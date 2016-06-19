@@ -1,0 +1,37 @@
+---
+layout: post
+title: "Migu Font"
+date: 2013-11-02
+comments: true
+categories: Linux Font
+---
+
+#フォントをMigu Font へ変更
+
+昨日 Steve Jobsの映画見てから、フォントはやっぱ綺麗な方がいいよねー。と思って、翌々見てみたら自分のPCの文字がデフォルトのフォントのままだった。
+<!-- more -->
+いつもお気に入りのフォントがあってそれを使っていたのだが、LaptopのOSをUbuntuからelementary OSに入れ替えた時からデフォルトのフォントのままになってた。
+
+ちなみに[Miguフォント](http://mix-mplus-ipa.sourceforge.jp/migu/)がお気に入りのフォントです。
+
+濁点、半濁点が見やすく、美しい。タイプしててキモチイイ。
+
+
+##ブラウザのフォントを変更してみる。
+
+Chromium
+`設定 ＞ Webコンテンツ ＞ フォントをカスタマイズ` にて設定。
+
+##SublimeTextのフォントも変更してみる
+
+設定ファイル `Preferences > Settings-User`をクリック
+
+Preferences.sublime-settings
+
+    {
+      "font_face": "Migu 1M",
+      "font_size": 12,
+    }
+
+なんだかフォントを変更しただけで少し幸せになれた気がする
+

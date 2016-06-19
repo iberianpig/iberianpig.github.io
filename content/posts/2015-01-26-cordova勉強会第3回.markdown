@@ -1,0 +1,96 @@
+---
+layout: post
+title: "Cordova勉強会第3回行ってきた"
+published: true
+date: 2015-01-26
+comments: true
+tags: Cordova, HTML5
+categories: HTML5
+---
+
+# Codova勉強会行ってきた
+
+だがしかし...
+
+* 参加時刻20:17  
+* ほとんど遅刻してアレ  
+* (19:00-21:00 at IIJさん)  
+* ビールとポテチもらいながら最後のセッション聞く感じになりました。  
+
+# デスクトップアプリマルチOS対応 with HTML5
+
+対象の人は以下の人  
+
+* デスクトップアプリ作りたい  
+* いろんなディスプレイサイズ辛い  
+* パフォーマンスそんな求めてない  
+* C#よりJSやりたい  
+
+うん。多分そんなところかも。  
+Destkop用のネイティブ言語を扱えない人も結構多そう。  
+
+## 3つのやりかた
+
+下記のやり方があるらしい。
+
+ * Mozilla XULRunner
+ * Cordova
+ * NW.js(Node-Webkit)
+
+あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。  
+なんかMonacaのローカルもそれ使うとか何とか（よくわかってない）
+
+<!-- more -->
+
+### Mozilla XULRunner
+
+ * 一番シンプルで古株なやつ
+ * エンジンGecko
+   - GeckoはHTML5だけじゃなくてXULというマークアップを動かせる
+   - セガ版Xamarinのような存在（?）
+ * 名前はXULだけど中身GeckoなのでHTML5が使える
+
+これ知らなかった。
+あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい
+
+### Cordova
+ * 3つの中で一番発展してる
+ * エンジンがTrident(Win)らしい
+ * ビルドツール
+ * プラグインで機能を足しやすいらしい
+
+Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった
+
+### NW.js(Node-Webkit)
+ * What is NW.js
+   - 3種の中で若造らしい
+ * Node.JS + Web標準でデスクトップを作ることができるよ 
+ * XULRUNNERとCorovaのいいどこどり?らしい
+
+# どうする
+ * デスクトップはNW.jsでいいと思う
+ * Codova(iOS),Crosswalk（Android)で良い
+ * Linux系サポートが熱いのはXULRunner
+
+# 完全なデスクトップアプリになれるとは思ってない
+ * html overflow:hidden; にしてもあまりいいことがないよ
+ * ウインドウサイズをネイティブアプリっぽく固定できないよ
+ * CreateWindowExっぽいもの？（なんだろ）はないよ
+ * Scrollがついている時点でWebっぽくなる
+
+# まとめ
+  * Mozilla XULRunner = 似非HTML5アプリ
+  * NW.js =DOM(Web標準) + Node.js
+  * Apache Cordova = DOM(Web標準) + プラグイン
+  * デスクトップHTML5アプリ ≠ デスクトップネイティブアプリ
+
+# その他
+ * AtomShell
+   - Githubが作ってるマルチプラットフォーム。
+   - Atomはそれで作ってるらしい。
+   - NodeWebKitが行けてなかったので作ったらしい。
+
+飯田橋行ったの初めてだったのとめっちゃ遅刻したので誰とも話してない。  
+何しに行ったんだ感が半端ない。  
+次回は2・13予定らしいけど、ちゃんと最初から参加したい。  
+

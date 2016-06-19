@@ -1,0 +1,121 @@
+---
+layout: post
+title: "技術メモ"
+published: false
+date: 2015-09-15
+comments: true
+categories: 技術メモ
+
+---
+
+# crontabの実行コマンドににnohupをつける
+
+# ssh/.configの設定内容とそのメリット
+
+# aws/.configの上手な使い方
+
+# git/hooksの実行タイミングとフック可能な内容
+
+# MySQLのdatetime型、timestamp型の違い, Railsでの利用のされ方
+
+# lineheightで | リスト１、| リスト２の高さを調整するのはNG, paddingで調節すべき
+
+# redisやmysqlを自動起動させるには
+ * 毎度立ち上がらずにエラーが出てから立ち上げる流れは面倒
+
+# CloudFlareを使う
+
+# モバイルアプリでよくあるメニューフォントの変形をWEBでやってみる
+ * SVG morpheusの利用
+ * angular-material-icons
+
+# ActiveRecordSerializer
+* jbuilderよりも高速
+* 使い方は少し違う
+* templateを使わない
+* 参考URL(http://qiita.com/kakkunpakkun/items/1c23b936d13f08a42752)
+* RAILS5で採用されるRAILS APIで利用される
+* rails api(https://github.com/rails-api/rails-api/tree/rails-5)
+* Serializerが見つからない時だけコントローラデフォルトのRails serializationにフォールバックする
+
+# 自動デプロイのスクリプトを作ってみた
+* Makefileで書いた
+* werckerでのCI,ビルド後のステータスを確認
+* cron
+  * whenever gemで便利に
+  * unicorn restart script
+* git reset --hard
+* rakeで書いてみても良いかも
+
+# shoulda/matcher
+1ライナーでvalidationのspecなどを簡単に書く
+
+# vim Unite file_rec/git,   Unite grep/git
+とっても便利
+
+# コロンビア式中央寄せテクニック
+だってばよ
+
+```css
+{
+  position: absolute;
+  left: 50%;
+  translation: translationX(-50%);
+}
+```
+
+# Restangular
+* 記述量が少ない
+* baseName.one('4').get()
+* lodashが依存で入る
+
+# IIFE
+
+モジュールパターンの記事、Javascriptあまりわかってない自分からすると、なるほど〜って感じで目からウロコ。
+(http://aphall.com/2013/06/javascript-iife-module-pattern/)
+
+```javascript
+var iife = (function(){
+  var field= "this field is accessed";
+  return{
+    set: function(arg){
+      var field = arg;
+    },
+    get: function(){
+      return field;
+    }
+  };
+})();
+
+iife.set("set value");
+iife.get();
+iife.field; //error! cannot access
+```
+
+# 頼み方を丁寧にしてみる(taskを渡せるようにする)
+* 依頼の仕方
+* 自分の期待する難易度と実際のtaskの難易度バランス
+* 割と似せて書かせると良いかも
+* issueをアサインするときに具体的な指示、それによって得られるメリット
+
+# scss-lint試してみたい
+(https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
+# autofixする csscombもある(ただしCSSのみに適用可)
+
+# エディタやGithub,Bitbucketと連携し、作業ログを可視化するwakatime(https://wakatime.com)
+
+# factoryのafter(:create) { has_manyの関連先生成に便利 }
+
+# redis-cliの操作
+全部無かったことに FLUSHALL
+
+# redis使うのでどうせならsidekiqかresqueを使おうとしたが
+sidekiqは謎のシリアライズエラーが消えない
+resqueは大本のドキュメントに従うべき、バージョンで全然動き違う
+
+# 協調フィルタリング
+例えば様々な商品群があって、それらにユーザが点数をつけていく。
+その点数の付け方から、似たユーザはどれか教えてくれる
+また、その趣向の近いユーザから、対象のユーザの好きそうなものを答えることができる。
+データが集まらないとまともな推薦はできない(コールドスタート問題)
+2次元のマップが大きくなりすぎて重い問題などがある。
