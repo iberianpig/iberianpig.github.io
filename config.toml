@@ -2,15 +2,15 @@ baseurl = "http://iberianpig.github.io/"
 languageCode = "ja-jp"
 title = "iberianpigsty"
 copyright = "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved."
-paginate = 10
+paginate = 16
 theme = "hugo_theme_robust"
+canonifyurls = true
 
 description = "Linux, Rails, AngularJS, Androidネタを投下します。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，現在Web/Mobileアプリ開発の修行中。"
 
 [params]
-  disqusShortname = "your disqus id." # optional
+  disqusShortname = "iberianpigsty"
+  GoogleAnalyticsUserID = "UA-45334010-1"
 
 [permalinks]
     post = "/:year/:month/:day/:filename/"
-
-
