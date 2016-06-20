@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Javascript Angualrjs on iberianpigsty</title>
+    <link>http://iberianpig.github.io/tags/javascript-angualrjs/</link>
+    <description>Recent content in Javascript Angualrjs on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 21 Mar 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/tags/javascript-angualrjs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ng-japan</title>
+      <link>http://iberianpig.github.io/posts/2015-03-21-ng-japan/</link>
+      <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2015-03-21-ng-japan/</guid>
+      <description>
+
+&lt;p&gt;Angualrjsの日本初のカンファレンス&lt;a href=&#34;http://ngjapan.org/&#34;&gt; ng-japan2015 &lt;/a&gt;が渋谷で2015/03/21にあったので行って来た。&lt;br /&gt;
+場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。&lt;br /&gt;
+毎度の通り、最初の1個目のセッションはあんまり聞けなかった。&lt;/p&gt;
+
+&lt;p&gt;結構人がいて定員500名の会場が普通に埋まってた&lt;br /&gt;
+こんなかんじ↓&lt;br /&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p&gt;すごい人！ ng-japan venue is packed! &lt;a href=&#34;https://twitter.com/hashtag/ng_jp?src=hash&#34;&gt;#ng_jp&lt;/a&gt; &lt;a href=&#34;http://t.co/Cb1Zfn9Q63&#34;&gt;pic.twitter.com/Cb1Zfn9Q63&lt;/a&gt;&lt;/p&gt;&amp;mdash; Eiji Kitamura (@agektmr) &lt;a href=&#34;https://twitter.com/agektmr/status/579144092333916160&#34;&gt;2015, 3月 21&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;onsen-uiのはなし:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;onsen-uiのはなし&lt;/h1&gt;
+
+&lt;p&gt;&lt;a class=&#34;embedly-card&#34; data-card-chrome=&#34;0&#34; href=&#34;http://www.slideshare.net/AsialCorp/angularonsen-uihtml5?ref=http://pirosikick.hateblo.jp/entry/2015/03/21/181240&#34;&gt;AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ&lt;/a&gt;
+&lt;script async src=&#34;//cdn.embedly.com/widgets/platform.js&#34; charset=&#34;UTF-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;html5ハイブリッドアプリとは:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;HTML5ハイブリッドアプリとは&lt;/h2&gt;
+
+&lt;p&gt;ネイティブのアプリとは違って、View部分をHTMLで記述。
+ネイティブ層、HTML5層があって内部はHTML5で作っている。&lt;br /&gt;
+アプリ内ではWebviewを利用している。&lt;/p&gt;
+
+&lt;p&gt;###メリット
+  * クロスプラットフォーム性
+  * ネイティブ機能をJsから呼び出し
+    * ハイブリッド用のCordovaから呼び出し
+      * OSからのAPI呼び出しを一本化する&lt;/p&gt;
+
+&lt;p&gt;###色々メリットはあるがしかし…
+  * ハイブリッドアプリは作ってみたものの&amp;hellip;
+  * Facebookでザッカーバーグの発言。&lt;em&gt;&amp;ldquo;HTML5にかけたのは失敗&amp;rdquo;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;###しかし状況は変わってきた
+  * モバイルの高速化
+  * CrossWalkだったり、ChromiumがWebviewに使われたり。
+  * DHH（Rails作者）によるハイブリッドアプリに関する好評&lt;/p&gt;
+
+&lt;p&gt;###デメリット
+* UIコンポーネントが標準で持っていない
+* チューニングの方法が難しい&lt;/p&gt;
+
+&lt;p&gt;##チューニングの方法
+  * インスペクタのTimelineタブで計測
+  * AndroidではChrome・iOSではsafariのinspecter
+  * タイムラインタブのカテゴリの説明（図）
+  * 描画が始まって16ms以下に抑えると60fps以上出る
+    * 逆にそれ以上だしてもディスプレイが追いつかない&lt;/p&gt;
+
+&lt;h3 id=&#34;チューニング対象となる5つのフェーズ:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;チューニング対象となる5つのフェーズ&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Loading
+
+&lt;ul&gt;
+&lt;li&gt;リソースの読み込みやパース&lt;/li&gt;
+&lt;li&gt;組み込みなのであんまやることない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Scripting
+
+&lt;ul&gt;
+&lt;li&gt;Javascriptの実行時間。純粋な計算は基本的に問題なし。&lt;/li&gt;
+&lt;li&gt;リフロー、Canvasへの命令など時間はかかる&lt;/li&gt;
+&lt;li&gt;ProfileTabで簡単にわかる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Rendering
+
+&lt;ul&gt;
+&lt;li&gt;レイアウト処理&lt;/li&gt;
+&lt;li&gt;再計算(Recaluculate Style)&lt;/li&gt;
+&lt;li&gt;CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。&lt;/li&gt;
+&lt;li&gt;使ってないCSSのルールマッチングの文だけ遅くなる&lt;/li&gt;
+&lt;li&gt;重たいCSSのセレクタの書き方&lt;/li&gt;
+&lt;li&gt;子孫セレクタやめたほうがいい&lt;/li&gt;
+&lt;li&gt;クラスで指定する書き方が速い&lt;/li&gt;
+&lt;li&gt;使ってないCSSのルールは消す。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Layout
+
+&lt;ul&gt;
+&lt;li&gt;すべてのDOMのレイアウト情報を計算&lt;/li&gt;
+&lt;li&gt;計算された結果の視野的なオブジェクトのツリーがレンダリングツリー&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Painting
+
+&lt;ul&gt;
+&lt;li&gt;描画処理&lt;/li&gt;
+&lt;li&gt;DisplayListの生成&lt;/li&gt;
+&lt;li&gt;Rasterize&lt;/li&gt;
+&lt;li&gt;ピクセル化&lt;/li&gt;
+&lt;li&gt;CompositeLayeers&lt;/li&gt;
+&lt;li&gt;レイヤの合成&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;雑多なチューニングの小話:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;雑多なチューニングの小話&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;translate3d(0,0,0)が早いのはなぜ？
+
+&lt;ul&gt;
+&lt;li&gt;GPUで描画されるから? -&amp;gt; 半分正解&lt;/li&gt;
+&lt;li&gt;Compositelayersのみ計算される
+transformなどはCompositeLayersのみ走る&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;詳しくはCSS Trigersでググること。
+
+&lt;ul&gt;
+&lt;li&gt;CSSをいじるとどのフェーズで計算されるかが書いてある!&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;DOMリークを防ぐ
+
+&lt;ul&gt;
+&lt;li&gt;DOMが参照されたまま開放されない。&lt;/li&gt;
+&lt;li&gt;見た目より深刻&lt;/li&gt;
+&lt;li&gt;detached DOMツリーとそれに参照されている&lt;/li&gt;
+&lt;li&gt;リソースが全てリークする&lt;/li&gt;
+&lt;li&gt;DesktopOSはスワップするが、モバイルは画面上の要素消したりするので注意。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;reflowを起こさないようにする
+
+&lt;ul&gt;
+&lt;li&gt;画像のサイズは必ず指定する&lt;/li&gt;
+&lt;li&gt;一度DOMツリーから切り離して操作する&lt;/li&gt;
+&lt;li&gt;offsetHeightやgetBoudingClientRect()を呼び出しつつstyleを変更するみたいなコードをループで書くと地獄&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;GPUバウンド
+
+&lt;ul&gt;
+&lt;li&gt;CPUよりもGPUの方で時間がかかっている状態&lt;/li&gt;
+&lt;li&gt;Rasterize後にテクスチャとしてGPUのVRAMに転送&lt;/li&gt;
+&lt;li&gt;Composite Layers&lt;/li&gt;
+&lt;li&gt;GPUへの転送や合成がCPU時間よりも時間がかかっていればGPUバウンドとしてみなすことができる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;チューニングには罠がある:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;チューニングには罠がある&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;レンダリングエンジンの実装に依存&lt;/li&gt;
+&lt;li&gt;どうしてもわからないときはWebKitやChromiumのコードを読むしかない。&lt;/li&gt;
+&lt;li&gt;HTML5でアプリを書きたいだけなのになぜChromiumのコードを読んでいるのか&lt;/li&gt;
+&lt;li&gt;CSSを書いているだけなのにGPUのVRAMへの転送速度を着にしなければならないのか？&lt;/li&gt;
+&lt;li&gt;開発期間の限られるアプリ開発者がここまでのチューニングを要求するのは酷&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;onsen-ui:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;Onsen-ui&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Angularベース&lt;/li&gt;
+&lt;li&gt;HTML拡張、UIのコンポーネント&lt;/li&gt;
+&lt;li&gt;Adobeの高速なCSSフレームワーク&lt;a href=&#34;http://topcoat.io/&#34;&gt; TopCoat &lt;/a&gt;を利用&lt;/li&gt;
+&lt;li&gt;パフォーマンスチューニング済。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://components.onsen.io/&#34;&gt; ui-component &lt;/a&gt;により、コンポーネントのデザインを簡単に変更可能&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##QA
+* ionic(海外製のAngular+Cordovaを用いたハイブリッドアプリUIフレームワーク)と比較。
+  * パフォーマンスチューニング済であること
+  * Androidベースでの最適化(ionicはiOSをメインでサポートしているとのこと)
+  * 日本語のドキュメントが豊富&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;他にも興味深いセッションがあったが、メモをあまりとっておらず、下記資料ベースm(_ _)m。&lt;/p&gt;
+
+&lt;h1 id=&#34;routing-in-angular:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;Routing in Angular&lt;/h1&gt;
+
+&lt;p&gt;ブライアン@braiantfordより&lt;a href=&#34;http://angular.github.io/router/configuration&#34;&gt; 新しいRoutingの仕組みについて &lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;typescript-angular:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;TypeScript + Angular&lt;/h1&gt;
+
+&lt;p&gt;&lt;a class=&#34;embedly-card&#34; href=&#34;http://www.slideshare.net/vvakame/ngjapan-2015-typescriptangularjs-13&#34;&gt;ng-japan 2015 TypeScript+AngularJS 1.3&lt;/a&gt;
+&lt;script async src=&#34;//cdn.embedly.com/widgets/platform.js&#34; charset=&#34;UTF-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;TypeScriptの布教活動が行われた。&lt;/p&gt;
+
+&lt;h1 id=&#34;angular2の話:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;Angular2の話&lt;/h1&gt;
+
+&lt;p&gt;資料は&lt;a href=&#34;https://docs.google.com/presentation/d/1c9YTFu5Dn6sxwnkWhXZhJC8pppASfJraKz6CC_eTezU/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&amp;amp;slide=id.g7b5b0dc77_376&#34;&gt; こちら。 &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;気になった話は下記。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Angular1.0と2.0はコードベースとして似てはいないが、基本概念は同じ。&lt;/li&gt;
+&lt;li&gt;Googleでは2000ものアプリがAngularで書かれている
+
+&lt;ul&gt;
+&lt;li&gt;2015/05から一部プロジェクトが実際に利用をはじめる。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;パフォーマンスチューニング用のツール
+
+&lt;ul&gt;
+&lt;li&gt;BenchPress&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;2.0による高速化について
+
+&lt;ul&gt;
+&lt;li&gt;ViewCache&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;その他:6869bb2a75adbf06daf9fe3356bd8b4a&#34;&gt;その他&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://chrome.google.com/webstore/detail/angular-watchers/nlmjblobloedpmkmmckeehnbfalnjnjk&#34;&gt;angular watchers&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;自分が帰ったあとのスポンサードLTの中で紹介されてたっぽい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

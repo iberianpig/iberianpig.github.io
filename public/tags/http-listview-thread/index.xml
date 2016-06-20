@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Http Listview Thread on iberianpigsty</title>
+    <link>http://iberianpig.github.io/tags/http-listview-thread/</link>
+    <description>Recent content in Http Listview Thread on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/tags/http-listview-thread/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ListView and http connection</title>
+      <link>http://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</guid>
+      <description>
+
+&lt;h1 id=&#34;雑多メモ:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;雑多メモ&lt;/h1&gt;
+
+&lt;p&gt;Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達&lt;/p&gt;
+
+&lt;h2 id=&#34;レイアウトをjava側で生成する:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;レイアウトをJava側で生成する&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;    LinearLayout linearLayout = new LinearLayout(this);
+    linearLayout.setOrientation(LinearLayout.VERTICAL);
+    setContentView(linearLayout);`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;レイアウトに要素を追加する:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;レイアウトに要素を追加する&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;   Button button1 = new Button(this);
+    button1.setText(&amp;quot;OK&amp;quot;);
+    button1.setLayoutParams(new LinearLayout.LayoutParams(
+        LinerLayout.LayoutParams.MATCH_PARENT,
+        LinerLayout.LayoutParams.WRAP_CONTENT));
+    linearLayout.addView(button1);`
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;addviewメソッド:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;AddViewメソッド&lt;/h3&gt;
+
+&lt;p&gt;「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;public void addView(View child, LayoutParams params)
+Adds a child view with the specified layout parameters.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Parameters:
+  child:  the child view to add
+  params:  the layout parameters to set on the child&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;LinearLayout.LayoutParamsクラス&lt;/p&gt;
+
+&lt;p&gt;「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;LayoutParams
+public LinearLayout.LayoutParams(int w, int h)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;他のビューに対する相対位置の指定-addrule:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;他のビューに対する相対位置の指定(addRule)&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。
+(参考:　&lt;a href=&#34;http://www.javadrive.jp/android/relativelayout/index3.html&#34;&gt;http://www.javadrive.jp/android/relativelayout/index3.html&lt;/a&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;addRule
+public void addRule(int verb, int anchor)
+Adds a layout rule to be interpreted by the RelativeLayout. Use this for
+verbs that take a target, such as a sibling (ALIGN_RIGHT) or a boolean
+value (VISIBLE).&lt;/p&gt;
+
+&lt;p&gt;Parameters:
+  verb  One of the verbs defined by RelativeLayout, such as
+    ALIGN_WITH_PARENT_LEFT.
+  anchor  The id of another view to use as an anchor, or a boolean
+    value(represented as TRUE) for true or 0 for false). For verbs that
+    don&amp;rsquo;t refer to another sibling (for example, ALIGN_WITH_PARENT_BOTTOM)
+    just use -1.&lt;/p&gt;
+
+&lt;h3 id=&#34;windowのタイトルを消す:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;Windowのタイトルを消す&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;onCreate内に下記を記述
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;requestWindowFeature(Window.FEATURE_NO_TITLE);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;listviewの扱い方:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;ListViewの扱い方&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;List&amp;lt;String&amp;gt; items = new ArrayList&amp;lt;String&amp;gt;();&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ListViewに値を追加する場合はArrayAdapterを用いる&lt;/li&gt;
+&lt;li&gt;独自クラスのリストを扱う場合は下記が必要
+
+&lt;ul&gt;
+&lt;li&gt;独自クラスの作成(id, name, url, 画像等)&lt;/li&gt;
+&lt;li&gt;XMLレイアウトを作成(独自クラスが収まるようなレイアウト)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ListViewに追加するArrayAdapter&lt;class&gt;(context, layout)
+&lt;code&gt;ArrayAdapter&amp;lt;String&amp;gt; adapter = new ArrayAdapter&amp;lt;String&amp;gt;(this, android.R.layout.simple_list_item_1);&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;アイテムの追加&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;adapter.add(&amp;quot;red&amp;quot;);
+adapter.add(&amp;quot;green&amp;quot;);
+adapter.add(&amp;quot;blue&amp;quot;);
+ListView listView = (ListView) findViewById(id.listview);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リストビューのアイテムがクリックされた時に呼び出されるコールバックリスナーを登録
+
+&lt;ul&gt;
+&lt;li&gt;listview.getItemAtPosition(position)でリスト上のオブジェクトを取得&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;``java
+ listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+     @Override
+     public void onItemClick(AdapterView&amp;lt;?&amp;gt; parent, View view,
+             int position, long id) {
+         ListView listView = (ListView) parent;
+         String item = (String) listView.getItemAtPosition(position);
+         Toast.makeText(ListViewSampleActivity.this, item, Toast.LENGTH_LONG).show();
+     }
+ });&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+## Threadの扱い
+* 基本的にMainでUIを担当する
+* サブThread上でUI描画を実行するとエラーとなってしまうので要注意
+* Handler クラスを宣言し、描画Thred内でhandler.postすることでMainに描画部分を引き渡せる(http://www.adamrocker.com/blog/255/hello-android-chapter7-the-connected-world.html)
+* ↑の処理をラップしているrunOnUiThreadメソッドが便利そう。(http://visible-true.blogspot.jp/2011/11/activityrunonuithreadrunnable.html)
+
+
+## Http通信を行う場合
+* インターネット接続を許可する為に、AndroidManifest.xmlに以下を
+* 記述する。
+`&amp;lt;uses-permission android:name=&amp;quot;android.permission.INTERNET&amp;quot;&amp;gt;&amp;lt;/uses-permissio&amp;gt;`
+* メインスレッドで通信を行った場合、Android4では&amp;quot;android.os.StrictMode$AndroidBlockGuardPolicy.onNetwork&amp;quot;エラーが発生し動作しない。
+    * Android4ではメインスレッドからネットワークにアクセスする処理を実行することができなくなったため。
+    * HTTPでdataを取得する場合はサブスレッドで取得する必要がある
+
+## 非同期タスク(AsyncTask)
+AsyncTask(Android独自のクラス)をextendsして、サブスレッドとメインスレッドを分けて動作させる。View操作とロジック計算を分離させる
+
+* doInBackgroundメソッド
+    * subスレッドとして動作
+    * 非同期のHttpリクエストを実装とか
+* onPostExecuteメソッド
+    * doInBackground終了時に呼ばれる
+    * mainスレッドとして実行する。
+    * UI更新内容を実装したりとか。
+* 参考URL
+    * (http://www.ipentec.com/document/document.aspx?page=android-get-html-file-use-http-for-android4)
+    * (http://www.office-matsunaga.biz/android/description.php?id=9)
+
+## レイアウトの取得・差し替え(inflater)
+
+&amp;gt; Androidのプログラミングでは、画面のViewを構成する場合、layout用xmlファイルを用いて、レイアウトを作成することが推奨されている。
+&amp;gt; しかし、xmlファイルを用いた場合、それは、静的にレイアウトが決定付けられてしまい、プログラムの実行時にレイアウトを変形することはできない。
+&amp;gt; この不都合を回避するため、LayoutInflater Classが用意されており、このクラスを活用することにより、実行時にお好みのレイアウトに変形できる。
+(https://sites.google.com/site/androyerjapan/home/layoutinflater)
+
+* inflaterによりxmlレイアウトの差し替えを行うことができる
+* inflaterの取得方法は3種類ある
+    * コンテキストから取得
+    `LayoutInflater inflater1 = LayoutInflater.from(this);`
+    * アクティビティから取得
+    `LayoutInflater inflater2 = getLayoutInflater();`
+    * システムサービスから取得
+    ` LayoutInflater inflater3 = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);`
+
+  上3つとも動きは一緒らしい
+
+* 差し替えの方法(レイアウトXMLから取得したビューを画面に反映させる)
+
+1. レイアウトインフレーターを取得
+  `LayoutInflater inflater1 = LayoutInflater.from(this);`
+ 
+2. レイアウトXMLからビューを取得
+`View view = inflater.inflate(R.layout.main, null);`
+ 
+3. ビューを画面に反映
+`setContentView(view);`
+
+&amp;gt; 最後のビューを画面に反映する処理は、リソースIDを指定する setContentView(R.layout.main) と同じ結果になります。
+
+(参考サイト: http://inujirushi123.blog.fc2.com/blog-entry-27.html) 
+
+
+
+* convertView
+```java
+// convertViewは使い回しされている可能性があるのでnullの時だけ新しく作る
+if (null == convertView) {
+    convertView = layoutInflater_.inflate(R.layout.hoge_layout, null);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下記の説明を読んで少しハラオチした。
+&lt;a href=&#34;http://hyoromo.hatenablog.com/entry/20090912/1252777077&#34;&gt;http://hyoromo.hatenablog.com/entry/20090912/1252777077&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;convertView自体はListViewをScrollした時のList一行生成時に呼ばれるgetViewに必要。
+getView自体はAdapterクラスだと持ってるコールバック。&lt;/p&gt;
+
+&lt;p&gt;一度でもgetViewを行ってさえいれば、AdapterクラスのインスタンスはconvertViewのプロパティ
+を保持しており、それを毎回getViewに代入する。&lt;/p&gt;
+
+&lt;p&gt;そのため、もし持っていなかったらLayoutInflaterで新しくconvertView取ってくるよという動きをする&lt;/p&gt;
+
+&lt;h2 id=&#34;その他-不明点:ca8b5a9520e22fcfb65e09ec054cbe42&#34;&gt;その他/不明点&lt;/h2&gt;
+
+&lt;p&gt;見てたサイト達
+&lt;a href=&#34;http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA&#34;&gt;http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
