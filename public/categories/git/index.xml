@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on iberianpigsty</title>
+    <link>http://iberianpig.github.io/categories/git/</link>
+    <description>Recent content in Git on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 22 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tigを使う</title>
+      <link>http://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</guid>
+      <description>
+
+&lt;p&gt;CUIなGitクライアント。社内勉強会のために少し調べた。&lt;br /&gt;
+意外と掘れば色々情報が出てくる印象。&lt;br /&gt;
+調べ次第追記する。&lt;/p&gt;
+
+&lt;h1 id=&#34;tigの特徴:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;tigの特徴&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gitクライアント&lt;/li&gt;
+&lt;li&gt;CUI&lt;/li&gt;
+&lt;li&gt;マルチプラットフォーム&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;tigのいいところ:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;tigのいいところ&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;軽い&lt;/li&gt;
+&lt;li&gt;インストールさえされていればX動いてなくても使える&lt;/li&gt;
+&lt;li&gt;ログのツリー見て、diff見て、編集のワークフローが快適&lt;/li&gt;
+&lt;li&gt;vim likeに使える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;インストール:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;インストール&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux/Windowsの人(apt使えるなら)
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install tig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Macとか
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;brew install tig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;基本的な使い方:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;基本的な使い方&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ターミナルで&lt;code&gt;tig&lt;/code&gt;とタイプで起動&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt;押せばヘルプ出る&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;q&lt;/code&gt;で閉じる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;vim-likeなキーバインド:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;vim likeなキーバインド&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;j&lt;/code&gt;, &lt;code&gt;k&lt;/code&gt;で上下移動&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/&lt;/code&gt;で検索&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;コミットログ見るとき:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;コミットログ見るとき&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブランチの枝分かれが見やすい&lt;/li&gt;
+&lt;li&gt;Enterで分割して、左がコミットログ、右がDiffが見れる&lt;/li&gt;
+&lt;li&gt;Diff見ながら&lt;code&gt;&amp;lt;C-n&amp;gt;&lt;/code&gt;(next),&lt;code&gt;&amp;lt;C-p&amp;gt;&lt;/code&gt;(previous)でコミット親・子を辿れる&lt;/li&gt;
+&lt;li&gt;Diffでカーソルがあたっている時、&lt;code&gt;e&lt;/code&gt;(edit)で該当箇所をエディタで編集できる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-logの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git logの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: tigのlog view
+
+&lt;ul&gt;
+&lt;li&gt;git log&lt;/li&gt;
+&lt;li&gt;エンター押せばdiffも見える&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;m&lt;/code&gt;: tigのmain view
+
+&lt;ul&gt;
+&lt;li&gt;一番使う&lt;/li&gt;
+&lt;li&gt;ツリー綺麗&lt;/li&gt;
+&lt;li&gt;エンター押せばdiffも見える&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-diffの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git diffの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;: tigのdiff view
+
+&lt;ul&gt;
+&lt;li&gt;gitdiff同様、diffが見れる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git diff &amp;lt;コミットID&amp;gt; &amp;lt;コミットID&amp;gt;&lt;/code&gt;だとコミット間でdiff見れるけど、tigは1つ1つのコミット毎にDiffが出るのでちょっと使い勝手が異なる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tig &amp;lt;コミットID&amp;gt;..&amp;lt;コミットID&amp;gt;&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;コミットIDからコミットIDまでの履歴のみDiffが出る&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-statusの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git statusの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s, S&lt;/code&gt;: tigのstatus view
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;: ステージング/アンステージング&lt;/li&gt;
+&lt;li&gt;1ファイル内に複数の変更がある場合はdiff viewで&lt;code&gt;u&lt;/code&gt;で部分的にステージングできる&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!&lt;/code&gt;: ワーキングスペースから取り除く(アンステージング状態のものに限る)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-branchの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git branchの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt;: tigのbranch View
+
+&lt;ul&gt;
+&lt;li&gt;ブランチが見れる&lt;/li&gt;
+&lt;li&gt;エンター押すと分割されて、該当ブランチを中心としたグラフが見える&lt;/li&gt;
+&lt;li&gt;.tigrc入れて改造すると捗る&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-grepの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git grepの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tig grep &amp;lt;検索文字列&amp;gt;&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;grepされた結果が出る&lt;/li&gt;
+&lt;li&gt;エンター押すと周辺ソースが見れる&lt;/li&gt;
+&lt;li&gt;eで該当箇所をエディタで開ける&lt;/li&gt;
+&lt;li&gt;syntax highlightが効かないところを除けば意外と便利&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;git-blameの代わりに:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;git blameの代わりに&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;b&lt;/code&gt;/&lt;code&gt;tig blame &amp;lt;ファイル名&amp;gt;&lt;/code&gt; : tigのblame view
+
+&lt;ul&gt;
+&lt;li&gt;blameしたあと開いたコミットに&lt;code&gt;b&lt;/code&gt;で再帰的にblameできるので、どういうコンテキストで変更されたのかわかったりする&lt;/li&gt;
+&lt;li&gt;ちなみに&lt;code&gt;&amp;lt;&lt;/code&gt;で戻れる&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;その他知っておくと捗る事:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;その他知っておくと捗る事&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tig --all&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リモート含めた全ブランチが見える&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt;でbranch Viwe上の&lt;code&gt;All references&lt;/code&gt;選択時と同じ&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tig [&amp;lt;ファイル名&amp;gt;, &amp;lt;ディレクトリ名&amp;gt;]&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ファイルorディレクトリが関わる履歴のみが見える&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tig [&amp;lt;ブランチ名&amp;gt;, &amp;lt;他のブランチ名&amp;gt;]&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;対象ブランチに関わる履歴のみが見える&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;バッファの内容を更新したいときは&lt;code&gt;R&lt;/code&gt;でリロード&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;tigrcを弄ってカスタマイズ:8ebafd3d13ec9d4030b2b6d9b8ec694c&#34;&gt;~/.tigrcを弄ってカスタマイズ&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-tigrc&#34;&gt;# main-viewの左端にコミットIDを表示する
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+# # Visualization
+set id-width = 8
+set blame-options = -C -C -C
+set horizontal-scroll = 33%
+set show-notes = yes
+set show-changes = yes
+set split-view-height = 80%
+set status-untracked-dirs = yes
+set tab-size = 2
+set diff-context = 3
+set ignore-space = some
+set commit-order = topo
+set ignore-case = yes
+set wrap-lines = yes
+set focus-child = yes
+
+# Bind Settings
+bind generic &amp;lt;C-f&amp;gt; move-page-down
+bind generic &amp;lt;C-b&amp;gt; move-page-up
+bind generic g move-first-line
+bind main    G  none
+bind main    G  move-last-line
+bind generic G  move-last-line
+
+# revertを定義
+bind main v !?git revert %(commit)
+bind diff v !?git revert %(commit)
+bind main V !?git revert %(prompt) %(commit)
+bind diff V !?git revert %(prompt) %(commit)
+
+bind generic F none
+bind generic F !git fe # git fetch
+
+bind branch C !git co -b %(prompt) %(branch)
+bind branch P !git push origin %(branch)
+bind branch L !git pull origin %(branch)
+bind branch H !git-browse-remote %(branch)
+
+bind generic M none
+bind branch M none
+bind branch M !git merge %(branch)
+
+bind status C !git commit -v
+
+# `-` でステージ・アンステージをスイッチ
+bind status u none
+bind status - status-update
+bind stage u none
+bind stage - status-update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ショートカットをアサインする
+
+&lt;ul&gt;
+&lt;li&gt;view毎にアサインできるので色々仕込める&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;カラーテーマを変える
+
+&lt;ul&gt;
+&lt;li&gt;あまりテーマは見つからない。しかし、デフォルトが綺麗なのでそこまで必要性は感じていない&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
