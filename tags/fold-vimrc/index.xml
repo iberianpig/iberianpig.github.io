@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fold Vimrc on iberianpigsty</title>
+    <title>iberianpigsty </title>
     <link>https://iberianpig.github.io/tags/fold-vimrc/</link>
-    <description>Recent content in Fold Vimrc on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 11 Sep 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://iberianpig.github.io/tags/fold-vimrc/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2014-09-11 00:00:00 &#43;0000 UTC</updated>
+
     
-    <item>
-      <title>vimで折りたたみしないようにする</title>
-      <link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
-      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
-      <description>
-
-&lt;h1 id=&#34;vimの折りたたみをしない設定:1663c1f1273913c1f484bd5874af7d2a&#34;&gt;Vimの折りたたみをしない設定&lt;/h1&gt;
-
-&lt;p&gt;いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に
-毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;set foldmethod=syntax
-let perl_fold=1
-set foldlevel=100
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;special-thanks:1663c1f1273913c1f484bd5874af7d2a&#34;&gt;special thanks&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.ksknet.net/vi/post_183.html&#34;&gt;vimの折りたたみ設定&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>

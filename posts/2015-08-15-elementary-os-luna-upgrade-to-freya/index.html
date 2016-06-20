@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="https://iberianpig.github.iocss/styles.css">
+    <link rel="stylesheet" href="https://iberianpig.github.iocss/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.ioindex.xml">
+
+    
+    <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから） - iberianpigsty</title>
+    <meta property='og:title' content="elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから） - iberianpigsty">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/">
+    
+    <meta property="og:image" content="https://iberianpig.github.ioimages/https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"https:\/\/iberianpig.github.io"
+    },
+    "headline": "elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから） |  ",
+    "image": {
+      "@type": "ImageObject",
+      "url": "",
+      "height": 700,
+      "width": 700
+    },
+    "datePublished": "2015-08-15T00:00:00JST",
+    "dateModified": "2015-08-15T00:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "",
+      "image": "https:\/\/iberianpig.github.ioimages/logo.png"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/iberianpig.github.ioimages/logo.png",
+        "height": 60,
+        "width": 60
+      }
+    },
+    "description": ""
+  }
+</script>
+</head>
+
+<body>
+
+  <header class="l-header">
+    <div class="p-logo">
+      <a href="https://iberianpig.github.io">iberianpigsty</a>
+    </div>
+  </header>
+
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9">
+
+      <article class="single">
+        <div class="image" style="background-image: url(https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg);"></div>
+        <div class="body">
+          <h1>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</h1>
+          
+
+<ul>
+<li>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない</li>
+<li>新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた)</li>
+<li>lunaのインストール時に<code>/home</code>と<code>/</code>パーティションを分けて管理していたので、<code>/home</code>を残して<code>/</code>をすべて入れ替える。</li>
+<li><code>/home</code>と<code>/</code>(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認
+
+<ul>
+<li>(install時にこれらを割り当てするときに間違えなようにメモしておく)</li>
+</ul></li>
+<li>elementaryOS freyaのイメージをダウンロード(<a href="https://elementary.io">https://elementary.io</a>)</li>
+<li>UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成)</li>
+<li>起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択</li>
+</ul>
+
+<!-- more -->
+
+<h1 id="パッケージのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">パッケージのインストール</h1>
+
+<h2 id="各種レポジトリの追加:4d3bb77c9ea83877f0cf6aba05568f9c">各種レポジトリの追加</h2>
+
+<pre><code class="language-bash">sudo man add-apt-repository
+sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
+sudo add-apt-repository ppa:numix/ppa
+sudo add-apt-repository ppa:webupd8team/atom
+sudo apt-get update &amp;&amp; sudo apt-get upgrade
+sudo add-apt-repository -y ppa:aguignard/ppa
+sudo add-apt-repository -y ppa:pi-rho/dev
+sudo add-apt-repository -y ppa:git-core/ppa
+</code></pre>
+
+<h2 id="elementary-tweaks-のインストール:4d3bb77c9ea83877f0cf6aba05568f9c">elementary-tweaks のインストール</h2>
+
+<p>アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる</p>
+
+<pre><code>sudo apt-get install elementary-tweaks
+</code></pre>
+
+<h2 id="numixのiconセットのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">numixのiconセットのインストール</h2>
+
+<pre><code>sudo apt-get install numix-*
+</code></pre>
+
+<p>numix-circleを適用</p>
+
+<h2 id="arc-themeのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">Arc-themeのインストール</h2>
+
+<pre><code class="language-sh">sudo sh -c &quot;echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_15.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list&quot;
+wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_15.04/Release.key
+sudo apt-key add - &lt; Release.key
+sudo apt-get update
+sudo apt-get install arc-theme
+</code></pre>
+
+<h2 id="ターミナルの分割にbyobuを利用:4d3bb77c9ea83877f0cf6aba05568f9c">ターミナルの分割にbyobuを利用</h2>
+
+<pre><code>sudo apt-get install byobu tmux
+</code></pre>
+
+<h2 id="xclipのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">xclipのインストール</h2>
+
+<p>byobu(tmux)上での擬似viコピーにxclipを利用しているので下記を実行</p>
+
+<pre><code>sudo apt-get install xclip
+</code></pre>
+
+<h2 id="vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピペが可能に:4d3bb77c9ea83877f0cf6aba05568f9c">vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピペが可能に。</h2>
+
+<pre><code>sudo apt-get install vim-gnome
+</code></pre>
+
+<h2 id="ag-のインストール-高速なgrep:4d3bb77c9ea83877f0cf6aba05568f9c">ag のインストール(高速なgrep)</h2>
+
+<pre><code>sudo apt-get install silversearcher-ag
+</code></pre>
+
+<h2 id="アプリケーションの設定用アプリケーション-dconf-editor-gconf-editor:4d3bb77c9ea83877f0cf6aba05568f9c">アプリケーションの設定用アプリケーション(dconf-editor, gconf-editor)</h2>
+
+<pre><code>sudo apt-get install dconf-editor gconf-editor
+</code></pre>
+
+<h2 id="gitのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">gitのインストール</h2>
+
+<pre><code>sudo apt-get install git tig
+</code></pre>
+
+<h2 id="guiパッケージマネージャ:4d3bb77c9ea83877f0cf6aba05568f9c">GUIパッケージマネージャ</h2>
+
+<pre><code>sudo apt-get install synaptic
+</code></pre>
+
+<h2 id="プロセス用のgrep:4d3bb77c9ea83877f0cf6aba05568f9c">プロセス用のgrep</h2>
+
+<pre><code>sudo apt-get install pgrep
+</code></pre>
+
+<h2 id="パスワードマネージャ:4d3bb77c9ea83877f0cf6aba05568f9c">パスワードマネージャ</h2>
+
+<pre><code>sudo apt-get install keepassx
+</code></pre>
+
+<h2 id="システムモニタ-shift-ctrl-escにバインドさせる:4d3bb77c9ea83877f0cf6aba05568f9c">システムモニタ(shift+ctrl+ESCにバインドさせる）</h2>
+
+<pre><code>sudo apt-get install gnome-system-monitor
+</code></pre>
+
+<h2 id="dropboxのinstall:4d3bb77c9ea83877f0cf6aba05568f9c">dropboxのinstall</h2>
+
+<ul>
+<li>websiteからdebパッケージをインストール(<a href="https://www.dropbox.com/">https://www.dropbox.com/</a>)</li>
+<li><code>dropbox filestatus</code>で状態/動作の確認</li>
+</ul>
+
+<h2 id="xswipeのインストール-マルチタッチジェスチャ:4d3bb77c9ea83877f0cf6aba05568f9c">xSwipeのインストール(マルチタッチジェスチャ)</h2>
+
+<ul>
+<li>インストールはこちらのREADME参照(<a href="https://github.com/iberianpig/xSwipe">https://github.com/iberianpig/xSwipe</a>)<br />
+
+<ul>
+<li>14.04系からsynapticsドライバがアップデートされて依存していたコマンドが利用できなくなったため、 Fork版のドライバを入れる必要あり</li>
+</ul></li>
+<li>Pull request歓迎。</li>
+</ul>
+
+<h2 id="fcitx-mozcのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">fcitx+mozcのインストール</h2>
+
+<pre><code>sudo apt-get install fcitx fcitx-mozc
+</code></pre>
+
+<p>日本語入力系統をIbusからFcitxへ変更を行うため、<code>im-config</code>を実行し、fcitxへ変更する</p>
+
+<h2 id="dotfiles-bashrcや-vimrcなど-の設定ファイル:4d3bb77c9ea83877f0cf6aba05568f9c">dotfiles(.bashrcや.vimrcなど)の設定ファイル</h2>
+
+<ul>
+<li>自分のGitHubレポジトリから引っ張ってくる</li>
+<li>home直下にdotfiles内からシンボリックリンク張るスクリプトを実行</li>
+</ul>
+
+<h2 id="自作スクリプトの実行などにキーバインドを割り当て:4d3bb77c9ea83877f0cf6aba05568f9c">自作スクリプトの実行などにキーバインドを割り当て</h2>
+
+<pre><code class="language-bash">sudo apt-get install xbindkeys
+sudo apt-get install xdotool
+</code></pre>
+
+<ul>
+<li>dotfilesより.xbindkeysをセット
+
+<ul>
+<li>テザリング用の接続コマンド</li>
+<li>セカンドモニタの位置変更(大体いつも真上にセットする)</li>
+<li>workspace移動のキーバインドの追加</li>
+</ul></li>
+</ul>
+
+<h2 id="業務用-個人的に必要だったのでメモ:4d3bb77c9ea83877f0cf6aba05568f9c">業務用(個人的に必要だったのでメモ)</h2>
+
+<pre><code>sudo apt-get install mysql-client-5.6
+sudo apt-get install mysql-client
+sudo apt-get install mysql-server
+sudo apt-get install nodejs
+sudo apt-get install redis-server
+</code></pre>
+
+<p><strong><a href="http://askubuntu.com/a/458646"> workbenchは14.04版にバグがあるため注意</a></strong></p>
+
+<p>適宜アップデートしていく予定。</p>
+
+        </div>
+
+        <aside>
+          <section>
+            <div>
+              <div class="p-share">
+                <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-15-elementary-os-luna-upgrade-to-freya%2f&t=elementary%20OS%20freya%e3%81%b8%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%82%b0%e3%83%ac%e3%83%bc%e3%83%89%e6%99%82%e3%81%ae%e3%83%a1%e3%83%a2%ef%bc%88elementaryOS%20luna%e3%81%8b%e3%82%89%ef%bc%89" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-15-elementary-os-luna-upgrade-to-freya%2f&text=elementary%20OS%20freya%e3%81%b8%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%82%b0%e3%83%ac%e3%83%bc%e3%83%89%e6%99%82%e3%81%ae%e3%83%a1%e3%83%a2%ef%bc%88elementaryOS%20luna%e3%81%8b%e3%82%89%ef%bc%89&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-15-elementary-os-luna-upgrade-to-freya%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+                <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-15-elementary-os-luna-upgrade-to-freya%2f&title=elementary%20OS%20freya%e3%81%b8%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%82%b0%e3%83%ac%e3%83%bc%e3%83%89%e6%99%82%e3%81%ae%e3%83%a1%e3%83%a2%ef%bc%88elementaryOS%20luna%e3%81%8b%e3%82%89%ef%bc%89" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+              </div>
+            </div>
+          </section>
+
+          
+          
+          <section>
+            <div>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  var disqus_shortname = 'iberianpigsty';
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          </section>
+          
+          
+        </aside>
+
+      </article>
+
+    </div>
+    <div class="col-md-3">
+      <aside class="site">
+
+  
+  <section>
+    <header>Table Of Contents</header>
+    <div><nav id="TableOfContents">
+<ul>
+<li><a href="#パッケージのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">パッケージのインストール</a>
+<ul>
+<li><a href="#各種レポジトリの追加:4d3bb77c9ea83877f0cf6aba05568f9c">各種レポジトリの追加</a></li>
+<li><a href="#elementary-tweaks-のインストール:4d3bb77c9ea83877f0cf6aba05568f9c">elementary-tweaks のインストール</a></li>
+<li><a href="#numixのiconセットのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">numixのiconセットのインストール</a></li>
+<li><a href="#arc-themeのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">Arc-themeのインストール</a></li>
+<li><a href="#ターミナルの分割にbyobuを利用:4d3bb77c9ea83877f0cf6aba05568f9c">ターミナルの分割にbyobuを利用</a></li>
+<li><a href="#xclipのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">xclipのインストール</a></li>
+<li><a href="#vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピペが可能に:4d3bb77c9ea83877f0cf6aba05568f9c">vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピペが可能に。</a></li>
+<li><a href="#ag-のインストール-高速なgrep:4d3bb77c9ea83877f0cf6aba05568f9c">ag のインストール(高速なgrep)</a></li>
+<li><a href="#アプリケーションの設定用アプリケーション-dconf-editor-gconf-editor:4d3bb77c9ea83877f0cf6aba05568f9c">アプリケーションの設定用アプリケーション(dconf-editor, gconf-editor)</a></li>
+<li><a href="#gitのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">gitのインストール</a></li>
+<li><a href="#guiパッケージマネージャ:4d3bb77c9ea83877f0cf6aba05568f9c">GUIパッケージマネージャ</a></li>
+<li><a href="#プロセス用のgrep:4d3bb77c9ea83877f0cf6aba05568f9c">プロセス用のgrep</a></li>
+<li><a href="#パスワードマネージャ:4d3bb77c9ea83877f0cf6aba05568f9c">パスワードマネージャ</a></li>
+<li><a href="#システムモニタ-shift-ctrl-escにバインドさせる:4d3bb77c9ea83877f0cf6aba05568f9c">システムモニタ(shift+ctrl+ESCにバインドさせる）</a></li>
+<li><a href="#dropboxのinstall:4d3bb77c9ea83877f0cf6aba05568f9c">dropboxのinstall</a></li>
+<li><a href="#xswipeのインストール-マルチタッチジェスチャ:4d3bb77c9ea83877f0cf6aba05568f9c">xSwipeのインストール(マルチタッチジェスチャ)</a></li>
+<li><a href="#fcitx-mozcのインストール:4d3bb77c9ea83877f0cf6aba05568f9c">fcitx+mozcのインストール</a></li>
+<li><a href="#dotfiles-bashrcや-vimrcなど-の設定ファイル:4d3bb77c9ea83877f0cf6aba05568f9c">dotfiles(.bashrcや.vimrcなど)の設定ファイル</a></li>
+<li><a href="#自作スクリプトの実行などにキーバインドを割り当て:4d3bb77c9ea83877f0cf6aba05568f9c">自作スクリプトの実行などにキーバインドを割り当て</a></li>
+<li><a href="#業務用-個人的に必要だったのでメモ:4d3bb77c9ea83877f0cf6aba05568f9c">業務用(個人的に必要だったのでメモ)</a></li>
+</ul></li>
+</ul>
+</nav></div>
+  </section>
+  
+
+  
+
+  <section>
+    <header>LatestPosts</header>
+    <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
+    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 22, 2016</time>
+      </div>
+      <h2 class="title">tigを使う</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/" class="clearfix">
+    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2013/07/13/13/41/bash-161382_960_720.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 15, 2016</time>
+      </div>
+      <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Mar 20, 2016</time>
+      </div>
+      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Jan 23, 2016</time>
+      </div>
+      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Lubuntu.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Sep 17, 2015</time>
+      </div>
+      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Aug 18, 2015</time>
+      </div>
+      <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-08-15-install-node/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Aug 16, 2015</time>
+      </div>
+      <h2 class="title">Install node/npm</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Aug 15, 2015</time>
+      </div>
+      <h2 class="title">elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/" class="clearfix">
+    <div class="image" style="background-image: url(https://c1.staticflickr.com/4/3913/14522157584_42fff58cfc_z.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 21, 2015</time>
+      </div>
+      <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 7, 2015</time>
+      </div>
+      <h2 class="title">EasytetherでBluetoothテザリング</h2>
+    </footer>
+  </a>
+</article>
+
+      
+    </div>
+  </section>
+
+  
+  <section>
+    <header>category</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.iocategories/vim">vim</a></li><li><a href="https://iberianpig.github.iocategories/android">android</a></li><li><a href="https://iberianpig.github.iocategories/rails">rails</a></li><li><a href="https://iberianpig.github.iocategories/linux">linux</a></li><li><a href="https://iberianpig.github.iocategories/javascript">javascript</a></li><li><a href="https://iberianpig.github.iocategories/git-pivotaltracker-ruby">git-pivotaltracker-ruby</a></li><li><a href="https://iberianpig.github.iocategories/linux-mysql-elementaryos-freya">linux-mysql-elementaryos-freya</a></li><li><a href="https://iberianpig.github.iocategories/marketing">marketing</a></li><li><a href="https://iberianpig.github.iocategories/html5">html5</a></li><li><a href="https://iberianpig.github.iocategories/linux-sublimetext-fcitx-ibus-mozc">linux-sublimetext-fcitx-ibus-mozc</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.iotags/linux-easytether-tethering">linux-easytether-tethering</a></li><li><a href="https://iberianpig.github.iotags/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack">ubuntu-elementaryos-睡眠-lifehack</a></li><li><a href="https://iberianpig.github.iotags/vim-lifehack-linux">vim-lifehack-linux</a></li><li><a href="https://iberianpig.github.iotags/fold-vimrc">fold-vimrc</a></li><li><a href="https://iberianpig.github.iotags/linux-elementaryos-luna-freya">linux-elementaryos-luna-freya</a></li><li><a href="https://iberianpig.github.iotags/mysql-elementaryos-freya">mysql-elementaryos-freya</a></li><li><a href="https://iberianpig.github.iotags/rspec">rspec</a></li><li><a href="https://iberianpig.github.iotags/sharedpreferences">sharedpreferences</a></li><li><a href="https://iberianpig.github.iotags/strategy">strategy</a></li><li><a href="https://iberianpig.github.iotags/angularjs-javascript">angularjs-javascript</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+</aside>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="l-footer">
+  <p>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-45334010-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
