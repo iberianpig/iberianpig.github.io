@@ -5,6 +5,7 @@ copyright = "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved."
 paginate = 16
 theme = "hugo_theme_robust"
 canonifyurls = true
+publishdir = "public"
 
 description = "Linux, Rails, AngularJS, Androidネタを投下します。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，現在Web/Mobileアプリ開発の修行中。"
 
