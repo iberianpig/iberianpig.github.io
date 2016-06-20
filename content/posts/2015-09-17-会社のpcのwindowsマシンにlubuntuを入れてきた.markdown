@@ -54,8 +54,8 @@ Webライターさん向けにChromeとOfficeツールが使える格安環境�
   * よく使いそうなソフトはデスクトップにショートカットを置く
       * Chrome
       * ファイルマネージャ
-      * LibreOffice Writer(ワード)
-      * LibreOffice Calc(エクセル)
+      * LibreOffice Writer(Word)
+      * LibreOffice Calc(Excel)
   * 見た目整える
     * 綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。`mkdir ~/.font/`してそこに展開。
     * ログアウトし、ログインするとルックアンドフィールなどからフォント設定。

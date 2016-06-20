@@ -61,7 +61,7 @@ Angualrjsの日本初のカンファレンス[ ng-japan2015 ](http://ngjapan.org
   * リソースの読み込みやパース
   * 組み込みなのであんまやることない
 * Scripting
-  * Javascriptの実行時間。純粋な計算は基本的に問題なし。
+  * JavaScriptの実行時間。純粋な計算は基本的に問題なし。
   * リフロー、Canvasへの命令など時間はかかる
   * ProfileTabで簡単にわかる
 * Rendering

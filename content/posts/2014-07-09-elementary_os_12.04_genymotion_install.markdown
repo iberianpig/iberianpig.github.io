@@ -8,7 +8,7 @@ tags: elementaryOS
 categories: android
 ---
 
-# 爆速Android用のエミュレータ GenyMotion導入
+# 爆速Android用のエミュレータGenyMotion導入
 
 最近巷で爆速と噂のGenyMotion入れてみます。   
 ※ Ubuntuでも同じ導入手順です。  
@@ -94,8 +94,7 @@ Playボタンからデバイスを起動します。
 
 これで起動完了です。  
 ![alt](/images/genymotion_launched_image.png "サクサク動くデバイスイメージが起動しました")  
-快速快適GenyMotion!めっちゃサクサクですよ！   
-
+快速快適GenyMotion!めっちゃサクサクです！  
 また、Terminalからではなく、Eclipse or AndroidStudioプラグインをインストールして
 そこから立ち上げることも可能です。  (むしろソッチのほうがおおいかな)
 

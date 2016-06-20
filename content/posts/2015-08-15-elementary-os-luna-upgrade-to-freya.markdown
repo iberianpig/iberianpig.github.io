@@ -24,7 +24,7 @@ image: https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg
 
 # パッケージのインストール
 
-## 各種レポジトリの追加
+## 各種リポジトリの追加
 
 ``` bash
 sudo man add-apt-repository
@@ -81,7 +81,7 @@ sudo apt-get install xclip
 ```
 
 
-## vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピペが可能に。
+## vim-gnomeを入れることでterminal上のvimもクリップボード連携したコピー&ペーストが可能に。
 ```
 sudo apt-get install vim-gnome
 ```
@@ -101,7 +101,7 @@ sudo apt-get install dconf-editor gconf-editor
 ```
 
 
-## gitのインストール
+## Gitのインストール
 ```
 sudo apt-get install git tig
 ```
@@ -149,7 +149,7 @@ sudo apt-get install fcitx fcitx-mozc
 日本語入力系統をIbusからFcitxへ変更を行うため、`im-config`を実行し、fcitxへ変更する
 
 ## dotfiles(.bashrcや.vimrcなど)の設定ファイル
-* 自分のGitHubレポジトリから引っ張ってくる
+* 自分のGitHubリポジトリから引っ張ってくる
 * home直下にdotfiles内からシンボリックリンク張るスクリプトを実行
 
 ## 自作スクリプトの実行などにキーバインドを割り当て

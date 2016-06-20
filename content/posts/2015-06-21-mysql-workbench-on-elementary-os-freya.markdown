@@ -23,7 +23,7 @@ MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合
 [![Gyazo](http://i.gyazo.com/62032b7e85ee9a16a4b33dfb096b1454.png)](http://gyazo.com/62032b7e85ee9a16a4b33dfb096b1454)
 workbencだQueryの結果が白くなって表示されない。  
 selectした結果がセルで表示されるはずなんだけど。 
-ちなみにCUIでmysqlからselectしたりした場合は全く問題ない。  
+ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。  
 
 ## 調査してみた
 色々な人が死んでた  

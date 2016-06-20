@@ -27,7 +27,7 @@ pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、
 
 <!-- more -->
 
-下記をコピペ
+下記をコピー&ペースト
 
 ```
 [Re-enable hibernate by default in upower]

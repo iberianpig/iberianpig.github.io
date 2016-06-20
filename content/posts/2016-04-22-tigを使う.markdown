@@ -51,17 +51,17 @@ CUIなGitクライアント。
 * Diff見ながら`<C-n>`(next),`<C-p>`(previous)でコミット親・子を辿れる
 * Diffでカーソルがあたっている時、`e`(edit)で該当箇所をエディタで編集できる
 
-# git logの代わりに
+# Git logの代わりに
 
 * `l`: tigのlog view
-  * git log
+  * `git log`
   * エンター押せばdiffも見える
 * `m`: tigのmain view
   * 一番使う
   * ツリー綺麗
   * エンター押せばdiffも見える
 
-# git diffの代わりに
+# Git diffの代わりに
 
 * `d`: tigのdiff view
   * gitdiff同様、diffが見れる
@@ -69,27 +69,27 @@ CUIなGitクライアント。
 * `tig <コミットID>..<コミットID>`
   * コミットIDからコミットIDまでの履歴のみDiffが出る
 
-# git statusの代わりに
+# Git statusの代わりに
 * `s, S`: tigのstatus view
   * `u`: ステージング/アンステージング
     * 1ファイル内に複数の変更がある場合はdiff viewで`u`で部分的にステージングできる
   * `!`: ワーキングスペースから取り除く(アンステージング状態のものに限る)
 
-# git branchの代わりに
+# Git branchの代わりに
 
 * `r`: tigのbranch View
   * ブランチが見れる
   * エンター押すと分割されて、該当ブランチを中心としたグラフが見える
   * .tigrc入れて改造すると捗る
 
-# git grepの代わりに
+# Git grepの代わりに
 * `tig grep <検索文字列>`
   * grepされた結果が出る
     * エンター押すと周辺ソースが見れる
     * eで該当箇所をエディタで開ける
     * syntax highlightが効かないところを除けば意外と便利
 
-# git blameの代わりに
+# Git blameの代わりに
 
 * `b`/`tig blame <ファイル名>` : tigのblame view
   * blameしたあと開いたコミットに`b`で再帰的にblameできるので、どういうコンテキストで変更されたのかわかったりする

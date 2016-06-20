@@ -14,20 +14,20 @@ categories: 技術メモ
 
 # aws/.configの上手な使い方
 
-# git/hooksの実行タイミングとフック可能な内容
+# `git/hooks`の実行タイミングとフック可能な内容
 
-# MySQLのdatetime型、timestamp型の違い, Railsでの利用のされ方
+# MySQLのdatetime型、タイムスタンプ型の違い, Railsでの利用のされ方
 
 # lineheightで | リスト１、| リスト２の高さを調整するのはNG, paddingで調節すべき
 
-# redisやmysqlを自動起動させるには
+# RedisやMySQLを自動起動させるには
  * 毎度立ち上がらずにエラーが出てから立ち上げる流れは面倒
 
 # CloudFlareを使う
 
-# モバイルアプリでよくあるメニューフォントの変形をWEBでやってみる
+# モバイルアプリでよくあるメニューフォントの変形をWebでやってみる
  * SVG morpheusの利用
- * angular-material-icons
+ * Angular-material-icons
 
 # ActiveRecordSerializer
 * jbuilderよりも高速
@@ -44,13 +44,13 @@ categories: 技術メモ
 * cron
   * whenever gemで便利に
   * unicorn restart script
-* git reset --hard
-* rakeで書いてみても良いかも
+* `git reset --hard`
+* Rakeで書いてみても良いかも
 
 # shoulda/matcher
 1ライナーでvalidationのspecなどを簡単に書く
 
-# vim Unite file_rec/git,   Unite grep/git
+# `vim Unite file_rec/git`, `Unite grep/git`
 とっても便利
 
 # コロンビア式中央寄せテクニック
@@ -71,7 +71,7 @@ categories: 技術メモ
 
 # IIFE
 
-モジュールパターンの記事、Javascriptあまりわかってない自分からすると、なるほど〜って感じで目からウロコ。
+モジュールパターンの記事、JavaScriptあまりわかってない自分からすると、なるほど〜って感じで目からウロコ。
 (http://aphall.com/2013/06/javascript-iife-module-pattern/)
 
 ```javascript
@@ -106,10 +106,10 @@ iife.field; //error! cannot access
 
 # factoryのafter(:create) { has_manyの関連先生成に便利 }
 
-# redis-cliの操作
+# Redis-cliの操作
 全部無かったことに FLUSHALL
 
-# redis使うのでどうせならsidekiqかresqueを使おうとしたが
+# Redis使うのでどうせならsidekiqかresqueを使おうとしたが
 sidekiqは謎のシリアライズエラーが消えない
 resqueは大本のドキュメントに従うべき、バージョンで全然動き違う
 

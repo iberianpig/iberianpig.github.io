@@ -11,17 +11,12 @@ tags:
 image: https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png
 ---
 
-# IssueIDを自動でコミットメッセージに入れたい
-
-[![PivotalTracker](https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png)](http://www.pivotaltracker.com)  
-タイトルそのまま。
-
 なぜこんなことがやりたいかというと、
 
 * スクラムでのタスク管理にPivotalTracker(http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される
 * Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される
 * あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる
-* 毎回IDを入れるのがめんどくさい, たまに忘れる
+* 毎回IDを入れるのがめんどくさい、たまに忘れる
 * チームで浸透させたい
 
 <!--more-->
@@ -29,7 +24,7 @@ image: https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png
 という理由から。  
 
 
-## gitのhookを利用する
+## Gitのhookを利用する
 
 プロジェクトのルートディレクトリから辿ると、`.git/hook/`というディレクトリがある  
 hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんなスクリプトが準備されている  
@@ -47,18 +42,18 @@ hookの順序としては下記のタイミングで実行される
 > 9. --amendで実行した場合はpost-rewriteスクリプト実行
 
 
-ということで、commit-msgにコミットメッセージの先頭に自動で追記するruby scriptを書く
+ということで、commit-msgにコミットメッセージの先頭に自動で追記するRuby scriptを書く
 
 ## commit-msg
-{% gist f010cfa1134bc19e3989 %}
+{{< gist iberianpig f010cfa1134bc19e3989 >}}
 
 ### 処理の流れ
 1. `ARGV[0]`にはコミットメッセージを入力するファイルが与えられる
 * ファイルからコメントを取り出す
 * コメントから先頭の[#xxxx]を除去する(`git commit -amend`した時のため)
-* コメントから空行、#で始まる行を除去する(ただし、-- >8 --マークは残す)  
-  * `git commit -v` の際に、-- >8 --マーク以下にCommit時に自動で切り取られるDiff表示があるため
-* メッセージが-- >8 --マークから開始だった場合、commit メッセージが空であるとして、コミットを中断
+* コメントから空行、#で始まる行を除去する(ただし、`-- >8 --`マークは残す)  
+  * `git commit -v` の際に、`-- >8 --`マーク以下にCommit時に自動で切り取られるDiff表示があるため
+* メッセージが`-- >8 --`マークから開始だった場合、commitメッセージが空であるとして、コミットを中断
 * `git branch`コマンドより、* の付いているカレントブランチIssueID_xxxxからIssueIDを抽出する
 * IssueIDとコメントを連結させる
 * メッセージをファイルに書き込んで終了
@@ -88,8 +83,8 @@ git commit -am "hoge fuga"
 
 ## その他チラ裏
 
-prepare-commit-msg では、`git commit -ammend`の際に二重で[#IssueID]を付与してしまうためcommit-msgを利用した  
-shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動作が異なり, 他のメンバーに展開できなかったためrubyで書いた
+`prepare-commit-msg`では、`git commit -ammend`の際に二重で[#IssueID]を付与してしまうためcommit-msgを利用した  
+shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動作が異なり、他のメンバーに展開できなかったためRubyで書いた
 
 ## エンジニアの小さなしあわせ
 

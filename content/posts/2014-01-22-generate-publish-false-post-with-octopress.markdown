@@ -29,7 +29,7 @@ Octopressデフォルトのプラグインがあるので、記事のファイ�
 
 一番下の`published: false`を追記。
 
-これでrake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。
+これでRake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。
 
 
 # 下書き保存をデフォルト設定
