@@ -1,116 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux Lubuntu on iberianpigsty</title>
+    <title>iberianpigsty </title>
     <link>https://iberianpig.github.io/categories/linux-lubuntu/</link>
-    <description>Recent content in Linux Lubuntu on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Thu, 17 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://iberianpig.github.io/categories/linux-lubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2015-09-17 00:00:00 &#43;0000 UTC</updated>
+
     
-    <item>
-      <title>会社のPCのWindowsマシンにLubuntuを入れてきた</title>
-      <link>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</link>
-      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
-      <description>
-
-&lt;p&gt;Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。
-デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。&lt;br /&gt;
-その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、
-3時間くらいかけてセットアップした時の備忘録。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;winowspcにlubuntuを入れる:7b68551a6d82d1888f6bc75cab6484f7&#34;&gt;WinowsPCにlubuntuを入れる&lt;/h1&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Windowsのコンピュータを起動し、コントロールパネルから&amp;rdquo;ディスクの管理&amp;rdquo;を表示する&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;ディスクの管理&amp;rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない）
-
-&lt;ul&gt;
-&lt;li&gt;今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。&lt;/li&gt;
-&lt;li&gt;Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;UnetBootInDiskでLinuxをブート可能なUSBメモリを作る&lt;/li&gt;
-&lt;li&gt;メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。&lt;/li&gt;
-&lt;li&gt;Try Installを選択。&lt;/li&gt;
-&lt;li&gt;言語で日本語を選択。&lt;/li&gt;
-&lt;li&gt;ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない）&lt;/li&gt;
-&lt;li&gt;インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック&lt;/li&gt;
-&lt;li&gt;インストールの種類で”それ以外”を選択&lt;/li&gt;
-&lt;li&gt;ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。&lt;/li&gt;
-&lt;li&gt;Dドライブの存在していた&lt;code&gt;/dev/sda4/&lt;/code&gt;(ディスクの管理でとった写真を参照）を選択し、&lt;code&gt;-&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&amp;rdquo;/&amp;ldquo;を選択。
-
-&lt;ul&gt;
-&lt;li&gt;これで論理パーティション内部に複数のパーティションが作成可能になる。&lt;/li&gt;
-&lt;li&gt;スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。&lt;/li&gt;
-&lt;li&gt;タイムゾーンはTokyoに。キーボードは日本語に設定する。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&#34;lubuntuをセットアップする:7b68551a6d82d1888f6bc75cab6484f7&#34;&gt;Lubuntuをセットアップする&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;スワップを有効化
-
-&lt;ul&gt;
-&lt;li&gt;USBからtry without installを選択&lt;/li&gt;
-&lt;li&gt;gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の&lt;code&gt;/dev/sdxx&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;fstabを&lt;code&gt;sudo vi /etc/fstab&lt;/code&gt;にて編集。 ( &lt;a href=&#34;http://linuxsalad.blogspot.jp/2009/05/swap.html&#34;&gt;http://linuxsalad.blogspot.jp/2009/05/swap.html&lt;/a&gt; )&lt;/li&gt;
-&lt;li&gt;再起動して&lt;code&gt;gparted&lt;/code&gt;上でスワップオンになっていることを確認&lt;/li&gt;
-&lt;li&gt;swapがないとたまにフリーズしたりするので早めに設定しておくこと&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;日本語を入力できるようにする
-
-&lt;ul&gt;
-&lt;li&gt;Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。&lt;/li&gt;
-&lt;li&gt;変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドは&lt;code&gt;sudo-apt-get install ibus-mozc&lt;/code&gt;。&lt;/li&gt;
-&lt;li&gt;キーボードインプットメソッドでibus-mozcを追加。&lt;/li&gt;
-&lt;li&gt;インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;GoogleChromeを入れる(firefox起動してそこから検索してインストールする)&lt;/li&gt;
-&lt;li&gt;LibreOffice(OpenOfficeのすごいやつ)を入れる&lt;/li&gt;
-&lt;li&gt;よく使いそうなソフトはデスクトップにショートカットを置く
-
-&lt;ul&gt;
-&lt;li&gt;Chrome&lt;/li&gt;
-&lt;li&gt;ファイルマネージャ&lt;/li&gt;
-&lt;li&gt;LibreOffice Writer(ワード)&lt;/li&gt;
-&lt;li&gt;LibreOffice Calc(エクセル)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;見た目整える
-
-&lt;ul&gt;
-&lt;li&gt;綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。&lt;code&gt;mkdir ~/.font/&lt;/code&gt;してそこに展開。&lt;/li&gt;
-&lt;li&gt;ログアウトし、ログインするとルックアンドフィールなどからフォント設定。&lt;/li&gt;
-&lt;li&gt;FaenzaIconsをダウンロードして設定。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;やってみての感想:7b68551a6d82d1888f6bc75cab6484f7&#34;&gt;やってみての感想&lt;/h1&gt;
-
-&lt;p&gt;やはり時間かかった(3h)。ほとんどはパーティションとスワップ周りの調査。&lt;/p&gt;
-
-&lt;p&gt;以下が得られた知見達。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;論理パーティションを作るには基本パーティションをフォーマットしなければならない。&lt;/li&gt;
-&lt;li&gt;swapとか使うなら論理パーティション必須。&lt;/li&gt;
-&lt;li&gt;Installより先にUSBブートしてGpartedで基本パーテイションの1つを論理パーティションにフォーマットする。&lt;/li&gt;
-&lt;li&gt;その論理パーティションの中でメモリ容量x2程度の小さなパーティションを作成する。&lt;/li&gt;
-&lt;li&gt;Lubuntuのインストーラ内で上記のパーティションをSwapに割り当てる。&lt;/li&gt;
-&lt;li&gt;Install時に割り当てられなかったらfstabで設定。再起動後Gpartedで割り当て確認。&lt;/li&gt;
-&lt;li&gt;Swap割り当てないとマウスポインタだけ動いてキーボードが操作不能になる。&lt;/li&gt;
-&lt;li&gt;LubuntuでCtrl+Del+BackSpaceでKill Xserverが簡単に設定できる箇所が見つからなかった。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>

@@ -1,113 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ubuntu Elementaryos 睡眠 Lifehack on iberianpigsty</title>
+    <title>iberianpigsty </title>
     <link>https://iberianpig.github.io/tags/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack/</link>
-    <description>Recent content in Ubuntu Elementaryos 睡眠 Lifehack on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 31 May 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://iberianpig.github.io/tags/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2015-05-31 00:00:00 &#43;0000 UTC</updated>
+
     
-    <item>
-      <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
-      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
-      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
-      <description>
-
-&lt;p&gt;世界各国のLinuxerの皆さん、こんばんは&lt;/p&gt;
-
-&lt;h1 id=&#34;寝不足のlinuxer達に贈る:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;寝不足のLinuxer達に贈る&lt;/h1&gt;
-
-&lt;p&gt;最近、寝不足のような気がすることは？&lt;/p&gt;
-
-&lt;p&gt;毎日Linuxと戯れるのには飽きないが、目の疲れや、夜の寝不足と行ったことからは免れられない。&lt;/p&gt;
-
-&lt;p&gt;少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、時間を短くするなど努力したことはあるはず。&lt;/p&gt;
-
-&lt;p&gt;現実問題難しい。&lt;/p&gt;
-
-&lt;p&gt;仕事でPC, 趣味でもPCを使うLinuxer達には。&lt;/p&gt;
-
-&lt;p&gt;そんなみなさんに朗報。&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;h1 id=&#34;pcメガネ-jins-pc:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;PCメガネ、JINS PC&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.jins-jp.com/jins-pc/img/item.jpg&#34; alt=&#34;僕も愛用&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;jins(&lt;a href=&#34;http://www.jins-jp.com/jins-pc/)のメガネ。&#34;&gt;http://www.jins-jp.com/jins-pc/)のメガネ。&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;このメガネを使うと目に(心理的に)優しくなれる。&lt;/p&gt;
-
-&lt;p&gt;そもそも、寝付きの悪さの原因の根源は何か？&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://www.jins-jp.com/jins-pc/img/koga.jpg&#34; alt=&#34;ぜんぶブルーライトのせいだ&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;そう、ブルーライト、聞いたことあるはず。&lt;/p&gt;
-
-&lt;p&gt;寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。&lt;/p&gt;
-
-&lt;h1 id=&#34;メガネを買うか否か:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;メガネを買うか否か&lt;/h1&gt;
-
-&lt;p&gt;（ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ・・・！）
-&amp;gt; そんなLinuxer達の心の声が聞こえてきそうだ。(ちなみに自分は買ってしまった)&lt;/p&gt;
-
-&lt;h1 id=&#34;ブルーライトをカットする:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;ブルーライトをカットする&lt;/h1&gt;
-
-&lt;p&gt;本題に入ろう。&lt;/p&gt;
-
-&lt;p&gt;実はこのブルーライト、&lt;strong&gt;色温度&lt;/strong&gt;を下げることで減量させることができる。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。
-(&lt;a href=&#34;http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6&#34;&gt;http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6&lt;/a&gt;)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;実は色温度は青い方が高い。
-炎は赤いので赤は温度が高い先入観があるかもしれないけれど、実際は炎の先端の青い部分が最も温度が高い。&lt;/p&gt;
-
-&lt;p&gt;そう、モニタの色温度をソフトウェアで変更さえすれば良い。
-輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。&lt;/p&gt;
-
-&lt;p&gt;今回は&lt;a href=&#34;http://jonls.dk/redshift/&#34;&gt;Redshift&lt;/a&gt;というソフトウェアを利用。&lt;/p&gt;
-
-&lt;h1 id=&#34;redshift:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;Redshift&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://jonls.dk/assets/redshift-icon-256.png&#34; alt=&#34;Redshift&#34; /&gt;
-&lt;a href=&#34;http://manpages.ubuntu.com/manpages/trusty/man5/redshift.5.html&#34;&gt;manual page&lt;/a&gt;
-このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。&lt;/p&gt;
-
-&lt;p&gt;Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftに切り替えて利用している。&lt;/p&gt;
-
-&lt;h2 id=&#34;redshiftのインストール:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;Redshiftのインストール&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;sudo apt-get install redshift redshift-gtk&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合はredshift-gtkは必要ない。&lt;/p&gt;
-
-&lt;h2 id=&#34;redshiftの起動と設定:aafdb94a326bfa5d225f86a3bcadd33b&#34;&gt;Redshiftの起動と設定&lt;/h2&gt;
-
-&lt;p&gt;redshift-gtkを実行させると、パネル上にインジケーターが出る。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;toggleでon/offを切り替え。&lt;/li&gt;
-&lt;li&gt;autostartで自動起動の設定を切り替え。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;詳細な設定内容はコマンドラインや外部ファイルから入力することができる。&lt;br /&gt;
-&lt;a href=&#34;http://kledgeb.blogspot.jp/2013/01/ubuntu-redshift-1.html&#34;&gt;こちらのサイト&lt;/a&gt;で詳しく紹介されていた。&lt;/p&gt;
-
-&lt;p&gt;デフォルトの設定の場合は、日中は色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)&lt;/p&gt;
-
-&lt;p&gt;夜の寝付きの良さがだいぶ変わるはず。&lt;br /&gt;
-Linuxer達に良き睡眠を。&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>
