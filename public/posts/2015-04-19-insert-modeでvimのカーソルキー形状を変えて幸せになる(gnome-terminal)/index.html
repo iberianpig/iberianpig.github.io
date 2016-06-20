@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="http://iberianpig.github.io/css/styles.css">
+    <link rel="stylesheet" href="http://iberianpig.github.io/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://iberianpig.github.io/index.xml">
+
+    
+    <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) - iberianpigsty</title>
+    <meta property='og:title' content="insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) - iberianpigsty">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/">
+    
+    <meta property="og:image" content="http://iberianpig.github.io/images/http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage":{
+      "@type":"WebPage",
+      "@id":"http:\/\/iberianpig.github.io\/"
+    },
+    "headline": "insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) |  ",
+    "image": {
+      "@type": "ImageObject",
+      "url": "",
+      "height": 700,
+      "width": 700
+    },
+    "datePublished": "2015-04-19T00:00:00JST",
+    "dateModified": "2015-04-19T00:00:00JST",
+    "author": {
+      "@type": "Person",
+      "name": "",
+      "image": "http:\/\/iberianpig.github.io\/images/logo.png"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http:\/\/iberianpig.github.io\/images/logo.png",
+        "height": 60,
+        "width": 60
+      }
+    },
+    "description": ""
+  }
+</script>
+</head>
+
+<body>
+
+  <header class="l-header">
+    <div class="p-logo">
+      <a href="http://iberianpig.github.io/">iberianpigsty</a>
+    </div>
+  </header>
+
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-9">
+
+      <article class="single">
+        <div class="image" style="background-image: url(http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png);"></div>
+        <div class="body">
+          <h1>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</h1>
+          
+
+<h1 id="command-normal-モードを間違う:ff449c990bbe11df9f128232db1438ac">Command/Normal モードを間違う</h1>
+
+<p>問題はこれ。<br />
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。</p>
+
+<p>自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。<br />
+gVimではカーソル形状が 矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。</p>
+
+<!-- more -->
+
+<h1 id="暫定策:ff449c990bbe11df9f128232db1438ac">暫定策</h1>
+
+<p>代替案として、 <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a>を使ってInsert/Normal モードの状態を色付きで
+画面下部に表示し、視覚的に理解しやすいように試みた。</p>
+
+<p><img src="http://i.gyazo.com/92223ba03c523c28e705980706a3a7e9.png" alt="lightline" />
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。</p>
+
+<p>また、横のラインを表示・非表示を( <code>autocmd InsertEnter,InsertLeave * set cursorline!</code> )で切り替える
+アプローチも試みたが、モード間違いは大きく改善はしなかった。</p>
+
+<h1 id="救世主:ff449c990bbe11df9f128232db1438ac">救世主</h1>
+
+<p>これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)</p>
+
+<blockquote>
+<p>To change the shape of the cursor in different modes, you can add the following into your vimrc.
+For the Gnome-Terminal (version 2.26)Edit</p>
+</blockquote>
+
+<pre><code class="language-vim">if has(&quot;autocmd&quot;)
+au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot;
+au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot;
+au VimLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot;
+endif
+</code></pre>
+
+<p><img src="http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png" alt="insert" />
+<img src="http://i.gyazo.com/d8fb66d045fdc0b3ce9470d058bfe81e.png" alt="normal" /><br />
+すばらしい。<br />
+グローバルな設定を書き換える力技だが、キニシナイ。</p>
+
+<h1 id="special-thanks:ff449c990bbe11df9f128232db1438ac">special thanks</h1>
+
+<ul>
+<li>Lightline(<a href="https://github.com/itchyny/lightline.vim">https://github.com/itchyny/lightline.vim</a> )</li>
+<li>Stackoverflow(<a href="http://stackoverflow.com/a/6488717/4040150">http://stackoverflow.com/a/6488717/4040150</a>)</li>
+</ul>
+
+        </div>
+
+        <aside>
+          <section>
+            <div>
+              <div class="p-share">
+                <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2528gnome-terminal%2529%2f&t=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2528gnome-terminal%2529%2f&text=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                <a href="https://plus.google.com/share?url=http%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2528gnome-terminal%2529%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+                <a href="http://getpocket.com/edit?url=http%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2528gnome-terminal%2529%2f&title=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+              </div>
+            </div>
+          </section>
+
+          
+          
+          <section>
+            <div>
+              <div id="disqus_thread"></div>
+              <script type="text/javascript">
+                (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  var disqus_shortname = 'iberianpigsty';
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+          </section>
+          
+          
+        </aside>
+
+      </article>
+
+    </div>
+    <div class="col-md-3">
+      <aside class="site">
+
+  
+  <section>
+    <header>Table Of Contents</header>
+    <div><nav id="TableOfContents">
+<ul>
+<li><a href="#command-normal-モードを間違う:ff449c990bbe11df9f128232db1438ac">Command/Normal モードを間違う</a></li>
+<li><a href="#暫定策:ff449c990bbe11df9f128232db1438ac">暫定策</a></li>
+<li><a href="#救世主:ff449c990bbe11df9f128232db1438ac">救世主</a></li>
+<li><a href="#special-thanks:ff449c990bbe11df9f128232db1438ac">special thanks</a></li>
+</ul>
+</nav></div>
+  </section>
+  
+
+  
+
+  <section>
+    <header>LatestPosts</header>
+    <div>
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
+    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 22, 2016</time>
+      </div>
+      <h2 class="title">tigを使う</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/" class="clearfix">
+    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2013/07/13/13/41/bash-161382_960_720.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 15, 2016</time>
+      </div>
+      <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Mar 20, 2016</time>
+      </div>
+      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Jan 23, 2016</time>
+      </div>
+      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Lubuntu.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Sep 17, 2015</time>
+      </div>
+      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Aug 18, 2015</time>
+      </div>
+      <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-08-15-install-node/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Aug 16, 2015</time>
+      </div>
+      <h2 class="title">Install node/npm</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Aug 15, 2015</time>
+      </div>
+      <h2 class="title">elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/" class="clearfix">
+    <div class="image" style="background-image: url(https://c1.staticflickr.com/4/3913/14522157584_42fff58cfc_z.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 21, 2015</time>
+      </div>
+      <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="http://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 7, 2015</time>
+      </div>
+      <h2 class="title">EasytetherでBluetoothテザリング</h2>
+    </footer>
+  </a>
+</article>
+
+      
+    </div>
+  </section>
+
+  
+  <section>
+    <header>category</header>
+    <div>
+      <ul>
+        <li><a href="http://iberianpig.github.io/categories/vim">vim</a></li><li><a href="http://iberianpig.github.io/categories/rails">rails</a></li><li><a href="http://iberianpig.github.io/categories/android">android</a></li><li><a href="http://iberianpig.github.io/categories/linux">linux</a></li><li><a href="http://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="http://iberianpig.github.io/categories/linux-elementaryos-luna-freya">linux-elementaryos-luna-freya</a></li><li><a href="http://iberianpig.github.io/categories/cordova">cordova</a></li><li><a href="http://iberianpig.github.io/categories/js-css">js-css</a></li><li><a href="http://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="http://iberianpig.github.io/categories/linux-font">linux-font</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul>
+        <li><a href="http://iberianpig.github.io/tags/linux-easytether-tethering">linux-easytether-tethering</a></li><li><a href="http://iberianpig.github.io/tags/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack">ubuntu-elementaryos-睡眠-lifehack</a></li><li><a href="http://iberianpig.github.io/tags/javascript-angualrjs">javascript-angualrjs</a></li><li><a href="http://iberianpig.github.io/tags/cordova-html5">cordova-html5</a></li><li><a href="http://iberianpig.github.io/tags/fold-vimrc">fold-vimrc</a></li><li><a href="http://iberianpig.github.io/tags/vim-surround">vim-surround</a></li><li><a href="http://iberianpig.github.io/tags/linux-elementaryos-luna-freya">linux-elementaryos-luna-freya</a></li><li><a href="http://iberianpig.github.io/tags/mysql-elementaryos-freya">mysql-elementaryos-freya</a></li><li><a href="http://iberianpig.github.io/tags/vim-lifehack-linux">vim-lifehack-linux</a></li><li><a href="http://iberianpig.github.io/tags/angularjs-javascript">angularjs-javascript</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+</aside>
+
+    </div>
+  </div>
+</div>
+
+
+<footer class="l-footer">
+  <p>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
+</footer>
+
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-45334010-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+  </body>
+</html>
+
