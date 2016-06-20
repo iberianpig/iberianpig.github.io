@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cordova Html5 on iberianpigsty</title>
+    <link>http://iberianpig.github.io/tags/cordova-html5/</link>
+    <description>Recent content in Cordova Html5 on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 26 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/tags/cordova-html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cordova勉強会第3回行ってきた</title>
+      <link>http://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</link>
+      <pubDate>Mon, 26 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</guid>
+      <description>
+
+&lt;h1 id=&#34;codova勉強会行ってきた:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;Codova勉強会行ってきた&lt;/h1&gt;
+
+&lt;p&gt;だがしかし&amp;hellip;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;参加時刻20:17&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;ほとんど遅刻してアレ&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;(19:00-21:00 at IIJさん)&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;ビールとポテチもらいながら最後のセッション聞く感じになりました。&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;デスクトップアプリマルチos対応-with-html5:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;デスクトップアプリマルチOS対応 with HTML5&lt;/h1&gt;
+
+&lt;p&gt;対象の人は以下の人&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;デスクトップアプリ作りたい&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;いろんなディスプレイサイズ辛い&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;パフォーマンスそんな求めてない&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;C#よりJSやりたい&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;うん。多分そんなところかも。&lt;br /&gt;
+Destkop用のネイティブ言語を扱えない人も結構多そう。&lt;/p&gt;
+
+&lt;h2 id=&#34;3つのやりかた:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;3つのやりかた&lt;/h2&gt;
+
+&lt;p&gt;下記のやり方があるらしい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mozilla XULRunner&lt;/li&gt;
+&lt;li&gt;Cordova&lt;/li&gt;
+&lt;li&gt;NW.js(Node-Webkit)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。&lt;br /&gt;
+なんかMonacaのローカルもそれ使うとか何とか（よくわかってない）&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;mozilla-xulrunner:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;Mozilla XULRunner&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;一番シンプルで古株なやつ&lt;/li&gt;
+&lt;li&gt;エンジンGecko
+
+&lt;ul&gt;
+&lt;li&gt;GeckoはHTML5だけじゃなくてXULというマークアップを動かせる&lt;/li&gt;
+&lt;li&gt;セガ版Xamarinのような存在（?）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;名前はXULだけど中身GeckoなのでHTML5が使える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これ知らなかった。
+あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい&lt;/p&gt;
+
+&lt;h3 id=&#34;cordova:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;Cordova&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3つの中で一番発展してる&lt;/li&gt;
+&lt;li&gt;エンジンがTrident(Win)らしい&lt;/li&gt;
+&lt;li&gt;ビルドツール&lt;/li&gt;
+&lt;li&gt;プラグインで機能を足しやすいらしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった&lt;/p&gt;
+
+&lt;h3 id=&#34;nw-js-node-webkit:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;NW.js(Node-Webkit)&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What is NW.js
+
+&lt;ul&gt;
+&lt;li&gt;3種の中で若造らしい&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Node.JS + Web標準でデスクトップを作ることができるよ&lt;/li&gt;
+&lt;li&gt;XULRUNNERとCorovaのいいどこどり?らしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;どうする:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;どうする&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;デスクトップはNW.jsでいいと思う&lt;/li&gt;
+&lt;li&gt;Codova(iOS),Crosswalk（Android)で良い&lt;/li&gt;
+&lt;li&gt;Linux系サポートが熱いのはXULRunner&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;完全なデスクトップアプリになれるとは思ってない:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;完全なデスクトップアプリになれるとは思ってない&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;html overflow:hidden; にしてもあまりいいことがないよ&lt;/li&gt;
+&lt;li&gt;ウインドウサイズをネイティブアプリっぽく固定できないよ&lt;/li&gt;
+&lt;li&gt;CreateWindowExっぽいもの？（なんだろ）はないよ&lt;/li&gt;
+&lt;li&gt;Scrollがついている時点でWebっぽくなる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;まとめ:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;まとめ&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mozilla XULRunner = 似非HTML5アプリ&lt;/li&gt;
+&lt;li&gt;NW.js =DOM(Web標準) + Node.js&lt;/li&gt;
+&lt;li&gt;Apache Cordova = DOM(Web標準) + プラグイン&lt;/li&gt;
+&lt;li&gt;デスクトップHTML5アプリ ≠ デスクトップネイティブアプリ&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;その他:a7c6f1fa65d77f913afd76fdb15164b4&#34;&gt;その他&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;AtomShell
+
+&lt;ul&gt;
+&lt;li&gt;Githubが作ってるマルチプラットフォーム。&lt;/li&gt;
+&lt;li&gt;Atomはそれで作ってるらしい。&lt;/li&gt;
+&lt;li&gt;NodeWebKitが行けてなかったので作ったらしい。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;飯田橋行ったの初めてだったのとめっちゃ遅刻したので誰とも話してない。&lt;br /&gt;
+何しに行ったんだ感が半端ない。&lt;br /&gt;
+次回は2・13予定らしいけど、ちゃんと最初から参加したい。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
