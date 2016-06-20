@@ -4,8 +4,12 @@ title: "Linuxでブルーライトフィルタ そして快眠へ..."
 published: true
 date: 2015-05-31
 comments: true
-tags: Ubuntu, elementaryOS, 睡眠, lifehack
-categories: Ubuntu elementaryOS 睡眠 lifehack
+tags:
+   - Ubuntu
+   - elementaryOS
+   - 睡眠
+   - lifehack
+categories: linux
 image: http://www.jins-jp.com/jins-pc/img/item.jpg
 ---
 

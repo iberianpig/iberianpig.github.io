@@ -5,10 +5,10 @@ published: true
 date: 2014-09-12
 comments: true
 tags: bootstrap
-categories: js, css
+categories: css
 ---
 
-mobileデバイス用のViewが768pxでの切り替えが行われない。
+mobileデバイス用のViewが768pxの際に切り替えが行われない。
 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
 
 ```html

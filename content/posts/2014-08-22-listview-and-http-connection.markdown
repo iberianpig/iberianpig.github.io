@@ -4,7 +4,10 @@ title: "ListView and http connection"
 published: true
 date: 2014-08-01
 comments: true
-tags: HTTP, ListView, Thread
+tags:
+  - HTTP
+  - ListView
+  - Thread
 categories: android
 
 ---

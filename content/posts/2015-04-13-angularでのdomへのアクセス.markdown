@@ -4,7 +4,8 @@ title: "AngularでのDOMへのアクセス"
 published: true
 date: 2015-04-13
 comments: true
-tags: angularJS, javascript
+tags: 
+  - angularJS
 categories: javascript
 ---
 

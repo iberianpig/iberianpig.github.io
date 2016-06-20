@@ -4,11 +4,8 @@ title: "vim-surround"
 published: true
 date: 2014-09-02
 comments: true
-tags: vim-surround
 categories: vim
 ---
-
-# vim-surround
 
 テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる  
 すぐに忘れてしまうのでメモ

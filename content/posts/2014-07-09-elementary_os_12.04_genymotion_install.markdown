@@ -4,8 +4,8 @@ title: "GenyMotionのelementaryOS12.04へのInstall"
 published: false
 date: 2014-07-09
 comments: true
-tags:
-categories: android linux
+tags: elementaryOS
+categories: android
 ---
 
 # 爆速Android用のエミュレータ GenyMotion導入

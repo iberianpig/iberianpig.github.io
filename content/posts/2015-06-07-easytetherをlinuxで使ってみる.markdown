@@ -4,8 +4,11 @@ title: "EasytetherでBluetoothテザリング"
 published: true
 date: 2015-06-07
 comments: true
-tags: linux, easytether, tethering
-categories: linux easytether tethering
+tags: 
+   - linux
+   - easytether
+   - tethering
+categories: linux
 image: https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg
 ---
 

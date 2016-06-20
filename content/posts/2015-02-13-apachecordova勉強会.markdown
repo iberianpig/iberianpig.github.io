@@ -4,8 +4,10 @@ title: "ApacheCordova勉強会第4回"
 published: true
 date: 2015-02-13
 comments: true
-tags: Cordova, PhoneGap
-categories: Cordova
+tags: 
+  - Cordova
+  - PhoneGap
+categories: HTML5
 ---
 
 # ApacheCordova勉強会第4回

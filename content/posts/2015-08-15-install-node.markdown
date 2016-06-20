@@ -4,7 +4,11 @@ title: "Install node/npm"
 published: true
 date: 2015-08-16
 comments: true
-categories: ubuntu linux node
+categories: javascript
+tags:
+  - nodejs
+  - ubuntu
+  - linux 
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png
 ---
 

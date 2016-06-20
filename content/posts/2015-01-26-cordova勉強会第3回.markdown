@@ -4,7 +4,7 @@ title: "Cordova勉強会第3回行ってきた"
 published: true
 date: 2015-01-26
 comments: true
-tags: Cordova, HTML5
+tags: Cordova
 categories: HTML5
 ---
 

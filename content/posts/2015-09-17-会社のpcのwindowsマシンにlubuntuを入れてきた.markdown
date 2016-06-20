@@ -4,8 +4,8 @@ title: "会社のPCのWindowsマシンにLubuntuを入れてきた"
 published: true
 date: 2015-09-17
 comments: true
-tags: 
-categories: linux lubuntu
+tags: lubuntu
+categories: linux
 image: https://upload.wikimedia.org/wikipedia/commons/d/d1/Lubuntu.png
 
 ---

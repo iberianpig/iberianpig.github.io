@@ -4,8 +4,10 @@ title: "elementary OS freyaへのアップグレード時のメモ（elementaryO
 published: true
 date: 2015-08-15
 comments: false
-tags: linux, elementaryOS, luna, freya
-categories: linux elementaryOS luna freya
+tags: 
+   - linux
+   - elementaryOS
+categories: linux
 image: https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg
 ---
 

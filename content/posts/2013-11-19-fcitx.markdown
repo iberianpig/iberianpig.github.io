@@ -1,22 +1,26 @@
 ---
 layout: post
-title: "Fcitx"
+title: elementary OSにFcitx＋Mozcを入れてみた
 date: 2013-11-19
 comments: true
-categories: Linux SublimeText Fcitx Ibus Mozc
+categories: Linux
+tags: 
+  - SublimeText
+  - Fcitx
+  - Ibus
+  - Mozc
 ---
 
-# elementary OSにFcitx＋Mozcを入れてみた。
 
 FcitxとMozcのインストールは[こちら](http://gihyo.jp/admin/serial/01/ubuntu-recipe/0274)を参照。
-自分の使っているelementary OSは Ubuntu 12.04 ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。
+自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。
 <!-- more -->
 # SublimeIbusとの連携
 
 以前ブログの中で書いた、SublimeIbusとの連携。
 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。
 ウインドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。
-しかし、今回なんと、Fcitxを入れることによって、SublimeIbusの入力窓が迷子にならなくなったｗ(なぜかは不明)
+しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
 
 SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウインドウではFcitxが使われ
 SublimeTextだけでIbusが使われている形になっているようだ。

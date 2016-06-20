@@ -4,7 +4,9 @@ title: "vimで折りたたみしないようにする"
 published: true
 date: 2014-09-11
 comments: true
-tags: fold, vimrc
+tags:
+  - fold
+  - vimrc
 categories: vim
 ---
 

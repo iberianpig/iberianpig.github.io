@@ -4,13 +4,14 @@ title: "tigを使う"
 published: true
 date: 2016-04-22
 comments: true
-tags: 
+tags: tig
 categories: git
 image: http://zarezky.spb.ru/blog/images/tig-window.png
 ---
 
-CUIなGitクライアント。社内勉強会のために少し調べた。  
-調べると色々と便利なオプションがあった。
+CUIなGitクライアント。  
+普段使いのツールだが、社内勉強会の際に改めて調べた。  
+色々と便利なオプションがあった。 
 
 # tigの特徴
 * Gitクライアント
@@ -98,6 +99,7 @@ CUIなGitクライアント。社内勉強会のために少し調べた。
 
 * `tig --all`
   * リモート含めた全ブランチが見える
+    * 仕事はじめに`git fetch`, `tig --all`してアップデート確認する儀式
   * `r`でbranch Viwe上の`All references`選択時と同じ
 * `tig [<ファイル名>, <ディレクトリ名>]`
   * ファイルorディレクトリが関わる履歴のみが見える

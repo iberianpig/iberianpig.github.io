@@ -3,7 +3,8 @@ layout: post
 title: "Escape Mozc with SublimeText"
 date: 2013-10-28
 comments: true
-categories: Linux SublimeText
+categories: Linux
+tags: SublimeText
 image: https://c1.staticflickr.com/9/8153/7461173568_47109f7e24_b.jpg
 ---
 
@@ -16,7 +17,6 @@ Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。
 
 [vim](http://qiita.com/iberianpig@github/items/0cc4269b83f675ccc54b)ではMozc側の対応だけで出来てるんだけど。
 
-今の所Escape２回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
+今の所Escape2回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
 
-
-しかし依然として、途中で入力窓が迷子になるのは結構不便っすな。日本語を打ち込んでるんだけど、Windowが表示されないから、正しく入力されてるのか変換されているのかわからない...。
+依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない...。

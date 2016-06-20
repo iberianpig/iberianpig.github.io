@@ -16,7 +16,7 @@ published: true
 Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
 
 実際は`yyyy-MM-dd-[$title].markdown`内に `published: false`を記述するだけ。
-(※$titleは生成された記事毎に異なります)
+(※$titleは生成された記事毎に異なる)
 
 ```diff
   layout: post

@@ -5,6 +5,8 @@ published: true
 date: 2016-03-20
 comments: true
 tags: 
+   - tethering
+   - bluetooth
 categories: linux
 image: https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg
 ---

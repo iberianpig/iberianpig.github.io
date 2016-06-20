@@ -5,7 +5,7 @@ published: false
 date: 2016-02-21
 comments: true
 tags: 
-categories: rails aws
+categories: aws
 ---
 
 # AWS上でUbuntu14.04, Rails4を利用して環境設定する
@@ -17,30 +17,35 @@ Ubuntu14.04を選択するのは普段利用しているラップトップの開
   * pemキーをダウンロード, ローカルPC上`/home/LOCAL_USERNAME/.ssh/`に配置
 * インスタンスが起動したら、コンソール上で接続を選択、、Wizardの指示に従い、デフォルトユーザ(ubuntu)でssh接続(上記pemを利用)
   * ユーザを作成する
-    * `sudo adduser USERNAME`
+  ```
+  sudo adduser USERNAME
+  ```
   * ユーザにsudoを使えるようにさせる
-    * `sudo gpasswd -a USERNAME sudo`
+  ```
+  sudo gpasswd -a USERNAME sudo
+  ```
   * defaultエディタをnanoからvimに変更する
-    * `sudo update-alternatives --config editor`
+   ```
+   sudo update-alternatives --config editor
+   ``` 
   * 作成したユーザにスイッチする
-    *  `sudo su -l USERNAME`
+  ```
+  sudo su -l USERNAME
+  ```
   * sshでログインできるように設定する
-    *  `mkdir ~/.ssh`
-    *  `chmod 700 ~/.ssh/`
-    *  `touch ~/.ssh/authorized_keys`
-    *  `chmod 644 ~/.ssh/authorized_keys`
+  ```
+  mkdir ~/.ssh
+  chmod 700 ~/.ssh/
+  touch ~/.ssh/authorized_keys
+  chmod 644 ~/.ssh/authorized_keys
+  ```
 
   * インスタンス作成時にダウンロードしたpem使って公開鍵を取得
      * ローカルマシン上で `ssh-keygen -y`
      * `/path/to/pemkey.pem を指定`
      * 出力された結果( public key)をコピーしてAWSインスタンス上の`/home/USERNAME/.ssh/authorized_keys`にペーストする
-  *  
-    *  vi authorized_keys
 
-    2  sudo adduser iberianpig
-    3  ls /home/
-    5  exit
-    6  sudo su -l iberianpig
+    6  sudo su -l USERNAME
     7  exit
     8  visudo
     9  sudo visudo
@@ -59,7 +64,7 @@ Ubuntu14.04を選択するのは普段利用しているラップトップの開
    22  cat /etc/passwd
    23  groups
    24  cat /etc/group
-   25  sudo gpasswd -a iberianpig sudo
+   25  sudo gpasswd -a USERNAME sudo
    26  cat /etc/group
    27  exit
    28  history
@@ -93,10 +98,10 @@ Ubuntu14.04を選択するのは普段利用しているラップトップの開
    20  sudo apt-get install git
    21  exit
    22  sudo apt-get install git
-   23  git clone git@github.com:iberianpig/dotfiles.git
+   23  git clone git@github.com:USERNAME/dotfiles.git
    24  ls
    25  git st
-   26  git clone https://github.com/iberianpig/dotfiles.git
+   26  git clone https://github.com/USERNAME/dotfiles.git
    27  cd dotfiles/
    28  ls
    29  vi dotfilesLink.sh
