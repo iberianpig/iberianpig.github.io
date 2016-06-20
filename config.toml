@@ -7,12 +7,11 @@ theme = "hugo_theme_robust"
 canonifyurls = true
 publishdir = "public"
 
-description = "Linux, Rails, AngularJS, Androidネタを投下します。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，現在Web/Mobileアプリ開発の修行中。"
-
 [permalinks]
     post = "/:year/:month/:day/:filename/"
 
 [params]
     disqusShortname = "iberianpigsty"
     GoogleAnalyticsUserID = "UA-45334010-1"
-
+    author = "Kohei Yamada"
+    description = "Linux, Rails, AngularJS, Androidに関しての技術系の話題について書きます。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，スタートアップにてWeb/Mobileアプリ開発。"
