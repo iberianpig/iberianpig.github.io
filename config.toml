@@ -13,5 +13,6 @@ publishdir = "public"
 [params]
     disqusShortname = "iberianpigsty"
     GoogleAnalyticsUserID = "UA-45334010-1"
+    twitterId = "nukumaro22"
     author = "Kohei Yamada"
     description = "Linux, Rails, AngularJS, Androidに関しての技術系の話題について書きます。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，スタートアップにてWeb/Mobileアプリ開発。"

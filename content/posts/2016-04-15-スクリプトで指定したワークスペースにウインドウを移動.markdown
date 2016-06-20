@@ -105,7 +105,7 @@ Defaulting to search window name, class, and classname
 対象のアプリケーションがどこのワークスペースにいるかを取得
 
 ```
-$ xdotool get_desktop_for_window 65011722
+xdotool get_desktop_for_window 65011722
 0
 ```
 
@@ -114,12 +114,12 @@ $ xdotool get_desktop_for_window 65011722
 WindowIDが`65011722`のWindowをWorkspace`1`に移動させる
 
 ```
-$ xdotool set_desktop_for_window 65011722 1
+xdotool set_desktop_for_window 65011722 1
 ```
 
-##実装してみる
+## 実装してみる
 
-{% gist 38a7dfe61b5dc59de7f855330b7c6ab4 %}
+{{< gist iberianpig 38a7dfe61b5dc59de7f855330b7c6ab4 >}}
 
 xdotoolで現在のWindowを見て、ブラウザであればターミナルを、そうでなければブラウザをアクティブにする。
 
@@ -165,5 +165,5 @@ browser | terminal | twitter/slack | calendar/todo list
 その状態でアプリケーションをドラッグで移動しようとしてもプライマリのワークスペースが隣のワークスペースの領域にかぶっていて、移動が困難になる。
 
 対処策として、一度`Super+Shift+Left`でアプリケーションを再配置してしまえばよいのですが、ひとつずつしかワークスペースに移動させることができない。
-これがとても面倒だったため、スクリプト一発で再配置できるようにしたい。
+これがとても面倒だったため、スクリプト一発で再配置できるようにしたいです。
 

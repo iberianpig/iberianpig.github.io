@@ -7,6 +7,12 @@
       4.3.1.丸かっこ（）: false
     }
   },
-  "spellcheck-tech-word": true,
-  "no-mix-dearu-desumasu": true
+    "spellcheck-tech-word": true,
+    "no-mix-dearu-desumasu": {
+      "preferInHeader": "である", // "である" or "ですます"
+      "preferInBody": "である",   // "である" or "ですます"
+      "preferInList": "である",    // "である" or "ですます"
+      // 文末以外でも、敬体(ですます調)と常体(である調)を厳しくチェックするかどうか
+      "strict": true
+    }
 }
