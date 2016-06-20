@@ -1,0 +1,248 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+  <link rel="stylesheet" href="https://iberianpig.github.io/css/styles.css">
+  <link rel="stylesheet" href="https://iberianpig.github.io/css/custom.css">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
+
+  
+  <title>Rails Aws - iberianpigsty</title>
+  <meta property='og:title' content="Rails Aws - iberianpigsty">
+  <meta property="og:type" content="article">
+  
+
+  <meta property="og:url" content="https://iberianpig.github.io/categories/rails-aws/">
+  
+  
+  
+</head>
+
+<header class="l-header">
+  <div class="p-logo">
+    <a href="https://iberianpig.github.io/">iberianpigsty</a>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+
+      <h1 class="p-page-title">Rails Aws</h1>
+
+      <div class="row">
+        
+        <div class="col-sm-4">
+          <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2016-02-21-build-rails-environment-on-aws/">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Feb 21, 2016</time>
+      </div>
+      <h2 class="title">build rails environment on AWS</h2>
+      <div class="summary">AWS上でUbuntu14.04, Rails4を利用して環境設定する Ubuntu14.04を選択するのは普段利用しているラップトップの開発環境と同等のため。特にそれ以上の意味はない。 AWSコンソールでインスタンス作成する セキュリティグループ設定では自分のIPアドレス(グローバル), sshのため22番ポートを許可しておく pemキーをダウンロード, ローカルPC上/home/LOCAL_USERNAME/.ssh/に配置 インスタンスが起動したら、コンソール上で接続を選択、、Wizardの指示に従い、デフォルトユーザ(ubuntu)でssh接続(上記pemを利用) ユーザを作成する sudo adduser USERNAME ユーザにsudoを使えるようにさせる sudo gpasswd -a USERNAME sudo defaultエディタをnanoからvimに変更する sudo update-alternatives --config editor 作成したユーザにスイッチする sudo su -l USERNAME sshでログインできるように設定する mkdir ~/.ssh chmod 700 ~/.ssh/ touch ~/.ssh/authorized_keys chmod 644 ~/.ssh/authorized_keys インスタンス作成時にダウンロードしたpem使って公開鍵を取得 ローカルマシン上で ssh-keygen -y /path/to/pemkey.pem を指定 出力された結果( public key)をコピーしてAWSインスタンス上の/home/USERNAME/.ssh/authorized_keysにペーストする vi authorized_keys 2 sudo adduser iberianpig 3 ls /home/ 5 exit 6 sudo su -l iberianpig 7 exit 8 visudo 9 sudo visudo 10 vi .bashrc 11 sudo update-alternatives &ndash;config editor 12 visudo 13 sudo visudo 14 users 15 users -h 16 users &ndash;help 17 man useradd 18 useradd -G 19 useradd -G admin 20 useradd -g admin 21 useradd -g ubuntu admin 22 cat /etc/passwd 23 groups 24 cat /etc/group 25 sudo gpasswd -a iberianpig sudo 26 cat /etc/group 27 exit 28 history インスタンス作成時にダウンロードしたPEM使って公開鍵を取得 ローカルマシン上で ssh-keygen -y /path/to/pemkey.pem を指定 public_keyをコピーしてAWS上の/home/USERNAME/.ssh/authorized_keysにペーストする 1 ll 2 mkdir .ssh 3 chmod 700 .ssh/ 4 ll 5 touch .ssh/authorized_keys 6 chmod 644 .ssh/authorized_keys 7 exit 8 cd .ssh/ 9 vi authorized_keys 10 ll 11 ls 12 exit 13 vim 14 vim &ndash;versions 15 vim &ndash;version 16 git 17 git st 18 sudo apt-get install git 19 sudo su -l ubuntu 20 sudo apt-get install git 21 exit 22 sudo apt-get install git 23 git clone git@github.com:iberianpig/dotfiles.git 24 ls 25 git st 26 git clone https://github.com/iberianpig/dotfiles.git 27 cd dotfiles/ 28 ls 29 vi dotfilesLink.sh 30 sh dotfilesLink.sh 31 ls 32 ls -lsa 33 cd 34 vim 35 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh &gt; install.sh 36 ls 37 sh ./install.sh 38 vim 39 ll 40 ll 41 ls 42 source ~/.bashrc 43 cd 44 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv 45 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build 46 rbenv 47 rbenv &ndash;version 48 rbenv install &ndash;list 49 rbenv install ruby-2.3.0 50 rbenv install 2.3.0 51 sudo apt-get update 52 apg 53 sudo apt-get install apt-fast 54 vi ~/.bashrc 55 vi ~/.bash_profile 56 vi ~/.bash_aliases 57 source ~/.bashrc 58 apg 59 sudo apt-get update 60 sudo apt-get upgrade 61 sudo apt-get install -y libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev 62 sudo apt-get install -y libreadline-dev 63 rbenv install 2.3.0 64 source ~/.bashrc 65 source ~/.bash_profile 66 source ~/.bash_aliases 67 make 68 sudo apt-get install -y make 69 sudo apt-get install -y g++ 70 sudo apt-get install -y libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev libreadline-dev libxslt-dev libxml2-dev libsqlite3-dev 71 source ~/.bashrc 72 rbenv install 2.3.0 73 ll 74 ruby -v 75 rbenv global 76 rbenv rehash 77 rbenv global 78 rbenv global 2.3.0 79 rbenv global 80 rbenv rehash 81 ll 82 mkdir -p /var/www/makrsjp 83 sudo mkdir -p /var/www/makrsjp 84 ll 85 cd /var/www/ 86 ll 87 sudo mv makrsjp makersjp 88 cd /var/www/makersjp/ 89 ls 90 cd ..</div>
+    </footer>
+  </a>
+</article>
+
+        </div>
+        
+      </div>
+
+      
+
+
+    </div>
+
+    <div class="col-md-3">
+      <aside class="site">
+
+  
+
+  
+
+  <section>
+    <header>LatestPosts</header>
+    <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-27-%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E5%A5%BD%E3%81%8D%E3%81%AA%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E9%85%8D%E7%BD%AE%E3%81%99%E3%82%8B/" class="clearfix">
+    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2015/05/26/21/53/ubuntu-785622_960_720.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Wed, Apr 27, 2016</time>
+      </div>
+      <h2 class="title">ワークスペースに好きなアプリケーションを自動で配置する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
+    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 22, 2016</time>
+      </div>
+      <h2 class="title">tigを使う</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/" class="clearfix">
+    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2013/07/13/13/41/bash-161382_960_720.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 15, 2016</time>
+      </div>
+      <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Mar 20, 2016</time>
+      </div>
+      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-02-21-build-rails-environment-on-aws/" class="clearfix">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Feb 21, 2016</time>
+      </div>
+      <h2 class="title">build rails environment on AWS</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Jan 23, 2016</time>
+      </div>
+      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-01-07-distance_on_the_earth_by_latitude_and_longitude/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/dd/West_Africa_Catalan_Atlas.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Jan 7, 2016</time>
+      </div>
+      <h2 class="title">緯度経度と距離</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Lubuntu.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Sep 17, 2015</time>
+      </div>
+      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-15-%E6%8A%80%E8%A1%93%E3%83%A1%E3%83%A2/" class="clearfix">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Sep 15, 2015</time>
+      </div>
+      <h2 class="title">技術メモ</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2015-09-03-aws-ec2%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/AmazonWebservices_Logo.svg/1024px-AmazonWebservices_Logo.svg.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Sep 3, 2015</time>
+      </div>
+      <h2 class="title">AWS EC2への接続</h2>
+    </footer>
+  </a>
+</article>
+
+      
+    </div>
+  </section>
+
+  
+  <section>
+    <header>category</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/categories/git-pivotaltracker-ruby">git-pivotaltracker-ruby</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/cordova">cordova</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.io/tags/rspec">rspec</a></li><li><a href="https://iberianpig.github.io/tags/fold-vimrc">fold-vimrc</a></li><li><a href="https://iberianpig.github.io/tags/sharedpreferences">sharedpreferences</a></li><li><a href="https://iberianpig.github.io/tags/http-listview-thread">http-listview-thread</a></li><li><a href="https://iberianpig.github.io/tags/linux-easytether-tethering">linux-easytether-tethering</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/angularjs-javascript">angularjs-javascript</a></li><li><a href="https://iberianpig.github.io/tags/cordova-html5">cordova-html5</a></li><li><a href="https://iberianpig.github.io/tags/linux-elementaryos-luna-freya">linux-elementaryos-luna-freya</a></li><li><a href="https://iberianpig.github.io/tags/strategy">strategy</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <section>
+    <header>Kohei Yamada</header>
+    <div>Linux, Rails, AngularJS, Androidに関しての技術系の話題について書きます。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，スタートアップにてWeb/Mobileアプリ開発。</div>
+  </section>
+  <a class="twitter-timeline" data-height="1000" data-dnt="true" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/nukumaro22">Tweets by nukumaro22</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</aside>
+
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="l-footer">
+  <p>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
+</footer>
+
+
