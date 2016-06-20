@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim Lifehack Linux on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/vim-lifehack-linux/</link>
+    <description>Recent content in Vim Lifehack Linux on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 19 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/tags/vim-lifehack-linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
+      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/</guid>
+      <description>
+
+&lt;h1 id=&#34;command-normal-モードを間違う:ff449c990bbe11df9f128232db1438ac&#34;&gt;Command/Normal モードを間違う&lt;/h1&gt;
+
+&lt;p&gt;問題はこれ。&lt;br /&gt;
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。&lt;/p&gt;
+
+&lt;p&gt;自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。&lt;br /&gt;
+gVimではカーソル形状が 矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;暫定策:ff449c990bbe11df9f128232db1438ac&#34;&gt;暫定策&lt;/h1&gt;
+
+&lt;p&gt;代替案として、 &lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;lightline.vim&lt;/a&gt;を使ってInsert/Normal モードの状態を色付きで
+画面下部に表示し、視覚的に理解しやすいように試みた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.gyazo.com/92223ba03c523c28e705980706a3a7e9.png&#34; alt=&#34;lightline&#34; /&gt;
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。&lt;/p&gt;
+
+&lt;p&gt;また、横のラインを表示・非表示を( &lt;code&gt;autocmd InsertEnter,InsertLeave * set cursorline!&lt;/code&gt; )で切り替える
+アプローチも試みたが、モード間違いは大きく改善はしなかった。&lt;/p&gt;
+
+&lt;h1 id=&#34;救世主:ff449c990bbe11df9f128232db1438ac&#34;&gt;救世主&lt;/h1&gt;
+
+&lt;p&gt;これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;To change the shape of the cursor in different modes, you can add the following into your vimrc.
+For the Gnome-Terminal (version 2.26)Edit&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;if has(&amp;quot;autocmd&amp;quot;)
+au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot;
+au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot;
+au VimLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot;
+endif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png&#34; alt=&#34;insert&#34; /&gt;
+&lt;img src=&#34;http://i.gyazo.com/d8fb66d045fdc0b3ce9470d058bfe81e.png&#34; alt=&#34;normal&#34; /&gt;&lt;br /&gt;
+すばらしい。&lt;br /&gt;
+グローバルな設定を書き換える力技だが、キニシナイ。&lt;/p&gt;
+
+&lt;h1 id=&#34;special-thanks:ff449c990bbe11df9f128232db1438ac&#34;&gt;special thanks&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lightline(&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;https://github.com/itchyny/lightline.vim&lt;/a&gt; )&lt;/li&gt;
+&lt;li&gt;Stackoverflow(&lt;a href=&#34;http://stackoverflow.com/a/6488717/4040150&#34;&gt;http://stackoverflow.com/a/6488717/4040150&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

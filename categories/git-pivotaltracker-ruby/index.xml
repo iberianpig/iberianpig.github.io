@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git Pivotaltracker Ruby on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/git-pivotaltracker-ruby/</link>
+    <description>Recent content in Git Pivotaltracker Ruby on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 18 Aug 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/categories/git-pivotaltracker-ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>自動でコミットメッセージの先頭にIssueIDを付与する</title>
+      <link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
+      <description>
+
+&lt;h1 id=&#34;issueidを自動でコミットメッセージに入れたい:256c9aba23a55141d0b5e840dc622108&#34;&gt;IssueIDを自動でコミットメッセージに入れたい&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.pivotaltracker.com&#34;&gt;&lt;img src=&#34;https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png&#34; alt=&#34;PivotalTracker&#34; /&gt;&lt;/a&gt;&lt;br /&gt;
+タイトルそのまま。&lt;/p&gt;
+
+&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;スクラムでのタスク管理にPivotalTracker(&lt;a href=&#34;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&#34;&gt;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される&lt;/li&gt;
+&lt;li&gt;あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li&gt;
+&lt;li&gt;毎回IDを入れるのがめんどくさい, たまに忘れる&lt;/li&gt;
+&lt;li&gt;チームで浸透させたい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;という理由から。&lt;/p&gt;
+
+&lt;h2 id=&#34;gitのhookを利用する:256c9aba23a55141d0b5e840dc622108&#34;&gt;gitのhookを利用する&lt;/h2&gt;
+
+&lt;p&gt;プロジェクトのルートディレクトリから辿ると、&lt;code&gt;.git/hook/&lt;/code&gt;というディレクトリがある&lt;br /&gt;
+hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんなスクリプトが準備されている&lt;br /&gt;
+(どれも&lt;code&gt;.sample&lt;/code&gt;という名前で入っているはず)&lt;/p&gt;
+
+&lt;p&gt;hookの順序としては下記のタイミングで実行される&lt;br /&gt;
+&amp;gt; 1. commit コマンド
+&amp;gt; 2. pre-commitスクリプト実行
+&amp;gt; 3. デフォルトのログメッセージの準備
+&amp;gt; 4. prepare-commit-msgスクリプト実行
+&amp;gt; 5. コミットメッセージ入力用のエディタ起動
+&amp;gt; 6. commit-msgスクリプト実行
+&amp;gt; 7. コミットの作成
+&amp;gt; 8. post-commitスクリプト実行
+&amp;gt; 9. &amp;ndash;amendで実行した場合はpost-rewriteスクリプト実行&lt;/p&gt;
+
+&lt;p&gt;ということで、commit-msgにコミットメッセージの先頭に自動で追記するruby scriptを書く&lt;/p&gt;
+
+&lt;h2 id=&#34;commit-msg:256c9aba23a55141d0b5e840dc622108&#34;&gt;commit-msg&lt;/h2&gt;
+
+&lt;p&gt;{% gist f010cfa1134bc19e3989 %}&lt;/p&gt;
+
+&lt;h3 id=&#34;処理の流れ:256c9aba23a55141d0b5e840dc622108&#34;&gt;処理の流れ&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;ARGV[0]&lt;/code&gt;にはコミットメッセージを入力するファイルが与えられる&lt;/li&gt;
+&lt;li&gt;ファイルからコメントを取り出す&lt;/li&gt;
+&lt;li&gt;コメントから先頭の[#xxxx]を除去する(&lt;code&gt;git commit -amend&lt;/code&gt;した時のため)&lt;/li&gt;
+&lt;li&gt;コメントから空行、#で始まる行を除去する(ただし、&amp;ndash; &amp;gt;8 &amp;ndash;マークは残す)&lt;br /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git commit -v&lt;/code&gt; の際に、&amp;ndash; &amp;gt;8 &amp;ndash;マーク以下にCommit時に自動で切り取られるDiff表示があるため&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;メッセージが&amp;ndash; &amp;gt;8 &amp;ndash;マークから開始だった場合、commit メッセージが空であるとして、コミットを中断&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git branch&lt;/code&gt;コマンドより、* の付いているカレントブランチIssueID_xxxxからIssueIDを抽出する&lt;/li&gt;
+&lt;li&gt;IssueIDとコメントを連結させる&lt;/li&gt;
+&lt;li&gt;メッセージをファイルに書き込んで終了&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;実行権限の付与:256c9aba23a55141d0b5e840dc622108&#34;&gt;実行権限の付与&lt;/h3&gt;
+
+&lt;p&gt;作成したスクリプトに下記コマンドで実行権をつけてやる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ chmod +x commit-msg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;やってみる:256c9aba23a55141d0b5e840dc622108&#34;&gt;やってみる&lt;/h3&gt;
+
+&lt;p&gt;ブランチを切ってみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git co -b &amp;quot;12345_xxxxxx&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;適当にコミットしてみる&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -am &amp;quot;hoge fuga&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;コミットメッセージが&lt;code&gt;[#12345]hoge fuga&lt;/code&gt;となっているはず。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git commit -amend&lt;/code&gt;などでもうまく動くはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;その他チラ裏:256c9aba23a55141d0b5e840dc622108&#34;&gt;その他チラ裏&lt;/h2&gt;
+
+&lt;p&gt;prepare-commit-msg では、&lt;code&gt;git commit -ammend&lt;/code&gt;の際に二重で[#IssueID]を付与してしまうためcommit-msgを利用した&lt;br /&gt;
+shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動作が異なり, 他のメンバーに展開できなかったためrubyで書いた&lt;/p&gt;
+
+&lt;h2 id=&#34;エンジニアの小さなしあわせ:256c9aba23a55141d0b5e840dc622108&#34;&gt;エンジニアの小さなしあわせ&lt;/h2&gt;
+
+&lt;p&gt;こういう小さな生産性向上のためにいろいろ小手先を使うのが好き。&lt;br /&gt;
+エンジニアならこの感覚、大事。&lt;br /&gt;
+ハマると仕事がつかなくなるんだけれども。&lt;/p&gt;
+
+&lt;h2 id=&#34;special-thanks:256c9aba23a55141d0b5e840dc622108&#34;&gt;Special Thanks&lt;/h2&gt;
+
+&lt;p&gt;(&lt;a href=&#34;http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929&#34;&gt;http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929&lt;/a&gt;)&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

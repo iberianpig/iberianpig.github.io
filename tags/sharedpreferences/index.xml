@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sharedpreferences on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/sharedpreferences/</link>
+    <description>Recent content in Sharedpreferences on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 14 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/tags/sharedpreferences/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Androidでのデータの保存</title>
+      <link>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</link>
+      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</guid>
+      <description>
+
+&lt;h1 id=&#34;データの保存:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;データの保存&lt;/h1&gt;
+
+&lt;h2 id=&#34;sharedpreferenceの利用:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;SharedPreferenceの利用&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Androidアプリでデータを保存する方法のひとつ
+データをキーと値の組み合わせで保存
+ファイルなどに保存するよりも非常に簡単にデータを保存可能&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;ただし大規模なデータには向かず、設定項目向き。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&#34;使い方:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;使い方&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;SharedPreferences はgetSharedPreferences(String name, int mode);
+でを取得。
+&lt;code&gt;name&lt;/code&gt; は &lt;code&gt;Preference&lt;/code&gt; 自体の名前指定
+mode には
+&lt;code&gt;Activity.MODE_PRIVATE&lt;/code&gt;
+&lt;code&gt;Activity.MODE_WORLD_READABLE&lt;/code&gt;
+&lt;code&gt;Activity.MODE_WORLD_WRITEABLE&lt;/code&gt;
+などを指定&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;モードについては後述。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、
+editメソッドでEditorクラスのインスタンスを呼び出す。
+そのEditorクラスにputXxxxメソッドを使って値を対応させる
+最後にcommitメソッドで格納する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;// プリファレンスに保存
+Editor editor = pref.edit();
+editor.putString(KEY_TEXT, s);  // KEY, VALUEの組み合わせで保存
+editor.commit();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;保存される場所:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;保存される場所&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;保存された Preference は data/data/パッケージ名/shared_prefs
+の中に xmlファイルとして保存される&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;データの取得:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;データの取得&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;getXxxx(String key, Xxxx defValue)&lt;/code&gt;のkey, value形式で取得する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;getString(String key, String defValue);
+getInt(String key, int defValue);
+getLong(String key, long defValue);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;データ型:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;データ型&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;下記のデータ型がXMLに保存される
+1. boolean
+2. float
+3. int
+4. long
+5. String&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;※ データの大きい物、objectの保管は非推奨。(シリアライズさせれば出来るはず)&lt;br /&gt;
+それらはバイナリ化してDBへ、もしくはファイルとして保存させるべき。&lt;/p&gt;
+
+&lt;h3 id=&#34;mode種別:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;MODE種別&lt;/h3&gt;
+
+&lt;p&gt;プリファレンスでは、MODE_APPENDを除いた３種類のオペレーションモードが指定可能&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;定数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MODE_PRIVATE&lt;/td&gt;
+&lt;td&gt;作成したアプリのみ読み書きできる&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MODE_WORLD_READABLE&lt;/td&gt;
+&lt;td&gt;他アプリに読み込み権を与える&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MODE_WORLD_WRITEABLE&lt;/td&gt;
+&lt;td&gt;他アプリに書き込み権を与える&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;どのタイミングで使用すべきか:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;どのタイミングで使用すべきか&lt;/h3&gt;
+
+&lt;p&gt;実際は下記が一般的とのこと。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;書き込み
+
+&lt;ul&gt;
+&lt;li&gt;onStop()&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;読み込み
+
+&lt;ul&gt;
+&lt;li&gt;onResume()&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/iberianpig/a25ce9e12795cdd40dd1/revisions&#34;&gt; サンプルコード &lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;ファイル入出力:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;ファイル入出力&lt;/h2&gt;
+
+&lt;p&gt;openFileOutput, openFileInputを利用してローカルファイルへ保存。
+android.content.Contextのファイル書き込み/読み込み系のメソッドを利用。&lt;/p&gt;
+
+&lt;p&gt;###ファイル入出力メソッド&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;メソッド名&lt;/th&gt;
+&lt;th&gt;概要&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;openFileInput(String name)&lt;/td&gt;
+&lt;td&gt;ローカルファイルの読み込み&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;openFileOutput (String name, int mode)&lt;/td&gt;
+&lt;td&gt;ローカルファイルへの書き込み&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;deleteFile(String name)&lt;/td&gt;
+&lt;td&gt;ローカルファイルの削除&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;abstract String[] fileList()&lt;/td&gt;
+&lt;td&gt;該当アプリが作成したローカルファイルのリストを取得&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h3 id=&#34;モード種別:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;モード種別&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;定数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MODE_APPEND&lt;/td&gt;
+&lt;td&gt;既にファイルがあった場合、追記で開く&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MODE_PRIVATE&lt;/td&gt;
+&lt;td&gt;他のアプリからアクセスできないprivate fileとして生成&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MODE_WORLD_READABLE&lt;/td&gt;
+&lt;td&gt;他のアプリへ読み込み権限を与える&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MODE_WORLD_WRITEABLE&lt;/td&gt;
+&lt;td&gt;他のアプリへ書き込み権限を与える&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://techbooster.org/tag/openfileoutput/&#34;&gt;http://techbooster.org/tag/openfileoutput/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;書き込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;書き込みの例&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;OutputStream out;
+//OutputStream インスタンス作成
+try {
+  out = openFileOutput(&amp;quot;log.txt&amp;quot;, MODE_PRIVATE);
+  // 出力ファイルをlog.txt, 権限をPRIVATE、このアプリでのみ利用可能とする
+  PrintWriter writer = new PrintWriter(
+    new OutputStreamWriter(out, &amp;quot;UTF-8&amp;quot;));
+  // Outputstreamインスタンスとエンコーディングの設定
+  EditText edit = (EditText)findViewById(R.id.edit_data);
+  writer.append(edit.getText().toString());
+  //editTextの内容をファイルに書き込む
+  writer.close();
+}catch...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;読み込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;読み込みの例&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;    InputStream in;
+    //InputStream インスタンス作成
+    String lineBuffer;
+    try {
+      in = openFileInput(&amp;quot;log.txt&amp;quot;);
+      BufferedReader reader = new BufferedReader(
+        new InputStreamReader(in, &amp;quot;UTF-8&amp;quot;));
+      while((lineBuffer = reader.readLine()) != null) {
+        Log.v(&amp;quot;TEST&amp;quot;, lineBuffer);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/iberianpig/007b96e935dd607311ae/revisions&#34;&gt; サンプルコード &lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;dbへの保存-書きかけ:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;DBへの保存(書きかけ)&lt;/h2&gt;
+
+&lt;h2 id=&#34;special-thanks:51d0cd193e9177c2e1f2a3f5a71c87a9&#34;&gt;Special Thanks&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html&#34;&gt;http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://androlab.blogspot.jp/2011/01/blog-post_20.html&#34;&gt;http://androlab.blogspot.jp/2011/01/blog-post_20.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://techbooster.org/tag/openfileoutput/&#34;&gt;http://techbooster.org/tag/openfileoutput/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

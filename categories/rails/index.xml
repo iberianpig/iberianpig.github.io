@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rails on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/rails/</link>
+    <description>Recent content in Rails on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 11 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/categories/rails/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rspecでなぜか@インスタンス変数が参照できない時</title>
+      <link>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B@%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</link>
+      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B@%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</guid>
+      <description>
+
+&lt;h1 id=&#34;controller内の-hogeが参照できない:1a4cc7bc024ef6bed03ee735cd6b5aa3&#34;&gt;controller内の@hogeが参照できない&lt;/h1&gt;
+
+&lt;p&gt;rspecの世界からcontroller内メソッドでインスタンス変数&lt;code&gt;@hoge&lt;/code&gt;を利用した場合は、&lt;br /&gt;
+直接rspecからインスタンス化された@hogeは参照できません。&lt;br /&gt;
+インスタンス化された評価する場合は&lt;code&gt;assigns(:hoge)&lt;/code&gt;で参照するといいようです。&lt;/p&gt;
+
+&lt;p&gt;また、controller内のメソッドが完了したあと、rspec内で&lt;code&gt;@hoge.reload&lt;/code&gt;してから評価するという手もあるそうです。&lt;/p&gt;
+
+&lt;p&gt;内容深く調査した上で、追記したいと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;その他:1a4cc7bc024ef6bed03ee735cd6b5aa3&#34;&gt;その他&lt;/h1&gt;
+
+&lt;p&gt;当然のことかもしれませんが、itブロック・contextブロック・describeブロックの中で定義した変数はその中に限ります。
+それ以外で扱うためにはインスタンス変数を利用する必要があります。
+はじめてのテストということでココらへんでハマってしまいましたが、そのおかげでスコープを意識してcontext分けたりできたので良かったと思います。&lt;/p&gt;
+
+&lt;p&gt;railsの世界の変数か、rspecの世界の変数なのかをきちんと意識する必要があった。
+rspecはrubyの変数が使えるブラウザとrailsと共通で参照できるテスト用DBの3つの大きなスコープがある。
+requestヘッダをrspecで作ってそれを使って投げることができる&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Head-First-Rails_5</title>
+      <link>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</link>
+      <pubDate>Mon, 17 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</guid>
+      <description>
+
+&lt;h1 id=&#34;head-first-rails-第5章のメモ:49a477d433e8846cc6e0a697d650972f&#34;&gt;Head First Rails 第5章のメモ&lt;/h1&gt;
+
+&lt;p&gt;※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。&lt;/p&gt;
+
+&lt;p&gt;scaffold で生成したアプリケーションのフォームに
+バリデーションを設定していく。&lt;/p&gt;
+
+&lt;p&gt;##バリデーションの設定。&lt;/p&gt;
+
+&lt;p&gt;バリデーションの設定はモデル名．rbの中に設定する
+&lt;code&gt;validates_xxxxxx_of&lt;/code&gt; と記述する。&lt;/p&gt;
+
+&lt;h2 id=&#34;エラー処理を自分で書く場合:49a477d433e8846cc6e0a697d650972f&#34;&gt;エラー処理を自分で書く場合&lt;/h2&gt;
+
+&lt;p&gt;scaffoldを利用していない場合にエラー処理を自分で記述する必要がある。&lt;br /&gt;
+画面に処理内容を表示するためにはSaveメソッドでの失敗をコントローラに伝える必要がある。&lt;br /&gt;
+そのため、 if文で@model.saveを実行した結果 true or false に応じて、リダイレクトを
+行うか否かを決定する。&lt;/p&gt;
+
+&lt;p&gt;form内で、f.error_messagesメソッドを利用する。&lt;/p&gt;
+
+&lt;p&gt;updateも同様。if文で@model.update_attributes(:params[:model])の実行し、結果に応じて
+リダイレクトを行うか否かを決める。&lt;/p&gt;
+
+&lt;h2 id=&#34;不明点:49a477d433e8846cc6e0a697d650972f&#34;&gt;不明点&lt;/h2&gt;
+
+&lt;h3 id=&#34;バリデーターのメッセージを変更方法:49a477d433e8846cc6e0a697d650972f&#34;&gt;バリデーターのメッセージを変更方法&lt;/h3&gt;
+
+&lt;p&gt;書籍内の&lt;code&gt;validates_presence_of :trainer, &amp;quot;What&#39;s your name?&amp;quot;&lt;/code&gt;がうまく動かない&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Head-First-Rails_4</title>
+      <link>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</guid>
+      <description>
+
+&lt;h1 id=&#34;head-first-rails-第４章のメモ:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;Head First Rails 第４章のメモ&lt;/h1&gt;
+
+&lt;p&gt;※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。&lt;/p&gt;
+
+&lt;p&gt;Scaffoldで作成したページを改造していく。&lt;/p&gt;
+
+&lt;h2 id=&#34;検索窓の導入:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;検索窓の導入&lt;/h2&gt;
+
+&lt;p&gt;どのページにも検索窓を用意するので、layoutsを利用する
+layoutfileは｛モデル名｝.html.erbとなる&lt;/p&gt;
+
+&lt;p&gt;form_forとform_tagの違い&lt;/p&gt;
+
+&lt;h2 id=&#34;ハマったところ:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;ハマったところ&lt;/h2&gt;
+
+&lt;p&gt;書籍では&amp;lt;% %&amp;gt;だったが、実際はform_tag は &amp;lt;%= %&amp;gt; で囲む必要があった&lt;br /&gt;
+(rails 3 と rails 4の違い？)&lt;/p&gt;
+
+&lt;h3 id=&#34;routesの追記が必要-formの追加に合わせて:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;routesの追記が必要。 formの追加に合わせて。&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;post &#39;client_workouts/find&#39; =&amp;gt; &#39;client_workouts#find&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;rails4-だと-find-で-conditionsが使えない:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;rails4 だと Find で :conditionsが使えない&lt;/h3&gt;
+
+&lt;p&gt;代わりにモデル名.whereを利用する&lt;br /&gt;
+* &lt;code&gt;モデル名.find(id)&lt;/code&gt;
+    - findはidの検索専用
+* &lt;code&gt;モデル名.where(:カラム名 =&amp;gt; 内容)&lt;/code&gt;
+    - なんか指定するときは大体where&lt;/p&gt;
+
+&lt;h3 id=&#34;defaultで生成されるapplication-html-erbはいつ利用される:6e5b4f40edb1c21bdfd9e120571fa740&#34;&gt;defaultで生成されるapplication.html.erbはいつ利用される？&lt;/h3&gt;
+
+&lt;p&gt;いつも使われてて、マスターのテンプレートとして使われてる
+どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

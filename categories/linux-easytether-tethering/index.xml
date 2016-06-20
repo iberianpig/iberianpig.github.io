@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Easytether Tethering on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/linux-easytether-tethering/</link>
+    <description>Recent content in Linux Easytether Tethering on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 07 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/categories/linux-easytether-tethering/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>EasytetherでBluetoothテザリング</title>
+      <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description>
+
+&lt;h1 id=&#34;easytether-with-linux:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;Easytether with linux&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.mstream.easytether_polyclef&amp;amp;hl=ja&#34;&gt;&lt;img src=&#34;https://lh6.ggpht.com/SkGhbKqXHvu3P08ZU_hW2ezWnTGOYEBjNvPp0cDBhWzAlBYlhoG6xS45-BVv0hSraA=w300-rw&#34; alt=&#34;EasytetherFull&#34; /&gt;&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.mstream.easytether_polyclef&amp;amp;hl=ja&#34;&gt;EasytetherFull( GooglePlay )&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。&lt;br /&gt;
+そして、公式の&lt;strong&gt;Linux向けクライアント&lt;/strong&gt;がある。&lt;br /&gt;
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。&lt;br /&gt;
+Linux版パッケージは&lt;a href=&#34;http://www.mobile-stream.com/easytether/drivers.html&#34;&gt; こちら &lt;/a&gt; からダウンロード可。&lt;/p&gt;
+
+&lt;p&gt;現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。&lt;br /&gt;
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h2 id=&#34;speedテスト3回戦:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;Speedテスト3回戦&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Easytether Bluetoothテザリング&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;AndroidのBluetoothテザリング&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414894284&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414894284.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414914824&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414914824.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414923094&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414923094.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414920048&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414920048.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414925130&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414925130.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;http://www.speedtest.net/my-result/4414927464&#34;&gt;&lt;img src=&#34;http://www.speedtest.net/result/4414927464.png&#34; /&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;やはり-easytetherの方が早い:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;やはり、Easytetherの方が早い。&lt;/h2&gt;
+
+&lt;p&gt;若干だけれども。
+ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。
+ただし起動/終了が面倒なので、ショートカット割り当てまで行う。&lt;/p&gt;
+
+&lt;h1 id=&#34;おまけ-起動スクリプトの登録:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;おまけ(起動スクリプトの登録)&lt;/h1&gt;
+
+&lt;h2 id=&#34;接続を切り替えるscriptを作る:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;接続を切り替えるscriptを作る&lt;/h2&gt;
+
+&lt;p&gt;easytether.shを任意のディレクトリに作成。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;#!/bin/sh
+
+pgrep -lf easytether
+ret=$?
+
+if test ${ret} -eq 0
+then
+  # 既に起動中の場合停止させる
+  pkill easytether -f
+else
+  # 対象のスマホのBluetoothのMACアドレスを指定して接続
+  sudo easytether-bluetooth BT:MA:CA:DD:RE:SS
+fi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;内容はこんな感じ。&lt;/p&gt;
+
+&lt;p&gt;実行権与えたいので&lt;code&gt;sudo chmod +x easytether.sh&lt;/code&gt;してあげる&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo ./easytether.sh&lt;/code&gt;で動かしてみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;パスワードの省略-sudoersの変更:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;パスワードの省略( sudoersの変更 )&lt;/h2&gt;
+
+&lt;p&gt;ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のように&lt;code&gt;sudo visudo&lt;/code&gt;で当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;username&amp;gt; ALL=(ALL) NOPASSWD: /path/to/script/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;xbindkeysショートカットキーのマッピング:1cfffe6a7adef89841b67d49ce1b6604&#34;&gt;xbindkeysショートカットキーのマッピング&lt;/h2&gt;
+
+&lt;p&gt;xbindkeysを利用してマッピングする。&lt;br /&gt;
+持ってない人は&lt;code&gt;sudo apt-get install xbindkeys&lt;/code&gt;で入れましょう。便利。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;~/.xbindkeysrc&lt;/code&gt;に下記を追記する&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot;sudo /path/to/script/easytether.sh&amp;quot;
+   Mod4 + F2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これはSuper_L + F2で起動させるようにした。&lt;br /&gt;
+これでEasytetherの切り替えがショートカットのみで行われるようになった。&lt;/p&gt;
+
+&lt;p&gt;色々なキーを自作のスクリプトにバインドしてるけれど、xbindkeys便利すぎる。&lt;/p&gt;
+
+&lt;p&gt;それではEasytetherで良いノマドライフを!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
