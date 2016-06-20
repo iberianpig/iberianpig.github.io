@@ -8,9 +8,10 @@ canonifyurls = true
 
 description = "Linux, Rails, AngularJS, Androidネタを投下します。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，現在Web/Mobileアプリ開発の修行中。"
 
-[params]
-  disqusShortname = "iberianpigsty"
-  GoogleAnalyticsUserID = "UA-45334010-1"
-
 [permalinks]
     post = "/:year/:month/:day/:filename/"
+
+[params]
+    disqusShortname = "iberianpigsty"
+    GoogleAnalyticsUserID = "UA-45334010-1"
+
