@@ -14,14 +14,14 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>SPとOC-企業戦略- - iberianpigsty</title>
-  <meta property='og:title' content="SPとOC-企業戦略- - iberianpigsty">
+  <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) - iberianpigsty</title>
+  <meta property='og:title' content="insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) - iberianpigsty">
   <meta property="og:type" content="article">
   
 
-  <meta property="og:url" content="https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/">
+  <meta property="og:url" content="https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/">
   
-  
+  <meta property="og:image" content="https://iberianpig.github.io/images/http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png">
   <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -30,15 +30,15 @@
       "@type":"WebPage",
       "@id":"https:\/\/iberianpig.github.io\/"
     },
-    "headline": "SPとOC-企業戦略- |  ",
+    "headline": "insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) |  ",
     "image": {
       "@type": "ImageObject",
       "url": "",
       "height": 700,
       "width": 700
     },
-    "datePublished": "2015-04-21T00:00:00JST",
-    "dateModified": "2015-04-21T00:00:00JST",
+    "datePublished": "2015-04-19T00:00:00JST",
+    "dateModified": "2015-04-19T00:00:00JST",
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
@@ -74,76 +74,59 @@
         <div class="col-md-9">
 
           <article class="single">
-            <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+            <div class="image" style="background-image: url(http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png);"></div>
             <div class="body">
-              <h1>SPとOC-企業戦略-</h1>
+              <h1>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</h1>
               
 
-<p>会社の方針決めるために、企業戦略のたて方についての勉強する。</p>
+<h1 id="command-normalモードを間違う:a17bb7983acd67ec681ce8a93186b257">Command/Normalモードを間違う</h1>
 
-<p>教材は<code>ストーリーとしての競争戦略</code>、から。</p>
+<p>問題はこれ。<br />
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。</p>
 
-<h1 id="戦略には優劣がある:62b85e87991c447040253970b58f308c">戦略には優劣がある</h1>
+<p>自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。<br />
+gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。</p>
 
-<p>打率2.5割の打者に戦略Aを施すと3割<br />
-打率2.5割の打者に戦略Bを施すと3.5割</p>
+<!-- more -->
 
-<p>より結果を高く押し上げるためのものが戦略, それには優劣がある</p>
+<h1 id="暫定策:a17bb7983acd67ec681ce8a93186b257">暫定策</h1>
 
-<h1 id="戦略には差異が必要:62b85e87991c447040253970b58f308c">戦略には差異が必要</h1>
+<p>代替案として、 <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a>を使ってInsert/Normalモードの状態を色付きで
+画面下部に表示し、視覚的に理解しやすいように試みた。</p>
 
-<p>差異は大きく分けて2種類ある。SPとOCだ。</p>
+<p><img src="http://i.gyazo.com/92223ba03c523c28e705980706a3a7e9.png" alt="lightline" />
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。</p>
 
-<h1 id="spとoc:62b85e87991c447040253970b58f308c">SPとOC</h1>
+<p>また、横のラインを表示・非表示を( <code>autocmd InsertEnter,InsertLeave * set cursorline!</code> )で切り替える
+アプローチも試みたが、モード間違いは大きく改善はしなかった。</p>
+
+<h1 id="救世主:a17bb7983acd67ec681ce8a93186b257">救世主</h1>
+
+<p>これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)</p>
 
 <blockquote>
-<p>競争優位を確立するための戦略の立て方である。著者によれば、これには、ＯＣとＳＰのふたつがあるという。ＳＰはStrategic Positioningの略でポジショニングのこと、ＯＣはOrganizational Capabilitiyの略で組織能力のこと。</p>
+<p>To change the shape of the cursor in different modes, you can add the following into your vimrc.
+For the Gnome-Terminal (version 2.26)Edit</p>
 </blockquote>
 
-<h2 id="sp-strategic-positioning:62b85e87991c447040253970b58f308c">SP(Strategic Positioning)</h2>
+<pre><code class="language-vim">if has(&quot;autocmd&quot;)
+au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot;
+au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot;
+au VimLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot;
+endif
+</code></pre>
 
-<p>&ldquo;違うシェフでなく違うジャンルの料理のレシピを揃える&rdquo;</p>
+<p><img src="http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png" alt="insert" />
+<img src="http://i.gyazo.com/d8fb66d045fdc0b3ce9470d058bfe81e.png" alt="normal" /><br />
+すばらしい。<br />
+グローバルな設定を書き換える力技だが、キニシナイ。</p>
 
-<ul>
-<li>外的要因によって左右される</li>
-<li>他社と違った何をやるか</li>
-</ul>
-
-<h3 id="oe-operational-effectives:62b85e87991c447040253970b58f308c">OE(Operational Effectives)</h3>
-
-<p>ジャンルの中でのレベル, 程度の違いであれば、OE(operational effetives)として区別され、改善する部分として扱われる。</p>
-
-<h2 id="oc-organizational-capability:62b85e87991c447040253970b58f308c">OC(Organizational Capability)</h2>
-
-<p>&ldquo;ライバルにないシェフを揃える&rdquo;</p>
+<h1 id="special-thanks:a17bb7983acd67ec681ce8a93186b257">special thanks</h1>
 
 <ul>
-<li>内的要因によって左右される</li>
-<li>市場にない、簡単に模倣できないもの</li>
-<li>他社と違った何を持つか</li>
+<li>Lightline(<a href="https://github.com/itchyny/lightline.vim">https://github.com/itchyny/lightline.vim</a> )</li>
+<li>Stackoverflow(<a href="http://stackoverflow.com/a/6488717/4040150">http://stackoverflow.com/a/6488717/4040150</a>)</li>
 </ul>
-
-<h1 id="利益持続のためのトレードオフ:62b85e87991c447040253970b58f308c">利益持続のためのトレードオフ</h1>
-
-<p>[WIP, コスト, ニッチ特化による無競争]の三者択一となる</p>
-
-<h2 id="wtp:62b85e87991c447040253970b58f308c">WTP</h2>
-
-<p>= Willingness To Pay
-顧客が支払いたいと思う水準, これが高いと利益が出る</p>
-
-<h2 id="コスト:62b85e87991c447040253970b58f308c">コスト</h2>
-
-<p>低コストによって利益が出る</p>
-
-<h2 id="ニッチ特化による無競争:62b85e87991c447040253970b58f308c">ニッチ特化による無競争</h2>
-
-<p>市場に競争相手がいない事で価格の下落が起きない</p>
-
-<p>ちなみに利益を表す場合、<code>P = WTP - C</code>の式となる。<br />
-利益はWTPからコストを引いたもので表される</p>
-
-<p>~つづく~</p>
 
             </div>
 
@@ -151,10 +134,10 @@
               <section>
                 <div>
                   <div class="p-share">
-                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-21-sp%25E3%2581%25A8oc-%25E4%25BC%2581%25E6%25A5%25AD%25E6%2588%25A6%25E7%2595%25A5%2f&t=SP%e3%81%a8OC-%e4%bc%81%e6%a5%ad%e6%88%a6%e7%95%a5-" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-21-sp%25E3%2581%25A8oc-%25E4%25BC%2581%25E6%25A5%25AD%25E6%2588%25A6%25E7%2595%25A5%2f&text=SP%e3%81%a8OC-%e4%bc%81%e6%a5%ad%e6%88%a6%e7%95%a5-&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-                    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-21-sp%25E3%2581%25A8oc-%25E4%25BC%2581%25E6%25A5%25AD%25E6%2588%25A6%25E7%2595%25A5%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-21-sp%25E3%2581%25A8oc-%25E4%25BC%2581%25E6%25A5%25AD%25E6%2588%25A6%25E7%2595%25A5%2f&title=SP%e3%81%a8OC-%e4%bc%81%e6%a5%ad%e6%88%a6%e7%95%a5-" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2f&t=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2f&text=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-04-19-insert-mode%25E3%2581%25A7vim%25E3%2581%25AE%25E3%2582%25AB%25E3%2583%25BC%25E3%2582%25BD%25E3%2583%25AB%25E3%2582%25AD%25E3%2583%25BC%25E5%25BD%25A2%25E7%258A%25B6%25E3%2582%2592%25E5%25A4%2589%25E3%2581%2588%25E3%2581%25A6%25E5%25B9%25B8%25E3%2581%259B%25E3%2581%25AB%25E3%2581%25AA%25E3%2582%258B%2f&title=insert-mode%e3%81%a7vim%e3%81%ae%e3%82%ab%e3%83%bc%e3%82%bd%e3%83%ab%e3%82%ad%e3%83%bc%e5%bd%a2%e7%8a%b6%e3%82%92%e5%a4%89%e3%81%88%e3%81%a6%e5%b9%b8%e3%81%9b%e3%81%ab%e3%81%aa%e3%82%8b%28gnome-terminal%e3%81%ae%e5%a0%b4%e5%90%88%29" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
                   </div>
                 </div>
               </section>
@@ -191,22 +174,10 @@
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#戦略には優劣がある:62b85e87991c447040253970b58f308c">戦略には優劣がある</a></li>
-<li><a href="#戦略には差異が必要:62b85e87991c447040253970b58f308c">戦略には差異が必要</a></li>
-<li><a href="#spとoc:62b85e87991c447040253970b58f308c">SPとOC</a>
-<ul>
-<li><a href="#sp-strategic-positioning:62b85e87991c447040253970b58f308c">SP(Strategic Positioning)</a>
-<ul>
-<li><a href="#oe-operational-effectives:62b85e87991c447040253970b58f308c">OE(Operational Effectives)</a></li>
-</ul></li>
-<li><a href="#oc-organizational-capability:62b85e87991c447040253970b58f308c">OC(Organizational Capability)</a></li>
-</ul></li>
-<li><a href="#利益持続のためのトレードオフ:62b85e87991c447040253970b58f308c">利益持続のためのトレードオフ</a>
-<ul>
-<li><a href="#wtp:62b85e87991c447040253970b58f308c">WTP</a></li>
-<li><a href="#コスト:62b85e87991c447040253970b58f308c">コスト</a></li>
-<li><a href="#ニッチ特化による無競争:62b85e87991c447040253970b58f308c">ニッチ特化による無競争</a></li>
-</ul></li>
+<li><a href="#command-normalモードを間違う:a17bb7983acd67ec681ce8a93186b257">Command/Normalモードを間違う</a></li>
+<li><a href="#暫定策:a17bb7983acd67ec681ce8a93186b257">暫定策</a></li>
+<li><a href="#救世主:a17bb7983acd67ec681ce8a93186b257">救世主</a></li>
+<li><a href="#special-thanks:a17bb7983acd67ec681ce8a93186b257">special thanks</a></li>
 </ul>
 </nav></div>
   </section>
@@ -356,7 +327,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/linux-font">linux-font</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/linux-font">linux-font</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -365,7 +336,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/thread">thread</a></li><li><a href="https://iberianpig.github.io/tags/ibus">ibus</a></li><li><a href="https://iberianpig.github.io/tags/sql">sql</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/fcitx">fcitx</a></li>
       </ul>
     </div>
   </section>

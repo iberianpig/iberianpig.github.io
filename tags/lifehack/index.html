@@ -50,7 +50,7 @@
         <time>Sun, May 31, 2015</time>
       </div>
       <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
-      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることは？ 毎日Linuxと戯れるのには飽きないが、目の疲れや、夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、時間を短くするなど努力したことはあるはず。 現実問題難しい。 仕事でPC, 趣味でもPCを使うLinuxer達には。 そんなみなさんに朗報。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ そう、ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ・・・！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(ちなみに自分は買ってしまった) ブルーライトをカットする 本題に入ろう。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高い先入観があるかもしれないけれど、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftに切り替えて利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合はredshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定の場合は、日中は色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さがだいぶ変わるはず。 Linuxer達に良き睡眠を。</div>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることは？ 毎日Linuxと戯れるのには飽きないが、目の疲れや、夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、時間を短くするなど努力したことはあるはず。 現実問題難しい。 仕事でPC, 趣味でもPCを使うLinuxer達には。 そんなみなさんに朗報。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ そう、ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(ちなみに自分は買ってしまった) ブルーライトをカットする 本題に入ろう。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高い先入観があるかもしれないけれど、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftに切り替えて利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合はredshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定の場合は、日中は色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さがだいぶ変わるはず。 Linuxer達に良き睡眠を。</div>
     </footer>
   </a>
 </article>
@@ -59,14 +59,14 @@
             
             <div class="col-sm-4">
               <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/">
+  <a href="https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/">
     <div class="image" style="background-image: url(http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png);"></div>
     <footer>
       <div class="date">
         <time>Sun, Apr 19, 2015</time>
       </div>
       <h2 class="title">insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</h2>
-      <div class="summary">Command/Normal モードを間違う 問題はこれ。 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。 gVimではカーソル形状が 矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。 暫定策 代替案として、 lightline.vimを使ってInsert/Normal モードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた) To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot;</div>
+      <div class="summary">Command/Normalモードを間違う 問題はこれ。 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。 gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。 暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた) To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot; au VimLeave *</div>
     </footer>
   </a>
 </article>
@@ -229,7 +229,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/linux-font">linux-font</a></li>
       </ul>
     </div>
   </section>
@@ -238,7 +238,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/http">http</a></li><li><a href="https://iberianpig.github.io/tags/fcitx">fcitx</a></li><li><a href="https://iberianpig.github.io/tags/mozc">mozc</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/fcitx">fcitx</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>
@@ -248,7 +248,13 @@
     <header>Kohei Yamada</header>
     <div>Linux, Rails, AngularJS, Androidに関しての技術系の話題について書きます。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，スタートアップにてWeb/Mobileアプリ開発。</div>
   </section>
-  <a class="twitter-timeline" data-height="1000" data-dnt="true" data-theme="light" data-link-color="#2B7BB9" href="https://twitter.com/nukumaro22">Tweets by nukumaro22</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <a class="twitter-timeline"
+  data-dnt="true"
+  data-theme="light"
+  data-link-color="#2B7BB9"
+  data-tweet-limit="5"
+  data-chrome="nofooter transparent noborder noscrollbar noheader"
+  href="https://twitter.com/nukumaro22"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 </aside>
