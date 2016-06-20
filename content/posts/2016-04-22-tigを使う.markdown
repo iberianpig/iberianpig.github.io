@@ -10,8 +10,7 @@ image: http://zarezky.spb.ru/blog/images/tig-window.png
 ---
 
 CUIなGitクライアント。社内勉強会のために少し調べた。  
-意外と掘れば色々情報が出てくる印象。  
-調べ次第追記する。
+調べると色々と便利なオプションがあった。
 
 # tigの特徴
 * Gitクライアント

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rspec on iberianpigsty</title>
+    <link>http://iberianpig.github.io/tags/rspec/</link>
+    <description>Recent content in Rspec on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 11 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/tags/rspec/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rspecでなぜか@インスタンス変数が参照できない時</title>
+      <link>http://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B@%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</link>
+      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B@%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</guid>
+      <description>
+
+&lt;h1 id=&#34;controller内の-hogeが参照できない:1a4cc7bc024ef6bed03ee735cd6b5aa3&#34;&gt;controller内の@hogeが参照できない&lt;/h1&gt;
+
+&lt;p&gt;rspecの世界からcontroller内メソッドでインスタンス変数&lt;code&gt;@hoge&lt;/code&gt;を利用した場合は、&lt;br /&gt;
+直接rspecからインスタンス化された@hogeは参照できません。&lt;br /&gt;
+インスタンス化された評価する場合は&lt;code&gt;assigns(:hoge)&lt;/code&gt;で参照するといいようです。&lt;/p&gt;
+
+&lt;p&gt;また、controller内のメソッドが完了したあと、rspec内で&lt;code&gt;@hoge.reload&lt;/code&gt;してから評価するという手もあるそうです。&lt;/p&gt;
+
+&lt;p&gt;内容深く調査した上で、追記したいと思います。&lt;/p&gt;
+
+&lt;h1 id=&#34;その他:1a4cc7bc024ef6bed03ee735cd6b5aa3&#34;&gt;その他&lt;/h1&gt;
+
+&lt;p&gt;当然のことかもしれませんが、itブロック・contextブロック・describeブロックの中で定義した変数はその中に限ります。
+それ以外で扱うためにはインスタンス変数を利用する必要があります。
+はじめてのテストということでココらへんでハマってしまいましたが、そのおかげでスコープを意識してcontext分けたりできたので良かったと思います。&lt;/p&gt;
+
+&lt;p&gt;railsの世界の変数か、rspecの世界の変数なのかをきちんと意識する必要があった。
+rspecはrubyの変数が使えるブラウザとrailsと共通で参照できるテスト用DBの3つの大きなスコープがある。
+requestヘッダをrspecで作ってそれを使って投げることができる&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

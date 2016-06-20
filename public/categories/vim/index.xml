@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on iberianpigsty</title>
+    <link>http://iberianpig.github.io/categories/vim/</link>
+    <description>Recent content in Vim on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 19 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
+      <link>http://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B%28gnome-terminal%29/</guid>
+      <description>
+
+&lt;h1 id=&#34;command-normal-モードを間違う:ff449c990bbe11df9f128232db1438ac&#34;&gt;Command/Normal モードを間違う&lt;/h1&gt;
+
+&lt;p&gt;問題はこれ。&lt;br /&gt;
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。&lt;/p&gt;
+
+&lt;p&gt;自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。&lt;br /&gt;
+gVimではカーソル形状が 矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h1 id=&#34;暫定策:ff449c990bbe11df9f128232db1438ac&#34;&gt;暫定策&lt;/h1&gt;
+
+&lt;p&gt;代替案として、 &lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;lightline.vim&lt;/a&gt;を使ってInsert/Normal モードの状態を色付きで
+画面下部に表示し、視覚的に理解しやすいように試みた。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.gyazo.com/92223ba03c523c28e705980706a3a7e9.png&#34; alt=&#34;lightline&#34; /&gt;
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。&lt;/p&gt;
+
+&lt;p&gt;また、横のラインを表示・非表示を( &lt;code&gt;autocmd InsertEnter,InsertLeave * set cursorline!&lt;/code&gt; )で切り替える
+アプローチも試みたが、モード間違いは大きく改善はしなかった。&lt;/p&gt;
+
+&lt;h1 id=&#34;救世主:ff449c990bbe11df9f128232db1438ac&#34;&gt;救世主&lt;/h1&gt;
+
+&lt;p&gt;これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;To change the shape of the cursor in different modes, you can add the following into your vimrc.
+For the Gnome-Terminal (version 2.26)Edit&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-vim&#34;&gt;if has(&amp;quot;autocmd&amp;quot;)
+au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot;
+au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot;
+au VimLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot;
+endif
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png&#34; alt=&#34;insert&#34; /&gt;
+&lt;img src=&#34;http://i.gyazo.com/d8fb66d045fdc0b3ce9470d058bfe81e.png&#34; alt=&#34;normal&#34; /&gt;&lt;br /&gt;
+すばらしい。&lt;br /&gt;
+グローバルな設定を書き換える力技だが、キニシナイ。&lt;/p&gt;
+
+&lt;h1 id=&#34;special-thanks:ff449c990bbe11df9f128232db1438ac&#34;&gt;special thanks&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Lightline(&lt;a href=&#34;https://github.com/itchyny/lightline.vim&#34;&gt;https://github.com/itchyny/lightline.vim&lt;/a&gt; )&lt;/li&gt;
+&lt;li&gt;Stackoverflow(&lt;a href=&#34;http://stackoverflow.com/a/6488717/4040150&#34;&gt;http://stackoverflow.com/a/6488717/4040150&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vimで折りたたみしないようにする</title>
+      <link>http://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <description>
+
+&lt;h1 id=&#34;vimの折りたたみをしない設定:1663c1f1273913c1f484bd5874af7d2a&#34;&gt;Vimの折りたたみをしない設定&lt;/h1&gt;
+
+&lt;p&gt;いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に
+毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set foldmethod=syntax
+let perl_fold=1
+set foldlevel=100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;special-thanks:1663c1f1273913c1f484bd5874af7d2a&#34;&gt;special thanks&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.ksknet.net/vi/post_183.html&#34;&gt;vimの折りたたみ設定&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim-surround</title>
+      <link>http://iberianpig.github.io/posts/2014-09-02-vim-surround/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid>
+      <description>
+
+&lt;h1 id=&#34;vim-surround:004a128efbb74be38670117f7f54793f&#34;&gt;vim-surround&lt;/h1&gt;
+
+&lt;p&gt;テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる&lt;br /&gt;
+すぐに忘れてしまうのでメモ&lt;/p&gt;
+
+&lt;h2 id=&#34;よく使うコマンド:004a128efbb74be38670117f7f54793f&#34;&gt;よく使うコマンド&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;コマンド&lt;/th&gt;
+&lt;th&gt;実行内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;cs({&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;(&lt;/code&gt;を&lt;code&gt;{&lt;/code&gt;に置き換える&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;csw&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;単語の外側を&lt;code&gt;&amp;quot;&lt;/code&gt;で囲む&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ci&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&lt;/code&gt;で囲われた部分を消去し、入力状態に&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;ci&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&lt;/code&gt;で囲われた部分を消去し、入力状態に&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;いつも忘れるコマンド:004a128efbb74be38670117f7f54793f&#34;&gt;いつも忘れるコマンド&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;コマンド&lt;/th&gt;
+&lt;th&gt;実行内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dst&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tagで囲われた部分を消去&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;yss&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&lt;/code&gt;で行を囲む&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;yss=&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;%=&lt;/code&gt;で行を囲む(vim-rails必須)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;yss-&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;lt;%&lt;/code&gt;で行を囲む(vim-rails必須)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;dst&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tagで囲われた部分を消去&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;選択状態で&lt;code&gt;S&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;&lt;/code&gt;で選択範囲を囲む&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

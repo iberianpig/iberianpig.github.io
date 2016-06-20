@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux Font on iberianpigsty</title>
+    <link>http://iberianpig.github.io/categories/linux-font/</link>
+    <description>Recent content in Linux Font on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 02 Nov 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://iberianpig.github.io/categories/linux-font/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Migu Font</title>
+      <link>http://iberianpig.github.io/posts/2013-11-02-migu-font/</link>
+      <pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://iberianpig.github.io/posts/2013-11-02-migu-font/</guid>
+      <description>&lt;p&gt;#フォントをMigu Font へ変更&lt;/p&gt;
+
+&lt;p&gt;昨日 Steve Jobsの映画見てから、フォントはやっぱ綺麗な方がいいよねー。と思って、翌々見てみたら自分のPCの文字がデフォルトのフォントのままだった。
+&lt;!-- more --&gt;
+いつもお気に入りのフォントがあってそれを使っていたのだが、LaptopのOSをUbuntuからelementary OSに入れ替えた時からデフォルトのフォントのままになってた。&lt;/p&gt;
+
+&lt;p&gt;ちなみに&lt;a href=&#34;http://mix-mplus-ipa.sourceforge.jp/migu/&#34;&gt;Miguフォント&lt;/a&gt;がお気に入りのフォントです。&lt;/p&gt;
+
+&lt;p&gt;濁点、半濁点が見やすく、美しい。タイプしててキモチイイ。&lt;/p&gt;
+
+&lt;p&gt;##ブラウザのフォントを変更してみる。&lt;/p&gt;
+
+&lt;p&gt;Chromium
+&lt;code&gt;設定 ＞ Webコンテンツ ＞ フォントをカスタマイズ&lt;/code&gt; にて設定。&lt;/p&gt;
+
+&lt;p&gt;##SublimeTextのフォントも変更してみる&lt;/p&gt;
+
+&lt;p&gt;設定ファイル &lt;code&gt;Preferences &amp;gt; Settings-User&lt;/code&gt;をクリック&lt;/p&gt;
+
+&lt;p&gt;Preferences.sublime-settings&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;,
+  &amp;quot;font_size&amp;quot;: 12,
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;なんだかフォントを変更しただけで少し幸せになれた気がする&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
