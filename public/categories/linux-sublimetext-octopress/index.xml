@@ -1,16 +1,63 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
-    <link>http://iberianpig.github.io/categories/linux-sublimetext-octopress/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2013-10-26 00:00:00 &#43;0000 UTC</updated>
-
+    <title>Linux Sublimetext Octopress on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/linux-sublimetext-octopress/</link>
+    <description>Recent content in Linux Sublimetext Octopress on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 26 Oct 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/categories/linux-sublimetext-octopress/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>first commit</title>
+      <link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
       
-    
+      <guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid>
+      <description>
 
+&lt;h1 id=&#34;linux-octpress-sublime-text-2-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b&#34;&gt;Linux + Octpress + Sublime Text 2 + SublimeIbus&lt;/h1&gt;
+
+&lt;p&gt;ちょっと前からSublimeText使ってたんだけど、デフォルトで対応してないからかLinuxでの日本語入力がめんどくさい。&lt;/p&gt;
+
+&lt;p&gt;LinuxでSublmeTextでJapaneseは鬼門のようだ。
+&lt;!-- more --&gt;
+InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるものの、萎える。非常に萎える。&lt;/p&gt;
+
+&lt;p&gt;そのくせブログもSublimeTextでやろうという湧いて出る謎のチャレンジャー精神は何なんだ。&lt;/p&gt;
+
+&lt;p&gt;しかしながら何とかヨサゲなソリューションを発見したので残しておく。&lt;/p&gt;
+
+&lt;p&gt;SublimeIbus(&lt;a href=&#34;https://github.com/chikatoike/SublimeIBus&#34;&gt;https://github.com/chikatoike/SublimeIBus&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;Readmeを見ているとこんな記述が。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;対象となる利用者
+
+  * Linux の Sublime Text 2 で日本語入力したい人
+  * InputHelper による日本語入力に不満を持っている人
+  * iBusを利用している人
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;おお、神よ！まさにこれっす！&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;SCIM、uim、その他のIMには対応していません。&lt;/code&gt; とあるものの自分はibus-mozc 使ってるのでOK&lt;/p&gt;
+
+&lt;h2 id=&#34;linux版sublimetextは日本語に難があり-subimeibusがオススメ:7f0f97d54a95156c6edd2ec6eb7f513b&#34;&gt;-&amp;gt;Linux版SublimeTextは日本語に難があり、SubimeIbusがオススメ&lt;/h2&gt;
+
+&lt;h3 id=&#34;若干課題あり:7f0f97d54a95156c6edd2ec6eb7f513b&#34;&gt;若干課題あり。&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;たまに日本語入力変換窓が迷子に&lt;/li&gt;
+&lt;li&gt;なぜかDeleteが動かない（日本語入力時）&lt;/li&gt;
+&lt;li&gt;SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;しかしながら、SublimeIbus使ってとりあえず日本語打てるようになったのでまずはよしとしますか。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

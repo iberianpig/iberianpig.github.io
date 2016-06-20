@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
-    <link>http://iberianpig.github.io/categories/linux-sublimetext/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2013-10-28 00:00:00 &#43;0000 UTC</updated>
-
+    <title>Linux Sublimetext on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/linux-sublimetext/</link>
+    <description>Recent content in Linux Sublimetext on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 28 Oct 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/categories/linux-sublimetext/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Escape Mozc with SublimeText</title>
+      <link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link>
+      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
       
-    
+      <guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid>
+      <description>
 
+&lt;h1 id=&#34;sublime-text2のinsertモードとsublimeibus-mozcの日本語入力モードをescape一発で同時に抜ける:7391f836d8f1885aa686c33b2e41fc60&#34;&gt;Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける&lt;/h1&gt;
+
+&lt;p&gt;これがやりたい。
+Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。
+&lt;!-- more --&gt;
+今はエスケープキー押してもMozc日本語からは抜けられない状態。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://qiita.com/iberianpig@github/items/0cc4269b83f675ccc54b&#34;&gt;vim&lt;/a&gt;ではMozc側の対応だけで出来てるんだけど。&lt;/p&gt;
+
+&lt;p&gt;今の所Escape２回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。&lt;/p&gt;
+
+&lt;p&gt;しかし依然として、途中で入力窓が迷子になるのは結構不便っすな。日本語を打ち込んでるんだけど、Windowが表示されないから、正しく入力されてるのか変換されているのかわからない&amp;hellip;。&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

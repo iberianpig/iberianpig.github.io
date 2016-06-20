@@ -1,16 +1,126 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
-    <link>http://iberianpig.github.io/tags/cordova-phonegap/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2016</rights>
-    <updated>2015-02-13 00:00:00 &#43;0000 UTC</updated>
-
+    <title>Cordova Phonegap on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/cordova-phonegap/</link>
+    <description>Recent content in Cordova Phonegap on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Feb 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://iberianpig.github.io/tags/cordova-phonegap/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>ApacheCordova勉強会第4回</title>
+      <link>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
-    
+      <guid>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</guid>
+      <description>
 
+&lt;h1 id=&#34;apachecordova勉強会第4回:7f5791b3de18c560158e6634345c658c&#34;&gt;ApacheCordova勉強会第4回&lt;/h1&gt;
+
+&lt;p&gt;AdobeからPhonegap開発チームの方々が来られていた。&lt;/p&gt;
+
+&lt;p&gt;以下雑なメモ。&lt;br /&gt;
+&lt;!-- more --&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;セッション1-米adobe-phonegapチーム-逐次通訳:7f5791b3de18c560158e6634345c658c&#34;&gt;セッション1：米Adobe PhoneGapチーム【逐次通訳】&lt;/h2&gt;
+
+&lt;p&gt;Adobeの人(Adobeに買収された開発チームの方)のセッション。英語同時翻訳。(ありがとうございました)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;パフォーマンス問題としていいニュース&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Apple、GoogleともにWebViewの高速化が進む&lt;/li&gt;
+&lt;li&gt;Appleもなんか出したらしい&lt;/li&gt;
+&lt;li&gt;AndroidのはおなじみCrossWalk projectの事&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Why Phonegap?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CrossPlatforms&lt;/li&gt;
+&lt;li&gt;ProjectSpeed&lt;/li&gt;
+&lt;li&gt;UI&lt;/li&gt;
+&lt;li&gt;Native functions&lt;/li&gt;
+&lt;li&gt;Update from Web&lt;/li&gt;
+&lt;li&gt;Appstoreを通さないアップデートができるとのこと ( てか、それいいの？ )&lt;/li&gt;
+&lt;li&gt;Plugin support&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;ShowCase ( PhonegapAppStoreで見れるよ )&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BankOfAmerica&lt;/li&gt;
+&lt;li&gt;Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい)&lt;/li&gt;
+&lt;li&gt;Untappd&lt;/li&gt;
+&lt;li&gt;Sworkit&lt;/li&gt;
+&lt;li&gt;Large Home Store&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;BaseCampもHybrid&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ほとんどがHTML5ベース&lt;/li&gt;
+&lt;li&gt;Rails作者, DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;PhoneGap Enterpriseについて&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Adobeのマネタイズのはなし&lt;/li&gt;
+&lt;li&gt;ダッシュボードでメタデータ統計など利用可能&lt;/li&gt;
+&lt;li&gt;マーケの人が(コンテンツなどを)管理画面から簡単に更新可能&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;セッション２-visual-studio-を使用した-cordova-開発:7f5791b3de18c560158e6634345c658c&#34;&gt;セッション２： Visual Studio を使用した Cordova 開発&lt;/h2&gt;
+
+&lt;p&gt;MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;VisualStudio
+
+&lt;ul&gt;
+&lt;li&gt;ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで４倍速。&lt;/li&gt;
+&lt;li&gt;補完の話とか便利機能の話&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;セッション３-windows開発者が知っておきたいcordova開発の話:7f5791b3de18c560158e6634345c658c&#34;&gt;セッション３： Windows開発者が知っておきたいCordova開発の話&lt;/h2&gt;
+
+&lt;p&gt;Monaca作ってるアシアルの方の話。
+Win上でのCorova開発iOS開発の壁を超える&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;chromeとUSBMAXD proxy つなげばiOSデバッグできるよ&lt;/li&gt;
+&lt;li&gt;GapDebugを使えばUSBMAXD互換なのでiOS/Android開発できるよ&lt;/li&gt;
+&lt;li&gt;BuildはBuildサーバとしてクラウドやMacを使う&lt;/li&gt;
+&lt;li&gt;リリースはどうしようもない、ApplicationLoaderがないとアップロードすることができない。
+
+&lt;ul&gt;
+&lt;li&gt;代行サービスがあるよでもID/パスワード必要だよ(笑)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Android -&amp;gt; iOSの開発順序の方がハマることは少ないらしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;その他:7f5791b3de18c560158e6634345c658c&#34;&gt;その他&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;飲み会でAdobeの方々， SmartFxの中の人とか居て色々話し聞けた。&lt;/li&gt;
+&lt;li&gt;React Nativeが気になってる人がやはり少なからず居たようだ。
+
+&lt;ul&gt;
+&lt;li&gt;パフォーマンスの観点がモバイルだと重要なのでそこら辺がどうなるのか気になる。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
