@@ -14,8 +14,8 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>first commit - iberianpigsty</title>
-  <meta property='og:title' content="first commit - iberianpigsty">
+  <title>Linux版SublmeTextでの日本語入力 - iberianpigsty</title>
+  <meta property='og:title' content="Linux版SublmeTextでの日本語入力 - iberianpigsty">
   <meta property="og:type" content="article">
   
 
@@ -30,7 +30,7 @@
       "@type":"WebPage",
       "@id":"https:\/\/iberianpig.github.io\/"
     },
-    "headline": "first commit |  ",
+    "headline": "Linux版SublmeTextでの日本語入力 |  ",
     "image": {
       "@type": "ImageObject",
       "url": "",
@@ -76,24 +76,20 @@
           <article class="single">
             <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
             <div class="body">
-              <h1>first commit</h1>
+              <h1>Linux版SublmeTextでの日本語入力</h1>
               
 
 <h1 id="linux-octpress-sublime-text-2-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b">Linux + Octpress + Sublime Text 2 + SublimeIbus</h1>
 
-<p>ちょっと前からSublimeText使ってたんだけど、デフォルトで対応してないからかLinuxでの日本語入力がめんどくさい。</p>
-
-<p>LinuxでSublmeTextでJapaneseは鬼門のようだ。
+<p>SublimeTextはデフォルトで日本語入力は対応してない。
+調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。
 <!-- more -->
-InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるものの、萎える。非常に萎える。</p>
+InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。</p>
 
-<p>そのくせブログもSublimeTextでやろうという湧いて出る謎のチャレンジャー精神は何なんだ。</p>
+<p>ブログもSublimeTextで書きたかったので調べを尽くした。
+何とかヨサゲなソリューションを発見したので残しておく。</p>
 
-<p>しかしながら何とかヨサゲなソリューションを発見したので残しておく。</p>
-
-<p>SublimeIbus(<a href="https://github.com/chikatoike/SublimeIBus">https://github.com/chikatoike/SublimeIBus</a>)</p>
-
-<p>Readmeを見ているとこんな記述が。</p>
+<h1 id="sublimeibus-https-github-com-chikatoike-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b">SublimeIbus(<a href="https://github.com/chikatoike/SublimeIBus">https://github.com/chikatoike/SublimeIBus</a>)</h1>
 
 <pre><code>対象となる利用者
 
@@ -102,13 +98,11 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
   * iBusを利用している人
 </code></pre>
 
-<p>おお、神よ！まさにこれっす！</p>
+<p>まさに。求めていたもの。</p>
 
-<p><code>SCIM、uim、その他のIMには対応していません。</code> とあるものの自分はibus-mozc 使ってるのでOK</p>
+<p><code>SCIM、uim、その他のIMには対応していません。</code>とあるものの自分はibus-mozc 使ってるのでOK</p>
 
-<h2 id="linux版sublimetextは日本語に難があり-subimeibusがオススメ:7f0f97d54a95156c6edd2ec6eb7f513b">-&gt;Linux版SublimeTextは日本語に難があり、SubimeIbusがオススメ</h2>
-
-<h3 id="若干課題あり:7f0f97d54a95156c6edd2ec6eb7f513b">若干課題あり。</h3>
+<h2 id="若干課題は残る:7f0f97d54a95156c6edd2ec6eb7f513b">若干課題は残る</h2>
 
 <ul>
 <li>たまに日本語入力変換窓が迷子に</li>
@@ -116,7 +110,7 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
 <li>SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）</li>
 </ul>
 
-<p>しかしながら、SublimeIbus使ってとりあえず日本語打てるようになったのでまずはよしとしますか。</p>
+<p>良いソリューションは無いのか</p>
 
             </div>
 
@@ -124,10 +118,10 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
               <section>
                 <div>
                   <div class="p-share">
-                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&t=first%20commit" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&text=first%20commit&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&t=Linux%e7%89%88SublmeText%e3%81%a7%e3%81%ae%e6%97%a5%e6%9c%ac%e8%aa%9e%e5%85%a5%e5%8a%9b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&text=Linux%e7%89%88SublmeText%e3%81%a7%e3%81%ae%e6%97%a5%e6%9c%ac%e8%aa%9e%e5%85%a5%e5%8a%9b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
                     <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&title=first%20commit" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2013-10-26-first-commit%2f&title=Linux%e7%89%88SublmeText%e3%81%a7%e3%81%ae%e6%97%a5%e6%9c%ac%e8%aa%9e%e5%85%a5%e5%8a%9b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
                   </div>
                 </div>
               </section>
@@ -164,12 +158,10 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#linux-octpress-sublime-text-2-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b">Linux + Octpress + Sublime Text 2 + SublimeIbus</a>
+<li><a href="#linux-octpress-sublime-text-2-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b">Linux + Octpress + Sublime Text 2 + SublimeIbus</a></li>
+<li><a href="#sublimeibus-https-github-com-chikatoike-sublimeibus:7f0f97d54a95156c6edd2ec6eb7f513b">SublimeIbus(<a href="https://github.com/chikatoike/SublimeIBus">https://github.com/chikatoike/SublimeIBus</a>)</a>
 <ul>
-<li><a href="#linux版sublimetextは日本語に難があり-subimeibusがオススメ:7f0f97d54a95156c6edd2ec6eb7f513b">-&gt;Linux版SublimeTextは日本語に難があり、SubimeIbusがオススメ</a>
-<ul>
-<li><a href="#若干課題あり:7f0f97d54a95156c6edd2ec6eb7f513b">若干課題あり。</a></li>
-</ul></li>
+<li><a href="#若干課題は残る:7f0f97d54a95156c6edd2ec6eb7f513b">若干課題は残る</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -320,7 +312,7 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git-pivotaltracker-ruby">git-pivotaltracker-ruby</a></li><li><a href="https://iberianpig.github.io/categories/linux-mysql-elementaryos-freya">linux-mysql-elementaryos-freya</a></li><li><a href="https://iberianpig.github.io/categories/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack">ubuntu-elementaryos-睡眠-lifehack</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
       </ul>
     </div>
   </section>
@@ -329,7 +321,7 @@ InputHelperなるものを使ってはみたものの、ショートカットキ
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/strategy">strategy</a></li><li><a href="https://iberianpig.github.io/tags/rspec">rspec</a></li><li><a href="https://iberianpig.github.io/tags/sharedpreferences">sharedpreferences</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu-elementaryos-%E7%9D%A1%E7%9C%A0-lifehack">ubuntu-elementaryos-睡眠-lifehack</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/vim-lifehack-linux">vim-lifehack-linux</a></li><li><a href="https://iberianpig.github.io/tags/cordova-html5">cordova-html5</a></li><li><a href="https://iberianpig.github.io/tags/bootstrap">bootstrap</a></li><li><a href="https://iberianpig.github.io/tags/linux-elementaryos-luna-freya">linux-elementaryos-luna-freya</a></li><li><a href="https://iberianpig.github.io/tags/angularjs-javascript">angularjs-javascript</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/pivotaltracker">pivotaltracker</a></li><li><a href="https://iberianpig.github.io/tags/fold">fold</a></li><li><a href="https://iberianpig.github.io/tags/sql">sql</a></li>
       </ul>
     </div>
   </section>
