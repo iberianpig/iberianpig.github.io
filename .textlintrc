@@ -7,6 +7,15 @@
       4.3.1.丸かっこ（）: false,
       4.2.7.コロン(：) : false,
     },
+    "no-doubled-joshi": {
+      "min_interval" : 1,
+      "strict": false,
+      "allow": []
+    },
+    "sentence-length": true,
+    "ja-no-weak-phrase": true,
+    "no-hankaku-kana": true,
+    "no-double-negative-ja": true,
     "no-dropping-the-ra": true,
     "spellcheck-tech-word": true,
     "no-mix-dearu-desumasu": {

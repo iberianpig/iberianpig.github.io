@@ -6,13 +6,14 @@ paginate = 16
 theme = "hugo_theme_robust"
 canonifyurls = true
 publishdir = "public"
-
-[permalinks]
-    post = "/:year/:month/:day/:filename/"
+MetaDataFormat = "yaml"
 
 [params]
     disqusShortname = "iberianpigsty"
     GoogleAnalyticsUserID = "UA-45334010-1"
     twitterId = "nukumaro22"
     author = "Kohei Yamada"
-    description = "Linux, Rails, AngularJS, Androidに関しての技術系の話題について書きます。/ メインマシンはDell XPS13, elementaryOS 14.04 freya/ 2014-04よりSIerを退職，スタートアップにてWeb/Mobileアプリ開発。"
+    description = "Linux, Rails, AngularJS, Androidなどについての技術ブログ。メインマシンはDell XPS13, OSはelementaryOS 14.04 freya。2014-04よりSIerを退職し、スタートアップにてWebサービス開発を行う。"
+
+[params.eyecatch]
+    linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
