@@ -43,6 +43,22 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jul 11, 2016</time>
+      </div>
+      <h2 class="title">2016 07 11 ソースコードを読む</h2>
+      <div class="summary">エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。 どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。 ソースを読むメリット 間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮 必要なモノ 気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元ジャンプができればOK 言語、フレームワークの公式リファレンス(http://devdocs.io) 武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要 根性 ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要 pry 調べたいコードを実行させ、binding.pryでブレークポイントを作る edit METHOD_NAMEがどこから呼ばれているのかを見る。 Rubyのコードは実行時でないと、正しい呼び出し元がわからない。 また、pryはコード・リーディングやデバッグに便利様々な機能を持っている * show-source METHOD_NAME でソースを読むこともできる。 * ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる。 IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする * これだけのためにIDE使うという人は多い * pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.mdを読んだり、lib/から関係していそうなところをおもむろに開いてみたりしている。 特に自分が使っているバージョンのREADME.mdを読むということに関しては最速。 言語、フレームワークのリファレンス リファレンスをいつでも読めるようにしておくことは重要(好きなツールで) DevDocsをよく使う * リファレンスなんでも横断検索ツール * Rails, Lodash,</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/">
     <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
     <footer>
@@ -354,22 +370,6 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-03-21-ng-japan/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sat, Mar 21, 2015</time>
-      </div>
-      <h2 class="title">ng-japan</h2>
-      <div class="summary">Angualrjsの日本初のカンファレンス ng-japan2015 が渋谷で2015/03/21にあったので行って来た。 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。 結構人がいて定員500名の会場が普通に埋まってた こんなかんじ↓ すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63 &mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。 onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。 アプリ内ではWebviewを利用している。 ###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する ###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo; ###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評 ###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい ##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない チューニング対象となる5つのフェーズ Loading リソースの読み込みやパース 組み込みなのであんまやることない Scripting JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる Rendering レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。 Layout すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー Painting 描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成 雑多なチューニングの小話 translate3d(0,0,0)が早いのはなぜ？ GPUで描画されるから?</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -395,6 +395,19 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
   <section>
     <header>LatestPosts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/" class="clearfix">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jul 11, 2016</time>
+      </div>
+      <h2 class="title">2016 07 11 ソースコードを読む</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
@@ -513,19 +526,6 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Jun 7, 2015</time>
-      </div>
-      <h2 class="title">EasytetherでBluetoothテザリング</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -534,7 +534,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -543,7 +543,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/strategy">strategy</a></li><li><a href="https://iberianpig.github.io/tags/http">http</a></li><li><a href="https://iberianpig.github.io/tags/listview">listview</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/sql">sql</a></li><li><a href="https://iberianpig.github.io/tags/vimrc">vimrc</a></li>
       </ul>
     </div>
   </section>
