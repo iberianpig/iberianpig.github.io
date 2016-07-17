@@ -83,17 +83,13 @@
 
 <h1 id="寝不足のlinuxer達に贈る:aafdb94a326bfa5d225f86a3bcadd33b">寝不足のLinuxer達に贈る</h1>
 
-<p>最近、寝不足のような気がすることは？</p>
+<p>最近、寝不足のような気がすることはないだろうか？</p>
 
-<p>毎日Linuxと戯れるのには飽きないが、目の疲れや、夜の寝不足と行ったことからは免れられない。</p>
+<p>毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。</p>
 
-<p>少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、時間を短くするなど努力したことはあるはず。</p>
+<p>少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。</p>
 
 <p>現実問題難しい。</p>
-
-<p>仕事でPC, 趣味でもPCを使うLinuxer達には。</p>
-
-<p>そんなみなさんに朗報。</p>
 
 <!-- more -->
 
@@ -109,20 +105,19 @@
 
 <p><img src="http://www.jins-jp.com/jins-pc/img/koga.jpg" alt="ぜんぶブルーライトのせいだ" /></p>
 
-<p>そう、ブルーライト、聞いたことあるはず。</p>
+<p>ブルーライト、聞いたことあるはず。</p>
 
 <p>寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。</p>
 
 <h1 id="メガネを買うか否か:aafdb94a326bfa5d225f86a3bcadd33b">メガネを買うか否か</h1>
 
-<p>（ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）
-&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(ちなみに自分は買ってしまった)</p>
+<p>（ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）<br />
+&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)</p>
 
 <h1 id="ブルーライトをカットする:aafdb94a326bfa5d225f86a3bcadd33b">ブルーライトをカットする</h1>
 
-<p>本題に入ろう。</p>
-
-<p>実はこのブルーライト、<strong>色温度</strong>を下げることで減量させることができる。</p>
+<p>本題に入る。<br />
+実はこのブルーライト、<strong>色温度</strong>を下げることで減量させることができる。</p>
 
 <blockquote>
 <p>色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。
@@ -130,7 +125,7 @@
 </blockquote>
 
 <p>実は色温度は青い方が高い。
-炎は赤いので赤は温度が高い先入観があるかもしれないけれど、実際は炎の先端の青い部分が最も温度が高い。</p>
+炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。</p>
 
 <p>そう、モニタの色温度をソフトウェアで変更さえすれば良い。
 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。</p>
@@ -143,13 +138,13 @@
 <a href="http://manpages.ubuntu.com/manpages/trusty/man5/redshift.5.html">manual page</a>
 このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。</p>
 
-<p>Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftに切り替えて利用している。</p>
+<p>Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。</p>
 
 <h2 id="redshiftのインストール:aafdb94a326bfa5d225f86a3bcadd33b">Redshiftのインストール</h2>
 
 <p><code>sudo apt-get install redshift redshift-gtk</code></p>
 
-<p>パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合はredshift-gtkは必要ない。</p>
+<p>パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。</p>
 
 <h2 id="redshiftの起動と設定:aafdb94a326bfa5d225f86a3bcadd33b">Redshiftの起動と設定</h2>
 
@@ -163,9 +158,9 @@
 <p>詳細な設定内容はコマンドラインや外部ファイルから入力することができる。<br />
 <a href="http://kledgeb.blogspot.jp/2013/01/ubuntu-redshift-1.html">こちらのサイト</a>で詳しく紹介されていた。</p>
 
-<p>デフォルトの設定の場合は、日中は色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)</p>
+<p>デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)</p>
 
-<p>夜の寝付きの良さがだいぶ変わるはず。<br />
+<p>夜の寝付きの良さが変わるはず。<br />
 Linuxer達に良き睡眠を。</p>
 
             </div>
@@ -372,7 +367,7 @@ Linuxer達に良き睡眠を。</p>
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -381,7 +376,7 @@ Linuxer達に良き睡眠を。</p>
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/javascript-angualrjs">javascript-angualrjs</a></li><li><a href="https://iberianpig.github.io/tags/thread">thread</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lubuntu">lubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li>
       </ul>
     </div>
   </section>
