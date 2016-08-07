@@ -43,8 +43,24 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/67/Paper_prototype_of_website_user_interface,_2015-04-16.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Aug 8, 2016</time>
+      </div>
+      <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
+      <div class="summary">何がうれしいのか APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時に便利。 外部のAPIサーバのように振る舞うサーバをlocalhost上に作ることができる。 リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。 初期にAPIのスタブサーバが出来てしまうと サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。 また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。 実際にあった話として APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。 node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。 package.jsonに以下のような記述をして起動スクリプトを作成する。 &quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。 APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。 Railsでの通常の開発だとmodel、controller、viewの順で作っていく。 プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。 フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。 固いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。 ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/">
-    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2014/12/30/05/42/source-code-583537_960_720.jpg);"></div>
+    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
     <footer>
       <div class="date">
         <time>Mon, Jul 11, 2016</time>
@@ -119,7 +135,7 @@
             <div class="col-sm-4">
               <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/">
-    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2013/07/13/13/41/bash-161382_960_720.png);"></div>
+    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
     <footer>
       <div class="date">
         <time>Fri, Apr 15, 2016</time>
@@ -354,22 +370,6 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Apr 13, 2015</time>
-      </div>
-      <h2 class="title">AngularでのDOMへのアクセス</h2>
-      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。 &lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時 str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。 hashed_data = angular.fomJson(str) これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -397,8 +397,21 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/" class="clearfix">
+    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/6/67/Paper_prototype_of_website_user_interface,_2015-04-16.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Aug 8, 2016</time>
+      </div>
+      <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/" class="clearfix">
-    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2014/12/30/05/42/source-code-583537_960_720.jpg);"></div>
+    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
     <footer>
       <div class="date">
         <time>Mon, Jul 11, 2016</time>
@@ -424,7 +437,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/" class="clearfix">
-    <div class="image" style="background-image: url(https://pixabay.com/static/uploads/photo/2013/07/13/13/41/bash-161382_960_720.png);"></div>
+    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
     <footer>
       <div class="date">
         <time>Fri, Apr 15, 2016</time>
@@ -513,19 +526,6 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/" class="clearfix">
-    <div class="image" style="background-image: url(https://c1.staticflickr.com/4/3913/14522157584_42fff58cfc_z.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Jun 21, 2015</time>
-      </div>
-      <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -534,7 +534,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/"></a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -543,7 +543,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/pry">pry</a></li><li><a href="https://iberianpig.github.io/tags/strategy">strategy</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/%E7%9D%A1%E7%9C%A0">睡眠</a></li><li><a href="https://iberianpig.github.io/tags/fold">fold</a></li>
       </ul>
     </div>
   </section>
