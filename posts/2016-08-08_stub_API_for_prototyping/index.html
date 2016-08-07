@@ -79,11 +79,12 @@
               <h1>プロトタイピングのためのスタブAPIサーバ</h1>
               
 
+<p>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。<br />
+外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。</p>
+
 <h1 id="何がうれしいのか:ebe6f9f8b3969e2e0248ca648b1644df">何がうれしいのか</h1>
 
-<p>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時に便利。<br />
-外部のAPIサーバのように振る舞うサーバをlocalhost上に作ることができる。<br />
-リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。</p>
+<p>リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。</p>
 
 <p>初期にAPIのスタブサーバが出来てしまうと</p>
 
@@ -93,6 +94,8 @@
 </ul>
 
 <p>jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。</p>
+
+<h2 id="apiドキュメントの自動生成:ebe6f9f8b3969e2e0248ca648b1644df">APIドキュメントの自動生成</h2>
 
 <p>加えてドキュメントサーバとして動くスタブサーバであればさらに便利。</p>
 
@@ -119,6 +122,8 @@
 <p>非常にシンプル。
 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。</p>
 
+<h2 id="起動スクリプトを作る:ebe6f9f8b3969e2e0248ca648b1644df">起動スクリプトを作る</h2>
+
 <p>package.jsonに以下のような記述をして起動スクリプトを作成する。</p>
 
 <pre><code class="language-json">&quot;scripts&quot;: {
@@ -144,11 +149,13 @@ POSTで認証用のレスポンスも返せる、ドキュメントサーバが�
 <li>サーバサイドにビジネスロジックを書いていく</li>
 </ol>
 
+<h2 id="柔らかい所から作り始める:ebe6f9f8b3969e2e0248ca648b1644df">柔らかい所から作り始める</h2>
+
 <p>経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。<br />
 Railsでの通常の開発だとmodel、controller、viewの順で作っていく。<br />
 プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。<br />
 フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。<br />
-固いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。<br />
+硬いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。<br />
 ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</p>
 
             </div>
@@ -197,9 +204,18 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#何がうれしいのか:ebe6f9f8b3969e2e0248ca648b1644df">何がうれしいのか</a></li>
-<li><a href="#node-easymockでスタブサーバ作る:ebe6f9f8b3969e2e0248ca648b1644df">node-easymockでスタブサーバ作る</a></li>
-<li><a href="#リーンな開発のためのapi開発:ebe6f9f8b3969e2e0248ca648b1644df">リーンな開発のためのAPI開発</a></li>
+<li><a href="#何がうれしいのか:ebe6f9f8b3969e2e0248ca648b1644df">何がうれしいのか</a>
+<ul>
+<li><a href="#apiドキュメントの自動生成:ebe6f9f8b3969e2e0248ca648b1644df">APIドキュメントの自動生成</a></li>
+</ul></li>
+<li><a href="#node-easymockでスタブサーバ作る:ebe6f9f8b3969e2e0248ca648b1644df">node-easymockでスタブサーバ作る</a>
+<ul>
+<li><a href="#起動スクリプトを作る:ebe6f9f8b3969e2e0248ca648b1644df">起動スクリプトを作る</a></li>
+</ul></li>
+<li><a href="#リーンな開発のためのapi開発:ebe6f9f8b3969e2e0248ca648b1644df">リーンな開発のためのAPI開発</a>
+<ul>
+<li><a href="#柔らかい所から作り始める:ebe6f9f8b3969e2e0248ca648b1644df">柔らかい所から作り始める</a></li>
+</ul></li>
 </ul>
 </nav></div>
   </section>
@@ -349,7 +365,7 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/"></a></li>
       </ul>
     </div>
   </section>
@@ -358,7 +374,7 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/javascript-angualrjs">javascript-angualrjs</a></li><li><a href="https://iberianpig.github.io/tags/font">font</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/sharedpreferences">sharedpreferences</a></li><li><a href="https://iberianpig.github.io/tags/"></a></li>
       </ul>
     </div>
   </section>
