@@ -14,8 +14,8 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>Rspecでなぜか@インスタンス変数が参照できない時 - iberianpigsty</title>
-  <meta property='og:title' content="Rspecでなぜか@インスタンス変数が参照できない時 - iberianpigsty">
+  <title>Rspecでインスタンス変数が参照できない - iberianpigsty</title>
+  <meta property='og:title' content="Rspecでインスタンス変数が参照できない - iberianpigsty">
   <meta property="og:type" content="article">
   
 
@@ -30,7 +30,7 @@
       "@type":"WebPage",
       "@id":"https:\/\/iberianpig.github.io\/"
     },
-    "headline": "Rspecでなぜか@インスタンス変数が参照できない時 |  ",
+    "headline": "Rspecでインスタンス変数が参照できない |  ",
     "image": {
       "@type": "ImageObject",
       "url": "",
@@ -76,28 +76,34 @@
           <article class="single">
             <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
             <div class="body">
-              <h1>Rspecでなぜか@インスタンス変数が参照できない時</h1>
+              <h1>Rspecでインスタンス変数が参照できない</h1>
               
 
-<h1 id="controller内の-hogeが参照できない:1a4cc7bc024ef6bed03ee735cd6b5aa3">controller内の@hogeが参照できない</h1>
+<p>Rspecの世界からController内メソッドでインスタンス変数<code>@hoge</code>を利用した場合は、
+直接Rspecからインスタンス化された<code>@hoge</code>は別物である。<br />
+まず、この事実を理解すべきだった。</p>
 
-<p>rspecの世界からcontroller内メソッドでインスタンス変数<code>@hoge</code>を利用した場合は、<br />
-直接rspecからインスタンス化された@hogeは参照できません。<br />
-インスタンス化された評価する場合は<code>assigns(:hoge)</code>で参照するといいようです。</p>
+<h1 id="controllerの中の値をテストする:1a4cc7bc024ef6bed03ee735cd6b5aa3">Controllerの中の値をテストする</h1>
 
-<p>また、controller内のメソッドが完了したあと、rspec内で<code>@hoge.reload</code>してから評価するという手もあるそうです。</p>
+<p>Rspec側からRailsのController側でインスタンス化された値を評価する場合は<code>assigns(:hoge)</code>で参照するとよい。</p>
 
-<p>内容深く調査した上で、追記したいと思います。</p>
+<p>また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。<br />
+<code>expect(Model.last.name).to eq 'modelname'</code>で評価する。</p>
+
+<p>どちらもどのような値がアサインされていればよいのかを意識してテストを書く。</p>
 
 <h1 id="その他:1a4cc7bc024ef6bed03ee735cd6b5aa3">その他</h1>
 
-<p>当然のことかもしれませんが、itブロック・contextブロック・describeブロックの中で定義した変数はその中に限ります。
-それ以外で扱うためにはインスタンス変数を利用する必要があります。
-はじめてのテストということでココらへんでハマってしまいましたが、そのおかげでスコープを意識してcontext分けたりできたので良かったと思います。</p>
+<p>itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。<br />
+そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。<br />
+はじめてのテストということでハマってしまった。</p>
 
-<p>railsの世界の変数か、rspecの世界の変数なのかをきちんと意識する必要があった。
-rspecはRubyの変数が使えるブラウザとrailsと共通で参照できるテスト用DBの3つの大きなスコープがある。
-requestヘッダをrspecで作ってそれを使って投げることができる</p>
+<p>テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。<br />
+実行中のプログラム内なのか、その外なのかを常に意識する。<br />
+RequestヘッダをRspecで作ってそれをRailsに投げる。<br />
+Railsの中のController内で、どのような値がアサインされるかテストする。<br />
+どの世界の値を取得して何と比べるのか。<br />
+何をテストすべきかを意識していれば回避できる問題。</p>
 
             </div>
 
@@ -105,10 +111,10 @@ requestヘッダをrspecで作ってそれを使って投げることができ�
               <section>
                 <div>
                   <div class="p-share">
-                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&t=Rspec%e3%81%a7%e3%81%aa%e3%81%9c%e3%81%8b%40%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&text=Rspec%e3%81%a7%e3%81%aa%e3%81%9c%e3%81%8b%40%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&t=Rspec%e3%81%a7%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&text=Rspec%e3%81%a7%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
                     <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&title=Rspec%e3%81%a7%e3%81%aa%e3%81%9c%e3%81%8b%40%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84%e6%99%82" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-09-11-rspec%25E3%2581%25A7%25E3%2581%25AA%25E3%2581%259C%25E3%2581%258B%40%25E3%2582%25A4%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25B3%25E3%2582%25B9%25E5%25A4%2589%25E6%2595%25B0%25E3%2581%258C%25E5%258F%2582%25E7%2585%25A7%25E3%2581%25A7%25E3%2581%258D%25E3%2581%25AA%25E3%2581%2584%25E6%2599%2582%2f&title=Rspec%e3%81%a7%e3%82%a4%e3%83%b3%e3%82%b9%e3%82%bf%e3%83%b3%e3%82%b9%e5%a4%89%e6%95%b0%e3%81%8c%e5%8f%82%e7%85%a7%e3%81%a7%e3%81%8d%e3%81%aa%e3%81%84" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
                   </div>
                 </div>
               </section>
@@ -145,7 +151,7 @@ requestヘッダをrspecで作ってそれを使って投げることができ�
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#controller内の-hogeが参照できない:1a4cc7bc024ef6bed03ee735cd6b5aa3">controller内の@hogeが参照できない</a></li>
+<li><a href="#controllerの中の値をテストする:1a4cc7bc024ef6bed03ee735cd6b5aa3">Controllerの中の値をテストする</a></li>
 <li><a href="#その他:1a4cc7bc024ef6bed03ee735cd6b5aa3">その他</a></li>
 </ul>
 </nav></div>
@@ -296,7 +302,7 @@ requestヘッダをrspecで作ってそれを使って投げることができ�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -305,7 +311,7 @@ requestヘッダをrspecで作ってそれを使って投げることができ�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vimrc">vimrc</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/pry">pry</a></li><li><a href="https://iberianpig.github.io/tags/easytether">easytether</a></li>
       </ul>
     </div>
   </section>
