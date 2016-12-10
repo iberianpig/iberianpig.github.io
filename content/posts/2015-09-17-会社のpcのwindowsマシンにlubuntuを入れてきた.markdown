@@ -6,7 +6,7 @@ date: 2015-09-17
 comments: true
 tags: lubuntu
 categories: linux
-image: https://upload.wikimedia.org/wikipedia/commons/d/d1/Lubuntu.png
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png
 
 ---
 

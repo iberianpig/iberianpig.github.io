@@ -6,7 +6,7 @@ date: 2016-04-27
 comments: true
 tags: 
 categories: linux
-image: https://pixabay.com/static/uploads/photo/2015/05/26/21/53/ubuntu-785622_960_720.png
+image: https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png
 ---
 
 前回の記事でワークスペースに対してWindowの再配置をするスクリプトがほしいと書いていたが、

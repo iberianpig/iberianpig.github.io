@@ -37,7 +37,19 @@ mysqldump -u <USERNAME> -p -t <DBNAME> <TABLENAME1> [ <TABLENAME2> ... ] > <DUMP
 mysqll -u <USERNAME> -p <DBNAME> < <DUMPFILENAME>.sql
 ```
 
+# seed_fuで入れる場合
+
+[mbleigh/seed-fu](https://github.com/mbleigh/seed-fu) という主に環境整備時に利用するものGemがある。  
+テストデータやシードデータの導入の利用される。  
+自分は実データをmysqlからdumpしてseed_fu用のfixtureを生成するrakeタスクを作成しており、ユースケースによってはこちらを利用する。
+
+{{< gist iberianpig 0d977156c0474bd3be86bfd73fe7bcc9 >}}
+
+db:dump_seed_fu[model]で実行。 
+db:seed_fuで使えるseedデータがdb/fixtures内に生成される。
+
 # Special Thanks
 
-[ MySQL で特定のテーブルのみをバックアップ - Easy Ramble ](http://easyramble.com/backup-only-mysql-tables.html)
+* [ MySQL で特定のテーブルのみをバックアップ - Easy Ramble ](http://easyramble.com/backup-only-mysql-tables.html)
+* [mbleigh/seed-fu](https://github.com/mbleigh/seed-fu)  
 
