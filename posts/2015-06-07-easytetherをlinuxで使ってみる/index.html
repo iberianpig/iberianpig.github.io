@@ -2,15 +2,19 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.19-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+
   <link rel="stylesheet" href="https://iberianpig.github.io/css/styles.css">
   <link rel="stylesheet" href="https://iberianpig.github.io/css/custom.css">
+
+
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
@@ -79,7 +83,7 @@
               <h1>EasytetherでBluetoothテザリング</h1>
               
 
-<h1 id="easytether-with-linux:1cfffe6a7adef89841b67d49ce1b6604">Easytether with linux</h1>
+<h1 id="easytether-with-linux">Easytether with linux</h1>
 
 <p><a href="https://play.google.com/store/apps/details?id=com.mstream.easytether_polyclef&amp;hl=ja"><img src="https://lh6.ggpht.com/SkGhbKqXHvu3P08ZU_hW2ezWnTGOYEBjNvPp0cDBhWzAlBYlhoG6xS45-BVv0hSraA=w300-rw" alt="EasytetherFull" /></a><br />
 <a href="https://play.google.com/store/apps/details?id=com.mstream.easytether_polyclef&amp;hl=ja">EasytetherFull( GooglePlay )</a></p>
@@ -94,7 +98,7 @@ Linux版パッケージは<a href="http://www.mobile-stream.com/easytether/drive
 
 <!-- more -->
 
-<h2 id="speedテスト3回戦:1cfffe6a7adef89841b67d49ce1b6604">Speedテスト3回戦</h2>
+<h2 id="speedテスト3回戦">Speedテスト3回戦</h2>
 
 <table>
 <thead>
@@ -122,15 +126,15 @@ Linux版パッケージは<a href="http://www.mobile-stream.com/easytether/drive
 </tbody>
 </table>
 
-<h2 id="やはり-easytetherの方が早い:1cfffe6a7adef89841b67d49ce1b6604">やはり、Easytetherの方が早い。</h2>
+<h2 id="やはり-easytetherの方が早い">やはり、Easytetherの方が早い。</h2>
 
 <p>若干だけれども。
 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。
 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。</p>
 
-<h1 id="おまけ-起動スクリプトの登録:1cfffe6a7adef89841b67d49ce1b6604">おまけ(起動スクリプトの登録)</h1>
+<h1 id="おまけ-起動スクリプトの登録">おまけ(起動スクリプトの登録)</h1>
 
-<h2 id="接続を切り替えるscriptを作る:1cfffe6a7adef89841b67d49ce1b6604">接続を切り替えるscriptを作る</h2>
+<h2 id="接続を切り替えるscriptを作る">接続を切り替えるscriptを作る</h2>
 
 <p>easytether.shを任意のディレクトリに作成。</p>
 
@@ -155,14 +159,14 @@ fi
 
 <p><code>sudo ./easytether.sh</code>で動かしてみる。</p>
 
-<h2 id="パスワードの省略-sudoersの変更:1cfffe6a7adef89841b67d49ce1b6604">パスワードの省略( sudoersの変更 )</h2>
+<h2 id="パスワードの省略-sudoersの変更">パスワードの省略( sudoersの変更 )</h2>
 
 <p>ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のように<code>sudo visudo</code>で当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。</p>
 
 <pre><code>&lt;username&gt; ALL=(ALL) NOPASSWD: /path/to/script/
 </code></pre>
 
-<h2 id="xbindkeysショートカットキーのマッピング:1cfffe6a7adef89841b67d49ce1b6604">xbindkeysショートカットキーのマッピング</h2>
+<h2 id="xbindkeysショートカットキーのマッピング">xbindkeysショートカットキーのマッピング</h2>
 
 <p>xbindkeysを利用してマッピングする。<br />
 持ってない人は<code>sudo apt-get install xbindkeys</code>で入れましょう。便利。</p>
@@ -226,16 +230,16 @@ fi
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#easytether-with-linux:1cfffe6a7adef89841b67d49ce1b6604">Easytether with linux</a>
+<li><a href="#easytether-with-linux">Easytether with linux</a>
 <ul>
-<li><a href="#speedテスト3回戦:1cfffe6a7adef89841b67d49ce1b6604">Speedテスト3回戦</a></li>
-<li><a href="#やはり-easytetherの方が早い:1cfffe6a7adef89841b67d49ce1b6604">やはり、Easytetherの方が早い。</a></li>
+<li><a href="#speedテスト3回戦">Speedテスト3回戦</a></li>
+<li><a href="#やはり-easytetherの方が早い">やはり、Easytetherの方が早い。</a></li>
 </ul></li>
-<li><a href="#おまけ-起動スクリプトの登録:1cfffe6a7adef89841b67d49ce1b6604">おまけ(起動スクリプトの登録)</a>
+<li><a href="#おまけ-起動スクリプトの登録">おまけ(起動スクリプトの登録)</a>
 <ul>
-<li><a href="#接続を切り替えるscriptを作る:1cfffe6a7adef89841b67d49ce1b6604">接続を切り替えるscriptを作る</a></li>
-<li><a href="#パスワードの省略-sudoersの変更:1cfffe6a7adef89841b67d49ce1b6604">パスワードの省略( sudoersの変更 )</a></li>
-<li><a href="#xbindkeysショートカットキーのマッピング:1cfffe6a7adef89841b67d49ce1b6604">xbindkeysショートカットキーのマッピング</a></li>
+<li><a href="#接続を切り替えるscriptを作る">接続を切り替えるscriptを作る</a></li>
+<li><a href="#パスワードの省略-sudoersの変更">パスワードの省略( sudoersの変更 )</a></li>
+<li><a href="#xbindkeysショートカットキーのマッピング">xbindkeysショートカットキーのマッピング</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -245,7 +249,7 @@ fi
   
 
   <section>
-    <header>LatestPosts</header>
+    <header>Latest Posts</header>
     <div>
       
       <article class="li">
@@ -313,71 +317,6 @@ fi
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Mar 20, 2016</time>
-      </div>
-      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sat, Jan 23, 2016</time>
-      </div>
-      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Thu, Sep 17, 2015</time>
-      </div>
-      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Tue, Aug 18, 2015</time>
-      </div>
-      <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-15-install-node/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Aug 16, 2015</time>
-      </div>
-      <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -386,7 +325,7 @@ fi
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/%E5%87%BA%E7%A4%BE%E8%8A%B8">出社芸</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
       </ul>
     </div>
   </section>
@@ -395,7 +334,7 @@ fi
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/javascript-angualrjs">javascript-angualrjs</a></li><li><a href="https://iberianpig.github.io/tags/phonegap">phonegap</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/api">api</a></li>
       </ul>
     </div>
   </section>
@@ -425,8 +364,8 @@ fi
   <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
 </footer>
 
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

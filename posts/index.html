@@ -2,15 +2,19 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.19-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+
   <link rel="stylesheet" href="https://iberianpig.github.io/css/styles.css">
   <link rel="stylesheet" href="https://iberianpig.github.io/css/custom.css">
+
+
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
@@ -50,7 +54,33 @@
         <time>Sun, Dec 18, 2016</time>
       </div>
       <h2 class="title">Amazon Dash Buttonで出社する</h2>
-      <div class="summary">この記事は出社芸アドベントカレンダーの18日目の記事です。 今日のアドベントカレンダーに登録した。 現在0:31。あと23時間半くらいある！ 余裕だね！ ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる) ※詳細は出社芸アドベントカレンダー1日目出社自由の会社を作ったよ | rake enjoyをご参照。 でもルールがあって、何時ごろ出社するか(/どこで仕事するか）をSlackのチャンネルで報告する義務がある。 リモートが多い時はこんな感じになる。 自由だ…。 ◯◯時頃出社しますと報告するのが面倒になってきた 出社時刻をSlackでつぶやくだけで遅れたりすることで怒られるなどは全く無い。 この会社に入ってアラームを設定することが無くなった。 起きたら何時に出社するか決めてSlackで報告すればいい。 しかし、毎日、何時になるかといちいち考えたりするのすら面倒になってくる。 プログラマは怠惰な生き物。 あのラリー・ウォールも怠惰（Laziness）がプログラマの美徳だと名言している。 自動化しよう 朝起きて時計を確認、何時ごろに出社するか決めて、Slackアプリを開き、報告する。 このフローを自動化する。なるべく楽に。 作戦としては今流行りのAmazon Dash Buttonを使う。 押したらSlackへ何時に行くかつぶやく。 起きたらAmazon Dash Buttonを押すだけ。俺がデリバリーされる。 準備するもの Amazon Dash Button これはAmazonで買える。500円。安い。 対象商品の初回購入時が500円割引されるので実質タダ。 なお、ものによっては到着に時間がかかるものもあるので注意。 とりあえず翌日届くレノアにした。 ローカルサーバ Amazon Dash Buttonはローカルネットワークに接続し、ボタンを押すとローカルネットワーク上にブロードキャストされる。 そのブロードキャストがAmazon Dash Buttonから来たかをMacアドレスで判断する。そうであれば任意のアクションを実行するだけ。 ボタンが押された時に任意のアクションをキャッチするのにローカルネットワーク上で動作する常時稼働サーバーが必要。 みんなのお家に眠っているラズベリーパイを使おう。 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。 実装する 処理は大きく見ると下記の様な流れになる Amazon Dash Button ---&gt; LocalServer ---&gt; IFTTT ---&gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。 エンドポイントを作る</div>
+      <div class="summary">この記事は出社芸アドベントカレンダーの18日目の記事です。
+今日のアドベントカレンダーに登録した。
+現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
+出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
+※詳細は出社芸アドベントカレンダー1日目出社自由の会社を作ったよ | rake enjoyをご参照。
+でもルールがあって、何時ごろ出社するか(/どこで仕事するか）をSlackのチャンネルで報告する義務がある。
+リモートが多い時はこんな感じになる。
+自由だ…。
+◯◯時頃出社しますと報告するのが面倒になってきた 出社時刻をSlackでつぶやくだけで遅れたりすることで怒られるなどは全く無い。 この会社に入ってアラームを設定することが無くなった。
+起きたら何時に出社するか決めてSlackで報告すればいい。
+しかし、毎日、何時になるかといちいち考えたりするのすら面倒になってくる。
+プログラマは怠惰な生き物。 あのラリー・ウォールも怠惰（Laziness）がプログラマの美徳だと名言している。
+自動化しよう 朝起きて時計を確認、何時ごろに出社するか決めて、Slackアプリを開き、報告する。 このフローを自動化する。なるべく楽に。
+作戦としては今流行りのAmazon Dash Buttonを使う。 押したらSlackへ何時に行くかつぶやく。
+起きたらAmazon Dash Buttonを押すだけ。俺がデリバリーされる。
+準備するもの Amazon Dash Button これはAmazonで買える。500円。安い。
+対象商品の初回購入時が500円割引されるので実質タダ。
+なお、ものによっては到着に時間がかかるものもあるので注意。
+とりあえず翌日届くレノアにした。
+ローカルサーバ Amazon Dash Buttonはローカルネットワークに接続し、ボタンを押すとローカルネットワーク上にブロードキャストされる。
+そのブロードキャストがAmazon Dash Buttonから来たかをMacアドレスで判断する。そうであれば任意のアクションを実行するだけ。
+ボタンが押された時に任意のアクションをキャッチするのにローカルネットワーク上で動作する常時稼働サーバーが必要。
+みんなのお家に眠っているラズベリーパイを使おう。
+エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
+IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
+実装する 処理は大きく見ると下記の様な流れになる
+Amazon Dash Button ---&gt; LocalServer ---&gt; IFTTT ---&gt; Slack  IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</div>
     </footer>
   </a>
 </article>
@@ -66,7 +96,21 @@
         <time>Mon, Aug 8, 2016</time>
       </div>
       <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
-      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。 外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。 何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。 初期にAPIのスタブサーバが出来てしまうと サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。 APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。 また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。 実際にあった話として APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。 node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。 起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。 &quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。 APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。 Railsでの通常の開発だとmodel、controller、viewの順で作っていく。 プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。 フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。 硬いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。 ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</div>
+      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
+外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
+何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。
+初期にAPIのスタブサーバが出来てしまうと
+ サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる  jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
+APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。
+また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。
+実際にあった話として
+ APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない  あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
+node-easymockでスタブサーバ作る  npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される  非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
+起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。
+&quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; }  ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
+リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
+ APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく  柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
+Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</div>
     </footer>
   </a>
 </article>
@@ -82,7 +126,15 @@
         <time>Mon, Jul 11, 2016</time>
       </div>
       <h2 class="title">ソースコードを読む</h2>
-      <div class="summary">エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。 どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。 ソースを読むメリット 間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮 必要なモノ 気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元ジャンプができればOK 言語、フレームワークの公式リファレンス(http://devdocs.io) 武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要 根性 ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要 pry 調べたいコードを実行させ、binding.pryでブレークポイントを作る edit METHOD_NAMEがどこから呼ばれているのかを見る。 Rubyのコードは実行時でないと、正しい呼び出し元がわからない。 また、pryはコード・リーディングやデバッグに便利様々な機能を持っている show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.mdを読んだり、lib/から関係していそうなところをおもむろに開いてみたりしている。 特に自分が使っているバージョンのREADME.mdを読むということに関しては最速。 言語、フレームワークのリファレンス (好きなツールで) リファレンスをいつでも読めるようにしておくことは重要 自分はDevDocsをよく使う DevDocsの特徴 リファレンスなんでも横断検索ツール Rails, Lodash, jQuery, Angular, Reactなど大抵ある オフライン機能があり、ブラウザにキャッシュさせることで、インターネット接続環境がなくても閲覧できる</div>
+      <div class="summary">エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
+どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。
+ソースを読むメリット  間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮  必要なモノ  気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc)  定義元ジャンプができればOK  言語、フレームワークの公式リファレンス(http://devdocs.io)  武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
+根性 ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要
+pry 調べたいコードを実行させ、binding.pryでブレークポイントを作る edit METHOD_NAMEがどこから呼ばれているのかを見る。
+Rubyのコードは実行時でないと、正しい呼び出し元がわからない。
+また、pryはコード・リーディングやデバッグに便利様々な機能を持っている
+ show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる  IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
+ これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする  Ctags  コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供  tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ)  万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。  bundle open bundle open LIBRARRY_NAME  ライブラリ内のソースの在処(ディレクトリ)を開く README.</div>
     </footer>
   </a>
 </article>
@@ -102,7 +154,7 @@
 普段使いのツールだが、社内勉強会の際に改めて調べた。<br />
 色々と便利なオプションがあった。</p>
 
-<h1 id="tigの特徴:8ebafd3d13ec9d4030b2b6d9b8ec694c">tigの特徴</h1>
+<h1 id="tigの特徴">tigの特徴</h1>
 
 <ul>
 <li>Gitクライアント</li>
@@ -110,7 +162,7 @@
 <li>マルチプラットフォーム</li>
 </ul>
 
-<h1 id="tigのいいところ:8ebafd3d13ec9d4030b2b6d9b8ec694c">tigのいいところ</h1>
+<h1 id="tigのいいところ">tigのいいところ</h1>
 
 <ul>
 <li>軽い</li>
@@ -119,7 +171,7 @@
 <li>vim likeに使える</li>
 </ul>
 
-<h1 id="インストール:8ebafd3d13ec9d4030b2b6d9b8ec694c">インストール</h1>
+<h1 id="インストール">インストール</h1>
 
 <ul>
 <li>Linux/Windowsの人(apt使えるなら)
@@ -134,14 +186,15 @@
 </ul></li>
 </ul>
 
-<h1 id="基本的な使い方:8ebafd3d13ec9d4030b2b6d9b8ec694c">基本的な使い方</h1>
+<h1 id="基本的な使い方">基本的な使い方</h1>
 
 <ul>
 <li>ターミナルで<code>tig</code>とタイプで起動</li>
 <li><code>h</code>押せばヘルプ出る</li>
 <li><code>q</code>で閉じる</li>
 </ul>
-</div>
+
+<p></p></div>
     </footer>
   </a>
 </article>
@@ -157,7 +210,12 @@
         <time>Fri, Apr 15, 2016</time>
       </div>
       <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
-      <div class="summary">Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。 ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。 特定のキー1回でブラウザとターミナルをトグルできればベスト。 xdotoolを使ってみる できる事は下記があるらしい。 ウィンドウ ID の取得 名前やクラスによる検索 現在アクテイブなウィンドウ ウィンドウ ID で指定されたウィンドウの操作 リサイズ 移動 最小化 最全面へ マウスイベントの模倣 マウスカーソル移動 マウスクリック キーイベントの模倣 文字入力 ショートカットキー入力 NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p) $xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops</div>
+      <div class="summary">Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。
+ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。
+特定のキー1回でブラウザとターミナルをトグルできればベスト。
+xdotoolを使ってみる できる事は下記があるらしい。
+  ウィンドウ ID の取得  名前やクラスによる検索 現在アクテイブなウィンドウ  ウィンドウ ID で指定されたウィンドウの操作  リサイズ 移動 最小化 最全面へ  マウスイベントの模倣  マウスカーソル移動 マウスクリック  キーイベントの模倣  文字入力 ショートカットキー入力    NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p)
+$xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops get_num_desktops set_desktop get_desktop set_desktop_for_window get_desktop_for_window get_desktop_viewport set_desktop_viewport exec sleep  結構いろいろある</div>
     </footer>
   </a>
 </article>
@@ -179,14 +237,15 @@
 <p>端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
 EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。</p>
 
-<h1 id="easytether使う前にbluetoothを有効にする:4f24cf1e0d357e53a60f8312f5b8ccf4">Easytether使う前にBluetoothを有効にする</h1>
+<h1 id="easytether使う前にbluetoothを有効にする">Easytether使う前にBluetoothを有効にする</h1>
 
 <p>Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
 コマンドラインで<code>easytether-bluetooth connect -d MAC_ADDRESS</code>と入力する必要がある。</p>
 
 <p>結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
 ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。</p>
-</div>
+
+<p></p></div>
     </footer>
   </a>
 </article>
@@ -202,7 +261,19 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sat, Jan 23, 2016</time>
       </div>
       <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
-      <div class="summary">必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。 動的に表示させようとしたが、現行のままでは動的に出すのは厳しく、バッチ処理でおすすめコンテンツの情報をキャッシュすることにした。 本番環境の裏側で実行させようと考えたが、非常に遅く、１ヶ月ほど時間がかかってしまうため、 一度本番のDumpを取得した上で別の環境でバッチを回し、その結果を本番環境へロードさせたほうが良いということになった。 テーブル別のDump いつもDB一括でMySQL workbenchでDumpを取得しているなど、mysqlコマンドに疎い。 今回は他のテーブルは必要なかったので、必要なテーブルのDumpのみを取得する方法を調べた。 下記コマンドでDumpを取得する。複数テーブルの場合は続けてテーブル名を入力すればよい。 また、今回の本番環境、隔離環境はRailsを利用しており、migrationにて既にテーブルが作成されている。 そのため-tオプションにてCREATE TABLE文をスキップさせる mysqldump -u &lt;USERNAME&gt; -p -t &lt;DBNAME&gt; &lt;TABLENAME1&gt; [ &lt;TABLENAME2&gt; ... ] &gt; &lt;DUMPFILENAME&gt;.sql Dumpのインポート 下記コマンドでインポート mysqll -u &lt;USERNAME&gt; -p &lt;DBNAME&gt; &lt; &lt;DUMPFILENAME&gt;.sql seed_fuで入れる場合 mbleigh/seed-fu という主に環境整備時に利用するものGemがある。 テストデータやシードデータの導入の利用される。 自分は実データをmysqlからdumpしてseed_fu用のfixtureを生成するrakeタスクを作成しており、ユースケースによってはこちらを利用する。 db:dump_seed_fu[model]で実行。 db:seed_fuで使えるseedデータがdb/fixtures内に生成される。 Special Thanks MySQL で特定のテーブルのみをバックアップ - Easy Ramble mbleigh/seed-fu</div>
+      <div class="summary"> 必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。
+動的に表示させようとしたが、現行のままでは動的に出すのは厳しく、バッチ処理でおすすめコンテンツの情報をキャッシュすることにした。
+本番環境の裏側で実行させようと考えたが、非常に遅く、１ヶ月ほど時間がかかってしまうため、 一度本番のDumpを取得した上で別の環境でバッチを回し、その結果を本番環境へロードさせたほうが良いということになった。
+テーブル別のDump いつもDB一括でMySQL workbenchでDumpを取得しているなど、mysqlコマンドに疎い。 今回は他のテーブルは必要なかったので、必要なテーブルのDumpのみを取得する方法を調べた。
+下記コマンドでDumpを取得する。複数テーブルの場合は続けてテーブル名を入力すればよい。 また、今回の本番環境、隔離環境はRailsを利用しており、migrationにて既にテーブルが作成されている。
+そのため-tオプションにてCREATE TABLE文をスキップさせる
+mysqldump -u &lt;USERNAME&gt; -p -t &lt;DBNAME&gt; &lt;TABLENAME1&gt; [ &lt;TABLENAME2&gt; ... ] &gt; &lt;DUMPFILENAME&gt;.sql  Dumpのインポート 下記コマンドでインポート
+mysqll -u &lt;USERNAME&gt; -p &lt;DBNAME&gt; &lt; &lt;DUMPFILENAME&gt;.sql  seed_fuで入れる場合 mbleigh/seed-fu という主に環境整備時に利用するものGemがある。
+テストデータやシードデータの導入の利用される。
+自分は実データをmysqlからdumpしてseed_fu用のfixtureを生成するrakeタスクを作成しており、ユースケースによってはこちらを利用する。
+ db:dump_seed_fu[model]で実行。 db:seed_fuで使えるseedデータがdb/fixtures内に生成される。
+Special Thanks  MySQL で特定のテーブルのみをバックアップ - Easy Ramble  mbleigh/seed-fu
+  </div>
     </footer>
   </a>
 </article>
@@ -218,7 +289,9 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Thu, Sep 17, 2015</time>
       </div>
       <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
-      <div class="summary">Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。 その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、 3時間くらいかけてセットアップした時の備忘録。 WinowsPCにlubuntuを入れる Windowsのコンピュータを起動し、コントロールパネルから&rdquo;ディスクの管理&rdquo;を表示する &ldquo;ディスクの管理&rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない） 今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。 UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&rdquo;/&ldquo;を選択。 これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。 マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。 Lubuntuをセットアップする スワップを有効化 USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと 日本語を入力できるようにする Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。 GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel) 見た目整える 綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.font/してそこに展開。 ログアウトし、ログインするとルックアンドフィールなどからフォント設定。 FaenzaIconsをダウンロードして設定。 やってみての感想 やはり時間かかった(3h)。ほとんどはパーティションとスワップ周りの調査。 以下が得られた知見達。 論理パーティションを作るには基本パーティションをフォーマットしなければならない。 swapとか使うなら論理パーティション必須。 Installより先にUSBブートしてGpartedで基本パーテイションの1つを論理パーティションにフォーマットする。 その論理パーティションの中でメモリ容量x2程度の小さなパーティションを作成する。 Lubuntuのインストーラ内で上記のパーティションをSwapに割り当てる。 Install時に割り当てられなかったらfstabで設定。再起動後Gpartedで割り当て確認。</div>
+      <div class="summary">Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。
+その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、 3時間くらいかけてセットアップした時の備忘録。
+WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コントロールパネルから&rdquo;ディスクの管理&rdquo;を表示する &ldquo;ディスクの管理&rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない）  今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。  UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&rdquo;/&ldquo;を選択。  これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。  マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。  Lubuntuをセットアップする  スワップを有効化  USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと  日本語を入力できるようにする  Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。  GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く  Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel)  見た目整える  綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.</div>
     </footer>
   </a>
 </article>
@@ -243,7 +316,8 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 <li>毎回IDを入れるのがめんどくさい、たまに忘れる</li>
 <li>チームで浸透させたい</li>
 </ul>
-</div>
+
+<p></p></div>
     </footer>
   </a>
 </article>
@@ -259,7 +333,21 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sun, Aug 16, 2015</time>
       </div>
       <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。 環境はElementary OS freya(Ubuntu14.04ベース) nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。 wget入ってない場合はインストール。 sudo apt-get install wget ppaの導入 wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行 nodeのインストール sudo apt-get install nodejs nodeではなくnodejsを使う version番号の確認 node -v v0.12.7 npm -v 2.11.3 色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
+      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
+環境はElementary OS freya(Ubuntu14.04ベース)
+nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
+wget入ってない場合はインストール。
+sudo apt-get install wget
+ppaの導入
+wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
+nodeのインストール sudo apt-get install nodejs
+nodeではなくnodejsを使う
+version番号の確認 node -v
+v0.12.7
+npm -v
+2.11.3
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
     </footer>
   </a>
 </article>
@@ -275,7 +363,9 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sat, Aug 15, 2015</time>
       </div>
       <h2 class="title">elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</h2>
-      <div class="summary">lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認 (install時にこれらを割り当てするときに間違えなようにメモしておく) elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択 パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;&amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる sudo apt-get install elementary-tweaks numixのiconセットのインストール sudo apt-get install numix-* numix-circleを適用 Arc-themeのインストール sudo sh -c &quot;echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_15.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list&quot; wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_15.04/Release.key</div>
+      <div class="summary">lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;&amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
+sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
+Arc-themeのインストール sudo sh -c &quot;echo 'deb http://download.</div>
     </footer>
   </a>
 </article>
@@ -291,7 +381,18 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sun, Jun 21, 2015</time>
       </div>
       <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
-      <div class="summary">elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。 具体的には以下のような症状。 workbencだQueryの結果が白くなって表示されない。 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。 調査してみた 色々な人が死んでた workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている また、 debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。 下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;bug_id=74147 patch -p0 &lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。 sudo make install後にrebootするときちんとresultが表示される。 special thanks reddit launchpad</div>
+      <div class="summary"> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
+MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
+具体的には以下のような症状。
+ workbencだQueryの結果が白くなって表示されない。
+selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
+調査してみた 色々な人が死んでた
+workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
+また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
+source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
+下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;bug_id=74147 patch -p0 &lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install  buildは1.5h程度は見込んでおいた方が良い。
+sudo make install後にrebootするときちんとresultが表示される。
+special thanks  reddit  launchpad   </div>
     </footer>
   </a>
 </article>
@@ -307,7 +408,17 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sun, Jun 7, 2015</time>
       </div>
       <h2 class="title">EasytetherでBluetoothテザリング</h2>
-      <div class="summary">Easytether with linux EasytetherFull( GooglePlay ) 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。 そして、公式のLinux向けクライアントがある。 当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。 Linux版パッケージは こちら からダウンロード可。 現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。 いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。 おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。 #!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。 実行権与えたいのでsudo chmod +x easytether.shしてあげる sudo ./easytether.shで動かしてみる。 パスワードの省略( sudoersの変更 ) ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のようにsudo visudoで当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。 &lt;username&gt; ALL=(ALL) NOPASSWD: /path/to/script/ xbindkeysショートカットキーのマッピング xbindkeysを利用してマッピングする。 持ってない人はsudo apt-get install xbindkeysで入れましょう。便利。 ~/.xbindkeysrcに下記を追記する &quot;sudo /path/to/script/easytether.sh&quot; Mod4 + F2 これはSuper_L + F2で起動させるようにした。 これでEasytetherの切り替えがショートカットのみで行われるようになった。 色々なキーを自作のスクリプトにバインドしてるけれど、xbindkeys便利すぎる。 それではEasytetherで良いノマドライフを!</div>
+      <div class="summary">Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</div>
     </footer>
   </a>
 </article>
@@ -323,7 +434,34 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Sun, May 31, 2015</time>
       </div>
       <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
-      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？ 毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。 現実問題難しい。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった) ブルーライトをカットする 本題に入る。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さが変わるはず。 Linuxer達に良き睡眠を。</div>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは
+寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？
+毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
+少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
+現実問題難しい。
+PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
+このメガネを使うと目に(心理的に)優しくなれる。
+そもそも、寝付きの悪さの原因の根源は何か？
+ブルーライト、聞いたことあるはず。
+寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
+メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）
+&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
+ブルーライトをカットする 本題に入る。
+実はこのブルーライト、色温度を下げることで減量させることができる。
+ 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+ 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
+今回はRedshiftというソフトウェアを利用。
+Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
+Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
+Redshiftのインストール sudo apt-get install redshift redshift-gtk
+パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
+Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
+ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+こちらのサイトで詳しく紹介されていた。
+デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
+夜の寝付きの良さが変わるはず。
+Linuxer達に良き睡眠を。</div>
     </footer>
   </a>
 </article>
@@ -339,7 +477,22 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
         <time>Mon, May 4, 2015</time>
       </div>
       <h2 class="title">Elementary OS freyaでハイバネートオプションを追加する</h2>
-      <div class="summary">少し前からElementaryOSの最新版Freyaを使っている。 電源周りで少し手こずったので、備忘録として残しておく。 インストール後にやったことはまた今度まとめる。 ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。 ※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。 pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。 電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla 下記をコピー&amp;ペースト [Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash resume=/dev/sda3&quot; resume=&lsquo;スワップ用パーティション&rsquo;とすること！ Grubの更新 sudo update-grub これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。 ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。 /etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。 sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し, 下記に変更する HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。</div>
+      <div class="summary">少し前からElementaryOSの最新版Freyaを使っている。
+電源周りで少し手こずったので、備忘録として残しておく。
+インストール後にやったことはまた今度まとめる。
+ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
+※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
+pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
+電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+下記をコピー&amp;ペースト
+[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes  Grubの設定 sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash resume=/dev/sda3&quot;  resume=&lsquo;スワップ用パーティション&rsquo;とすること！
+Grubの更新 sudo update-grub
+これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
+ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
+/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
+sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し, 下記に変更する
+HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。</div>
     </footer>
   </a>
 </article>
@@ -359,11 +512,12 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 
 <p>教材は<code>ストーリーとしての競争戦略</code>、から。</p>
 
-<h1 id="戦略には優劣がある:62b85e87991c447040253970b58f308c">戦略には優劣がある</h1>
+<h1 id="戦略には優劣がある">戦略には優劣がある</h1>
 
 <p>打率2.5割の打者に戦略Aを施すと3割<br />
 打率2.5割の打者に戦略Bを施すと3.5割</p>
-</div>
+
+<p></p></div>
     </footer>
   </a>
 </article>
@@ -393,7 +547,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
   
 
   <section>
-    <header>LatestPosts</header>
+    <header>Latest Posts</header>
     <div>
       
       <article class="li">
@@ -461,71 +615,6 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Mar 20, 2016</time>
-      </div>
-      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sat, Jan 23, 2016</time>
-      </div>
-      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Thu, Sep 17, 2015</time>
-      </div>
-      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Tue, Aug 18, 2015</time>
-      </div>
-      <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-15-install-node/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Aug 16, 2015</time>
-      </div>
-      <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -534,7 +623,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
       </ul>
     </div>
   </section>
@@ -543,7 +632,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/sql">sql</a></li><li><a href="https://iberianpig.github.io/tags/lubuntu">lubuntu</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/api">api</a></li>
       </ul>
     </div>
   </section>
@@ -575,8 +664,8 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
   <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
 </footer>
 
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 

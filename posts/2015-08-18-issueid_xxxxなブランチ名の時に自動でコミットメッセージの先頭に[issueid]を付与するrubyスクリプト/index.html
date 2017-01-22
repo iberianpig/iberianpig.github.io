@@ -2,15 +2,19 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.19-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Noticia+Text:400,700|Marcellus+SC'>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+
   <link rel="stylesheet" href="https://iberianpig.github.io/css/styles.css">
   <link rel="stylesheet" href="https://iberianpig.github.io/css/custom.css">
+
+
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
@@ -77,9 +81,7 @@
             <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
             <div class="body">
               <h1>自動でコミットメッセージの先頭にIssueIDを付与する</h1>
-              
-
-<p>なぜこんなことがやりたいかというと、</p>
+              <p>なぜこんなことがやりたいかというと、</p>
 
 <ul>
 <li>スクラムでのタスク管理にPivotalTracker(<a href="http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される">http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される</a></li>
@@ -89,9 +91,11 @@
 <li>チームで浸透させたい</li>
 </ul>
 
+<p></p>
+
 <p>という理由から。</p>
 
-<h2 id="gitのhookを利用する:256c9aba23a55141d0b5e840dc622108">Gitのhookを利用する</h2>
+<h2 id="gitのhookを利用する">Gitのhookを利用する</h2>
 
 <p>プロジェクトのルートディレクトリから辿ると、<code>.git/hook/</code>というディレクトリがある<br />
 hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんなスクリプトが準備されている<br />
@@ -110,11 +114,11 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 
 <p>ということで、commit-msgにコミットメッセージの先頭に自動で追記するRuby scriptを書く</p>
 
-<h2 id="commit-msg:256c9aba23a55141d0b5e840dc622108">commit-msg</h2>
+<h2 id="commit-msg">commit-msg</h2>
 
 <script src="//gist.github.com/iberianpig/f010cfa1134bc19e3989.js"></script>
 
-<h3 id="処理の流れ:256c9aba23a55141d0b5e840dc622108">処理の流れ</h3>
+<h3 id="処理の流れ">処理の流れ</h3>
 
 <ol>
 <li><code>ARGV[0]</code>にはコミットメッセージを入力するファイルが与えられる</li>
@@ -131,14 +135,14 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 <li>メッセージをファイルに書き込んで終了</li>
 </ol>
 
-<h3 id="実行権限の付与:256c9aba23a55141d0b5e840dc622108">実行権限の付与</h3>
+<h3 id="実行権限の付与">実行権限の付与</h3>
 
 <p>作成したスクリプトに下記コマンドで実行権をつけてやる</p>
 
 <pre><code>$ chmod +x commit-msg
 </code></pre>
 
-<h3 id="やってみる:256c9aba23a55141d0b5e840dc622108">やってみる</h3>
+<h3 id="やってみる">やってみる</h3>
 
 <p>ブランチを切ってみる</p>
 
@@ -154,21 +158,20 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 
 <p><code>git commit -amend</code>などでもうまく動くはず。</p>
 
-<h2 id="その他チラ裏:256c9aba23a55141d0b5e840dc622108">その他チラ裏</h2>
+<h2 id="その他チラ裏">その他チラ裏</h2>
 
 <p><code>prepare-commit-msg</code>では、<code>git commit -ammend</code>の際に二重で[#IssueID]を付与してしまうためcommit-msgを利用した<br />
 shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動作が異なり、他のメンバーに展開できなかったためRubyで書いた</p>
 
-<h2 id="エンジニアの小さなしあわせ:256c9aba23a55141d0b5e840dc622108">エンジニアの小さなしあわせ</h2>
+<h2 id="エンジニアの小さなしあわせ">エンジニアの小さなしあわせ</h2>
 
 <p>こういう小さな生産性向上のためにいろいろ小手先を使うのが好き。<br />
 エンジニアならこの感覚、大事。<br />
 ハマると仕事がつかなくなるんだけれども。</p>
 
-<h2 id="special-thanks:256c9aba23a55141d0b5e840dc622108">Special Thanks</h2>
+<h2 id="special-thanks">Special Thanks</h2>
 
 <p>(<a href="http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929">http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929</a>)</p>
-
             </div>
 
             <aside>
@@ -217,16 +220,16 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
 <ul>
 <li>
 <ul>
-<li><a href="#gitのhookを利用する:256c9aba23a55141d0b5e840dc622108">Gitのhookを利用する</a></li>
-<li><a href="#commit-msg:256c9aba23a55141d0b5e840dc622108">commit-msg</a>
+<li><a href="#gitのhookを利用する">Gitのhookを利用する</a></li>
+<li><a href="#commit-msg">commit-msg</a>
 <ul>
-<li><a href="#処理の流れ:256c9aba23a55141d0b5e840dc622108">処理の流れ</a></li>
-<li><a href="#実行権限の付与:256c9aba23a55141d0b5e840dc622108">実行権限の付与</a></li>
-<li><a href="#やってみる:256c9aba23a55141d0b5e840dc622108">やってみる</a></li>
+<li><a href="#処理の流れ">処理の流れ</a></li>
+<li><a href="#実行権限の付与">実行権限の付与</a></li>
+<li><a href="#やってみる">やってみる</a></li>
 </ul></li>
-<li><a href="#その他チラ裏:256c9aba23a55141d0b5e840dc622108">その他チラ裏</a></li>
-<li><a href="#エンジニアの小さなしあわせ:256c9aba23a55141d0b5e840dc622108">エンジニアの小さなしあわせ</a></li>
-<li><a href="#special-thanks:256c9aba23a55141d0b5e840dc622108">Special Thanks</a></li>
+<li><a href="#その他チラ裏">その他チラ裏</a></li>
+<li><a href="#エンジニアの小さなしあわせ">エンジニアの小さなしあわせ</a></li>
+<li><a href="#special-thanks">Special Thanks</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -236,7 +239,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
   
 
   <section>
-    <header>LatestPosts</header>
+    <header>Latest Posts</header>
     <div>
       
       <article class="li">
@@ -304,71 +307,6 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Mar 20, 2016</time>
-      </div>
-      <h2 class="title">Bluetoothのオン・オフをコマンドラインから切り替える</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sat, Jan 23, 2016</time>
-      </div>
-      <h2 class="title">mysqlで特定のテーブルのDumpをのみ取得する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Thu, Sep 17, 2015</time>
-      </div>
-      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Tue, Aug 18, 2015</time>
-      </div>
-      <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与する</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2015-08-15-install-node/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Aug 16, 2015</time>
-      </div>
-      <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -377,7 +315,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
       </ul>
     </div>
   </section>
@@ -386,7 +324,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/http">http</a></li><li><a href="https://iberianpig.github.io/tags/mozc">mozc</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/api">api</a></li>
       </ul>
     </div>
   </section>
@@ -416,8 +354,8 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
   <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
 </footer>
 
-    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
