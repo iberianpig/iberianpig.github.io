@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.19-DEV" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+
+  <link rel="stylesheet" href="https://iberianpig.github.io/css/styles.css">
+  <link rel="stylesheet" href="https://iberianpig.github.io/css/custom.css">
+
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
+
+  
+  <title>Shellscript - iberianpigsty</title>
+  <meta property='og:title' content="Shellscript - iberianpigsty">
+  <meta property="og:type" content="article">
+  
+
+  <meta property="og:url" content="https://iberianpig.github.io/tags/shellscript/">
+  
+  
+  
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4578444047174224",
+      enable_page_level_ads: true
+    });
+  </script>
+</head>
+
+  <body>
+    <header class="l-header">
+  <div class="p-logo">
+    <a href="https://iberianpig.github.io/">iberianpigsty</a>
+  </div>
+</header>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+
+          <h1 class="p-page-title">Shellscript</h1>
+
+          <div class="row">
+            
+            <div class="col-sm-4">
+              <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jan 23, 2017</time>
+      </div>
+      <h2 class="title">簡単に記事のテンプレートを生成するシェルスクリプトを作った</h2>
+      <div class="summary">表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+hugoの記事作成 hugo new &quot;path/to/article.md&quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &quot;content/post/article.md&quot;とやってしまう。
+しかしcontent/content/path/to/article.mdに作られてしまう。辛い。
+正しくはhugo new &quot;post/article.md&quot;だ。contentを除いておく必要が有る。
+#!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
+これでブログが捗るはず。
+ちなみにbashのlintとしてshellcheckを入れてる。 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
+使ってない人はぜひインストールしよう。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+          </div>
+
+          
+
+
+        </div>
+
+        <div class="col-md-3">
+          <aside class="site">
+
+  
+
+  
+
+  <section>
+    <header>Latest Posts</header>
+    <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/" class="clearfix">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jan 23, 2017</time>
+      </div>
+      <h2 class="title">簡単に記事のテンプレートを生成するシェルスクリプトを作った</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Dec 18, 2016</time>
+      </div>
+      <h2 class="title">Amazon Dash Buttonで出社する</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Aug 8, 2016</time>
+      </div>
+      <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jul 11, 2016</time>
+      </div>
+      <h2 class="title">ソースコードを読む</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
+    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Fri, Apr 22, 2016</time>
+      </div>
+      <h2 class="title">tigを使う</h2>
+    </footer>
+  </a>
+</article>
+
+      
+    </div>
+  </section>
+
+  
+  <section>
+    <header>category</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <section>
+    <header>tag</header>
+    <div>
+      <ul>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/api">api</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <section>
+    <header>Kohei Yamada</header>
+    <div>Linux, Rails, AngularJS, Androidなどについての技術ブログ。メインマシンはDell XPS13, OSはelementaryOS 14.04 freya。2014-04よりSIerを退職し、スタートアップにてWebサービス開発を行う。</div>
+  </section>
+  <a class="twitter-timeline"
+  data-dnt="true"
+  data-theme="light"
+  data-link-color="#337ab7"
+  data-tweet-limit="5"
+  data-chrome="noborder noscrollbar noheader"
+  href="https://twitter.com/nukumaro22"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</aside>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="l-footer">
+  <p>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</p>
+  <p>Powered by <a href="http://gohugo.io" target="_blank" rel="nofollow">Hugo</a>, Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank" rel="nofollow">robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank" rel="nofollow">Daisuke Tsuji</a></p>
+</footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-45334010-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+  </body>
+</html>

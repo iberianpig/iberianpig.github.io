@@ -53,6 +53,31 @@
               
               <div class="col-sm-6">
                 <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jan 23, 2017</time>
+      </div>
+      <h2 class="title">簡単に記事のテンプレートを生成するシェルスクリプトを作った</h2>
+      <div class="summary">表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+hugoの記事作成 hugo new &quot;path/to/article.md&quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &quot;content/post/article.md&quot;とやってしまう。
+しかしcontent/content/path/to/article.mdに作られてしまう。辛い。
+正しくはhugo new &quot;post/article.md&quot;だ。contentを除いておく必要が有る。
+#!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
+これでブログが捗るはず。
+ちなみにbashのlintとしてshellcheckを入れてる。 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
+使ってない人はぜひインストールしよう。</div>
+    </footer>
+  </a>
+</article>
+
+              </div>
+              
+            
+              
+              <div class="col-sm-6">
+                <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/">
     <div class="image" style="background-image: url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg);"></div>
     <footer>
@@ -153,7 +178,7 @@ Rubyのコードは実行時でないと、正しい呼び出し元がわから�
               
             
               
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/">
     <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
@@ -534,33 +559,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
               </div>
               
             
-              
-              <div class="col-sm-4">
-                <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Tue, Apr 21, 2015</time>
-      </div>
-      <h2 class="title">SPとOC-企業戦略-</h2>
-      <div class="summary"><p>会社の方針決めるために、企業戦略のたて方についての勉強する。</p>
-
-<p>教材は<code>ストーリーとしての競争戦略</code>、から。</p>
-
-<h1 id="戦略には優劣がある">戦略には優劣がある</h1>
-
-<p>打率2.5割の打者に戦略Aを施すと3割<br />
-打率2.5割の打者に戦略Bを施すと3.5割</p>
-
-<p></p></div>
-    </footer>
-  </a>
-</article>
-
-              </div>
-              
-            
           </div>
 
           
@@ -586,6 +584,19 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/" class="clearfix">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jan 23, 2017</time>
+      </div>
+      <h2 class="title">簡単に記事のテンプレートを生成するシェルスクリプトを作った</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/" class="clearfix">
@@ -639,19 +650,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Fri, Apr 15, 2016</time>
-      </div>
-      <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -660,7 +658,7 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
