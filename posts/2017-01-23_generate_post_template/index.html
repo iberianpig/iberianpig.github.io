@@ -103,8 +103,16 @@
 <p>コレだけなのだが、記事ソースが配置される<code>content</code>配下に<code>post</code>と階層が有る場合、
 <code>hugo new &quot;content/post/article.md&quot;</code>とやってしまう。</p>
 
-<p>しかし<code>content/content/path/to/article.md</code>に作られてしまう。辛い。<br />
-正しくは<code>hugo new &quot;post/article.md&quot;</code>だ。<code>content</code>を<strong>除いて</strong>おく必要が有る。</p>
+<p>しかし<code>content/content/path/to/article.md</code>に作られてしまう。</p>
+
+<p>正しくは<code>hugo new &quot;post/article.md&quot;</code>だ。<code>content</code>を<strong>除いて</strong>おく必要が有る。</p>
+
+<p>「久々にブログ書くか」という時（いつも）こうなる。しんどい。</p>
+
+<h1 id="shellscriptで生成を自動化">shellscriptで生成を自動化</h1>
+
+<p>ということで自動化しよう。
+shellscriptを書く。<code>new_post.sh</code>と言う名前にした。</p>
 
 <pre><code class="language-bash">#!/bin/bash
 
@@ -125,8 +133,14 @@ hugo new &quot;$full_path&quot;
 vi &quot;content/$full_path&quot;
 </code></pre>
 
-<p>タイトルに日付を付けてエディタを起動するまで自動化した。<br />
-これでブログが捗るはず。</p>
+<p>タイトルに日付を付けてエディタを起動するまで自動化した。</p>
+
+<pre><code class="language-bash">./new_post.sh title
+</code></pre>
+
+<p>で<code>./content/posts/2017-01-23_title.md</code>が生成されてviで開く。</p>
+
+<p>これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。</p>
 
 <p>ちなみにbashのlintとしてshellcheckを入れてる。
 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。<br />
@@ -179,6 +193,7 @@ vi &quot;content/$full_path&quot;
     <div><nav id="TableOfContents">
 <ul>
 <li><a href="#hugoの記事作成">hugoの記事作成</a></li>
+<li><a href="#shellscriptで生成を自動化">shellscriptで生成を自動化</a></li>
 </ul>
 </nav></div>
   </section>

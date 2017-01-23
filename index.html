@@ -62,10 +62,13 @@
       <h2 class="title">簡単に記事のテンプレートを生成するシェルスクリプトを作った</h2>
       <div class="summary">表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
 hugoの記事作成 hugo new &quot;path/to/article.md&quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &quot;content/post/article.md&quot;とやってしまう。
-しかしcontent/content/path/to/article.mdに作られてしまう。辛い。
+しかしcontent/content/path/to/article.mdに作られてしまう。
 正しくはhugo new &quot;post/article.md&quot;だ。contentを除いておく必要が有る。
+「久々にブログ書くか」という時（いつも）こうなる。しんどい。
+shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
 #!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
-これでブログが捗るはず。
+./new_post.sh title  で./content/posts/2017-01-23_title.mdが生成されてviで開く。
+これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
 ちなみにbashのlintとしてshellcheckを入れてる。 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
 使ってない人はぜひインストールしよう。</div>
     </footer>
