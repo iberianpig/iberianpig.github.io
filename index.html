@@ -69,7 +69,9 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 #!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
 ./new_post.sh title  で./content/posts/2017-01-23_title.mdが生成されてviで開く。
 これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
-ちなみにbashのlintとしてshellcheckを入れてる。 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
+ちなみにbashのlintとしてshellcheckを入れてる。
+さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
+変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
 使ってない人はぜひインストールしよう。</div>
     </footer>
   </a>
