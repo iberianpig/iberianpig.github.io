@@ -14,7 +14,7 @@ MetaDataFormat = "yaml"
     GoogleAdsenseId = "ca-pub-4578444047174224"
     twitterId = "nukumaro22"
     author = "Kohei Yamada"
-    description = "Linux、Rails、AngularJS、Androidなどについての技術ブログを中心に。メインの開発機はDell XPS13, OSはelementaryOS 0.4 Loki。2014-04よりSIerを退職し、スタートアップにてWebサービス開発を行う。仕事の依頼等はtwitter: @nukumaro22までお願いします。"
+    description = "Linux、Ruby on Rails、AngularJS、Androidなどについての技術ブログが中心です。Github(https://github.com/iberianpig)上でOSSのツールを公開しています。メイン開発機はDell XPS13, OSはelementaryOS 0.4 Loki。2014年4月よりメーカー系のシステムエンジニアを退職し、現在は渋谷のスタートアップにてWebサービス開発を行っています。また、副業でフリーランスのエンジニアとしても活動中です。仕事の依頼等はtwitter: @nukumaro22までお願いします。"
 
 [params.eyecatch]
     linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
