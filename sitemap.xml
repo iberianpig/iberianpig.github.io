@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</loc>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</loc>
     <lastmod>2017-01-23T19:36:53+09:00</lastmod>
   </url>
@@ -264,6 +269,12 @@
   </url>
   
   <url>
+    <loc>https://iberianpig.github.io/categories/gadget/</loc>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://iberianpig.github.io/categories/git/</loc>
     <lastmod>2016-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -302,6 +313,12 @@
   <url>
     <loc>https://iberianpig.github.io/tags/javascript-angualrjs/</loc>
     <lastmod>2015-03-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://iberianpig.github.io/tags/kindle/</loc>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -391,7 +408,7 @@
   
   <url>
     <loc>https://iberianpig.github.io/posts/</loc>
-    <lastmod>2017-01-23T19:36:53+09:00</lastmod>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -504,7 +521,7 @@
   
   <url>
     <loc>https://iberianpig.github.io/</loc>
-    <lastmod>2017-01-23T19:36:53+09:00</lastmod>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -517,6 +534,12 @@
   <url>
     <loc>https://iberianpig.github.io/tags/%E7%9D%A1%E7%9C%A0/</loc>
     <lastmod>2015-05-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://iberianpig.github.io/tags/%E9%A2%A8%E5%91%82/</loc>
+    <lastmod>2017-01-24T23:58:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   

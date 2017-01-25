@@ -62,6 +62,30 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sat, Mar 15, 2014</time>
+      </div>
+      <h2 class="title">Head-First-Rails_4</h2>
+      <div class="summary">Head First Rails 第４章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
+Scaffoldで作成したページを改造していく。
+検索窓の導入 どのページにも検索窓を用意するので、layoutsを利用する layoutfileは｛モデル名｝.html.erbとなる
+form_forとform_tagの違い
+ハマったところ 書籍では&lt;％ %&gt;だったが、実際はform_tag は &lt;%= %&gt; で囲む必要があった
+(rails 3 と rails 4の違い？ )
+routesの追記が必要。 formの追加に合わせて。 post 'client_workouts/find' =&gt; 'client_workouts#find'  rails4 だと Find で :conditionsが使えない 代わりにモデル名.whereを利用する
+* モデル名.find(id) - findはidの検索専用 * モデル名.where(:カラム名 =&gt; 内容) - なんか指定するときは大体where
+defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/">
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
@@ -189,6 +213,19 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/" class="clearfix">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Jan 24, 2017</time>
+      </div>
+      <h2 class="title">風呂キンドルのすゝめ</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/" class="clearfix">
     <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png);"></div>
     <footer>
@@ -240,19 +277,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
-    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Fri, Apr 22, 2016</time>
-      </div>
-      <h2 class="title">tigを使う</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -261,7 +285,7 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/gadget">gadget</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -317,6 +341,16 @@ ga('create', 'UA-45334010-1', 'auto');
 ga('send', 'pageview');
 </script>
 
+
+
+<script type="text/javascript">
+  amzn_assoc_ad_type = "link_enhancement_widget";
+  amzn_assoc_tracking_id = "iberianpig-22";
+  amzn_assoc_placement = "";
+  amzn_assoc_marketplace = "amazon";
+  amzn_assoc_region = "JP";
+</script>
+<script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
 
 
   </body>

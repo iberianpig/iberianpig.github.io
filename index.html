@@ -61,6 +61,34 @@
               
               <div class="col-sm-6">
                 <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Jan 24, 2017</time>
+      </div>
+      <h2 class="title">風呂キンドルのすゝめ</h2>
+      <div class="summary"> 風呂で読書するというのを一度やってみたかったのでやってみた。
+Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良いと思う。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
+Ziploc 防水性能をアドオンする。
+ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を保管するのに買った。
+ Kindleを入れるとこうなる。奇跡のジャストサイズ。 
+風呂Kindleやってみた 意外と良かった。
+蒸気プラスビニール一枚隔てるので、視認性は若干落ちるのでフォントサイズを少しだけ大きくすれば快適に読める。
+バスタブをちょっと曲げてあげて溝の部分に挟んであげるとKindleを立てるスタンドになる。手で持たなくていい。 これも快適な要因の一つ。
+ただ、集中して読めるのだが、水分が持って行かれているのに気づかない。 お水を飲んだりするのにペットボトル置いておくといい。あとのぼせてしまう場合はお湯の温度を少し下げてもいいかもしれない。
+ちなみに今はホモ・サピエンス全史という本を読んでる。 ネアンデルタール人と裾野を分けたサピエンスは動物とどう違うのか、お金、会社、資本主義はどうやって成り立っているのか。 それらは全て虚構であり、それを信じなければ成り立たなかった&hellip;という話。 普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。
+  </div>
+    </footer>
+  </a>
+</article>
+
+              </div>
+              
+            
+              
+              <div class="col-sm-6">
+                <article class="grid">
   <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/">
     <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png);"></div>
     <footer>
@@ -165,7 +193,7 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
               
             
               
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/">
     <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
@@ -539,39 +567,6 @@ Linuxer達に良き睡眠を。</div>
               </div>
               
             
-              
-              <div class="col-sm-4">
-                <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/">
-    <div class="image" style="background-image: url(https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, May 4, 2015</time>
-      </div>
-      <h2 class="title">Elementary OS freyaでハイバネートオプションを追加する</h2>
-      <div class="summary">少し前からElementaryOSの最新版Freyaを使っている。
-電源周りで少し手こずったので、備忘録として残しておく。
-インストール後にやったことはまた今度まとめる。
-ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
-※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
-pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
-電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-下記をコピー&amp;ペースト
-[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes  Grubの設定 sudo vi /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash resume=/dev/sda3&quot;  resume=&lsquo;スワップ用パーティション&rsquo;とすること！
-Grubの更新 sudo update-grub
-これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
-ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
-/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
-sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し, 下記に変更する
-HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。</div>
-    </footer>
-  </a>
-</article>
-
-              </div>
-              
-            
           </div>
 
           
@@ -597,6 +592,19 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/" class="clearfix">
+    <div class="image" style="background-image: url();"></div>
+    <footer>
+      <div class="date">
+        <time>Tue, Jan 24, 2017</time>
+      </div>
+      <h2 class="title">風呂キンドルのすゝめ</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/" class="clearfix">
@@ -650,19 +658,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/" class="clearfix">
-    <div class="image" style="background-image: url(http://zarezky.spb.ru/blog/images/tig-window.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Fri, Apr 22, 2016</time>
-      </div>
-      <h2 class="title">tigを使う</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -671,7 +666,7 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/gadget">gadget</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -725,6 +720,16 @@ ga('create', 'UA-45334010-1', 'auto');
 ga('send', 'pageview');
 </script>
 
+
+
+<script type="text/javascript">
+  amzn_assoc_ad_type = "link_enhancement_widget";
+  amzn_assoc_tracking_id = "iberianpig-22";
+  amzn_assoc_placement = "";
+  amzn_assoc_marketplace = "amazon";
+  amzn_assoc_region = "JP";
+</script>
+<script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
 
   </body>
 </html>
