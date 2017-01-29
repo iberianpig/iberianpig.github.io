@@ -62,6 +62,49 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/">
+    <div class="image" style="background-image: url(http://www.jins-jp.com/jins-pc/img/item.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, May 31, 2015</time>
+      </div>
+      <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは
+寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？
+毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
+少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
+現実問題難しい。
+PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
+このメガネを使うと目に(心理的に)優しくなれる。
+そもそも、寝付きの悪さの原因の根源は何か？
+ブルーライト、聞いたことあるはず。
+寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
+メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）
+&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
+ブルーライトをカットする 本題に入る。
+実はこのブルーライト、色温度を下げることで減量させることができる。
+ 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+ 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
+今回はRedshiftというソフトウェアを利用。
+Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
+Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
+Redshiftのインストール sudo apt-get install redshift redshift-gtk
+パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
+Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
+ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+こちらのサイトで詳しく紹介されていた。
+デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
+夜の寝付きの良さが変わるはず。
+Linuxer達に良き睡眠を。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/">
     <div class="image" style="background-image: url(https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg);"></div>
     <footer>
@@ -467,31 +510,6 @@ StartActivityとは 同一アプリ内の画面を呼び出すときは明示的
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Mar 17, 2014</time>
-      </div>
-      <h2 class="title">Head-First-Rails_5</h2>
-      <div class="summary">Head First Rails 第5章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
-scaffold で生成したアプリケーションのフォームに バリデーションを設定していく。
-##バリデーションの設定。
-バリデーションの設定はモデル名．rbの中に設定する validates_xxxxxx_of と記述する。
-エラー処理を自分で書く場合 scaffoldを利用していない場合にエラー処理を自分で記述する必要がある。
-画面に処理内容を表示するためにはSaveメソッドでの失敗をコントローラに伝える必要がある。
-そのため、 if文で@model.saveを実行した結果 true or false に応じて、リダイレクトを 行うか否かを決定する。
-form内で、f.error_messagesメソッドを利用する。
-updateも同様。if文で@model.update_attributes(:params[:model])の実行し、結果に応じて リダイレクトを行うか否かを決める。
-不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, &quot;What's your name?&quot;がうまく動かない</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -519,6 +537,19 @@ updateも同様。if文で@model.update_attributes(:params[:model])の実行し�
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Jan 30, 2017</time>
+      </div>
+      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/" class="clearfix">
@@ -572,19 +603,6 @@ updateも同様。if文で@model.update_attributes(:params[:model])の実行し�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jul 11, 2016</time>
-      </div>
-      <h2 class="title">ソースコードを読む</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -602,7 +620,7 @@ updateも同様。if文で@model.update_attributes(:params[:model])の実行し�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li><li><a href="https://iberianpig.github.io/tags/api">api</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li>
       </ul>
     </div>
   </section>
