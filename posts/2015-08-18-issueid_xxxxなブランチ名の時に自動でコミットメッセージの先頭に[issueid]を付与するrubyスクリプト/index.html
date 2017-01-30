@@ -18,14 +18,14 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>自動でコミットメッセージの先頭にIssueIDを付与する - iberianpigsty</title>
-  <meta property='og:title' content="自動でコミットメッセージの先頭にIssueIDを付与する - iberianpigsty">
-  
+  <title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方 - iberianpigsty</title>
+  <meta property='og:title' content="自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方 - iberianpigsty">
+  <meta name="description" content="githubとPivotalTrackerの連携をよりシームレスにするgithookの作り方">
   
 
   <meta property="og:url" content="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/">
 
-  <meta property="og:description" content="Linux、Ruby on Rails、AngularJS、Androidなどが中心の技術ブログです。Github上でOSSのツールを公開しています。(https://github.com/iberianpig)メイン開発機はDell XPS13, OSはelementaryOS 0.4 Loki。2014年4月よりメーカー系のシステムエンジニアを退職し、現在は渋谷のスタートアップにてWebサービス開発を行っています。また、副業でフリーランスのエンジニアとしても活動中です。仕事の依頼等はtwitter: @nukumaro22までお願いします。">
+  <meta property="og:description" content="githubとPivotalTrackerの連携をよりシームレスにするgithookの作り方">
 
   <meta property="og:image" content="https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png">
   <meta name="twitter:card" content="summary" />
@@ -41,7 +41,7 @@
       "@type":"WebPage",
       "@id":"https:\/\/iberianpig.github.io\/"
     },
-    "headline": "自動でコミットメッセージの先頭にIssueIDを付与する |  ",
+    "headline": "自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方 |  ",
     "image": {
       "@type": "ImageObject",
       "url": "",
@@ -65,7 +65,7 @@
         "width": 60
       }
     },
-    "description": ""
+    "description": "githubとPivotalTrackerの連携をよりシームレスにするgithookの作り方"
   }
 </script>
 
@@ -95,7 +95,7 @@
           <article class="single">
             <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
             <div class="body">
-              <h1>自動でコミットメッセージの先頭にIssueIDを付与する</h1>
+              <h1>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</h1>
               <p>なぜこんなことがやりたいかというと、</p>
 
 <ul>
@@ -193,10 +193,10 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
               <section>
                 <div>
                   <div class="p-share">
-                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&t=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&text=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&t=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8bGithook%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&text=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8bGithook%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
                     <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&title=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-08-18-issueid_xxxx%25E3%2581%25AA%25E3%2583%2596%25E3%2583%25A9%25E3%2583%25B3%25E3%2583%2581%25E5%2590%258D%25E3%2581%25AE%25E6%2599%2582%25E3%2581%25AB%25E8%2587%25AA%25E5%258B%2595%25E3%2581%25A7%25E3%2582%25B3%25E3%2583%259F%25E3%2583%2583%25E3%2583%2588%25E3%2583%25A1%25E3%2583%2583%25E3%2582%25BB%25E3%2583%25BC%25E3%2582%25B8%25E3%2581%25AE%25E5%2585%2588%25E9%25A0%25AD%25E3%2581%25AB%255Bissueid%255D%25E3%2582%2592%25E4%25BB%2598%25E4%25B8%258E%25E3%2581%2599%25E3%2582%258Bruby%25E3%2582%25B9%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2597%25E3%2583%2588%2f&title=%e8%87%aa%e5%8b%95%e3%81%a7%e3%82%b3%e3%83%9f%e3%83%83%e3%83%88%e3%83%a1%e3%83%83%e3%82%bb%e3%83%bc%e3%82%b8%e3%81%ae%e5%85%88%e9%a0%ad%e3%81%abIssueID%e3%82%92%e4%bb%98%e4%b8%8e%e3%81%99%e3%82%8bGithook%e3%81%ae%e4%bd%9c%e3%82%8a%e6%96%b9" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
                   </div>
                 </div>
               </section>
@@ -330,7 +330,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/gadget">gadget</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -339,7 +339,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/angularjs">angularjs</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/lifehack">lifehack</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
       </ul>
     </div>
   </section>
