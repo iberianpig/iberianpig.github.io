@@ -62,6 +62,32 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/">
+    <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 7, 2015</time>
+      </div>
+      <h2 class="title">EasytetherでBluetoothテザリング</h2>
+      <div class="summary">Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/">
     <div class="image" style="background-image: url(http://www.jins-jp.com/jins-pc/img/item.jpg);"></div>
     <footer>
@@ -474,42 +500,6 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Wed, Jul 23, 2014</time>
-      </div>
-      <h2 class="title">send data on Intent to call activity</h2>
-      <div class="summary">#Activityとは
-Androidの画面単位の概念 一つのアクティビティに対してクラス一つが割り当てされる
-&ndash;&gt;1つのXML(Viewテンプレート)と1つのJavaクラス(Activity)が必要となる
-#Intentとは
- インテントというのは簡単に言えばアクティビティなどが他のアクティビティやアプリケーションなどと情報のやり取りを行うための箱のようなものです。インテントという箱には、相手先や届けたい情報などが含まれています。
-アクティビティから他の指定したアクティビティへインテントを送ることがあります。例えば他の画面を表示したい場合などです。
- (参考:　http://www.javadrive.jp/android/intent/index1.html)
-##暗黙的インテントと明示的インテント
- どの機能を呼び出すかをあらかじめ指定して直接それを起動することを「明示的インテント」(explicit intent)、何をしたいかは明示せずに漠然とそのデータに対して実行できる機能の一覧を要求することを「暗黙的インテント」(implicit intent)という。
- (参考: http://e-words.jp/w/E382A4E383B3E38386E383B3E38388.html)
-##どうやって起動するのか
- インテントのアクションとは、あるオブジェクトが他のオブジェクトを起動する際に、何をしたいのかを指すための指定です。ここでいうオブジェクトはActivityやサービスのことを指します。
-アクションを指定するには、Intentクラスのコンストラクタで指定するか、もしくはIntentクラスのsetActionメソッドを使って指定します。### また、指定するアクションはすべてIntentクラスの遷移元への値の渡し方と受け取り方定数として定義されていますので、該当な定数を使ってアクションを以下のように指定します。
- ``` java activity.java
-// アクションを指定してインテントのインスタンス生成 Intent intent = new Intent(Intent.ACTION_MAIN);
-// 次画面のアクティビティ起動 startActivity(intent); ```
-インテントをnew IntentしてそれをstartActivity()の引数に入れて起動するらしい。
-StartActivityとは 同一アプリ内の画面を呼び出すときは明示的Intentを作成する。そしてstartActivity()の引数として引き渡すことでそれを実現する。ただし、この挙動は一方通行のようなもの。呼び出し元の情報を返して欲しいときはstartActivityForResult()を使う。
- また、アクションには「アクティビティアクション」と「ブロードキャストアクション」があります。
- ###アクティビティアクション &gt;アクティビティアクションとは、他のアクティビティを起動する際に、何をしたいのかを示すためのアクションです。具体的には以下のものがあります
-   アクション 機能     ACTION_MAIN メインエントリーポイントとしてアクションを起動する。データを戻すことができない。   ACTION_VIEW データをユーザに表示するためにアクションを起動する。   ACTION_ATTACH_DATA 別の場所にデータが添付されていることを示す。   ACTION_EDIT データを編集するためにアクションを起動する。   ACTION_PICK データの中からアイテムを選択するためにアクションを起動する。選択されたアイテムを受け取る。   ACTION_CHOOSER 起動するActivityを選択するチューザーをユーザに示し、選択してもらう。   ACTION_GET_CONTENT 指定した種類のデータをユーザに選択、もしくは作成してもらう。   ACTION_DIAL データで指定した番号を電話番号として設定する。データを指定しなければ、ユーザがその場で設定する。電話をかける操作はユーザに任せる。   ACTION_CALL データで指定した人に電話をかける。データを指定しなければ、ユーザがその場で指定した番号に電話をかける。   ACTION_SEND 別の人にデータを送信する。データの宛先は指定しない。このIntentを受け取ったアクションが、ユーザに宛先を問う。   ACTION_SENDTO データによって指定された人にメッセージを送信する。   ACTION_ANSWER かかってきた電話に対処するアクションを起動する。   ACTION_INSERT データに含まれるURIが示すディレクトリに秋のデータを挿入する。   ACTION_DELETE データに含まれるURIが示すデータをコンテナから削除する。   ACTION_RUN データを起動する。その意味はデータの種類によって異なる。   ACTION_SYNC データの同期を実行する。   ACTION_PICK_ACTIVITY Intentが与えられるActivityを選択し、そのクラスを返す。   ACTION_SEARCH 検索を実行する。   ACTION_WEB_SEARCH WEB検索を実行する。   ACTION_FACTORY_TEST デバイスが工場検査モードで起動する際にだけ実行される工場検査のメインエントリポイントとして起動する。    ブロードキャストアクション  ブロードキャストアクションとは、なんらかのイベントが発生したことを他のオブジェクトに知らせる際に指定するアクションです。</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -537,6 +527,19 @@ StartActivityとは 同一アプリ内の画面を呼び出すときは明示的
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Feb 6, 2017</time>
+      </div>
+      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
@@ -590,19 +593,6 @@ StartActivityとは 同一アプリ内の画面を呼び出すときは明示的
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Aug 8, 2016</time>
-      </div>
-      <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -638,7 +628,7 @@ StartActivityとは 同一アプリ内の画面を呼び出すときは明示的
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

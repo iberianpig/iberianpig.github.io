@@ -62,6 +62,34 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/">
+    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Feb 6, 2017</time>
+      </div>
+      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
+      <div class="summary">環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
+リポジトリを追加する
+sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
+sudo apt update &amp;&amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
+カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
+記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
+HWEカーネル用パッケージのインストール HWEカーネルとは
+ HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
+ 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
+linux-generic-hwe-16.04-edgeをインストール
+sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/">
     <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
     <footer>
@@ -502,32 +530,6 @@ special thanks  reddit  launchpad   </div>
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/">
-    <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Jun 7, 2015</time>
-      </div>
-      <h2 class="title">EasytetherでBluetoothテザリング</h2>
-      <div class="summary">Easytether with linux 
-EasytetherFull( GooglePlay )
-数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
-そして、公式のLinux向けクライアントがある。
-当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
-Linux版パッケージはこちら  からダウンロード可。
-現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
-いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
-Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
-おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
-#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -553,6 +555,19 @@ Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetooth
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Mon, Feb 6, 2017</time>
+      </div>
+      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
@@ -606,19 +621,6 @@ Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetooth
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Aug 8, 2016</time>
-      </div>
-      <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -654,7 +656,7 @@ Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetooth
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>
