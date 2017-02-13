@@ -96,6 +96,16 @@
             <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
             <div class="body">
               <h1>Bluetoothのオン・オフをコマンドラインから切り替える</h1>
+              <aside class="p-share">
+  <div class="share-inner">
+    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&t=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&text=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+  </div>
+</aside>
+
               
 <section>
   <div class="adsense">
@@ -166,38 +176,38 @@ fi
 (SONYのNFCタッチでBluetooth接続するUXがかなり良かったので）</p>
             </div>
 
-            <aside>
-              <section>
-                <div>
-                  <div class="p-share">
-                    <a href="http://www.facebook.com/sharer.php?src=bm&u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&t=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-                    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&text=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-                    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-                    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
-                  </div>
-                </div>
-              </section>
+            <aside class="p-share">
+  <div class="share-inner">
+    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&t=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&text=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+  </div>
+</aside>
 
-              
-              
-              <section>
-                <div>
-                  <div id="disqus_thread"></div>
-                  <script type="text/javascript">
-                    (function() {
-                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                      var disqus_shortname = 'iberianpigsty';
-                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                  </script>
-                  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-                </div>
-              </section>
-              
-              
-            </aside>
+            
+
+<aside>
+  <section>
+    <div>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'iberianpigsty';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </section>
+</aside>
+
+
+
 
           </article>
 
