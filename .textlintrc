@@ -4,8 +4,8 @@
       "max": 3
     },
     "preset-jtf-style": {
-      4.3.1.丸かっこ（）: false,
-      4.2.7.コロン(：) : false,
+      "4.3.1.丸かっこ（）": false,
+      "4.2.7.コロン(：) ": false,
     },
     "no-doubled-joshi": {
       "min_interval" : 1,
