@@ -1,12 +1,13 @@
 ---
 layout: post
-title: "tigを使う"
+title: "tigの使い方とオプションをまとめた"
 published: true
 date: 2016-04-22
 comments: true
 tags: tig
 categories: git
 image: http://zarezky.spb.ru/blog/images/tig-window.png
+description: CUIなGitクライアントであるtigの使い方と便利なオプションのまとめ 
 ---
 
 CUIなGitクライアント。  

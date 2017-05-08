@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "自動でコミットメッセージの先頭にIssueIDを付与する"
+title: "自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方"
 published: true
 date: 2015-08-18
 comments: true
@@ -9,6 +9,7 @@ tags:
    - ruby
    - pivotaltracker
 image: https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png
+description: 'githubとPivotalTrackerの連携をよりシームレスにするgithookの作り方'
 ---
 
 なぜこんなことがやりたいかというと、

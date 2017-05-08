@@ -7,7 +7,7 @@ comments: true
 tags: lubuntu
 categories: linux
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png
-
+description: "lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を3時間くらいかけてセットアップした時の備忘録。"
 ---
 
 Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。

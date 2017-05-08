@@ -18,3 +18,6 @@ MetaDataFormat = "yaml"
 
 [params.eyecatch]
     linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
+[params.adsense]
+    sidebar = "2886367399" 
+    content = "2746766592" 
