@@ -61,6 +61,24 @@
               
               <div class="col-sm-6">
                 <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/">
+    <div class="image" style="background-image: url(https://c1.staticflickr.com/4/3913/14522157584_42fff58cfc_z.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 21, 2015</time>
+      </div>
+      <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
+      <div class="summary">elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。 具体的には以下のような症状。 workbencだQueryの結果が白くなって表示されない。 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。 調査してみた 色々な人が死んでた workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている また、 debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。 下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;bug_id=74147 patch -p0 &lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。 sudo make install後にrebootするときちんとresultが表示される。 special thanks reddit launchpad</div>
+    </footer>
+  </a>
+</article>
+
+              </div>
+              
+            
+              
+              <div class="col-sm-6">
+                <article class="grid">
   <a href="https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/">
     <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
     <footer>
@@ -113,7 +131,7 @@
               
             
               
-              <div class="col-sm-6">
+              <div class="col-sm-4">
                 <article class="grid">
   <a href="https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/">
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
@@ -336,24 +354,6 @@
               </div>
               
             
-              
-              <div class="col-sm-4">
-                <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/">
-    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Fri, Aug 1, 2014</time>
-      </div>
-      <h2 class="title">ListView and http connection</h2>
-      <div class="summary">雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達 レイアウトをJava側で生成する LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);` レイアウトに要素を追加する Button button1 = new Button(this); button1.setText(&quot;OK&quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);` AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。 public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters. Parameters: child: the child view to add params: the layout parameters to set on the child LinearLayout.LayoutParamsクラス 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。 LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。 (参考: http://www.javadrive.jp/android/relativelayout/index3.html) addRule public void addRule(int verb, int anchor) Adds a layout rule to be interpreted by the RelativeLayout.</div>
-    </footer>
-  </a>
-</article>
-
-              </div>
-              
-            
           </div>
 
           
@@ -381,6 +381,19 @@
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/" class="clearfix">
+    <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, May 14, 2017</time>
+      </div>
+      <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
@@ -434,19 +447,6 @@
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg);"></div>
-    <footer>
-      <div class="date">
-        <time>Sun, Dec 18, 2016</time>
-      </div>
-      <h2 class="title">Amazon Dash Buttonで出社する</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -473,7 +473,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -482,7 +482,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
       </ul>
     </div>
   </section>
