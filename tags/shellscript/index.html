@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,19 +69,7 @@
         <time>Mon, Jan 23, 2017</time>
       </div>
       <h2 class="title">簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2>
-      <div class="summary">表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
-hugoの記事作成 hugo new &quot;path/to/article.md&quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &quot;content/post/article.md&quot;とやってしまう。
-しかしcontent/content/path/to/article.mdに作られてしまう。
-正しくはhugo new &quot;post/article.md&quot;だ。contentを除いておく必要が有る。
-「久々にブログ書くか」という時（いつも）こうなる。しんどい。
-shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
-#!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
-./new_post.sh title  で./content/posts/2017-01-23_title.mdが生成されてviで開く。
-これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
-ちなみにbashのlintとしてshellcheckを入れてる。
-さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
-変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
-使ってない人はぜひインストールしよう。</div>
+      <div class="summary">表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。 hugoの記事作成 hugo new &quot;path/to/article.md&quot; コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &quot;content/post/article.md&quot;とやってしまう。 しかしcontent/content/path/to/article.mdに作られてしまう。 正しくはhugo new &quot;post/article.md&quot;だ。contentを除いておく必要が有る。 「久々にブログ書くか」という時（いつも）こうなる。しんどい。 shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。 #!/bin/bash echo -e &quot;\033[0;32mCreating new post...\033[0m&quot; if [ $# -eq 1 ]; then title=&quot;_$1&quot; else title=&quot;&quot; fi formatted_date=$(date &quot;+%Y-%m-%d&quot;) full_path=&quot;posts/${formatted_date}${title}.md&quot; hugo new &quot;$full_path&quot; vi &quot;content/$full_path&quot; タイトルに日付を付けてエディタを起動するまで自動化した。 ./new_post.sh title で./content/posts/2017-01-23_title.mdが生成されてviで開く。 これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。 ちなみにbashのlintとしてshellcheckを入れてる。 さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。 使ってない人はぜひインストールしよう。</div>
     </footer>
   </a>
 </article>
@@ -97,12 +85,7 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
         <time>Fri, Apr 15, 2016</time>
       </div>
       <h2 class="title">特定のアプリケーションにスイッチするシェルスクリプトを作る</h2>
-      <div class="summary">Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。
-ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。
-特定のキー1回でブラウザとターミナルをトグルできればベスト。
-xdotoolを使ってみる できる事は下記があるらしい。
-  ウィンドウ ID の取得  名前やクラスによる検索 現在アクテイブなウィンドウ  ウィンドウ ID で指定されたウィンドウの操作  リサイズ 移動 最小化 最全面へ  マウスイベントの模倣  マウスカーソル移動 マウスクリック  キーイベントの模倣  文字入力 ショートカットキー入力    NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p)
-$xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops get_num_desktops set_desktop get_desktop set_desktop_for_window get_desktop_for_window get_desktop_viewport set_desktop_viewport exec sleep  結構いろいろある</div>
+      <div class="summary">Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。 ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。 特定のキー1回でブラウザとターミナルをトグルできればベスト。 xdotoolを使ってみる できる事は下記があるらしい。 ウィンドウ ID の取得 名前やクラスによる検索 現在アクテイブなウィンドウ ウィンドウ ID で指定されたウィンドウの操作 リサイズ 移動 最小化 最全面へ マウスイベントの模倣 マウスカーソル移動 マウスクリック キーイベントの模倣 文字入力 ショートカットキー入力 NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p) $xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops</div>
     </footer>
   </a>
 </article>
@@ -218,7 +201,7 @@ $xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfo
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -227,7 +210,7 @@ $xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfo
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

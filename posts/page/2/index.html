@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,17 +69,7 @@
         <time>Sun, Jun 7, 2015</time>
       </div>
       <h2 class="title">EasytetherでBluetoothテザリング</h2>
-      <div class="summary">Easytether with linux 
-EasytetherFull( GooglePlay )
-数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
-そして、公式のLinux向けクライアントがある。
-当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
-Linux版パッケージはこちら  からダウンロード可。
-現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
-いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
-Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
-おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
-#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</div>
+      <div class="summary">Easytether with linux EasytetherFull( GooglePlay ) 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。 そして、公式のLinux向けクライアントがある。 当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。 Linux版パッケージは こちら からダウンロード可。 現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。 いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。 おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。 #!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。 実行権与えたいのでsudo chmod +x easytether.shしてあげる sudo ./easytether.shで動かしてみる。 パスワードの省略( sudoersの変更 ) ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のようにsudo visudoで当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。 &lt;username&gt; ALL=(ALL) NOPASSWD: /path/to/script/ xbindkeysショートカットキーのマッピング xbindkeysを利用してマッピングする。 持ってない人はsudo apt-get install xbindkeysで入れましょう。便利。 ~/.xbindkeysrcに下記を追記する &quot;sudo /path/to/script/easytether.sh&quot; Mod4 + F2 これはSuper_L + F2で起動させるようにした。 これでEasytetherの切り替えがショートカットのみで行われるようになった。 色々なキーを自作のスクリプトにバインドしてるけれど、xbindkeys便利すぎる。 それではEasytetherで良いノマドライフを!</div>
     </footer>
   </a>
 </article>
@@ -95,34 +85,7 @@ Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetooth
         <time>Sun, May 31, 2015</time>
       </div>
       <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
-      <div class="summary">世界各国のLinuxerの皆さん、こんばんは
-寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？
-毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
-少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
-現実問題難しい。
-PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
-このメガネを使うと目に(心理的に)優しくなれる。
-そもそも、寝付きの悪さの原因の根源は何か？
-ブルーライト、聞いたことあるはず。
-寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
-メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）
-&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
-ブルーライトをカットする 本題に入る。
-実はこのブルーライト、色温度を下げることで減量させることができる。
- 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
- 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
-そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
-今回はRedshiftというソフトウェアを利用。
-Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
-Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
-Redshiftのインストール sudo apt-get install redshift redshift-gtk
-パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
-Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
- toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
-こちらのサイトで詳しく紹介されていた。
-デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
-夜の寝付きの良さが変わるはず。
-Linuxer達に良き睡眠を。</div>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？ 毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。 現実問題難しい。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった) ブルーライトをカットする 本題に入る。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さが変わるはず。 Linuxer達に良き睡眠を。</div>
     </footer>
   </a>
 </article>
@@ -138,22 +101,7 @@ Linuxer達に良き睡眠を。</div>
         <time>Mon, May 4, 2015</time>
       </div>
       <h2 class="title">Elementary OS freyaでハイバネートオプションを追加する</h2>
-      <div class="summary">少し前からElementaryOSの最新版Freyaを使っている。
-電源周りで少し手こずったので、備忘録として残しておく。
-インストール後にやったことはまた今度まとめる。
-ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
-※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
-pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
-電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-下記をコピー&amp;ペースト
-[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes  Grubの設定 sudo vi /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash resume=/dev/sda3&quot;  resume=&lsquo;スワップ用パーティション&rsquo;とすること！
-Grubの更新 sudo update-grub
-これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
-ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
-/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
-sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し, 下記に変更する
-HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。</div>
+      <div class="summary">少し前からElementaryOSの最新版Freyaを使っている。 電源周りで少し手こずったので、備忘録として残しておく。 インストール後にやったことはまた今度まとめる。 ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。 ※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。 pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。 電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla 下記をコピー&amp;ペースト [Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash resume=/dev/sda3&quot; resume=&lsquo;スワップ用パーティション&rsquo;とすること！ Grubの更新 sudo update-grub これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。 ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。 /etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。 sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し, 下記に変更する HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。</div>
     </footer>
   </a>
 </article>
@@ -173,12 +121,11 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
 
 <p>教材は<code>ストーリーとしての競争戦略</code>、から。</p>
 
-<h1 id="戦略には優劣がある">戦略には優劣がある</h1>
+<h1 id="戦略には優劣がある:62b85e87991c447040253970b58f308c">戦略には優劣がある</h1>
 
 <p>打率2.5割の打者に戦略Aを施すと3割<br />
 打率2.5割の打者に戦略Bを施すと3.5割</p>
-
-<p></p></div>
+</div>
     </footer>
   </a>
 </article>
@@ -194,16 +141,7 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
         <time>Sun, Apr 19, 2015</time>
       </div>
       <h2 class="title">insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</h2>
-      <div class="summary">Command/Normalモードを間違う 問題はこれ。
-頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
-自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
-gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
-暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。
-確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
-また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
-救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
- To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
- if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot; au VimLeave * silent execute &quot;!</div>
+      <div class="summary">Command/Normalモードを間違う 問題はこれ。 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。 gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。 暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた) To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot; au VimLeave *</div>
     </footer>
   </a>
 </article>
@@ -219,13 +157,7 @@ gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるの�
         <time>Mon, Apr 13, 2015</time>
       </div>
       <h2 class="title">AngularでのDOMへのアクセス</h2>
-      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
-今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
-&lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時
-str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。
-しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
-hashed_data = angular.fomJson(str)
-これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
+      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。 &lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時 str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。 hashed_data = angular.fomJson(str) これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
     </footer>
   </a>
 </article>
@@ -241,23 +173,7 @@ hashed_data = angular.fomJson(str)
         <time>Sat, Mar 21, 2015</time>
       </div>
       <h2 class="title">ng-japan</h2>
-      <div class="summary">Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
-場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
-毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
-結構人がいて定員500名の会場が普通に埋まってた
-こんなかんじ↓
-すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63
-&mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 
-今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。
-onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ 
-HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。
-アプリ内ではWebviewを利用している。
-###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する
-###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo;
-###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評
-###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい
-##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない
-チューニング対象となる5つのフェーズ  Loading  リソースの読み込みやパース 組み込みなのであんまやることない  Scripting  JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる  Rendering  レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。  Layout  すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー  Painting  描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成   雑多なチューニングの小話  translate3d(0,0,0)が早いのはなぜ？  GPUで描画されるから?</div>
+      <div class="summary">Angualrjsの日本初のカンファレンス ng-japan2015 が渋谷で2015/03/21にあったので行って来た。 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。 結構人がいて定員500名の会場が普通に埋まってた こんなかんじ↓ すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63 &mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。 onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。 アプリ内ではWebviewを利用している。 ###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する ###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo; ###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評 ###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい ##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない チューニング対象となる5つのフェーズ Loading リソースの読み込みやパース 組み込みなのであんまやることない Scripting JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる Rendering レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。 Layout すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー Painting 描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成 雑多なチューニングの小話 translate3d(0,0,0)が早いのはなぜ？ GPUで描画されるから?</div>
     </footer>
   </a>
 </article>
@@ -273,16 +189,7 @@ HTML5ハイブリッドアプリとは ネイティブのアプリとは違っ�
         <time>Fri, Feb 13, 2015</time>
       </div>
       <h2 class="title">ApacheCordova勉強会第4回</h2>
-      <div class="summary">ApacheCordova勉強会第4回 AdobeからPhonegap開発チームの方々が来られていた。
-以下雑なメモ。
-セッション1：米Adobe PhoneGapチーム【逐次通訳】 Adobeの人(Adobeに買収された開発チームの方)のセッション。英語同時翻訳。(ありがとうございました)
- パフォーマンス問題としていいニュース
- Apple、GoogleともにWebViewの高速化が進む Appleもなんか出したらしい AndroidのはおなじみCrossWalk projectの事  Why Phonegap?
- CrossPlatforms ProjectSpeed UI Native functions Update from Web Appstoreを通さないアップデートができるとのこと ( てか、それいいの？ ) Plugin support  ShowCase ( PhonegapAppStoreで見れるよ )
- BankOfAmerica Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい) Untappd Sworkit Large Home Store  Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)
- BaseCampもHybrid
- ほとんどがHTML5ベース Rails作者, DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた  PhoneGap Enterpriseについて
- Adobeのマネタイズのはなし ダッシュボードでメタデータ統計など利用可能 マーケの人が(コンテンツなどを)管理画面から簡単に更新可能   セッション２： Visual Studio を使用した Cordova 開発 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。</div>
+      <div class="summary">ApacheCordova勉強会第4回 AdobeからPhonegap開発チームの方々が来られていた。 以下雑なメモ。 セッション1：米Adobe PhoneGapチーム【逐次通訳】 Adobeの人(Adobeに買収された開発チームの方)のセッション。英語同時翻訳。(ありがとうございました) パフォーマンス問題としていいニュース Apple、GoogleともにWebViewの高速化が進む Appleもなんか出したらしい AndroidのはおなじみCrossWalk projectの事 Why Phonegap? CrossPlatforms ProjectSpeed UI Native functions Update from Web Appstoreを通さないアップデートができるとのこと ( てか、それいいの？ ) Plugin support ShowCase ( PhonegapAppStoreで見れるよ ) BankOfAmerica Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい) Untappd Sworkit Large Home Store Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった) BaseCampもHybrid ほとんどがHTML5ベース Rails作者, DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた PhoneGap Enterpriseについて Adobeのマネタイズのはなし ダッシュボードでメタデータ統計など利用可能 マーケの人が(コンテンツなどを)管理画面から簡単に更新可能 セッション２： Visual Studio を使用した Cordova 開発 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。 VisualStudio ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで４倍速。 補完の話とか便利機能の話 &hellip; セッション３： Windows開発者が知っておきたいCordova開発の話 Monaca作ってるアシアルの方の話。 Win上でのCorova開発iOS開発の壁を超える chromeとUSBMAXD proxy つなげばiOSデバッグできるよ GapDebugを使えばUSBMAXD互換なのでiOS/Android開発できるよ BuildはBuildサーバとしてクラウドやMacを使う</div>
     </footer>
   </a>
 </article>
@@ -298,24 +205,7 @@ HTML5ハイブリッドアプリとは ネイティブのアプリとは違っ�
         <time>Mon, Jan 26, 2015</time>
       </div>
       <h2 class="title">Cordova勉強会第3回行ってきた</h2>
-      <div class="summary">Codova勉強会行ってきた だがしかし&hellip;
- 参加時刻20:17
- ほとんど遅刻してアレ
- (19:00-21:00 at IIJさん)
- ビールとポテチもらいながら最後のセッション聞く感じになりました。
-  デスクトップアプリマルチOS対応 with HTML5 対象の人は以下の人
- デスクトップアプリ作りたい
- いろんなディスプレイサイズ辛い
- パフォーマンスそんな求めてない
- C#よりJSやりたい
-  うん。多分そんなところかも。
-Destkop用のネイティブ言語を扱えない人も結構多そう。
-3つのやりかた 下記のやり方があるらしい。
- Mozilla XULRunner Cordova NW.js(Node-Webkit)  あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。
-なんかMonacaのローカルもそれ使うとか何とか（よくわかってない）
-Mozilla XULRunner  一番シンプルで古株なやつ エンジンGecko  GeckoはHTML5だけじゃなくてXULというマークアップを動かせる セガ版Xamarinのような存在（?）  名前はXULだけど中身GeckoなのでHTML5が使える  これ知らなかった。 あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい
-Cordova  3つの中で一番発展してる エンジンがTrident(Win)らしい ビルドツール プラグインで機能を足しやすいらしい  Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった
-NW.js(Node-Webkit)  What is NW.js  3種の中で若造らしい  Node.</div>
+      <div class="summary">Codova勉強会行ってきた だがしかし&hellip; 参加時刻20:17 ほとんど遅刻してアレ (19:00-21:00 at IIJさん) ビールとポテチもらいながら最後のセッション聞く感じになりました。 デスクトップアプリマルチOS対応 with HTML5 対象の人は以下の人 デスクトップアプリ作りたい いろんなディスプレイサイズ辛い パフォーマンスそんな求めてない C#よりJSやりたい うん。多分そんなところかも。 Destkop用のネイティブ言語を扱えない人も結構多そう。 3つのやりかた 下記のやり方があるらしい。 Mozilla XULRunner Cordova NW.js(Node-Webkit) あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。 なんかMonacaのローカルもそれ使うとか何とか（よくわかってない） Mozilla XULRunner 一番シンプルで古株なやつ エンジンGecko GeckoはHTML5だけじゃなくてXULというマークアップを動かせる セガ版Xamarinのような存在（?） 名前はXULだけど中身GeckoなのでHTML5が使える これ知らなかった。 あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい Cordova 3つの中で一番発展してる エンジンがTrident(Win)らしい ビルドツール プラグインで機能を足しやすいらしい Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった NW.js(Node-Webkit) What is NW.js 3種の中で若造らしい Node.js + Web標準でデスクトップを作ることができるよ XULRUNNERとCorovaのいいどこどり?らしい どうする デスクトップはNW.jsでいいと思う Codova(iOS),Crosswalk（Android)で良い Linux系サポートが熱いのはXULRunner 完全なデスクトップアプリになれるとは思ってない html overflow:hidden; にしてもあまりいいことがないよ ウィンドウサイズをネイティブアプリっぽく固定できないよ CreateWindowExっぽいもの？（なんだろ）はないよ Scrollがついている時点でWebっぽくなる まとめ Mozilla XULRunner = 似非HTML5アプリ NW.js =DOM(Web標準) + Node.js</div>
     </footer>
   </a>
 </article>
@@ -331,39 +221,7 @@ NW.js(Node-Webkit)  What is NW.js  3種の中で若造らしい  Node.</div>
         <time>Sat, Jan 3, 2015</time>
       </div>
       <h2 class="title">今やっていること, 2014年と2015年</h2>
-      <div class="summary">あけましておめでとうございます 久々更新過ぎて、書き方忘れてた。。。
-octopressのテンプレートにマークダウンで書いて、それをpushするというフローでやっていたんだけど、 そのvimのプラグインのコマンドを忘れてなんだっけとしばらく考える程度に放置してた。ガンバロウ。
-また、正月早々風邪を引いてしまって、これが中々治る気配がないという。。。
-あまりイケてないスタートになってしまった。
-2014年何をやったか。何を身につけたか 自身の棚卸をしていくことにする。
-3月に前職を退職。
-作れる技術をもったエンジニアになろうと思い、大手電機メーカーのSEを辞めた。
-プログラミングには興味があったけれども、WEBのコピー&amp;ペーストでしか何かを動かしたことがないので自分で作るといったこととは あながち離れたところにいた。サンプルがないと死ぬみたいな感じ。
-割と前職ではプログラミングわかる人とということになってたけど、本人の中での理想と現実のギャップは大きく、 何かを作っているはずが何も作ってないエンジニアとして嫌気が差していた。
-自分が欲しい物は自分で作りたいという強い欲求はあったが、誰にも教えられるほどの知識・スキルがなかった。
-どれから身に付けるかと考えた時に、
- WEBは息が長い、きっと様々なモノのI/FとしてWEBが生きるはず。
-しかしながら今皆使っているのはモバイル。
- と思った。
- Web技術 モバイルアプリ  これらをひと通り作れるようになろうと決めた。
-やったこと 2014年、とりあえず人並みにまでを目標に、自分で学んでみた。 下記の技術を中心に学習した。
- Ruby on Rails AngularJS Android(Java)  1年前の自分だったらちょっと重いから1つずつやろうか。などと諭していそう気がする。
-独学で勉強したり、勉強会におせわになったり、ベンチャー企業のお世話になったり。
-逆に学んだことをシェアハウスの住人や知り合いに教えてみたり。
-そんなこんなでいつの間にか、志して1年を迎えてしまった。
-その結果、どれも不完全な感じで終わってしまった気がする。
-まだまだどれも伸びしろ十分(笑) 一番身についたのはRailsかな。
-AngularJS周りで少し色目を出して、秋ごろにionicをベースにWebRTCのP2PビデオチャットのAndroidアプリを作ってみたりした。
-最後にAndroid Nativeで作らなかったのは本気でAndroid/Javをa学ぶ気力が足りていなかった説は大いにあり得る。。
-結果どうあったにせよ、プログラミング言語的なコンプレックスは自分からは大いに取り除かれたので、それはそれで大いに良かった。
-2015年やりたいこと プログラミング言語的コンプレックスは抜けた。しかしながら英語、貴様はまだだ！
-という事で、プログラミング以外に英語の学習を重点的に行なっていくようにしたいと思う。
-海外で1・2年は仕事しながら住んでみたいという憧れがあることがひとつ。
-そして、エンジニアとして先端を走るときにドキュメントは必ず英語として立ちはだかる、 もしくは公式ドキュメントはStack Overflow!なんてことはザラ。
-エンジニア目線としても英語はぜひコンプレックスをなくしていきたい所存。
-やろうと思っていること  フィリピン留学 ビデオチャットで英会話 つなぎのtoeicの学習  2014年の伸びしろを埋めていく作業を続けながら英語を学んでいく。
-自作のビデオチャットアプリで英会話することが今年の密かな目標です
-(ブログの更新はハードル高そうなので一応含んでいませんw)</div>
+      <div class="summary">あけましておめでとうございます 久々更新過ぎて、書き方忘れてた。。。 octopressのテンプレートにマークダウンで書いて、それをpushするというフローでやっていたんだけど、 そのvimのプラグインのコマンドを忘れてなんだっけとしばらく考える程度に放置してた。ガンバロウ。 また、正月早々風邪を引いてしまって、これが中々治る気配がないという。。。 あまりイケてないスタートになってしまった。 2014年何をやったか。何を身につけたか 自身の棚卸をしていくことにする。 3月に前職を退職。 作れる技術をもったエンジニアになろうと思い、大手電機メーカーのSEを辞めた。 プログラミングには興味があったけれども、WEBのコピー&amp;ペーストでしか何かを動かしたことがないので自分で作るといったこととは あながち離れたところにいた。サンプルがないと死ぬみたいな感じ。 割と前職ではプログラミングわかる人とということになってたけど、本人の中での理想と現実のギャップは大きく、 何かを作っているはずが何も作ってないエンジニアとして嫌気が差していた。 自分が欲しい物は自分で作りたいという強い欲求はあったが、誰にも教えられるほどの知識・スキルがなかった。 どれから身に付けるかと考えた時に、 WEBは息が長い、きっと様々なモノのI/FとしてWEBが生きるはず。 しかしながら今皆使っているのはモバイル。 と思った。 Web技術 モバイルアプリ これらをひと通り作れるようになろうと決めた。 やったこと 2014年、とりあえず人並みにまでを目標に、自分で学んでみた。 下記の技術を中心に学習した。 Ruby on Rails AngularJS Android(Java) 1年前の自分だったらちょっと重いから1つずつやろうか。などと諭していそう気がする。 独学で勉強したり、勉強会におせわになったり、ベンチャー企業のお世話になったり。 逆に学んだことをシェアハウスの住人や知り合いに教えてみたり。 そんなこんなでいつの間にか、志して1年を迎えてしまった。 その結果、どれも不完全な感じで終わってしまった気がする。 まだまだどれも伸びしろ十分(笑) 一番身についたのはRailsかな。 AngularJS周りで少し色目を出して、秋ごろにionicをベースにWebRTCのP2PビデオチャットのAndroidアプリを作ってみたりした。 最後にAndroid Nativeで作らなかったのは本気でAndroid/Javをa学ぶ気力が足りていなかった説は大いにあり得る。。 結果どうあったにせよ、プログラミング言語的なコンプレックスは自分からは大いに取り除かれたので、それはそれで大いに良かった。 2015年やりたいこと プログラミング言語的コンプレックスは抜けた。しかしながら英語、貴様はまだだ！ という事で、プログラミング以外に英語の学習を重点的に行なっていくようにしたいと思う。 海外で1・2年は仕事しながら住んでみたいという憧れがあることがひとつ。 そして、エンジニアとして先端を走るときにドキュメントは必ず英語として立ちはだかる、 もしくは公式ドキュメントはStack Overflow!なんてことはザラ。 エンジニア目線としても英語はぜひコンプレックスをなくしていきたい所存。 やろうと思っていること フィリピン留学 ビデオチャットで英会話 つなぎのtoeicの学習 2014年の伸びしろを埋めていく作業を続けながら英語を学んでいく。 自作のビデオチャットアプリで英会話することが今年の密かな目標です (ブログの更新はハードル高そうなので一応含んでいませんw)</div>
     </footer>
   </a>
 </article>
@@ -379,10 +237,7 @@ AngularJS周りで少し色目を出して、秋ごろにionicをベースにWeb
         <time>Fri, Sep 12, 2014</time>
       </div>
       <h2 class="title">twitterbootstrapでnavbarがモバイル表示にならない</h2>
-      <div class="summary">mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;  つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。
-ご参考(http://getbootstrap.com/css/#overview-mobile)
- Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</div>
+      <div class="summary">mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。 ご参考(http://getbootstrap.com/css/#overview-mobile) Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</div>
     </footer>
   </a>
 </article>
@@ -398,21 +253,7 @@ AngularJS周りで少し色目を出して、秋ごろにionicをベースにWeb
         <time>Thu, Sep 11, 2014</time>
       </div>
       <h2 class="title">Rspecでインスタンス変数が参照できない</h2>
-      <div class="summary">Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。
-まず、この事実を理解すべきだった。
-Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
-また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
-expect(Model.last.name).to eq 'modelname'で評価する。
-どちらもどのような値がアサインされていればよいのかを意識してテストを書く。
-その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。
-そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。
-はじめてのテストということでハマってしまった。
-テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。
-実行中のプログラム内なのか、その外なのかを常に意識する。
-RequestヘッダをRspecで作ってそれをRailsに投げる。
-Railsの中のController内で、どのような値がアサインされるかテストする。
-どの世界の値を取得して何と比べるのか。
-何をテストすべきかを意識していれば回避できる問題。</div>
+      <div class="summary">Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。 まず、この事実を理解すべきだった。 Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。 また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。 expect(Model.last.name).to eq 'modelname'で評価する。 どちらもどのような値がアサインされていればよいのかを意識してテストを書く。 その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。 そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。 はじめてのテストということでハマってしまった。 テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。 実行中のプログラム内なのか、その外なのかを常に意識する。 RequestヘッダをRspecで作ってそれをRailsに投げる。 Railsの中のController内で、どのような値がアサインされるかテストする。 どの世界の値を取得して何と比べるのか。 何をテストすべきかを意識していれば回避できる問題。</div>
     </footer>
   </a>
 </article>
@@ -428,8 +269,7 @@ Railsの中のController内で、どのような値がアサインされるか�
         <time>Thu, Sep 11, 2014</time>
       </div>
       <h2 class="title">vimで折りたたみしないようにする</h2>
-      <div class="summary">Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
-set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vimの折りたたみ設定</div>
+      <div class="summary">Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。 set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</div>
     </footer>
   </a>
 </article>
@@ -445,9 +285,7 @@ set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vimの�
         <time>Tue, Sep 2, 2014</time>
       </div>
       <h2 class="title">vim-surround</h2>
-      <div class="summary"> テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
-すぐに忘れてしまうのでメモ
-よく使うコマンド    コマンド 実行内容     cs({ (を{に置き換える   csw&quot; 単語の外側を&quot;で囲む   ci&quot; &quot;で囲われた部分を消去し、入力状態に   ci&quot; &quot;で囲われた部分を消去し、入力状態に    いつも忘れるコマンド    コマンド 実行内容     dst tagで囲われた部分を消去   yss&quot; &quot;で行を囲む   yss= &lt;%=で行を囲む(vim-rails必須)   yss- &lt;%で行を囲む(vim-rails必須)   dst tagで囲われた部分を消去   選択状態でS&quot; &quot;で選択範囲を囲む    </div>
+      <div class="summary">テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる すぐに忘れてしまうのでメモ よく使うコマンド コマンド 実行内容 cs({ (を{に置き換える csw&quot; 単語の外側を&quot;で囲む ci&quot; &quot;で囲われた部分を消去し、入力状態に ci&quot; &quot;で囲われた部分を消去し、入力状態に いつも忘れるコマンド コマンド 実行内容 dst tagで囲われた部分を消去 yss&quot; &quot;で行を囲む yss= &lt;%=で行を囲む(vim-rails必須) yss- &lt;%で行を囲む(vim-rails必須) dst tagで囲われた部分を消去 選択状態でS&quot; &quot;で選択範囲を囲む</div>
     </footer>
   </a>
 </article>
@@ -463,15 +301,7 @@ set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vimの�
         <time>Thu, Aug 14, 2014</time>
       </div>
       <h2 class="title">Androidでのデータの保存</h2>
-      <div class="summary">データの保存 SharedPreferenceの利用  Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能
- ただし大規模なデータには向かず、設定項目向き。
-使い方  SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定
- モードについては後述。
-SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する
-// プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit();  保存される場所  保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される
- データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。
-getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue);  データ型  下記のデータ型がXMLに保存される 1.</div>
+      <div class="summary">データの保存 SharedPreferenceの利用 Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能 ただし大規模なデータには向かず、設定項目向き。 使い方 SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定 モードについては後述。 SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE); SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する // プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit(); 保存される場所 保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。 getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue); データ型 下記のデータ型がXMLに保存される 1.</div>
     </footer>
   </a>
 </article>
@@ -487,13 +317,7 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
         <time>Fri, Aug 1, 2014</time>
       </div>
       <h2 class="title">ListView and http connection</h2>
-      <div class="summary">雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
-レイアウトをJava側で生成する  LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);`  レイアウトに要素を追加する  Button button1 = new Button(this); button1.setText(&quot;OK&quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);`  AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
- public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.
- Parameters: child: the child view to add params: the layout parameters to set on the child
- LinearLayout.LayoutParamsクラス
-「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。
- LayoutParams public LinearLayout.LayoutParams(int w, int h)  他のビューに対する相対位置の指定(addRule)  このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</div>
+      <div class="summary">雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達 レイアウトをJava側で生成する LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);` レイアウトに要素を追加する Button button1 = new Button(this); button1.setText(&quot;OK&quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);` AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。 public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters. Parameters: child: the child view to add params: the layout parameters to set on the child LinearLayout.LayoutParamsクラス 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。 LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。 (参考: http://www.javadrive.jp/android/relativelayout/index3.html) addRule public void addRule(int verb, int anchor) Adds a layout rule to be interpreted by the RelativeLayout.</div>
     </footer>
   </a>
 </article>
@@ -619,7 +443,7 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -628,7 +452,7 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

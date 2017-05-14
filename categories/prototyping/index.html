@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,21 +69,7 @@
         <time>Mon, Aug 8, 2016</time>
       </div>
       <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
-      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
-外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
-何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。
-初期にAPIのスタブサーバが出来てしまうと
- サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる  jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
-APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。
-また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。
-実際にあった話として
- APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない  あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
-node-easymockでスタブサーバ作る  npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される  非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
-起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。
-&quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; }  ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
-リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
- APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく  柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
-Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</div>
+      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。 外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。 何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。 初期にAPIのスタブサーバが出来てしまうと サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。 APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。 また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。 実際にあった話として APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。 node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。 起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。 &quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。 APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。 Railsでの通常の開発だとmodel、controller、viewの順で作っていく。 プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。 フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。 硬いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。 ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</div>
     </footer>
   </a>
 </article>
@@ -199,7 +185,7 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -208,7 +194,7 @@ Railsでの通常の開発だとmodel、controller、viewの順で作ってい�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

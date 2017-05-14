@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,19 +69,7 @@
         <time>Mon, Feb 6, 2017</time>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-      <div class="summary">環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
-ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
-リポジトリを追加する
-sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
-sudo apt update &amp;&amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
-カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
-記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
-HWEカーネル用パッケージのインストール HWEカーネルとは
- HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
- 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
-linux-generic-hwe-16.04-edgeをインストール
-sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</div>
+      <div class="summary">環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る リポジトリを追加する sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール sudo apt update &amp;&amp; sudo apt install ukuu Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい) カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。 記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。 HWEカーネル用パッケージのインストール HWEカーネルとは HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。 linux-generic-hwe-16.04-edgeをインストール sudo apt install linux-generic-hwe-16.04-edge バージョンの確認 $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウエアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。 Special Thanks</div>
     </footer>
   </a>
 </article>
@@ -197,7 +185,7 @@ $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -206,7 +194,7 @@ $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li>
       </ul>
     </div>
   </section>

@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,12 +69,7 @@
         <time>Wed, Jan 22, 2014</time>
       </div>
       <h2 class="title">Octopressで下書き保存をデフォルト設定にする方法</h2>
-      <div class="summary">Octopressでの下書き保存 普通にdeployすると、rake new_post['hogehoge']で生成された/_posts配下の記事がすべてPublishされてしまう。 一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
-実際はyyyy-MM-dd-[$title].markdown内に published: falseを記述するだけ。 (※$titleは生成された記事毎に異なる)
-layout: post title: &quot;Octopressで下書き保存をデフォルト設定にする方法&quot; date: 2014-01-22 comments: true categories: + published: false  一番下のpublished: falseを追記。
-これでRake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。
-下書き保存をデフォルト設定 記事生成時に下書き保存をデフォルトで設定してほしい場合、RakeFileを編集する。
-task :new_post, :title do |t, args| if args.title title = args.title else title = get_stdin(&quot;Enter a title for your post: &quot;) end raise &quot;### You haven't set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.</div>
+      <div class="summary">Octopressでの下書き保存 普通にdeployすると、rake new_post['hogehoge']で生成された/_posts配下の記事がすべてPublishされてしまう。 一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。 実際はyyyy-MM-dd-[$title].markdown内に published: falseを記述するだけ。 (※$titleは生成された記事毎に異なる) layout: post title: &quot;Octopressで下書き保存をデフォルト設定にする方法&quot; date: 2014-01-22 comments: true categories: + published: false 一番下のpublished: falseを追記。 これでRake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。 下書き保存をデフォルト設定 記事生成時に下書き保存をデフォルトで設定してほしい場合、RakeFileを編集する。 task :new_post, :title do |t, args| if args.title title = args.title else title = get_stdin(&quot;Enter a title for your post: &quot;) end raise &quot;### You haven't set anything up yet. First run `rake install` to set up an Octopress theme.&quot; unless File.directory?(source_dir) mkdir_p &quot;#{source_dir}/#{posts_dir}&quot; filename = &quot;#{source_dir}/#{posts_dir}/#{Time.now.strftime('%Y-%m-%d')}-#{title.to_url}.#{new_post_ext}&quot; if File.exist?(filename) abort(&quot;rake aborted!&quot;) if ask(&quot;#{filename} already exists.</div>
     </footer>
   </a>
 </article>
@@ -190,7 +185,7 @@ task :new_post, :title do |t, args| if args.title title = args.title else title 
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -199,7 +194,7 @@ task :new_post, :title do |t, args| if args.title title = args.title else title 
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

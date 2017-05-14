@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,21 +69,7 @@
         <time>Sun, Aug 16, 2015</time>
       </div>
       <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
-sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
-環境はElementary OS freya(Ubuntu14.04ベース)
-nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
-wget入ってない場合はインストール。
-sudo apt-get install wget
-ppaの導入
-wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
-nodeのインストール sudo apt-get install nodejs
-nodeではなくnodejsを使う
-version番号の確認 node -v
-v0.12.7
-npm -v
-2.11.3
-色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
+      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。 環境はElementary OS freya(Ubuntu14.04ベース) nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。 wget入ってない場合はインストール。 sudo apt-get install wget ppaの導入 wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行 nodeのインストール sudo apt-get install nodejs nodeではなくnodejsを使う version番号の確認 node -v v0.12.7 npm -v 2.11.3 色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
     </footer>
   </a>
 </article>
@@ -99,13 +85,7 @@ npm -v
         <time>Mon, Apr 13, 2015</time>
       </div>
       <h2 class="title">AngularでのDOMへのアクセス</h2>
-      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
-今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
-&lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時
-str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。
-しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
-hashed_data = angular.fomJson(str)
-これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
+      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。 &lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時 str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。 hashed_data = angular.fomJson(str) これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
     </footer>
   </a>
 </article>
@@ -121,23 +101,7 @@ hashed_data = angular.fomJson(str)
         <time>Sat, Mar 21, 2015</time>
       </div>
       <h2 class="title">ng-japan</h2>
-      <div class="summary">Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
-場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
-毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
-結構人がいて定員500名の会場が普通に埋まってた
-こんなかんじ↓
-すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63
-&mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 
-今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。
-onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ 
-HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。
-アプリ内ではWebviewを利用している。
-###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する
-###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo;
-###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評
-###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい
-##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない
-チューニング対象となる5つのフェーズ  Loading  リソースの読み込みやパース 組み込みなのであんまやることない  Scripting  JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる  Rendering  レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。  Layout  すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー  Painting  描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成   雑多なチューニングの小話  translate3d(0,0,0)が早いのはなぜ？  GPUで描画されるから?</div>
+      <div class="summary">Angualrjsの日本初のカンファレンス ng-japan2015 が渋谷で2015/03/21にあったので行って来た。 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。 結構人がいて定員500名の会場が普通に埋まってた こんなかんじ↓ すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63 &mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。 onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。 アプリ内ではWebviewを利用している。 ###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する ###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo; ###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評 ###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい ##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない チューニング対象となる5つのフェーズ Loading リソースの読み込みやパース 組み込みなのであんまやることない Scripting JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる Rendering レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。 Layout すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー Painting 描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成 雑多なチューニングの小話 translate3d(0,0,0)が早いのはなぜ？ GPUで描画されるから?</div>
     </footer>
   </a>
 </article>
@@ -253,7 +217,7 @@ HTML5ハイブリッドアプリとは ネイティブのアプリとは違っ�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -262,7 +226,7 @@ HTML5ハイブリッドアプリとは ネイティブのアプリとは違っ�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,21 +69,7 @@
         <time>Thu, Sep 11, 2014</time>
       </div>
       <h2 class="title">Rspecでインスタンス変数が参照できない</h2>
-      <div class="summary">Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。
-まず、この事実を理解すべきだった。
-Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
-また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
-expect(Model.last.name).to eq 'modelname'で評価する。
-どちらもどのような値がアサインされていればよいのかを意識してテストを書く。
-その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。
-そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。
-はじめてのテストということでハマってしまった。
-テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。
-実行中のプログラム内なのか、その外なのかを常に意識する。
-RequestヘッダをRspecで作ってそれをRailsに投げる。
-Railsの中のController内で、どのような値がアサインされるかテストする。
-どの世界の値を取得して何と比べるのか。
-何をテストすべきかを意識していれば回避できる問題。</div>
+      <div class="summary">Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。 まず、この事実を理解すべきだった。 Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。 また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。 expect(Model.last.name).to eq 'modelname'で評価する。 どちらもどのような値がアサインされていればよいのかを意識してテストを書く。 その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。 そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。 はじめてのテストということでハマってしまった。 テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。 実行中のプログラム内なのか、その外なのかを常に意識する。 RequestヘッダをRspecで作ってそれをRailsに投げる。 Railsの中のController内で、どのような値がアサインされるかテストする。 どの世界の値を取得して何と比べるのか。 何をテストすべきかを意識していれば回避できる問題。</div>
     </footer>
   </a>
 </article>
@@ -199,7 +185,7 @@ Railsの中のController内で、どのような値がアサインされるか�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -208,7 +194,7 @@ Railsの中のController内で、どのような値がアサインされるか�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

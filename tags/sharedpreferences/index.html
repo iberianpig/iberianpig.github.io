@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,15 +69,7 @@
         <time>Thu, Aug 14, 2014</time>
       </div>
       <h2 class="title">Androidでのデータの保存</h2>
-      <div class="summary">データの保存 SharedPreferenceの利用  Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能
- ただし大規模なデータには向かず、設定項目向き。
-使い方  SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定
- モードについては後述。
-SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する
-// プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit();  保存される場所  保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される
- データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。
-getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue);  データ型  下記のデータ型がXMLに保存される 1.</div>
+      <div class="summary">データの保存 SharedPreferenceの利用 Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能 ただし大規模なデータには向かず、設定項目向き。 使い方 SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定 モードについては後述。 SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE); SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する // プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit(); 保存される場所 保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。 getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue); データ型 下記のデータ型がXMLに保存される 1.</div>
     </footer>
   </a>
 </article>
@@ -193,7 +185,7 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
       </ul>
     </div>
   </section>
@@ -202,7 +194,7 @@ getString(String key, String defValue); getInt(String key, int defValue); getLon
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li>
       </ul>
     </div>
   </section>

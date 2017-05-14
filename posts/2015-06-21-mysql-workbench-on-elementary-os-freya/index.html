@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -139,18 +139,18 @@ workbencだQueryの結果が白くなって表示されない。<br />
 selectした結果がセルで表示されるはずなんだけど。
 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。</p>
 
-<h2 id="調査してみた">調査してみた</h2>
+<h2 id="調査してみた:f94058f14ea96d152f182c3ea0fbf87e">調査してみた</h2>
 
 <p>色々な人が死んでた<br />
 workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている</p>
 
 <p>また、<a href="http://askubuntu.com/a/458646"> debパッケージの中身を書き換える方法 </a>が提案されていたが筆者の環境では失敗。</p>
 
-<h2 id="source落としてパッチ当ててmakeする-成功">source落としてパッチ当ててmakeする(成功)</h2>
+<h2 id="source落としてパッチ当ててmakeする-成功:f94058f14ea96d152f182c3ea0fbf87e">source落としてパッチ当ててmakeする(成功)</h2>
 
 <p>唯一上手く行った方法。</p>
 
-<h3 id="下記コマンドを実行">下記コマンドを実行</h3>
+<h3 id="下記コマンドを実行:f94058f14ea96d152f182c3ea0fbf87e">下記コマンドを実行</h3>
 
 <pre><code class="language-bash">sudo apt-get remove mysql-workbench*
 tar xvf mysql-workbench-community-6.3.3-src.tar.gz
@@ -168,7 +168,7 @@ sudo make install
 <p>buildは1.5h程度は見込んでおいた方が良い。<br />
 <code>sudo make install</code>後にrebootするときちんとresultが表示される。</p>
 
-<h2 id="special-thanks">special thanks</h2>
+<h2 id="special-thanks:f94058f14ea96d152f182c3ea0fbf87e">special thanks</h2>
 
 <ul>
 <li><a href="https://www.reddit.com/r/elementaryos/comments/2tahgl/elementary_mysql_workbench_libglib_242_empty/"> reddit </a></li>
@@ -224,12 +224,12 @@ sudo make install
 <ul>
 <li>
 <ul>
-<li><a href="#調査してみた">調査してみた</a></li>
-<li><a href="#source落としてパッチ当ててmakeする-成功">source落としてパッチ当ててmakeする(成功)</a>
+<li><a href="#調査してみた:f94058f14ea96d152f182c3ea0fbf87e">調査してみた</a></li>
+<li><a href="#source落としてパッチ当ててmakeする-成功:f94058f14ea96d152f182c3ea0fbf87e">source落としてパッチ当ててmakeする(成功)</a>
 <ul>
-<li><a href="#下記コマンドを実行">下記コマンドを実行</a></li>
+<li><a href="#下記コマンドを実行:f94058f14ea96d152f182c3ea0fbf87e">下記コマンドを実行</a></li>
 </ul></li>
-<li><a href="#special-thanks">special thanks</a></li>
+<li><a href="#special-thanks:f94058f14ea96d152f182c3ea0fbf87e">special thanks</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -333,7 +333,7 @@ sudo make install
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -342,7 +342,7 @@ sudo make install
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li>
       </ul>
     </div>
   </section>

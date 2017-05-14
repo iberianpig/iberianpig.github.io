@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -124,7 +124,9 @@
 </section>
 
 
-              <p>なぜこんなことがやりたいかというと、</p>
+              
+
+<p>なぜこんなことがやりたいかというと、</p>
 
 <ul>
 <li>スクラムでのタスク管理にPivotalTracker(<a href="http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される">http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される</a></li>
@@ -134,11 +136,9 @@
 <li>チームで浸透させたい</li>
 </ul>
 
-<p></p>
-
 <p>という理由から。</p>
 
-<h2 id="gitのhookを利用する">Gitのhookを利用する</h2>
+<h2 id="gitのhookを利用する:256c9aba23a55141d0b5e840dc622108">Gitのhookを利用する</h2>
 
 <p>プロジェクトのルートディレクトリから辿ると、<code>.git/hook/</code>というディレクトリがある<br />
 hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんなスクリプトが準備されている<br />
@@ -157,11 +157,11 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 
 <p>ということで、commit-msgにコミットメッセージの先頭に自動で追記するRuby scriptを書く</p>
 
-<h2 id="commit-msg">commit-msg</h2>
+<h2 id="commit-msg:256c9aba23a55141d0b5e840dc622108">commit-msg</h2>
 
 <script src="//gist.github.com/iberianpig/f010cfa1134bc19e3989.js"></script>
 
-<h3 id="処理の流れ">処理の流れ</h3>
+<h3 id="処理の流れ:256c9aba23a55141d0b5e840dc622108">処理の流れ</h3>
 
 <ol>
 <li><code>ARGV[0]</code>にはコミットメッセージを入力するファイルが与えられる</li>
@@ -178,14 +178,14 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 <li>メッセージをファイルに書き込んで終了</li>
 </ol>
 
-<h3 id="実行権限の付与">実行権限の付与</h3>
+<h3 id="実行権限の付与:256c9aba23a55141d0b5e840dc622108">実行権限の付与</h3>
 
 <p>作成したスクリプトに下記コマンドで実行権をつけてやる</p>
 
 <pre><code>$ chmod +x commit-msg
 </code></pre>
 
-<h3 id="やってみる">やってみる</h3>
+<h3 id="やってみる:256c9aba23a55141d0b5e840dc622108">やってみる</h3>
 
 <p>ブランチを切ってみる</p>
 
@@ -201,20 +201,21 @@ hookの中にはpre-commit, prepare-commit-msg, commit-msgなど、いろんな�
 
 <p><code>git commit -amend</code>などでもうまく動くはず。</p>
 
-<h2 id="その他チラ裏">その他チラ裏</h2>
+<h2 id="その他チラ裏:256c9aba23a55141d0b5e840dc622108">その他チラ裏</h2>
 
 <p><code>prepare-commit-msg</code>では、<code>git commit -ammend</code>の際に二重で[#IssueID]を付与してしまうためcommit-msgを利用した<br />
 shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動作が異なり、他のメンバーに展開できなかったためRubyで書いた</p>
 
-<h2 id="エンジニアの小さなしあわせ">エンジニアの小さなしあわせ</h2>
+<h2 id="エンジニアの小さなしあわせ:256c9aba23a55141d0b5e840dc622108">エンジニアの小さなしあわせ</h2>
 
 <p>こういう小さな生産性向上のためにいろいろ小手先を使うのが好き。<br />
 エンジニアならこの感覚、大事。<br />
 ハマると仕事がつかなくなるんだけれども。</p>
 
-<h2 id="special-thanks">Special Thanks</h2>
+<h2 id="special-thanks:256c9aba23a55141d0b5e840dc622108">Special Thanks</h2>
 
 <p>(<a href="http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929">http://qiita.com/mima_ita/items/dcaa3789022d2a9ab929</a>)</p>
+
             </div>
 
             <aside class="p-share">
@@ -264,16 +265,16 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
 <ul>
 <li>
 <ul>
-<li><a href="#gitのhookを利用する">Gitのhookを利用する</a></li>
-<li><a href="#commit-msg">commit-msg</a>
+<li><a href="#gitのhookを利用する:256c9aba23a55141d0b5e840dc622108">Gitのhookを利用する</a></li>
+<li><a href="#commit-msg:256c9aba23a55141d0b5e840dc622108">commit-msg</a>
 <ul>
-<li><a href="#処理の流れ">処理の流れ</a></li>
-<li><a href="#実行権限の付与">実行権限の付与</a></li>
-<li><a href="#やってみる">やってみる</a></li>
+<li><a href="#処理の流れ:256c9aba23a55141d0b5e840dc622108">処理の流れ</a></li>
+<li><a href="#実行権限の付与:256c9aba23a55141d0b5e840dc622108">実行権限の付与</a></li>
+<li><a href="#やってみる:256c9aba23a55141d0b5e840dc622108">やってみる</a></li>
 </ul></li>
-<li><a href="#その他チラ裏">その他チラ裏</a></li>
-<li><a href="#エンジニアの小さなしあわせ">エンジニアの小さなしあわせ</a></li>
-<li><a href="#special-thanks">Special Thanks</a></li>
+<li><a href="#その他チラ裏:256c9aba23a55141d0b5e840dc622108">その他チラ裏</a></li>
+<li><a href="#エンジニアの小さなしあわせ:256c9aba23a55141d0b5e840dc622108">エンジニアの小さなしあわせ</a></li>
+<li><a href="#special-thanks:256c9aba23a55141d0b5e840dc622108">Special Thanks</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -377,7 +378,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -386,7 +387,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

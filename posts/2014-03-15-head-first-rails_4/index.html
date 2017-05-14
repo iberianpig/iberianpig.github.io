@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -126,30 +126,30 @@
 
               
 
-<h1 id="head-first-rails-第４章のメモ">Head First Rails 第４章のメモ</h1>
+<h1 id="head-first-rails-第４章のメモ:6e5b4f40edb1c21bdfd9e120571fa740">Head First Rails 第４章のメモ</h1>
 
 <p>※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。</p>
 
 <p>Scaffoldで作成したページを改造していく。</p>
 
-<h2 id="検索窓の導入">検索窓の導入</h2>
+<h2 id="検索窓の導入:6e5b4f40edb1c21bdfd9e120571fa740">検索窓の導入</h2>
 
 <p>どのページにも検索窓を用意するので、layoutsを利用する
 layoutfileは｛モデル名｝.html.erbとなる</p>
 
 <p>form_forとform_tagの違い</p>
 
-<h2 id="ハマったところ">ハマったところ</h2>
+<h2 id="ハマったところ:6e5b4f40edb1c21bdfd9e120571fa740">ハマったところ</h2>
 
 <p>書籍では&lt;％ %&gt;だったが、実際はform_tag は &lt;%= %&gt; で囲む必要があった<br />
 (rails 3 と rails 4の違い？ )</p>
 
-<h3 id="routesの追記が必要-formの追加に合わせて">routesの追記が必要。 formの追加に合わせて。</h3>
+<h3 id="routesの追記が必要-formの追加に合わせて:6e5b4f40edb1c21bdfd9e120571fa740">routesの追記が必要。 formの追加に合わせて。</h3>
 
 <pre><code>post 'client_workouts/find' =&gt; 'client_workouts#find'
 </code></pre>
 
-<h3 id="rails4-だと-find-で-conditionsが使えない">rails4 だと Find で :conditionsが使えない</h3>
+<h3 id="rails4-だと-find-で-conditionsが使えない:6e5b4f40edb1c21bdfd9e120571fa740">rails4 だと Find で :conditionsが使えない</h3>
 
 <p>代わりにモデル名.whereを利用する<br />
 * <code>モデル名.find(id)</code>
@@ -157,7 +157,7 @@ layoutfileは｛モデル名｝.html.erbとなる</p>
 * <code>モデル名.where(:カラム名 =&gt; 内容)</code>
     - なんか指定するときは大体where</p>
 
-<h3 id="defaultで生成されるapplication-html-erbはいつ利用される">defaultで生成されるapplication.html.erbはいつ利用される？</h3>
+<h3 id="defaultで生成されるapplication-html-erbはいつ利用される:6e5b4f40edb1c21bdfd9e120571fa740">defaultで生成されるapplication.html.erbはいつ利用される？</h3>
 
 <p>いつも使われてて、マスタのテンプレートとして使われてる
 どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</p>
@@ -209,14 +209,14 @@ layoutfileは｛モデル名｝.html.erbとなる</p>
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#head-first-rails-第４章のメモ">Head First Rails 第４章のメモ</a>
+<li><a href="#head-first-rails-第４章のメモ:6e5b4f40edb1c21bdfd9e120571fa740">Head First Rails 第４章のメモ</a>
 <ul>
-<li><a href="#検索窓の導入">検索窓の導入</a></li>
-<li><a href="#ハマったところ">ハマったところ</a>
+<li><a href="#検索窓の導入:6e5b4f40edb1c21bdfd9e120571fa740">検索窓の導入</a></li>
+<li><a href="#ハマったところ:6e5b4f40edb1c21bdfd9e120571fa740">ハマったところ</a>
 <ul>
-<li><a href="#routesの追記が必要-formの追加に合わせて">routesの追記が必要。 formの追加に合わせて。</a></li>
-<li><a href="#rails4-だと-find-で-conditionsが使えない">rails4 だと Find で :conditionsが使えない</a></li>
-<li><a href="#defaultで生成されるapplication-html-erbはいつ利用される">defaultで生成されるapplication.html.erbはいつ利用される？</a></li>
+<li><a href="#routesの追記が必要-formの追加に合わせて:6e5b4f40edb1c21bdfd9e120571fa740">routesの追記が必要。 formの追加に合わせて。</a></li>
+<li><a href="#rails4-だと-find-で-conditionsが使えない:6e5b4f40edb1c21bdfd9e120571fa740">rails4 だと Find で :conditionsが使えない</a></li>
+<li><a href="#defaultで生成されるapplication-html-erbはいつ利用される:6e5b4f40edb1c21bdfd9e120571fa740">defaultで生成されるapplication.html.erbはいつ利用される？</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -321,7 +321,7 @@ layoutfileは｛モデル名｝.html.erbとなる</p>
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -330,7 +330,7 @@ layoutfileは｛モデル名｝.html.erbとなる</p>
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
       </ul>
     </div>
   </section>

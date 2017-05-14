@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -69,19 +69,7 @@
         <time>Mon, Feb 6, 2017</time>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-      <div class="summary">環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
-ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
-リポジトリを追加する
-sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
-sudo apt update &amp;&amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
-カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
-記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
-HWEカーネル用パッケージのインストール HWEカーネルとは
- HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
- 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
-linux-generic-hwe-16.04-edgeをインストール
-sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</div>
+      <div class="summary">環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る リポジトリを追加する sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール sudo apt update &amp;&amp; sudo apt install ukuu Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい) カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。 記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。 HWEカーネル用パッケージのインストール HWEカーネルとは HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。 linux-generic-hwe-16.04-edgeをインストール sudo apt install linux-generic-hwe-16.04-edge バージョンの確認 $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウエアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。 Special Thanks</div>
     </footer>
   </a>
 </article>
@@ -97,21 +85,7 @@ $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18
         <time>Sun, Aug 16, 2015</time>
       </div>
       <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
-sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
-環境はElementary OS freya(Ubuntu14.04ベース)
-nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
-wget入ってない場合はインストール。
-sudo apt-get install wget
-ppaの導入
-wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
-nodeのインストール sudo apt-get install nodejs
-nodeではなくnodejsを使う
-version番号の確認 node -v
-v0.12.7
-npm -v
-2.11.3
-色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
+      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。 環境はElementary OS freya(Ubuntu14.04ベース) nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。 wget入ってない場合はインストール。 sudo apt-get install wget ppaの導入 wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行 nodeのインストール sudo apt-get install nodejs nodeではなくnodejsを使う version番号の確認 node -v v0.12.7 npm -v 2.11.3 色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
     </footer>
   </a>
 </article>
@@ -127,18 +101,7 @@ npm -v
         <time>Sun, Jun 21, 2015</time>
       </div>
       <h2 class="title">MySQL WorkbenchでQueryの結果が表示されない問題</h2>
-      <div class="summary"> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
-MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
-具体的には以下のような症状。
- workbencだQueryの結果が白くなって表示されない。
-selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
-調査してみた 色々な人が死んでた
-workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
-また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
-source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
-下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;bug_id=74147 patch -p0 &lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install  buildは1.5h程度は見込んでおいた方が良い。
-sudo make install後にrebootするときちんとresultが表示される。
-special thanks  reddit  launchpad   </div>
+      <div class="summary">elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。 具体的には以下のような症状。 workbencだQueryの結果が白くなって表示されない。 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。 調査してみた 色々な人が死んでた workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている また、 debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。 下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;bug_id=74147 patch -p0 &lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。 sudo make install後にrebootするときちんとresultが表示される。 special thanks reddit launchpad</div>
     </footer>
   </a>
 </article>
@@ -154,34 +117,7 @@ special thanks  reddit  launchpad   </div>
         <time>Sun, May 31, 2015</time>
       </div>
       <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
-      <div class="summary">世界各国のLinuxerの皆さん、こんばんは
-寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？
-毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
-少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
-現実問題難しい。
-PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
-このメガネを使うと目に(心理的に)優しくなれる。
-そもそも、寝付きの悪さの原因の根源は何か？
-ブルーライト、聞いたことあるはず。
-寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
-メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！）
-&gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
-ブルーライトをカットする 本題に入る。
-実はこのブルーライト、色温度を下げることで減量させることができる。
- 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
- 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
-そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
-今回はRedshiftというソフトウェアを利用。
-Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
-Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
-Redshiftのインストール sudo apt-get install redshift redshift-gtk
-パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
-Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
- toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
-こちらのサイトで詳しく紹介されていた。
-デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
-夜の寝付きの良さが変わるはず。
-Linuxer達に良き睡眠を。</div>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？ 毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。 現実問題難しい。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった) ブルーライトをカットする 本題に入る。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さが変わるはず。 Linuxer達に良き睡眠を。</div>
     </footer>
   </a>
 </article>
@@ -297,7 +233,7 @@ Linuxer達に良き睡眠を。</div>
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
       </ul>
     </div>
   </section>
@@ -306,7 +242,7 @@ Linuxer達に良き睡眠を。</div>
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -130,7 +130,7 @@
 電源周りで少し手こずったので、備忘録として残しておく。<br />
 インストール後にやったことはまた今度まとめる。</p>
 
-<h1 id="ハイバネートオプションを追加する">ハイバネートオプションを追加する</h1>
+<h1 id="ハイバネートオプションを追加する:c8d472f69fc412cae198361bfb8e36f4">ハイバネートオプションを追加する</h1>
 
 <p>Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。<br />
 ※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。
@@ -138,7 +138,7 @@
 
 <p>pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。</p>
 
-<h2 id="電源オプションの中にハイバネートを追加する">電源オプションの中にハイバネートを追加する</h2>
+<h2 id="電源オプションの中にハイバネートを追加する:c8d472f69fc412cae198361bfb8e36f4">電源オプションの中にハイバネートを追加する</h2>
 
 <p><code>sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla</code></p>
 
@@ -157,7 +157,7 @@ Action=org.freedesktop.login1.hibernate
 ResultActive=yes
 </code></pre>
 
-<h2 id="grubの設定">Grubの設定</h2>
+<h2 id="grubの設定:c8d472f69fc412cae198361bfb8e36f4">Grubの設定</h2>
 
 <p><code>sudo vi /etc/default/grub</code></p>
 
@@ -166,18 +166,18 @@ ResultActive=yes
 
 <p>resume=&lsquo;スワップ用パーティション&rsquo;とすること！</p>
 
-<h3 id="grubの更新">Grubの更新</h3>
+<h3 id="grubの更新:c8d472f69fc412cae198361bfb8e36f4">Grubの更新</h3>
 
 <p><code>sudo update-grub</code></p>
 
 <p>これでシャットダウンのオプションなどで、<code>休止状態</code>(もしくは<code>ハイバネート</code>)が増えているはず。</p>
 
-<h1 id="ノートpcを閉じた時にハイバネーションを有効にしたい-ロック画面でのpowerボタンの挙動を変える">ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える</h1>
+<h1 id="ノートpcを閉じた時にハイバネーションを有効にしたい-ロック画面でのpowerボタンの挙動を変える:c8d472f69fc412cae198361bfb8e36f4">ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える</h1>
 
 <p>自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた
 デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。</p>
 
-<h2 id="etc-systemd-logind-confの編集">/etc/systemd/logind.confの編集</h2>
+<h2 id="etc-systemd-logind-confの編集:c8d472f69fc412cae198361bfb8e36f4">/etc/systemd/logind.confの編集</h2>
 
 <p><code>man logind.conf</code> で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。</p>
 
@@ -236,17 +236,17 @@ HandleLidSwitch=hibernate
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#ハイバネートオプションを追加する">ハイバネートオプションを追加する</a>
+<li><a href="#ハイバネートオプションを追加する:c8d472f69fc412cae198361bfb8e36f4">ハイバネートオプションを追加する</a>
 <ul>
-<li><a href="#電源オプションの中にハイバネートを追加する">電源オプションの中にハイバネートを追加する</a></li>
-<li><a href="#grubの設定">Grubの設定</a>
+<li><a href="#電源オプションの中にハイバネートを追加する:c8d472f69fc412cae198361bfb8e36f4">電源オプションの中にハイバネートを追加する</a></li>
+<li><a href="#grubの設定:c8d472f69fc412cae198361bfb8e36f4">Grubの設定</a>
 <ul>
-<li><a href="#grubの更新">Grubの更新</a></li>
+<li><a href="#grubの更新:c8d472f69fc412cae198361bfb8e36f4">Grubの更新</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#ノートpcを閉じた時にハイバネーションを有効にしたい-ロック画面でのpowerボタンの挙動を変える">ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える</a>
+<li><a href="#ノートpcを閉じた時にハイバネーションを有効にしたい-ロック画面でのpowerボタンの挙動を変える:c8d472f69fc412cae198361bfb8e36f4">ノートPCを閉じた時にハイバネーションを有効にしたい &amp;&amp; ロック画面でのPowerボタンの挙動を変える</a>
 <ul>
-<li><a href="#etc-systemd-logind-confの編集">/etc/systemd/logind.confの編集</a></li>
+<li><a href="#etc-systemd-logind-confの編集:c8d472f69fc412cae198361bfb8e36f4">/etc/systemd/logind.confの編集</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -350,7 +350,7 @@ HandleLidSwitch=hibernate
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -359,7 +359,7 @@ HandleLidSwitch=hibernate
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

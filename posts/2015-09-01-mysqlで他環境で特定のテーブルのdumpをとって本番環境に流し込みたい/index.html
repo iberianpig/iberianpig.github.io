@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -126,7 +126,7 @@
 
               
 
-<h1 id="必要となった背景">必要となった背景</h1>
+<h1 id="必要となった背景:70a73770871b0e628cc7fededae2078d">必要となった背景</h1>
 
 <p>1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。<br />
 動的に表示させようとしたが、現行のままでは動的に出すのは厳しく、バッチ処理でおすすめコンテンツの情報をキャッシュすることにした。<br />
@@ -134,7 +134,7 @@
 本番環境の裏側で実行させようと考えたが、非常に遅く、１ヶ月ほど時間がかかってしまうため、
 一度本番のDumpを取得した上で別の環境でバッチを回し、その結果を本番環境へロードさせたほうが良いということになった。</p>
 
-<h1 id="テーブル別のdump">テーブル別のDump</h1>
+<h1 id="テーブル別のdump:70a73770871b0e628cc7fededae2078d">テーブル別のDump</h1>
 
 <p>いつもDB一括でMySQL workbenchでDumpを取得しているなど、mysqlコマンドに疎い。
 今回は他のテーブルは必要なかったので、必要なテーブルのDumpのみを取得する方法を調べた。</p>
@@ -146,14 +146,14 @@
 <pre><code class="language-sh">mysqldump -u &lt;USERNAME&gt; -p -t &lt;DBNAME&gt; &lt;TABLENAME1&gt; [ &lt;TABLENAME2&gt; ... ] &gt; &lt;DUMPFILENAME&gt;.sql
 </code></pre>
 
-<h1 id="dumpのインポート">Dumpのインポート</h1>
+<h1 id="dumpのインポート:70a73770871b0e628cc7fededae2078d">Dumpのインポート</h1>
 
 <p>下記コマンドでインポート</p>
 
 <pre><code class="language-sh">mysqll -u &lt;USERNAME&gt; -p &lt;DBNAME&gt; &lt; &lt;DUMPFILENAME&gt;.sql
 </code></pre>
 
-<h1 id="seed-fuで入れる場合">seed_fuで入れる場合</h1>
+<h1 id="seed-fuで入れる場合:70a73770871b0e628cc7fededae2078d">seed_fuで入れる場合</h1>
 
 <p><a href="https://github.com/mbleigh/seed-fu">mbleigh/seed-fu</a> という主に環境整備時に利用するものGemがある。<br />
 テストデータやシードデータの導入の利用される。<br />
@@ -164,7 +164,7 @@
 <p>db:dump_seed_fu[model]で実行。
 db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 
-<h1 id="special-thanks">Special Thanks</h1>
+<h1 id="special-thanks:70a73770871b0e628cc7fededae2078d">Special Thanks</h1>
 
 <ul>
 <li><a href="http://easyramble.com/backup-only-mysql-tables.html"> MySQL で特定のテーブルのみをバックアップ - Easy Ramble </a></li>
@@ -218,11 +218,11 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#必要となった背景">必要となった背景</a></li>
-<li><a href="#テーブル別のdump">テーブル別のDump</a></li>
-<li><a href="#dumpのインポート">Dumpのインポート</a></li>
-<li><a href="#seed-fuで入れる場合">seed_fuで入れる場合</a></li>
-<li><a href="#special-thanks">Special Thanks</a></li>
+<li><a href="#必要となった背景:70a73770871b0e628cc7fededae2078d">必要となった背景</a></li>
+<li><a href="#テーブル別のdump:70a73770871b0e628cc7fededae2078d">テーブル別のDump</a></li>
+<li><a href="#dumpのインポート:70a73770871b0e628cc7fededae2078d">Dumpのインポート</a></li>
+<li><a href="#seed-fuで入れる場合:70a73770871b0e628cc7fededae2078d">seed_fuで入れる場合</a></li>
+<li><a href="#special-thanks:70a73770871b0e628cc7fededae2078d">Special Thanks</a></li>
 </ul>
 </nav></div>
   </section>
@@ -325,7 +325,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -334,7 +334,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li>
       </ul>
     </div>
   </section>

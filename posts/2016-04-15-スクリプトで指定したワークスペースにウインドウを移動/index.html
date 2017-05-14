@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -130,7 +130,7 @@
 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。
 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。</p>
 
-<h1 id="ブラウザとターミナルを交互に切り替えたい">ブラウザとターミナルを交互に切り替えたい</h1>
+<h1 id="ブラウザとターミナルを交互に切り替えたい:5dbe9927ab3915e7be0f4259c8c818ab">ブラウザとターミナルを交互に切り替えたい</h1>
 
 <p>Web開発している時にターミナルとChromeを何度も行き来することがある。
 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。
@@ -138,7 +138,7 @@ Alt-tabを押す、該当の画面がターミナル(Window)であるかを確�
 
 <p>特定のキー1回でブラウザとターミナルをトグルできればベスト。</p>
 
-<h2 id="xdotoolを使ってみる">xdotoolを使ってみる</h2>
+<h2 id="xdotoolを使ってみる:5dbe9927ab3915e7be0f4259c8c818ab">xdotoolを使ってみる</h2>
 
 <p>できる事は下記があるらしい。</p>
 
@@ -226,7 +226,7 @@ Available commands:
 
 <p>結構いろいろある</p>
 
-<h2 id="windowidの取得">windowIDの取得</h2>
+<h2 id="windowidの取得:5dbe9927ab3915e7be0f4259c8c818ab">windowIDの取得</h2>
 
 <p>対象アプリケーションのWindowのIDを取得</p>
 
@@ -235,7 +235,7 @@ Defaulting to search window name, class, and classname
 65011722
 </code></pre>
 
-<h2 id="workspaceidの取得">workspaceIDの取得</h2>
+<h2 id="workspaceidの取得:5dbe9927ab3915e7be0f4259c8c818ab">workspaceIDの取得</h2>
 
 <p>対象のアプリケーションがどこのワークスペースにいるかを取得</p>
 
@@ -243,14 +243,14 @@ Defaulting to search window name, class, and classname
 0
 </code></pre>
 
-<h2 id="windowをworkspaceへのセット">windowをworkspaceへのセット</h2>
+<h2 id="windowをworkspaceへのセット:5dbe9927ab3915e7be0f4259c8c818ab">windowをworkspaceへのセット</h2>
 
 <p>WindowIDが<code>65011722</code>のWindowをWorkspace<code>1</code>に移動させる</p>
 
 <pre><code>xdotool set_desktop_for_window 65011722 1
 </code></pre>
 
-<h2 id="実装してみる">実装してみる</h2>
+<h2 id="実装してみる:5dbe9927ab3915e7be0f4259c8c818ab">実装してみる</h2>
 
 <script src="//gist.github.com/iberianpig/38a7dfe61b5dc59de7f855330b7c6ab4.js"></script>
 
@@ -276,11 +276,11 @@ xbindkeys
 
 <p>Ctrl+Shift+mでターミナルとブラウザをトグルできるようなった！</p>
 
-<h1 id="その他xdotoolでやりたいこと">その他xdotoolでやりたいこと</h1>
+<h1 id="その他xdotoolでやりたいこと:5dbe9927ab3915e7be0f4259c8c818ab">その他xdotoolでやりたいこと</h1>
 
 <p>他にもxdotoolでやりたいことがいくつかある。</p>
 
-<h2 id="いつも指定のワークスペースにアプリをセットしたい">いつも指定のワークスペースにアプリをセットしたい</h2>
+<h2 id="いつも指定のワークスペースにアプリをセットしたい:5dbe9927ab3915e7be0f4259c8c818ab">いつも指定のワークスペースにアプリをセットしたい</h2>
 
 <p>作業を始めるときいつも同じ配置にする。</p>
 
@@ -290,7 +290,7 @@ xbindkeys
 <p>上記の配置をすることが多い。アプリ開いて、ワークスペース移動して、アプリ開いて…。
 面倒であるので一発でワークスペースに配置したい。</p>
 
-<h2 id="現在のアプリをひとつずつ隣のワークスペースに移動させたい">現在のアプリをひとつずつ隣のワークスペースに移動させたい</h2>
+<h2 id="現在のアプリをひとつずつ隣のワークスペースに移動させたい:5dbe9927ab3915e7be0f4259c8c818ab">現在のアプリをひとつずつ隣のワークスペースに移動させたい</h2>
 
 <p>そもそもなぜこのような要望が出るかというと今のelementary OSのバグで、マルチモニタを接続した際にプライマリのワークスペースが大きく描画されてしまう謎挙動がある。
 その状態でアプリケーションをドラッグで移動しようとしてもプライマリのワークスペースが隣のワークスペースの領域にかぶっていて、移動が困難になる。</p>
@@ -345,18 +345,18 @@ xbindkeys
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#ブラウザとターミナルを交互に切り替えたい">ブラウザとターミナルを交互に切り替えたい</a>
+<li><a href="#ブラウザとターミナルを交互に切り替えたい:5dbe9927ab3915e7be0f4259c8c818ab">ブラウザとターミナルを交互に切り替えたい</a>
 <ul>
-<li><a href="#xdotoolを使ってみる">xdotoolを使ってみる</a></li>
-<li><a href="#windowidの取得">windowIDの取得</a></li>
-<li><a href="#workspaceidの取得">workspaceIDの取得</a></li>
-<li><a href="#windowをworkspaceへのセット">windowをworkspaceへのセット</a></li>
-<li><a href="#実装してみる">実装してみる</a></li>
+<li><a href="#xdotoolを使ってみる:5dbe9927ab3915e7be0f4259c8c818ab">xdotoolを使ってみる</a></li>
+<li><a href="#windowidの取得:5dbe9927ab3915e7be0f4259c8c818ab">windowIDの取得</a></li>
+<li><a href="#workspaceidの取得:5dbe9927ab3915e7be0f4259c8c818ab">workspaceIDの取得</a></li>
+<li><a href="#windowをworkspaceへのセット:5dbe9927ab3915e7be0f4259c8c818ab">windowをworkspaceへのセット</a></li>
+<li><a href="#実装してみる:5dbe9927ab3915e7be0f4259c8c818ab">実装してみる</a></li>
 </ul></li>
-<li><a href="#その他xdotoolでやりたいこと">その他xdotoolでやりたいこと</a>
+<li><a href="#その他xdotoolでやりたいこと:5dbe9927ab3915e7be0f4259c8c818ab">その他xdotoolでやりたいこと</a>
 <ul>
-<li><a href="#いつも指定のワークスペースにアプリをセットしたい">いつも指定のワークスペースにアプリをセットしたい</a></li>
-<li><a href="#現在のアプリをひとつずつ隣のワークスペースに移動させたい">現在のアプリをひとつずつ隣のワークスペースに移動させたい</a></li>
+<li><a href="#いつも指定のワークスペースにアプリをセットしたい:5dbe9927ab3915e7be0f4259c8c818ab">いつも指定のワークスペースにアプリをセットしたい</a></li>
+<li><a href="#現在のアプリをひとつずつ隣のワークスペースに移動させたい:5dbe9927ab3915e7be0f4259c8c818ab">現在のアプリをひとつずつ隣のワークスペースに移動させたい</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -460,7 +460,7 @@ xbindkeys
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -469,7 +469,7 @@ xbindkeys
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
       </ul>
     </div>
   </section>

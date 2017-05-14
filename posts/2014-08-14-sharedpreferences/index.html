@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -126,9 +126,9 @@
 
               
 
-<h1 id="データの保存">データの保存</h1>
+<h1 id="データの保存:51d0cd193e9177c2e1f2a3f5a71c87a9">データの保存</h1>
 
-<h2 id="sharedpreferenceの利用">SharedPreferenceの利用</h2>
+<h2 id="sharedpreferenceの利用:51d0cd193e9177c2e1f2a3f5a71c87a9">SharedPreferenceの利用</h2>
 
 <blockquote>
 <p>Androidアプリでデータを保存する方法のひとつ
@@ -140,7 +140,7 @@
 
 <!-- more -->
 
-<h3 id="使い方">使い方</h3>
+<h3 id="使い方:51d0cd193e9177c2e1f2a3f5a71c87a9">使い方</h3>
 
 <blockquote>
 <p>SharedPreferences はgetSharedPreferences(String name, int mode);
@@ -168,14 +168,14 @@ editor.putString(KEY_TEXT, s);  // KEY, VALUEの組み合わせで保存
 editor.commit();
 </code></pre>
 
-<h3 id="保存される場所">保存される場所</h3>
+<h3 id="保存される場所:51d0cd193e9177c2e1f2a3f5a71c87a9">保存される場所</h3>
 
 <blockquote>
 <p>保存された Preference は data/data/パッケージ名/shared_prefs
 の中に xmlファイルとして保存される</p>
 </blockquote>
 
-<h3 id="データの取得">データの取得</h3>
+<h3 id="データの取得:51d0cd193e9177c2e1f2a3f5a71c87a9">データの取得</h3>
 
 <p><code>getXxxx(String key, Xxxx defValue)</code>のkey, value形式で取得する。</p>
 
@@ -184,7 +184,7 @@ getInt(String key, int defValue);
 getLong(String key, long defValue);
 </code></pre>
 
-<h3 id="データ型">データ型</h3>
+<h3 id="データ型:51d0cd193e9177c2e1f2a3f5a71c87a9">データ型</h3>
 
 <blockquote>
 <p>下記のデータ型がXMLに保存される
@@ -198,7 +198,7 @@ getLong(String key, long defValue);
 <p>※ データの大きい物、objectの保管は非推奨。(シリアライズさせれば出来るはず)<br />
 それらはバイナリ化してDBへ、もしくはファイルとして保存させるべき。</p>
 
-<h3 id="mode種別">MODE種別</h3>
+<h3 id="mode種別:51d0cd193e9177c2e1f2a3f5a71c87a9">MODE種別</h3>
 
 <p>プリファレンスでは、MODE_APPENDを除いた３種類のオペレーションモードが指定可能</p>
 
@@ -228,7 +228,7 @@ getLong(String key, long defValue);
 </tbody>
 </table>
 
-<h3 id="どのタイミングで使用すべきか">どのタイミングで使用すべきか</h3>
+<h3 id="どのタイミングで使用すべきか:51d0cd193e9177c2e1f2a3f5a71c87a9">どのタイミングで使用すべきか</h3>
 
 <p>実際は下記が一般的とのこと。</p>
 
@@ -247,7 +247,7 @@ getLong(String key, long defValue);
 
 <p><a href="https://gist.github.com/iberianpig/a25ce9e12795cdd40dd1/revisions"> サンプルコード </a></p>
 
-<h2 id="ファイル入出力">ファイル入出力</h2>
+<h2 id="ファイル入出力:51d0cd193e9177c2e1f2a3f5a71c87a9">ファイル入出力</h2>
 
 <p>openFileOutput, openFileInputを利用してローカルファイルへ保存。
 android.content.Contextのファイル書き込み/読み込み系のメソッドを利用。</p>
@@ -285,7 +285,7 @@ android.content.Contextのファイル書き込み/読み込み系のメソッ�
 </tbody>
 </table>
 
-<h3 id="モード種別">モード種別</h3>
+<h3 id="モード種別:51d0cd193e9177c2e1f2a3f5a71c87a9">モード種別</h3>
 
 <table>
 <thead>
@@ -322,7 +322,7 @@ android.content.Contextのファイル書き込み/読み込み系のメソッ�
 <p><a href="http://techbooster.org/tag/openfileoutput/">http://techbooster.org/tag/openfileoutput/</a></p>
 </blockquote>
 
-<h3 id="書き込みの例">書き込みの例</h3>
+<h3 id="書き込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9">書き込みの例</h3>
 
 <pre><code class="language-java">OutputStream out;
 //OutputStream インスタンス作成
@@ -339,7 +339,7 @@ try {
 }catch...
 </code></pre>
 
-<h3 id="読み込みの例">読み込みの例</h3>
+<h3 id="読み込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9">読み込みの例</h3>
 
 <pre><code class="language-java">    InputStream in;
     //InputStream インスタンス作成
@@ -358,9 +358,9 @@ try {
 
 <p><a href="https://gist.github.com/iberianpig/007b96e935dd607311ae/revisions"> サンプルコード </a></p>
 
-<h2 id="dbへの保存-書きかけ">DBへの保存(書きかけ)</h2>
+<h2 id="dbへの保存-書きかけ:51d0cd193e9177c2e1f2a3f5a71c87a9">DBへの保存(書きかけ)</h2>
 
-<h2 id="special-thanks">Special Thanks</h2>
+<h2 id="special-thanks:51d0cd193e9177c2e1f2a3f5a71c87a9">Special Thanks</h2>
 
 <p><a href="http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html">http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html</a></p>
 
@@ -415,25 +415,25 @@ try {
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#データの保存">データの保存</a>
+<li><a href="#データの保存:51d0cd193e9177c2e1f2a3f5a71c87a9">データの保存</a>
 <ul>
-<li><a href="#sharedpreferenceの利用">SharedPreferenceの利用</a>
+<li><a href="#sharedpreferenceの利用:51d0cd193e9177c2e1f2a3f5a71c87a9">SharedPreferenceの利用</a>
 <ul>
-<li><a href="#使い方">使い方</a></li>
-<li><a href="#保存される場所">保存される場所</a></li>
-<li><a href="#データの取得">データの取得</a></li>
-<li><a href="#データ型">データ型</a></li>
-<li><a href="#mode種別">MODE種別</a></li>
-<li><a href="#どのタイミングで使用すべきか">どのタイミングで使用すべきか</a></li>
+<li><a href="#使い方:51d0cd193e9177c2e1f2a3f5a71c87a9">使い方</a></li>
+<li><a href="#保存される場所:51d0cd193e9177c2e1f2a3f5a71c87a9">保存される場所</a></li>
+<li><a href="#データの取得:51d0cd193e9177c2e1f2a3f5a71c87a9">データの取得</a></li>
+<li><a href="#データ型:51d0cd193e9177c2e1f2a3f5a71c87a9">データ型</a></li>
+<li><a href="#mode種別:51d0cd193e9177c2e1f2a3f5a71c87a9">MODE種別</a></li>
+<li><a href="#どのタイミングで使用すべきか:51d0cd193e9177c2e1f2a3f5a71c87a9">どのタイミングで使用すべきか</a></li>
 </ul></li>
-<li><a href="#ファイル入出力">ファイル入出力</a>
+<li><a href="#ファイル入出力:51d0cd193e9177c2e1f2a3f5a71c87a9">ファイル入出力</a>
 <ul>
-<li><a href="#モード種別">モード種別</a></li>
-<li><a href="#書き込みの例">書き込みの例</a></li>
-<li><a href="#読み込みの例">読み込みの例</a></li>
+<li><a href="#モード種別:51d0cd193e9177c2e1f2a3f5a71c87a9">モード種別</a></li>
+<li><a href="#書き込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9">書き込みの例</a></li>
+<li><a href="#読み込みの例:51d0cd193e9177c2e1f2a3f5a71c87a9">読み込みの例</a></li>
 </ul></li>
-<li><a href="#dbへの保存-書きかけ">DBへの保存(書きかけ)</a></li>
-<li><a href="#special-thanks">Special Thanks</a></li>
+<li><a href="#dbへの保存-書きかけ:51d0cd193e9177c2e1f2a3f5a71c87a9">DBへの保存(書きかけ)</a></li>
+<li><a href="#special-thanks:51d0cd193e9177c2e1f2a3f5a71c87a9">Special Thanks</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -537,7 +537,7 @@ try {
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
       </ul>
     </div>
   </section>
@@ -546,7 +546,7 @@ try {
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li>
       </ul>
     </div>
   </section>

@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.19-DEV" />
+  <meta name="generator" content="Hugo 0.16-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -126,18 +126,18 @@
 
               
 
-<h1 id="雑多メモ">雑多メモ</h1>
+<h1 id="雑多メモ:ca8b5a9520e22fcfb65e09ec054cbe42">雑多メモ</h1>
 
 <p>Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達</p>
 
-<h2 id="レイアウトをjava側で生成する">レイアウトをJava側で生成する</h2>
+<h2 id="レイアウトをjava側で生成する:ca8b5a9520e22fcfb65e09ec054cbe42">レイアウトをJava側で生成する</h2>
 
 <pre><code>    LinearLayout linearLayout = new LinearLayout(this);
     linearLayout.setOrientation(LinearLayout.VERTICAL);
     setContentView(linearLayout);`
 </code></pre>
 
-<h2 id="レイアウトに要素を追加する">レイアウトに要素を追加する</h2>
+<h2 id="レイアウトに要素を追加する:ca8b5a9520e22fcfb65e09ec054cbe42">レイアウトに要素を追加する</h2>
 
 <pre><code>   Button button1 = new Button(this);
     button1.setText(&quot;OK&quot;);
@@ -149,7 +149,7 @@
 
 <!-- more -->
 
-<h3 id="addviewメソッド">AddViewメソッド</h3>
+<h3 id="addviewメソッド:ca8b5a9520e22fcfb65e09ec054cbe42">AddViewメソッド</h3>
 
 <p>「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。</p>
 
@@ -172,7 +172,7 @@ Adds a child view with the specified layout parameters.</p>
 public LinearLayout.LayoutParams(int w, int h)
 </code></pre>
 
-<h2 id="他のビューに対する相対位置の指定-addrule">他のビューに対する相対位置の指定(addRule)</h2>
+<h2 id="他のビューに対する相対位置の指定-addrule:ca8b5a9520e22fcfb65e09ec054cbe42">他のビューに対する相対位置の指定(addRule)</h2>
 
 <blockquote>
 <p>このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。
@@ -193,7 +193,7 @@ value (VISIBLE).</p>
     don&rsquo;t refer to another sibling (for example, ALIGN_WITH_PARENT_BOTTOM)
     just use -1.</p>
 
-<h3 id="windowのタイトルを消す">Windowのタイトルを消す</h3>
+<h3 id="windowのタイトルを消す:ca8b5a9520e22fcfb65e09ec054cbe42">Windowのタイトルを消す</h3>
 
 <ul>
 <li>onCreate内に下記を記述
@@ -203,7 +203,7 @@ value (VISIBLE).</p>
 </ul></li>
 </ul>
 
-<h2 id="listviewの扱い方">ListViewの扱い方</h2>
+<h2 id="listviewの扱い方:ca8b5a9520e22fcfb65e09ec054cbe42">ListViewの扱い方</h2>
 
 <ul>
 <li><code>List&lt;String&gt; items = new ArrayList&lt;String&gt;();</code></li>
@@ -330,7 +330,7 @@ getView自体はAdapterクラスだと持ってるコールバック。</p>
 
 <p>そのため、もし持っていなかったらLayoutInflaterで新しくconvertView取ってくるよという動きをする</p>
 
-<h2 id="その他-不明点">その他/不明点</h2>
+<h2 id="その他-不明点:ca8b5a9520e22fcfb65e09ec054cbe42">その他/不明点</h2>
 
 <p>見てたサイト達
 <a href="http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA">http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA</a></p>
@@ -382,19 +382,19 @@ getView自体はAdapterクラスだと持ってるコールバック。</p>
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#雑多メモ">雑多メモ</a>
+<li><a href="#雑多メモ:ca8b5a9520e22fcfb65e09ec054cbe42">雑多メモ</a>
 <ul>
-<li><a href="#レイアウトをjava側で生成する">レイアウトをJava側で生成する</a></li>
-<li><a href="#レイアウトに要素を追加する">レイアウトに要素を追加する</a>
+<li><a href="#レイアウトをjava側で生成する:ca8b5a9520e22fcfb65e09ec054cbe42">レイアウトをJava側で生成する</a></li>
+<li><a href="#レイアウトに要素を追加する:ca8b5a9520e22fcfb65e09ec054cbe42">レイアウトに要素を追加する</a>
 <ul>
-<li><a href="#addviewメソッド">AddViewメソッド</a></li>
+<li><a href="#addviewメソッド:ca8b5a9520e22fcfb65e09ec054cbe42">AddViewメソッド</a></li>
 </ul></li>
-<li><a href="#他のビューに対する相対位置の指定-addrule">他のビューに対する相対位置の指定(addRule)</a>
+<li><a href="#他のビューに対する相対位置の指定-addrule:ca8b5a9520e22fcfb65e09ec054cbe42">他のビューに対する相対位置の指定(addRule)</a>
 <ul>
-<li><a href="#windowのタイトルを消す">Windowのタイトルを消す</a></li>
+<li><a href="#windowのタイトルを消す:ca8b5a9520e22fcfb65e09ec054cbe42">Windowのタイトルを消す</a></li>
 </ul></li>
-<li><a href="#listviewの扱い方">ListViewの扱い方</a></li>
-<li><a href="#その他-不明点">その他/不明点</a></li>
+<li><a href="#listviewの扱い方:ca8b5a9520e22fcfb65e09ec054cbe42">ListViewの扱い方</a></li>
+<li><a href="#その他-不明点:ca8b5a9520e22fcfb65e09ec054cbe42">その他/不明点</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -498,7 +498,7 @@ getView自体はAdapterクラスだと持ってるコールバック。</p>
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -507,7 +507,7 @@ getView自体はAdapterクラスだと持ってるコールバック。</p>
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li>
       </ul>
     </div>
   </section>
