@@ -169,7 +169,7 @@ bind stage - status-update
   * view毎にアサインできるので色々仕込める
 * カラーテーマを変える
   * あまりテーマは見つからない。しかし、デフォルトが綺麗なのでそこまで必要性は感じていない
-* tig-explorer(https://github.com/iberianpig/tig-explorer.vim)というvim pluginをリリースした。
+* tig-explorer(https://github.com/iberianpig/tig-explorer.vim) というvim pluginをリリースした。
   * vimからtigを呼び出して開いたバッファを呼び出し元のvim共有できる。
   * vim ⇔ tig を行き来できるようになる。
-  * tigを使うため、vimプラグインgitv(https://github.com/gregsexton/gitv), agit(https://github.com/cohama/agit.vim)よりもPreviewにモタツキがない。
+  * tigを使うため、vimプラグインgitv(https://github.com/gregsexton/gitv) , agit(https://github.com/cohama/agit.vim) よりもPreviewにモタツキがない。
