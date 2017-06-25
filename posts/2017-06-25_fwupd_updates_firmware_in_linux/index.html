@@ -18,16 +18,16 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>Bluetoothのオン・オフをコマンドラインから切り替える - iberianpigsty</title>
-  <meta property='og:title' content="Bluetoothのオン・オフをコマンドラインから切り替える - iberianpigsty">
+  <title>fwupdでLinuxからUEFI(BIOS)のアップデート - iberianpigsty</title>
+  <meta property='og:title' content="fwupdでLinuxからUEFI(BIOS)のアップデート - iberianpigsty">
+  <meta name="description" content="Linuxデスクトップを利用する際に少し問題になるBIOSのアップデート。 ここではUEFI BIOSに対応したfwupdというツールを使ってアップデートする。">
   
-  
 
-  <meta property="og:url" content="https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/">
+  <meta property="og:url" content="https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/">
 
-  <meta property="og:description" content="Linux、Ruby on Rails、AngularJS、Androidなどが中心の技術ブログです。Github上でOSSのツールを公開しています。(https://github.com/iberianpig)メイン開発機はDell XPS13, OSはelementaryOS 0.4 Loki。2014年4月よりメーカー系のシステムエンジニアを退職し、現在は渋谷のスタートアップにてWebサービス開発を行っています。また、副業でフリーランスのエンジニアとしても活動中です。仕事の依頼等はtwitter: @nukumaro22までお願いします。">
+  <meta property="og:description" content="Linuxデスクトップを利用する際に少し問題になるBIOSのアップデート。 ここではUEFI BIOSに対応したfwupdというツールを使ってアップデートする。">
 
-  <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg">
+  <meta property="og:image" content="https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site"    content="@nukumaro22" />
   <meta name="twitter:creator" content="@nukumaro22" />
@@ -41,15 +41,15 @@
       "@type":"WebPage",
       "@id":"https:\/\/iberianpig.github.io\/"
     },
-    "headline": "Bluetoothのオン・オフをコマンドラインから切り替える |  ",
+    "headline": "fwupdでLinuxからUEFI(BIOS)のアップデート |  ",
     "image": {
       "@type": "ImageObject",
       "url": "",
       "height": 700,
       "width": 700
     },
-    "datePublished": "2016-03-20T00:00:00JST",
-    "dateModified": "2016-03-20T00:00:00JST",
+    "datePublished": "2017-06-25T22:48:09JST",
+    "dateModified": "2017-06-25T22:48:09JST",
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
@@ -65,7 +65,7 @@
         "width": 60
       }
     },
-    "description": ""
+    "description": "Linuxデスクトップを利用する際に少し問題になるBIOSのアップデート。 ここではUEFI BIOSに対応したfwupdというツールを使ってアップデートする。"
   }
 </script>
 
@@ -93,17 +93,17 @@
         <div class="col-md-9">
 
           <article class="single">
-            <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg);"></div>
+            <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
             <div class="body">
-              <h1>Bluetoothのオン・オフをコマンドラインから切り替える</h1>
+              <h1>fwupdでLinuxからUEFI(BIOS)のアップデート</h1>
               <aside class="p-share">
   <div class="share-inner">
-    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&text=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
-    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&t=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
-    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketであとで読む" class="pk" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&text=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&t=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&title=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
+    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&title=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="Pocketであとで読む" class="pk" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88 https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -126,66 +126,67 @@
 
               
 
-<p>以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
-<a href="http://iberianpig.github.io/blog/2015/06/07/easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/">EasytetherでBluetoothテザリング</a></p>
+<p>Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。
+ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。</p>
 
-<p>端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
-EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。</p>
+<p>特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。</p>
 
-<h1 id="easytether使う前にbluetoothを有効にする:4f24cf1e0d357e53a60f8312f5b8ccf4">Easytether使う前にBluetoothを有効にする</h1>
+<p>なお、<a href="http://qiita.com/iberianpig@github/items/92d6684be74e708203d6">Unetbootinを使ってUSBデバイスからのアップデート手順</a>をQiitaに書いているのでそちらもご参考あれ。</p>
 
-<p>Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
-コマンドラインで<code>easytether-bluetooth connect -d MAC_ADDRESS</code>と入力する必要がある。</p>
+<p>この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。</p>
 
-<p>結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
-ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。</p>
+<h1 id="fwupdで利用可能なデバイスかどうかを確認する:c60116921b794c645f585170a1273111">fwupdで利用可能なデバイスかどうかを確認する</h1>
 
-<h1 id="コマンドラインで自動化する:4f24cf1e0d357e53a60f8312f5b8ccf4">コマンドラインで自動化する</h1>
+<p>利用可能なデバイスのリストはこちら→ (<a href="https://secure-lvfs.rhcloud.com/lvfs/devicelist">https://secure-lvfs.rhcloud.com/lvfs/devicelist</a>)
+自分の<a href="https://secure-lvfs.rhcloud.com/lvfs/device/5ffdbc0d-f340-441c-a803-8439c8c0ae10">XPS13 9360はfwupdでアップデート可能</a>だった。</p>
 
-<p>少し調べてうまく行ったので、メモ。</p>
+<h1 id="fwupdのインストール:c60116921b794c645f585170a1273111">fwupdのインストール</h1>
 
-<pre><code class="language-sh"># bluetooth off
-sudo hciconfig hci0 down
+<p>aptでfwupdインストールする</p>
 
-# bluetooth on
-sudo hciconfig hci0 up
+<pre><code class="language-bash">sudo apt install fwupd
 </code></pre>
 
-<p>これだけ。</p>
+<h1 id="cabファイルをダウンロード:c60116921b794c645f585170a1273111">cabファイルをダウンロード</h1>
 
-<p>ちなみに追記後はこちら</p>
+<p>(<a href="https://secure-lvfs.rhcloud.com/lvfs/devicelist">https://secure-lvfs.rhcloud.com/lvfs/devicelist</a>) からダウンロードする。</p>
 
-<pre><code>#!/bin/sh
+<p><a href="https://gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558"><img src="https://i.gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558.png" alt="https://gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558" /></a></p>
 
-pgrep -lf easytether
-ret=$?
+<p>画像内のリンク先のcabファイル。</p>
 
-if test ${ret} -eq 0
-then
-  pkill easytether -f
-  sudo hciconfig hci0 down
-else
-  sudo hciconfig hci0 up
-  sudo easytether-bluetooth MAC_ADDRESS
-fi
+<h1 id="fwupdmgrでインストール:c60116921b794c645f585170a1273111">fwupdmgrでインストール</h1>
+
+<p>fwupdmgrというコマンドが利用出来るようになっている。</p>
+
+<p>ただし、ACアダプタを接続していないと進めないので注意する。</p>
+
+<p><code>fwupdmgr install</code>でファームウェアをインストール。</p>
+
+<pre><code class="language-bash">fwupdmgr install /path/to/your/downloaded/firmware.cab
 </code></pre>
 
-<p>ちなみに別の起動時の省電力スクリプトの中にも<code>sudo hciconfig hci0 down</code>を追加した。
-起動時はbluetoothをオフにする設定。</p>
+<p>これでインストール待ち状態になった。<br />
+再起動時にBIOSのロード画面でアップグレードが走る。</p>
 
-<p>NFCで携帯近づけてWifi、テザリングのON/OFFまで出来たらベストなんだけれども。
-(SONYのNFCタッチでBluetooth接続するUXがかなり良かったので）</p>
+<h1 id="special-thanks:c60116921b794c645f585170a1273111">Special Thanks</h1>
+
+<ul>
+<li><a href="https://github.com/hughsie/fwupd">https://github.com/hughsie/fwupd</a></li>
+<li><a href="https://secure-lvfs.rhcloud.com/lvfs/devicelist">https://secure-lvfs.rhcloud.com/lvfs/devicelist</a></li>
+<li><a href="http://fwupd.org.s3-website-eu-west-1.amazonaws.com/developers.html">http://fwupd.org.s3-website-eu-west-1.amazonaws.com/developers.html</a></li>
+</ul>
 
             </div>
 
             <aside class="p-share">
   <div class="share-inner">
-    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&text=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
-    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&t=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
-    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
-    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
-    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f&title=Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b" title="Pocketであとで読む" class="pk" target="_blank" rel="nofollow"></a>
-    <a href="http://line.me/R/msg/text/?Bluetooth%e3%81%ae%e3%82%aa%e3%83%b3%e3%83%bb%e3%82%aa%e3%83%95%e3%82%92%e3%82%b3%e3%83%9e%e3%83%b3%e3%83%89%e3%83%a9%e3%82%a4%e3%83%b3%e3%81%8b%e3%82%89%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88%e3%82%8b https%3a%2f%2fiberianpig.github.io%2fposts%2f2016-03-20-switch-bluetooth-status-from-command-line%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
+    <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&text=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"></a>
+    <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&t=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"></a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"></a>
+    <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&title=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="はてなブックマーク" class="ht" target="_blank" rel="nofollow"></a>
+    <a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f&title=fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88" title="Pocketであとで読む" class="pk" target="_blank" rel="nofollow"></a>
+    <a href="http://line.me/R/msg/text/?fwupd%e3%81%a7Linux%e3%81%8b%e3%82%89UEFI%28BIOS%29%e3%81%ae%e3%82%a2%e3%83%83%e3%83%97%e3%83%87%e3%83%bc%e3%83%88 https%3a%2f%2fiberianpig.github.io%2fposts%2f2017-06-25_fwupd_updates_firmware_in_linux%2f" title="LINEでシェア" class="ln" target="_blank" rel="nofollow"></a>
   </div>
 </aside>
 
@@ -223,8 +224,11 @@ fi
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#easytether使う前にbluetoothを有効にする:4f24cf1e0d357e53a60f8312f5b8ccf4">Easytether使う前にBluetoothを有効にする</a></li>
-<li><a href="#コマンドラインで自動化する:4f24cf1e0d357e53a60f8312f5b8ccf4">コマンドラインで自動化する</a></li>
+<li><a href="#fwupdで利用可能なデバイスかどうかを確認する:c60116921b794c645f585170a1273111">fwupdで利用可能なデバイスかどうかを確認する</a></li>
+<li><a href="#fwupdのインストール:c60116921b794c645f585170a1273111">fwupdのインストール</a></li>
+<li><a href="#cabファイルをダウンロード:c60116921b794c645f585170a1273111">cabファイルをダウンロード</a></li>
+<li><a href="#fwupdmgrでインストール:c60116921b794c645f585170a1273111">fwupdmgrでインストール</a></li>
+<li><a href="#special-thanks:c60116921b794c645f585170a1273111">Special Thanks</a></li>
 </ul>
 </nav></div>
   </section>
@@ -327,7 +331,7 @@ fi
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
       </ul>
     </div>
   </section>

@@ -62,6 +62,22 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <time>Thu, Aug 14, 2014</time>
+      </div>
+      <h2 class="title">Androidでのデータの保存</h2>
+      <div class="summary">データの保存 SharedPreferenceの利用 Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能 ただし大規模なデータには向かず、設定項目向き。 使い方 SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定 モードについては後述。 SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE); SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する // プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit(); 保存される場所 保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。 getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue); データ型 下記のデータ型がXMLに保存される 1.</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/">
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
@@ -231,6 +247,19 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
+    <footer>
+      <div class="date">
+        <time>Sun, Jun 25, 2017</time>
+      </div>
+      <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/" class="clearfix">
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
@@ -282,19 +311,6 @@
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-23_generate_post_template/" class="clearfix">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 23, 2017</time>
-      </div>
-      <h2 class="title">簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -321,7 +337,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
       </ul>
     </div>
   </section>
@@ -330,7 +346,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>
