@@ -25,8 +25,8 @@ Linuxデスクトップを利用する際に少し問題となるBIOSのアッ�
 
 # fwupdで利用可能なデバイスかどうかを確認する
 
-利用可能なデバイスのリストはこちら→ (https://secure-lvfs.rhcloud.com/lvfs/devicelist)
-自分の[XPS13 9360はfwupdでアップデート可能](https://secure-lvfs.rhcloud.com/lvfs/device/5ffdbc0d-f340-441c-a803-8439c8c0ae10)だった。
+利用可能なデバイスのリストはこちら→(https://fwupd.org/lvfs/devicelist)
+自分の[XPS13 9360はfwupdでアップデート可能](https://fwupd.org/lvfs/device/5ffdbc0d-f340-441c-a803-8439c8c0ae10)だった。
 
 # fwupdのインストール
 
@@ -38,7 +38,7 @@ sudo apt install fwupd
 
 # cabファイルをダウンロード
 
-(https://secure-lvfs.rhcloud.com/lvfs/devicelist) からダウンロードする。
+(https://fwupd.org/lvfs/devicelist) からダウンロードする。
 
 [![https://gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558](https://i.gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558.png)](https://gyazo.com/aea60172de3d87cbaf7c0c8e0ff4a558)
 
@@ -62,6 +62,5 @@ fwupdmgr install /path/to/your/downloaded/firmware.cab
 # Special Thanks
 
 * https://github.com/hughsie/fwupd
-* https://secure-lvfs.rhcloud.com/lvfs/devicelist
-* http://fwupd.org.s3-website-eu-west-1.amazonaws.com/developers.html
+* https://fwupd.org/lvfs/devicelist
 

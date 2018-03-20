@@ -8,7 +8,7 @@ tags:
    - linux
    - elementaryOS
 categories: linux
-image: https://i.ytimg.com/vi/r4s7lk3GVrk/hqdefault.jpg
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Elementary_OS_Freya_Desktop.png/1024px-Elementary_OS_Freya_Desktop.png
 ---
 
 * lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない
