@@ -69,7 +69,7 @@
         <time>Sun, Jun 25, 2017</time>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
-      <div class="summary">Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。 特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。 なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。 この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。 fwupdで利用可能なデバイスかどうかを確認する 利用可能なデバイスのリストはこちら→ (https://secure-lvfs.rhcloud.com/lvfs/devicelist) 自分のXPS13 9360はfwupdでアップデート可能だった。 fwupdのインストール aptでfwupdインストールする sudo apt install fwupd cabファイルをダウンロード (https://secure-lvfs.rhcloud.com/lvfs/devicelist) からダウンロードする。 画像内のリンク先のcabファイル。 fwupdmgrでインストール fwupdmgrというコマンドが利用出来るようになっている。 ただし、ACアダプタを接続していないと進めないので注意する。 fwupdmgr installでファームウェアをインストール。 fwupdmgr install /path/to/your/downloaded/firmware.cab これでインストール待ち状態になった。 再起動時にBIOSのロード画面でアップグレードが走る。 Special Thanks https://github.com/hughsie/fwupd https://secure-lvfs.rhcloud.com/lvfs/devicelist http://fwupd.org.s3-website-eu-west-1.amazonaws.com/developers.html</div>
+      <div class="summary">Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。 特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。 なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。 この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。 fwupdで利用可能なデバイスかどうかを確認する 利用可能なデバイスのリストはこちら→(https://fwupd.org/lvfs/devicelist) 自分のXPS13 9360はfwupdでアップデート可能だった。 fwupdのインストール aptでfwupdインストールする sudo apt install fwupd cabファイルをダウンロード (https://fwupd.org/lvfs/devicelist) からダウンロードする。 画像内のリンク先のcabファイル。 fwupdmgrでインストール fwupdmgrというコマンドが利用出来るようになっている。 ただし、ACアダプタを接続していないと進めないので注意する。 fwupdmgr installでファームウェアをインストール。 fwupdmgr install /path/to/your/downloaded/firmware.cab これでインストール待ち状態になった。 再起動時にBIOSのロード画面でアップグレードが走る。 Special Thanks https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist</div>
     </footer>
   </a>
 </article>
@@ -498,7 +498,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
       </ul>
     </div>
   </section>
@@ -507,7 +507,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
+        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
       </ul>
     </div>
   </section>
