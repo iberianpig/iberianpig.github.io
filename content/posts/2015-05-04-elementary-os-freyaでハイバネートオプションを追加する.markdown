@@ -64,11 +64,11 @@ resume='スワップ用パーティション'とすること！
 ## /etc/systemd/logind.confの編集
 `man logind.conf` で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
 
-`sudo vi /etc/systemd/logind.conf`にて該当箇所のコメントアウトを外し, 下記に変更する
+`sudo vi /etc/systemd/logind.conf`にて該当箇所のコメントアウトを外し、 下記に変更する
 
 ```
 HandlePowerKey=hibernate
 HandleLidSwitch=hibernate
 ```
 
-再起動後、ロック画面での電源ボタン, PCの閉じる動作によるハイバネートが有効になっているはず。
+再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。

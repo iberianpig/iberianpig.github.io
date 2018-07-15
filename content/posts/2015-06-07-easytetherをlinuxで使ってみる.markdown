@@ -36,7 +36,7 @@ Linux版パッケージは[ こちら ](http://www.mobile-stream.com/easytether/
 | <a href="http://www.speedtest.net/my-result/4414923094"><img src="http://www.speedtest.net/result/4414923094.png" /></a> | <a href="http://www.speedtest.net/my-result/4414920048"><img src="http://www.speedtest.net/result/4414920048.png" /></a>
 | <a href="http://www.speedtest.net/my-result/4414925130"><img src="http://www.speedtest.net/result/4414925130.png" /></a> | <a href="http://www.speedtest.net/my-result/4414927464"><img src="http://www.speedtest.net/result/4414927464.png" /></a>
 
-## やはり、Easytetherの方が早い。
+## やはり、Easytetherの方が早い
 
 若干だけれども。
 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。
@@ -71,7 +71,7 @@ fi
 
 ## パスワードの省略( sudoersの変更 )
 
-ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のように`sudo visudo`で当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。  
+ただし、sudoつけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のように`sudo visudo`で当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。  
 
 ```
 <username> ALL=(ALL) NOPASSWD: /path/to/script/
@@ -93,4 +93,4 @@ xbindkeysを利用してマッピングする。
 色々なキーを自作のスクリプトにバインドしてるけれど、xbindkeys便利すぎる。  
 
 
-それではEasytetherで良いノマドライフを!  
+それではEasytetherで良いノマドライフを！　 

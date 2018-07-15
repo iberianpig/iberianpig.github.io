@@ -16,9 +16,9 @@ categories: 技術メモ
 
 # `git/hooks`の実行タイミングとフック可能な内容
 
-# MySQLのdatetime型、タイムスタンプ型の違い, Railsでの利用のされ方
+# MySQLのdatetime型、タイムスタンプ型の違い、 Railsでの利用のされ方
 
-# lineheightで | リスト１、| リスト２の高さを調整するのはNG, paddingで調節すべき
+# lineheightで | リスト1、| リスト2の高さを調整するのはNG, paddingで調節すべき
 
 # RedisやMySQLを自動起動させるには
  * 毎度立ち上がらずにエラーが出てから立ち上げる流れは面倒
@@ -40,7 +40,7 @@ categories: 技術メモ
 
 # 自動デプロイのスクリプトを作ってみた
 * Makefileで書いた
-* werckerでのCI,ビルド後のステータスを確認
+* werckerでのCI、ビルド後のステータスを確認
 * cron
   * whenever gemで便利に
   * unicorn restart script
@@ -100,14 +100,14 @@ iife.field; //error! cannot access
 
 # scss-lint試してみたい
 (https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md)
-# autofixする csscombもある(ただしCSSのみに適用可)
+# autofixするcsscombもある(ただしCSSのみに適用可)
 
 # エディタやGithub,Bitbucketと連携し、作業ログを可視化するwakatime(https://wakatime.com)
 
 # factoryのafter(:create) { has_manyの関連先生成に便利 }
 
 # Redis-cliの操作
-全部無かったことに FLUSHALL
+全部無かったことにFLUSHALL
 
 # Redis使うのでどうせならsidekiqかresqueを使おうとしたが
 sidekiqは謎のシリアライズエラーが消えない

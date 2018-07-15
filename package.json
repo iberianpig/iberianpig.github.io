@@ -1,0 +1,28 @@
+{
+  "name": "iberianpig.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "textlint": "node_modules/.bin/textlint content/posts/",
+    "textlint:fix": "node_modules/.bin/textlint content/posts/ --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iberianpig/iberianpig.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iberianpig/iberianpig.github.io/issues"
+  },
+  "homepage": "https://github.com/iberianpig/iberianpig.github.io#readme",
+  "devDependencies": {
+    "prh": "^5.4.3",
+    "textlint": "^10.2.1",
+    "textlint-rule-preset-ja-technical-writing": "^3.0.1",
+    "textlint-rule-prh": "^5.0.1",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
+  }
+}

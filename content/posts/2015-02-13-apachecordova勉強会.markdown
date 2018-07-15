@@ -31,7 +31,7 @@ Adobeの人(Adobeに買収された開発チームの方)のセッション。�
   - UI
   - Native functions
   - Update from Web
-    * Appstoreを通さないアップデートができるとのこと ( てか、それいいの？ )
+    * Appstoreを通さないアップデートができるとのこと ( てか、それいいの？　)
   - Plugin support
 
 * ShowCase ( PhonegapAppStoreで見れるよ )
@@ -44,27 +44,27 @@ Adobeの人(Adobeに買収された開発チームの方)のセッション。�
 * Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)
 * BaseCampもHybrid
  - ほとんどがHTML5ベース
- - Rails作者, DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた
+ - Rails作者、 DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた
 
 * PhoneGap Enterpriseについて
   * Adobeのマネタイズのはなし
   * ダッシュボードでメタデータ統計など利用可能
   * マーケの人が(コンテンツなどを)管理画面から簡単に更新可能
 
-## セッション２： Visual Studio を使用した Cordova 開発
+## セッション2： Visual Studioを使用したCordova開発
 
 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。
 
 * VisualStudio
-  - ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで４倍速。
+  - ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで4倍速。
   - 補完の話とか便利機能の話
   - ...
 
-## セッション３： Windows開発者が知っておきたいCordova開発の話
+## セッション3： Windows開発者が知っておきたいCordova開発の話
 Monaca作ってるアシアルの方の話。
 Win上でのCorova開発iOS開発の壁を超える
 
-* chromeとUSBMAXD proxy つなげばiOSデバッグできるよ
+* chromeとUSBMAXD proxyつなげばiOSデバッグできるよ
 * GapDebugを使えばUSBMAXD互換なのでiOS/Android開発できるよ
 * BuildはBuildサーバとしてクラウドやMacを使う
 * リリースはどうしようもない、ApplicationLoaderがないとアップロードすることができない。
@@ -73,7 +73,7 @@ Win上でのCorova開発iOS開発の壁を超える
 
 ## その他
 
-* 飲み会でAdobeの方々， SmartFxの中の人とか居て色々話し聞けた。
+* 飲み会でAdobeの方々、 SmartFxの中の人とか居て色々話し聞けた。
 * React Nativeが気になってる人がやはり少なからず居たようだ。
   - パフォーマンスの観点がモバイルだと重要なのでそこら辺がどうなるのか気になる。
 

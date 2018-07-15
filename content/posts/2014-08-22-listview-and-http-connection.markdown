@@ -109,7 +109,7 @@ ListView listView = (ListView) findViewById(id.listview);
 ## Threadの扱い
 * 基本的にMainでUIを担当する
 * サブThread上でUI描画を実行するとエラーとなってしまうので要注意
-* Handler クラスを宣言し、描画Thred内でhandler.postすることでMainに描画部分を引き渡せる(http://www.adamrocker.com/blog/255/hello-android-chapter7-the-connected-world.html)
+* Handlerクラスを宣言し、描画Thred内でhandler.postすることでMainに描画部分を引き渡せる(http://www.adamrocker.com/blog/255/hello-android-chapter7-the-connected-world.html)
 * ↑の処理をラップしているrunOnUiThreadメソッドが便利そう。(http://visible-true.blogspot.jp/2011/11/activityrunonuithreadrunnable.html)
 
 
@@ -166,7 +166,7 @@ AsyncTask(Android独自のクラス)をextendsして、サブスレッドとメ�
 
 > 最後のビューを画面に反映する処理は、リソースIDを指定する setContentView(R.layout.main) と同じ結果になります。
 
-(参考サイト: http://inujirushi123.blog.fc2.com/blog-entry-27.html) 
+(参考サイト： http://inujirushi123.blog.fc2.com/blog-entry-27.html) 
 
 
 

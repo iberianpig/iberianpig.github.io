@@ -93,7 +93,7 @@ CUIなGitクライアント。
 # Git blameの代わりに
 
 * `b`/`tig blame <ファイル名>` : tigのblame view
-  * blameしたあと開いたコミットに`b`で再帰的にblameできるので、どういうコンテキストで変更されたのかわかったりする
+  * blameしたあと開いたコミットに`b`で再帰的にblameできるので、どのようなコンテキストで変更されたのかわかったりする
   * ちなみに`<`で戻れる
 
 # その他知っておくと捗る事
@@ -171,5 +171,5 @@ bind stage - status-update
   * あまりテーマは見つからない。しかし、デフォルトが綺麗なのでそこまで必要性は感じていない
 * tig-explorer(https://github.com/iberianpig/tig-explorer.vim) というvim pluginをリリースした。
   * vimからtigを呼び出して開いたバッファを呼び出し元のvim共有できる。
-  * vim ⇔ tig を行き来できるようになる。
+  * vim ⇔ tigを行き来できるようになる。
   * tigを使うため、vimプラグインgitv(https://github.com/gregsexton/gitv) , agit(https://github.com/cohama/agit.vim) よりもPreviewにモタツキがない。
