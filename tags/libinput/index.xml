@@ -24,7 +24,30 @@
  Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している  ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
 また、X11でもライブラリをインストールすればラッパー経由でlibinputを利用できる
 libinputかsynapticsのどちらが有効か 判別方法は以下
-$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)]  Touchpadが含まれた行が見つかる。</description>
+$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)]  Touchpadの記述を含んだ行が見つかる。</description>
+    </item>
+    
+    <item>
+      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
+      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
+      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
+      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+https://github.com/iberianpig/fusuma
+Fusumaという名前でRubyGemsに公開した。
+Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
+ちなみにsyncapticsドライバ向けのPerlでの先行実装のxSwipe を過去に作っていて、こちらを元にRubyでlibinputドライバ向けに書き直している。
+ワークスペースの切り替えする横スワイプが襖を開ける動作と似てるところが由来。
+TouchEggやGinsなどUbuntuのWikiに紹介されるようなライブラリは利用するのに一癖ある。そして設定で上手くいかないケースが多い。
+Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利用してタッチパッドの出力を読み取り、任意のスクリプトを発行出来る。そのため、タッチパッドのデバッグログ出力さえ出来ればジェスチャ解釈はできるためマルチタッチジェスチャの敷居がかなり低くなった。
+Fusumaの使い方 インストールについては、fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。
+Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。
+fusumaコマンドで起動。
+~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
+ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
+下記は一例。
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
     </item>
     
   </channel>
