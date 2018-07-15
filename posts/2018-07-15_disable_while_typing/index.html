@@ -129,7 +129,7 @@
 <p>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。<br />
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。</p>
 
-<h1 id="記事内の環境">記事内の環境</h1>
+<p><strong>記事内の環境</strong></p>
 
 <ul>
 <li>Distribution: elementary OS Loki (Ubuntu 16.04.1ベース)</li>
@@ -203,7 +203,7 @@ Device 'DLL075B:01 06CB:76AF Touchpad':
 <p>libinput XXXXという行が続いているのでlibinputを利用している。
 synapticsの場合はlibinputが利用されていない。</p>
 
-<h1 id="libinputを利用するように設定する">libinputを利用するように設定する</h1>
+<h1 id="libinputドライバを利用するように設定する">libinputドライバを利用するように設定する</h1>
 
 <p><code>/usr/share/X11/xorg.conf.d/</code> ディレクトリに数字+ドライバの設定ファイルが置かれている。<br />
 ここの数字の中で大きいもが後に読み込まれるため、synapticsが優先的に利用されている</p>
@@ -304,9 +304,8 @@ DisableWhileTypingはタイピング中にタッチパッドを無効にする�
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#記事内の環境">記事内の環境</a></li>
 <li><a href="#libinputかsynapticsのどちらが有効か">libinputかsynapticsのどちらが有効か</a></li>
-<li><a href="#libinputを利用するように設定する">libinputを利用するように設定する</a></li>
+<li><a href="#libinputドライバを利用するように設定する">libinputドライバを利用するように設定する</a></li>
 <li><a href="#disablewhiletypingオプションでタイピング中にタッチパッドを無効にする">DisableWhileTypingオプションでタイピング中にタッチパッドを無効にする</a></li>
 </ul>
 </nav></div>
