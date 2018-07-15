@@ -36,17 +36,6 @@ npm -v
     </item>
     
     <item>
-      <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title>
-      <link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
-      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
-      <description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
-sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
-Arc-themeのインストール sudo sh -c &amp;quot;echo &#39;deb http://download.</description>
-    </item>
-    
-    <item>
       <title>EasytetherでBluetoothテザリング</title>
       <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
       <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
