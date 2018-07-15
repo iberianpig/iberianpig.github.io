@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -66,10 +66,24 @@
     <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Aug 16, 2015</time>
+        <div class="time">Sun, Aug 16, 2015</time>
       </div>
       <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。 環境はElementary OS freya(Ubuntu14.04ベース) nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。 wget入ってない場合はインストール。 sudo apt-get install wget ppaの導入 wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行 nodeのインストール sudo apt-get install nodejs nodeではなくnodejsを使う version番号の確認 node -v v0.12.7 npm -v 2.11.3 色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
+      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
+環境はElementary OS freya(Ubuntu14.04ベース)
+nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
+wget入ってない場合はインストール。
+sudo apt-get install wget
+ppaの導入
+wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
+nodeのインストール sudo apt-get install nodejs
+nodeではなくnodejsを使う
+version番号の確認 node -v
+v0.12.7
+npm -v
+2.11.3
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
     </footer>
   </a>
 </article>
@@ -82,10 +96,16 @@
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Apr 13, 2015</time>
+        <div class="time">Mon, Apr 13, 2015</time>
       </div>
       <h2 class="title">AngularでのDOMへのアクセス</h2>
-      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。 &lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時 str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。 hashed_data = angular.fomJson(str) これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
+      <div class="summary">AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
+今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
+&lt;SELECTOR data-x = '{&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}'...&gt;というDOM要素が存在した時
+str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。
+しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
+hashed_data = angular.fomJson(str)
+これでhashed_data = {&quot;id&quot;:&quot;123&quot;, &quot;name&quot;:&quot;hoge&quot;}が取得できる。</div>
     </footer>
   </a>
 </article>
@@ -98,10 +118,26 @@
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Sat, Mar 21, 2015</time>
+        <div class="time">Sat, Mar 21, 2015</time>
       </div>
       <h2 class="title">ng-japan</h2>
-      <div class="summary">Angualrjsの日本初のカンファレンス ng-japan2015 が渋谷で2015/03/21にあったので行って来た。 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。 結構人がいて定員500名の会場が普通に埋まってた こんなかんじ↓ すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63 &mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。 onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。 アプリ内ではWebviewを利用している。 ###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する ###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo; ###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評 ###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい ##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない チューニング対象となる5つのフェーズ Loading リソースの読み込みやパース 組み込みなのであんまやることない Scripting JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる Rendering レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。 Layout すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー Painting 描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成 雑多なチューニングの小話 translate3d(0,0,0)が早いのはなぜ？ GPUで描画されるから?</div>
+      <div class="summary">Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
+場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
+毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
+結構人がいて定員500名の会場が普通に埋まってた
+こんなかんじ↓
+すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63
+&mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 
+今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。
+onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ 
+HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。
+アプリ内ではWebviewを利用している。
+###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する
+###色々メリットはあるがしかし… * ハイブリッドアプリは作ってみたものの&hellip; * Facebookでザッカーバーグの発言。&ldquo;HTML5にかけたのは失敗&rdquo;
+###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評
+###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい
+##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない
+チューニング対象となる5つのフェーズ  Loading  リソースの読み込みやパース 組み込みなのであんまやることない  Scripting  JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる  Rendering  レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。  Layout  すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー  Painting  描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成   雑多なチューニングの小話  translate3d(0,0,0)が早いのはなぜ？  GPUで描画されるから?</div>
     </footer>
   </a>
 </article>
@@ -127,11 +163,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -144,7 +193,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -157,7 +206,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -170,22 +219,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -217,7 +253,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/pocket">pocket</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -226,7 +262,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

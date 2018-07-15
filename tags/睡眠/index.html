@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -66,10 +66,34 @@
     <div class="image" style="background-image: url(http://www.jins-jp.com/jins-pc/img/item.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 31, 2015</time>
+        <div class="time">Sun, May 31, 2015</time>
       </div>
       <h2 class="title">Linuxでブルーライトフィルタ そして快眠へ...</h2>
-      <div class="summary">世界各国のLinuxerの皆さん、こんばんは 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？ 毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。 現実問題難しい。 PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。 このメガネを使うと目に(心理的に)優しくなれる。 そもそも、寝付きの悪さの原因の根源は何か？ ブルーライト、聞いたことあるはず。 寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった) ブルーライトをカットする 本題に入る。 実はこのブルーライト、色温度を下げることで減量させることができる。 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6) 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。 今回はRedshiftというソフトウェアを利用。 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。 Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。 Redshiftのインストール sudo apt-get install redshift redshift-gtk パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。 toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。 こちらのサイトで詳しく紹介されていた。 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K) 夜の寝付きの良さが変わるはず。 Linuxer達に良き睡眠を。</div>
+      <div class="summary">世界各国のLinuxerの皆さん、こんばんは
+寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？　毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
+少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
+現実問題難しい。
+PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
+このメガネを使うと目に(心理的に)優しくなれる。
+そもそも、寝付きの悪さの原因の根源は何か？　ブルーライト、聞いたことあるはず。
+寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
+メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
+ブルーライトをカットする 本題に入る。
+実はこのブルーライト、色温度を下げることで減量させることができる。
+ 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+ 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
+今回はRedshiftというソフトウェアを利用。
+Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
+Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
+Redshiftのインストール sudo apt-get install redshift redshift-gtk
+パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
+Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
+ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+こちらのサイトで詳しく紹介されていた。
+デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
+夜の寝付きの良さが変わるはず。
+Linuxer達に良き睡眠を。</div>
     </footer>
   </a>
 </article>
@@ -95,11 +119,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -112,7 +149,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -125,7 +162,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -138,22 +175,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -185,7 +209,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -194,7 +218,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

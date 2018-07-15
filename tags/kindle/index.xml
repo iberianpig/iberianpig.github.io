@@ -1,18 +1,62 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Kindle on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/kindle/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2017-01-30 02:52:18 &#43;0900 JST</updated>
-
+    <description>Recent content in Kindle on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 30 Jan 2017 02:52:18 +0900</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/kindle/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>記憶の定着率を上げるPocket&#43;Kindle連携</title>
+      <link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link>
+      <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-    
-      
-    
+      <guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
+      <description> 日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
+エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
+1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
+時間を空けて読むという行為をWebサービスを組み合わせてやってみる。
+なお、1日以内、1週間以内、2週間以内で3度復習したほうが良いらしいが、運用効率が悪いので期間はあまり厳密にしない。
+気になったらとりあえずPocketに入れる PocketはWebページを&amp;rdquo;後で読むリスト&amp;rdquo;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
+Pocketで見る(短期記憶) Pocketのアプリをスマホに入れる。タブレットでも良いが、いつでも持っているものがいい。
 
+毎日の通勤時に記事をチェックする。
+Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。 
+配信オプションが色々ある(daily/weekly, 記事の長さ、 取得順序、 etc)が、自分は30分程度で読める分を週1回Kindleに配信している。
+Kindleで読むのは週に1回（しかも長めの記事）になるので必然的にPocketに入れた時から期間が空くことになる。
+週末に30分-1時間程度かけて読む。
+その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている
+ IFTTTでTwitter-&amp;gt; Pocketの連携  Twitterでいいねした記事を後で読むリストに追加する。  IFTTTでPocket -&amp;gt; Buffer連携  Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る   上記を取り入れた場合、3回以上同じ記事を目にすることになる。
+Special Thanks  忘却曲線 - Wikipedia エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う  </description>
+    </item>
+    
+    <item>
+      <title>風呂キンドルのすゝめ</title>
+      <link>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</link>
+      <pubDate>Tue, 24 Jan 2017 23:58:22 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</guid>
+      <description> 風呂で読書するというのを一度やってみたかったのでやってみた。
+Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良い。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
+Ziploc 防水性能をアドオンする。
+ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を保管するのに買った。
+ Kindleを入れるとこうなる。奇跡のジャストサイズ。 
+風呂Kindleやってみた結果 意外と良かった。日々の習慣に組み込みたいレベル。
+蒸気プラスビニール一枚隔てるので、視認性は若干落ちるのでフォントサイズを少しだけ大きくすれば快適に読める。
+バスタブをちょっと曲げてあげて溝の部分に挟んであげるとKindleを立てるスタンドになる。手で持たなくていい。 これも快適な要因の1つ。
+ただ、集中して読めるのだが、水分が持って行かれているのに気づかない。 お水を飲んだりするのにペットボトル置いておくといい。あとのぼせてしまう場合はお湯の温度を少し下げたほうがいい。
+ちなみに今はホモ・サピエンス全史という本を読んでる。
+ネアンデルタール人と裾野を分けたサピエンスは動物とどう違うのか、お金、会社、資本主義はどうやって成り立っているのか。
+それらは全て虚構であり、それを信じなければ成り立たなかった&amp;hellip;という話。
+普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。
+  </description>
+    </item>
+    
   </channel>
 </rss>

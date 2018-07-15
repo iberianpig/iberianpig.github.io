@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -66,10 +66,24 @@
     <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Aug 16, 2015</time>
+        <div class="time">Sun, Aug 16, 2015</time>
       </div>
       <h2 class="title">node/npmをUbuntuにインストールする方法</h2>
-      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。 環境はElementary OS freya(Ubuntu14.04ベース) nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。 wget入ってない場合はインストール。 sudo apt-get install wget ppaの導入 wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行 nodeのインストール sudo apt-get install nodejs nodeではなくnodejsを使う version番号の確認 node -v v0.12.7 npm -v 2.11.3 色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
+      <div class="summary">ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
+環境はElementary OS freya(Ubuntu14.04ベース)
+nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
+wget入ってない場合はインストール。
+sudo apt-get install wget
+ppaの導入
+wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
+nodeのインストール sudo apt-get install nodejs
+nodeではなくnodejsを使う
+version番号の確認 node -v
+v0.12.7
+npm -v
+2.11.3
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</div>
     </footer>
   </a>
 </article>
@@ -82,10 +96,12 @@
     <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Elementary_OS_Freya_Desktop.png/1024px-Elementary_OS_Freya_Desktop.png);"></div>
     <footer>
       <div class="date">
-        <time>Sat, Aug 15, 2015</time>
+        <div class="time">Sat, Aug 15, 2015</time>
       </div>
       <h2 class="title">elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</h2>
-      <div class="summary">lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認 (install時にこれらを割り当てするときに間違えなようにメモしておく) elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択 パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;&amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる sudo apt-get install elementary-tweaks numixのiconセットのインストール sudo apt-get install numix-* numix-circleを適用 Arc-themeのインストール sudo sh -c &quot;echo 'deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_15.04/ /' &gt;&gt; /etc/apt/sources.list.d/arc-theme.list&quot; wget http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_15.04/Release.key</div>
+      <div class="summary">lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;&amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
+sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
+Arc-themeのインストール sudo sh -c &quot;echo 'deb http://download.</div>
     </footer>
   </a>
 </article>
@@ -98,10 +114,20 @@
     <div class="image" style="background-image: url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 7, 2015</time>
+        <div class="time">Sun, Jun 7, 2015</time>
       </div>
       <h2 class="title">EasytetherでBluetoothテザリング</h2>
-      <div class="summary">Easytether with linux EasytetherFull( GooglePlay ) 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。 そして、公式のLinux向けクライアントがある。 当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。 Linux版パッケージは こちら からダウンロード可。 現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。 いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い。 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。 おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。 #!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。 実行権与えたいのでsudo chmod +x easytether.shしてあげる sudo ./easytether.shで動かしてみる。 パスワードの省略( sudoersの変更 ) ただし、sudo つけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のようにsudo visudoで当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。 &lt;username&gt; ALL=(ALL) NOPASSWD: /path/to/script/ xbindkeysショートカットキーのマッピング xbindkeysを利用してマッピングする。 持ってない人はsudo apt-get install xbindkeysで入れましょう。便利。 ~/.xbindkeysrcに下記を追記する &quot;sudo /path/to/script/easytether.sh&quot; Mod4 + F2 これはSuper_L + F2で起動させるようにした。 これでEasytetherの切り替えがショートカットのみで行われるようになった。 色々なキーを自作のスクリプトにバインドしてるけれど、xbindkeys便利すぎる。 それではEasytetherで良いノマドライフを!</div>
+      <div class="summary">Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</div>
     </footer>
   </a>
 </article>
@@ -114,10 +140,19 @@
     <div class="image" style="background-image: url(http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Apr 19, 2015</time>
+        <div class="time">Sun, Apr 19, 2015</time>
       </div>
       <h2 class="title">insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</h2>
-      <div class="summary">Command/Normalモードを間違う 問題はこれ。 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。 gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。 暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた) To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot; au VimLeave *</div>
+      <div class="summary">Command/Normalモードを間違う 問題はこれ。
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
+自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
+gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
+暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
+また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
+救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
+ To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
+ if has(&quot;autocmd&quot;) au InsertEnter * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&quot; au InsertLeave * silent execute &quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&quot; au VimLeave * silent execute &quot;!</div>
     </footer>
   </a>
 </article>
@@ -143,11 +178,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -160,7 +208,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -173,7 +221,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -186,22 +234,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -233,7 +268,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -242,7 +277,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

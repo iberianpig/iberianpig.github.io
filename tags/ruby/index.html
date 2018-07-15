@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -66,10 +66,24 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</time>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
-      <div class="summary">linuxのマルチタッチのジェスチャを認識してショートカットを発火するプログラムを作った。 https://github.com/iberianpig/fusuma Fusumaという名前でRubyGemsに公開した。 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。 ちなみにsyncapticsドライバ向けのPerlでの先行実装のxSwipe を過去に作っていて、こちらを元にRubyでlibinputドライバ向けに書き直している。 ワークスペースの切り替えする横スワイプが襖をガーってスライドさせる動作と似てるところが由来。 仕組み $ libinput-debug-events libinputをデバッグするコマンドを叩き、画面をスワイプすると下記のようなログが見える event10 GESTURE_SWIPE_BEGIN +4.28s 3 event10 GESTURE_SWIPE_UPDATE +4.28s 3 6.47/ 1.35 (13.12/ 2.73 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.29s 3 7.52/ 1.02 (16.13/ 2.19 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.30s 3 11.73/ 0.36 (18.04/ 0.55 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.32s 3 12.90/-0.36 (19.41/-0.55 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.33s 3 16.09/-1.32 (23.24/-1.91 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.35s 3 17.56/-1.97 (24.33/-2.73 unaccelerated) event10 GESTURE_SWIPE_UPDATE +4.36s 3 19.34/-2.24 (25.97/-3.01 unaccelerated)</div>
+      <div class="summary">linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+https://github.com/iberianpig/fusuma
+Fusumaという名前でRubyGemsに公開した。
+Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
+ちなみにsyncapticsドライバ向けのPerlでの先行実装のxSwipe を過去に作っていて、こちらを元にRubyでlibinputドライバ向けに書き直している。
+ワークスペースの切り替えする横スワイプが襖を開ける動作と似てるところが由来。
+TouchEggやGinsなどUbuntuのWikiに紹介されるようなライブラリは利用するのに一癖ある。そして設定で上手くいかないケースが多い。
+Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利用してタッチパッドの出力を読み取り、任意のスクリプトを発行出来る。そのため、タッチパッドのデバッグログ出力さえ出来ればジェスチャ解釈はできるためマルチタッチジェスチャの敷居がかなり低くなった。
+Fusumaの使い方 インストールについては、fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。
+Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。
+fusumaコマンドで起動。
+~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
+ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
+下記は一例。
+swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key alt+Left' up: command: 'xdotool key alt+t' down: command: 'xdotool key alt+w' 4: left: command: 'xdotool key super' right: command: 'xdotool key super+a' up: command: 'sh ~/tool/linux/script/desktop_switcher.sh 1' down: command: 'sh ~/tool/linux/script/desktop_switcher.sh -1' pinch: 2: in: command: 'xdotool key ctrl+equal' out: command: 'xdotool key ctrl+minus' 4: in: command: 'xdotool key super+a' out: command: 'xdotool key super+s' threshold: swipe: 0.</div>
     </footer>
   </a>
 </article>
@@ -82,10 +96,36 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Dec 18, 2016</time>
+        <div class="time">Sun, Dec 18, 2016</time>
       </div>
       <h2 class="title">Amazon Dash Buttonで出社する</h2>
-      <div class="summary">この記事は出社芸アドベントカレンダーの18日目の記事です。 今日のアドベントカレンダーに登録した。 現在0:31。あと23時間半くらいある！ 余裕だね！ ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる) ※詳細は出社芸アドベントカレンダー1日目出社自由の会社を作ったよ | rake enjoyをご参照。 でもルールがあって、何時ごろ出社するか(/どこで仕事するか）をSlackのチャンネルで報告する義務がある。 リモートが多い時はこんな感じになる。 自由だ…。 ◯◯時頃出社しますと報告するのが面倒になってきた 出社時刻をSlackでつぶやくだけで遅れたりすることで怒られるなどは全く無い。 この会社に入ってアラームを設定することが無くなった。 起きたら何時に出社するか決めてSlackで報告すればいい。 しかし、毎日、何時になるかといちいち考えたりするのすら面倒になってくる。 プログラマは怠惰な生き物。 あのラリー・ウォールも怠惰（Laziness）がプログラマの美徳だと名言している。 自動化しよう 朝起きて時計を確認、何時ごろに出社するか決めて、Slackアプリを開き、報告する。 このフローを自動化する。なるべく楽に。 作戦としては今流行りのAmazon Dash Buttonを使う。 押したらSlackへ何時に行くかつぶやく。 起きたらAmazon Dash Buttonを押すだけ。俺がデリバリーされる。 準備するもの Amazon Dash Button これはAmazonで買える。500円。安い。 対象商品の初回購入時が500円割引されるので実質タダ。 なお、ものによっては到着に時間がかかるものもあるので注意。 とりあえず翌日届くレノアにした。 ローカルサーバ Amazon Dash Buttonはローカルネットワークに接続し、ボタンを押すとローカルネットワーク上にブロードキャストされる。 そのブロードキャストがAmazon Dash Buttonから来たかをMacアドレスで判断する。そうであれば任意のアクションを実行するだけ。 ボタンが押された時に任意のアクションをキャッチするのにローカルネットワーク上で動作する常時稼働サーバーが必要。 みんなのお家に眠っているラズベリーパイを使おう。 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。 実装する 処理は大きく見ると下記の様な流れになる Amazon Dash Button ---&gt; LocalServer ---&gt; IFTTT ---&gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。 エンドポイントを作る</div>
+      <div class="summary">この記事は出社芸アドベントカレンダーの18日目の記事です。
+今日のアドベントカレンダーに登録した。
+現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
+出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
+※詳細は出社芸アドベントカレンダー1日目出社自由の会社を作ったよ | rake enjoyをご参照。
+でもルールがあって、何時ごろ出社するか(/どこで仕事するか）をSlackのチャンネルで報告する義務がある。
+リモートが多い時はこんな感じになる。
+自由だ…。
+◯◯時頃出社しますと報告するのが面倒になってきた 出社時刻をSlackでつぶやくだけで遅れたりすることで怒られるなどは全く無い。 この会社に入ってアラームを設定することが無くなった。
+起きたら何時に出社するか決めてSlackで報告すればいい。
+しかし、毎日、何時になるかといちいち考えたりするのすら面倒になってくる。
+プログラマは怠惰な生き物。 あのラリー・ウォールも怠惰（Laziness）がプログラマの美徳だと名言している。
+自動化しよう 朝起きて時計を確認、何時ごろに出社するか決めて、Slackアプリを開き、報告する。 このフローを自動化する。なるべく楽に。
+作戦としては今流行りのAmazon Dash Buttonを使う。 押したらSlackへ何時に行くかつぶやく。
+起きたらAmazon Dash Buttonを押すだけ。俺がデリバリーされる。
+準備するもの Amazon Dash Button これはAmazonで買える。500円。安い。
+対象商品の初回購入時が500円割引されるので実質タダ。
+なお、ものによっては到着に時間がかかるものもあるので注意。
+とりあえず翌日届くレノアにした。
+ローカルサーバ Amazon Dash Buttonはローカルネットワークに接続し、ボタンを押すとローカルネットワーク上にブロードキャストされる。
+そのブロードキャストがAmazon Dash Buttonから来たかをMacアドレスで判断する。そうであれば任意のアクションを実行するだけ。
+ボタンが押された時に任意のアクションをキャッチするのにローカルネットワーク上で動作する常時稼働サーバーが必要。
+みんなのお家に眠っているラズベリーパイを使おう。
+エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
+IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
+実装する 処理は大きく見ると下記の様な流れになる
+Amazon Dash Button ---&gt; LocalServer ---&gt; IFTTT ---&gt; Slack  IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</div>
     </footer>
   </a>
 </article>
@@ -94,11 +134,11 @@
             
             <div class="col-sm-4">
               <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%AB%5Bissueid%5D%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/">
+  <a href="https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/">
     <div class="image" style="background-image: url(https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png);"></div>
     <footer>
       <div class="date">
-        <time>Tue, Aug 18, 2015</time>
+        <div class="time">Tue, Aug 18, 2015</time>
       </div>
       <h2 class="title">自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</h2>
       <div class="summary"><p>なぜこんなことがやりたいかというと、</p>
@@ -110,7 +150,8 @@
 <li>毎回IDを入れるのがめんどくさい、たまに忘れる</li>
 <li>チームで浸透させたい</li>
 </ul>
-</div>
+
+<p></p></div>
     </footer>
   </a>
 </article>
@@ -136,11 +177,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -153,7 +207,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -166,7 +220,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -179,22 +233,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -226,7 +267,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -235,7 +276,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

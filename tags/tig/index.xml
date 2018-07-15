@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Tig on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/tig/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2016-04-22 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Tig on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 22 Apr 2016 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/tig/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>tigの使い方とオプションをまとめた</title>
+      <link>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</link>
+      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
       
-    
+      <guid>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</guid>
+      <description>&lt;p&gt;CUIなGitクライアント。&lt;br /&gt;
+普段使いのツールだが、社内勉強会の際に改めて調べた。&lt;br /&gt;
+色々と便利なオプションがあった。&lt;/p&gt;
 
+&lt;h1 id=&#34;tigの特徴&#34;&gt;tigの特徴&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gitクライアント&lt;/li&gt;
+&lt;li&gt;CUI&lt;/li&gt;
+&lt;li&gt;マルチプラットフォーム&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;tigのいいところ&#34;&gt;tigのいいところ&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;軽い&lt;/li&gt;
+&lt;li&gt;インストールさえされていればX動いてなくても使える&lt;/li&gt;
+&lt;li&gt;ログのツリー見て、diff見て、編集のワークフローが快適&lt;/li&gt;
+&lt;li&gt;vim likeに使える&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;インストール&#34;&gt;インストール&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Linux/Windowsの人(apt使えるなら)
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo apt-get install tig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Macとか
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;brew install tig&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;基本的な使い方&#34;&gt;基本的な使い方&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ターミナルで&lt;code&gt;tig&lt;/code&gt;とタイプで起動&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;h&lt;/code&gt;押せばヘルプ出る&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;q&lt;/code&gt;で閉じる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

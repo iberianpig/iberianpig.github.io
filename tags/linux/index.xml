@@ -1,22 +1,87 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Linux on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/linux/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2015-08-16 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Linux on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node/npmをUbuntuにインストールする方法</title>
+      <link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link>
+      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid>
+      <description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
+環境はElementary OS freya(Ubuntu14.04ベース)
+nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
+wget入ってない場合はインストール。
+sudo apt-get install wget
+ppaの導入
+wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
+nodeのインストール sudo apt-get install nodejs
+nodeではなくnodejsを使う
+version番号の確認 node -v
+v0.12.7
+npm -v
+2.11.3
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description>
+    </item>
     
+    <item>
+      <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title>
+      <link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
+      <description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
+sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
+Arc-themeのインストール sudo sh -c &amp;quot;echo &#39;deb http://download.</description>
+    </item>
     
+    <item>
+      <title>EasytetherでBluetoothテザリング</title>
+      <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description>Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</description>
+    </item>
     
+    <item>
+      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
+      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
+      <description>Command/Normalモードを間違う 問題はこれ。
+頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
+自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
+gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
+暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。
+確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
+また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
+救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
+ To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
+ if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description>
+    </item>
     
-
   </channel>
 </rss>

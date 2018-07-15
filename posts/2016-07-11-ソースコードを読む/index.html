@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -39,7 +39,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"https:\/\/iberianpig.github.io\/"
+      "@id":"https://iberianpig.github.io/"
     },
     "headline": "ソースコードを読む |  ",
     "image": {
@@ -53,14 +53,14 @@
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
-      "image": "https:\/\/iberianpig.github.io\/images/logo.png"
+      "image": "https://iberianpig.github.io/images/logo.png"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https:\/\/iberianpig.github.io\/images/logo.png",
+        "url": "https://iberianpig.github.io/images/logo.png",
         "height": 60,
         "width": 60
       }
@@ -131,7 +131,7 @@
 
 <p>どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。</p>
 
-<h2 id="ソースを読むメリット:a3eb74a910416e66f63f67af6a1bbc1c">ソースを読むメリット</h2>
+<h2 id="ソースを読むメリット">ソースを読むメリット</h2>
 
 <ul>
 <li>間違いがない</li>
@@ -140,7 +140,7 @@
 <li>結果的に迷う時間の短縮</li>
 </ul>
 
-<h2 id="必要なモノ:a3eb74a910416e66f63f67af6a1bbc1c">必要なモノ</h2>
+<h2 id="必要なモノ">必要なモノ</h2>
 
 <ul>
 <li>気合</li>
@@ -155,17 +155,17 @@
 <li>言語、フレームワークの公式リファレンス(<a href="http://devdocs.io">http://devdocs.io</a>)</li>
 </ul>
 
-<h2 id="武器の使いドコロ:a3eb74a910416e66f63f67af6a1bbc1c">武器の使いドコロ</h2>
+<h2 id="武器の使いドコロ">武器の使いドコロ</h2>
 
-<h2 id="気合:a3eb74a910416e66f63f67af6a1bbc1c">気合</h2>
+<h2 id="気合">気合</h2>
 
 <p><strong>Googleへ逃げず、ソースを読むという決断をするのために必要</strong></p>
 
-<h2 id="根性:a3eb74a910416e66f63f67af6a1bbc1c">根性</h2>
+<h2 id="根性">根性</h2>
 
 <p><strong>ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要</strong></p>
 
-<h2 id="pry:a3eb74a910416e66f63f67af6a1bbc1c">pry</h2>
+<h2 id="pry">pry</h2>
 
 <p>調べたいコードを実行させ、<code>binding.pry</code>でブレークポイントを作る
 <code>edit METHOD_NAME</code>がどこから呼ばれているのかを見る。</p>
@@ -179,7 +179,7 @@
 <li><code>ls OBJECT_NAME</code>でオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる</li>
 </ul>
 
-<h2 id="ideや-ctagsが使えるエディタ-emacs-vim-etc:a3eb74a910416e66f63f67af6a1bbc1c">IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc)</h2>
+<h2 id="ideや-ctagsが使えるエディタ-emacs-vim-etc">IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc)</h2>
 
 <p>定義元にエディタ上でジャンプする</p>
 
@@ -188,7 +188,7 @@
 <li>pryのeditで飛んでそこからはエディタでタグジャンプしたりする</li>
 </ul>
 
-<h3 id="ctags:a3eb74a910416e66f63f67af6a1bbc1c">Ctags</h3>
+<h3 id="ctags">Ctags</h3>
 
 <ul>
 <li>コマンドラインツール</li>
@@ -203,7 +203,7 @@
 <li>ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、<code>.gitignore</code>へ<code>tags</code>を追加しておくべき。</li>
 </ul>
 
-<h2 id="bundle-open:a3eb74a910416e66f63f67af6a1bbc1c">bundle open</h2>
+<h2 id="bundle-open">bundle open</h2>
 
 <pre><code class="language-pry">bundle open LIBRARRY_NAME
 </code></pre>
@@ -212,13 +212,13 @@
 <code>README.md</code>を読んだり、<code>lib/</code>から関係していそうなところをおもむろに開いてみたりしている。
 特に自分が使っているバージョンのREADME.mdを読むということに関しては最速。</p>
 
-<h2 id="言語-フレームワークのリファレンス:a3eb74a910416e66f63f67af6a1bbc1c">言語、フレームワークのリファレンス</h2>
+<h2 id="言語-フレームワークのリファレンス">言語、フレームワークのリファレンス</h2>
 
 <p>(好きなツールで)  リファレンスをいつでも読めるようにしておくことは重要</p>
 
 <p>自分は<a href="http://devdocs.io">DevDocs</a>をよく使う</p>
 
-<h3 id="devdocsの特徴:a3eb74a910416e66f63f67af6a1bbc1c">DevDocsの特徴</h3>
+<h3 id="devdocsの特徴">DevDocsの特徴</h3>
 
 <ul>
 <li>リファレンスなんでも横断検索ツール</li>
@@ -226,7 +226,7 @@
 <li>オフライン機能があり、ブラウザにキャッシュさせることで、インターネット接続環境がなくても閲覧できる</li>
 </ul>
 
-<h2 id="最後に:a3eb74a910416e66f63f67af6a1bbc1c">最後に</h2>
+<h2 id="最後に">最後に</h2>
 
 <p>慣れてくれば意外といきなりGoogleで検索するということが減ってくる。
 BootstrapやSimpleFormなどのViewまわりのヘルパーを提供するGemを使うときには頻繁にソースコードを読むことが多くなる。
@@ -234,9 +234,9 @@ Gemが提供するに同名のメソッドでもって要求する引数の型�
 
 <p>また、ここまで紹介した内容は完全に自己流のため、効率の良い方法があればぜひ教えていただければとm(_ _)m</p>
 
-<h2 id="おまけ:a3eb74a910416e66f63f67af6a1bbc1c">おまけ</h2>
+<h2 id="おまけ">おまけ</h2>
 
-<h3 id="pryを使いやすく:a3eb74a910416e66f63f67af6a1bbc1c">pryを使いやすく</h3>
+<h3 id="pryを使いやすく">pryを使いやすく</h3>
 
 <p><code>~/.pryrc</code>を作っておくと、使えるエディタ、エイリアスの設定が可能</p>
 
@@ -253,7 +253,7 @@ if defined?(PryByebug)
 end
 </code></pre>
 
-<h3 id="vimからdevdocsを開く:a3eb74a910416e66f63f67af6a1bbc1c">VimからDevdocsを開く</h3>
+<h3 id="vimからdevdocsを開く">VimからDevdocsを開く</h3>
 
 <pre><code class="language-vim">&quot; plugin
 NeoBundle &quot;tyru/open-browser.vim&quot;
@@ -311,26 +311,26 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
 <ul>
 <li>
 <ul>
-<li><a href="#ソースを読むメリット:a3eb74a910416e66f63f67af6a1bbc1c">ソースを読むメリット</a></li>
-<li><a href="#必要なモノ:a3eb74a910416e66f63f67af6a1bbc1c">必要なモノ</a></li>
-<li><a href="#武器の使いドコロ:a3eb74a910416e66f63f67af6a1bbc1c">武器の使いドコロ</a></li>
-<li><a href="#気合:a3eb74a910416e66f63f67af6a1bbc1c">気合</a></li>
-<li><a href="#根性:a3eb74a910416e66f63f67af6a1bbc1c">根性</a></li>
-<li><a href="#pry:a3eb74a910416e66f63f67af6a1bbc1c">pry</a></li>
-<li><a href="#ideや-ctagsが使えるエディタ-emacs-vim-etc:a3eb74a910416e66f63f67af6a1bbc1c">IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc)</a>
+<li><a href="#ソースを読むメリット">ソースを読むメリット</a></li>
+<li><a href="#必要なモノ">必要なモノ</a></li>
+<li><a href="#武器の使いドコロ">武器の使いドコロ</a></li>
+<li><a href="#気合">気合</a></li>
+<li><a href="#根性">根性</a></li>
+<li><a href="#pry">pry</a></li>
+<li><a href="#ideや-ctagsが使えるエディタ-emacs-vim-etc">IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc)</a>
 <ul>
-<li><a href="#ctags:a3eb74a910416e66f63f67af6a1bbc1c">Ctags</a></li>
+<li><a href="#ctags">Ctags</a></li>
 </ul></li>
-<li><a href="#bundle-open:a3eb74a910416e66f63f67af6a1bbc1c">bundle open</a></li>
-<li><a href="#言語-フレームワークのリファレンス:a3eb74a910416e66f63f67af6a1bbc1c">言語、フレームワークのリファレンス</a>
+<li><a href="#bundle-open">bundle open</a></li>
+<li><a href="#言語-フレームワークのリファレンス">言語、フレームワークのリファレンス</a>
 <ul>
-<li><a href="#devdocsの特徴:a3eb74a910416e66f63f67af6a1bbc1c">DevDocsの特徴</a></li>
+<li><a href="#devdocsの特徴">DevDocsの特徴</a></li>
 </ul></li>
-<li><a href="#最後に:a3eb74a910416e66f63f67af6a1bbc1c">最後に</a></li>
-<li><a href="#おまけ:a3eb74a910416e66f63f67af6a1bbc1c">おまけ</a>
+<li><a href="#最後に">最後に</a></li>
+<li><a href="#おまけ">おまけ</a>
 <ul>
-<li><a href="#pryを使いやすく:a3eb74a910416e66f63f67af6a1bbc1c">pryを使いやすく</a></li>
-<li><a href="#vimからdevdocsを開く:a3eb74a910416e66f63f67af6a1bbc1c">VimからDevdocsを開く</a></li>
+<li><a href="#pryを使いやすく">pryを使いやすく</a></li>
+<li><a href="#vimからdevdocsを開く">VimからDevdocsを開く</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -345,11 +345,24 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -362,7 +375,7 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -375,7 +388,7 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -388,22 +401,9 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -435,7 +435,7 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -444,7 +444,7 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

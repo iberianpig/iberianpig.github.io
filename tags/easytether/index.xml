@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Easytether on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/easytether/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2015-06-07 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Easytether on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 07 Jun 2015 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/easytether/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>EasytetherでBluetoothテザリング</title>
+      <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description>Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</description>
+    </item>
     
-
   </channel>
 </rss>

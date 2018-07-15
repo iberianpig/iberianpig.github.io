@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -39,7 +39,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"https:\/\/iberianpig.github.io\/"
+      "@id":"https://iberianpig.github.io/"
     },
     "headline": "fwupdでLinuxからUEFI(BIOS)のアップデート |  ",
     "image": {
@@ -53,14 +53,14 @@
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
-      "image": "https:\/\/iberianpig.github.io\/images/logo.png"
+      "image": "https://iberianpig.github.io/images/logo.png"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https:\/\/iberianpig.github.io\/images/logo.png",
+        "url": "https://iberianpig.github.io/images/logo.png",
         "height": 60,
         "width": 60
       }
@@ -135,19 +135,19 @@
 
 <p>この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。</p>
 
-<h1 id="fwupdで利用可能なデバイスかどうかを確認する:c60116921b794c645f585170a1273111">fwupdで利用可能なデバイスかどうかを確認する</h1>
+<h1 id="fwupdで利用可能なデバイスかどうかを確認する">fwupdで利用可能なデバイスかどうかを確認する</h1>
 
 <p>利用可能なデバイスのリストはこちら→(<a href="https://fwupd.org/lvfs/devicelist">https://fwupd.org/lvfs/devicelist</a>)
 自分の<a href="https://fwupd.org/lvfs/device/5ffdbc0d-f340-441c-a803-8439c8c0ae10">XPS13 9360はfwupdでアップデート可能</a>だった。</p>
 
-<h1 id="fwupdのインストール:c60116921b794c645f585170a1273111">fwupdのインストール</h1>
+<h1 id="fwupdのインストール">fwupdのインストール</h1>
 
 <p>aptでfwupdインストールする</p>
 
 <pre><code class="language-bash">sudo apt install fwupd
 </code></pre>
 
-<h1 id="cabファイルをダウンロード:c60116921b794c645f585170a1273111">cabファイルをダウンロード</h1>
+<h1 id="cabファイルをダウンロード">cabファイルをダウンロード</h1>
 
 <p>(<a href="https://fwupd.org/lvfs/devicelist">https://fwupd.org/lvfs/devicelist</a>) からダウンロードする。</p>
 
@@ -155,7 +155,7 @@
 
 <p>画像内のリンク先のcabファイル。</p>
 
-<h1 id="fwupdmgrでインストール:c60116921b794c645f585170a1273111">fwupdmgrでインストール</h1>
+<h1 id="fwupdmgrでインストール">fwupdmgrでインストール</h1>
 
 <p>fwupdmgrというコマンドが利用出来るようになっている。</p>
 
@@ -169,7 +169,7 @@
 <p>これでインストール待ち状態になった。<br />
 再起動時にBIOSのロード画面でアップグレードが走る。</p>
 
-<h1 id="special-thanks:c60116921b794c645f585170a1273111">Special Thanks</h1>
+<h1 id="special-thanks">Special Thanks</h1>
 
 <ul>
 <li><a href="https://github.com/hughsie/fwupd">https://github.com/hughsie/fwupd</a></li>
@@ -223,11 +223,11 @@
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#fwupdで利用可能なデバイスかどうかを確認する:c60116921b794c645f585170a1273111">fwupdで利用可能なデバイスかどうかを確認する</a></li>
-<li><a href="#fwupdのインストール:c60116921b794c645f585170a1273111">fwupdのインストール</a></li>
-<li><a href="#cabファイルをダウンロード:c60116921b794c645f585170a1273111">cabファイルをダウンロード</a></li>
-<li><a href="#fwupdmgrでインストール:c60116921b794c645f585170a1273111">fwupdmgrでインストール</a></li>
-<li><a href="#special-thanks:c60116921b794c645f585170a1273111">Special Thanks</a></li>
+<li><a href="#fwupdで利用可能なデバイスかどうかを確認する">fwupdで利用可能なデバイスかどうかを確認する</a></li>
+<li><a href="#fwupdのインストール">fwupdのインストール</a></li>
+<li><a href="#cabファイルをダウンロード">cabファイルをダウンロード</a></li>
+<li><a href="#fwupdmgrでインストール">fwupdmgrでインストール</a></li>
+<li><a href="#special-thanks">Special Thanks</a></li>
 </ul>
 </nav></div>
   </section>
@@ -240,11 +240,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -257,7 +270,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -270,7 +283,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -283,22 +296,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -330,7 +330,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/pocket">pocket</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -339,7 +339,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

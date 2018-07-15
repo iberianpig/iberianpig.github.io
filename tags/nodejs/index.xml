@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Nodejs on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/nodejs/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2015-08-16 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Nodejs on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>node/npmをUbuntuにインストールする方法</title>
+      <link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link>
+      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid>
+      <description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
+環境はElementary OS freya(Ubuntu14.04ベース)
+nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
+wget入ってない場合はインストール。
+sudo apt-get install wget
+ppaの導入
+wget -qO- https://deb.nodesource.com/setup | sudo bash - を実行
+nodeのインストール sudo apt-get install nodejs
+nodeではなくnodejsを使う
+version番号の確認 node -v
+v0.12.7
+npm -v
+2.11.3
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description>
+    </item>
     
-
   </channel>
 </rss>

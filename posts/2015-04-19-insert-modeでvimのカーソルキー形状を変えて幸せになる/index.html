@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -39,7 +39,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"https:\/\/iberianpig.github.io\/"
+      "@id":"https://iberianpig.github.io/"
     },
     "headline": "insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合) |  ",
     "image": {
@@ -53,19 +53,19 @@
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
-      "image": "https:\/\/iberianpig.github.io\/images/logo.png"
+      "image": "https://iberianpig.github.io/images/logo.png"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https:\/\/iberianpig.github.io\/images/logo.png",
+        "url": "https://iberianpig.github.io/images/logo.png",
         "height": 60,
         "width": 60
       }
     },
-    "description": "Gnome-TerminalでVimのCommand\/Normalモードの状態をよりわかりやすくするためのTips"
+    "description": "Gnome-TerminalでVimのCommand/Normalモードの状態をよりわかりやすくするためのTips"
   }
 </script>
 
@@ -126,7 +126,7 @@
 
               
 
-<h1 id="command-normalモードを間違う:a17bb7983acd67ec681ce8a93186b257">Command/Normalモードを間違う</h1>
+<h1 id="command-normalモードを間違う">Command/Normalモードを間違う</h1>
 
 <p>問題はこれ。<br />
 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。</p>
@@ -136,7 +136,7 @@ gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるの�
 
 <!-- more -->
 
-<h1 id="暫定策:a17bb7983acd67ec681ce8a93186b257">暫定策</h1>
+<h1 id="暫定策">暫定策</h1>
 
 <p>代替案として、 <a href="https://github.com/itchyny/lightline.vim">lightline.vim</a>を使ってInsert/Normalモードの状態を色付きで
 画面下部に表示し、視覚的に理解しやすいように試みた。</p>
@@ -147,7 +147,7 @@ gVimではカーソル形状が矩形と&rsquo;｜&rsquo;が切り替わるの�
 <p>また、横のラインを表示・非表示を( <code>autocmd InsertEnter,InsertLeave * set cursorline!</code> )で切り替える
 アプローチも試みたが、モード間違いは大きく改善はしなかった。</p>
 
-<h1 id="救世主:a17bb7983acd67ec681ce8a93186b257">救世主</h1>
+<h1 id="救世主">救世主</h1>
 
 <p>これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)</p>
 
@@ -168,7 +168,7 @@ endif
 すばらしい。<br />
 グローバルな設定を書き換える力技だが、キニシナイ。</p>
 
-<h1 id="special-thanks:a17bb7983acd67ec681ce8a93186b257">special thanks</h1>
+<h1 id="special-thanks">special thanks</h1>
 
 <ul>
 <li>Lightline(<a href="https://github.com/itchyny/lightline.vim">https://github.com/itchyny/lightline.vim</a> )</li>
@@ -222,10 +222,10 @@ endif
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li><a href="#command-normalモードを間違う:a17bb7983acd67ec681ce8a93186b257">Command/Normalモードを間違う</a></li>
-<li><a href="#暫定策:a17bb7983acd67ec681ce8a93186b257">暫定策</a></li>
-<li><a href="#救世主:a17bb7983acd67ec681ce8a93186b257">救世主</a></li>
-<li><a href="#special-thanks:a17bb7983acd67ec681ce8a93186b257">special thanks</a></li>
+<li><a href="#command-normalモードを間違う">Command/Normalモードを間違う</a></li>
+<li><a href="#暫定策">暫定策</a></li>
+<li><a href="#救世主">救世主</a></li>
+<li><a href="#special-thanks">special thanks</a></li>
 </ul>
 </nav></div>
   </section>
@@ -238,11 +238,24 @@ endif
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -255,7 +268,7 @@ endif
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -268,7 +281,7 @@ endif
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -281,22 +294,9 @@ endif
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -328,7 +328,7 @@ endif
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li><li><a href="https://iberianpig.github.io/categories/prototyping">prototyping</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -337,7 +337,7 @@ endif
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

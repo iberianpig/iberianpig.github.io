@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Bluetooth on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/bluetooth/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2016-03-20 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Bluetooth on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 20 Mar 2016 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/bluetooth/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bluetoothのオン・オフをコマンドラインから切り替える</title>
+      <link>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
       
-    
+      <guid>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid>
+      <description>&lt;p&gt;以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
+&lt;a href=&#34;http://iberianpig.github.io/blog/2015/06/07/easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;EasytetherでBluetoothテザリング&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
+EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。&lt;/p&gt;
+
+&lt;h1 id=&#34;easytether使う前にbluetoothを有効にする&#34;&gt;Easytether使う前にBluetoothを有効にする&lt;/h1&gt;
+
+&lt;p&gt;Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
+コマンドラインで&lt;code&gt;easytether-bluetooth connect -d MAC_ADDRESS&lt;/code&gt;と入力する必要がある。&lt;/p&gt;
+
+&lt;p&gt;結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
+ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -39,7 +39,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"https:\/\/iberianpig.github.io\/"
+      "@id":"https://iberianpig.github.io/"
     },
     "headline": "send data on Intent to call activity |  ",
     "image": {
@@ -53,14 +53,14 @@
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
-      "image": "https:\/\/iberianpig.github.io\/images/logo.png"
+      "image": "https://iberianpig.github.io/images/logo.png"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https:\/\/iberianpig.github.io\/images/logo.png",
+        "url": "https://iberianpig.github.io/images/logo.png",
         "height": 60,
         "width": 60
       }
@@ -128,7 +128,7 @@
 
 <p>#Activityとは</p>
 
-<h2 id="androidの画面単位の概念:c2c063becef589ed6b639d4c6569fd2e">Androidの画面単位の概念</h2>
+<h2 id="androidの画面単位の概念">Androidの画面単位の概念</h2>
 
 <p>一つのアクティビティに対してクラス一つが割り当てされる<br />
   &ndash;&gt;1つのXML(Viewテンプレート)と1つのJavaクラス(Activity)が必要となる</p>
@@ -161,18 +161,17 @@
 <p>アクションを指定するには、Intentクラスのコンストラクタで指定するか、もしくはIntentクラスのsetActionメソッドを使って指定します。### また、指定するアクションはすべてIntentクラスの遷移元への値の渡し方と受け取り方定数として定義されていますので、該当な定数を使ってアクションを以下のように指定します。</p>
 </blockquote>
 
-<p>``` java activity.java</p>
+<pre><code class="language-java">
+// アクションを指定してインテントのインスタンス生成
+Intent intent = new Intent(Intent.ACTION_MAIN);
 
-<p>// アクションを指定してインテントのインスタンス生成
-Intent intent = new Intent(Intent.ACTION_MAIN);</p>
-
-<p>// 次画面のアクティビティ起動
+// 次画面のアクティビティ起動
 startActivity(intent);
-```</p>
+</code></pre>
 
 <p>インテントを<strong>new Intent</strong>してそれを<strong>startActivity()</strong>の引数に入れて起動するらしい。</p>
 
-<h3 id="startactivityとは:c2c063becef589ed6b639d4c6569fd2e">StartActivityとは</h3>
+<h3 id="startactivityとは">StartActivityとは</h3>
 
 <p>同一アプリ内の画面を呼び出すときは<strong>明示的Intent</strong>を作成する。そして<strong>startActivity()</strong>の引数として引き渡すことでそれを実現する。ただし、この挙動は一方通行のようなもの。呼び出し元の情報を返して欲しいときは<strong>startActivityForResult()</strong>を使う。</p>
 
@@ -294,7 +293,7 @@ startActivity(intent);
 </tbody>
 </table>
 
-<h3 id="ブロードキャストアクション:c2c063becef589ed6b639d4c6569fd2e">ブロードキャストアクション</h3>
+<h3 id="ブロードキャストアクション">ブロードキャストアクション</h3>
 
 <blockquote>
 <p>ブロードキャストアクションとは、なんらかのイベントが発生したことを他のオブジェクトに知らせる際に指定するアクションです。</p>
@@ -363,7 +362,7 @@ startActivity(intent);
 
 <p>(参考:　<a href="http://it-trick-java.appspot.com/android/c3152/page7212.html">http://it-trick-java.appspot.com/android/c3152/page7212.html</a>)</p>
 
-<h2 id="intentに値-メッセージを乗っけて呼び出し先アクティビティに引き渡す:c2c063becef589ed6b639d4c6569fd2e">Intentに値・メッセージを乗っけて呼び出し先アクティビティに引き渡す</h2>
+<h2 id="intentに値-メッセージを乗っけて呼び出し先アクティビティに引き渡す">Intentに値・メッセージを乗っけて呼び出し先アクティビティに引き渡す</h2>
 
 <p>Activity呼び出す際に<code>setStart(intent)</code>とするが、そのintentの中身に仕込む。</p>
 
@@ -377,7 +376,7 @@ Intentへ値を保持させるには『putExtra()』メソッドを使用しま�
 
 <p>(参考: <a href="http://web-terminal.blogspot.jp/2013/06/android.html#How-to-receive-and-how-to-pass-a-value-to-a-transition-destination">http://web-terminal.blogspot.jp/2013/06/android.html#How-to-receive-and-how-to-pass-a-value-to-a-transition-destination</a>)</p>
 
-<h3 id="遷移先へ値を渡す:c2c063becef589ed6b639d4c6569fd2e">遷移先へ値を渡す</h3>
+<h3 id="遷移先へ値を渡す">遷移先へ値を渡す</h3>
 
 <p><code>intent.putExtra(key, val)</code>でインテントに値を保持させることができる。</p>
 
@@ -389,7 +388,7 @@ intent.putExtra( &quot;key&quot;, &quot;value&quot; );
 startActivity( intent );
 </code></pre>
 
-<h3 id="遷移先で値を取得する:c2c063becef589ed6b639d4c6569fd2e">遷移先で値を取得する</h3>
+<h3 id="遷移先で値を取得する">遷移先で値を取得する</h3>
 
 <p><code>val = intent.getStringExtra(key)</code>で保持させた値を取得することができる</p>
 
@@ -402,7 +401,7 @@ String name = intent.getStringExtra( &quot;key&quot; );
 <p>getIntent()でintentを取得。
 intent.getStringExtra()で指定したキーに対となる値を取得できる。</p>
 
-<h5 id="型指定での取得:c2c063becef589ed6b639d4c6569fd2e">型指定での取得</h5>
+<h5 id="型指定での取得">型指定での取得</h5>
 
 <p>今回保持していた値は&rdquo;value&rdquo;というString型だったため、getStringExtraとなった。
 格納時の方によって呼び出し方は異なる。</p>
@@ -568,11 +567,11 @@ intent.getStringExtra()で指定したキーに対となる値を取得できる
 
 <p>(参考: <a href="http://web-terminal.blogspot.jp/2013/06/android.html">http://web-terminal.blogspot.jp/2013/06/android.html</a>)</p>
 
-<h2 id="遷移先でセットした値を遷移元で受け取る:c2c063becef589ed6b639d4c6569fd2e">遷移先でセットした値を遷移元で受け取る</h2>
+<h2 id="遷移先でセットした値を遷移元で受け取る">遷移先でセットした値を遷移元で受け取る</h2>
 
 <p>今度は遷移元への値の戻し方。</p>
 
-<h3 id="遷移元での事前準備:c2c063becef589ed6b639d4c6569fd2e">遷移元での事前準備</h3>
+<h3 id="遷移元での事前準備">遷移元での事前準備</h3>
 
 <p>Activityはfinish()で終了を行うことができる
 前述の通り、呼び出し時にstartActivityForResult()を宣言した時のみ呼び出し元に呼び出し先の結果を戻す事が可能となる</p>
@@ -585,7 +584,7 @@ int requestCode = 1001;
 startActivityForResult( intent, requestCode );
 </code></pre>
 
-<h3 id="遷移元で値を受け取るメソッド:c2c063becef589ed6b639d4c6569fd2e">遷移元で値を受け取るメソッド</h3>
+<h3 id="遷移元で値を受け取るメソッド">遷移元で値を受け取るメソッド</h3>
 
 <p>遷移先のアクティビティが破棄されたイベントをトリガーに発火する onActivityResult() をコールバックで実装する</p>
 
@@ -613,7 +612,7 @@ startActivityForResult( intent, requestCode );
 
 <p>これらが正しければ、getStringExtra()を使って文字列を取得する。</p>
 
-<h3 id="遷移先での遷移元に戻す値のセット:c2c063becef589ed6b639d4c6569fd2e">遷移先での遷移元に戻す値のセット</h3>
+<h3 id="遷移先での遷移元に戻す値のセット">遷移先での遷移元に戻す値のセット</h3>
 
 <p>finish();した時にどんな値を遷移元に戻すか
     // intentの作成
@@ -684,27 +683,27 @@ finish();
 <ul>
 <li>
 <ul>
-<li><a href="#androidの画面単位の概念:c2c063becef589ed6b639d4c6569fd2e">Androidの画面単位の概念</a>
+<li><a href="#androidの画面単位の概念">Androidの画面単位の概念</a>
 <ul>
-<li><a href="#startactivityとは:c2c063becef589ed6b639d4c6569fd2e">StartActivityとは</a></li>
-<li><a href="#ブロードキャストアクション:c2c063becef589ed6b639d4c6569fd2e">ブロードキャストアクション</a></li>
+<li><a href="#startactivityとは">StartActivityとは</a></li>
+<li><a href="#ブロードキャストアクション">ブロードキャストアクション</a></li>
 </ul></li>
-<li><a href="#intentに値-メッセージを乗っけて呼び出し先アクティビティに引き渡す:c2c063becef589ed6b639d4c6569fd2e">Intentに値・メッセージを乗っけて呼び出し先アクティビティに引き渡す</a>
+<li><a href="#intentに値-メッセージを乗っけて呼び出し先アクティビティに引き渡す">Intentに値・メッセージを乗っけて呼び出し先アクティビティに引き渡す</a>
 <ul>
-<li><a href="#遷移先へ値を渡す:c2c063becef589ed6b639d4c6569fd2e">遷移先へ値を渡す</a></li>
-<li><a href="#遷移先で値を取得する:c2c063becef589ed6b639d4c6569fd2e">遷移先で値を取得する</a>
+<li><a href="#遷移先へ値を渡す">遷移先へ値を渡す</a></li>
+<li><a href="#遷移先で値を取得する">遷移先で値を取得する</a>
 <ul>
 <li>
 <ul>
-<li><a href="#型指定での取得:c2c063becef589ed6b639d4c6569fd2e">型指定での取得</a></li>
+<li><a href="#型指定での取得">型指定での取得</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><a href="#遷移先でセットした値を遷移元で受け取る:c2c063becef589ed6b639d4c6569fd2e">遷移先でセットした値を遷移元で受け取る</a>
+<li><a href="#遷移先でセットした値を遷移元で受け取る">遷移先でセットした値を遷移元で受け取る</a>
 <ul>
-<li><a href="#遷移元での事前準備:c2c063becef589ed6b639d4c6569fd2e">遷移元での事前準備</a></li>
-<li><a href="#遷移元で値を受け取るメソッド:c2c063becef589ed6b639d4c6569fd2e">遷移元で値を受け取るメソッド</a></li>
-<li><a href="#遷移先での遷移元に戻す値のセット:c2c063becef589ed6b639d4c6569fd2e">遷移先での遷移元に戻す値のセット</a></li>
+<li><a href="#遷移元での事前準備">遷移元での事前準備</a></li>
+<li><a href="#遷移元で値を受け取るメソッド">遷移元で値を受け取るメソッド</a></li>
+<li><a href="#遷移先での遷移元に戻す値のセット">遷移先での遷移元に戻す値のセット</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -719,11 +718,24 @@ finish();
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -736,7 +748,7 @@ finish();
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -749,7 +761,7 @@ finish();
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -762,22 +774,9 @@ finish();
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -809,7 +808,7 @@ finish();
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -818,7 +817,7 @@ finish();
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

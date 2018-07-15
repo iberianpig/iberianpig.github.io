@@ -1,44 +1,305 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Linux on iberianpigsty</title>
     <link>https://iberianpig.github.io/categories/linux/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2017-06-25 22:48:09 &#43;0900 JST</updated>
+    <description>Recent content in Linux on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 15 Jul 2018 00:05:21 +0900</lastBuildDate>
+    
+	<atom:link href="https://iberianpig.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title>
+      <link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link>
+      <pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid>
+      <description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
+記事内の環境  Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している  ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
+また、X11でもライブラリをインストールすればラッパー経由でlibinputを利用できる
+libinputかsynapticsのどちらが有効か 判別方法は以下
+$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)]  Touchpadが含まれた行が見つかる。</description>
+    </item>
+    
+    <item>
+      <title>fwupdでLinuxからUEFI(BIOS)のアップデート</title>
+      <link>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</link>
+      <pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</guid>
+      <description> Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
+特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。
+なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。
+この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。
+fwupdで利用可能なデバイスかどうかを確認する 利用可能なデバイスのリストはこちら→(https://fwupd.org/lvfs/devicelist) 自分のXPS13 9360はfwupdでアップデート可能だった。
+fwupdのインストール aptでfwupdインストールする
+sudo apt install fwupd  cabファイルをダウンロード (https://fwupd.org/lvfs/devicelist) からダウンロードする。
 
+画像内のリンク先のcabファイル。
+fwupdmgrでインストール fwupdmgrというコマンドが利用出来るようになっている。
+ただし、ACアダプタを接続していないと進めないので注意する。
+fwupdmgr installでファームウェアをインストール。
+fwupdmgr install /path/to/your/downloaded/firmware.cab  これでインストール待ち状態になった。
+再起動時にBIOSのロード画面でアップグレードが走る。
+Special Thanks  https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist  </description>
+    </item>
     
+    <item>
+      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
+      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
+      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
+      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+https://github.com/iberianpig/fusuma
+Fusumaという名前でRubyGemsに公開した。
+Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
+ちなみにsyncapticsドライバ向けのPerlでの先行実装のxSwipe を過去に作っていて、こちらを元にRubyでlibinputドライバ向けに書き直している。
+ワークスペースの切り替えする横スワイプが襖を開ける動作と似てるところが由来。
+TouchEggやGinsなどUbuntuのWikiに紹介されるようなライブラリは利用するのに一癖ある。そして設定で上手くいかないケースが多い。
+Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利用してタッチパッドの出力を読み取り、任意のスクリプトを発行出来る。そのため、タッチパッドのデバッグログ出力さえ出来ればジェスチャ解釈はできるためマルチタッチジェスチャの敷居がかなり低くなった。
+Fusumaの使い方 インストールについては、fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。
+Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。
+fusumaコマンドで起動。
+~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
+ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
+下記は一例。
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
+    </item>
     
+    <item>
+      <title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title>
+      <link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link>
+      <pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid>
+      <description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
+リポジトリを追加する
+sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
+sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
+カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
+記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
+HWEカーネル用パッケージのインストール HWEカーネルとは
+ HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
+ 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
+linux-generic-hwe-16.04-edgeをインストール
+sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</description>
+    </item>
     
+    <item>
+      <title>特定のアプリケーションにスイッチするシェルスクリプトを作る</title>
+      <link>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</link>
+      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</guid>
+      <description>Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。
+ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。
+特定のキー1回でブラウザとターミナルをトグルできればベスト。
+xdotoolを使ってみる できる事は下記があるらしい。
+  ウィンドウ ID の取得  名前やクラスによる検索 現在アクテイブなウィンドウ  ウィンドウ ID で指定されたウィンドウの操作  リサイズ 移動 最小化 最全面へ  マウスイベントの模倣  マウスカーソル移動 マウスクリック  キーイベントの模倣  文字入力 ショートカットキー入力    NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p)
+$xdotool Usage: xdotool &amp;lt;cmd&amp;gt; &amp;lt;args&amp;gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops get_num_desktops set_desktop get_desktop set_desktop_for_window get_desktop_for_window get_desktop_viewport set_desktop_viewport exec sleep  結構いろいろある</description>
+    </item>
     
+    <item>
+      <title>Bluetoothのオン・オフをコマンドラインから切り替える</title>
+      <link>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link>
+      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
       
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+      <guid>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid>
+      <description>&lt;p&gt;以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
+&lt;a href=&#34;http://iberianpig.github.io/blog/2015/06/07/easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;EasytetherでBluetoothテザリング&lt;/a&gt;&lt;/p&gt;
 
+&lt;p&gt;端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
+EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。&lt;/p&gt;
+
+&lt;h1 id=&#34;easytether使う前にbluetoothを有効にする&#34;&gt;Easytether使う前にBluetoothを有効にする&lt;/h1&gt;
+
+&lt;p&gt;Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
+コマンドラインで&lt;code&gt;easytether-bluetooth connect -d MAC_ADDRESS&lt;/code&gt;と入力する必要がある。&lt;/p&gt;
+
+&lt;p&gt;結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
+ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>会社のPCのWindowsマシンにLubuntuを入れてきた</title>
+      <link>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</link>
+      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
+      <description>Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。
+その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、 3時間くらいかけてセットアップした時の備忘録。
+WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コントロールパネルから&amp;rdquo;ディスクの管理&amp;rdquo;を表示する &amp;ldquo;ディスクの管理&amp;rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない）  今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。  UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&amp;rdquo;/&amp;ldquo;を選択。  これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。  マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。  Lubuntuをセットアップする  スワップを有効化  USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと  日本語を入力できるようにする  Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。  GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く  Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel)  見た目整える  綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.</description>
+    </item>
+    
+    <item>
+      <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title>
+      <link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
+      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
+      <description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
+sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
+Arc-themeのインストール sudo sh -c &amp;quot;echo &#39;deb http://download.</description>
+    </item>
+    
+    <item>
+      <title>MySQL WorkbenchでQueryの結果が表示されない問題</title>
+      <link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link>
+      <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid>
+      <description> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
+MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
+具体的には以下のような症状。
+ workbencだQueryの結果が白くなって表示されない。
+selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
+調査してみた 色々な人が死んでた
+workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
+また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
+source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
+下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install  buildは1.5h程度は見込んでおいた方が良い。
+sudo make install後にrebootするときちんとresultが表示される。
+special thanks  reddit  launchpad   </description>
+    </item>
+    
+    <item>
+      <title>EasytetherでBluetoothテザリング</title>
+      <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <description>Easytether with linux 
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら  からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</description>
+    </item>
+    
+    <item>
+      <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
+      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
+      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
+      <description>世界各国のLinuxerの皆さん、こんばんは
+寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？　毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
+少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
+現実問題難しい。
+PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
+このメガネを使うと目に(心理的に)優しくなれる。
+そもそも、寝付きの悪さの原因の根源は何か？　ブルーライト、聞いたことあるはず。
+寝付きの悪さだけでなく、目の疲れ、 肩こり、頭痛などに影響を与えていると言われる。
+メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &amp;gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
+ブルーライトをカットする 本題に入る。
+実はこのブルーライト、色温度を下げることで減量させることができる。
+ 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+ 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
+今回はRedshiftというソフトウェアを利用。
+Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
+Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消費量が非常に高くなることがあり、それが理由でRedshiftを利用している。
+Redshiftのインストール sudo apt-get install redshift redshift-gtk
+パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
+Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
+ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+こちらのサイトで詳しく紹介されていた。
+デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
+夜の寝付きの良さが変わるはず。
+Linuxer達に良き睡眠を。</description>
+    </item>
+    
+    <item>
+      <title>Elementary OS freyaでハイバネートオプションを追加する</title>
+      <link>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</link>
+      <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</guid>
+      <description>少し前からElementaryOSの最新版Freyaを使っている。
+電源周りで少し手こずったので、備忘録として残しておく。
+インストール後にやったことはまた今度まとめる。
+ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
+※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
+pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
+電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+下記をコピー&amp;amp;ペースト
+[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes  Grubの設定 sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash resume=/dev/sda3&amp;quot;  resume=&amp;lsquo;スワップ用パーティション&amp;rsquo;とすること！
+Grubの更新 sudo update-grub
+これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
+ノートPCを閉じた時にハイバネーションを有効にしたい &amp;amp;&amp;amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
+/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
+sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し、 下記に変更する
+HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</description>
+    </item>
+    
+    <item>
+      <title>elementary OSにFcitx＋Mozcを入れてみた</title>
+      <link>https://iberianpig.github.io/posts/2013-11-19-fcitx/</link>
+      <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-11-19-fcitx/</guid>
+      <description>FcitxとMozcのインストールはこちらを参照。 自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。 SublimeIbusとの連携 以前ブログの中で書いた、SublimeIbusとの連携。 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。 ウィンドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。 しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
+SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description>
+    </item>
+    
+    <item>
+      <title>Migu Font</title>
+      <link>https://iberianpig.github.io/posts/2013-11-02-migu-font/</link>
+      <pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-11-02-migu-font/</guid>
+      <description>#フォントをMigu Fontへ変更
+昨日Steve Jobsの映画見てから、フォントはやっぱ綺麗な方がいいよねー。と思って、翌々見てみたら自分のPCの文字がデフォルトのフォントのままだった。 いつもお気に入りのフォントがあってそれを使っていたのだが、LaptopのOSをUbuntuからelementary OSに入れ替えた時からデフォルトのフォントのままになってた。
+ちなみにMiguフォントがお気に入りのフォントです。
+濁点、半濁点が見やすく、美しい。タイプしててキモチイイ。
+##ブラウザのフォントを変更してみる。
+Chromium 設定 ＞ Webコンテンツ ＞ フォントをカスタマイズ にて設定。
+##SublimeTextのフォントも変更してみる
+設定ファイル Preferences &amp;gt; Settings-Userをクリック
+Preferences.sublime-settings
+{ &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;, &amp;quot;font_size&amp;quot;: 12, }  なんだかフォントを変更しただけで少し幸せになれた気がする</description>
+    </item>
+    
+    <item>
+      <title>Escape Mozc with SublimeText</title>
+      <link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link>
+      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid>
+      <description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
+vimではMozc側の対応だけで出来てるんだけど。
+今の所Escape2回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
+依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description>
+    </item>
+    
+    <item>
+      <title>Linux版SublmeTextでの日本語入力</title>
+      <link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid>
+      <description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
+ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。
+SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人  まさに。求めていたもの。
+SCIM、uim、その他のIMには対応していません。とあるものの自分はibus-mozc使ってるのでOK
+若干課題は残る  たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）  良いソリューションは無いのか</description>
+    </item>
+    
   </channel>
 </rss>

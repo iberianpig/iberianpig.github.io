@@ -1,18 +1,61 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Cordova on iberianpigsty</title>
     <link>https://iberianpig.github.io/tags/cordova/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2015-02-13 00:00:00 &#43;0000 UTC</updated>
-
+    <description>Recent content in Cordova on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 13 Feb 2015 00:00:00 +0000</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/tags/cordova/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ApacheCordova勉強会第4回</title>
+      <link>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</link>
+      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</guid>
+      <description>ApacheCordova勉強会第4回 AdobeからPhonegap開発チームの方々が来られていた。
+以下雑なメモ。
+セッション1：米Adobe PhoneGapチーム【逐次通訳】 Adobeの人(Adobeに買収された開発チームの方)のセッション。英語同時翻訳。(ありがとうございました)
+ パフォーマンス問題としていいニュース
+ Apple、GoogleともにWebViewの高速化が進む Appleもなんか出したらしい AndroidのはおなじみCrossWalk projectの事  Why Phonegap?
+ CrossPlatforms ProjectSpeed UI Native functions Update from Web Appstoreを通さないアップデートができるとのこと ( てか、それいいの？　) Plugin support  ShowCase ( PhonegapAppStoreで見れるよ )
+ BankOfAmerica Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい) Untappd Sworkit Large Home Store  Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)
+ BaseCampもHybrid
+ ほとんどがHTML5ベース Rails作者、 DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた  PhoneGap Enterpriseについて
+ Adobeのマネタイズのはなし ダッシュボードでメタデータ統計など利用可能 マーケの人が(コンテンツなどを)管理画面から簡単に更新可能   セッション2： Visual Studioを使用したCordova開発 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。
+ VisualStudio  ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで4倍速。 補完の話とか便利機能の話 &amp;hellip;   セッション3： Windows開発者が知っておきたいCordova開発の話 Monaca作ってるアシアルの方の話。 Win上でのCorova開発iOS開発の壁を超える</description>
+    </item>
     
+    <item>
+      <title>Cordova勉強会第3回行ってきた</title>
+      <link>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</link>
+      <pubDate>Mon, 26 Jan 2015 00:00:00 +0000</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</guid>
+      <description>Codova勉強会行ってきた だがしかし&amp;hellip;
+ 参加時刻20:17
+ ほとんど遅刻してアレ
+ (19:00-21:00 at IIJさん)
+ ビールとポテチもらいながら最後のセッション聞く感じになりました。
+  デスクトップアプリマルチOS対応 with HTML5 対象の人は以下の人
+ デスクトップアプリ作りたい
+ いろんなディスプレイサイズ辛い
+ パフォーマンスそんな求めてない
+ C#よりJSやりたい
+  うん。多分そんなところかも。
+Destkop用のネイティブ言語を扱えない人も結構多そう。
+3つのやりかた 下記のやり方があるらしい。
+ Mozilla XULRunner Cordova NW.js(Node-Webkit)  あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。
+なんかMonacaのローカルもそれ使うとか何とか（よくわかってない）
+Mozilla XULRunner  一番シンプルで古株なやつ エンジンGecko  GeckoはHTML5だけじゃなくてXULというマークアップを動かせる セガ版Xamarinのような存在（?）  名前はXULだけど中身GeckoなのでHTML5が使える  これ知らなかった。 あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい
+Cordova  3つの中で一番発展してる エンジンがTrident(Win)らしい ビルドツール プラグインで機能を足しやすいらしい  Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった
+NW.js(Node-Webkit)  What is NW.js  3種の中で若造らしい  Node.</description>
+    </item>
     
-
   </channel>
 </rss>

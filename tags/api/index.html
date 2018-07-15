@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -62,14 +62,28 @@
             
             <div class="col-sm-4">
               <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_API_for_prototyping/">
+  <a href="https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/">
     <div class="image" style="background-image: url(https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Aug 8, 2016</time>
+        <div class="time">Mon, Aug 8, 2016</time>
       </div>
       <h2 class="title">プロトタイピングのためのスタブAPIサーバ</h2>
-      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。 外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。 何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。 初期にAPIのスタブサーバが出来てしまうと サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。 APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。 また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。 実際にあった話として APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。 node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。 起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。 &quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。 APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。 Railsでの通常の開発だとmodel、controller、viewの順で作っていく。 プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。 フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。 硬いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。 ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</div>
+      <div class="summary">APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
+外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
+何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。
+初期にAPIのスタブサーバが出来てしまうと
+ サーバサイドエンジニア =&gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&gt; スタブサーバが返すjsonをパースするインタフェースを作成できる  jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
+APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。
+また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。
+実際にあった話として
+ APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない  あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
+node-easymockでスタブサーバ作る  npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される  非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
+起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。
+&quot;scripts&quot;: { &quot;easymock&quot;: &quot;easymock --port 8000 --path spec/api/easymock&quot; }  ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
+リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
+ APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく  柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
+Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</div>
     </footer>
   </a>
 </article>
@@ -95,11 +109,24 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -112,7 +139,7 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -125,7 +152,7 @@
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -138,22 +165,9 @@
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -185,7 +199,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -194,7 +208,7 @@
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>

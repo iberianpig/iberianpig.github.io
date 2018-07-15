@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iberianpigsty </title>
+    <title>Hugo on iberianpigsty</title>
     <link>https://iberianpig.github.io/categories/hugo/</link>
-    <language>en-us</language>
-    <author></author>
-    <rights>(C) 2018</rights>
-    <updated>2017-01-23 19:36:53 &#43;0900 JST</updated>
-
+    <description>Recent content in Hugo on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 23 Jan 2017 19:36:53 +0900</lastBuildDate>
     
+	<atom:link href="https://iberianpig.github.io/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</title>
+      <link>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</link>
+      <pubDate>Mon, 23 Jan 2017 19:36:53 +0900</pubDate>
       
+      <guid>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</guid>
+      <description>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+hugoの記事作成 hugo new &amp;quot;path/to/article.md&amp;quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &amp;quot;content/post/article.md&amp;quot;とやってしまう。
+しかしcontent/content/path/to/article.mdに作られてしまう。
+正しくはhugo new &amp;quot;post/article.md&amp;quot;だ。contentを除いておく必要が有る。
+「久々にブログ書くか」という時（いつも）こうなる。しんどい。
+shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
+#!/bin/bash echo -e &amp;quot;\033[0;32mCreating new post...\033[0m&amp;quot; if [ $# -eq 1 ]; then title=&amp;quot;_$1&amp;quot; else title=&amp;quot;&amp;quot; fi formatted_date=$(date &amp;quot;+%Y-%m-%d&amp;quot;) full_path=&amp;quot;posts/${formatted_date}${title}.md&amp;quot; hugo new &amp;quot;$full_path&amp;quot; vi &amp;quot;content/$full_path&amp;quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
+./new_post.sh title  で./content/posts/2017-01-23_title.mdが生成されてviで開く。
+これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
+ちなみにbashのlintとしてshellcheckを入れてる。
+さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
+変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
+使ってない人はぜひインストールしよう。</description>
+    </item>
     
-
   </channel>
 </rss>

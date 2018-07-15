@@ -2,7 +2,7 @@
 <html>
   <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Hugo 0.16-DEV" />
+  <meta name="generator" content="Hugo 0.45-DEV" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
@@ -39,7 +39,7 @@
     "@type": "BlogPosting",
     "mainEntityOfPage":{
       "@type":"WebPage",
-      "@id":"https:\/\/iberianpig.github.io\/"
+      "@id":"https://iberianpig.github.io/"
     },
     "headline": "Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った |  ",
     "image": {
@@ -53,14 +53,14 @@
     "author": {
       "@type": "Person",
       "name": "Kohei Yamada",
-      "image": "https:\/\/iberianpig.github.io\/images/logo.png"
+      "image": "https://iberianpig.github.io/images/logo.png"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.",
       "logo": {
         "@type": "ImageObject",
-        "url": "https:\/\/iberianpig.github.io\/images/logo.png",
+        "url": "https://iberianpig.github.io/images/logo.png",
         "height": 60,
         "width": 60
       }
@@ -126,7 +126,7 @@
 
               
 
-<p>linuxのマルチタッチのジェスチャを認識してショートカットを発火するプログラムを作った。</p>
+<p>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。</p>
 
 <p><a href="https://github.com/iberianpig/fusuma">https://github.com/iberianpig/fusuma</a></p>
 
@@ -136,14 +136,80 @@
 
 <p>ちなみにsyncapticsドライバ向けのPerlでの先行実装の<a href="https://github.com/iberianpig/xswipe">xSwipe</a> を過去に作っていて、こちらを元にRubyでlibinputドライバ向けに書き直している。</p>
 
-<p>ワークスペースの切り替えする横スワイプが襖をガーってスライドさせる動作と似てるところが由来。</p>
+<p>ワークスペースの切り替えする横スワイプが襖を開ける動作と似てるところが由来。</p>
 
-<h2 id="仕組み:0c0ecc80a8979d2045b83e8a922ad3ec">仕組み</h2>
+<p>TouchEggやGinsなどUbuntuのWikiに紹介されるようなライブラリは利用するのに一癖ある。そして設定で上手くいかないケースが多い。<br />
+Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利用してタッチパッドの出力を読み取り、任意のスクリプトを発行出来る。そのため、タッチパッドのデバッグログ出力さえ出来ればジェスチャ解釈はできるためマルチタッチジェスチャの敷居がかなり低くなった。</p>
 
-<pre><code>$ libinput-debug-events
+<h1 id="fusumaの使い方">Fusumaの使い方</h1>
+
+<p>インストールについては、fusumaのインストール方法(<a href="https://github.com/iberianpig/fusuma#installation">https://github.com/iberianpig/fusuma#installation</a>) を読んで欲しい。<br />
+<strong>Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。</strong></p>
+
+<p><code>fusuma</code>コマンドで起動。</p>
+
+<p><code>~/.config/fusuma/config.yml</code>に設定ファイルを配置するとfusuma起動時に読み込んでくれる。</p>
+
+<p>ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。</p>
+
+<p>下記は一例。</p>
+
+<pre><code>swipe:
+  3:
+    left:
+      command: 'xdotool key alt+Right'
+    right:
+      command: 'xdotool key alt+Left'
+    up:
+      command: 'xdotool key alt+t'
+    down:
+      command: 'xdotool key alt+w'
+  4:
+    left:
+      command: 'xdotool key super'
+    right:
+      command: 'xdotool key super+a'
+    up:
+      command: 'sh ~/tool/linux/script/desktop_switcher.sh 1'
+    down:
+      command: 'sh ~/tool/linux/script/desktop_switcher.sh -1'
+pinch:
+  2:
+    in:
+      command: 'xdotool key ctrl+equal'
+    out:
+      command: 'xdotool key ctrl+minus'
+  4:
+    in:
+      command: 'xdotool key super+a'
+    out:
+      command: 'xdotool key super+s'
+
+threshold:
+  swipe: 0.1
+  pinch: 0.5
+
+interval:
+  swipe: 0.5
+  pinch: 0.3
 </code></pre>
 
-<p>libinputをデバッグするコマンドを叩き、画面をスワイプすると下記のようなログが見える</p>
+<p>こちらがオプション。</p>
+
+<pre><code>Usage: fusuma [options]
+    -c, --config=path/to/file        Use an alternative config file
+    -d, --daemon                     Daemonize process
+    -l, --list-devices               List available devices
+        --device=&quot;Device name&quot;       Open the given device only
+    -v, --verbose                    Show details about the results of running fusuma
+        --version                    Show fusuma version
+</code></pre>
+
+<p>自動起動する場合は<code>gnome-session-properties</code>等に登録。パスはターミナル上で<code>$(which fusuma)</code> で確認。</p>
+
+<h1 id="fusumaがタッチパッド上のジェスチャを読み取る仕組み">Fusumaがタッチパッド上のジェスチャを読み取る仕組み</h1>
+
+<p>libinputをデバッグするコマンド<code>libinput-debug-events</code>を叩き、画面をスワイプすると下記のようなログが出力される。</p>
 
 <pre><code class="language-md">event10 GESTURE_SWIPE_BEGIN  +4.28s     3
 event10 GESTURE_SWIPE_UPDATE  +4.28s    3  6.47/ 1.35 (13.12/ 2.73 unaccelerated)
@@ -173,54 +239,30 @@ event10 GESTURE_SWIPE_UPDATE  +5.41s    4 12.68/-0.53 (19.48/-0.82 unaccelerated
 
 <p><code>距離 ÷時間 = 速さ</code></p>
 
-<p>速さが一定のしきい値を超えたらショートカットのコマンドを発火する。</p>
+<p>速さが一定のしきい値を超えたらスクリプトを実行している。</p>
 
-<p>ハックっぽい感じ実装だけれど、libinputのAPIが出来てそれをWindowManagerが読み取るという理想的なものはまだなかった。
-TouchEgg, GinsなどUbuntuのWikiに紹介されるようなライブラリたちにはことごとく期待を裏切られてきた。<br />
-xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの一種の繋ぎだと思って作ってる。<br />
-とはいえこの過渡期は暫く続きそうな気配がする。</p>
+<h1 id="ショートカットの発行">ショートカットの発行</h1>
 
-<h2 id="入出力を統一する:0c0ecc80a8979d2045b83e8a922ad3ec">入出力を統一する</h2>
+<p>当初は発行がショートカットのみだったが、xdotool等の利用が難しくなったため、出力はconfig.ymlに記述した任意のスクリプトを実行するようにしている。
+今後はxdotoolが利用できないWayland環境でのデスクトップ操作を提供する予定。</p>
 
-<p>あまり色々なことをやらせすぎないようにした。
-入力はタッチパッドのイベント、出力はショートカットのイベント。それ以外はやらせない。</p>
+<h1 id="その他">その他</h1>
 
-<h3 id="unixという考え方-the-unix-philosophy:0c0ecc80a8979d2045b83e8a922ad3ec">UNIXという考え方/The UNIX philosophy</h3>
+<p>はじめてのGemの作成と公開だったので学びが大きかった。
+* Bundlerでテンプレが作れる。Bundlerすごい。
+* ディレクトリ構成が分かるようになるのでGemを読めるようになった。
+* 英語でちゃんとREADME書くとIssue/PRのやり取りが起こる。
+* しかしREADMEを読まない人が多い。
+* シングルトンクラスを書いてみた。ログ生成と設定の読み込みあたり。
+* <a href="https://www.amazon.co.jp/dp/B01L8SEVYI/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方</a>を参考にスワイプやピンチズームのベクトルクラスをダックタイプで書いてみた。
+* Lint駆動開発が良かった。Rubocopに怒られながら書くと自然と綺麗な書き方になる。
+* Hacker NewsのTopに出てる時があって、この時はGitHubのスターが3分に1つくらいのペースでついてた。</p>
 
-<p>下記の2つを意識した。</p>
-
-<ul>
-<li>1つのことをうまくやろう</li>
-<li>すべてのプログラムをフィルタとして設計する</li>
-</ul>
-
-<p>標準出力を返すわけではないが、出力をキーイベントに統一することで、キーイベントを入力として扱うプログラムとうまく連携する。</p>
-
-<pre><code class="language-md">タッチパッド上のジェスチャ ---&gt; ショートカット
-</code></pre>
-
-<p>例えば、 window毎にショートカットのキーマップを変更出来るプログラム<a href="https://github.com/k0kubun/xremap">xremap</a> と連携する。
-これを繋げば同じジェスチャでも対象のアプリによって柔軟に振る舞いを変える事が出来る。</p>
-
-<h2 id="作る中での学び:0c0ecc80a8979d2045b83e8a922ad3ec">作る中での学び</h2>
-
-<p>はじめてのGemの作成と公開だったので学びが大きかった。</p>
-
-<ul>
-<li>Bundlerでテンプレが作れる。Bundlerすごい。</li>
-<li>ディレクトリ構成が分かるようになるのでGemを読めるようになった。</li>
-<li>英語でちゃんとREADME書くとIssue/PRのやり取りが起こる。</li>
-<li>シングルトンクラスを書いてみた。ログ生成と設定の読み込みあたり。</li>
-<li><a href="https://www.amazon.co.jp/dp/B01L8SEVYI/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1">オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方</a>を参考にスワイプやピンチズームのベクトルクラスをダックタイプで書いてみた。</li>
-<li>Lint駆動開発良い。Rubocopに怒られながら書くと綺麗な書き方になる。</li>
-</ul>
-
-<h2 id="参考url:0c0ecc80a8979d2045b83e8a922ad3ec">参考URL</h2>
+<h1 id="参考url">参考URL</h1>
 
 <ul>
 <li><a href="https://github.com/iberianpig/fusuma">https://github.com/iberianpig/fusuma</a></li>
 <li><a href="https://github.com/iberianpig/xswipe">https://github.com/iberianpig/xswipe</a></li>
-<li><a href="https://github.com/k0kubun/xremap">https://github.com/k0kubun/xremap</a></li>
 </ul>
 
             </div>
@@ -270,16 +312,11 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <header>Table Of Contents</header>
     <div><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#仕組み:0c0ecc80a8979d2045b83e8a922ad3ec">仕組み</a></li>
-<li><a href="#入出力を統一する:0c0ecc80a8979d2045b83e8a922ad3ec">入出力を統一する</a>
-<ul>
-<li><a href="#unixという考え方-the-unix-philosophy:0c0ecc80a8979d2045b83e8a922ad3ec">UNIXという考え方/The UNIX philosophy</a></li>
-</ul></li>
-<li><a href="#作る中での学び:0c0ecc80a8979d2045b83e8a922ad3ec">作る中での学び</a></li>
-<li><a href="#参考url:0c0ecc80a8979d2045b83e8a922ad3ec">参考URL</a></li>
-</ul></li>
+<li><a href="#fusumaの使い方">Fusumaの使い方</a></li>
+<li><a href="#fusumaがタッチパッド上のジェスチャを読み取る仕組み">Fusumaがタッチパッド上のジェスチャを読み取る仕組み</a></li>
+<li><a href="#ショートカットの発行">ショートカットの発行</a></li>
+<li><a href="#その他">その他</a></li>
+<li><a href="#参考url">参考URL</a></li>
 </ul>
 </nav></div>
   </section>
@@ -292,11 +329,24 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Jul 15, 2018</div>
+      </div>
+      <h2 class="title">タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg);"></div>
     <footer>
       <div class="date">
-        <time>Fri, Apr 27, 2018</time>
+        <div class="time">Fri, Apr 27, 2018</div>
       </div>
       <h2 class="title">2018/04/27 最近読んだ記事</h2>
     </footer>
@@ -309,7 +359,7 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <div class="image" style="background-image: url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png);"></div>
     <footer>
       <div class="date">
-        <time>Sun, Jun 25, 2017</time>
+        <div class="time">Sun, Jun 25, 2017</div>
       </div>
       <h2 class="title">fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
     </footer>
@@ -322,7 +372,7 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <div class="image" style="background-image: url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67);"></div>
     <footer>
       <div class="date">
-        <time>Sun, May 14, 2017</time>
+        <div class="time">Sun, May 14, 2017</div>
       </div>
       <h2 class="title">Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
     </footer>
@@ -335,22 +385,9 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
     <footer>
       <div class="date">
-        <time>Mon, Feb 6, 2017</time>
+        <div class="time">Mon, Feb 6, 2017</div>
       </div>
       <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_Information_gathering_and_its_optimization/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
-    <footer>
-      <div class="date">
-        <time>Mon, Jan 30, 2017</time>
-      </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
     </footer>
   </a>
 </article>
@@ -382,7 +419,7 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/marketing">marketing</a></li><li><a href="https://iberianpig.github.io/categories/octopress">octopress</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
@@ -391,7 +428,7 @@ xSwipe/Fusumaはそういった公式がきちんとしたもの出すまでの�
     <header>tag</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li>
+        <li><a href="https://iberianpig.github.io/tags/elementaryos">elementaryos</a></li><li><a href="https://iberianpig.github.io/tags/linux">linux</a></li><li><a href="https://iberianpig.github.io/tags/ubuntu">ubuntu</a></li><li><a href="https://iberianpig.github.io/tags/ruby">ruby</a></li><li><a href="https://iberianpig.github.io/tags/shellscript">shellscript</a></li><li><a href="https://iberianpig.github.io/tags/sublimetext">sublimetext</a></li><li><a href="https://iberianpig.github.io/tags/cordova">cordova</a></li><li><a href="https://iberianpig.github.io/tags/kindle">kindle</a></li><li><a href="https://iberianpig.github.io/tags/tethering">tethering</a></li><li><a href="https://iberianpig.github.io/tags/vim">vim</a></li>
       </ul>
     </div>
   </section>
