@@ -14,7 +14,8 @@ title: タイピング中にタッチパッドを無効にする(Linux/Libinput)
 タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。  
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 
-# 記事内の環境
+**記事内の環境**
+
 - Distribution: elementary OS Loki (Ubuntu 16.04.1ベース)
 - Kernel Linux 4.15.0-24-generic
 - タッチパッドドライバでlibinputを使用している
@@ -39,7 +40,7 @@ $ xinput
     ↳ Sleep Button                    id=9  [slave  keyboard (3)]
 ```
 
-`Touchpad`が含まれた行が見つかる。
+`Touchpad`の記述を含んだ行が見つかる。
 ```bash
 DLL075B:01 06CB:76AF Touchpad   id=11
 ```
@@ -88,7 +89,7 @@ libinput XXXXという行が続いているのでlibinputを利用している�
 synapticsの場合はlibinputが利用されていない。
 
 
-# libinputを利用するように設定する
+# libinputドライバを利用するように設定する
 
 `/usr/share/X11/xorg.conf.d/` ディレクトリに数字+ドライバの設定ファイルが置かれている。  
 ここの数字の中で大きいもが後に読み込まれるため、synapticsが優先的に利用されている

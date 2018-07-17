@@ -4,7 +4,7 @@ title: "特定のアプリケーションにスイッチするシェルスクリ
 published: true
 date: 2016-04-15
 comments: true
-categories: linux
+categories: Linux
 image: https://i.gyazo.com/0246c197a04c9b93b7a77601740ec3da.png
 description: ショートカットからブラウザとターミナルを切り替える便利なシェルスクリプトの作り方
 tags: 

@@ -7,7 +7,7 @@ comments: true
 tags: 
    - tethering
    - bluetooth
-categories: linux
+categories: Linux
 image: https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg
 ---
 

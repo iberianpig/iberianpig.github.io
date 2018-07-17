@@ -5,7 +5,7 @@ published: true
 date: 2014-03-15
 comments: true
 tags: 
-categories: rails
+categories: Rails
 ---
 
 # Head First Rails第4章のメモ

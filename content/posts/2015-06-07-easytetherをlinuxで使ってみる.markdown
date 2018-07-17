@@ -8,7 +8,7 @@ tags:
    - linux
    - easytether
    - tethering
-categories: linux
+categories: Linux
 image: https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg
 ---
 

@@ -8,6 +8,7 @@ layout: post
 published: true
 tags:
 - "ruby"
+- "libinput"
 title: "Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った"
 ---
 

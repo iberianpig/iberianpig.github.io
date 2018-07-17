@@ -9,7 +9,7 @@ tags:
    - elementaryOS
    - 睡眠
    - lifehack
-categories: linux
+categories: Linux
 image: http://www.jins-jp.com/jins-pc/img/item.jpg
 ---
 
