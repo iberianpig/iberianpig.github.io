@@ -62,6 +62,36 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/">
+    <div class="image" style="background-image: url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Sep 2, 2018</time>
+      </div>
+      <h2 class="title">ranger-explorer.vimをアップデートした</h2>
+      <div class="summary">ranger-explorer.vimをアップデートした。
+このアップデートでranger上の操作でvimのタブで開くか画面分割して開くかを選択できるようにした。
+(あとNeovimもサポートした)
+ranger-explorer.vimとは https://github.com/iberianpig/ranger-explorer.vim
+vimのファイラのrangerに置き換えるプラグイン。 vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、vimの子プロセスのranger経由でファイルを選択するが、親プロセスのvimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
+今回のアップデートでは rangerから vimのタブや画面分割で開いたり出来るようにしている。
+ranger ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
+特に高速なライブプレビューがが気に入っており、これだけでrangerを選択するモチベーションになっている。
+rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、下記キーバインドがrangerに自動的に定義される
+&lt;Ctrl-o&gt;: 現在のタブ上で開く &lt;Ctrl-t&gt;: 新しいタブで開く &lt;Ctrl-v&gt;: 画面を垂直に分割して開く &lt;Ctrl-s&gt;: 画面を水平に分割して開く  下のようにrangerから分割して開くことが出来る。 
+動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
+let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_tabedit = '&lt;C-t&gt;' let g:ranger_explorer_keymap_split = '&lt;C-s&gt;' let g:ranger_explorer_keymap_vsplit = '&lt;C-v&gt;'  ワークフローの一部として ranger.vimを利用していたが、vim-filerと同等の使い勝手が欲しくてタブや画面分割する機能を実装した。 同じアイデアはGitクライアントtigを扱うプラグインのtig-explorer(https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。
+無理に全てvimプラグインで頑張るよりも得意なツールにまかせてしまえば良いと考えていて、 ファイルを開くツールは得意分野別にCLIツールに依存させている。
+ 雑なファイル検索はfzf.vim ディレクトリ階層からファイルを開くのにはranger-explorer.vim コミット履歴やgit grepからファイルを開くのにはtig-explorer.vim  どれもプレビューが高速なツールを使えるようになったのでvim上ワークフローが快適になった。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/">
     <div class="image" style="background-image: url(https://i.gyazo.com/a1a8623055ef27ee3ba7ffcb2b65d116.png);"></div>
     <footer>
@@ -139,6 +169,19 @@
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Sep 2, 2018</div>
+      </div>
+      <h2 class="title">ranger-explorer.vimをアップデートした</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
     <footer>
@@ -190,19 +233,6 @@
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
-    <footer>
-      <div class="date">
-        <div class="time">Mon, Feb 6, 2017</div>
-      </div>
-      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -229,7 +259,7 @@
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>

@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 22 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate>
     
 	<atom:link href="https://iberianpig.github.io/tags/tig/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ranger-explorer.vimをアップデートした</title>
+      <link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link>
+      <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid>
+      <description>ranger-explorer.vimをアップデートした。
+このアップデートでranger上の操作でvimのタブで開くか画面分割して開くかを選択できるようにした。
+(あとNeovimもサポートした)
+ranger-explorer.vimとは https://github.com/iberianpig/ranger-explorer.vim
+vimのファイラのrangerに置き換えるプラグイン。 vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、vimの子プロセスのranger経由でファイルを選択するが、親プロセスのvimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
+今回のアップデートでは rangerから vimのタブや画面分割で開いたり出来るようにしている。
+ranger ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
+特に高速なライブプレビューがが気に入っており、これだけでrangerを選択するモチベーションになっている。
+rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、下記キーバインドがrangerに自動的に定義される
+&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く  下のようにrangerから分割して開くことが出来る。 
+動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
+let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39;  ワークフローの一部として ranger.vimを利用していたが、vim-filerと同等の使い勝手が欲しくてタブや画面分割する機能を実装した。 同じアイデアはGitクライアントtigを扱うプラグインのtig-explorer(https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。
+無理に全てvimプラグインで頑張るよりも得意なツールにまかせてしまえば良いと考えていて、 ファイルを開くツールは得意分野別にCLIツールに依存させている。
+ 雑なファイル検索はfzf.vim ディレクトリ階層からファイルを開くのにはranger-explorer.vim コミット履歴やgit grepからファイルを開くのにはtig-explorer.vim  どれもプレビューが高速なツールを使えるようになったのでvim上ワークフローが快適になった。</description>
+    </item>
     
     <item>
       <title>tigの使い方とオプションをまとめた</title>

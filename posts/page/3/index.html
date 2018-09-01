@@ -62,6 +62,36 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Thu, Sep 11, 2014</time>
+      </div>
+      <h2 class="title">Rspecでインスタンス変数が参照できない</h2>
+      <div class="summary">Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。
+まず、この事実を理解すべきだった。
+Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
+また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
+expect(Model.last.name).to eq 'modelname'で評価する。
+どちらもどのような値がアサインされていればよいのかを意識してテストを書く。
+その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。
+そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。
+はじめてのテストということでハマってしまった。
+テストではRailsの世界の変数か、Rspecの世界の変数なのかを明確に意識する必要があった。
+実行中のプログラム内なのか、その外なのかを常に意識する。
+RequestヘッダをRspecで作ってそれをRailsに投げる。
+Railsの中のController内で、どのような値がアサインされるかテストする。
+どの世界の値を取得して何と比べるのか。
+何をテストすべきかを意識していれば回避できる問題。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/">
     <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
@@ -352,6 +382,19 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
     <div>
       
       <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Sep 2, 2018</div>
+      </div>
+      <h2 class="title">ranger-explorer.vimをアップデートした</h2>
+    </footer>
+  </a>
+</article>
+
+      
+      <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
     <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
     <footer>
@@ -403,19 +446,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
-    <footer>
-      <div class="date">
-        <div class="time">Mon, Feb 6, 2017</div>
-      </div>
-      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -442,7 +472,7 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>

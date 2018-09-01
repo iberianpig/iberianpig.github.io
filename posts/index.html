@@ -62,6 +62,36 @@
             
             <div class="col-sm-4">
               <article class="grid">
+  <a href="https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/">
+    <div class="image" style="background-image: url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Sep 2, 2018</time>
+      </div>
+      <h2 class="title">ranger-explorer.vimをアップデートした</h2>
+      <div class="summary">ranger-explorer.vimをアップデートした。
+このアップデートでranger上の操作でvimのタブで開くか画面分割して開くかを選択できるようにした。
+(あとNeovimもサポートした)
+ranger-explorer.vimとは https://github.com/iberianpig/ranger-explorer.vim
+vimのファイラのrangerに置き換えるプラグイン。 vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、vimの子プロセスのranger経由でファイルを選択するが、親プロセスのvimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
+今回のアップデートでは rangerから vimのタブや画面分割で開いたり出来るようにしている。
+ranger ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
+特に高速なライブプレビューがが気に入っており、これだけでrangerを選択するモチベーションになっている。
+rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、下記キーバインドがrangerに自動的に定義される
+&lt;Ctrl-o&gt;: 現在のタブ上で開く &lt;Ctrl-t&gt;: 新しいタブで開く &lt;Ctrl-v&gt;: 画面を垂直に分割して開く &lt;Ctrl-s&gt;: 画面を水平に分割して開く  下のようにrangerから分割して開くことが出来る。 
+動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
+let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_tabedit = '&lt;C-t&gt;' let g:ranger_explorer_keymap_split = '&lt;C-s&gt;' let g:ranger_explorer_keymap_vsplit = '&lt;C-v&gt;'  ワークフローの一部として ranger.vimを利用していたが、vim-filerと同等の使い勝手が欲しくてタブや画面分割する機能を実装した。 同じアイデアはGitクライアントtigを扱うプラグインのtig-explorer(https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。
+無理に全てvimプラグインで頑張るよりも得意なツールにまかせてしまえば良いと考えていて、 ファイルを開くツールは得意分野別にCLIツールに依存させている。
+ 雑なファイル検索はfzf.vim ディレクトリ階層からファイルを開くのにはranger-explorer.vim コミット履歴やgit grepからファイルを開くのにはtig-explorer.vim  どれもプレビューが高速なツールを使えるようになったのでvim上ワークフローが快適になった。</div>
+    </footer>
+  </a>
+</article>
+
+            </div>
+            
+            <div class="col-sm-4">
+              <article class="grid">
   <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/">
     <div class="image" style="background-image: url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png);"></div>
     <footer>
@@ -523,24 +553,6 @@ Special Thanks  MySQL で特定のテーブルのみをバックアップ - Easy
 
             </div>
             
-            <div class="col-sm-4">
-              <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/">
-    <div class="image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png);"></div>
-    <footer>
-      <div class="date">
-        <div class="time">Thu, Sep 17, 2015</time>
-      </div>
-      <h2 class="title">会社のPCのWindowsマシンにLubuntuを入れてきた</h2>
-      <div class="summary">Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。
-その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、 3時間くらいかけてセットアップした時の備忘録。
-WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コントロールパネルから&rdquo;ディスクの管理&rdquo;を表示する &ldquo;ディスクの管理&rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない）  今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。  UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&rdquo;/&ldquo;を選択。  これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。  マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。  Lubuntuをセットアップする  スワップを有効化  USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと  日本語を入力できるようにする  Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。  GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く  Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel)  見た目整える  綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.</div>
-    </footer>
-  </a>
-</article>
-
-            </div>
-            
           </div>
 
           
@@ -566,6 +578,19 @@ WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コ�
   <section>
     <header>Latest Posts</header>
     <div>
+      
+      <article class="li">
+  <a href="https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/" class="clearfix">
+    <div class="image" style="background-image: url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif);"></div>
+    <footer>
+      <div class="date">
+        <div class="time">Sun, Sep 2, 2018</div>
+      </div>
+      <h2 class="title">ranger-explorer.vimをアップデートした</h2>
+    </footer>
+  </a>
+</article>
+
       
       <article class="li">
   <a href="https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/" class="clearfix">
@@ -619,19 +644,6 @@ WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コ�
 </article>
 
       
-      <article class="li">
-  <a href="https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/" class="clearfix">
-    <div class="image" style="background-image: url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png);"></div>
-    <footer>
-      <div class="date">
-        <div class="time">Mon, Feb 6, 2017</div>
-      </div>
-      <h2 class="title">Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-    </footer>
-  </a>
-</article>
-
-      
     </div>
   </section>
 
@@ -658,7 +670,7 @@ WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コ�
     <header>category</header>
     <div>
       <ul>
-        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
+        <li><a href="https://iberianpig.github.io/categories/linux">linux</a></li><li><a href="https://iberianpig.github.io/categories/rails">rails</a></li><li><a href="https://iberianpig.github.io/categories/vim">vim</a></li><li><a href="https://iberianpig.github.io/categories/android">android</a></li><li><a href="https://iberianpig.github.io/categories/javascript">javascript</a></li><li><a href="https://iberianpig.github.io/categories/life">life</a></li><li><a href="https://iberianpig.github.io/categories/git">git</a></li><li><a href="https://iberianpig.github.io/categories/html5">html5</a></li><li><a href="https://iberianpig.github.io/categories/css">css</a></li><li><a href="https://iberianpig.github.io/categories/hugo">hugo</a></li>
       </ul>
     </div>
   </section>
