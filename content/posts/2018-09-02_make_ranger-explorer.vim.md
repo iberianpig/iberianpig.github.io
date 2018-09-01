@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ranger-explorer.vimをアップデートした"
-published: false
+published: true
 date: "2018-09-02"
 comments: true
 tags: 
