@@ -82,7 +82,7 @@ rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた
 let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_tabedit = '&lt;C-t&gt;' let g:ranger_explorer_keymap_split = '&lt;C-s&gt;' let g:ranger_explorer_keymap_vsplit = '&lt;C-v&gt;'  得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
  fzf.vim  ファイル名をあいまい検索(fuzzy-finder)  ranger-explorer.vim  ディレクトリ階層からファイルを選択  tig-explorer.vim  tigでGitの履歴から、git grepからファイルを開く   どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
-UIに一貫性を持たせる 外部ツールを利用する場合、パフォーマンスの利点とは別に、普段から使い慣れているツールをVimから扱えるということが利点。 だが、ツール毎に細かいキーバインドが異なる。 同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</div>
+異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 だが、ツール毎に細かいキーバインドが異なる。 同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</div>
     </footer>
   </a>
 </article>

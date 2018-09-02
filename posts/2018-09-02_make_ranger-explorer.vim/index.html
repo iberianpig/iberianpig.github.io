@@ -199,15 +199,14 @@ let g:ranger_explorer_keymap_vsplit  = '&lt;C-v&gt;'
 
 <p>どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。</p>
 
-<h1 id="uiに一貫性を持たせる">UIに一貫性を持たせる</h1>
+<h1 id="異なるツールの操作に一貫性を持たせる">異なるツールの操作に一貫性を持たせる</h1>
 
-<p>外部ツールを利用する場合、パフォーマンスの利点とは別に、普段から使い慣れているツールをVimから扱えるということが利点。
+<p>Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。
 だが、ツール毎に細かいキーバインドが異なる。 同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</p>
 
-<p>ファイルを開く際にvimfiler/ctrlpと同様の使い勝手が欲しくて、<code>&lt;C-o&gt;</code>、<code>&lt;C-t&gt;</code>、<code>&lt;C-v&gt;</code>、<code>&lt;C-s&gt;</code>のキーバインドをプラグイン側から注入することで
-タブや画面分割して開けるようにした。</p>
+<p>以前愛用していた、vimfiler/ctrlpと同様の使い勝手が欲しくて、<code>&lt;C-o&gt;</code>、<code>&lt;C-t&gt;</code>、<code>&lt;C-v&gt;</code>、<code>&lt;C-s&gt;</code>のキーバインドでタブや画面分割して開けるようにした。</p>
 
-<p>同じアイデアをtigを扱うプラグインのtig-explorer(<a href="https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。">https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。</a></p>
+<p>プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</p>
 
 <p>前日の3つのツールは同じキーバインドで同じ振る舞いをするよう一貫性が保てるようになり、ツール別でキーバインドが合わず、混乱するのを防ぐことが出来た。</p>
 
@@ -264,7 +263,7 @@ let g:ranger_explorer_keymap_vsplit  = '&lt;C-v&gt;'
 </ul></li>
 <li><a href="#rangerからタブ-画面分割で開く">rangerからタブ/画面分割で開く</a></li>
 <li><a href="#得意なツールに任せる">得意なツールに任せる</a></li>
-<li><a href="#uiに一貫性を持たせる">UIに一貫性を持たせる</a></li>
+<li><a href="#異なるツールの操作に一貫性を持たせる">異なるツールの操作に一貫性を持たせる</a></li>
 </ul>
 </nav></div>
   </section>
