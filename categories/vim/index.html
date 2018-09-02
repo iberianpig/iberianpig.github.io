@@ -69,21 +69,21 @@
         <div class="time">Sun, Sep 2, 2018</time>
       </div>
       <h2 class="title">ranger-explorer.vimをアップデートした</h2>
-      <div class="summary">ranger-explorer.vimをアップデートした。
-このアップデートでranger上の操作でvimのタブで開くか画面分割して開くかを選択できるようにした。
-(あとNeovimもサポートした)
+      <div class="summary">ranger-explorer.vimというVimプラグインをアップデートした。
+このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
+(ついでにNeovimもサポートした)
 ranger-explorer.vimとは https://github.com/iberianpig/ranger-explorer.vim
-vimのファイラのrangerに置き換えるプラグイン。 vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、vimの子プロセスのranger経由でファイルを選択するが、親プロセスのvimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
-今回のアップデートでは rangerから vimのタブや画面分割で開いたり出来るようにしている。
+Vimのファイラのrangerに置き換えるVimプラグイン。 Vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、Vimのプロセスがネストせず、rangerの親プロセスのVimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
+今回のアップデートでは rangerから Vimのタブや画面分割で開いたり出来るようにしている。
 ranger ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 特に高速なライブプレビューがが気に入っており、これだけでrangerを選択するモチベーションになっている。
-rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、下記キーバインドがrangerに自動的に定義される
-&lt;Ctrl-o&gt;: 現在のタブ上で開く &lt;Ctrl-t&gt;: 新しいタブで開く &lt;Ctrl-v&gt;: 画面を垂直に分割して開く &lt;Ctrl-s&gt;: 画面を水平に分割して開く  下のようにrangerから分割して開くことが出来る。 
-動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
+&lt;Ctrl-o&gt;: 現在のタブ上で開く &lt;Ctrl-t&gt;: 新しいタブで開く &lt;Ctrl-v&gt;: 画面を垂直に分割して開く &lt;Ctrl-s&gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
-let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_tabedit = '&lt;C-t&gt;' let g:ranger_explorer_keymap_split = '&lt;C-s&gt;' let g:ranger_explorer_keymap_vsplit = '&lt;C-v&gt;'  ワークフローの一部として ranger.vimを利用していたが、vim-filerと同等の使い勝手が欲しくてタブや画面分割する機能を実装した。 同じアイデアはGitクライアントtigを扱うプラグインのtig-explorer(https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。
-無理に全てvimプラグインで頑張るよりも得意なツールにまかせてしまえば良いと考えていて、 ファイルを開くツールは得意分野別にCLIツールに依存させている。
- 雑なファイル検索はfzf.vim ディレクトリ階層からファイルを開くのにはranger-explorer.vim コミット履歴やgit grepからファイルを開くのにはtig-explorer.vim  どれもプレビューが高速なツールを使えるようになったのでvim上ワークフローが快適になった。</div>
+let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_tabedit = '&lt;C-t&gt;' let g:ranger_explorer_keymap_split = '&lt;C-s&gt;' let g:ranger_explorer_keymap_vsplit = '&lt;C-v&gt;'  得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
+特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
+ fzf.vim  ファイル名をあいまい検索(fuzzy-finder)  ranger-explorer.vim  ディレクトリ階層からファイルを選択  tig-explorer.vim  tigでGitの履歴から、git grepからファイルを開く   どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
+UIに一貫性を持たせる 外部ツールを利用する場合、パフォーマンスの利点とは別に、普段から使い慣れているツールをVimから扱えるということが利点。 だが、ツール毎に細かいキーバインドが異なる。 同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</div>
     </footer>
   </a>
 </article>

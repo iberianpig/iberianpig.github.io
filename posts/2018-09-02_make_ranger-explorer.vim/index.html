@@ -126,19 +126,19 @@
 
               
 
-<p>ranger-explorer.vimをアップデートした。<br />
-このアップデートでranger上の操作でvimのタブで開くか画面分割して開くかを選択できるようにした。<br />
-(あとNeovimもサポートした)</p>
+<p>ranger-explorer.vimというVimプラグインをアップデートした。<br />
+このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。<br />
+(ついでにNeovimもサポートした)</p>
 
 <h1 id="ranger-explorer-vimとは">ranger-explorer.vimとは</h1>
 
 <p><a href="https://github.com/iberianpig/ranger-explorer.vim">https://github.com/iberianpig/ranger-explorer.vim</a></p>
 
-<p>vimのファイラのrangerに置き換えるプラグイン。
-vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。
-また、vimの子プロセスのranger経由でファイルを選択するが、親プロセスのvimで開くようにしているのでbufferを共有することが出来る。(これが<code>!ranger</code>で開いた時との違い)</p>
+<p>Vimのファイラのrangerに置き換えるVimプラグイン。
+Vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。
+また、Vimのプロセスがネストせず、rangerの親プロセスのVimで開くようにしているのでbufferを共有することが出来る。(これが<code>!ranger</code>で開いた時との違い)</p>
 
-<p>今回のアップデートでは <strong>rangerから</strong> vimのタブや画面分割で開いたり出来るようにしている。</p>
+<p>今回のアップデートでは <strong>rangerから</strong> Vimのタブや画面分割で開いたり出来るようにしている。</p>
 
 <h2 id="ranger">ranger</h2>
 
@@ -151,7 +151,7 @@ hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimラ�
 
 <h1 id="rangerからタブ-画面分割で開く">rangerからタブ/画面分割で開く</h1>
 
-<p>ranger-explorerからrangerを開いた時、下記キーバインドがrangerに自動的に定義される</p>
+<p>ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。</p>
 
 <pre><code>&lt;Ctrl-o&gt;: 現在のタブ上で開く
 &lt;Ctrl-t&gt;: 新しいタブで開く
@@ -159,8 +159,8 @@ hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimラ�
 &lt;Ctrl-s&gt;: 画面を水平に分割して開く
 </code></pre>
 
-<p>下のようにrangerから分割して開くことが出来る。
-<a href="https://gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd"><img src="https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif" alt="edit with vsplit from ranger" /></a></p>
+<p>このようにrangerから分割して開くことが出来る。
+<img src="https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif" alt="ranger経由で画面を分割して開く" /></p>
 
 <p>動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。</p>
 
@@ -172,21 +172,44 @@ let g:ranger_explorer_keymap_split   = '&lt;C-s&gt;'
 let g:ranger_explorer_keymap_vsplit  = '&lt;C-v&gt;'
 </code></pre>
 
-<h1 id="ワークフローの一部として">ワークフローの一部として</h1>
+<h1 id="得意なツールに任せる">得意なツールに任せる</h1>
 
-<p>ranger.vimを利用していたが、vim-filerと同等の使い勝手が欲しくてタブや画面分割する機能を実装した。
-同じアイデアはGitクライアントtigを扱うプラグインのtig-explorer(<a href="https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。">https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。</a></p>
+<p>無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、
+今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。</p>
 
-<p>無理に全てvimプラグインで頑張るよりも得意なツールにまかせてしまえば良いと考えていて、
-ファイルを開くツールは得意分野別にCLIツールに依存させている。</p>
+<p>特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。</p>
 
 <ul>
-<li>雑なファイル検索は<a href="https://github.com/junegunn/fzf.vim/">fzf.vim</a></li>
-<li>ディレクトリ階層からファイルを開くのには<a href="https://github.com/iberianpig/ranger-explorer.vim">ranger-explorer.vim</a></li>
-<li>コミット履歴や<code>git grep</code>からファイルを開くのには<a href="https://github.com/iberianpig/tig-explorer.vim">tig-explorer.vim</a></li>
+<li><a href="https://github.com/junegunn/fzf.vim/">fzf.vim</a>
+
+<ul>
+<li>ファイル名をあいまい検索(fuzzy-finder)</li>
+</ul></li>
+<li><a href="https://github.com/iberianpig/ranger-explorer.vim">ranger-explorer.vim</a>
+
+<ul>
+<li>ディレクトリ階層からファイルを選択</li>
+</ul></li>
+<li><a href="https://github.com/iberianpig/tig-explorer.vim">tig-explorer.vim</a>
+
+<ul>
+<li>tigでGitの履歴から、<code>git grep</code>からファイルを開く</li>
+</ul></li>
 </ul>
 
-<p>どれもプレビューが高速なツールを使えるようになったのでvim上ワークフローが快適になった。</p>
+<p>どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。</p>
+
+<h1 id="uiに一貫性を持たせる">UIに一貫性を持たせる</h1>
+
+<p>外部ツールを利用する場合、パフォーマンスの利点とは別に、普段から使い慣れているツールをVimから扱えるということが利点。
+だが、ツール毎に細かいキーバインドが異なる。 同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</p>
+
+<p>ファイルを開く際にvimfiler/ctrlpと同様の使い勝手が欲しくて、<code>&lt;C-o&gt;</code>、<code>&lt;C-t&gt;</code>、<code>&lt;C-v&gt;</code>、<code>&lt;C-s&gt;</code>のキーバインドをプラグイン側から注入することで
+タブや画面分割して開けるようにした。</p>
+
+<p>同じアイデアをtigを扱うプラグインのtig-explorer(<a href="https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。">https://github.com/iberianpig/tig-explorer.vim)にも取り込んでいる。</a></p>
+
+<p>前日の3つのツールは同じキーバインドで同じ振る舞いをするよう一貫性が保てるようになり、ツール別でキーバインドが合わず、混乱するのを防ぐことが出来た。</p>
 
             </div>
 
@@ -240,7 +263,8 @@ let g:ranger_explorer_keymap_vsplit  = '&lt;C-v&gt;'
 <li><a href="#ranger">ranger</a></li>
 </ul></li>
 <li><a href="#rangerからタブ-画面分割で開く">rangerからタブ/画面分割で開く</a></li>
-<li><a href="#ワークフローの一部として">ワークフローの一部として</a></li>
+<li><a href="#得意なツールに任せる">得意なツールに任せる</a></li>
+<li><a href="#uiに一貫性を持たせる">UIに一貫性を持たせる</a></li>
 </ul>
 </nav></div>
   </section>
