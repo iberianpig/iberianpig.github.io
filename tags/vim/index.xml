@@ -29,23 +29,5 @@ Rubyのコードは実行時でないと、正しい呼び出し元がわから�
  これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする  Ctags  コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供  tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ)  万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。  bundle open bundle open LIBRARRY_NAME  ライブラリ内のソースの在処(ディレクトリ)を開く README.</description>
     </item>
     
-    <item>
-      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
-      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
-      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
-      <description>Command/Normalモードを間違う 問題はこれ。
-頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
-自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
-gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
-暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。
-確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
-また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
-救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
- To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
- if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description>
-    </item>
-    
   </channel>
 </rss>

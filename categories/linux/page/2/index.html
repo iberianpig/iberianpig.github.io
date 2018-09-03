@@ -18,12 +18,12 @@
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://iberianpig.github.io/index.xml">
 
   
-  <title>Pocket - iberianpigsty</title>
-  <meta property='og:title' content="Pocket - iberianpigsty">
+  <title>Linux - iberianpigsty</title>
+  <meta property='og:title' content="Linux - iberianpigsty">
   
   
 
-  <meta property="og:url" content="https://iberianpig.github.io/tags/pocket/">
+  <meta property="og:url" content="https://iberianpig.github.io/categories/linux/">
 
   <meta property="og:description" content="Linux、Ruby on Rails、AngularJS、Androidなどが中心の技術ブログです。Github(https://github.com/iberianpig) 上でOSSのツールを公開しています。フリーランスのエンジニアとして活動中です。仕事の依頼等はTwitter: @nukumaro22 / Gmail: yhkyky@gmail.com まで。">
 
@@ -56,35 +56,24 @@
       <div class="row">
         <div class="col-md-9">
 
-          <h1 class="p-page-title">Pocket</h1>
+          <h1 class="p-page-title">Linux</h1>
 
           <div class="row">
             
             <div class="col-sm-4">
               <article class="grid">
-  <a href="https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/">
-    <div class="image" style="background-image: url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png);"></div>
+  <a href="https://iberianpig.github.io/posts/2013-10-26-first-commit/">
+    <div class="image" style="background-image: url(https://iberianpig.github.io//images/default.jpg);"></div>
     <footer>
       <div class="date">
-        <div class="time">Mon, Jan 30, 2017</time>
+        <div class="time">Sat, Oct 26, 2013</time>
       </div>
-      <h2 class="title">記憶の定着率を上げるPocket&#43;Kindle連携</h2>
-      <div class="summary"> 日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
-エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
-1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
-時間を空けて読むという行為をWebサービスを組み合わせてやってみる。
-なお、1日以内、1週間以内、2週間以内で3度復習したほうが良いらしいが、運用効率が悪いので期間はあまり厳密にしない。
-気になったらとりあえずPocketに入れる PocketはWebページを&rdquo;後で読むリスト&rdquo;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
-Pocketで見る(短期記憶) Pocketのアプリをスマホに入れる。タブレットでも良いが、いつでも持っているものがいい。
-
-毎日の通勤時に記事をチェックする。
-Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。 
-配信オプションが色々ある(daily/weekly, 記事の長さ、 取得順序、 etc)が、自分は30分程度で読める分を週1回Kindleに配信している。
-Kindleで読むのは週に1回（しかも長めの記事）になるので必然的にPocketに入れた時から期間が空くことになる。
-週末に30分-1時間程度かけて読む。
-その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている
- IFTTTでTwitter-&gt; Pocketの連携  Twitterでいいねした記事を後で読むリストに追加する。  IFTTTでPocket -&gt; Buffer連携  Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る   上記を取り入れた場合、3回以上同じ記事を目にすることになる。
-Special Thanks  忘却曲線 - Wikipedia エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う  </div>
+      <h2 class="title">Linux版SublmeTextでの日本語入力</h2>
+      <div class="summary">Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
+ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。
+SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人  まさに。求めていたもの。
+SCIM、uim、その他のIMには対応していません。とあるものの自分はibus-mozc使ってるのでOK
+若干課題は残る  たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）  良いソリューションは無いのか</div>
     </footer>
   </a>
 </article>
@@ -94,6 +83,18 @@ Special Thanks  忘却曲線 - Wikipedia エビングハウスの忘却曲線(�
           </div>
 
           
+<div class="row">
+  <div class="col-md-12">
+    <nav class="p-paging pull-right">
+    
+    <a href="https://iberianpig.github.io/categories/linux/page/1" rel="nofollow">PREV</a>
+    
+
+    
+    </nav>
+  </div>
+</div>
+
 
 
         </div>
