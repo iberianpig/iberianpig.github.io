@@ -71,10 +71,10 @@
       <div class="summary">ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
-ranger-explorer.vimとは https://github.com/iberianpig/ranger-explorer.vim
+ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
 Vimのファイラのrangerに置き換えるVimプラグイン。 Vimからrangerでカレントディレクトリを開いたり、プロジェクトルートのディレクトリを開いたりできる。 また、Vimのプロセスがネストせず、rangerの親プロセスのVimで開くようにしているのでbufferを共有することが出来る。(これが!rangerで開いた時との違い)
 今回のアップデートでは rangerから Vimのタブや画面分割で開いたり出来るようにしている。
-ranger ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
+ranger rangerはCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 特に高速なライブプレビューが気に入っており、これだけでrangerを選択するモチベーションになっている。
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
 &lt;Ctrl-o&gt;: 現在のタブ上で開く &lt;Ctrl-t&gt;: 新しいタブで開く &lt;Ctrl-v&gt;: 画面を垂直に分割して開く &lt;Ctrl-s&gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
