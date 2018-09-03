@@ -4,7 +4,8 @@ title: "twitterbootstrapでnavbarがモバイル表示にならない"
 published: true
 date: 2014-09-12
 comments: true
-tags: bootstrap
+tags: 
+  - bootstrap
 categories: css
 ---
 

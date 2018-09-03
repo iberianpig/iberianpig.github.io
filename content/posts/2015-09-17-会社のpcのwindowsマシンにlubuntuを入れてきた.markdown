@@ -4,7 +4,8 @@ title: "会社のPCのWindowsマシンにLubuntuを入れてきた"
 published: true
 date: 2015-09-17
 comments: true
-tags: lubuntu
+tags: 
+  - lubuntu
 categories: Linux
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Lubuntu_15.10_English.png/800px-Lubuntu_15.10_English.png
 description: "lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を3時間くらいかけてセットアップした時の備忘録。"

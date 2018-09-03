@@ -4,7 +4,9 @@ title: "ng-japan"
 published: true
 date: 2015-03-21
 comments: true
-tags: javascript angualrjs
+tags: 
+  - javascript
+  - angualrjs
 categories: javascript
 ---
 

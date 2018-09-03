@@ -3,7 +3,8 @@ layout: post
 title: "Androidでのデータの保存"
 date: 2014-08-14
 comments: true
-tags: SharedPreferences 
+tags: 
+  - SharedPreferences 
 categories: android
 ---
 

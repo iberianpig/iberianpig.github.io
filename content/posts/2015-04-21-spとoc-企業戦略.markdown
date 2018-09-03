@@ -4,7 +4,8 @@ title: "SPとOC-企業戦略-"
 published: true
 date: 2015-04-21
 comments: true
-tags: strategy
+tags:
+  - strategy
 categories: marketing
 ---
 

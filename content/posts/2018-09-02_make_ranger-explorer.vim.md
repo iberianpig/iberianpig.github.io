@@ -5,7 +5,7 @@ published: true
 date: 2018-09-02T00:05:21+09:00
 comments: true
 tags: 
-   - "tig"
+   - tig
 categories: "vim"
 image: "https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif"
 description: "ranger-explorer.vimをアップデートしてranger上からvimのタブや画面分割で開けるようした"
@@ -16,7 +16,7 @@ ranger-explorer.vimというVimプラグインをアップデートした。
 (あとNeovimもサポートした)
 
 
-# ranger-explorer.vimとは
+# ranger-explorer.vim
 
 https://github.com/iberianpig/ranger-explorer.vim
 
@@ -29,7 +29,7 @@ Vimからrangerでカレントディレクトリを開いたり、プロジェ�
 
 
 ## ranger
-ranger(https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。
+[ranger](https://ranger.github.io/)はCLIベースの高機能ファイラで、コマンドラインから操作できる。
 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 
 ![ranger](https://ranger.github.io/screenshots/screenshot0.png)
