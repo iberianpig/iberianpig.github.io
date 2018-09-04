@@ -5,7 +5,6 @@ published: true
 date: 2015-06-07
 comments: true
 tags: 
-   - linux
    - easytether
    - tethering
 categories: Linux

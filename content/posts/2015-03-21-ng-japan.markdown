@@ -5,8 +5,8 @@ published: true
 date: 2015-03-21
 comments: true
 tags: 
-  - javascript
   - angualrjs
+  - javascript
 categories: javascript
 ---
 
