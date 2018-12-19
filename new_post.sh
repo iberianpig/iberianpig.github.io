@@ -10,8 +10,8 @@ fi
 
 formatted_date=$(date "+%Y-%m-%d")
 
-post="posts/${formatted_date}${title}.md" 
+path="posts/${formatted_date}${title}.md" 
 
-hugo new "$post"
+hugo new $path
 
-vi "content/$post"
+vi "content/$path"

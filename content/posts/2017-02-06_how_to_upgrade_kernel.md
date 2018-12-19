@@ -6,10 +6,10 @@ description: "カーネルバージョン4.4ではディスプレイ周りの不
 image: "https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png"
 layout: post
 published: true
-tags:
-  - "elementary OS"
+tags: 
   - "Ubuntu"
   - "kernel"
+
 title: "Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法"
 ---
 

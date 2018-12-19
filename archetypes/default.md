@@ -1,8 +1,8 @@
 ---
 layout: post
-title: ""
-published: false
-date: ""
+title: "{{ replace .Name "-" " " | title  }}"
+draft: true
+date: {{ .Date  }}
 comments: true
 tags: 
    - ""

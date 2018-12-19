@@ -5,6 +5,7 @@ published: true
 date: 2018-09-02T00:05:21+09:00
 comments: true
 tags: 
+   - ranger
    - tig
 categories: "vim"
 image: "https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif"
@@ -50,7 +51,7 @@ ranger-explorerからrangerを開いた時、Vimを開くキーバインドがra
 このようにrangerから分割して開くことが出来る。
 ![ranger経由で画面を分割して開く](https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)
 
-動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 
 また、動的にアサインするキーバインドは `~/.vimrc` で下記のように上書きできる。
 
@@ -81,7 +82,7 @@ let g:ranger_explorer_keymap_vsplit  = '<C-v>'
 Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。
 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。
 
-そこで、以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、`<C-o>`、`<C-t>`、`<C-v>`、`<C-s>`のキーバインドでタブや画面分割して開けるようにした。
+そこで、fzfや以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、`<C-o>`、`<C-t>`、`<C-v>`、`<C-s>`のキーバインドでタブや画面分割して開けるようにした。
 
 プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。
 
