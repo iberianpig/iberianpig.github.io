@@ -27,7 +27,7 @@ Vimのファイラのrangerに置き換えるVimプラグイン。 Vimからrang
 ranger rangerはCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 特に高速なライブプレビューが気に入っており、これだけでrangerを選択するモチベーションになっている。
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
-&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、tig-explorerから開いた時のみタブや画面分割が出来るようになる。
+&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
 let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39;  得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
@@ -330,9 +330,7 @@ Rubyのコードは実行時でないと、正しい呼び出し元がわから�
 &lt;li&gt;ターミナルで&lt;code&gt;tig&lt;/code&gt;とタイプで起動&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;h&lt;/code&gt;押せばヘルプ出る&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;q&lt;/code&gt;で閉じる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -367,9 +365,7 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 コマンドラインで&lt;code&gt;easytether-bluetooth connect -d MAC_ADDRESS&lt;/code&gt;と入力する必要がある。&lt;/p&gt;
 
 &lt;p&gt;結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
-ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -418,9 +414,7 @@ WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コ�
 &lt;li&gt;あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li&gt;
 &lt;li&gt;毎回IDを入れるのがめんどくさい、たまに忘れる&lt;/li&gt;
 &lt;li&gt;チームで浸透させたい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -566,9 +560,7 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画�
 &lt;h1 id=&#34;戦略には優劣がある&#34;&gt;戦略には優劣がある&lt;/h1&gt;
 
 &lt;p&gt;打率2.5割の打者に戦略Aを施すと3割&lt;br /&gt;
-打率2.5割の打者に戦略Bを施すと3.5割&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+打率2.5割の打者に戦略Bを施すと3.5割&lt;/p&gt;</description>
     </item>
     
     <item>
