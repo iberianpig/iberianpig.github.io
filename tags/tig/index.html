@@ -349,7 +349,7 @@ let g:ranger_explorer_keymap_edit = '&lt;C-o&gt;' let g:ranger_explorer_keymap_t
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

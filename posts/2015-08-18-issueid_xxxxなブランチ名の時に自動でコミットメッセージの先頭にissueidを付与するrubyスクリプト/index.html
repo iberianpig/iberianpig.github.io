@@ -446,7 +446,7 @@ shell scriptでsedを利用していたが、GNUのsedとFreeBSD系のsedの動�
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

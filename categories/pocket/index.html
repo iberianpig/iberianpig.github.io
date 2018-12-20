@@ -291,7 +291,7 @@ $ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&gt; 0 # 成功 $ mkd
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

@@ -392,7 +392,7 @@ defaultで生成されるapplication.html.erbはいつ利用される？ いつ�
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

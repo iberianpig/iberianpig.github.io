@@ -490,7 +490,7 @@ event10 GESTURE_SWIPE_UPDATE  +5.41s    4 12.68/-0.53 (19.48/-0.82 unaccelerated
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

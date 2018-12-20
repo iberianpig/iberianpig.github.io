@@ -506,7 +506,7 @@ vmap dx y:&lt;C-u&gt;OpenBrowserSearch -devdocs &lt;C-R&gt;&quot;&lt;CR&gt;
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

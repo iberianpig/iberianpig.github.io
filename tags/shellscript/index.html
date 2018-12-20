@@ -340,7 +340,7 @@ $xdotool Usage: xdotool &lt;cmd&gt; &lt;args&gt; Available commands: getwindowfo
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

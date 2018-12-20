@@ -357,7 +357,7 @@ Amazon Dash Button ---&gt; LocalServer ---&gt; IFTTT ---&gt; Slack  IFTTTとSlac
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

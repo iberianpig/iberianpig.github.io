@@ -351,7 +351,7 @@ set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vim„ÅÆÊä
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

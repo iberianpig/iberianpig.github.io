@@ -437,7 +437,7 @@ let g:ranger_explorer_keymap_vsplit  = '&lt;C-v&gt;'
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

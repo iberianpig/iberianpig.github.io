@@ -396,7 +396,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

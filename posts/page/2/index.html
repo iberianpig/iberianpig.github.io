@@ -717,7 +717,7 @@ AngularJS周りで少し色目を出して、秋ごろにionicをベースにWeb
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",

@@ -320,7 +320,7 @@ NW.js(Node-Webkit)  What is NW.js  3種の中で若造らしい  Node.</div>
   }(document, "script", "twitter-wjs"));
 
   InstantClick.on('change', function(isInitialLoad) {
-    twttr.ready(function (twttr) {
+    window.twttr.ready(function (twttr) {
       twttr.widgets.createTimeline(
       {
         sourceType: "profile",
