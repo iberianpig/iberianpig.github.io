@@ -1,24 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on iberianpigsty</title>
-    <link>https://iberianpig.github.io/posts/</link>
-    <description>Recent content in Posts on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>ranger-explorer.vimをアップデートした</title>
-      <link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link>
-      <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid>
-      <description>ranger-explorer.vimというVimプラグインをアップデートした。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on iberianpigsty</title><link>https://iberianpig.github.io/posts/</link><description>Recent content in Posts on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>ranger-explorer.vimをアップデートした</title><link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link><pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid><description>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
@@ -27,82 +7,43 @@ Vimのファイラのrangerに置き換えるVimプラグイン。 Vimからrang
 ranger rangerはCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 特に高速なライブプレビューが気に入っており、これだけでrangerを選択するモチベーションになっている。
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
-&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
+&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
-let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39;  得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
+let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39; 得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
- fzf.vim  ファイル名をあいまい検索(fuzzy-finder)  ranger-explorer.vim  ディレクトリ階層からファイルを選択  tig-explorer.vim  tigでGitの履歴から、git grepからファイルを開く   どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
-異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</description>
-    </item>
-    
-    <item>
-      <title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title>
-      <link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link>
-      <pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid>
-      <description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
+異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</description></item><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
- Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している  ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
+Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
 また、X11でもライブラリをインストールすればラッパー経由でlibinputを利用できる
 libinputかsynapticsのどちらが有効か 判別方法は以下
-$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)]  Touchpadの記述を含んだ行が見つかる。</description>
-    </item>
-    
-    <item>
-      <title>2018/04/27 最近読んだ記事</title>
-      <link>https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link>
-      <pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid>
-      <description>最近読んだ記事で気になったものを幾つかピックアップ。
-ERC20に準拠したトークンコントラクトの脆弱性問題について  独自実装した箇所のSolidityのプログラムにバグがあった。
+$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)] Touchpadの記述を含んだ行が見つかる。</description></item><item><title>2018/04/27 最近読んだ記事</title><link>https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link><pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid><description>最近読んだ記事で気になったものを幾つかピックアップ。
+ERC20に準拠したトークンコントラクトの脆弱性問題について 独自実装した箇所のSolidityのプログラムにバグがあった。
 ERC20自体に欠陥があるわけではない。
-
- 算出処理はzeppelin-solidityというコントラクト開発ライブラリ群のSafeMath.sol を利用することが定石となっています。
- 計算処理で意図しない処理を弾くのには SafeMath 使うのが良さそう。
-シェルスクリプトで排他・共有ロック&amp;amp;セマフォ  POSIX標準のshell scriptでロックを作る。(どんなOS上でも動くという話)
- ポイントはアトミックに（単一操作で）作るという点である。つまり存在確認処理と作成処理が同時ということだ。もし存在しないことを確認できて、いざ作成しようとした時に他のプロセスに素早く作成されてしまったら、ロックファイルを上書きできてしまうのでアクセス権が唯一のものではなくなってしまう。
- 作成と確認アトミックであれば良い。
-$ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $ mkdir /tmp/lockfile # =&amp;gt; mkdir: ディレクトリ `/tmp/lockfile&#39; を作成できません: ファイルが存在します $ echo $? #=&amp;gt; 1 # 失敗  ちなみに以前の会社ではmkdirでロック書いてた。 確か他と比較して早いというのが理由。
+算出処理はzeppelin-solidityというコントラクト開発ライブラリ群のSafeMath.sol を利用することが定石となっています。
+計算処理で意図しない処理を弾くのには SafeMath 使うのが良さそう。
+シェルスクリプトで排他・共有ロック&amp;amp;セマフォ POSIX標準のshell scriptでロックを作る。(どんなOS上でも動くという話)
+ポイントはアトミックに（単一操作で）作るという点である。つまり存在確認処理と作成処理が同時ということだ。もし存在しないことを確認できて、いざ作成しようとした時に他のプロセスに素早く作成されてしまったら、ロックファイルを上書きできてしまうのでアクセス権が唯一のものではなくなってしまう。
+作成と確認アトミックであれば良い。
+$ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $ mkdir /tmp/lockfile # =&amp;gt; mkdir: ディレクトリ `/tmp/lockfile&#39; を作成できません: ファイルが存在します $ echo $? #=&amp;gt; 1 # 失敗 ちなみに以前の会社ではmkdirでロック書いてた。 確か他と比較して早いというのが理由。
 【翻訳】サイドプロジェクトから収益性のあるスタートアップに育てる方法（前編） Nomad List 作った人の話。毎月1つのペースでサービス作るのは楽しそう。 Nomad Listはノマドワーカーに必要なネットや電源、生活費を含めた都市毎のランキングがメインのサイト。 コワーキングのリストとかもある。 ログインしてチャットチャンネルに参加する部分は有料。 サインアップしたらフリーミアムとかはなくて全て有料プラン。
-
 あと、remoteok というサービスも作っていてこちらも稼ぎを出してる模様 数を撃つこと自体は当てるためには必要。個人的にかなり参考にしたい。
 アマゾン・エコーが、英会話の練習相手になってくれた 日常会話的な内容が練習出来ると良さそう。
-最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</description>
-    </item>
-    
-    <item>
-      <title>fwupdでLinuxからUEFI(BIOS)のアップデート</title>
-      <link>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</link>
-      <pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</guid>
-      <description> Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
+最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</description></item><item><title>fwupdでLinuxからUEFI(BIOS)のアップデート</title><link>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</link><pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</guid><description> Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
 特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。
 なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。
 この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。
 fwupdで利用可能なデバイスかどうかを確認する 利用可能なデバイスのリストはこちら→(https://fwupd.org/lvfs/devicelist) 自分のXPS13 9360はfwupdでアップデート可能だった。
 fwupdのインストール aptでfwupdインストールする
-sudo apt install fwupd  cabファイルをダウンロード (https://fwupd.org/lvfs/devicelist) からダウンロードする。
-
+sudo apt install fwupd cabファイルをダウンロード (https://fwupd.org/lvfs/devicelist) からダウンロードする。
 画像内のリンク先のcabファイル。
 fwupdmgrでインストール fwupdmgrというコマンドが利用出来るようになっている。
 ただし、ACアダプタを接続していないと進めないので注意する。
 fwupdmgr installでファームウェアをインストール。
-fwupdmgr install /path/to/your/downloaded/firmware.cab  これでインストール待ち状態になった。
+fwupdmgr install /path/to/your/downloaded/firmware.cab これでインストール待ち状態になった。
 再起動時にBIOSのロード画面でアップグレードが走る。
-Special Thanks  https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist  </description>
-    </item>
-    
-    <item>
-      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
-      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
-      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
-      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+Special Thanks https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
@@ -116,65 +57,37 @@ fusumaコマンドで起動。
 ~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
-swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
-    </item>
-    
-    <item>
-      <title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title>
-      <link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link>
-      <pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid>
-      <description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description></item><item><title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title><link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link><pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid><description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
 リポジトリを追加する
-sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
-sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
+sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール
+sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
 カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
 記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
 HWEカーネル用パッケージのインストール HWEカーネルとは
- HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
- 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
+HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
+安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
 linux-generic-hwe-16.04-edgeをインストール
-sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</description>
-    </item>
-    
-    <item>
-      <title>記憶の定着率を上げるPocket&#43;Kindle連携</title>
-      <link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link>
-      <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
-      <description> 日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
+sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.</description></item><item><title>記憶の定着率を上げるPocket&#43;Kindle連携</title><link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link><pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid><description> 日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
 1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
 時間を空けて読むという行為をWebサービスを組み合わせてやってみる。
 なお、1日以内、1週間以内、2週間以内で3度復習したほうが良いらしいが、運用効率が悪いので期間はあまり厳密にしない。
 気になったらとりあえずPocketに入れる PocketはWebページを&amp;rdquo;後で読むリスト&amp;rdquo;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
 Pocketで見る(短期記憶) Pocketのアプリをスマホに入れる。タブレットでも良いが、いつでも持っているものがいい。
-
 毎日の通勤時に記事をチェックする。
-Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。 
+Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。
 配信オプションが色々ある(daily/weekly, 記事の長さ、 取得順序、 etc)が、自分は30分程度で読める分を週1回Kindleに配信している。
 Kindleで読むのは週に1回（しかも長めの記事）になるので必然的にPocketに入れた時から期間が空くことになる。
 週末に30分-1時間程度かけて読む。
 その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている
- IFTTTでTwitter-&amp;gt; Pocketの連携  Twitterでいいねした記事を後で読むリストに追加する。  IFTTTでPocket -&amp;gt; Buffer連携  Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る   上記を取り入れた場合、3回以上同じ記事を目にすることになる。
-Special Thanks  忘却曲線 - Wikipedia エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う  </description>
-    </item>
-    
-    <item>
-      <title>風呂キンドルのすゝめ</title>
-      <link>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</link>
-      <pubDate>Tue, 24 Jan 2017 23:58:22 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</guid>
-      <description> 風呂で読書するというのを一度やってみたかったのでやってみた。
+IFTTTでTwitter-&amp;gt; Pocketの連携 Twitterでいいねした記事を後で読むリストに追加する。 IFTTTでPocket -&amp;gt; Buffer連携 Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る 上記を取り入れた場合、3回以上同じ記事を目にすることになる。
+Special Thanks 忘却曲線 - Wikipedia エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う</description></item><item><title>風呂キンドルのすゝめ</title><link>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</link><pubDate>Tue, 24 Jan 2017 23:58:22 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/</guid><description> 風呂で読書するというのを一度やってみたかったのでやってみた。
 Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良い。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
 Ziploc 防水性能をアドオンする。
 ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を保管するのに買った。
- Kindleを入れるとこうなる。奇跡のジャストサイズ。 
+Kindleを入れるとこうなる。奇跡のジャストサイズ。
 風呂Kindleやってみた結果 意外と良かった。日々の習慣に組み込みたいレベル。
 蒸気プラスビニール一枚隔てるので、視認性は若干落ちるのでフォントサイズを少しだけ大きくすれば快適に読める。
 バスタブをちょっと曲げてあげて溝の部分に挟んであげるとKindleを立てるスタンドになる。手で持たなくていい。 これも快適な要因の1つ。
@@ -182,38 +95,19 @@ ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を�
 ちなみに今はホモ・サピエンス全史という本を読んでる。
 ネアンデルタール人と裾野を分けたサピエンスは動物とどう違うのか、お金、会社、資本主義はどうやって成り立っているのか。
 それらは全て虚構であり、それを信じなければ成り立たなかった&amp;hellip;という話。
-普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。
-  </description>
-    </item>
-    
-    <item>
-      <title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</title>
-      <link>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</link>
-      <pubDate>Mon, 23 Jan 2017 19:36:53 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</guid>
-      <description>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
-hugoの記事作成 hugo new &amp;quot;path/to/article.md&amp;quot;  コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &amp;quot;content/post/article.md&amp;quot;とやってしまう。
+普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。</description></item><item><title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</title><link>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</link><pubDate>Mon, 23 Jan 2017 19:36:53 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-23_generate_post_template/</guid><description>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+hugoの記事作成 hugo new &amp;quot;path/to/article.md&amp;quot; コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &amp;quot;content/post/article.md&amp;quot;とやってしまう。
 しかしcontent/content/path/to/article.mdに作られてしまう。
 正しくはhugo new &amp;quot;post/article.md&amp;quot;だ。contentを除いておく必要が有る。
 「久々にブログ書くか」という時（いつも）こうなる。しんどい。
 shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
-#!/bin/bash echo -e &amp;quot;\033[0;32mCreating new post...\033[0m&amp;quot; if [ $# -eq 1 ]; then title=&amp;quot;_$1&amp;quot; else title=&amp;quot;&amp;quot; fi formatted_date=$(date &amp;quot;+%Y-%m-%d&amp;quot;) full_path=&amp;quot;posts/${formatted_date}${title}.md&amp;quot; hugo new &amp;quot;$full_path&amp;quot; vi &amp;quot;content/$full_path&amp;quot;  タイトルに日付を付けてエディタを起動するまで自動化した。
-./new_post.sh title  で./content/posts/2017-01-23_title.mdが生成されてviで開く。
+#!/bin/bash echo -e &amp;quot;\033[0;32mCreating new post...\033[0m&amp;quot; if [ $# -eq 1 ]; then title=&amp;quot;_$1&amp;quot; else title=&amp;quot;&amp;quot; fi formatted_date=$(date &amp;quot;+%Y-%m-%d&amp;quot;) full_path=&amp;quot;posts/${formatted_date}${title}.md&amp;quot; hugo new &amp;quot;$full_path&amp;quot; vi &amp;quot;content/$full_path&amp;quot; タイトルに日付を付けてエディタを起動するまで自動化した。
+./new_post.sh title で./content/posts/2017-01-23_title.mdが生成されてviで開く。
 これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
 ちなみにbashのlintとしてshellcheckを入れてる。
 さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
-使ってない人はぜひインストールしよう。</description>
-    </item>
-    
-    <item>
-      <title>Amazon Dash Buttonで出社する</title>
-      <link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link>
-      <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid>
-      <description>この記事は出社芸アドベントカレンダーの18日目の記事です。
+使ってない人はぜひインストールしよう。</description></item><item><title>Amazon Dash Buttonで出社する</title><link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link><pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate><guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid><description>この記事は出社芸アドベントカレンダーの18日目の記事です。
 今日のアドベントカレンダーに登録した。
 現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
@@ -239,191 +133,94 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
 実装する 処理は大きく見ると下記の様な流れになる
-Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack  IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description>
-    </item>
-    
-    <item>
-      <title>プロトタイピングのためのスタブAPIサーバ</title>
-      <link>https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/</link>
-      <pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/</guid>
-      <description>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
+Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description></item><item><title>プロトタイピングのためのスタブAPIサーバ</title><link>https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/</link><pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate><guid>https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/</guid><description>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
 外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
 何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。
 初期にAPIのスタブサーバが出来てしまうと
- サーバサイドエンジニア =&amp;gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&amp;gt; スタブサーバが返すjsonをパースするインタフェースを作成できる  jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
+サーバサイドエンジニア =&amp;gt; スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア =&amp;gt; スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
 APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。
 また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。
 実際にあった話として
- APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない  あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
-node-easymockでスタブサーバ作る  npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される  非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
+APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
+node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
 起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。
-&amp;quot;scripts&amp;quot;: { &amp;quot;easymock&amp;quot;: &amp;quot;easymock --port 8000 --path spec/api/easymock&amp;quot; }  ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
+&amp;quot;scripts&amp;quot;: { &amp;quot;easymock&amp;quot;: &amp;quot;easymock --port 8000 --path spec/api/easymock&amp;quot; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
- APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく  柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
-Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</description>
-    </item>
-    
-    <item>
-      <title>ソースコードを読む</title>
-      <link>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link>
-      <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid>
-      <description>エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
+APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
+Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</description></item><item><title>ソースコードを読む</title><link>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link><pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid><description>エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
 どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。
-ソースを読むメリット  間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮  必要なモノ  気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc)  定義元ジャンプができればOK  言語、フレームワークの公式リファレンス(http://devdocs.io)  武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
+ソースを読むメリット 間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮 必要なモノ 気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元ジャンプができればOK 言語、フレームワークの公式リファレンス(http://devdocs.io) 武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
 根性 ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要
 pry 調べたいコードを実行させ、binding.pryでブレークポイントを作る edit METHOD_NAMEがどこから呼ばれているのかを見る。
 Rubyのコードは実行時でないと、正しい呼び出し元がわからない。
 また、pryはコード・リーディングやデバッグに便利様々な機能を持っている
- show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる  IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
- これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする  Ctags  コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供  tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ)  万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。  bundle open bundle open LIBRARRY_NAME  ライブラリ内のソースの在処(ディレクトリ)を開く README.</description>
-    </item>
-    
-    <item>
-      <title>tigの使い方とオプションをまとめた</title>
-      <link>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</link>
-      <pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</guid>
-      <description>&lt;p&gt;CUIなGitクライアント。&lt;br /&gt;
+show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
+これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.</description></item><item><title>tigの使い方とオプションをまとめた</title><link>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</link><pubDate>Fri, 22 Apr 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</guid><description>&lt;p&gt;CUIなGitクライアント。&lt;br /&gt;
 普段使いのツールだが、社内勉強会の際に改めて調べた。&lt;br /&gt;
 色々と便利なオプションがあった。&lt;/p&gt;
-
 &lt;h1 id=&#34;tigの特徴&#34;&gt;tigの特徴&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Gitクライアント&lt;/li&gt;
 &lt;li&gt;CUI&lt;/li&gt;
 &lt;li&gt;マルチプラットフォーム&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;tigのいいところ&#34;&gt;tigのいいところ&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;軽い&lt;/li&gt;
 &lt;li&gt;インストールさえされていればX動いてなくても使える&lt;/li&gt;
 &lt;li&gt;ログのツリー見て、diff見て、編集のワークフローが快適&lt;/li&gt;
 &lt;li&gt;vim likeに使える&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;インストール&#34;&gt;インストール&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Linux/Windowsの人(apt使えるなら)
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;sudo apt-get install tig&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;Macとか
-
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;brew install tig&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h1 id=&#34;基本的な使い方&#34;&gt;基本的な使い方&lt;/h1&gt;
-
 &lt;ul&gt;
 &lt;li&gt;ターミナルで&lt;code&gt;tig&lt;/code&gt;とタイプで起動&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;h&lt;/code&gt;押せばヘルプ出る&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;q&lt;/code&gt;で閉じる&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>特定のアプリケーションにスイッチするシェルスクリプトを作る</title>
-      <link>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</link>
-      <pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</guid>
-      <description>Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。
+&lt;/ul&gt;</description></item><item><title>特定のアプリケーションにスイッチするシェルスクリプトを作る</title><link>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</link><pubDate>Fri, 15 Apr 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</guid><description>Web開発を行っていて、ターミナルとブラウザを行き来することが非常に多い。 一度のキーアクションでターミナルに移動、ブラウザに移動できる方法がないかと考えた上で、作ってみた。 思いつきから作ってみたが意外と便利だった。一日に多用するショートカットとなった。
 ブラウザとターミナルを交互に切り替えたい Web開発している時にターミナルとChromeを何度も行き来することがある。 Alt-tabもあるけれど、他のウィンドウが邪魔で何度Alt+tabを入力すればよいかわからない。 Alt-tabを押す、該当の画面がターミナル(Window)であるかを確認、もう一度Alt-tabを押すという繰り返しが非常に面倒。
 特定のキー1回でブラウザとターミナルをトグルできればベスト。
 xdotoolを使ってみる できる事は下記があるらしい。
-  ウィンドウ ID の取得  名前やクラスによる検索 現在アクテイブなウィンドウ  ウィンドウ ID で指定されたウィンドウの操作  リサイズ 移動 最小化 最全面へ  マウスイベントの模倣  マウスカーソル移動 マウスクリック  キーイベントの模倣  文字入力 ショートカットキー入力    NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p)
-$xdotool Usage: xdotool &amp;lt;cmd&amp;gt; &amp;lt;args&amp;gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops get_num_desktops set_desktop get_desktop set_desktop_for_window get_desktop_for_window get_desktop_viewport set_desktop_viewport exec sleep  結構いろいろある</description>
-    </item>
-    
-    <item>
-      <title>Bluetoothのオン・オフをコマンドラインから切り替える</title>
-      <link>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link>
-      <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid>
-      <description>&lt;p&gt;以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
+ウィンドウ ID の取得 名前やクラスによる検索 現在アクテイブなウィンドウ ウィンドウ ID で指定されたウィンドウの操作 リサイズ 移動 最小化 最全面へ マウスイベントの模倣 マウスカーソル移動 マウスクリック キーイベントの模倣 文字入力 ショートカットキー入力 NOTE: xdotoolを使い特定ウィンドウの表示をワンキーでトグル(http://d.hatena.ne.jp/mooz/20101228/p)
+$xdotool Usage: xdotool &amp;lt;cmd&amp;gt; &amp;lt;args&amp;gt; Available commands: getwindowfocus getwindowname getwindowpid getwindowgeometry getdisplaygeometry search selectwindow help version behave behave_screen_edge click getmouselocation key keydown keyup mousedown mousemove mousemove_relative mouseup set_window type windowactivate windowfocus windowkill windowmap windowminimize windowmove windowraise windowreparent windowsize windowunmap set_num_desktops get_num_desktops set_desktop get_desktop set_desktop_for_window get_desktop_for_window get_desktop_viewport set_desktop_viewport exec sleep 結構いろいろある</description></item><item><title>Bluetoothのオン・オフをコマンドラインから切り替える</title><link>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link><pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid><description>&lt;p&gt;以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
 &lt;a href=&#34;http://iberianpig.github.io/blog/2015/06/07/easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;EasytetherでBluetoothテザリング&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
 EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。&lt;/p&gt;
-
 &lt;h1 id=&#34;easytether使う前にbluetoothを有効にする&#34;&gt;Easytether使う前にBluetoothを有効にする&lt;/h1&gt;
-
 &lt;p&gt;Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
 コマンドラインで&lt;code&gt;easytether-bluetooth connect -d MAC_ADDRESS&lt;/code&gt;と入力する必要がある。&lt;/p&gt;
-
 &lt;p&gt;結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
-ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>mysqlで特定のテーブルのDumpをのみ取得する</title>
-      <link>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</link>
-      <pubDate>Sat, 23 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</guid>
-      <description> 必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。
+ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p&gt;</description></item><item><title>mysqlで特定のテーブルのDumpをのみ取得する</title><link>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</link><pubDate>Sat, 23 Jan 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</guid><description> 必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。
 動的に表示させようとしたが、現行のままでは動的に出すのは厳しく、バッチ処理でおすすめコンテンツの情報をキャッシュすることにした。
 本番環境の裏側で実行させようと考えたが、非常に遅く、1ヶ月ほど時間がかかってしまうため、 一度本番のDumpを取得した上で別の環境でバッチを回し、その結果を本番環境へロードさせたほうが良いということになった。
 テーブル別のDump いつもDB一括でMySQL workbenchでDumpを取得しているなど、mysqlコマンドに疎い。 今回は他のテーブルは必要なかったので、必要なテーブルのDumpのみを取得する方法を調べた。
 下記コマンドでDumpを取得する。複数テーブルの場合は続けてテーブル名を入力すればよい。 また、今回の本番環境、隔離環境はRailsを利用しており、migrationにて既にテーブルが作成されている。
 そのため-tオプションにてCREATE TABLE文をスキップさせる
-mysqldump -u &amp;lt;USERNAME&amp;gt; -p -t &amp;lt;DBNAME&amp;gt; &amp;lt;TABLENAME1&amp;gt; [ &amp;lt;TABLENAME2&amp;gt; ... ] &amp;gt; &amp;lt;DUMPFILENAME&amp;gt;.sql  Dumpのインポート 下記コマンドでインポート
-mysqll -u &amp;lt;USERNAME&amp;gt; -p &amp;lt;DBNAME&amp;gt; &amp;lt; &amp;lt;DUMPFILENAME&amp;gt;.sql  seed_fuで入れる場合 mbleigh/seed-fu という主に環境整備時に利用するものGemがある。
+mysqldump -u &amp;lt;USERNAME&amp;gt; -p -t &amp;lt;DBNAME&amp;gt; &amp;lt;TABLENAME1&amp;gt; [ &amp;lt;TABLENAME2&amp;gt; ... ] &amp;gt; &amp;lt;DUMPFILENAME&amp;gt;.sql Dumpのインポート 下記コマンドでインポート
+mysqll -u &amp;lt;USERNAME&amp;gt; -p &amp;lt;DBNAME&amp;gt; &amp;lt; &amp;lt;DUMPFILENAME&amp;gt;.sql seed_fuで入れる場合 mbleigh/seed-fu という主に環境整備時に利用するものGemがある。
 テストデータやシードデータの導入の利用される。
 自分は実データをMySQLからdumpしてseed_fu用のfixtureを生成するRakeタスクを作成しており、ユースケースによってはこちらを利用する。
- db:dump_seed_fu[model]で実行。 db:seed_fuで使えるseedデータがdb/fixtures内に生成される。
-Special Thanks  MySQL で特定のテーブルのみをバックアップ - Easy Ramble  mbleigh/seed-fu
-  </description>
-    </item>
-    
-    <item>
-      <title>会社のPCのWindowsマシンにLubuntuを入れてきた</title>
-      <link>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</link>
-      <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
-      <description>Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。
+db:dump_seed_fu[model]で実行。 db:seed_fuで使えるseedデータがdb/fixtures内に生成される。
+Special Thanks MySQL で特定のテーブルのみをバックアップ - Easy Ramble mbleigh/seed-fu</description></item><item><title>会社のPCのWindowsマシンにLubuntuを入れてきた</title><link>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</link><pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</guid><description>Webライターさん向けにChromeとOfficeツールが使える格安環境が欲しいとのことで、同僚が買ってきた1万5000円のWindowsPC。 デフォルトで入っている(おそらくkitting時に自動で入る)セキュリティツールが悪さをしてまともにブラウジングができなかった。
 その要件であれば、lubuntu(軽量版GUIを備えたUbuntuベースのLinuxディストリビューション)を使えばよいだろうということで、 3時間くらいかけてセットアップした時の備忘録。
-WinowsPCにlubuntuを入れる  Windowsのコンピュータを起動し、コントロールパネルから&amp;rdquo;ディスクの管理&amp;rdquo;を表示する &amp;ldquo;ディスクの管理&amp;rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない）  今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。  UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&amp;rdquo;/&amp;ldquo;を選択。  これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。  マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。  Lubuntuをセットアップする  スワップを有効化  USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと  日本語を入力できるようにする  Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。  GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く  Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel)  見た目整える  綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.</description>
-    </item>
-    
-    <item>
-      <title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title>
-      <link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
-      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
-      <description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
-
+WinowsPCにlubuntuを入れる Windowsのコンピュータを起動し、コントロールパネルから&amp;rdquo;ディスクの管理&amp;rdquo;を表示する &amp;ldquo;ディスクの管理&amp;rdquo;の画面の写真を取る（スクショはだめ。インストール中に見れない） 今回はDドライブの内容が空だったので、Lubuntu側でDドライブをフォーマットすることにする。 Dドライブのディスク空き容量68.43GB。Dドライブの容量の数値を確認しておく。 UnetBootInDiskでLinuxをブート可能なUSBメモリを作る メーカーロゴでF12連打でブートメニューに入って、USBメニューを選択（なければBIOS設定画面に入ってから設定を変更する)。 Try Installを選択。 言語で日本語を選択。 ネットワーク（Wifi）に接続できるので、接続（あとでもできるがこのタイミングのほうが失敗が少ない） インストール中にアップデートをダウンロードする、サードパーティ製のソフトウェアをインストールの両方にチェック インストールの種類で”それ以外”を選択 ブートローダをインストールするデバイスに/dev/sda(ディスクの大元)を選択。 Dドライブの存在していた/dev/sda4/(ディスクの管理でとった写真を参照）を選択し、-をクリック。 空き領域を選択、 + をクリック。論理パーティションを選択。ext4ジャーナリングシステムを選択。マウントポイントに&amp;rdquo;/&amp;ldquo;を選択。 これで論理パーティション内部に複数のパーティションが作成可能になる。 スワップ領域を作らなくてよいかとの画面が出るが、無視してよい。あとで追加する。 マシン名とユーザ名とパスワードを設定する。Windows側と同じユーザ名、パスワードを利用。 タイムゾーンはTokyoに。キーボードは日本語に設定する。 Lubuntuをセットアップする スワップを有効化 USBからtry without installを選択 gpartedを利用して論理パーティション内1GBのスワップを作る。swap領域の/dev/sdxx fstabをsudo vi /etc/fstabにて編集。 ( http://linuxsalad.blogspot.jp/2009/05/swap.html ) 再起動してgparted上でスワップオンになっていることを確認 swapがないとたまにフリーズしたりするので早めに設定しておくこと 日本語を入力できるようにする Ctrl-Spaceで日本語入力可能。ibus-anthyが使える。 変換精度のより良いibus-mozc(Google日本語入力)を入れる。コマンドはsudo-apt-get install ibus-mozc。 キーボードインプットメソッドでibus-mozcを追加。 インプットメソッドの切替キーを半角に設定する（hankakuを追加割り当てする)。 GoogleChromeを入れる(firefox起動してそこから検索してインストールする) LibreOffice(OpenOfficeのすごいやつ)を入れる よく使いそうなソフトはデスクトップにショートカットを置く Chrome ファイルマネージャ LibreOffice Writer(Word) LibreOffice Calc(Excel) 見た目整える 綺麗な日本語フォントをAdobeが出してる(源ノ角フォント)のでそれを入れる。mkdir ~/.</description></item><item><title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title><link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link><pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid><description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;スクラムでのタスク管理にPivotalTracker(&lt;a href=&#34;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&#34;&gt;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される&lt;/li&gt;
 &lt;li&gt;あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li&gt;
 &lt;li&gt;毎回IDを入れるのがめんどくさい、たまに忘れる&lt;/li&gt;
 &lt;li&gt;チームで浸透させたい&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>node/npmをUbuntuにインストールする方法</title>
-      <link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link>
-      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid>
-      <description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+&lt;/ul&gt;</description></item><item><title>node/npmをUbuntuにインストールする方法</title><link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link><pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid><description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
 環境はElementary OS freya(Ubuntu14.04ベース)
 nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
@@ -437,66 +234,30 @@ version番号の確認 node -v
 v0.12.7
 npm -v
 2.11.3
-色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description>
-    </item>
-    
-    <item>
-      <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title>
-      <link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
-      <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
-      <description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)  elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa  elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
-sudo apt-get install elementary-tweaks  numixのiconセットのインストール sudo apt-get install numix-*  numix-circleを適用
-Arc-themeのインストール sudo sh -c &amp;quot;echo &#39;deb http://download.</description>
-    </item>
-    
-    <item>
-      <title>MySQL WorkbenchでQueryの結果が表示されない問題</title>
-      <link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link>
-      <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid>
-      <description> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description></item><item><title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title><link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link><pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid><description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認 (install時にこれらを割り当てするときに間違えなようにメモしておく) elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択 パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
+sudo apt-get install elementary-tweaks numixのiconセットのインストール sudo apt-get install numix-* numix-circleを適用
+Arc-themeのインストール sudo sh -c &amp;quot;echo &#39;deb http://download.</description></item><item><title>MySQL WorkbenchでQueryの結果が表示されない問題</title><link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link><pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid><description> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
 具体的には以下のような症状。
- workbencだQueryの結果が白くなって表示されない。
+workbencだQueryの結果が白くなって表示されない。
 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
 調査してみた 色々な人が死んでた
 workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
 また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
-下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install  buildは1.5h程度は見込んでおいた方が良い。
+下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。
 sudo make install後にrebootするときちんとresultが表示される。
-special thanks  reddit  launchpad   </description>
-    </item>
-    
-    <item>
-      <title>EasytetherでBluetoothテザリング</title>
-      <link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
-      <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
-      <description>Easytether with linux 
+special thanks reddit launchpad</description></item><item><title>EasytetherでBluetoothテザリング</title><link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link><pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid><description>Easytether with linux
 EasytetherFull( GooglePlay )
 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
 そして、公式のLinux向けクライアントがある。
 当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
-Linux版パッケージはこちら  からダウンロード可。
+Linux版パッケージはこちら からダウンロード可。
 現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
 いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
-Speedテスト3回戦    Easytether Bluetoothテザリング AndroidのBluetoothテザリング                  やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
 おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
-#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi  内容はこんな感じ。</description>
-    </item>
-    
-    <item>
-      <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
-      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
-      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
-      <description>世界各国のLinuxerの皆さん、こんばんは
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。</description></item><item><title>Linuxでブルーライトフィルタ そして快眠へ...</title><link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link><pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid><description>世界各国のLinuxerの皆さん、こんばんは
 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？　毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
 現実問題難しい。
@@ -507,8 +268,8 @@ PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &amp;gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
 ブルーライトをカットする 本題に入る。
 実はこのブルーライト、色温度を下げることで減量させることができる。
- 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
- 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
 今回はRedshiftというソフトウェアを利用。
 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
@@ -516,20 +277,11 @@ Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消�
 Redshiftのインストール sudo apt-get install redshift redshift-gtk
 パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
- toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
 こちらのサイトで詳しく紹介されていた。
 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
 夜の寝付きの良さが変わるはず。
-Linuxer達に良き睡眠を。</description>
-    </item>
-    
-    <item>
-      <title>Elementary OS freyaでハイバネートオプションを追加する</title>
-      <link>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</link>
-      <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</guid>
-      <description>少し前からElementaryOSの最新版Freyaを使っている。
+Linuxer達に良き睡眠を。</description></item><item><title>Elementary OS freyaでハイバネートオプションを追加する</title><link>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</link><pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</guid><description>少し前からElementaryOSの最新版Freyaを使っている。
 電源周りで少し手こずったので、備忘録として残しておく。
 インストール後にやったことはまた今度まとめる。
 ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
@@ -537,39 +289,18 @@ Linuxer達に良き睡眠を。</description>
 pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
 電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
 下記をコピー&amp;amp;ペースト
-[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes  Grubの設定 sudo vi /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash resume=/dev/sda3&amp;quot;  resume=&amp;lsquo;スワップ用パーティション&amp;rsquo;とすること！
+[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&amp;quot;quiet splash resume=/dev/sda3&amp;quot; resume=&amp;lsquo;スワップ用パーティション&amp;rsquo;とすること！
 Grubの更新 sudo update-grub
 これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
 ノートPCを閉じた時にハイバネーションを有効にしたい &amp;amp;&amp;amp; ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
 /etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
 sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し、 下記に変更する
-HandlePowerKey=hibernate HandleLidSwitch=hibernate  再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</description>
-    </item>
-    
-    <item>
-      <title>SPとOC-企業戦略-</title>
-      <link>https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</link>
-      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</guid>
-      <description>&lt;p&gt;会社の方針決めるために、企業戦略のたて方についての勉強する。&lt;/p&gt;
-
+HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</description></item><item><title>SPとOC-企業戦略-</title><link>https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</link><pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</guid><description>&lt;p&gt;会社の方針決めるために、企業戦略のたて方についての勉強する。&lt;/p&gt;
 &lt;p&gt;教材は&lt;code&gt;ストーリーとしての競争戦略&lt;/code&gt;、から。&lt;/p&gt;
-
 &lt;h1 id=&#34;戦略には優劣がある&#34;&gt;戦略には優劣がある&lt;/h1&gt;
-
 &lt;p&gt;打率2.5割の打者に戦略Aを施すと3割&lt;br /&gt;
-打率2.5割の打者に戦略Bを施すと3.5割&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
-      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
-      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
-      <description>Command/Normalモードを間違う 問題はこれ。
+打率2.5割の打者に戦略Bを施すと3.5割&lt;/p&gt;</description></item><item><title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title><link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link><pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid><description>Command/Normalモードを間違う 問題はこれ。
 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
 gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
@@ -577,40 +308,22 @@ gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わ
 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
- To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
- if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description>
-    </item>
-    
-    <item>
-      <title>AngularでのDOMへのアクセス</title>
-      <link>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link>
-      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid>
-      <description>AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
+To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
+if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description></item><item><title>AngularでのDOMへのアクセス</title><link>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link><pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid><description>AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
 &amp;lt;SELECTOR data-x = &#39;{&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}&#39;...&amp;gt;というDOM要素が存在した時
 str = angular.element(&#39;SELECTOR&#39;).attr(&#39;data-x&#39;)のような形式でデータを取得することができる。
 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
 hashed_data = angular.fomJson(str)
-これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description>
-    </item>
-    
-    <item>
-      <title>ng-japan</title>
-      <link>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</link>
-      <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</guid>
-      <description>Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
+これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description></item><item><title>ng-japan</title><link>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</link><pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</guid><description>Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
 結構人がいて定員500名の会場が普通に埋まってた
 こんなかんじ↓
 すごい人！ ng-japan venue is packed! #ng_jp pic.twitter.com/Cb1Zfn9Q63
-&amp;mdash; Eiji Kitamura (@agektmr) 2015, 3月 21 
+&amp;mdash; Eiji Kitamura (@agektmr) 2015, 3月 21
 今回アシアルの田中さんのセッションが個人的に面白かったのでそちらにフォーカスして書いています。
-onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ 
+onsen-uiのはなし AngularとOnsen UIで作る最高のHTML5ハイブリッドアプリ
 HTML5ハイブリッドアプリとは ネイティブのアプリとは違って、View部分をHTMLで記述。 ネイティブ層、HTML5層があって内部はHTML5で作っている。
 アプリ内ではWebviewを利用している。
 ###メリット * クロスプラットフォーム性 * ネイティブ機能をJsから呼び出し * ハイブリッド用のCordovaから呼び出し * OSからのAPI呼び出しを一本化する
@@ -618,61 +331,34 @@ HTML5ハイブリッドアプリとは ネイティブのアプリとは違っ�
 ###しかし状況は変わってきた * モバイルの高速化 * CrossWalkだったり、ChromiumがWebviewに使われたり。 * DHH（Rails作者）によるハイブリッドアプリに関する好評
 ###デメリット * UIコンポーネントが標準で持っていない * チューニングの方法が難しい
 ##チューニングの方法 * インスペクタのTimelineタブで計測 * AndroidではChrome・iOSではsafariのinspecter * タイムラインタブのカテゴリの説明（図） * 描画が始まって16ms以下に抑えると60fps以上出る * 逆にそれ以上だしてもディスプレイが追いつかない
-チューニング対象となる5つのフェーズ  Loading  リソースの読み込みやパース 組み込みなのであんまやることない  Scripting  JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる  Rendering  レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。  Layout  すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー  Painting  描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成   雑多なチューニングの小話  translate3d(0,0,0)が早いのはなぜ？  GPUで描画されるから?</description>
-    </item>
-    
-    <item>
-      <title>ApacheCordova勉強会第4回</title>
-      <link>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</link>
-      <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</guid>
-      <description>ApacheCordova勉強会第4回 AdobeからPhonegap開発チームの方々が来られていた。
+チューニング対象となる5つのフェーズ Loading リソースの読み込みやパース 組み込みなのであんまやることない Scripting JavaScriptの実行時間。純粋な計算は基本的に問題なし。 リフロー、Canvasへの命令など時間はかかる ProfileTabで簡単にわかる Rendering レイアウト処理 再計算(Recaluculate Style) CSS OMを参照してDOM*CSSルールの数分マッチング処理が走る。 使ってないCSSのルールマッチングの文だけ遅くなる 重たいCSSのセレクタの書き方 子孫セレクタやめたほうがいい クラスで指定する書き方が速い 使ってないCSSのルールは消す。 Layout すべてのDOMのレイアウト情報を計算 計算された結果の視野的なオブジェクトのツリーがレンダリングツリー Painting 描画処理 DisplayListの生成 Rasterize ピクセル化 CompositeLayeers レイヤの合成 雑多なチューニングの小話 translate3d(0,0,0)が早いのはなぜ？ GPUで描画されるから?</description></item><item><title>ApacheCordova勉強会第4回</title><link>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</link><pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</guid><description>ApacheCordova勉強会第4回 AdobeからPhonegap開発チームの方々が来られていた。
 以下雑なメモ。
 セッション1：米Adobe PhoneGapチーム【逐次通訳】 Adobeの人(Adobeに買収された開発チームの方)のセッション。英語同時翻訳。(ありがとうございました)
- パフォーマンス問題としていいニュース
- Apple、GoogleともにWebViewの高速化が進む Appleもなんか出したらしい AndroidのはおなじみCrossWalk projectの事  Why Phonegap?
- CrossPlatforms ProjectSpeed UI Native functions Update from Web Appstoreを通さないアップデートができるとのこと ( てか、それいいの？　) Plugin support  ShowCase ( PhonegapAppStoreで見れるよ )
- BankOfAmerica Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい) Untappd Sworkit Large Home Store  Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)
- BaseCampもHybrid
- ほとんどがHTML5ベース Rails作者、 DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた  PhoneGap Enterpriseについて
- Adobeのマネタイズのはなし ダッシュボードでメタデータ統計など利用可能 マーケの人が(コンテンツなどを)管理画面から簡単に更新可能   セッション2： Visual Studioを使用したCordova開発 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。
- VisualStudio  ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで4倍速。 補完の話とか便利機能の話 &amp;hellip;   セッション3： Windows開発者が知っておきたいCordova開発の話 Monaca作ってるアシアルの方の話。 Win上でのCorova開発iOS開発の壁を超える</description>
-    </item>
-    
-    <item>
-      <title>Cordova勉強会第3回行ってきた</title>
-      <link>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</link>
-      <pubDate>Mon, 26 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</guid>
-      <description>Codova勉強会行ってきた だがしかし&amp;hellip;
- 参加時刻20:17
- ほとんど遅刻してアレ
- (19:00-21:00 at IIJさん)
- ビールとポテチもらいながら最後のセッション聞く感じになりました。
-  デスクトップアプリマルチOS対応 with HTML5 対象の人は以下の人
- デスクトップアプリ作りたい
- いろんなディスプレイサイズ辛い
- パフォーマンスそんな求めてない
- C#よりJSやりたい
-  うん。多分そんなところかも。
+パフォーマンス問題としていいニュース
+Apple、GoogleともにWebViewの高速化が進む Appleもなんか出したらしい AndroidのはおなじみCrossWalk projectの事 Why Phonegap?
+CrossPlatforms ProjectSpeed UI Native functions Update from Web Appstoreを通さないアップデートができるとのこと ( てか、それいいの？　) Plugin support ShowCase ( PhonegapAppStoreで見れるよ )
+BankOfAmerica Sabre - TripCase(HTML5/JSでゴリゴリ書いてるらしい) Untappd Sworkit Large Home Store Instagram・Evernoteなどはハイブリッドアプリ(割合とかは言ってなかった)
+BaseCampもHybrid
+ほとんどがHTML5ベース Rails作者、 DHHも情報が多いアプリだとHybridは向いているとのコメントを寄せていた PhoneGap Enterpriseについて
+Adobeのマネタイズのはなし ダッシュボードでメタデータ統計など利用可能 マーケの人が(コンテンツなどを)管理画面から簡単に更新可能 セッション2： Visual Studioを使用したCordova開発 MSの方の話。主にVisualStudioの話でしたので話半分にしか聞けていません。。。
+VisualStudio ユニバーサルアプリ(Windows系アプリケーション)はネイティブコンパイルで4倍速。 補完の話とか便利機能の話 &amp;hellip; セッション3： Windows開発者が知っておきたいCordova開発の話 Monaca作ってるアシアルの方の話。 Win上でのCorova開発iOS開発の壁を超える</description></item><item><title>Cordova勉強会第3回行ってきた</title><link>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</link><pubDate>Mon, 26 Jan 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</guid><description>Codova勉強会行ってきた だがしかし&amp;hellip;
+参加時刻20:17
+ほとんど遅刻してアレ
+(19:00-21:00 at IIJさん)
+ビールとポテチもらいながら最後のセッション聞く感じになりました。
+デスクトップアプリマルチOS対応 with HTML5 対象の人は以下の人
+デスクトップアプリ作りたい
+いろんなディスプレイサイズ辛い
+パフォーマンスそんな求めてない
+C#よりJSやりたい
+うん。多分そんなところかも。
 Destkop用のネイティブ言語を扱えない人も結構多そう。
 3つのやりかた 下記のやり方があるらしい。
- Mozilla XULRunner Cordova NW.js(Node-Webkit)  あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。
+Mozilla XULRunner Cordova NW.js(Node-Webkit) あと質疑応答でアシアルの人がAtom-shellっていうのが最近あるよと言ってた。
 なんかMonacaのローカルもそれ使うとか何とか（よくわかってない）
-Mozilla XULRunner  一番シンプルで古株なやつ エンジンGecko  GeckoはHTML5だけじゃなくてXULというマークアップを動かせる セガ版Xamarinのような存在（?）  名前はXULだけど中身GeckoなのでHTML5が使える  これ知らなかった。 あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい
-Cordova  3つの中で一番発展してる エンジンがTrident(Win)らしい ビルドツール プラグインで機能を足しやすいらしい  Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった
-NW.js(Node-Webkit)  What is NW.js  3種の中で若造らしい  Node.</description>
-    </item>
-    
-    <item>
-      <title>今やっていること, 2014年と2015年</title>
-      <link>https://iberianpig.github.io/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</link>
-      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</guid>
-      <description>あけましておめでとうございます 久々更新過ぎて、書き方忘れてた。。。
+Mozilla XULRunner 一番シンプルで古株なやつ エンジンGecko GeckoはHTML5だけじゃなくてXULというマークアップを動かせる セガ版Xamarinのような存在（?） 名前はXULだけど中身GeckoなのでHTML5が使える これ知らなかった。 あとオワコン(HTML5に置き換えてる今から使うなとMozillaの中の人に言われたw)らしい
+Cordova 3つの中で一番発展してる エンジンがTrident(Win)らしい ビルドツール プラグインで機能を足しやすいらしい Win版の環境がだいぶ残念とのこと言っていたけど、よくわからなかった
+NW.js(Node-Webkit) What is NW.js 3種の中で若造らしい Node.</description></item><item><title>今やっていること, 2014年と2015年</title><link>https://iberianpig.github.io/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</link><pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</guid><description>あけましておめでとうございます 久々更新過ぎて、書き方忘れてた。。。
 octopressのテンプレートにマークダウンで書いて、それをpushするというフローでやっていたんだけど、 そのvimのプラグインのコマンドを忘れてなんだっけとしばらく考える程度に放置してた。ガンバロウ。
 また、正月早々風邪を引いてしまって、これが中々治る気配がないという。。。
 あまりイケてないスタートになってしまった。
@@ -683,12 +369,12 @@ octopressのテンプレートにマークダウンで書いて、それをpush�
 割と前職ではプログラミングわかる人とということになってたけど、本人の中での理想と現実のギャップは大きく、 何かを作っているはずが何も作ってないエンジニアとして嫌気が差していた。
 自分が欲しい物は自分で作りたいという強い欲求はあったが、誰にも教えられるほどの知識・スキルがなかった。
 どれから身に付けるかと考えた時に、
- WEBは息が長い、きっと様々なモノのI/FとしてWEBが生きるはず。
+WEBは息が長い、きっと様々なモノのI/FとしてWEBが生きるはず。
 しかしながら今皆使っているのはモバイル。
- と思った。
- Web技術 モバイルアプリ  これらをひと通り作れるようになろうと決めた。
+と思った。
+Web技術 モバイルアプリ これらをひと通り作れるようになろうと決めた。
 やったこと 2014年、とりあえず人並みにまでを目標に、自分で学んでみた。 下記の技術を中心に学習した。
- Ruby on Rails AngularJS Android(Java)  1年前の自分だったらちょっと重いから1つずつやろうか。などと諭していそう気がする。
+Ruby on Rails AngularJS Android(Java) 1年前の自分だったらちょっと重いから1つずつやろうか。などと諭していそう気がする。
 独学で勉強したり、勉強会におせわになったり、ベンチャー企業のお世話になったり。
 逆に学んだことをシェアハウスの住人や知り合いに教えてみたり。
 そんなこんなでいつの間にか、志して1年を迎えてしまった。
@@ -702,30 +388,12 @@ AngularJS周りで少し色目を出して、秋ごろにionicをベースにWeb
 海外で1・2年は仕事しながら住んでみたいという憧れがあることがひとつ。
 そして、エンジニアとして先端を走るときにドキュメントは必ず英語として立ちはだかる、 もしくは公式ドキュメントはStack Overflow!なんてことはザラ。
 エンジニア目線としても英語はぜひコンプレックスをなくしていきたい所存。
-やろうと思っていること  フィリピン留学 ビデオチャットで英会話 つなぎのtoeicの学習  2014年の伸びしろを埋めていく作業を続けながら英語を学んでいく。
+やろうと思っていること フィリピン留学 ビデオチャットで英会話 つなぎのtoeicの学習 2014年の伸びしろを埋めていく作業を続けながら英語を学んでいく。
 自作のビデオチャットアプリで英会話することが今年の密かな目標です
-(ブログの更新はハードル高そうなので一応含んでいませんw)</description>
-    </item>
-    
-    <item>
-      <title>twitterbootstrapでnavbarがモバイル表示にならない</title>
-      <link>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</link>
-      <pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</guid>
-      <description>mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
-&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;  つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。
+(ブログの更新はハードル高そうなので一応含んでいませんw)</description></item><item><title>twitterbootstrapでnavbarがモバイル表示にならない</title><link>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</link><pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</guid><description>mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。
 ご参考(http://getbootstrap.com/css/#overview-mobile)
- Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&amp;rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&amp;rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</description>
-    </item>
-    
-    <item>
-      <title>Rspecでインスタンス変数が参照できない</title>
-      <link>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</link>
-      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</guid>
-      <description>Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。
+Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&amp;rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&amp;rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</description></item><item><title>Rspecでインスタンス変数が参照できない</title><link>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</guid><description>Rspecの世界からController内メソッドでインスタンス変数@hogeを利用した場合は、 直接Rspecからインスタンス化された@hogeは別物である。
 まず、この事実を理解すべきだった。
 Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
 また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
@@ -739,95 +407,41 @@ expect(Model.last.name).to eq &#39;modelname&#39;で評価する。
 RequestヘッダをRspecで作ってそれをRailsに投げる。
 Railsの中のController内で、どのような値がアサインされるかテストする。
 どの世界の値を取得して何と比べるのか。
-何をテストすべきかを意識していれば回避できる問題。</description>
-    </item>
-    
-    <item>
-      <title>vimで折りたたみしないようにする</title>
-      <link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
-      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
-      <description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
-set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vimの折りたたみ設定</description>
-    </item>
-    
-    <item>
-      <title>vim-surround</title>
-      <link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link>
-      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid>
-      <description> テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
+何をテストすべきかを意識していれば回避できる問題。</description></item><item><title>vimで折りたたみしないようにする</title><link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid><description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
+set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</description></item><item><title>vim-surround</title><link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link><pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid><description> テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
 すぐに忘れてしまうのでメモ
-よく使うコマンド    コマンド 実行内容     cs({ (を{に置き換える   csw&amp;quot; 単語の外側を&amp;quot;で囲む   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に    いつも忘れるコマンド    コマンド 実行内容     dst tagで囲われた部分を消去   yss&amp;quot; &amp;quot;で行を囲む   yss= &amp;lt;%=で行を囲む(vim-rails必須)   yss- &amp;lt;%で行を囲む(vim-rails必須)   dst tagで囲われた部分を消去   選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む    </description>
-    </item>
-    
-    <item>
-      <title>Androidでのデータの保存</title>
-      <link>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</link>
-      <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</guid>
-      <description>データの保存 SharedPreferenceの利用  Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能
- ただし大規模なデータには向かず、設定項目向き。
-使い方  SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定
- モードについては後述。
+よく使うコマンド コマンド 実行内容 cs({ (を{に置き換える csw&amp;quot; 単語の外側を&amp;quot;で囲む ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に いつも忘れるコマンド コマンド 実行内容 dst tagで囲われた部分を消去 yss&amp;quot; &amp;quot;で行を囲む yss= &amp;lt;%=で行を囲む(vim-rails必須) yss- &amp;lt;%で行を囲む(vim-rails必須) dst tagで囲われた部分を消去 選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む</description></item><item><title>Androidでのデータの保存</title><link>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</link><pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/</guid><description>データの保存 SharedPreferenceの利用 Androidアプリでデータを保存する方法のひとつ データをキーと値の組み合わせで保存 ファイルなどに保存するよりも非常に簡単にデータを保存可能
+ただし大規模なデータには向かず、設定項目向き。
+使い方 SharedPreferences はgetSharedPreferences(String name, int mode); でを取得。 name は Preference 自体の名前指定 mode には Activity.MODE_PRIVATE Activity.MODE_WORLD_READABLE Activity.MODE_WORLD_WRITEABLE などを指定
+モードについては後述。
 SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
 SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、 editメソッドでEditorクラスのインスタンスを呼び出す。 そのEditorクラスにputXxxxメソッドを使って値を対応させる 最後にcommitメソッドで格納する
-// プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit();  保存される場所  保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される
- データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。
-getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue);  データ型  下記のデータ型がXMLに保存される 1.</description>
-    </item>
-    
-    <item>
-      <title>ListView and http connection</title>
-      <link>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</link>
-      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</guid>
-      <description>雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
-レイアウトをJava側で生成する  LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);`  レイアウトに要素を追加する  Button button1 = new Button(this); button1.setText(&amp;quot;OK&amp;quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);`  AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
- public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.
- Parameters: child: the child view to add params: the layout parameters to set on the child
- LinearLayout.LayoutParamsクラス
+// プリファレンスに保存 Editor editor = pref.edit(); editor.putString(KEY_TEXT, s); // KEY, VALUEの組み合わせで保存 editor.commit(); 保存される場所 保存された Preference は data/data/パッケージ名/shared_prefs の中に xmlファイルとして保存される
+データの取得 getXxxx(String key, Xxxx defValue)のkey, value形式で取得する。
+getString(String key, String defValue); getInt(String key, int defValue); getLong(String key, long defValue); データ型 下記のデータ型がXMLに保存される 1.</description></item><item><title>ListView and http connection</title><link>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</link><pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</guid><description>雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
+レイアウトをJava側で生成する LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);` レイアウトに要素を追加する Button button1 = new Button(this); button1.setText(&amp;quot;OK&amp;quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);` AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
+public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.
+Parameters: child: the child view to add params: the layout parameters to set on the child
+LinearLayout.LayoutParamsクラス
 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。
- LayoutParams public LinearLayout.LayoutParams(int w, int h)  他のビューに対する相対位置の指定(addRule)  このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description>
-    </item>
-    
-    <item>
-      <title>send data on Intent to call activity</title>
-      <link>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</link>
-      <pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</guid>
-      <description>#Activityとは
+LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description></item><item><title>send data on Intent to call activity</title><link>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</link><pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</guid><description>#Activityとは
 Androidの画面単位の概念 一つのアクティビティに対してクラス一つが割り当てされる
 &amp;ndash;&amp;gt;1つのXML(Viewテンプレート)と1つのJavaクラス(Activity)が必要となる
 #Intentとは
- インテントというのは簡単に言えばアクティビティなどが他のアクティビティやアプリケーションなどと情報のやり取りを行うための箱のようなものです。インテントという箱には、相手先や届けたい情報などが含まれています。
+インテントというのは簡単に言えばアクティビティなどが他のアクティビティやアプリケーションなどと情報のやり取りを行うための箱のようなものです。インテントという箱には、相手先や届けたい情報などが含まれています。
 アクティビティから他の指定したアクティビティへインテントを送ることがあります。例えば他の画面を表示したい場合などです。
- (参考:　http://www.javadrive.jp/android/intent/index1.html)
+(参考:　http://www.javadrive.jp/android/intent/index1.html)
 ##暗黙的インテントと明示的インテント
- どの機能を呼び出すかをあらかじめ指定して直接それを起動することを「明示的インテント」(explicit intent)、何をしたいかは明示せずに漠然とそのデータに対して実行できる機能の一覧を要求することを「暗黙的インテント」(implicit intent)という。
- (参考: http://e-words.jp/w/E382A4E383B3E38386E383B3E38388.html)
+どの機能を呼び出すかをあらかじめ指定して直接それを起動することを「明示的インテント」(explicit intent)、何をしたいかは明示せずに漠然とそのデータに対して実行できる機能の一覧を要求することを「暗黙的インテント」(implicit intent)という。
+(参考: http://e-words.jp/w/E382A4E383B3E38386E383B3E38388.html)
 ##どうやって起動するのか
- インテントのアクションとは、あるオブジェクトが他のオブジェクトを起動する際に、何をしたいのかを指すための指定です。ここでいうオブジェクトはActivityやサービスのことを指します。
+インテントのアクションとは、あるオブジェクトが他のオブジェクトを起動する際に、何をしたいのかを指すための指定です。ここでいうオブジェクトはActivityやサービスのことを指します。
 アクションを指定するには、Intentクラスのコンストラクタで指定するか、もしくはIntentクラスのsetActionメソッドを使って指定します。### また、指定するアクションはすべてIntentクラスの遷移元への値の渡し方と受け取り方定数として定義されていますので、該当な定数を使ってアクションを以下のように指定します。
- // アクションを指定してインテントのインスタンス生成 Intent intent = new Intent(Intent.ACTION_MAIN); // 次画面のアクティビティ起動 startActivity(intent);  インテントをnew IntentしてそれをstartActivity()の引数に入れて起動するらしい。
+// アクションを指定してインテントのインスタンス生成 Intent intent = new Intent(Intent.ACTION_MAIN); // 次画面のアクティビティ起動 startActivity(intent); インテントをnew IntentしてそれをstartActivity()の引数に入れて起動するらしい。
 StartActivityとは 同一アプリ内の画面を呼び出すときは明示的Intentを作成する。そしてstartActivity()の引数として引き渡すことでそれを実現する。ただし、この挙動は一方通行のようなもの。呼び出し元の情報を返して欲しいときはstartActivityForResult()を使う。
- また、アクションには「アクティビティアクション」と「ブロードキャストアクション」があります。
- ###アクティビティアクション &amp;gt;アクティビティアクションとは、他のアクティビティを起動する際に、何をしたいのかを示すためのアクションです。具体的には以下のものがあります
-   アクション 機能     ACTION_MAIN メインエントリーポイントとしてアクションを起動する。データを戻すことができない。   ACTION_VIEW データをユーザに表示するためにアクションを起動する。   ACTION_ATTACH_DATA 別の場所にデータが添付されていることを示す。   ACTION_EDIT データを編集するためにアクションを起動する。   ACTION_PICK データの中からアイテムを選択するためにアクションを起動する。選択されたアイテムを受け取る。   ACTION_CHOOSER 起動するActivityを選択するチューザーをユーザに示し、選択してもらう。   ACTION_GET_CONTENT 指定した種類のデータをユーザに選択、もしくは作成してもらう。   ACTION_DIAL データで指定した番号を電話番号として設定する。データを指定しなければ、ユーザがその場で設定する。電話をかける操作はユーザに任せる。   ACTION_CALL データで指定した人に電話をかける。データを指定しなければ、ユーザがその場で指定した番号に電話をかける。   ACTION_SEND 別の人にデータを送信する。データの宛先は指定しない。このIntentを受け取ったアクションが、ユーザに宛先を問う。   ACTION_SENDTO データによって指定された人にメッセージを送信する。   ACTION_ANSWER かかってきた電話に対処するアクションを起動する。   ACTION_INSERT データに含まれるURIが示すディレクトリに秋のデータを挿入する。   ACTION_DELETE データに含まれるURIが示すデータをコンテナから削除する。   ACTION_RUN データを起動する。その意味はデータの種類によって異なる。   ACTION_SYNC データの同期を実行する。   ACTION_PICK_ACTIVITY Intentが与えられるActivityを選択し、そのクラスを返す。   ACTION_SEARCH 検索を実行する。   ACTION_WEB_SEARCH WEB検索を実行する。   ACTION_FACTORY_TEST デバイスが工場検査モードで起動する際にだけ実行される工場検査のメインエントリポイントとして起動する。    ブロードキャストアクション  ブロードキャストアクションとは、なんらかのイベントが発生したことを他のオブジェクトに知らせる際に指定するアクションです。</description>
-    </item>
-    
-    <item>
-      <title>Head-First-Rails_5</title>
-      <link>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</link>
-      <pubDate>Mon, 17 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</guid>
-      <description>Head First Rails 第5章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
+また、アクションには「アクティビティアクション」と「ブロードキャストアクション」があります。
+###アクティビティアクション &amp;gt;アクティビティアクションとは、他のアクティビティを起動する際に、何をしたいのかを示すためのアクションです。具体的には以下のものがあります
+アクション 機能 ACTION_MAIN メインエントリーポイントとしてアクションを起動する。データを戻すことができない。 ACTION_VIEW データをユーザに表示するためにアクションを起動する。 ACTION_ATTACH_DATA 別の場所にデータが添付されていることを示す。 ACTION_EDIT データを編集するためにアクションを起動する。 ACTION_PICK データの中からアイテムを選択するためにアクションを起動する。選択されたアイテムを受け取る。 ACTION_CHOOSER 起動するActivityを選択するチューザーをユーザに示し、選択してもらう。 ACTION_GET_CONTENT 指定した種類のデータをユーザに選択、もしくは作成してもらう。 ACTION_DIAL データで指定した番号を電話番号として設定する。データを指定しなければ、ユーザがその場で設定する。電話をかける操作はユーザに任せる。 ACTION_CALL データで指定した人に電話をかける。データを指定しなければ、ユーザがその場で指定した番号に電話をかける。 ACTION_SEND 別の人にデータを送信する。データの宛先は指定しない。このIntentを受け取ったアクションが、ユーザに宛先を問う。 ACTION_SENDTO データによって指定された人にメッセージを送信する。 ACTION_ANSWER かかってきた電話に対処するアクションを起動する。 ACTION_INSERT データに含まれるURIが示すディレクトリに秋のデータを挿入する。 ACTION_DELETE データに含まれるURIが示すデータをコンテナから削除する。 ACTION_RUN データを起動する。その意味はデータの種類によって異なる。 ACTION_SYNC データの同期を実行する。 ACTION_PICK_ACTIVITY Intentが与えられるActivityを選択し、そのクラスを返す。 ACTION_SEARCH 検索を実行する。 ACTION_WEB_SEARCH WEB検索を実行する。 ACTION_FACTORY_TEST デバイスが工場検査モードで起動する際にだけ実行される工場検査のメインエントリポイントとして起動する。 ブロードキャストアクション ブロードキャストアクションとは、なんらかのイベントが発生したことを他のオブジェクトに知らせる際に指定するアクションです。</description></item><item><title>Head-First-Rails_5</title><link>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</link><pubDate>Mon, 17 Mar 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/</guid><description>Head First Rails 第5章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
 scaffold で生成したアプリケーションのフォームに バリデーションを設定していく。
 ##バリデーションの設定。
 バリデーションの設定はモデル名．rbの中に設定する validates_xxxxxx_of と記述する。
@@ -836,57 +450,21 @@ scaffold で生成したアプリケーションのフォームに バリデー�
 そのため、 if文で@model.saveを実行した結果 true or false に応じて、リダイレクトを 行うか否かを決定する。
 form内で、f.error_messagesメソッドを利用する。
 updateも同様。if文で@model.update_attributes(:params[:model])の実行し、結果に応じて リダイレクトを行うか否かを決める。
-不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, &amp;quot;What&#39;s your name?&amp;quot;がうまく動かない</description>
-    </item>
-    
-    <item>
-      <title>Head-First-Rails_4</title>
-      <link>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</link>
-      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</guid>
-      <description>Head First Rails第4章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
+不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, &amp;quot;What&#39;s your name?&amp;quot;がうまく動かない</description></item><item><title>Head-First-Rails_4</title><link>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</link><pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</guid><description>Head First Rails第4章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
 Scaffoldで作成したページを改造していく。
 検索窓の導入 どのページにも検索窓を用意するので、layoutsを利用する layoutfileは｛モデル名｝.html.erbとなる
 form_forとform_tagの違い
 ハマったところ 書籍では&amp;lt;% %&amp;gt;だったが、実際はform_tagは &amp;lt;%= %&amp;gt; で囲む必要があった
 (rails 3とrails 4の違い？　)
-routesの追記が必要。 formの追加に合わせて post &#39;client_workouts/find&#39; =&amp;gt; &#39;client_workouts#find&#39;  rails4だとFindで :conditionsが使えない 代わりにモデル名.whereを利用する
+routesの追記が必要。 formの追加に合わせて post &#39;client_workouts/find&#39; =&amp;gt; &#39;client_workouts#find&#39; rails4だとFindで :conditionsが使えない 代わりにモデル名.whereを利用する
 * モデル名.find(id) - findはidの検索専用 * モデル名.where(:カラム名 =&amp;gt; 内容) - なんか指定するときは大体where
-defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</description>
-    </item>
-    
-    <item>
-      <title>Octopressで下書き保存をデフォルト設定にする方法</title>
-      <link>https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/</link>
-      <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/</guid>
-      <description>Octopressでの下書き保存 普通にdeployすると、rake new_post[&#39;hogehoge&#39;]で生成された/_posts配下の記事がすべてPublishされてしまう。 一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
+defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</description></item><item><title>Octopressで下書き保存をデフォルト設定にする方法</title><link>https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/</link><pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/</guid><description>Octopressでの下書き保存 普通にdeployすると、rake new_post[&#39;hogehoge&#39;]で生成された/_posts配下の記事がすべてPublishされてしまう。 一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
 実際はyyyy-MM-dd-[$title].markdown内に published: falseを記述するだけ。 (※$titleは生成された記事毎に異なる)
-layout: post title: &amp;quot;Octopressで下書き保存をデフォルト設定にする方法&amp;quot; date: 2014-01-22 comments: true categories: + published: false  一番下のpublished: falseを追記。
+layout: post title: &amp;quot;Octopressで下書き保存をデフォルト設定にする方法&amp;quot; date: 2014-01-22 comments: true categories: + published: false 一番下のpublished: falseを追記。
 これでRake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。
 下書き保存をデフォルト設定 記事生成時に下書き保存をデフォルトで設定してほしい場合、RakeFileを編集する。
-task :new_post, :title do |t, args| if args.title title = args.title else title = get_stdin(&amp;quot;Enter a title for your post: &amp;quot;) end raise &amp;quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&amp;quot; unless File.</description>
-    </item>
-    
-    <item>
-      <title>elementary OSにFcitx＋Mozcを入れてみた</title>
-      <link>https://iberianpig.github.io/posts/2013-11-19-fcitx/</link>
-      <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2013-11-19-fcitx/</guid>
-      <description>FcitxとMozcのインストールはこちらを参照。 自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。 SublimeIbusとの連携 以前ブログの中で書いた、SublimeIbusとの連携。 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。 ウィンドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。 しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
-SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description>
-    </item>
-    
-    <item>
-      <title>Migu Font</title>
-      <link>https://iberianpig.github.io/posts/2013-11-02-migu-font/</link>
-      <pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2013-11-02-migu-font/</guid>
-      <description>#フォントをMigu Fontへ変更
+task :new_post, :title do |t, args| if args.title title = args.title else title = get_stdin(&amp;quot;Enter a title for your post: &amp;quot;) end raise &amp;quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&amp;quot; unless File.</description></item><item><title>elementary OSにFcitx＋Mozcを入れてみた</title><link>https://iberianpig.github.io/posts/2013-11-19-fcitx/</link><pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-11-19-fcitx/</guid><description>FcitxとMozcのインストールはこちらを参照。 自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。 SublimeIbusとの連携 以前ブログの中で書いた、SublimeIbusとの連携。 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。 ウィンドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。 しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
+SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description></item><item><title>Migu Font</title><link>https://iberianpig.github.io/posts/2013-11-02-migu-font/</link><pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-11-02-migu-font/</guid><description>#フォントをMigu Fontへ変更
 昨日Steve Jobsの映画見てから、フォントはやっぱ綺麗な方がいいよねー。と思って、翌々見てみたら自分のPCの文字がデフォルトのフォントのままだった。 いつもお気に入りのフォントがあってそれを使っていたのだが、LaptopのOSをUbuntuからelementary OSに入れ替えた時からデフォルトのフォントのままになってた。
 ちなみにMiguフォントがお気に入りのフォントです。
 濁点、半濁点が見やすく、美しい。タイプしててキモチイイ。
@@ -895,33 +473,11 @@ Chromium 設定 ＞ Webコンテンツ ＞ フォントをカスタマイズ に
 ##SublimeTextのフォントも変更してみる
 設定ファイル Preferences &amp;gt; Settings-Userをクリック
 Preferences.sublime-settings
-{ &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;, &amp;quot;font_size&amp;quot;: 12, }  なんだかフォントを変更しただけで少し幸せになれた気がする</description>
-    </item>
-    
-    <item>
-      <title>Escape Mozc with SublimeText</title>
-      <link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link>
-      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid>
-      <description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
+{ &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;, &amp;quot;font_size&amp;quot;: 12, } なんだかフォントを変更しただけで少し幸せになれた気がする</description></item><item><title>Escape Mozc with SublimeText</title><link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link><pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid><description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
 vimではMozc側の対応だけで出来てるんだけど。
 今の所Escape2回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
-依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description>
-    </item>
-    
-    <item>
-      <title>Linux版SublmeTextでの日本語入力</title>
-      <link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link>
-      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid>
-      <description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
+依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description></item><item><title>Linux版SublmeTextでの日本語入力</title><link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link><pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid><description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
 ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。
-SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人  まさに。求めていたもの。
+SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人 まさに。求めていたもの。
 SCIM、uim、その他のIMには対応していません。とあるものの自分はibus-mozc使ってるのでOK
-若干課題は残る  たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）  良いソリューションは無いのか</description>
-    </item>
-    
-  </channel>
-</rss>
+若干課題は残る たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた） 良いソリューションは無いのか</description></item></channel></rss>

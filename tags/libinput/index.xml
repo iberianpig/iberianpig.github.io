@@ -1,39 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Libinput on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/libinput/</link>
-    <description>Recent content in Libinput on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 15 Jul 2018 00:05:21 +0900</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/tags/libinput/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title>
-      <link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link>
-      <pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid>
-      <description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Libinput on iberianpigsty</title><link>https://iberianpig.github.io/tags/libinput/</link><description>Recent content in Libinput on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 15 Jul 2018 00:05:21 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/libinput/index.xml" rel="self" type="application/rss+xml"/><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
- Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している  ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
+Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
 また、X11でもライブラリをインストールすればラッパー経由でlibinputを利用できる
 libinputかsynapticsのどちらが有効か 判別方法は以下
-$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)]  Touchpadの記述を含んだ行が見つかる。</description>
-    </item>
-    
-    <item>
-      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
-      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
-      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
-      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)] Touchpadの記述を含んだ行が見つかる。</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
@@ -47,8 +18,4 @@ fusumaコマンドで起動。
 ~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
-swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
-    </item>
-    
-  </channel>
-</rss>
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description></item></channel></rss>

@@ -1,45 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ubuntu on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/ubuntu/</link>
-    <description>Recent content in Ubuntu on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 06 Feb 2017 17:53:41 +0900</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title>
-      <link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link>
-      <pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid>
-      <description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on iberianpigsty</title><link>https://iberianpig.github.io/tags/ubuntu/</link><description>Recent content in Ubuntu on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Mon, 06 Feb 2017 17:53:41 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title><link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link><pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid><description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
 リポジトリを追加する
-sudo apt-add-repository -y ppa:teejee2008/ppa  ukuuのインストール
-sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu  Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
+sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール
+sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
 カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
 記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
 HWEカーネル用パッケージのインストール HWEカーネルとは
- HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
- 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
+HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
+安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
 linux-generic-hwe-16.04-edgeをインストール
-sudo apt install linux-generic-hwe-16.04-edge  バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux  カーネルバージョンは4.</description>
-    </item>
-    
-    <item>
-      <title>node/npmをUbuntuにインストールする方法</title>
-      <link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link>
-      <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid>
-      <description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
+sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.</description></item><item><title>node/npmをUbuntuにインストールする方法</title><link>https://iberianpig.github.io/posts/2015-08-15-install-node/</link><pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-15-install-node/</guid><description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
 環境はElementary OS freya(Ubuntu14.04ベース)
 nodesource.comで管理しているppaを利用 PPAから最新のnodeを入れる。 最初からPPAを登録するのではなく、nodesource.comからインストールスクリプトを落として実行する。
@@ -53,36 +24,18 @@ version番号の確認 node -v
 v0.12.7
 npm -v
 2.11.3
-色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description>
-    </item>
-    
-    <item>
-      <title>MySQL WorkbenchでQueryの結果が表示されない問題</title>
-      <link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link>
-      <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid>
-      <description> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
+色々やってるようだけど内部ではPPAを追加してるようで、sudo apt-get updateでアップデートできるようになる</description></item><item><title>MySQL WorkbenchでQueryの結果が表示されない問題</title><link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link><pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid><description> elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
 具体的には以下のような症状。
- workbencだQueryの結果が白くなって表示されない。
+workbencだQueryの結果が白くなって表示されない。
 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
 調査してみた 色々な人が死んでた
 workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
 また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
-下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install  buildは1.5h程度は見込んでおいた方が良い。
+下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。
 sudo make install後にrebootするときちんとresultが表示される。
-special thanks  reddit  launchpad   </description>
-    </item>
-    
-    <item>
-      <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
-      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
-      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
-      <description>世界各国のLinuxerの皆さん、こんばんは
+special thanks reddit launchpad</description></item><item><title>Linuxでブルーライトフィルタ そして快眠へ...</title><link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link><pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid><description>世界各国のLinuxerの皆さん、こんばんは
 寝不足のLinuxer達に贈る 最近、寝不足のような気がすることはないだろうか？　毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなど努力したことはあるはず。
 現実問題難しい。
@@ -93,8 +46,8 @@ PCメガネ、JINS PC jins(http://www.jins-jp.com/jins-pc/)のメガネ。
 メガネを買うか否か （ハードで何とかするんじゃない、ソフトウェアでどうにかするんだ…！） &amp;gt; そんなLinuxer達の心の声が聞こえてきそうだ。(自分は買ってしまった)
 ブルーライトをカットする 本題に入る。
 実はこのブルーライト、色温度を下げることで減量させることができる。
- 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
- 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
 今回はRedshiftというソフトウェアを利用。
 Redshift manual page このソフトウェアを使えば、手持ちのマシンから放たれるブルーライトが低減できる。
@@ -102,12 +55,8 @@ Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消�
 Redshiftのインストール sudo apt-get install redshift redshift-gtk
 パネルのインジケーターに表示させることができる。コマンドラインでも使えるため、その場合redshift-gtkは必要ない。
 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
- toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
 こちらのサイトで詳しく紹介されていた。
 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
 夜の寝付きの良さが変わるはず。
-Linuxer達に良き睡眠を。</description>
-    </item>
-    
-  </channel>
-</rss>
+Linuxer達に良き睡眠を。</description></item></channel></rss>

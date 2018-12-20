@@ -1,28 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Css on iberianpigsty</title>
-    <link>https://iberianpig.github.io/categories/css/</link>
-    <description>Recent content in Css on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 12 Sep 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/categories/css/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>twitterbootstrapでnavbarがモバイル表示にならない</title>
-      <link>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</link>
-      <pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</guid>
-      <description>mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
-&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt;  つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Css on iberianpigsty</title><link>https://iberianpig.github.io/categories/css/</link><description>Recent content in Css on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Fri, 12 Sep 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/categories/css/index.xml" rel="self" type="application/rss+xml"/><item><title>twitterbootstrapでnavbarがモバイル表示にならない</title><link>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</link><pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</guid><description>mobileデバイス用のViewが768pxの際に切り替えが行われない。 PCブラウザ上では、サイズ変更時にViewが変わったが、実機やDeveloper toolでのエミュレーションでは適用されなかった。
+&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1&amp;quot;&amp;gt; つまるところ、これをhtmlのヘッダに下記を書き込んで置かないと行けなかった。 小一時間使ってしまった。
 ご参考(http://getbootstrap.com/css/#overview-mobile)
- Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&amp;rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&amp;rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</description>
-    </item>
-    
-  </channel>
-</rss>
+Mobile first With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we&amp;rsquo;ve rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they&amp;rsquo;re baked right into the core. In fact, Bootstrap is mobile first. Mobile first styles can be found throughout the entire library instead of in separate files.</description></item></channel></rss>
