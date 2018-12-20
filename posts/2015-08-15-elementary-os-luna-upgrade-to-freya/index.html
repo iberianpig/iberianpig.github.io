@@ -446,14 +446,8 @@ sudo apt-get install redis-server
     <header>Kohei Yamada</header>
     <div>Linux、Ruby on Rails、AngularJS、Androidなどが中心の技術ブログです。Github(https://github.com/iberianpig) 上でOSSのツールを公開しています。フリーランスのエンジニアとして活動中です。仕事の依頼等はTwitter: @nukumaro22 / Gmail: yhkyky@gmail.com まで。</div>
   </section>
-  <a class="twitter-timeline"
-  data-no-instant 
-  data-dnt="true"
-  data-theme="light"
-  data-link-color="#337ab7"
-  data-tweet-limit="5"
-  data-chrome="noborder noscrollbar noheader"
-  href="https://twitter.com/nukumaro22"></a>
+  <div id="js-twitter-timeline" data-no-instant >
+</div>
 
 
 </aside>
@@ -523,17 +517,28 @@ sudo apt-get install redis-server
       t.ready = function(f) {
         t._e.push(f);
       };
+    
       return t;
     }(document, "script", "twitter-wjs"));
   };
   InstantClick.on('change', function(isInitialLoad) {
-    twitterWidget();
-    if(isInitialLoad) { return; }
-    twttr.ready(function () {
-      twttr.widgets.createTweet(
-        '971659711429955585',
-        document.getElementById('twtcon-971659711429955585'),
-        { theme: 'white' }
+    if(isInitialLoad) {
+      twitterWidget();
+    }
+    twttr.ready(function (twttr) {
+      twttr.widgets.createTimeline(
+      {
+        sourceType: "profile",
+        screenName: "nukumaro22",
+        },
+        document.getElementById("js-twitter-timeline"),
+        {
+          dnt: "true",
+          theme: "light",
+          linkColor: "#337ab7",
+          tweetLimit: "5",
+          chrome: "noborder noscrollbar noheader"
+        }
       );
     });
   });
