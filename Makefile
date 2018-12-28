@@ -1,7 +1,7 @@
 all: help
 
 deploy: ## update posts to iberianpig.github.io
-	bash -c "./deploy.sh"
+	./deploy.sh
 
 TITLE=""
 new_post: ## create new post with TITLE=awesome_title
