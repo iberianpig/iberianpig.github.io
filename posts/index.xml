@@ -51,10 +51,10 @@ Linux上のタッチパッドでのジェスチャをキーイベントにマッ
 ワークスペースの切り替えする横スワイプが襖を開ける動作と似てるところが由来。
 TouchEggやGinsなどUbuntuのWikiに紹介されるようなライブラリは利用するのに一癖ある。そして設定で上手くいかないケースが多い。
 Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利用してタッチパッドの出力を読み取り、任意のスクリプトを発行出来る。そのため、タッチパッドのデバッグログ出力さえ出来ればジェスチャ解釈はできるためマルチタッチジェスチャの敷居がかなり低くなった。
-Fusumaの使い方 インストールについては、fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。
+Fusumaの使い方 インストールについては、Fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。
 Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。
 fusumaコマンドで起動。
-~/.config/fusuma/config.ymlに設定ファイルを配置するとfusuma起動時に読み込んでくれる。
+~/.config/fusuma/config.ymlに設定ファイルを配置するとFusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
 swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description></item><item><title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title><link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link><pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid><description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
