@@ -392,14 +392,18 @@ article.single .body .content pre code {
 
 article.single .body .content p>code {
   font-size: .9rem;
+  font-weight: bold;
   line-height: 1rem;
-  background-color: #fff;
-  color: #337ab7;
+  background-color: #eee;
+  color: #002b36;
+  border-radius: 4px;
+  padding: 4px 6px;
+  margin: 2px;
 }
 
-article.single .body h1 { margin: 2rem 0 0; font-weight: 700; }
-article.single .body h2 { margin: 2rem 0 0; font-weight: 700; }
-article.single .body h3 { margin: 1rem 0 0; font-weight: 700; }
+article.single .body h1 { margin: 4rem 0 0; font-weight: 700; }
+article.single .body h2 { margin: 3rem 0 0; font-weight: 700; }
+article.single .body h3 { margin: 2rem 0 0; font-weight: 700; }
 
 /* Helpers */
 ul.h-inline,
