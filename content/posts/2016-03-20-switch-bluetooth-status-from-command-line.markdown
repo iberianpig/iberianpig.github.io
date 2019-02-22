@@ -13,7 +13,7 @@ image: https://upload.wikimedia.org/wikipedia/commons/f/fc/BluetoothLogo.svg
 
 
 以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
-[EasytetherでBluetoothテザリング](http://iberianpig.github.io/blog/2015/06/07/easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/)
+[EasytetherでBluetoothテザリング](https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/)
 
 端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
 EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。

@@ -14,7 +14,7 @@ MetaDataFormat = "yaml"
     GoogleAdsenseId = "ca-pub-4578444047174224"
     twitterId = "nukumaro22"
     author = "Kohei Yamada"
-    description = "Linux、Ruby on Rails、AngularJS、Androidなどが中心の技術ブログです。Github(https://github.com/iberianpig) 上でOSSのツールを公開しています。フリーランスのエンジニアとして活動中です。仕事の依頼等はTwitter: @nukumaro22 / Gmail: yhkyky@gmail.com まで。"
+    description = "Sony → Wanderlust → StartupTechnology → freelance \n 現在フリーランスのエンジニアチーム山田㌠のリーダーとしてWeb系のスタートアップの開発支援を行っています。\n Past client: Tripbox / Caster / Increments / etc... \n システム開発の依頼は下記までお願いします。 \n Twitter: @nukumaro22\n Gmail: yhkyky@gmail.com"
 
 [params.eyecatch]
     linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 

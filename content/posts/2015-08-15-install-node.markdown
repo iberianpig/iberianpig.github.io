@@ -7,7 +7,7 @@ comments: true
 categories: linux
 tags:
   - ubuntu
-  - javascript 
+  - JavaScript 
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/553px-Node.js_logo.svg.png
 description: "Ubuntuのデフォルトのレポジトリからaptで入るnode/npmのバージョンが最新でなかったのでインストール方法を調査した。"
 

@@ -9,7 +9,8 @@ image: "https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png"
 layout: post
 published: true
 tags:
-- ""
+  - "Ubuntu"
+  - "Kernel"
 title: fwupdでLinuxからUEFI(BIOS)のアップデート
 ---
 

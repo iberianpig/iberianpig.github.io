@@ -8,7 +8,7 @@ layout: post
 published: true
 tags: 
   - "Ubuntu"
-  - "kernel"
+  - "Kernel"
 
 title: "Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法"
 ---

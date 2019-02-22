@@ -1,5 +1,5 @@
 ---
-categories: "linux"
+categories: "Linux"
 comments: true
 date: 2017-05-14T17:27:59+09:00
 description: "FusumaというGemを公開した。Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。"
@@ -29,12 +29,12 @@ Perl製のxSwipe/今回公開したRuby製のFusumaはデバッグログを利�
 
 
 # Fusumaの使い方
-インストールについては、fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。  
+インストールについては、Fusumaのインストール方法(https://github.com/iberianpig/fusuma#installation) を読んで欲しい。  
 **Input Groupにログインユーザ追加後、ログイン・ログアウトしないとFusuma実行ユーザーからタッチパッドが読み取れず、Fusumaが失敗してしまうので注意。**
 
 `fusuma`コマンドで起動。 
 
-`~/.config/fusuma/config.yml`に設定ファイルを配置するとfusuma起動時に読み込んでくれる。
+`~/.config/fusuma/config.yml`に設定ファイルを配置するとFusuma起動時に読み込んでくれる。
 
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 
@@ -140,15 +140,17 @@ event10 GESTURE_SWIPE_UPDATE  +5.41s    4 12.68/-0.53 (19.48/-0.82 unaccelerated
 # その他
 
 はじめてのGemの作成と公開だったので学びが大きかった。
+
 * Bundlerでテンプレが作れる。Bundlerすごい。
-* ディレクトリ構成が分かるようになるのでGemを読めるようになった。
+  * ディレクトリ構成が分かるようになるのでGemを読めるようになった。
 * 英語でちゃんとREADME書くとIssue/PRのやり取りが起こる。
-* しかしREADMEを読まない人が多い。
-* シングルトンクラスを書いてみた。ログ生成と設定の読み込みあたり。
+  * しかしREADMEを読まない人が多い。
+* 初めてシングルトンクラスを書いてみた。
+  * ログ生成とymlのconfigの読み込みあたり。
 * [オブジェクト指向設計実践ガイド　～Rubyでわかる 進化しつづける柔軟なアプリケーションの育て方](https://www.amazon.co.jp/dp/B01L8SEVYI/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)を参考にスワイプやピンチズームのベクトルクラスをダックタイプで書いてみた。
 * Lint駆動開発が良かった。Rubocopに怒られながら書くと自然と綺麗な書き方になる。
-* Hacker NewsのTopに出てる時があって、この時はGitHubのスターが3分に1つくらいのペースでついてた。
+* 一時期Hacker NewsのTopに出てて、この時はGitHubのスターが3分に1つくらいのペースでついてた。
 
-# 参考URL
+## URLなど
 * https://github.com/iberianpig/fusuma
 * https://github.com/iberianpig/xswipe
