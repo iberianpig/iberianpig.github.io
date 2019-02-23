@@ -479,13 +479,13 @@ task :new_post, :title do |t, args| if args.title title = args.title else title 
 SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description></item><item><title>Migu Font</title><link>https://iberianpig.github.io/posts/2013-11-02-migu-font/</link><pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-11-02-migu-font/</guid><description>#フォントをMigu Fontへ変更
 昨日Steve Jobsの映画見てから、フォントはやっぱ綺麗な方がいいよねー。と思って、翌々見てみたら自分のPCの文字がデフォルトのフォントのままだった。 いつもお気に入りのフォントがあってそれを使っていたのだが、LaptopのOSをUbuntuからelementary OSに入れ替えた時からデフォルトのフォントのままになってた。
 ちなみにMiguフォントがお気に入りのフォントです。
-濁点、半濁点が見やすく、美しい。タイプしててキモチイイ。
+濁点、半濁点が見やすく、美しい。タイプしてて気持ちいい。
 ##ブラウザのフォントを変更してみる。
 Chromium 設定 ＞ Webコンテンツ ＞ フォントをカスタマイズ にて設定。
 ##SublimeTextのフォントも変更してみる
 設定ファイル Preferences &amp;gt; Settings-Userをクリック
 Preferences.sublime-settings
-{ &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;, &amp;quot;font_size&amp;quot;: 12, } なんだかフォントを変更しただけで少し幸せになれた気がする</description></item><item><title>Escape Mozc with SublimeText</title><link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link><pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid><description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
+{ &amp;quot;font_face&amp;quot;: &amp;quot;Migu 1M&amp;quot;, &amp;quot;font_size&amp;quot;: 12, } フォントを変更しただけで少し幸せになれた</description></item><item><title>Escape Mozc with SublimeText</title><link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link><pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid><description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
 vimではMozc側の対応だけで出来てるんだけど。
 今の所Escape2回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
 依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description></item><item><title>Linux版SublmeTextでの日本語入力</title><link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link><pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid><description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
