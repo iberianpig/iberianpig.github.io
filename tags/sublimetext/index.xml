@@ -1,9 +1,51 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sublimetext on iberianpigsty</title><link>https://iberianpig.github.io/tags/sublimetext/</link><description>Recent content in Sublimetext on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Tue, 19 Nov 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/sublimetext/index.xml" rel="self" type="application/rss+xml"/><item><title>elementary OSにFcitx＋Mozcを入れてみた</title><link>https://iberianpig.github.io/posts/2013-11-19-fcitx/</link><pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-11-19-fcitx/</guid><description>FcitxとMozcのインストールはこちらを参照。 自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。 SublimeIbusとの連携 以前ブログの中で書いた、SublimeIbusとの連携。 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。 ウィンドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。 しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
-SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description></item><item><title>Escape Mozc with SublimeText</title><link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link><pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid><description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublimetext on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/sublimetext/</link>
+    <description>Recent content in Sublimetext on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Tue, 19 Nov 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iberianpig.github.io/tags/sublimetext/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>elementary OSにFcitx＋Mozcを入れてみた</title>
+      <link>https://iberianpig.github.io/posts/2013-11-19-fcitx/</link>
+      <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-11-19-fcitx/</guid>
+      <description>FcitxとMozcのインストールはこちらを参照。 自分の使っているelementary OSはUbuntu 12.04ベースなので、うまく動くかどうか心配だったが、とりあえず問題なく動いている模様。 SublimeIbusとの連携 以前ブログの中で書いた、SublimeIbusとの連携。 Fcitxはデフォルト設定に変更したが、Ibusは残しておりまだアンインストールしていない状態。 ウィンドウを切り替えると入力窓が迷子になって、2度目の入力以降、入力窓が表示されないバグがあった。 しかし、なんとFcitxを導入することによって、SublimeIbusの入力窓が迷子にならなくなった(謎は解明されていない)。
+SublimeIbus利用時のみIbusのインジケータが表示されているのを見る限り、他のウィンドウではFcitxが使われ SublimeTextだけでIbusが使われている形になっているようだ。 毎度SublimeIbusでWindowIDを取得し直すことになったからかもしれないが、これでLinux＋SublimeText＋Ibus(Mozc)環境を特に大きな不具合もなく利用できるようになった。 若干腑に落ちない所もあるが、結果的に気兼ねなく日本語の入力ができるようになったのでこれはこれでよしとしよう。</description>
+    </item>
+    
+    <item>
+      <title>Escape Mozc with SublimeText</title>
+      <link>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</link>
+      <pubDate>Mon, 28 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-10-28-escape-mozc-with-sublimeibus/</guid>
+      <description>Sublime Text2のInsertモードとSublimeIbus+Mozcの日本語入力モードをEscape一発で同時に抜ける これがやりたい。 Shift+Spaceで入力切換はできたものの。Escapeで抜けられない。 今はエスケープキー押してもMozc日本語からは抜けられない状態。
 vimではMozc側の対応だけで出来てるんだけど。
 今の所Escape2回打ち込んでMozc+SublimeIbusから抜けられると言った所まで。
-依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description></item><item><title>Linux版SublmeTextでの日本語入力</title><link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link><pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid><description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
+依然として、途中で入力窓が迷子になるのは結構不便。日本語を打ち込んでるけど、Windowが表示されないから正しく入力されてるのか変換されているのかがわからない。..。</description>
+    </item>
+    
+    <item>
+      <title>Linux版SublmeTextでの日本語入力</title>
+      <link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link>
+      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid>
+      <description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
 ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。
-SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人 まさに。求めていたもの。
+SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人  まさに。求めていたもの。
 SCIM、uim、その他のIMには対応していません。とあるものの自分はibus-mozc使ってるのでOK
-若干課題は残る たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた） 良いソリューションは無いのか</description></item></channel></rss>
+若干課題は残る  たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）  良いソリューションは無いのか</description>
+    </item>
+    
+  </channel>
+</rss>

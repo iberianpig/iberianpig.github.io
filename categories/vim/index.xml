@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on iberianpigsty</title><link>https://iberianpig.github.io/categories/vim/</link><description>Recent content in Vim on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/categories/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>ranger-explorer.vimをアップデートした</title><link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link><pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid><description>ranger-explorer.vimというVimプラグインをアップデートした。
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on iberianpigsty</title>
+    <link>https://iberianpig.github.io/categories/vim/</link>
+    <description>Recent content in Vim on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate>
+    
+	<atom:link href="https://iberianpig.github.io/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ranger-explorer.vimをアップデートした</title>
+      <link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link>
+      <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid>
+      <description>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
@@ -7,12 +27,21 @@ Vimのファイラのrangerに置き換えるVimプラグイン。 Vimからrang
 ranger rangerはCLIベースの高機能ファイラで、コマンドラインから操作できる。 hjklの移動、yyのヤンク、ddのカット、pのペーストなどVimライクな操作や、コマンドラインでの:rename、:touchなどの操作がサポートされている。
 特に高速なライブプレビューが気に入っており、これだけでrangerを選択するモチベーションになっている。
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
-&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
+&amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く  このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
-let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39; 得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
+let g:ranger_explorer_keymap_edit = &#39;&amp;lt;C-o&amp;gt;&#39; let g:ranger_explorer_keymap_tabedit = &#39;&amp;lt;C-t&amp;gt;&#39; let g:ranger_explorer_keymap_split = &#39;&amp;lt;C-s&amp;gt;&#39; let g:ranger_explorer_keymap_vsplit = &#39;&amp;lt;C-v&amp;gt;&#39;  得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
-fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
-異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</description></item><item><title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title><link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link><pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid><description>Command/Normalモードを間違う 問題はこれ。
+ fzf.vim  ファイル名をあいまい検索(fuzzy-finder)  ranger-explorer.vim  ディレクトリ階層からファイルを選択  tig-explorer.vim  tigでGitの履歴から、git grepからファイルを開く   どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
+異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。</description>
+    </item>
+    
+    <item>
+      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
+      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
+      <description>Command/Normalモードを間違う 問題はこれ。
 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
 gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
@@ -20,8 +49,30 @@ gVimではカーソル形状が矩形と&amp;rsquo;｜&amp;rsquo;が切り替わ
 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
-To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
-if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description></item><item><title>vimで折りたたみしないようにする</title><link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid><description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
-set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</description></item><item><title>vim-surround</title><link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link><pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid><description> テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
+ To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
+ if has(&amp;quot;autocmd&amp;quot;) au InsertEnter * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;quot; au InsertLeave * silent execute &amp;quot;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;quot; au VimLeave * silent execute &amp;quot;!</description>
+    </item>
+    
+    <item>
+      <title>vimで折りたたみしないようにする</title>
+      <link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
+set foldmethod=syntax let perl_fold=1 set foldlevel=100  special thanks vimの折りたたみ設定</description>
+    </item>
+    
+    <item>
+      <title>vim-surround</title>
+      <link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid>
+      <description> テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
 すぐに忘れてしまうのでメモ
-よく使うコマンド コマンド 実行内容 cs({ (を{に置き換える csw&amp;quot; 単語の外側を&amp;quot;で囲む ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に いつも忘れるコマンド コマンド 実行内容 dst tagで囲われた部分を消去 yss&amp;quot; &amp;quot;で行を囲む yss= &amp;lt;%=で行を囲む(vim-rails必須) yss- &amp;lt;%で行を囲む(vim-rails必須) dst tagで囲われた部分を消去 選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む</description></item></channel></rss>
+よく使うコマンド    コマンド 実行内容     cs({ (を{に置き換える   csw&amp;quot; 単語の外側を&amp;quot;で囲む   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に    いつも忘れるコマンド    コマンド 実行内容     dst tagで囲われた部分を消去   yss&amp;quot; &amp;quot;で行を囲む   yss= &amp;lt;%=で行を囲む(vim-rails必須)   yss- &amp;lt;%で行を囲む(vim-rails必須)   dst tagで囲われた部分を消去   選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む    </description>
+    </item>
+    
+  </channel>
+</rss>

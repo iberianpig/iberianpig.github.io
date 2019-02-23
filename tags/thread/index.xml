@@ -1,7 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Thread on iberianpigsty</title><link>https://iberianpig.github.io/tags/thread/</link><description>Recent content in Thread on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/thread/index.xml" rel="self" type="application/rss+xml"/><item><title>ListView and http connection</title><link>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</link><pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</guid><description>雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
-レイアウトをJava側で生成する LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);` レイアウトに要素を追加する Button button1 = new Button(this); button1.setText(&amp;quot;OK&amp;quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);` AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
-public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.
-Parameters: child: the child view to add params: the layout parameters to set on the child
-LinearLayout.LayoutParamsクラス
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thread on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/thread/</link>
+    <description>Recent content in Thread on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://iberianpig.github.io/tags/thread/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ListView and http connection</title>
+      <link>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</link>
+      <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/</guid>
+      <description>雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
+レイアウトをJava側で生成する  LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);`  レイアウトに要素を追加する  Button button1 = new Button(this); button1.setText(&amp;quot;OK&amp;quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);`  AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
+ public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.
+ Parameters: child: the child view to add params: the layout parameters to set on the child
+ LinearLayout.LayoutParamsクラス
 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。
-LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description></item></channel></rss>
+ LayoutParams public LinearLayout.LayoutParams(int w, int h)  他のビューに対する相対位置の指定(addRule)  このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description>
+    </item>
+    
+  </channel>
+</rss>
