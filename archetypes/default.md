@@ -6,7 +6,7 @@ date: {{ .Date  }}
 comments: true
 tags: 
    - ""
-category: ""
+categories: ""
 image: ""
 description: ""
 ---
