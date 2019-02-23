@@ -2,7 +2,7 @@
 layout: post
 title: "Fusumaのインストールと設定"
 draft: false
-date: 2019-02-22T23:07:09-08:00
+date: 2019-02-22T23:07:09+09:00
 comments: true
 tags: 
    - "ruby"
