@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on iberianpigsty</title><link>https://iberianpig.github.io/categories/linux/</link><description>Recent content in Linux on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 15 Jul 2018 00:05:21 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on iberianpigsty</title><link>https://iberianpig.github.io/categories/linux/</link><description>Recent content in Linux on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Fri, 22 Feb 2019 23:07:09 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Fusumaのインストールと設定</title><link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link><pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid><description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリを公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
+RubyGemsにライブラリを公開した時の記事⇓
+Fusumaのインストール 自分のUbuntu16.04ベースのelementary OS lokiだが、 Debian系(パッケージ管理システムにdeb形式)を利用しているOSならコマンドはそのまま利用できるはず。
+Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
+https://wiki.archlinux.org/index.php/Libinput#fusuma
+Ubuntu15.04以上はFusumaがlibinputを利用出来るためが、Ubuntu 12.04系など古いバージョンではsynapticsドライバを利用するxSwipeを試してみて欲しい。
+Rubyのインストール まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
+(もちろんrbenvやrvm使ってても問題ない)
+$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
+$ sudo apt install libinput-tools 今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
+$ sudo apt-get install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
+Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.config/fusuma/config.ymlを開き、以下の内容を貼り付ける
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key ctrl+t&#39; down: command: &#39;xdotool key ctrl+w&#39; 3本指スワイプでブラウザのショートカット操作を登録した。</description></item><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
 Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
