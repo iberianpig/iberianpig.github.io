@@ -1,48 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ruby on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/ruby/</link>
-    <description>Recent content in Ruby on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 22 Feb 2019 23:07:09 +0900</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Fusumaのインストールと設定</title>
-      <link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link>
-      <pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid>
-      <description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリを公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ruby on iberianpigsty</title><link>https://iberianpig.github.io/tags/ruby/</link><description>Recent content in Ruby on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Fri, 22 Feb 2019 23:07:09 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml"/><item><title>Fusumaのインストールと設定</title><link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link><pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid><description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリを公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
 RubyGemsにライブラリを公開した時の記事⇓
-
 Fusumaのインストール 自分のUbuntu16.04ベースのelementary OS lokiだが、 Debian系(パッケージ管理システムにdeb形式)を利用しているOSならコマンドはそのまま利用できるはず。
 Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
 https://wiki.archlinux.org/index.php/Libinput#fusuma
 Ubuntu15.04以上はFusumaがlibinputを利用出来るためが、Ubuntu 12.04系など古いバージョンではsynapticsドライバを利用するxSwipeを試してみて欲しい。
 Rubyのインストール まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
 (もちろんrbenvやrvm使ってても問題ない)
-$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認  依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
-$ sudo apt install libinput-tools  今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
-$ sudo apt-get install xdotool  FusumaをRubyGemsからインストール $ sudo gem i fusuma  rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
+$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
+$ sudo apt install libinput-tools 今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
+$ sudo apt-get install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
 Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml  エディタで~/.config/fusuma/config.ymlを開き、以下の内容を貼り付ける
-swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key ctrl+t&#39; down: command: &#39;xdotool key ctrl+w&#39;  3本指スワイプでブラウザのショートカット操作を登録した。</description>
-    </item>
-    
-    <item>
-      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
-      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
-      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
-      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.config/fusuma/config.ymlを開き、以下の内容を貼り付ける
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key ctrl+t&#39; down: command: &#39;xdotool key ctrl+w&#39; 3本指スワイプでブラウザのショートカット操作を登録した。</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
@@ -56,16 +25,7 @@ fusumaコマンドで起動。
 ~/.config/fusuma/config.ymlに設定ファイルを配置するとFusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
-swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
-    </item>
-    
-    <item>
-      <title>Amazon Dash Buttonで出社する</title>
-      <link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link>
-      <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid>
-      <description>この記事は出社芸アドベントカレンダーの18日目の記事です。
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description></item><item><title>Amazon Dash Buttonで出社する</title><link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link><pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate><guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid><description>この記事は出社芸アドベントカレンダーの18日目の記事です。
 今日のアドベントカレンダーに登録した。
 現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
@@ -91,25 +51,11 @@ swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xd
 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
 実装する 処理は大きく見ると下記の様な流れになる
-Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack  IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description>
-    </item>
-    
-    <item>
-      <title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title>
-      <link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
-      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
-      <description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
-
+Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description></item><item><title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title><link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link><pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid><description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;スクラムでのタスク管理にPivotalTracker(&lt;a href=&#34;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&#34;&gt;http://www.pivotaltracker.com)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される&lt;/li&gt;
 &lt;li&gt;あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li&gt;
 &lt;li&gt;毎回IDを入れるのがめんどくさい、たまに忘れる&lt;/li&gt;
 &lt;li&gt;チームで浸透させたい&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

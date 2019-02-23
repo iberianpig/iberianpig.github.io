@@ -1,29 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Octopress on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/octopress/</link>
-    <description>Recent content in Octopress on iberianpigsty</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja-jp</language>
-    <copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 26 Oct 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://iberianpig.github.io/tags/octopress/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Linux版SublmeTextでの日本語入力</title>
-      <link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link>
-      <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid>
-      <description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Octopress on iberianpigsty</title><link>https://iberianpig.github.io/tags/octopress/</link><description>Recent content in Octopress on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sat, 26 Oct 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/octopress/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux版SublmeTextでの日本語入力</title><link>https://iberianpig.github.io/posts/2013-10-26-first-commit/</link><pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2013-10-26-first-commit/</guid><description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
 ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。
-SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人  まさに。求めていたもの。
+SublimeIbus(https://github.com/chikatoike/SublimeIBus) 対象となる利用者 * Linux の Sublime Text 2 で日本語入力したい人 * InputHelper による日本語入力に不満を持っている人 * iBusを利用している人 まさに。求めていたもの。
 SCIM、uim、その他のIMには対応していません。とあるものの自分はibus-mozc使ってるのでOK
-若干課題は残る  たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた）  良いソリューションは無いのか</description>
-    </item>
-    
-  </channel>
-</rss>
+若干課題は残る たまに日本語入力変換窓が迷子に なぜかDeleteが動かない（日本語入力時） SublimeIbusからSlowなんとかいうワーニングが出る（スクリーンショット撮り忘れた） 良いソリューションは無いのか</description></item></channel></rss>
