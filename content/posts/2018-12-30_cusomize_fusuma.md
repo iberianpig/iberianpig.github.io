@@ -9,7 +9,7 @@ tags:
    - "libinput"
 categories: "Linux"
 image: "https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png"
-description: ""
+description: "Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaの使い方やカスタマイズの方法"
 ---
 
 Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリを公開している。
