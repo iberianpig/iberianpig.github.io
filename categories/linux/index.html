@@ -4,9 +4,10 @@
  システム開発の依頼は下記までお願いします。 
  Twitter: @nukumaro22
  Gmail: yhkyky@gmail.com 
- Github: iberianpig"><meta property=og:image content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content=summary><meta name=twitter:site content=@nukumaro22><meta name=twitter:creator content=@nukumaro22><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4578444047174224",enable_page_level_ads:true});</script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><h1 class=p-page-title>Linux</h1><div class=row><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</time></div><h2 class=title>Fusumaのインストールと設定</h2><div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリを公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
+ Github: iberianpig"><meta property=og:image content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content=summary><meta name=twitter:site content=@nukumaro22><meta name=twitter:creator content=@nukumaro22><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4578444047174224",enable_page_level_ads:true});</script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><h1 class=p-page-title>Linux</h1><div class=row><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</time></div><h2 class=title>Fusumaのインストールと設定</h2><div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
 RubyGemsにライブラリを公開した時の記事⇓
-Fusumaのインストール 自分のUbuntu16.04ベースのelementary OS lokiだが、 Debian系(パッケージ管理システムにdeb形式)を利用しているOSならコマンドはそのまま利用できるはず。
+Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
+自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
 Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
 https://wiki.archlinux.org/index.php/Libinput#fusuma
 Ubuntu15.04以上はFusumaがlibinputを利用出来るためが、Ubuntu 12.04系など古いバージョンではsynapticsドライバを利用するxSwipeを試してみて欲しい。
@@ -14,10 +15,9 @@ Rubyのインストール まず最初にRubyをインストールしてある�
 (もちろんrbenvやrvm使ってても問題ない)
 $ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
 $ sudo apt install libinput-tools 今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
-$ sudo apt-get install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
+$ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
 Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.config/fusuma/config.ymlを開き、以下の内容を貼り付ける
-swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key alt+Left' up: command: 'xdotool key ctrl+t' down: command: 'xdotool key ctrl+w' 3本指スワイプでブラウザのショートカット操作を登録した。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/><div class=image style=background-image:url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png)></div><footer><div class=date><div class=time>Sun, Jul 15, 2018</time></div><h2 class=title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2><div class=summary>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/><div class=image style=background-image:url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png)></div><footer><div class=date><div class=time>Sun, Jul 15, 2018</time></div><h2 class=title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2><div class=summary>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
 Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
