@@ -10,14 +10,15 @@ Fusumaのインストール Debian系を利用しているOS(パッケージ管�
 自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
 Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
 https://wiki.archlinux.org/index.php/Libinput#fusuma
-Ubuntu15.04以上はFusumaがlibinputを利用出来るためが、Ubuntu 12.04系など古いバージョンではsynapticsドライバを利用するxSwipeを試してみて欲しい。
-Rubyのインストール まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
+Ubuntu 15.04以降ではFusumaに依存するlibinputを使用することができるが、Ubuntu 14以下の古いバージョンではsynapticsドライバを使用するxswipexSwipeを試してみて欲しい。
+インストールされているRubyのバージョンを確認 まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
 (もちろんrbenvやrvm使ってても問題ない)
-$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
-$ sudo apt install libinput-tools 今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
-$ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
+$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドを読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
+$ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショートカットを発行できるようにするためxdotoolをインストールする。
+$ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
+(rbenvやrvmでローカルにインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
 Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div><footer><div class=date><div class=time>Sun, Sep 2, 2018</time></div><h2 class=title>ranger-explorer.vimをアップデートした</h2><div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
+$ mkdir -p ~/.</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div><footer><div class=date><div class=time>Sun, Sep 2, 2018</time></div><h2 class=title>ranger-explorer.vimをアップデートした</h2><div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim

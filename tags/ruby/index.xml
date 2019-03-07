@@ -4,14 +4,15 @@ Fusumaのインストール Debian系を利用しているOS(パッケージ管�
 自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
 Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
 https://wiki.archlinux.org/index.php/Libinput#fusuma
-Ubuntu15.04以上はFusumaがlibinputを利用出来るためが、Ubuntu 12.04系など古いバージョンではsynapticsドライバを利用するxSwipeを試してみて欲しい。
-Rubyのインストール まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
+Ubuntu 15.04以降ではFusumaに依存するlibinputを使用することができるが、Ubuntu 14以下の古いバージョンではsynapticsドライバを使用するxswipexSwipeを試してみて欲しい。
+インストールされているRubyのバージョンを確認 まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
 (もちろんrbenvやrvm使ってても問題ない)
-$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませるためにlibinput-toolsを利用する。
-$ sudo apt install libinput-tools 今回はジェスチャからショートカットを発行できるようにするためxdotoolをインストールする。
-$ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma rbenvやrvmでローカルにインストールしているRubyを使う場合sudoは必要なく、$ gem i fusuma でインストール出来る
+$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドを読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
+$ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショートカットを発行できるようにするためxdotoolをインストールする。
+$ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
+(rbenvやrvmでローカルにインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
 Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+$ mkdir -p ~/.</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
