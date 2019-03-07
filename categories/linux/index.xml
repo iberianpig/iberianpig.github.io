@@ -7,7 +7,7 @@ https://wiki.archlinux.org/index.php/Libinput#fusuma
 Ubuntu 15.04以降ではFusumaに依存するlibinputを使用することができるが、Ubuntu 14以下の古いバージョンではsynapticsドライバを使用するxswipexSwipeを試してみて欲しい。
 インストールされているRubyのバージョンを確認 まず最初にRubyをインストールしてあるか確認。 システムにインストールされているRubyでも問題ない。
 (もちろんrbenvやrvm使ってても問題ない)
-$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドを読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
+$ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
 $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショートカットを発行できるようにするためxdotoolをインストールする。
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
 (rbenvやrvmでローカルにインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)

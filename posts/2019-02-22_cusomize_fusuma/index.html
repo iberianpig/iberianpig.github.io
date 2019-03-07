@@ -4,7 +4,7 @@
 
 ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
 # ↑Rubyの2.4がインストールされていることを確認
-</code></pre><h2 id=依存パッケージのインストール>依存パッケージのインストール</h2><p>タッチパッドを読ませる必要があるためlibinput-toolsをインストールする。
+</code></pre><h2 id=依存パッケージのインストール>依存パッケージのインストール</h2><p>タッチパッドの入力を読ませる必要があるため<code>libinput-tools</code>をインストールする。
 (Fusuma内部で<code>libinput debug-events</code>によるデバッグログの出力を利用している)</p><pre><code class=language-shell>$ sudo apt install libinput-tools
 </code></pre><p>また、<code>Alt+Left</code>, <code>Alt+Right</code>などショートカットを発行できるようにするため<code>xdotool</code>をインストールする。</p><pre><code class=language-shell>$ sudo apt install xdotool
 </code></pre><h2 id=fusumaをrubygemsからインストール>FusumaをRubyGemsからインストール</h2><pre><code class=language-shell>$ sudo gem i fusuma
