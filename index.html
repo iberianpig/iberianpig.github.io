@@ -4,13 +4,7 @@
  システム開発の依頼は下記までお願いします。 
  Twitter: @nukumaro22
  Gmail: yhkyky@gmail.com 
- Github: iberianpig"><meta property=og:url content=https://iberianpig.github.io/><meta property=og:description content="Sony → Wanderlust → StartupTechnology → freelance 
- 現在フリーランスのエンジニアチーム山田㌠のリーダーとしてWeb系のスタートアップのコンサルティング、開発支援を行っています。
- Past client: Tripbox / Caster / Increments / etc... 
- システム開発の依頼は下記までお願いします。 
- Twitter: @nukumaro22
- Gmail: yhkyky@gmail.com 
- Github: iberianpig"><meta property=og:image content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content=summary><meta name=twitter:site content=@nukumaro22><meta name=twitter:creator content=@nukumaro22><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4578444047174224",enable_page_level_ads:true});</script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><div class=row><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</time></div><h2 class=title>Fusumaのインストールと設定</h2><div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
+ Github: iberianpig"><meta property=og:url content=https://iberianpig.github.io/><meta property=og:image content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content=summary><meta name=twitter:site content=@nukumaro22><meta name=twitter:creator content=@nukumaro22><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-4578444047174224",enable_page_level_ads:true});</script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><div class=row><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</time></div><h2 class=title>Fusumaのインストールと設定</h2><div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
 RubyGemsにライブラリを公開した時の記事⇓
 Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
 自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
@@ -22,8 +16,8 @@ Ubuntu 15.04以降ではFusumaに依存するlibinputを使用することがで
 $ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
 $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショートカットを発行できるようにするためxdotoolをインストールする。
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
-(rbenvやrvmでローカルにインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
-Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
+(rbenvやrvmでインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
+Fusumaの設定ファイルを作成する ~/.config/fusuma/config.ymlに設定ファイルを作成する。
 $ mkdir -p ~/.</div></footer></a></article></div><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div><footer><div class=date><div class=time>Sun, Sep 2, 2018</time></div><h2 class=title>ranger-explorer.vimをアップデートした</h2><div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)

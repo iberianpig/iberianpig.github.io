@@ -10,8 +10,8 @@ Ubuntu 15.04以降ではFusumaに依存するlibinputを使用することがで
 $ ruby -v ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux] # ↑Rubyの2.4がインストールされていることを確認 依存パッケージのインストール タッチパッドの入力を読ませる必要があるためlibinput-toolsをインストールする。 (Fusuma内部でlibinput debug-eventsによるデバッグログの出力を利用している)
 $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショートカットを発行できるようにするためxdotoolをインストールする。
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
-(rbenvやrvmでローカルにインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
-Fusumaの設定ファイルを作成する 設定ファイル~/.config/fusuma/config.ymlの作成
+(rbenvやrvmでインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
+Fusumaの設定ファイルを作成する ~/.config/fusuma/config.ymlに設定ファイルを作成する。
 $ mkdir -p ~/.</description></item><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
