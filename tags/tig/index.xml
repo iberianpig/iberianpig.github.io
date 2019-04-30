@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tig on iberianpigsty</title><link>https://iberianpig.github.io/tags/tig/</link><description>Recent content in Tig on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 02 Sep 2018 00:05:21 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/tig/index.xml" rel="self" type="application/rss+xml"/><item><title>ranger-explorer.vimをアップデートした</title><link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link><pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid><description>ranger-explorer.vimというVimプラグインをアップデートした。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tig on iberianpigsty</title><link>https://iberianpig.github.io/tags/tig/</link><description>Recent content in Tig on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Tue, 30 Apr 2019 23:57:45 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/tig/index.xml" rel="self" type="application/rss+xml"/><item><title>tig-explorer.vimの使い方</title><link>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</link><pubDate>Tue, 30 Apr 2019 23:57:45 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</guid><description>Vim用のGitクライアントが欲しかった vimのgitプラグインとして何を使っているのが多いだろうか?
+自分の観測範囲ではfugitiveを使っている人が多いようだ。
+しかし、ターミナルではCUIツールで高速なプレビューの出来るtigをGitクライアントとして利用している人は多いのではないだろうか。
+vimでもtigが使いたい。そんな人(自分)のためにvim pluginを作成した。
+tig-explorer.vim
+tig-explorer.vimはtigをvimから扱うプラグイン。
+tigの機能でdiff上からeキーを押下すると任意のエディタで該当箇所を開く事が出来るが、このプラグインを使うと、vimからtigを呼び出すことが出来る。
+tigを開き、差分をチェックして、そこから再びvimで開くことが出来る。
+また、vimからtigを呼び出すには!tigコマンドをvimのコマンドモードから呼び出すことでも同じことが実現でも可能だが、 プロセスがvim-tig-vim-tig-vimのようにどんどんネストしてしまう。
+このプラグインを経由してエディタで開く場合は親のvimプロセスで開くため、vim上のbuffer移動やhistory、yankが途切れることがない。
+また、vimからtigに行番号やファイル名を渡せるので、↓のコマンドが格段に扱いやすくなる。
+tig FILEPATHで閲覧中のファイルの履歴を見る(:TigOpenCurrentFile)
+tig grep PATTERN PATHでプレビューしてから開く(:TigGrep)
+tig blame FILEPATHで現在のファイル履歴を行単位で見る(:TigBlame)
+tig-explorer.vimのカスタマイズ .vimrcの記述例
+&amp;quot; tigを開く nnoremap &amp;lt;Leader&amp;gt;t :TigOpenProjectRootDir&amp;lt;CR&amp;gt; &amp;quot; 現在のファイルの履歴を見る nnoremap &amp;lt;Leader&amp;gt;T :TigOpenCurrentFile&amp;lt;CR&amp;gt; &amp;quot; パターンでtig grepする nnoremap &amp;lt;Leader&amp;gt;g :TigGrep&amp;lt;CR&amp;gt; &amp;quot; tig grepした内容を再呼び出しする nnoremap &amp;lt;Leader&amp;gt;r :TigGrepResume&amp;lt;CR&amp;gt; &amp;quot; 選択中のキーワードでtig grepする vnoremap &amp;lt;Leader&amp;gt;g y:TigGrep&amp;lt;Space&amp;gt;&amp;lt;C-R&amp;gt;&amp;quot;&amp;lt;CR&amp;gt; &amp;quot; カーソル下のキーワードでtig grepする nnoremap &amp;lt;Leader&amp;gt;cg :&amp;lt;C-u&amp;gt;:TigGrep&amp;lt;Space&amp;gt;&amp;lt;C-R&amp;gt;&amp;lt;C-W&amp;gt;&amp;lt;CR&amp;gt; &amp;quot; 現在のカーソル位置でtig blameする nnoremap &amp;lt;Leader&amp;gt;b :TigBlame&amp;lt;CR&amp;gt; また、このプラグインの特徴的なところでtig上でCtrl-tを押下するとvimのタブで開く機能が追加されている。 同様にCtrl-sで水平分割, Ctrl-vで垂直分割出来る。</description></item><item><title>ranger-explorer.vimをアップデートした</title><link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link><pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid><description>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
