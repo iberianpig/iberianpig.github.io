@@ -1,16 +1,15 @@
 #!/bin/bash
 
-echo -e "\033[0;32mCreating new post...\033[0m"
+read -ep "blog title: " title
 
-if [ $# -eq 1 ]; then
-  title="_$1"
-else
-  title=""
-fi
+echo -e "\033[0;32mCreating new post...\033[0m"
 
 formatted_date=$(date "+%Y-%m-%d")
 
-path="posts/${formatted_date}${title}.md" 
+underscore_tilte=$(echo $title | sed -e "s/ /_/g")
+
+path="posts/${formatted_date}_${underscore_tilte}.md" 
+echo $path
 
 hugo new $path
 

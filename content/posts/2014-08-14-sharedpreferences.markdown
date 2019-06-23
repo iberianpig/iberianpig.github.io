@@ -4,8 +4,8 @@ title: "Androidでのデータの保存"
 date: 2014-08-14
 comments: true
 tags: 
+  - android
   - SharedPreferences 
-categories: android
 ---
 
 

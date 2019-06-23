@@ -5,7 +5,7 @@ published: false
 date: 2016-02-21
 comments: true
 tags: 
-categories: aws
+  - aws
 ---
 
 # AWS上でUbuntu14.04, Rails4を利用して環境設定する

@@ -6,8 +6,8 @@ date: 2018-09-02T00:05:21+09:00
 comments: true
 tags: 
    - ranger
-   - tig
-categories: "vim"
+   - vim
+   - git
 image: "https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif"
 description: "ranger-explorer.vimをアップデートしてranger上からvimのタブや画面分割で開けるようした"
 ---

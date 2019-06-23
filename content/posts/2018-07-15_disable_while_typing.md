@@ -1,5 +1,4 @@
 ---
-categories: "Linux"
 comments: true
 date: 2018-07-15T00:05:21+09:00
 description: ""
@@ -7,7 +6,8 @@ image: "https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png"
 layout: post
 published: true
 tags:
-- "libinput"
+  - "libinput"
+  - "Linux"
 title: タイピング中にタッチパッドを無効にする(Linux/Libinput)
 ---
 

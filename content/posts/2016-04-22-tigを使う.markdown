@@ -5,8 +5,7 @@ published: true
 date: 2016-04-22
 comments: true
 tags: 
-  - tig
-categories: git
+  - git
 image: https://i.gyazo.com/a1a8623055ef27ee3ba7ffcb2b65d116.png
 description: CUIなGitクライアントであるtigの使い方と便利なオプションのまとめ 
 ---

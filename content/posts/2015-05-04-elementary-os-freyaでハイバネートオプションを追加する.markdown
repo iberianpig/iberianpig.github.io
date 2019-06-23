@@ -5,8 +5,8 @@ published: true
 date: 2015-05-04
 comments: true
 tags: 
+  - Linux
   - elementaryOS
-categories: Linux
 image: https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg
 ---
 

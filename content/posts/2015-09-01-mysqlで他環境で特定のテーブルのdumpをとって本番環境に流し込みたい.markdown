@@ -4,8 +4,8 @@ title: "mysqlで特定のテーブルのDumpをのみ取得する"
 published: true
 date: 2016-01-23
 comments: true
-categories: Rails
 tags: 
+  - Rails
   - sql
 image: https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png
 ---

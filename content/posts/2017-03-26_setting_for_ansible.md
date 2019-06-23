@@ -1,5 +1,4 @@
 ---
-categories: ""
 comments: true
 date: 2017-03-26T10:21:35+09:00
 description: ""

@@ -1,5 +1,4 @@
 ---
-categories: "Linux"
 comments: true
 date: 2017-02-06T17:53:41+09:00
 description: "カーネルバージョン4.4ではディスプレイ周りの不具合が多かったため、カーネルバージョンを4.8までアップグレードした。"
@@ -7,6 +6,7 @@ image: "https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png"
 layout: post
 published: true
 tags: 
+  - "Linux"
   - "Ubuntu"
   - "Kernel"
 

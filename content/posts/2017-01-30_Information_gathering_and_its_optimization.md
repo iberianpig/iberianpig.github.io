@@ -1,5 +1,4 @@
 ---
-categories: "Life"
 comments: true
 date: 2017-01-30T02:52:18+09:00
 description: "長期記憶に持っていくための工夫。複数のWEBサービスを組み合わせて記憶に残す仕組みを作る"
@@ -7,6 +6,7 @@ image: "https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png"
 layout: post
 published: true
 tags:
+  - "Life"
   - "Kindle"
   - "Pocket"
   - "Twitter"

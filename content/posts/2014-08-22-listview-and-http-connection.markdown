@@ -5,10 +5,10 @@ published: true
 date: 2014-08-01
 comments: true
 tags:
+  - android
   - HTTP
   - ListView
   - Thread
-categories: android
 
 ---
 

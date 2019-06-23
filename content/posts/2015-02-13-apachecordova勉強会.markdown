@@ -7,7 +7,7 @@ comments: true
 tags: 
   - Cordova
   - PhoneGap
-categories: HTML5
+  - HTML5
 ---
 
 # ApacheCordova勉強会第4回

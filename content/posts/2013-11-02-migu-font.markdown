@@ -3,9 +3,9 @@ layout: post
 title: "Migu Font"
 date: 2013-11-02
 comments: true
-categories: Linux
 tags: 
- - font
+  - font
+  - Linux
 ---
 
 #フォントをMigu Fontへ変更

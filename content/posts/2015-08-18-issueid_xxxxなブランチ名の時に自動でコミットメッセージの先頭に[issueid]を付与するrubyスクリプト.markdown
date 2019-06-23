@@ -4,8 +4,8 @@ title: "自動でコミットメッセージの先頭にIssueIDを付与するGi
 published: true
 date: 2015-08-18
 comments: true
-categories: git
 tags:
+   - git
    - ruby
    - pivotaltracker
 image: https://i.gyazo.com/abfa076d4f3affdf717d87351b8ca5fe.png

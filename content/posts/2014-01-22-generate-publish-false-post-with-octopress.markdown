@@ -3,7 +3,8 @@ layout: post
 title: "Octopressで下書き保存をデフォルト設定にする方法"
 date: 2014-01-22
 comments: true
-categories: Octopress
+tags: 
+  - Octopress
 published: true
 ---
 

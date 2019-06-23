@@ -4,7 +4,6 @@ title: "技術メモ"
 published: false
 date: 2015-09-15
 comments: true
-categories: 技術メモ
 
 ---
 

@@ -1,5 +1,4 @@
 ---
-categories: "Linux"
 comments: true
 date: 2017-06-25T22:48:09+09:00
 description: "Linuxデスクトップを利用する際に少し問題になるBIOSのアップデート。
@@ -9,6 +8,7 @@ image: "https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png"
 layout: post
 published: true
 tags:
+  - "Linux"
   - "Ubuntu"
   - "Kernel"
 title: fwupdでLinuxからUEFI(BIOS)のアップデート

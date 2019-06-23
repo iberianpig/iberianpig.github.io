@@ -5,8 +5,8 @@ published: true
 date: 2015-08-15
 comments: false
 tags: 
-   - elementaryOS
-categories: Linux
+  - Linux
+  - elementaryOS
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Elementary_OS_Freya_Desktop.png/1024px-Elementary_OS_Freya_Desktop.png
 ---
 

@@ -1,13 +1,13 @@
 ---
-categories: "prototyping"
 comments: true
 date: 2016-08-08T06:32:00+09:00
 image: https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png
 layout: post
 published: true
 tags:
-  - "node"
+  - node
   - "API"
+  - "prototyping"
 title: プロトタイピングのためのスタブAPIサーバ
 description: APIサーバが出来てない、もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
 ---

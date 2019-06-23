@@ -5,10 +5,10 @@ published: true
 date: 2015-06-21
 comments: true
 tags: 
+    - Linux
     - mysql
     - elementaryOS
     - ubuntu
-categories: Linux
 image: https://c1.staticflickr.com/4/3913/14522157584_42fff58cfc_z.jpg
 ---
 

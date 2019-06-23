@@ -6,7 +6,7 @@ date: 2015-04-21
 comments: true
 tags:
   - strategy
-categories: marketing
+  - marketing
 ---
 
 会社の方針決めるために、企業戦略のたて方についての勉強する。  

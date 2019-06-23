@@ -1,5 +1,4 @@
 ---
-categories: "Life"
 comments: true
 date: 2017-01-24T23:58:22+09:00
 description: "風呂で読書するというのを一度やってみたかったのでやってみた。"
@@ -7,8 +6,9 @@ image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Amazon_Kindle_
 layout: post
 published: true
 tags:
-- "Kindle"
-- "風呂"
+  - "Life"
+  - "Kindle"
+  - "風呂"
 title: "風呂キンドルのすゝめ"
 ---
 

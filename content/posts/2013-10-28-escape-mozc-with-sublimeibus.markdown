@@ -3,9 +3,9 @@ layout: post
 title: "Escape Mozc with SublimeText"
 date: 2013-10-28
 comments: true
-categories: Linux
 tags: 
   - SublimeText
+  - Linux
 image: https://c1.staticflickr.com/9/8153/7461173568_47109f7e24_b.jpg
 ---
 

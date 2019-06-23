@@ -1,5 +1,4 @@
 ---
-categories: "Linux"
 comments: true
 date: 2017-05-14T17:27:59+09:00
 description: "FusumaというGemを公開した。Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。"
@@ -7,8 +6,9 @@ image: "https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f
 layout: post
 published: true
 tags:
-- "ruby"
-- "libinput"
+  - Linux
+  - ruby
+  - libinput
 title: "Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った"
 ---
 

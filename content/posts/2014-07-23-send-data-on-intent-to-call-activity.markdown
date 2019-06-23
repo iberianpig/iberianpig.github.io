@@ -5,7 +5,7 @@ published: true
 date: 2014-07-23
 comments: true
 tags: 
-categories: android
+  - android
 ---
 
 #Activityとは

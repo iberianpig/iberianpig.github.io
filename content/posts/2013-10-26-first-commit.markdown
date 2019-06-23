@@ -3,10 +3,10 @@ layout: post
 title: "Linux版SublmeTextでの日本語入力"
 date: 2013-10-26
 comments: true
-categories: Linux
 tags:
   - SublimeText
   - Octopress
+  - Linux
 ---
 
 

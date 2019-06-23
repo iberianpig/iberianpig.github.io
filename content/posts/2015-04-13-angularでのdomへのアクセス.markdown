@@ -5,8 +5,8 @@ published: true
 date: 2015-04-13
 comments: true
 tags: 
+  - javascript
   - angularJS
-categories: javascript
 ---
 
 AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。  

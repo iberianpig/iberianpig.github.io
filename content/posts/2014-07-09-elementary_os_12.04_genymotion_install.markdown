@@ -6,7 +6,8 @@ date: 2014-07-09
 comments: true
 tags: 
   - elementaryOS
-categories: android
+  - android
+
 ---
 
 # 爆速Android用のエミュレータGenyMotion導入

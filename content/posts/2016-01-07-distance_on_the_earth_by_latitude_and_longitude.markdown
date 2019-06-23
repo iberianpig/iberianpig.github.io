@@ -5,7 +5,7 @@ published: false
 date: 2016-01-07
 comments: true
 tags: 
-categories: ruby
+  - ruby
 image: https://upload.wikimedia.org/wikipedia/commons/d/dd/West_Africa_Catalan_Atlas.jpg
 ---
 

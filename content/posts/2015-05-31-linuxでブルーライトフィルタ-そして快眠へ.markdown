@@ -8,7 +8,7 @@ tags:
    - Ubuntu
    - elementaryOS
    - lifehack
-categories: Linux
+   - Linux
 image: http://jonls.dk/assets/redshift-icon-256.png
 ---
 

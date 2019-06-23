@@ -3,9 +3,8 @@ all: help
 deploy: ## update posts to iberianpig.github.io
 	./deploy.sh
 
-TITLE=""
-new_post: ## create new post with TITLE=awesome_title
-	./new_post.sh ${TITLE}
+new_post: ## create new post
+	./new_post.sh
 
 watch: ## build and serve site on http://localhost:1313
 	hugo server --buildDrafts --watch

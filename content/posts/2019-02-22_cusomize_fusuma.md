@@ -5,9 +5,9 @@ draft: false
 date: 2019-02-22T23:07:09+09:00
 comments: true
 tags: 
-   - "ruby"
-   - "libinput"
-categories: "Linux"
+   - Linux
+   - ruby
+   - libinput
 image: "https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png"
 description: "Linux上でタッチパッド上のジェスチャーにアクションを定義出来るFusumaのインストール方法やカスタマイズについて説明する"
 ---

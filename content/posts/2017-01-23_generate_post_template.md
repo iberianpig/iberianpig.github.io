@@ -1,12 +1,12 @@
 ---
-categories: "hugo"
 comments: true
 date: 2017-01-23T19:36:53+09:00
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png"
 layout: post
 published: true
 tags:
-- "shellscript"
+  - "hugo"
+  - "shellscript"
 title: "簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った"
 ---
 

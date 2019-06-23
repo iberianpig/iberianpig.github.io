@@ -5,8 +5,8 @@ published: true
 date: 2015-01-26
 comments: true
 tags: 
+  - HTML5
   - Cordova
-categories: HTML5
 ---
 
 # Codova勉強会行ってきた

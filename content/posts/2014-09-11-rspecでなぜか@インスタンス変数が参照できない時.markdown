@@ -6,7 +6,7 @@ date: 2014-09-11
 comments: true
 tags: 
   - Rspec
-categories: Rails
+  - Rails
 ---
 
 Rspecの世界からController内メソッドでインスタンス変数`@hoge`を利用した場合は、

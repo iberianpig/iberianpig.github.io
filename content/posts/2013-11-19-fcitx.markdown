@@ -3,8 +3,8 @@ layout: post
 title: elementary OSにFcitx＋Mozcを入れてみた
 date: 2013-11-19
 comments: true
-categories: Linux
 tags: 
+  - Linux
   - SublimeText
   - Fcitx
   - Ibus

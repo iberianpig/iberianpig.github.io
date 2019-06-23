@@ -8,6 +8,9 @@ canonifyurls = true
 publishdir = "public"
 MetaDataFormat = "yaml"
 
+[taxonomies]
+  tag = "tags"
+
 [params]
     disqusShortname = "iberianpigsty"
     GoogleAnalyticsUserID = "UA-45334010-1"

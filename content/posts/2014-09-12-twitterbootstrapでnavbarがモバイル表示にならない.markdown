@@ -6,7 +6,7 @@ date: 2014-09-12
 comments: true
 tags: 
   - bootstrap
-categories: css
+  - css
 ---
 
 mobileデバイス用のViewが768pxの際に切り替えが行われない。
