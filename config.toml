@@ -1,7 +1,7 @@
 baseurl = "https://iberianpig.github.io/"
 languageCode = "ja-jp"
 title = "iberianpigsty"
-copyright = "Copyright (c) 2014 - 2016, iberianpigsty; all rights reserved."
+copyright = "Copyright (c) 2014 - 2019, iberianpigsty; all rights reserved."
 paginate = 16
 theme = "hugo_theme_robust"
 canonifyurls = true
@@ -17,9 +17,10 @@ MetaDataFormat = "yaml"
     GoogleAdsenseId = "ca-pub-4578444047174224"
     twitterId = "nukumaro22"
     githubId = "iberianpig"
-    email = "yhkyky@gmail.com"
+    email = "yhkyky+work@gmail.com"
     author = "Kohei Yamada"
-    aboutme = "Sony → Wanderlust → StartupTechnology → freelance 現在フリーランスのエンジニアチーム山田㌠のリーダーとしてWeb系のスタートアップのコンサルティング、開発支援を行っています。サーバーサイド、特にRubyが得意ですが、フロントエンドもやります。"
+    aboutme = "趣味・仕事で平日休日変わらず毎日コードを書いてます。東京で活動中のフリーランスのエンジニア。"
+    aboutwork = "フリーランスのエンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず対応可能ですが、バックエンド、特にRubyだとバリューが出しやすいです。お仕事のご相談はemailかtwitterでお願いします。"
     description = "iberianpigの技術ブログ"
 
 [params.eyecatch]
