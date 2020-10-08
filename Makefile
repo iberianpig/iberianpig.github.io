@@ -1,5 +1,8 @@
 all: help
 
+setup: ## clone public and setup
+	git clone https://iberianpig/iberianpig.github.io public
+    git clone https://github.com/iberianpig/hugo_theme_robust themes/hugo_theme_robust
 deploy: ## update posts to iberianpig.github.io
 	./deploy.sh
 
