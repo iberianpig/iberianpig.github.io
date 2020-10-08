@@ -12,7 +12,7 @@ description: "elementary OS 5.0 Junoにアップグレードした"
 
 下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)
 
-elementary OSはUIが綺麗で動作が軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。
+elementary OSはUIが綺麗でかつ動作も軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://elementary.io/ja/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Felementary.io%2Fja%2F&amp;key=f073c4f447189e73167146bd9d0f6195&amp;iframe=card-small"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
