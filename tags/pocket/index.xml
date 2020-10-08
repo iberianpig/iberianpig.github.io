@@ -5,10 +5,9 @@ https://github.com/ffi/ffi/wiki/projects-using-ffi
 キー入力のエミュレーションライブラリのxdotoolの基幹ライブラリのlibxdoをNative Extentionとして呼び出せるか調べていた。
 というのも、fusumaでxdotoolの呼び出し遅延のIssueが上がっていて、ネイティブのC関数レベルでAPIを呼べると改善するか試したかったというのがある。
 最近のlibxdo3に対応出来ているライブラリは少なく、forkされたものであれば動くことを確認した。
-require &#39;x_do&#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&#39;super+Right&#39;) =&amp;gt; :success # 隣のワークスペースに移動
+require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動
 GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
-貸倒引当金について
-昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
+貸倒引当金について 昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
 一括評価になりそう。 この単語もたまたま詳しい方に教えて頂けたが、会計難しいので詳しい人からすぐ聞けるようにしておきたい。
 歴4ヶ月の異業種未経験がリモート開発 スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。
 特に最初からリモートワークは絶対にやめたほうが良くて、テキストベースのチャットで理解できる範囲なんて初心者(じゃなくても難しい)に分かるはずもない。 しかも教える側のコストが格段に大きくなってしまうので、お互いに不幸になる。
@@ -21,16 +20,16 @@ ERC20自体に欠陥があるわけではない。
 シェルスクリプトで排他・共有ロック&amp;amp;セマフォ POSIX標準のshell scriptでロックを作る。(どんなOS上でも動くという話)
 ポイントはアトミックに（単一操作で）作るという点である。つまり存在確認処理と作成処理が同時ということだ。もし存在しないことを確認できて、いざ作成しようとした時に他のプロセスに素早く作成されてしまったら、ロックファイルを上書きできてしまうのでアクセス権が唯一のものではなくなってしまう。
 作成と確認アトミックであれば良い。
-$ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $ mkdir /tmp/lockfile # =&amp;gt; mkdir: ディレクトリ `/tmp/lockfile&#39; を作成できません: ファイルが存在します $ echo $? #=&amp;gt; 1 # 失敗 ちなみに以前の会社ではmkdirでロック書いてた。 確か他と比較して早いというのが理由。
+$ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $ mkdir /tmp/lockfile # =&amp;gt; mkdir: ディレクトリ `/tmp/lockfile&amp;#39; を作成できません: ファイルが存在します $ echo $? #=&amp;gt; 1 # 失敗 ちなみに以前の会社ではmkdirでロック書いてた。 確か他と比較して早いというのが理由。
 【翻訳】サイドプロジェクトから収益性のあるスタートアップに育てる方法（前編） Nomad List 作った人の話。毎月1つのペースでサービス作るのは楽しそう。 Nomad Listはノマドワーカーに必要なネットや電源、生活費を含めた都市毎のランキングがメインのサイト。 コワーキングのリストとかもある。 ログインしてチャットチャンネルに参加する部分は有料。 サインアップしたらフリーミアムとかはなくて全て有料プラン。
 あと、remoteok というサービスも作っていてこちらも稼ぎを出してる模様 数を撃つこと自体は当てるためには必要。個人的にかなり参考にしたい。
 アマゾン・エコーが、英会話の練習相手になってくれた 日常会話的な内容が練習出来ると良さそう。
-最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</description></item><item><title>記憶の定着率を上げるPocket&#43;Kindle連携</title><link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link><pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid><description> 日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
+最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</description></item><item><title>記憶の定着率を上げるPocket+Kindle連携</title><link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link><pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid><description>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
 1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
 時間を空けて読むという行為をWebサービスを組み合わせてやってみる。
 なお、1日以内、1週間以内、2週間以内で3度復習したほうが良いらしいが、運用効率が悪いので期間はあまり厳密にしない。
-気になったらとりあえずPocketに入れる PocketはWebページを&amp;rdquo;後で読むリスト&amp;rdquo;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
+気になったらとりあえずPocketに入れる PocketはWebページを&amp;quot;後で読むリスト&amp;quot;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
 Pocketで見る(短期記憶) Pocketのアプリをスマホに入れる。タブレットでも良いが、いつでも持っているものがいい。
 毎日の通勤時に記事をチェックする。
 Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。
@@ -39,4 +38,4 @@ Kindleで読むのは週に1回（しかも長めの記事）になるので必�
 週末に30分-1時間程度かけて読む。
 その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている
 IFTTTでTwitter-&amp;gt; Pocketの連携 Twitterでいいねした記事を後で読むリストに追加する。 IFTTTでPocket -&amp;gt; Buffer連携 Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る 上記を取り入れた場合、3回以上同じ記事を目にすることになる。
-Special Thanks 忘却曲線 - Wikipedia エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う</description></item></channel></rss>
+Special Thanks [忘却曲線 - Wikipedia] (https://ja.wikipedia.org/wiki/%E5%BF%98%E5%8D%B4%E6%9B%B2%E7%B7%9A) エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う</description></item></channel></rss>

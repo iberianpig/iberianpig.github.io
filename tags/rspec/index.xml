@@ -2,7 +2,7 @@
 まず、この事実を理解すべきだった。
 Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
 また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
-expect(Model.last.name).to eq &#39;modelname&#39;で評価する。
+expect(Model.last.name).to eq 'modelname'で評価する。
 どちらもどのような値がアサインされていればよいのかを意識してテストを書く。
 その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。
 そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。

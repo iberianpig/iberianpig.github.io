@@ -6,7 +6,7 @@ pry 調べたいコードを実行させ、binding.pryでブレークポイン�
 Rubyのコードは実行時でないと、正しい呼び出し元がわからない。
 また、pryはコード・リーディングやデバッグに便利様々な機能を持っている
 show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
-これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.</description></item><item><title>mysqlで特定のテーブルのDumpをのみ取得する</title><link>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</link><pubDate>Sat, 23 Jan 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</guid><description> 必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。
+これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.</description></item><item><title>mysqlで特定のテーブルのDumpをのみ取得する</title><link>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</link><pubDate>Sat, 23 Jan 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</guid><description>必要となった背景 1つのコンテンツに対してそのコンテンツに含まれる複数のカテゴリの組み合わせを元におすすめのコンテンツを表示する。
 動的に表示させようとしたが、現行のままでは動的に出すのは厳しく、バッチ処理でおすすめコンテンツの情報をキャッシュすることにした。
 本番環境の裏側で実行させようと考えたが、非常に遅く、1ヶ月ほど時間がかかってしまうため、 一度本番のDumpを取得した上で別の環境でバッチを回し、その結果を本番環境へロードさせたほうが良いということになった。
 テーブル別のDump いつもDB一括でMySQL workbenchでDumpを取得しているなど、mysqlコマンドに疎い。 今回は他のテーブルは必要なかったので、必要なテーブルのDumpのみを取得する方法を調べた。
@@ -21,7 +21,7 @@ Special Thanks MySQL で特定のテーブルのみをバックアップ - Easy 
 まず、この事実を理解すべきだった。
 Controllerの中の値をテストする Rspec側からRailsのController側でインスタンス化された値を評価する場合はassigns(:hoge)で参照するとよい。
 また、RspecからDBアクセスして取り出す方法もあるのでこちらも忘れずに。
-expect(Model.last.name).to eq &#39;modelname&#39;で評価する。
+expect(Model.last.name).to eq 'modelname'で評価する。
 どちらもどのような値がアサインされていればよいのかを意識してテストを書く。
 その他 itブロック・contextブロック・describeブロックの中で定義した変数のスコープはその中に限る。
 そのため、スコープを飛び越えて同じ値を扱うためにはインスタンス変数を利用する必要がある。
@@ -40,12 +40,11 @@ scaffold で生成したアプリケーションのフォームに バリデー�
 そのため、 if文で@model.saveを実行した結果 true or false に応じて、リダイレクトを 行うか否かを決定する。
 form内で、f.error_messagesメソッドを利用する。
 updateも同様。if文で@model.update_attributes(:params[:model])の実行し、結果に応じて リダイレクトを行うか否かを決める。
-不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, &amp;quot;What&#39;s your name?&amp;quot;がうまく動かない</description></item><item><title>Head-First-Rails_4</title><link>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</link><pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</guid><description>Head First Rails第4章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
+不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, &amp;quot;What's your name?&amp;quot;がうまく動かない</description></item><item><title>Head-First-Rails_4</title><link>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</link><pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/</guid><description>Head First Rails第4章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
 Scaffoldで作成したページを改造していく。
 検索窓の導入 どのページにも検索窓を用意するので、layoutsを利用する layoutfileは｛モデル名｝.html.erbとなる
 form_forとform_tagの違い
 ハマったところ 書籍では&amp;lt;% %&amp;gt;だったが、実際はform_tagは &amp;lt;%= %&amp;gt; で囲む必要があった
 (rails 3とrails 4の違い？　)
-routesの追記が必要。 formの追加に合わせて post &#39;client_workouts/find&#39; =&amp;gt; &#39;client_workouts#find&#39; rails4だとFindで :conditionsが使えない 代わりにモデル名.whereを利用する
-* モデル名.find(id) - findはidの検索専用 * モデル名.where(:カラム名 =&amp;gt; 内容) - なんか指定するときは大体where
-defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</description></item></channel></rss>
+routesの追記が必要。 formの追加に合わせて post 'client_workouts/find' =&amp;gt; 'client_workouts#find' rails4だとFindで :conditionsが使えない 代わりにモデル名.whereを利用する
+モデル名.find(id) findはidの検索専用 モデル名.where(:カラム名 =&amp;gt; 内容) なんか指定するときは大体where defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</description></item></channel></rss>
