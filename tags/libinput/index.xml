@@ -12,8 +12,7 @@ $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショート
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
 (rbenvやrvmでインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
 Fusumaの設定ファイルを作成する ~/.config/fusuma/config.ymlに設定ファイルを作成する。
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.config/fusuma/config.ymlを開き、以下の内容を貼り付ける
-swipe: 3: left: command: &amp;#39;xdotool key alt+Right&amp;#39; right: command: &amp;#39;xdotool key alt+Left&amp;#39; up: command: &amp;#39;xdotool key ctrl+t&amp;#39; down: command: &amp;#39;xdotool key ctrl+w&amp;#39; ↑ 3本指スワイプでブラウザの(戻る/進む/タブを作成/タブを閉じる)ショートカットを登録する例。</description></item><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</description></item><item><title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</title><link>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</link><pubDate>Sun, 15 Jul 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/</guid><description>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
 Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
