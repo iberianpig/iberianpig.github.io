@@ -28,3 +28,6 @@ MetaDataFormat = "yaml"
 [params.adsense]
     sidebar = "2886367399" 
     content = "2746766592" 
+
+[markup.goldmark.renderer]
+unsafe = true
