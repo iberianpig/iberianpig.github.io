@@ -119,7 +119,7 @@ ansible-playbook ~/.config/ansible/playbook.yml -K
    - 任意のコマンドにショートカットを割り当てる
  - [Fusuma](https://github.com/iberianpig/fusuma)
    - マルチタッチジェスチャ
-   - gemコマンドでインストール。rubyが必要。
+   - gemコマンドでインストール。Rubyが必要。
    - インストールとカスタマイズ方法(https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/)
 
  - [Dropbox](https://www.dropbox.com/ja/install-linux)
@@ -257,7 +257,7 @@ GRUB_CMDLINE_LINUX=""
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="http://nodemand.hatenablog.com/entry/2016/11/11/175929" data-iframely-url="//cdn.iframe.ly/api/iframe?url=http%3A%2F%2Fnodemand.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F175929&amp;key=f073c4f447189e73167146bd9d0f6195&amp;iframe=card-small&amp;media=0"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
-# fwupdでファームウエアの最新化
+# fwupdでファームウェアの最新化
 
 fwupdでデバイスの更新、取得を行う
 
@@ -272,7 +272,7 @@ fwupdでデバイスの更新、取得を行う
 
 ## ath10k-firmwareの更新
 
-XPS 13シリーズで不評なKiller 1535 Wirless Adapterのファームウエア(ath10k/QCA6174)をgithubから取得して更新する
+XPS 13シリーズで不評なKiller 1535 Wirless Adapterのファームウェア(ath10k/QCA6174)をGitHubから取得して更新する
 
 <div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://github.com/kvalo/ath10k-firmware" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fkvalo%2Fath10k-firmware&amp;key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 

@@ -12,7 +12,7 @@ description: "tig-explorer.vimの使い方。vimとgitクライアントのtig�
 ---
 
 # Vim用のGitクライアントが欲しかった
-vimのgitプラグインとして何を使っているのが多いだろうか?  
+vimのGitプラグインとして何を使っているのが多いだろうか？  
 自分の観測範囲では[fugitive](https://github.com/tpope/vim-fugitive)を使っている人が多いようだ。
 
 しかし、ターミナルではCUIツールで高速なプレビューの出来る`tig`をGitクライアントとして利用している人は多いのではないだろうか。
@@ -75,7 +75,7 @@ nnoremap <Leader>b :TigBlame<CR>
 
 
 また、このプラグインの特徴的なところでtig上で`Ctrl-t`を押下するとvimのタブで開く機能が追加されている。
-同様に`Ctrl-s`で水平分割, `Ctrl-v`で垂直分割出来る。
+同様に`Ctrl-s`で水平分割、 `Ctrl-v`で垂直分割出来る。
 
 [![Image from Gyazo](https://i.gyazo.com/1cb632c8930079dd3168d3ecc8507ee1.gif)](https://gyazo.com/1cb632c8930079dd3168d3ecc8507ee1)
 

@@ -70,17 +70,17 @@ Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 
 ```
 
 カーネルバージョンは4.8.0-34まで上がった。
-ハードウエアのサポートが入っているためか、こちらでは`libinput-debug-events`が正しく動作していた。
+ハードウェアのサポートが入っているためか、こちらでは`libinput-debug-events`が正しく動作していた。
 
 # Special Thanks
 
 * How to Easily Upgrade Ubuntu’s Linux Kernel With Ukuu
  (http://www.makeuseof.com/tag/upgrade-kernel-ukuu-ubuntu/)
 
-* Ubuntu Weekly Recipe 第278回 Ubuntuカーネルとの付き合い方
+* Ubuntu Weekly Recipe第278回Ubuntuカーネルとの付き合い方
  (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278)
 
-* Ubuntu 16.04 その113 - ローリングLTS Enablement Stackモデルの採用へ
+* Ubuntu 16.04その113 - ローリングLTS Enablement Stackモデルの採用へ
  (http://kledgeb.blogspot.jp/2016/11/ubuntu-1604-113-lts-enablement-stack.html)
 
 * Package: linux-generic-hwe-16.04-edge (4.8.0.34.6)

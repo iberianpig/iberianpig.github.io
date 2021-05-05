@@ -20,7 +20,7 @@
   "homepage": "https://github.com/iberianpig/iberianpig.github.io#readme",
   "devDependencies": {
     "prh": "^5.4.3",
-    "stylelint": "^10.1.0",
+    "stylelint": "^13.13.0",
     "stylelint-config-standard": "^18.3.0",
     "textlint": "^10.2.1",
     "textlint-rule-preset-ja-technical-writing": "^3.0.1",
