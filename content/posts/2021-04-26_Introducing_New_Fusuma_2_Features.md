@@ -18,7 +18,7 @@ Linux向けのマルチタッチジェスチャツールの[Fusuma](https://gith
 
 この記事ではFusumaのv2へのアップデートとv2から使える新機能について紹介する。
 
-# Fusuma v2のアップデートの概要
+## Fusuma v2のアップデートの概要
 
 Fusuma v2ではマルチプロセス化、I/O多重化、contextに応じた設定の切り替えなど、
 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
@@ -46,7 +46,7 @@ Desktop session: ubuntu x11
 
 Fusuma v2から要求するRubyバージョンが2.5.1以上となっているので注意。
 
-# FusumaとFusumaプラグインを最新版にアップデート
+## FusumaとFusumaプラグインを最新版にアップデート
 
 gemコマンドでアップデートできる。
 システムワイドのRubyを使ってインストールしていない場合`sudo`は不要。
@@ -71,7 +71,7 @@ $ sudo gem update fusuma-plugin-sendkey fusuma-plugin-wmctrl fusuma-plugin-keypr
 
 
 
-# アプリケーション固有のジェスチャ設定 
+## アプリケーション固有のジェスチャ設定 
 
 Fusuma v2から利用可能な新しいプラグインを作った。
 [fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)をインストールすることでFusumaのconfig.yml上でアプリケーション固有の設定ができるようになる。
@@ -81,7 +81,7 @@ Fusuma v2から利用可能な新しいプラグインを作った。
 
 これまでジェスチャの設定はアプリ関係なくグローバルな設定のみだったので、アプリ毎に微妙にショートカットキーが違う場合も対応できるようになる。
 
-## fusuma-plugin-appmatcherのインストール
+### fusuma-plugin-appmatcherのインストール
 
 ターミナルで↓のコマンドを実行
 
@@ -93,7 +93,7 @@ $ sudo gem install fusuma-plugin-appmatcher
 コマンドから`wm_class`を取得できさえすれば実装可能なので、[fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)にPull Requestを作ってもらえると嬉しい。
 
 
-## 設定で利用するアプリケーション名の取得
+### 設定で利用するアプリケーション名の取得
 
 config.ymlでアプリを指定するためのアプリケーション名は`$ fusuma-appmatcher -l`で取得できる。
 `-l`オプション無しの場合はフォアグラウンドのアプリケーション名のみを取得する。
@@ -107,7 +107,7 @@ Google-chrome
 ```
 
 
-## config.ymlに`context: WM_CLASS`を設定する
+### config.ymlに`context: WM_CLASS`を設定する
 
 1. config.ymlの最下部に`---`を追加して`context`を区切る。
 1. `context: { application: Google-chrome }`を追加する。
@@ -174,7 +174,7 @@ Fusuma v2から`---`を含むYAMLドキュメントを処理できるように�
 ちなみに`---`は1つのファイル内で複数ドキュメントを記述できるYAML標準のシンタックスである。
 
 
-# Mac OSの3本指ドラッグをLinuxで実現する
+## Mac OSの3本指ドラッグをLinuxで実現する
 
 TwitterでMac OSのトラックパッドでの3本指のドラッグ機能が便利らしいことを目にした。
 
@@ -197,7 +197,7 @@ TwitterでMac OSのトラックパッドでの3本指のドラッグ機能が便
 テキスト選択、Chromeのタブ移動、ウィンドウの移動など、3本指ドラッグは確かに便利。
 トラックパッドでクリックしてから別の指でドラッグするよりも、3本指ドラッグは操作ステップが少く直感的に動かせる。
 
-## 3本指ドラッグの設定方法
+### 3本指ドラッグの設定方法
 
 ↓ を`~/.config/fusuma/config.yml`に設定して、Fusumaを再起動すると3本指のドラッグができるようになっている。
 
@@ -215,7 +215,7 @@ swipe:
 ```
 
 
-## `begin:`/`update:`/`end:`プロパティ
+### `begin:`/`update:`/`end:`プロパティ
 
 Fusuma v2からスワイプ、ピンチ、ローテートにジェスチャの`開始`/`更新`/`終了`イベントを割り当てを個別で設定できるようになった。
 例えば上述の3本指ドラッグの設定では `begin:`/`update:`/`end:` にxdotoolの `マウス押下`/`マウス移動`/`マウス解放` を割り当ている。
@@ -232,7 +232,7 @@ Fusuma v2からスワイプ、ピンチ、ローテートにジェスチャの`�
 ちなみに後述のAlt+Tabのウィンドウ切り替えやローテートの音量・輝度調節もこの機能で実現している。
 
 
-# Windowsの3本指スワイプによるウィンドウ切り替え
+## Windowsの3本指スワイプによるウィンドウ切り替え
 
 3本指ドラッグと同じくこの機能も以前から要望があった。
 Windowsは3本指の左右スワイプでAlt+Tabショートカットと同様のウィンドウの切り替えができる。
@@ -242,7 +242,7 @@ Windowsは3本指の左右スワイプでAlt+Tabショートカットと同様�
 スワイプするとウィンドウを切り替え、指を離すまではプレビューが出る。
 Fusuma v2の`begin:`/`update:`/`end:`を利用して実現する。
 
-## Alt+Tabウィンドウ切り替えの設定方法
+### Alt+Tabウィンドウ切り替えの設定方法
 
 ```yaml
 swipe:
@@ -266,14 +266,14 @@ swipe:
 ちなみに`begin:`/`update:`/`end:`はSwipeやPinch/Rotateの方向プロパティ(`right`/`left`など)の下にも設定できる。
 
 
-# スワイプ/ローテートによる音量・輝度調整
+## スワイプ/ローテートによる音量・輝度調整
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Linuxで回転ジェスチャによる音量・輝度調節 <a href="https://t.co/nxGUxFFV9R">pic.twitter.com/nxGUxFFV9R</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1393232055383691274?ref_src=twsrc%5Etfw">May 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 * 3本指のローテート(回転)ジェスチャで音量が変更できる。Shiftキーを押すと音量変化の幅が小さくなって微調整が効く。
 * ALTキーを押しながら回転させると輝度を変更する。
 
-## 音量・輝度調整の設定方法
+### 音量・輝度調整の設定方法
 
 ```yaml
 rotate:
@@ -296,7 +296,7 @@ rotate:
 
 動作確認のために設定してみたら意外と便利なジェスチャだったので紹介してみた。
 
-# その他の設定はWikiへ
+## その他の設定はWikiへ
 Fusumaがv2にメジャーアップデートしてジェスチャの表現の幅が広がった。
 
 今回紹介した設定も[fusuma Wiki](https://github.com/iberianpig/fusuma/wiki)に書いている。
