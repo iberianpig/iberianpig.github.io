@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fusuma v2の新機能の紹介"
-draft: true
+draft: false
 date: 2021-04-26T22:05:57+09:00
 comments: true
 tags: 
