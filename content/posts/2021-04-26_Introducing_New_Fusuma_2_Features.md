@@ -1,52 +1,54 @@
 ---
 layout: post
-title: "Fusuma v2の新機能の紹介"
+title: "Linux用マルチタッチジェスチャのFusumaがv2にアップデート"
 draft: false
-date: 2021-04-26T22:05:57+09:00
+date:    2021-04-26T22:05:57+09:00
+lastmod: 2021-05-27T10:19:10+09:00
 comments: true
 tags: 
    - Linux
    - ruby
    - libinput
 image: "https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma"
-description: "Fusumaがv2にメジャーアップデートし3本指でのドラッグやAlt+Tab、アプリ固有のジェスチャ設定など新機能が導入された。"
+description: "Linux用マルチタッチジェスチャのFusumaがv2にアップデート。Macスタイルの3本指ドラッグやWindowsスタイルのウインドウ切り替え、アプリ固有のジェスチャ設定などが可能になった。"
 ---
 
 Linux向けのマルチタッチジェスチャツールの[Fusuma](https://github.com/iberianpig/fusuma)がv2にバージョンアップした。
+新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
 
 <div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 50%; padding-top: 120px;"><a href="https://github.com/iberianpig/fusuma" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma&amp;key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
-この記事ではFusumaのv2へのアップデートとv2から使える新機能について紹介する。
 
 ## Fusuma v2のアップデートの概要
 
-Fusuma v2ではマルチプロセス化、I/O多重化、contextに応じた設定の切り替えなど、
+Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ、contextに応じた設定の切り替えなど、
 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
 
-* アプリ固有のジェスチャ設定
-* Mac OSの3本指ドラッグ
-* Windowsの3本指スワイプによるウィンドウ切り替え(Alt+Tab)
+* アプリ固有のジェスチャ設定(fusuma-plugin-appmatcher)
+* Mac OSスタイルの3本指ドラッグ
+* Windowsスタイルの3本指スワイプでのウィンドウ切り替え
 * スワイプ/ローテートによる音量調整・輝度変更
 
+## 動作確認した環境
+この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。
+利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
 
-動作確認した環境はUbuntu 20.04(X11/Gnome-shell)。
-
-```
+```sh
 $ fusuma --version
 reload config: /home/iberianpig/.config/fusuma/config.yml
 ---------------------------------------------
-Fusuma: 2.0.4
+Fusuma: 2.0.5
 libinput: 1.16.5
 ruby 2.7.0p0
-OS: Linux 5.6.0-1056-oem #60-Ubuntu SMP Tue May 4 06:40:10 UTC 2021
+OS: Linux 5.10.0-1026-oem #27-Ubuntu SMP Thu May 6 07:19:13 UTC 2021
 Distribution: Ubuntu 20.04.2 LTS \n \l
 Desktop session: ubuntu x11
 ---------------------------------------------
 ```
 
-Fusuma v2から要求するRubyバージョンが2.5.1以上となっているので注意。
+なお、Fusuma v2から要求するRubyバージョンが2.5.1以上(Ubuntu 18.04のデフォルトのRubyバージョン)となっているので注意。
 
-## FusumaとFusumaプラグインを最新版にアップデート
+## Fusumaとプラグインを最新版にアップデート
 
 gemコマンドでアップデートできる。
 システムワイドのRubyを使ってインストールしていない場合`sudo`は不要。
@@ -71,15 +73,17 @@ $ sudo gem update fusuma-plugin-sendkey fusuma-plugin-wmctrl fusuma-plugin-keypr
 
 
 
-## アプリケーション固有のジェスチャ設定 
+## アプリケーション固有のジェスチャを設定する
 
-Fusuma v2から利用可能な新しいプラグインを作った。
-[fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)をインストールすることでFusumaのconfig.yml上でアプリケーション固有の設定ができるようになる。
+[fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)をインストールするとFusumaのconfig.yml上でアプリケーション固有の設定ができるようになる。
 
 
 <div class="iframely-embed"><div class="iframely-responsive" style="padding-bottom: 50%; padding-top: 120px;"><a href="https://github.com/iberianpig/fusuma-plugin-appmatcher/tree/master/lib/fusuma/plugin/appmatcher" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma-plugin-appmatcher%2Ftree%2Fmaster%2Flib%2Ffusuma%2Fplugin%2Fappmatcher&amp;key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
 これまでジェスチャの設定はアプリ関係なくグローバルな設定のみだったので、アプリ毎に微妙にショートカットキーが違う場合も対応できるようになる。
+
+自分が動作確認できるX11とUbuntu-Waylandは現在サポートしているが、Plasma Waylandや他のWayland環境へは未対応。
+コマンドから`wm_class`を取得できさえすれば実装可能なので、[fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)にPull Requestを作ってもらえると嬉しい。
 
 ### fusuma-plugin-appmatcherのインストール
 
@@ -89,13 +93,10 @@ Fusuma v2から利用可能な新しいプラグインを作った。
 $ sudo gem install fusuma-plugin-appmatcher
 ```
 
-自分が動作確認できるX11とUbuntu-Waylandは現在サポートしているが、Plasma Waylandや他のWayland環境へは未対応。
-コマンドから`wm_class`を取得できさえすれば実装可能なので、[fusuma-plugin-appmatcher](https://github.com/iberianpig/fusuma-plugin-appmatcher)にPull Requestを作ってもらえると嬉しい。
-
 
 ### 設定で利用するアプリケーション名の取得
 
-config.ymlでアプリを指定するためのアプリケーション名は`$ fusuma-appmatcher -l`で取得できる。
+config.ymlで指定するためのアプリケーション名は`$ fusuma-appmatcher -l`で取得できる。
 `-l`オプション無しの場合はフォアグラウンドのアプリケーション名のみを取得する。
 
 ```sh
@@ -109,12 +110,12 @@ Google-chrome
 
 ### config.ymlに`context: WM_CLASS`を設定する
 
-1. config.ymlの最下部に`---`を追加して`context`を区切る。
+既存のconfig.ymlに書き足す場合:
+1. `~/.config/fusuma/config.yml`の最下部に`---`を追加して`context`を区切る。
 1. `context: { application: Google-chrome }`を追加する。
 1. その下に`swipe: ...`と通常通りジェスチャを記述していく。
 
-
-それぞれ異なるアクションをGoogle-chromeとGnome-terminalに対して3本指のスワイプジェスチャに割り当ててみる。
+以下の例では4本指のジェスチャをデフォルトの設定とし、Google ChromeとGnome Terminalに対して3本指のスワイプジェスチャを割り当てている。
 
 ```yml
 # デフォルトのコンテキスト
@@ -164,22 +165,20 @@ swipe:
       sendkey: 'LEFTSHIFT+LEFTCTRL+W' # タブを閉じる
 ```
 
-この例には[fusuma-plugin-wmctrl](https://github.com/iberianpig/fusuma-plugin-wmctrl)、[fusuma-plugin-sendkey](https://github.com/iberianpig/fusuma-plugin-sendkey)、[fusuma-plugin-keypress](https://github.com/iberianpig/fusuma-plugin-keypress)を利用している。
+※ この例には[fusuma-plugin-wmctrl](https://github.com/iberianpig/fusuma-plugin-wmctrl)、[fusuma-plugin-sendkey](https://github.com/iberianpig/fusuma-plugin-sendkey)、[fusuma-plugin-keypress](https://github.com/iberianpig/fusuma-plugin-keypress)を利用している。
 
 Google ChromeとGnome Terminalでそれぞれ3本指上スワイプを試してみるとどちらもタブが開く。
 Google Chromeには`LEFTCTRL+T`、Gnome Terminalには`LEFTSHIFT+LEFTCTRL+T`とそれぞれ異なるキーを割り当てることができた。
 
-
-Fusuma v2から`---`を含むYAMLドキュメントを処理できるようになった。`---`で区切られた先頭のドキュメントがデフォルトのconfigとなる。
+Fusuma v2から`---`を含むYAMLドキュメントを処理できるようになった。`---`で区切られた先頭のドキュメントがデフォルト設定として扱われる。
 ちなみに`---`は1つのファイル内で複数ドキュメントを記述できるYAML標準のシンタックスである。
 
 
 ## Mac OSの3本指ドラッグをLinuxで実現する
 
-TwitterでMac OSのトラックパッドでの3本指のドラッグ機能が便利らしいことを目にした。
+Mac OSのトラックパッドでの3本指のドラッグ機能が便利らしいことを目にした。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Mac の操作がヌルヌルできない人はこの設定入れておくと良いぞ？ / Mac で最高に便利な「3本指のドラッグ」 - kakakakakku blog <a href="https://t.co/4Un28vU11q">https://t.co/4Un28vU11q</a></p>&mdash; カック@テックブロガー (@kakakakakku) <a href="https://twitter.com/kakakakakku/status/1164903204238135296?ref_src=twsrc%5Etfw">August 23, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 > 「3本指のドラッグ」の用途は無限にあって，具体的な例を挙げておく．Keynote でキレイな発表資料を作るときも使えないと困ってしまう．
 > 
@@ -188,9 +187,7 @@ TwitterでMac OSのトラックパッドでの3本指のドラッグ機能が便
 > * Keynote でオブジェクトのサイズを変更するとき
 
 
-とても便利そう。
-
-ということでLinux向けにFusuma上で実装した。
+とても便利そう。ということで実装したのがこちら。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Linuxタッチパッドで3本指ドラッグ <a href="https://t.co/kFNtKGU9x2">pic.twitter.com/kFNtKGU9x2</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1364924640125014021?ref_src=twsrc%5Etfw">February 25, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -218,6 +215,7 @@ swipe:
 ### `begin:`/`update:`/`end:`プロパティ
 
 Fusuma v2からスワイプ、ピンチ、ローテートにジェスチャの`開始`/`更新`/`終了`イベントを割り当てを個別で設定できるようになった。
+
 例えば上述の3本指ドラッグの設定では `begin:`/`update:`/`end:` にxdotoolの `マウス押下`/`マウス移動`/`マウス解放` を割り当ている。
 
 またジェスチャの移動量の`$move_x`, `$move_y`, `$zoom`, `$rotate`が変数として扱えるようにした。
@@ -232,17 +230,21 @@ Fusuma v2からスワイプ、ピンチ、ローテートにジェスチャの`�
 ちなみに後述のAlt+Tabのウィンドウ切り替えやローテートの音量・輝度調節もこの機能で実現している。
 
 
-## Windowsの3本指スワイプによるウィンドウ切り替え
+## Windowsの3本指スワイプでのウィンドウ切り替えをLinuxで実現する
 
-3本指ドラッグと同じくこの機能も以前から要望があった。
-Windowsは3本指の左右スワイプでAlt+Tabショートカットと同様のウィンドウの切り替えができる。
+こちらもFusumaのGithub Issueでユーザーから機能要望が上がってきたものだった。
+Windowsは3本指の左右スワイプするとウィンドウの切り替えができるらしく、Windowsマシンが手元になかったのでヨドバシカメラで動作確認した。
+
+Alt+Tabを送信してウィンドウ切り替えを真似てみた。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Linuxで3本指スワイプのウィンドウ切り替え <a href="https://t.co/Zr1jBrqCd5">pic.twitter.com/Zr1jBrqCd5</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1393227683039903753?ref_src=twsrc%5Etfw">May 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 スワイプするとウィンドウを切り替え、指を離すまではプレビューが出る。
-Fusuma v2の`begin:`/`update:`/`end:`を利用して実現する。
+こちらもFusuma v2の`begin:`/`update:`/`end:`を使って再現した。
 
-### Alt+Tabウィンドウ切り替えの設定方法
+### 3本指スワイプによるウィンドウ切り替えの設定方法
+
+Alt+Tabのウィンドウ切り替えをconfig.ymlに記述する。
 
 ```yaml
 swipe:
@@ -268,12 +270,11 @@ swipe:
 
 ## スワイプ/ローテートによる音量・輝度調整
 
+3本指のローテート(回転)ジェスチャで音量が変更できる。Shiftキーを押すと音量変化の幅が小さくなって微調整が効く。
+ALTキーを押しながら回転させると輝度を変更する。
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Linuxで回転ジェスチャによる音量・輝度調節 <a href="https://t.co/nxGUxFFV9R">pic.twitter.com/nxGUxFFV9R</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1393232055383691274?ref_src=twsrc%5Etfw">May 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-* 3本指のローテート(回転)ジェスチャで音量が変更できる。Shiftキーを押すと音量変化の幅が小さくなって微調整が効く。
-* ALTキーを押しながら回転させると輝度を変更する。
-
-### 音量・輝度調整の設定方法
+### スワイプ/ローテートによる音量・輝度調整の設定方法
 
 ```yaml
 rotate:
@@ -294,10 +295,13 @@ rotate:
           sendkey: BRIGHTNESSDOWN  # 輝度DOWN
 ```
 
-動作確認のために設定してみたら意外と便利なジェスチャだったので紹介してみた。
+`rotate:` x `update:`イベントの動作確認用に設定していたのだが、使ってみたら意外と便利だったのでそのまま使っている。  
+回転ジェスチャやピンチジェスチャはコツがいるので、難しい場合は修飾キー+上下スワイプでの音量・輝度調整が簡単でオススメ。
+
 
 ## その他の設定はWikiへ
-Fusumaがv2にメジャーアップデートしてジェスチャの表現の幅が広がった。
 
-今回紹介した設定も[fusuma Wiki](https://github.com/iberianpig/fusuma/wiki)に書いている。
-各々のディストリビューションごとの設定なども書かれていて、こちらは誰でも編集できるので便利な設定を見つけたら共有してもらえると嬉しい。
+今回紹介した設定は[fusuma Wiki](https://github.com/iberianpig/fusuma/wiki)に追加した。
+
+誰でも編集できて、各々がおすすめの設定を載せているので参考になるので見て欲しい。
+また、便利設定を発見したら共有してもらえると嬉しい。

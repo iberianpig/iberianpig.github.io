@@ -20,7 +20,7 @@ MetaDataFormat = "yaml"
     email = "yhkyky+work@gmail.com"
     author = "Kohei Yamada"
     aboutme = "趣味・仕事で平日休日変わらず毎日コードを書いてます。"
-    aboutwork = "フリーランスのエンジニアチームでスタートアップのお手伝い。バックエンド、フロントエンド問わず色々。バックエンド、特にRubyが得意。お仕事のご相談はお気軽に。"
+    aboutwork = "エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。"
     description = "iberianpigの技術ブログ"
 
 [params.eyecatch]
