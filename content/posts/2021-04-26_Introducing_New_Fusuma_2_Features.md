@@ -3,7 +3,7 @@ layout: post
 title: "Linux用マルチタッチジェスチャのFusumaがv2にアップデート"
 draft: false
 date:    2021-04-26T22:05:57+09:00
-lastmod: 2021-05-27T10:19:10+09:00
+lastmod: 2021-06-09T01:36:42+09:00 
 comments: true
 tags: 
    - Linux
@@ -30,6 +30,7 @@ Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ�
 * スワイプ/ローテートによる音量調整・輝度変更
 
 ## 動作確認した環境
+
 この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。
 利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
 
@@ -178,7 +179,7 @@ Fusuma v2から`---`を含むYAMLドキュメントを処理できるように�
 
 Mac OSのトラックパッドでの3本指のドラッグ機能が便利らしいことを目にした。
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Mac の操作がヌルヌルできない人はこの設定入れておくと良いぞ？ / Mac で最高に便利な「3本指のドラッグ」 - kakakakakku blog <a href="https://t.co/4Un28vU11q">https://t.co/4Un28vU11q</a></p>&mdash; カック@テックブロガー (@kakakakakku) <a href="https://twitter.com/kakakakakku/status/1164903204238135296?ref_src=twsrc%5Etfw">August 23, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div style="left: 0; width: 100%; height: 190px; position: relative;"><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fkakakakakku.hatenablog.com%2Fentry%2F2018%2F05%2F30%2F191652" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no"></iframe></div>
 
 > 「3本指のドラッグ」の用途は無限にあって，具体的な例を挙げておく．Keynote でキレイな発表資料を作るときも使えないと困ってしまう．
 > 
