@@ -14,7 +14,7 @@
 <meta name=description content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した">
 <meta property="og:url" content="https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/">
 <meta property="og:description" content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した">
-<meta property="og:image" content="https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png">
+<meta property="og:image" content="https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg">
 <meta name=twitter:card content="summary">
 <meta name=twitter:site content="@nukumaro22">
 <meta name=twitter:creator content="@nukumaro22">
@@ -33,7 +33,7 @@
 <div class=row>
 <div class=col-md-9>
 <article class=single>
-<div class=image style=background-image:url(https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png)></div>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <div class=body>
 <h1>RubyKaigi 2023に登壇してFusumaについて話した</h1>
 <div class=publishDate>
@@ -54,7 +54,7 @@
 </aside>
 <div class=content>
 <h2 id=rubykaigi-2023>RubyKaigi 2023</h2>
-<p>RubyKaigi2023で登壇してFusumaについて話した。</p>
+<p><a href=https://rubykaigi.org/2023/>RubyKaigi2023</a>で登壇してFusumaについて話した。</p>
 <p>CFP出したら通ってしまって、まだまだ先の話だと思っていたら、あっという間に当日になってしまった。</p>
 <p>資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。
 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。
@@ -93,18 +93,18 @@ Macのトラックパッド上を2本指で右端からからスワイプする�
 <h3 id=pluginとpipeline>PluginとPipeline</h3>
 <p>Fusumaはジェスチャ認識のフローをパイプラインとしてイベントでやり取りするようになっており、その中の各タスクはプラグインとして拡張可能かつ差し替え可能になっている。
 全てがプラグイン、Fluentdにかなり影響を受けている。</p>
-<p><a href=https://gyazo.com/5d620bb1a58f99a1e396abf3157684a6><img src=https://i.gyazo.com/5d620bb1a58f99a1e396abf3157684a6.png alt="Image from Gyazo"></a></p>
+<p><img src=https://i.gyazo.com/5d620bb1a58f99a1e396abf3157684a6.png alt="Image from Gyazo"></p>
 <p>後半にOne more thing的なノリで新しいプラグインを発表した。</p>
 <h3 id=thumbsense>ThumbSense</h3>
 <p>ThumbSenseはSony CSLの暦本先生の2003年の<a href=https://www2.sonycsl.co.jp/person/rekimoto/papers/chi03tsense.pdf>論文</a>とその実装で、オリジナルはWindows向けのソフトウェア。
 これをFusumaのPluginとして実装した。</p>
-<p><a href=https://gyazo.com/f5595089b529ad8ddd93777604d9c6be><img src=https://i.gyazo.com/f5595089b529ad8ddd93777604d9c6be.jpg alt="Image from Gyazo"></a></p>
+<p><img src=https://i.gyazo.com/f5595089b529ad8ddd93777604d9c6be.jpg alt="Image from Gyazo"></p>
 <p>タッチパッドが追加の修飾キーになるようなイメージ。親指でタッチパッドに触れる間JやFのキーがクリックにリマップされる。
 タッチを検知してキーボードレイヤの変更を依頼する<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense>fusuma-plugin-thumbsense</a>
 と、外部プロセスから動的にレイヤ変更できるキーリマッパーの<a href=https://github.com/iberianpig/fusuma-plugin-remap>fusuma-plugin-remap</a>の2つのGemで実現している。</p>
-<p><a href=https://gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff><img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt="Image from Gyazo"></a></p>
+<p><img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt="Image from Gyazo"></p>
 <p>実は親指を使わなくても便利で、ThumbSenseの状態でFを押しっぱなしにした場合、ドラッグ中はタッチパッドから手が離れても問題ないように実装している。つまりこの間タッチパッドを自由にスクロールしたりスワイプしたりできる。</p>
-<p><a href=https://gyazo.com/b434e5c33712b210ea58650451c21caf><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo"></a>
+<p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo">
 ドラッグ中に別のワークスペースにスワイプして移動してドロップ、 ThumbSenseが出た当時はスワイプジェスチャは無かったはずだけど、この組み合わせはすごく便利。 みんなLinuxにしてFusuma使ってみよう。</p>
 <p>あとタップしてクリックする機能がオフに出来るのでキーボード入力中にタッチパッド触って誤操作することが無くなって便利だった。</p>
 <h3 id=今後の展望>今後の展望</h3>
@@ -163,7 +163,7 @@ Macのトラックパッド上を2本指で右端からからスワイプする�
 <header>Latest Posts</header>
 <div><article class=li>
 <a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png)></div>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
 <div class=date>
 <div class=time>Wed, May 17, 2023</div>
