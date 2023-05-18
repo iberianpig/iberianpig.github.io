@@ -1,20 +1,562 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.82.1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>Upgrade to elementary OS 5.0 Juno - iberianpigsty</title><meta property="og:title" content="Upgrade to elementary OS 5.0 Juno - iberianpigsty"><meta name=description content="elementary OS 5.0 Junoにアップグレードした"><meta property="og:url" content="https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/"><meta property="og:description" content="elementary OS 5.0 Junoにアップグレードした"><meta property="og:image" content="https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"Upgrade to elementary OS 5.0 Juno |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2019-05-14T15:38:04JST","dateModified":"2019-05-14T15:38:04JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":"elementary OS 5.0 Junoにアップグレードした"}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><article class=single><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><div class=body><h1>Upgrade to elementary OS 5.0 Juno</h1><div class=publishDate><time datetime=2019-05-14T15:38:04+09:00>Published at 14 May, 2019</time></div><nav><ul class=terms><li><a href=https://iberianpig.github.io/tags/elementaryos/>#elementaryOS</a></li></ul></nav><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&text=Upgrade%20to%20elementary%20OS%205.0%20Juno&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a><a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&t=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Facebookでシェア class=fb target=_blank rel=nofollow></a><a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=はてなブックマーク class=ht target=_blank rel=nofollow></a><a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><div class=content><p>下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)</p><p>elementary OSはUIが綺麗でかつ動作も軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://elementary.io/ja/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Felementary.io%2Fja%2F&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><p><code>Unetbootin</code>を利用してelementary OS Junoにアップグレードする。</p><p>実際はクリーンインストールなのだが、elementary OS自体は公式でアップグレードパスを用意していない。
-<code>/home</code>と<code>/</code>を別パーティションに分けていたので、データ領域である<code>/home</code>を残してそれ以外を新しい環境に移行する。</p><h1 id=環境>環境</h1><ul><li>Dell XPS 13 9360</li><li>OS: elementary OS 0.4 Loki → elementary OS 5.0 Juno</li></ul><p>パーティション</p><pre><code>Filesystem      Size  Used Avail Use% Mounted on
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>Upgrade to elementary OS 5.0 Juno - iberianpigsty</title>
+<meta property="og:title" content="Upgrade to elementary OS 5.0 Juno - iberianpigsty">
+<meta name=description content="elementary OS 5.0 Junoにアップグレードした">
+<meta property="og:url" content="https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/">
+<meta property="og:description" content="elementary OS 5.0 Junoにアップグレードした">
+<meta property="og:image" content="https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"Upgrade to elementary OS 5.0 Juno |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2019-05-14T15:38:04JST","dateModified":"2019-05-14T15:38:04JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":"elementary OS 5.0 Junoにアップグレードした"}</script>
+<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<article class=single>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<div class=body>
+<h1>Upgrade to elementary OS 5.0 Juno</h1>
+<div class=publishDate>
+<time datetime=2019-05-14T15:38:04+09:00>Published at 14 May, 2019 </time>
+</div>
+<nav>
+<ul class=terms>
+<li><a href=https://iberianpig.github.io/tags/elementaryos/>#elementaryOS</a></li>
+</ul>
+</nav>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&text=Upgrade%20to%20elementary%20OS%205.0%20Juno&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&t=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<div class=content>
+<p>下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)</p>
+<p>elementary OSはUIが綺麗でかつ動作も軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://elementary.io/ja/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Felementary.io%2Fja%2F&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<p><code>Unetbootin</code>を利用してelementary OS Junoにアップグレードする。</p>
+<p>実際はクリーンインストールなのだが、elementary OS自体は公式でアップグレードパスを用意していない。
+<code>/home</code>と<code>/</code>を別パーティションに分けていたので、データ領域である<code>/home</code>を残してそれ以外を新しい環境に移行する。</p>
+<h1 id=環境>環境</h1>
+<ul>
+<li>Dell XPS 13 9360</li>
+<li>OS: elementary OS 0.4 Loki → elementary OS 5.0 Juno</li>
+</ul>
+<p>パーティション</p>
+<pre tabindex=0><code>Filesystem      Size  Used Avail Use% Mounted on
 /dev/nvme0n1p1   42G   17G   23G  42% /
 /dev/nvme0n1p2  177G  151G   17G  90% /home
 </code></pre><p>今回 <code>/</code> の領域をフォーマットして5.0 Junoをクリーンインストールし、
-<code>/home</code>には個人の設定(<code>XDG_CONFIG</code>や<code>dotfiles</code>)やドキュメント類などが置いてあり、ここは引き続き利用する。</p><p>インストールには<code>Unetbootin</code>を利用した。</p><p>Unetbootinについてはこちらをご参考に↓</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://kledgeb.blogspot.com/2016/04/unetbootin-3-unetbootinubuntuusb.html data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fkledgeb.blogspot.com%2F2016%2F04%2Funetbootin-3-unetbootinubuntuusb.html&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><h1 id=アプリケーションのインストール>アプリケーションのインストール</h1><p><code>/home</code>以外はクリーンインストールなので、<code>apt</code>や<code>/usr/local/bin</code>でインストールしていたものは再インストールする必要がある。</p><h2 id=ansibleでローカル環境の再構築>Ansibleでローカル環境の再構築</h2><p><code>Ansible</code>でローカル環境の再構築を楽に行えるようにしたかったので、アプリケーションのリスト程度だが<code>dotfiles/.config/ansible/playbook.yml</code>に残している。</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/iberianpig/dotfiles/blob/master/.config/ansible/playbook.yml data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Fdotfiles%2Fblob%2Fmaster%2F.config%2Fansible%2Fplaybook.yml&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><p><code>ansible-playbook</code>コマンドでリポジトリの追加、パッケージインストールを下記のコマンドで行う。</p><pre><code>ansible-playbook ~/.config/ansible/playbook.yml -K
-</code></pre><h1 id=インストールしたアプリケーション一覧>インストールしたアプリケーション一覧</h1><h2 id=ブラウザ>ブラウザ</h2><ul><li><a href=https://www.google.com/chrome/>Google Chrome</a><ul><li>メインブラウザ</li><li>手動でインストール</li></ul></li><li>Chromium</li><li>Firefox</li></ul><h2 id=パスワードマネージャ>パスワードマネージャ</h2><ul><li>bitwarden<ul><li>snapでインストール可</li><li>Chrome拡張もある</li></ul></li></ul><h2 id=画像編集系>画像編集系</h2><ul><li>Gimp<ul><li>画像編集</li></ul></li><li>Inkscape<ul><li>ベクタ系の画像編集</li></ul></li></ul><h2 id=ターミナルcli環境>ターミナル/CLI環境</h2><ul><li>byobu<ul><li>tmuxのラッパー</li></ul></li><li>guake<ul><li>ドロップダウンタイプのターミナル</li></ul></li><li>git<ul><li>バージョン管理</li></ul></li><li>tig<ul><li>gitのCUIクライアント</li></ul></li><li>ranger<ul><li>VimライクなCUIファイラ</li></ul></li><li>vim-gnome<ul><li>GVim。クリップボード拡張入りのVimも入る。</li></ul></li><li>xclip<ul><li>CLIクリップボードマネージャ</li></ul></li></ul><h2 id=チャット>チャット</h2><ul><li><a href=https://slack.com/intl/ja-jp/downloads/linux>Slack</a><ul><li>仕事で使うチャットアプリ</li></ul></li><li><a href="https://chrome.google.com/webstore/detail/line/ophjlpahpchlmihnnnihgmmeilfjmjjc?hl=ja">Line</a><ul><li>chrome拡張</li></ul></li></ul><h2 id=デスクトップ拡張gui>デスクトップ拡張/GUI</h2><ul><li><p>numix-icon-theme</p><ul><li>お洒落なデスクトップアイコンセット</li></ul></li><li><p>elementary-tweaks</p><ul><li>elementaryOSのデスクトップの詳細設定</li></ul></li><li><p>fcitx-mozc</p><ul><li>日本語入力</li></ul></li><li><p>xbindkeys</p><ul><li>任意のコマンドにショートカットを割り当てる</li></ul></li><li><p><a href=https://github.com/iberianpig/fusuma>Fusuma</a></p><ul><li>マルチタッチジェスチャ</li><li>gemコマンドでインストール。Rubyが必要。</li><li>インストールとカスタマイズ方法(<a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</a>)</li></ul></li><li><p><a href=https://www.dropbox.com/ja/install-linux>Dropbox</a></p><ul><li>デバイス間のファイル共有</li></ul></li></ul><h2 id=設定編集>設定編集</h2><h2 id=システム設定>システム設定</h2><ul><li><p>synaptic</p><ul><li>aptのGUIフロントエンド</li></ul></li><li><p>gdebi</p><ul><li>debファイルの依存関係解決</li></ul></li><li><p>fwupd</p><ul><li>BIOSやデバイスのファームウェアのアップデート。uefiのみで利用可</li></ul></li><li><p>snapd</p><ul><li>Snapを使えるようにする</li></ul></li><li><p>powertop</p><ul><li>消費バッテリーのモニタリング</li></ul></li><li><p>tlp</p><ul><li>節電用ユーティリティ</li></ul></li><li><p>baobab</p><ul><li>ディスク管理</li></ul></li><li><p>gparted</p><ul><li>パーティション管理</li></ul></li><li><p>etckeeper</p><ul><li><code>/etc</code>のバックアップ</li></ul></li><li><p>dconf-editor</p><ul><li>dconf利用アプリケーションの設定値変更</li></ul></li><li><p>gconf-editor</p><ul><li>gconf利用アプリケーションの設定値変更</li></ul></li></ul><h2 id=その他>その他</h2><ul><li>playonlinux</li><li>calibre</li></ul><h2 id=オフィス>オフィス</h2><ul><li>libreoffice</li></ul><h2 id=動画音楽>動画・音楽</h2><ul><li>Spotify<ul><li>音楽プレイヤー</li></ul></li><li>VLC<ul><li>動画プレイヤー</li></ul></li></ul><h2 id=デスクトップキャプチャ>デスクトップキャプチャ</h2><ul><li>gyazo<ul><li>キャプチャした動画や画像をホスティング</li></ul></li><li>scrot<ul><li>スクリーンショット</li></ul></li><li>byzanz<ul><li>Gifアニメーションでキャプチャ</li></ul></li><li>obs-studio<ul><li>デスクトップ配信</li></ul></li></ul><h3 id=リモートデスクトップ>リモートデスクトップ</h3><ul><li>remmina</li></ul><h3 id=開発用>開発用</h3><ul><li>docker-ce</li><li>jq</li><li>direnv</li><li>make</li><li>automake</li><li>autoconf</li><li>pkg-config</li><li>tree</li><li>sassc</li><li>gcc</li><li>python-pip</li><li>libreadline-dev</li><li>shellcheck</li><li>global</li><li>awscli</li><li>libmysqlclient-dev</li><li>mysql-server</li><li>virtualbox</li><li>virtualbox-ext-pack</li><li>ngrok</li></ul><h1 id=grubの設定>grubの設定</h1><pre><code>GRUB_DEFAULT=0
+<code>/home</code>には個人の設定(<code>XDG_CONFIG</code>や<code>dotfiles</code>)やドキュメント類などが置いてあり、ここは引き続き利用する。</p>
+<p>インストールには<code>Unetbootin</code>を利用した。</p>
+<p>Unetbootinについてはこちらをご参考に↓</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://kledgeb.blogspot.com/2016/04/unetbootin-3-unetbootinubuntuusb.html data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fkledgeb.blogspot.com%2F2016%2F04%2Funetbootin-3-unetbootinubuntuusb.html&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<h1 id=アプリケーションのインストール>アプリケーションのインストール</h1>
+<p><code>/home</code>以外はクリーンインストールなので、<code>apt</code>や<code>/usr/local/bin</code>でインストールしていたものは再インストールする必要がある。</p>
+<h2 id=ansibleでローカル環境の再構築>Ansibleでローカル環境の再構築</h2>
+<p><code>Ansible</code>でローカル環境の再構築を楽に行えるようにしたかったので、アプリケーションのリスト程度だが<code>dotfiles/.config/ansible/playbook.yml</code>に残している。</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/iberianpig/dotfiles/blob/master/.config/ansible/playbook.yml data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Fdotfiles%2Fblob%2Fmaster%2F.config%2Fansible%2Fplaybook.yml&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<p><code>ansible-playbook</code>コマンドでリポジトリの追加、パッケージインストールを下記のコマンドで行う。</p>
+<pre tabindex=0><code>ansible-playbook ~/.config/ansible/playbook.yml -K
+</code></pre><h1 id=インストールしたアプリケーション一覧>インストールしたアプリケーション一覧</h1>
+<h2 id=ブラウザ>ブラウザ</h2>
+<ul>
+<li><a href=https://www.google.com/chrome/>Google Chrome</a>
+<ul>
+<li>メインブラウザ</li>
+<li>手動でインストール</li>
+</ul>
+</li>
+<li>Chromium</li>
+<li>Firefox</li>
+</ul>
+<h2 id=パスワードマネージャ>パスワードマネージャ</h2>
+<ul>
+<li>bitwarden
+<ul>
+<li>snapでインストール可</li>
+<li>Chrome拡張もある</li>
+</ul>
+</li>
+</ul>
+<h2 id=画像編集系>画像編集系</h2>
+<ul>
+<li>Gimp
+<ul>
+<li>画像編集</li>
+</ul>
+</li>
+<li>Inkscape
+<ul>
+<li>ベクタ系の画像編集</li>
+</ul>
+</li>
+</ul>
+<h2 id=ターミナルcli環境>ターミナル/CLI環境</h2>
+<ul>
+<li>byobu
+<ul>
+<li>tmuxのラッパー</li>
+</ul>
+</li>
+<li>guake
+<ul>
+<li>ドロップダウンタイプのターミナル</li>
+</ul>
+</li>
+<li>git
+<ul>
+<li>バージョン管理</li>
+</ul>
+</li>
+<li>tig
+<ul>
+<li>gitのCUIクライアント</li>
+</ul>
+</li>
+<li>ranger
+<ul>
+<li>VimライクなCUIファイラ</li>
+</ul>
+</li>
+<li>vim-gnome
+<ul>
+<li>GVim。クリップボード拡張入りのVimも入る。</li>
+</ul>
+</li>
+<li>xclip
+<ul>
+<li>CLIクリップボードマネージャ</li>
+</ul>
+</li>
+</ul>
+<h2 id=チャット>チャット</h2>
+<ul>
+<li><a href=https://slack.com/intl/ja-jp/downloads/linux>Slack</a>
+<ul>
+<li>仕事で使うチャットアプリ</li>
+</ul>
+</li>
+<li><a href="https://chrome.google.com/webstore/detail/line/ophjlpahpchlmihnnnihgmmeilfjmjjc?hl=ja">Line</a>
+<ul>
+<li>chrome拡張</li>
+</ul>
+</li>
+</ul>
+<h2 id=デスクトップ拡張gui>デスクトップ拡張/GUI</h2>
+<ul>
+<li>
+<p>numix-icon-theme</p>
+<ul>
+<li>お洒落なデスクトップアイコンセット</li>
+</ul>
+</li>
+<li>
+<p>elementary-tweaks</p>
+<ul>
+<li>elementaryOSのデスクトップの詳細設定</li>
+</ul>
+</li>
+<li>
+<p>fcitx-mozc</p>
+<ul>
+<li>日本語入力</li>
+</ul>
+</li>
+<li>
+<p>xbindkeys</p>
+<ul>
+<li>任意のコマンドにショートカットを割り当てる</li>
+</ul>
+</li>
+<li>
+<p><a href=https://github.com/iberianpig/fusuma>Fusuma</a></p>
+<ul>
+<li>マルチタッチジェスチャ</li>
+<li>gemコマンドでインストール。Rubyが必要。</li>
+<li>インストールとカスタマイズ方法(<a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</a>)</li>
+</ul>
+</li>
+<li>
+<p><a href=https://www.dropbox.com/ja/install-linux>Dropbox</a></p>
+<ul>
+<li>デバイス間のファイル共有</li>
+</ul>
+</li>
+</ul>
+<h2 id=設定編集>設定編集</h2>
+<h2 id=システム設定>システム設定</h2>
+<ul>
+<li>
+<p>synaptic</p>
+<ul>
+<li>aptのGUIフロントエンド</li>
+</ul>
+</li>
+<li>
+<p>gdebi</p>
+<ul>
+<li>debファイルの依存関係解決</li>
+</ul>
+</li>
+<li>
+<p>fwupd</p>
+<ul>
+<li>BIOSやデバイスのファームウェアのアップデート。uefiのみで利用可</li>
+</ul>
+</li>
+<li>
+<p>snapd</p>
+<ul>
+<li>Snapを使えるようにする</li>
+</ul>
+</li>
+<li>
+<p>powertop</p>
+<ul>
+<li>消費バッテリーのモニタリング</li>
+</ul>
+</li>
+<li>
+<p>tlp</p>
+<ul>
+<li>節電用ユーティリティ</li>
+</ul>
+</li>
+<li>
+<p>baobab</p>
+<ul>
+<li>ディスク管理</li>
+</ul>
+</li>
+<li>
+<p>gparted</p>
+<ul>
+<li>パーティション管理</li>
+</ul>
+</li>
+<li>
+<p>etckeeper</p>
+<ul>
+<li><code>/etc</code>のバックアップ</li>
+</ul>
+</li>
+<li>
+<p>dconf-editor</p>
+<ul>
+<li>dconf利用アプリケーションの設定値変更</li>
+</ul>
+</li>
+<li>
+<p>gconf-editor</p>
+<ul>
+<li>gconf利用アプリケーションの設定値変更</li>
+</ul>
+</li>
+</ul>
+<h2 id=その他>その他</h2>
+<ul>
+<li>playonlinux</li>
+<li>calibre</li>
+</ul>
+<h2 id=オフィス>オフィス</h2>
+<ul>
+<li>libreoffice</li>
+</ul>
+<h2 id=動画音楽>動画・音楽</h2>
+<ul>
+<li>Spotify
+<ul>
+<li>音楽プレイヤー</li>
+</ul>
+</li>
+<li>VLC
+<ul>
+<li>動画プレイヤー</li>
+</ul>
+</li>
+</ul>
+<h2 id=デスクトップキャプチャ>デスクトップキャプチャ</h2>
+<ul>
+<li>gyazo
+<ul>
+<li>キャプチャした動画や画像をホスティング</li>
+</ul>
+</li>
+<li>scrot
+<ul>
+<li>スクリーンショット</li>
+</ul>
+</li>
+<li>byzanz
+<ul>
+<li>Gifアニメーションでキャプチャ</li>
+</ul>
+</li>
+<li>obs-studio
+<ul>
+<li>デスクトップ配信</li>
+</ul>
+</li>
+</ul>
+<h3 id=リモートデスクトップ>リモートデスクトップ</h3>
+<ul>
+<li>remmina</li>
+</ul>
+<h3 id=開発用>開発用</h3>
+<ul>
+<li>docker-ce</li>
+<li>jq</li>
+<li>direnv</li>
+<li>make</li>
+<li>automake</li>
+<li>autoconf</li>
+<li>pkg-config</li>
+<li>tree</li>
+<li>sassc</li>
+<li>gcc</li>
+<li>python-pip</li>
+<li>libreadline-dev</li>
+<li>shellcheck</li>
+<li>global</li>
+<li>awscli</li>
+<li>libmysqlclient-dev</li>
+<li>mysql-server</li>
+<li>virtualbox</li>
+<li>virtualbox-ext-pack</li>
+<li>ngrok</li>
+</ul>
+<h1 id=grubの設定>grubの設定</h1>
+<pre tabindex=0><code>GRUB_DEFAULT=0
 GRUB_TIMEOUT_STYLE=hidden
 GRUB_TIMEOUT=5
 GRUB_RECORDFAIL_TIMEOUT=5
 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`
 GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash pci=noaer resume=UUID=9844e045-cffd-4fac-806d-9b1f3f430edf zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=25 i915.enable_fbc=1 i915.enable_psr=1 i915.disable_power_well=0&quot;
 GRUB_CMDLINE_LINUX=&quot;&quot;
-</code></pre><h2 id=hibernateオプションの設定>hibernateオプションの設定</h2><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%25E3%2581%25A7%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2590%25E3%2583%258D%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25AA%25E3%2583%2597%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2582%2592%25E8%25BF%25BD%25E5%258A%25A0%25E3%2581%2599%25E3%2582%258B/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%2F&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><p>以前の方法のとおりだと上手くいかずにハマった。<br><code>resume=UUID=9844e045-cffd-4fac-806d-9b1f3f430edf</code>のように必ず、<strong>UUID</strong>で指定をすること。</p><blockquote><p>ここで注意なのは、initramfs の resume ファイルに設定したものと同じ文字列を設定する必要があります。同じパーテーションだからといって、resume=/dev/sdaX のように違う指定の方法をすると動作しません。initramfs の方で UUID で指定したら、grub の設定も UUID で指定してください。</p></blockquote><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://petit-noise.net/blog/hibernation-on-ubuntu-18-04/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fpetit-noise.net%2Fblog%2Fhibernation-on-ubuntu-18-04%2F&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><h2 id=zswapの設定>zswapの設定</h2><p>メモリが8GBと開発機としては少し物足りないのでzswapを設定しておく。</p><p><code>/etc/default/grub</code>と<code>/etc/initramfs-tools/modules</code>を修正する。</p><p>こちらのリンクを参考に設定した</p><p><a href=http://www.nofuture.tv/diary/20180206.html>Zswapを有効にして少ないメモリを乗り切ろう - Days of Speed(2018-02-06)</a></p><h1 id=uefiの設定>UEFIの設定</h1><p>最初、BIOSブートでインストールしてしまったため、あとからUEFIブート出来るように<code>/boot/efi</code>にgrubをインストールした。</p><ol><li>Ubuntuの入ったLiveUSBを作り、BIOSの設定を弄ってUEFIモードでLiveUSBのUbuntu起動</li><li>gpartでパーティションをfat32で切る</li><li>elementaryOS側(PC側)の各デバイスをLiveUSB側からmountし、grubインストール</li><li><code>/boot/efi</code>のマウント指定を<code>/etc/fstab</code>に記述して保存</li><li>再起動するとUEFIモードでelementary OSが起動する</li></ol><p>このやり方覚えておくと、間違って<code>/boot</code>削除したとしても大丈夫。</p><p>詳しくはこちらの記事参照。</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=http://nodemand.hatenablog.com/entry/2016/11/11/175929 data-iframely-url="//cdn.iframe.ly/api/iframe?url=http%3A%2F%2Fnodemand.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F175929&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small&media=0"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><h1 id=fwupdでファームウェアの最新化>fwupdでファームウェアの最新化</h1><p>fwupdでデバイスの更新、取得を行う</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/fwupd/fwupd data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Ffwupd%2Ffwupd&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><p>最近はSnapでインストールできるのようになっている模様</p><h1 id=ネットワーク周りの対応>ネットワーク周りの対応</h1><p>ネットワークがブツブツ切れるような問題になった際に行った対応</p><h2 id=ath10k-firmwareの更新>ath10k-firmwareの更新</h2><p>XPS 13シリーズで不評なKiller 1535 Wirless Adapterのファームウェア(ath10k/QCA6174)をGitHubから取得して更新する</p><div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/kvalo/ath10k-firmware data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fkvalo%2Fath10k-firmware&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git clone https://github.com/kvalo/ath10k-firmware
+</code></pre><h2 id=hibernateオプションの設定>hibernateオプションの設定</h2>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%25E3%2581%25A7%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2590%25E3%2583%258D%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25AA%25E3%2583%2597%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2582%2592%25E8%25BF%25BD%25E5%258A%25A0%25E3%2581%2599%25E3%2582%258B/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%2F&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<p>以前の方法のとおりだと上手くいかずにハマった。<br>
+<code>resume=UUID=9844e045-cffd-4fac-806d-9b1f3f430edf</code>のように必ず、<strong>UUID</strong>で指定をすること。</p>
+<blockquote>
+<p>ここで注意なのは、initramfs の resume ファイルに設定したものと同じ文字列を設定する必要があります。同じパーテーションだからといって、resume=/dev/sdaX のように違う指定の方法をすると動作しません。initramfs の方で UUID で指定したら、grub の設定も UUID で指定してください。</p>
+</blockquote>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://petit-noise.net/blog/hibernation-on-ubuntu-18-04/ data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fpetit-noise.net%2Fblog%2Fhibernation-on-ubuntu-18-04%2F&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<h2 id=zswapの設定>zswapの設定</h2>
+<p>メモリが8GBと開発機としては少し物足りないのでzswapを設定しておく。</p>
+<p><code>/etc/default/grub</code>と<code>/etc/initramfs-tools/modules</code>を修正する。</p>
+<p>こちらのリンクを参考に設定した</p>
+<p><a href=http://www.nofuture.tv/diary/20180206.html>Zswapを有効にして少ないメモリを乗り切ろう - Days of Speed(2018-02-06)</a></p>
+<h1 id=uefiの設定>UEFIの設定</h1>
+<p>最初、BIOSブートでインストールしてしまったため、あとからUEFIブート出来るように<code>/boot/efi</code>にgrubをインストールした。</p>
+<ol>
+<li>Ubuntuの入ったLiveUSBを作り、BIOSの設定を弄ってUEFIモードでLiveUSBのUbuntu起動</li>
+<li>gpartでパーティションをfat32で切る</li>
+<li>elementaryOS側(PC側)の各デバイスをLiveUSB側からmountし、grubインストール</li>
+<li><code>/boot/efi</code>のマウント指定を<code>/etc/fstab</code>に記述して保存</li>
+<li>再起動するとUEFIモードでelementary OSが起動する</li>
+</ol>
+<p>このやり方覚えておくと、間違って<code>/boot</code>削除したとしても大丈夫。</p>
+<p>詳しくはこちらの記事参照。</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=http://nodemand.hatenablog.com/entry/2016/11/11/175929 data-iframely-url="//cdn.iframe.ly/api/iframe?url=http%3A%2F%2Fnodemand.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F175929&key=f073c4f447189e73167146bd9d0f6195&iframe=card-small&media=0"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<h1 id=fwupdでファームウェアの最新化>fwupdでファームウェアの最新化</h1>
+<p>fwupdでデバイスの更新、取得を行う</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/fwupd/fwupd data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Ffwupd%2Ffwupd&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<p>最近はSnapでインストールできるのようになっている模様</p>
+<h1 id=ネットワーク周りの対応>ネットワーク周りの対応</h1>
+<p>ネットワークがブツブツ切れるような問題になった際に行った対応</p>
+<h2 id=ath10k-firmwareの更新>ath10k-firmwareの更新</h2>
+<p>XPS 13シリーズで不評なKiller 1535 Wirless Adapterのファームウェア(ath10k/QCA6174)をGitHubから取得して更新する</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/kvalo/ath10k-firmware data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fkvalo%2Fath10k-firmware&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git clone https://github.com/kvalo/ath10k-firmware
 </code></pre></div><p>リポジトリにあるファイルを/lib/firmware配下のものと置き換える。
-参考: <a href=https://gist.github.com/Samffy/97cb1dd9cb89f5ac29ac4af2affd43f2>Dell XPS 13 9360 : Ubuntu Wifi disconnection</a></p><p>よくやってる処理なのでMakefileにしてリポジトリのルートに配置して更新している。</p><script src=https://gist.github.com/iberianpig/5b7c275bed9ec69562b7bc728c84b8d1.js></script><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ make backup_QCA6174 <span style=color:#75715e># /lib/firmware/ath10k/QCA6174をバックアップ</span>
+参考: <a href=https://gist.github.com/Samffy/97cb1dd9cb89f5ac29ac4af2affd43f2>Dell XPS 13 9360 : Ubuntu Wifi disconnection</a></p>
+<p>よくやってる処理なのでMakefileにしてリポジトリのルートに配置して更新している。</p>
+<script src=https://gist.github.com/iberianpig/5b7c275bed9ec69562b7bc728c84b8d1.js></script>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ make backup_QCA6174 <span style=color:#75715e># /lib/firmware/ath10k/QCA6174をバックアップ</span>
 $ make update <span style=color:#75715e># リポジトリから取得したものと差し替え</span>
-</code></pre></div><h2 id=カーネルパラメータの見直し>カーネルパラメータの見直し</h2><p>GRUB_CMDLINE_LINUX_DEFAULTカーネルパラメータに省電力設定が入っている場合<code>pcie_aspm=off</code>にしておくとネットワーク周りが安定することある。</p></div><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&text=Upgrade%20to%20elementary%20OS%205.0%20Juno&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a><a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&t=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Facebookでシェア class=fb target=_blank rel=nofollow></a><a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=はてなブックマーク class=ht target=_blank rel=nofollow></a><a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><aside><section><div><div id=disqus_thread></div></div></section></aside></div></article></div><div class=col-md-3><aside class=site><section><header>Table Of Contents</header><div><nav id=TableOfContents><ul><li><a href=#ansibleでローカル環境の再構築>Ansibleでローカル環境の再構築</a></li></ul><ul><li><a href=#ブラウザ>ブラウザ</a></li><li><a href=#パスワードマネージャ>パスワードマネージャ</a></li><li><a href=#画像編集系>画像編集系</a></li><li><a href=#ターミナルcli環境>ターミナル/CLI環境</a></li><li><a href=#チャット>チャット</a></li><li><a href=#デスクトップ拡張gui>デスクトップ拡張/GUI</a></li><li><a href=#設定編集>設定編集</a></li><li><a href=#システム設定>システム設定</a></li><li><a href=#その他>その他</a></li><li><a href=#オフィス>オフィス</a></li><li><a href=#動画音楽>動画・音楽</a></li><li><a href=#デスクトップキャプチャ>デスクトップキャプチャ</a><ul><li><a href=#リモートデスクトップ>リモートデスクトップ</a></li><li><a href=#開発用>開発用</a></li></ul></li></ul><ul><li><a href=#hibernateオプションの設定>hibernateオプションの設定</a></li><li><a href=#zswapの設定>zswapの設定</a></li></ul><ul><li><a href=#ath10k-firmwareの更新>ath10k-firmwareの更新</a></li><li><a href=#カーネルパラメータの見直し>カーネルパラメータの見直し</a></li></ul></nav></div></section><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div><footer><div class=date><div class=time>Sun, Apr 28, 2019</div></div><h2 class=title>2019/04/28 最近読んだ記事</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</div></div><h2 class=title>Fusumaのインストールと設定</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>趣味・仕事で平日休日変わらず毎日コードを書いてます。</div><iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-briefcase fa-lg">Work</i></div>エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+</code></pre></div><h2 id=カーネルパラメータの見直し>カーネルパラメータの見直し</h2>
+<p>GRUB_CMDLINE_LINUX_DEFAULTカーネルパラメータに省電力設定が入っている場合<code>pcie_aspm=off</code>にしておくとネットワーク周りが安定することある。</p>
+</div>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&text=Upgrade%20to%20elementary%20OS%205.0%20Juno&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&t=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2019-05-14_upgrade_to_elementary_os_5.0_juno%2f&title=Upgrade%20to%20elementary%20OS%205.0%20Juno" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<aside>
+<section>
+<div>
+<div id=disqus_thread></div>
+</div>
+</section>
+</aside>
+</div>
+</article>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Table Of Contents</header>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#ansibleでローカル環境の再構築>Ansibleでローカル環境の再構築</a></li>
+</ul>
+<ul>
+<li><a href=#ブラウザ>ブラウザ</a></li>
+<li><a href=#パスワードマネージャ>パスワードマネージャ</a></li>
+<li><a href=#画像編集系>画像編集系</a></li>
+<li><a href=#ターミナルcli環境>ターミナル/CLI環境</a></li>
+<li><a href=#チャット>チャット</a></li>
+<li><a href=#デスクトップ拡張gui>デスクトップ拡張/GUI</a></li>
+<li><a href=#設定編集>設定編集</a></li>
+<li><a href=#システム設定>システム設定</a></li>
+<li><a href=#その他>その他</a></li>
+<li><a href=#オフィス>オフィス</a></li>
+<li><a href=#動画音楽>動画・音楽</a></li>
+<li><a href=#デスクトップキャプチャ>デスクトップキャプチャ</a>
+<ul>
+<li><a href=#リモートデスクトップ>リモートデスクトップ</a></li>
+<li><a href=#開発用>開発用</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href=#hibernateオプションの設定>hibernateオプションの設定</a></li>
+<li><a href=#zswapの設定>zswapの設定</a></li>
+</ul>
+<ul>
+<li><a href=#ath10k-firmwareの更新>ath10k-firmwareの更新</a></li>
+<li><a href=#カーネルパラメータの見直し>カーネルパラメータの見直し</a></li>
+</ul>
+</nav></div>
+</section>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</div>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</div>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Apr 28, 2019</div>
+</div>
+<h2 class=title>2019/04/28 最近読んだ記事</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+趣味・仕事で平日休日変わらず毎日コードを書いてます。
+</div>
+<iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-briefcase fa-lg"> Work</i>
+</div>
+エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
 <a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
-<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script><script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script><script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script><script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
+<script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
+<script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
+<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>

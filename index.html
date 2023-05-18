@@ -1,10 +1,98 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.82.1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>iberianpigsty</title><meta property="og:title" content="iberianpigsty"><meta property="og:type" content="website"><meta name=description content="iberianpigの技術ブログ"><meta property="og:url" content="https://iberianpig.github.io/"><meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script><script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><div class=row><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</time></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2><div class=summary>Linux向けのマルチタッチジェスチャツールのFusumaがv2にバージョンアップした。 新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>iberianpigsty</title>
+<meta property="og:title" content="iberianpigsty">
+<meta property="og:type" content="website">
+<meta name=description content="iberianpigの技術ブログ">
+<meta property="og:url" content="https://iberianpig.github.io/">
+<meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<div class=row>
+<div class=col-sm-6>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/>
+<div class=image style=background-image:url(https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</time>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+<div class=summary>RubyKaigi 2023 RubyKaigi2023で登壇してFusumaについて話した。
+CFP出したら通ってしまって、まだまだ先の話だと思っていたら、あっという間に当日になってしまった。
+資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。 結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。
+今でも自分がRubyKaigiに登壇するなんて思ってもいなかったし、なんならもう一週間経つけれど、あんまり実感がない。 https://rubykaigi.org/2023/schedule/#day1 で並んでる面々、みんな凄い人ばかりで、自分が並んでるのが違和感があるというか、まだそんな感じがする。
+RubyKaigi is 祭 ランチブレイクの時にRubyKaigiって祭りだよねという話をしていた。 あの短い期間だけ、町がRubyistに包まれるあの熱狂的でカオスな状況、まさしく祭りだと思う。
+好きなトークを聞いて、久々に会う友人・はじめましての人と話して、松本グルメ探訪し、夜はOfficial Party、Drinkup、After Party、会期中ずっとRubyの話してるのすごい楽しい。
+トーク聞きに来てくれた友人の夫妻と久々に会ったらお子さんがめっちゃ大きくなってて謎に感動したり、 推しのk0kubunさんやペンさんと写真を撮ってホクホクしていたり、 初めてRubyKaigiに来たという若者見つけてバーに連れて行ったり、 特にDay 3は After Party🍺 => 居酒屋🍺 => ラーメン屋🍺 => コンビニ🍺 みたいな感じで朝までずっと飲んで話してた。
+ラーメン屋で朝まで飲んでた人達、みんな無事かな#rubykaigi #rubyfriends pic.twitter.com/O2zDWNscAP
+&mdash; iberianpig(Kohei Yamada) (@nukumaro22) May 14, 2023 みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。 ちなみに最初に参加したのはRubyKaigi 2019の福岡の時で、その時もめちゃくちゃ楽しかったけど、今回はもっと楽しめた気がする。Kaigi is back!
+RubyKaigiを盛り上げてきてくださったスタッフの皆様、スポンサーしてくれている企業さんには頭が上がりません。本当にありがとうございます。
+Fusumaについて発表した FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。gem install fusuma でジェスチャが効くようになるツール。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。
+初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。
+Youtubeにアーカイブが上がったら見てください。
+同時通訳 RubyKaigiは日 -> 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。
+自分は通訳の方を入れて話すのは初めてだった。 当日になってギリギリまで資料を弄ってしまっていたので、事前に送った資料との差分が出ていてそのギャップを埋めるのにてんやわんやさせてしまいました。本当に申し訳ありません。
+二人の通訳の方がセクション毎に交代して通訳を担当するのでお互いのパートで表現のニュアンスのズレがでないか調整をしていた。 技術通訳をされているプロの方々で、担当してくれた方はバッファやキューなどのデータ構造のことを認識されていて、その上でどの表現が適切か、発火はFireかTriggerか、みたいな細かいところまで質問していただけて、すごく新鮮な体験だった。
+あと、通訳し終わる前にスライドが次に移動すると英語で聞いている人が理解しづらくなるので、話の区切りでは適宜間を持たせたほうが良いという話や、みなさんどうしても早口になるのでゆっくり落ち着いて話すようにというアドバイスをいただきました。 しかし、想定よりも若干時間が余ったのでかなりオタク特有の早口出てしまったと思います。すみません。
+登壇資料 トークの中で話してた、ヨドバシに通ってMac触って挙動を確認してたのは本当で、それでエッジスワイプをプロトタイプのxSwipeに実装できた。 Macのトラックパッド上を2本指で右端からからスワイプすると通知センター開くやつで、右端指1本分くらいの領域を通過したあとその領域にもう1回連続でタッチが入り移動するとトリガされるやつ。 ただ、Synapticsではタッチパッド上の絶対位置が取れて同じような実装が出来るのだが、相対移動しか取れないLibinputだと端を取るのがちょっと難しくまだFusumaには移植できてない。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-6>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</time>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+<div class=summary>Linux向けのマルチタッチジェスチャツールのFusumaがv2にバージョンアップした。 新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
 Fusuma v2のアップデートの概要 Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ、contextに応じた設定の切り替えなど、 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
 アプリ固有のジェスチャ設定(fusuma-plugin-appmatcher) Mac OSスタイルの3本指ドラッグ Windowsスタイルの3本指スワイプでのウィンドウ切り替え スワイプ/ローテートによる音量調整・輝度変更 動作確認した環境 この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。 利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
 $ fusuma --version reload config: /home/iberianpig/.config/fusuma/config.yml --------------------------------------------- Fusuma: 2.0.5 libinput: 1.16.5 ruby 2.7.0p0 OS: Linux 5.10.0-1026-oem #27-Ubuntu SMP Thu May 6 07:19:13 UTC 2021 Distribution: Ubuntu 20.04.2 LTS \n \l Desktop session: ubuntu x11 --------------------------------------------- なお、Fusuma v2から要求するRubyバージョンが2.5.1以上(Ubuntu 18.04のデフォルトのRubyバージョン)となっているので注意。
 Fusumaとプラグインを最新版にアップデート gemコマンドでアップデートできる。 システムワイドのRubyを使ってインストールしていない場合sudoは不要。
 $ sudo gem update fusuma インストール済みのFusumaプラグインがある場合はそれらをアップデートしておく。
-# プラグインをリストする $ sudo gem list fusuma-plugin- fusuma-plugin-keypress (0.</div></footer></a></article></div><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</time></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2><div class=summary>下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)
+# プラグインをリストする $ sudo gem list fusuma-plugin- fusuma-plugin-keypress (0.</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-6>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</time>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+<div class=summary>下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)
 elementary OSはUIが綺麗でかつ動作も軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。
 Unetbootinを利用してelementary OS Junoにアップグレードする。
 実際はクリーンインストールなのだが、elementary OS自体は公式でアップグレードパスを用意していない。 /homeと/を別パーティションに分けていたので、データ領域である/homeを残してそれ以外を新しい環境に移行する。
@@ -15,7 +103,21 @@ Unetbootinについてはこちらをご参考に↓
 アプリケーションのインストール /home以外はクリーンインストールなので、aptや/usr/local/binでインストールしていたものは再インストールする必要がある。
 Ansibleでローカル環境の再構築 Ansibleでローカル環境の再構築を楽に行えるようにしたかったので、アプリケーションのリスト程度だがdotfiles/.config/ansible/playbook.ymlに残している。
 ansible-playbookコマンドでリポジトリの追加、パッケージインストールを下記のコマンドで行う。
-ansible-playbook ~/.config/ansible/playbook.yml -K インストールしたアプリケーション一覧 ブラウザ Google Chrome メインブラウザ 手動でインストール Chromium Firefox パスワードマネージャ bitwarden snapでインストール可 Chrome拡張もある 画像編集系 Gimp 画像編集 Inkscape ベクタ系の画像編集 ターミナル/CLI環境 byobu tmuxのラッパー guake ドロップダウンタイプのターミナル git バージョン管理 tig gitのCUIクライアント ranger VimライクなCUIファイラ vim-gnome GVim。クリップボード拡張入りのVimも入る。 xclip CLIクリップボードマネージャ チャット Slack 仕事で使うチャットアプリ Line chrome拡張 デスクトップ拡張/GUI numix-icon-theme</div></footer></a></article></div><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</time></div><h2 class=title>tig-explorer.vimの使い方</h2><div class=summary>Vim用のGitクライアントが欲しかった vimのGitプラグインとして何を使っているのが多いだろうか？
+ansible-playbook ~/.config/ansible/playbook.yml -K インストールしたアプリケーション一覧 ブラウザ Google Chrome メインブラウザ 手動でインストール Chromium Firefox パスワードマネージャ bitwarden snapでインストール可 Chrome拡張もある 画像編集系 Gimp 画像編集 Inkscape ベクタ系の画像編集 ターミナル/CLI環境 byobu tmuxのラッパー guake ドロップダウンタイプのターミナル git バージョン管理 tig gitのCUIクライアント ranger VimライクなCUIファイラ vim-gnome GVim。クリップボード拡張入りのVimも入る。 xclip CLIクリップボードマネージャ チャット Slack 仕事で使うチャットアプリ Line chrome拡張 デスクトップ拡張/GUI numix-icon-theme</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-6>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</time>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+<div class=summary>Vim用のGitクライアントが欲しかった vimのGitプラグインとして何を使っているのが多いだろうか？
 自分の観測範囲ではfugitiveを使っている人が多いようだ。
 しかし、ターミナルではCUIツールで高速なプレビューの出来るtigをGitクライアントとして利用している人は多いのではないだろうか。
 vimでもtigが使いたい。そんな人(自分)のためにvim pluginを作成した。
@@ -31,7 +133,21 @@ tig blame FILEPATHで現在のファイル履歴を行単位で見る(:TigBlame)
 tig-explorer.vimのカスタマイズ .vimrcの記述例
 " tigを開くnnoremap &lt;Leader>t :TigOpenProjectRootDir&lt;CR>" 現在のファイルの履歴を見るnnoremap &lt;Leader>T :TigOpenCurrentFile&lt;CR>" パターンでtig grepするnnoremap &lt;Leader>g :TigGrep&lt;CR>" tig grepした内容を再呼び出しするnnoremap &lt;Leader>r :TigGrepResume&lt;CR>" 選択中のキーワードでtig grepするvnoremap &lt;Leader>g y:TigGrep&lt;Space>&lt;C-R>"&lt;CR>" カーソル下のキーワードでtig grepするnnoremap &lt;Leader>cg :&lt;C-u>:TigGrep&lt;Space>&lt;C-R>&lt;C-W>&lt;CR>" 現在のカーソル位置でtig blameするnnoremap &lt;Leader>b :TigBlame&lt;CR>また、このプラグインの特徴的なところでtig上でCtrl-tを押下するとvimのタブで開く機能が追加されている。 同様にCtrl-sで水平分割、 Ctrl-vで垂直分割出来る。
 tig上のvimを開くキーバインドの動的に追加していて、下記がデフォルトの設定値。
-let g:tig_explorer_keymap_edit = '&lt;C-o>'let g:tig_explorer_keymap_tabedit = '&lt;C-t>'let g:tig_explorer_keymap_split = '&lt;C-s>'let g:tig_explorer_keymap_vsplit = '&lt;C-v>'↑ .</div></footer></a></article></div><div class=col-sm-6><article class=grid><a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/><div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div><footer><div class=date><div class=time>Sun, Apr 28, 2019</time></div><h2 class=title>2019/04/28 最近読んだ記事</h2><div class=summary>Ruby FFIについて https://github.com/ffi/ffi
+let g:tig_explorer_keymap_edit = '&lt;C-o>'let g:tig_explorer_keymap_tabedit = '&lt;C-t>'let g:tig_explorer_keymap_split = '&lt;C-s>'let g:tig_explorer_keymap_vsplit = '&lt;C-v>'↑ .</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/>
+<div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Apr 28, 2019</time>
+</div>
+<h2 class=title>2019/04/28 最近読んだ記事</h2>
+<div class=summary>Ruby FFIについて https://github.com/ffi/ffi
 RubyからCの関数を呼び出すことが出来る代物。 内部でlibffiというライブラリを経由してRubyからCをコールする。
 ↓ FFIを使って作成されたプロジェクト一覧
 https://github.com/ffi/ffi/wiki/projects-using-ffi
@@ -45,7 +161,21 @@ GIFのようにワークスペースの移動が出来ている。fusuma-plugins
 歴4ヶ月の異業種未経験がリモート開発 スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。
 特に最初からリモートワークは絶対にやめたほうが良くて、テキストベースのチャットで理解できる範囲なんて初心者(じゃなくても難しい)に分かるはずもない。 しかも教える側のコストが格段に大きくなってしまうので、お互いに不幸になる。
 技術的レベルが足りないのであれば、 ちゃんと1年下積みしたら見違えるように変わるので、フリーランスなる前に何処かの事業会社や受託会社などに転がり込んで武者修行すると早い。 自分は職業訓練校の後にスタートアップにインターンとしてジョインしたが、特に小さいスタートアップだと急速な成長は見込めるものの体力無いとしんどいので覚悟決めていったほうが良い。
-最近、未経験でフリーランスのエンジニアやりたいという人から相談受けることがあるけれど、普通に無謀なのでまずは会社に入ろう。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</time></div><h2 class=title>Fusumaのインストールと設定</h2><div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
+最近、未経験でフリーランスのエンジニアやりたいという人から相談受けることがあるけれど、普通に無謀なのでまずは会社に入ろう。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/>
+<div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div>
+<footer>
+<div class=date>
+<div class=time>Fri, Feb 22, 2019</time>
+</div>
+<h2 class=title>Fusumaのインストールと設定</h2>
+<div class=summary>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
 RubyGemsにライブラリを公開した時の記事⇓
 Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
 自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
@@ -59,7 +189,21 @@ $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショート
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
 (rbenvやrvmでインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
 Fusumaの設定ファイルを作成する ~/.config/fusuma/config.ymlに設定ファイルを作成する。
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div><footer><div class=date><div class=time>Sun, Sep 2, 2018</time></div><h2 class=title>ranger-explorer.vimをアップデートした</h2><div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/>
+<div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Sep 2, 2018</time>
+</div>
+<h2 class=title>ranger-explorer.vimをアップデートした</h2>
+<div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
@@ -75,13 +219,41 @@ let g:ranger_explorer_keymap_edit = '&lt;C-o>'let g:ranger_explorer_keymap_tabed
 fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
 異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。
 そこで、fzfや以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、&lt;C-o>、&lt;C-t>、&lt;C-v>、&lt;C-s>のキーバインドでタブや画面分割して開けるようにした。
-プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/><div class=image style=background-image:url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png)></div><footer><div class=date><div class=time>Sun, Jul 15, 2018</time></div><h2 class=title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2><div class=summary>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
+プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2018-07-15_disable_while_typing/>
+<div class=image style=background-image:url(https://i.gyazo.com/94f329bb2ad264a36c5ea67e1b548b99.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Jul 15, 2018</time>
+</div>
+<h2 class=title>タイピング中にタッチパッドを無効にする(Linux/Libinput)</h2>
+<div class=summary>タッチパッドに親指の付け根や手のひらが当たることでカーソルが飛び、頻繁にタイポが発生していた。
 今回、libinputの設定でカーソル飛びがほとんど無くなったので、その方法について書いた。
 記事内の環境
 Distribution: elementary OS Loki (Ubuntu 16.04.1ベース) Kernel Linux 4.15.0-24-generic タッチパッドドライバでlibinputを使用している ドライバはsynapticsとlibinputがあって、最近はwayland由来のlibinputの開発が盛んである
 また、X11でもライブラリをインストールすればラッパー経由でlibinputを利用できる
 libinputかsynapticsのどちらが有効か 判別方法は以下
-$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)] Touchpadの記述を含んだ行が見つかる。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/><div class=image style=background-image:url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg)></div><footer><div class=date><div class=time>Fri, Apr 27, 2018</time></div><h2 class=title>2018/04/27 最近読んだ記事</h2><div class=summary>最近読んだ記事で気になったものを幾つかピックアップ。
+$ xinput ⎡ Virtual core pointer id=2 [master pointer (3)] ⎜ ↳ Virtual core XTEST pointer id=4 [slave pointer (2)] ⎜ ↳ DLL075B:01 06CB:76AF Touchpad id=11 [slave pointer (2)] ⎣ Virtual core keyboard id=3 [master keyboard (2)] ↳ Virtual core XTEST keyboard id=5 [slave keyboard (3)] ↳ Power Button id=6 [slave keyboard (3)] ↳ Video Bus id=7 [slave keyboard (3)] ↳ Power Button id=8 [slave keyboard (3)] ↳ Sleep Button id=9 [slave keyboard (3)] Touchpadの記述を含んだ行が見つかる。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/>
+<div class=image style=background-image:url(https://i.gyazo.com/7f1d222f22ee8400a3166cf400f4936e.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Fri, Apr 27, 2018</time>
+</div>
+<h2 class=title>2018/04/27 最近読んだ記事</h2>
+<div class=summary>最近読んだ記事で気になったものを幾つかピックアップ。
 ERC20に準拠したトークンコントラクトの脆弱性問題について 独自実装した箇所のSolidityのプログラムにバグがあった。
 ERC20自体に欠陥があるわけではない。
 算出処理はzeppelin-solidityというコントラクト開発ライブラリ群のSafeMath.sol を利用することが定石となっています。
@@ -93,7 +265,21 @@ $ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=> 0 # 成功 $ mkdir 
 【翻訳】サイドプロジェクトから収益性のあるスタートアップに育てる方法（前編） Nomad List 作った人の話。毎月1つのペースでサービス作るのは楽しそう。 Nomad Listはノマドワーカーに必要なネットや電源、生活費を含めた都市毎のランキングがメインのサイト。 コワーキングのリストとかもある。 ログインしてチャットチャンネルに参加する部分は有料。 サインアップしたらフリーミアムとかはなくて全て有料プラン。
 あと、remoteok というサービスも作っていてこちらも稼ぎを出してる模様 数を撃つこと自体は当てるためには必要。個人的にかなり参考にしたい。
 アマゾン・エコーが、英会話の練習相手になってくれた 日常会話的な内容が練習出来ると良さそう。
-最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/><div class=image style=background-image:url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png)></div><footer><div class=date><div class=time>Sun, Jun 25, 2017</time></div><h2 class=title>fwupdでLinuxからUEFI(BIOS)のアップデート</h2><div class=summary>Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
+最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/>
+<div class=image style=background-image:url(https://i.gyazo.com/265d5fab5db286263c9c9f46e604a79f.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Jun 25, 2017</time>
+</div>
+<h2 class=title>fwupdでLinuxからUEFI(BIOS)のアップデート</h2>
+<div class=summary>Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
 特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。
 なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。
 この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。
@@ -106,7 +292,21 @@ fwupdmgrでインストール fwupdmgrというコマンドが利用出来るよ
 fwupdmgr installでファームウェアをインストール。
 fwupdmgr install /path/to/your/downloaded/firmware.cab これでインストール待ち状態になった。
 再起動時にBIOSのロード画面でアップグレードが走る。
-Special Thanks https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/><div class=image style=background-image:url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67)></div><footer><div class=date><div class=time>Sun, May 14, 2017</time></div><h2 class=title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2><div class=summary>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+Special Thanks https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist </div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/>
+<div class=image style=background-image:url(https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, May 14, 2017</time>
+</div>
+<h2 class=title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</h2>
+<div class=summary>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
@@ -120,7 +320,21 @@ fusumaコマンドで起動。
 ~/.config/fusuma/config.ymlに設定ファイルを配置するとFusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
-swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key alt+Left' up: command: 'xdotool key alt+t' down: command: 'xdotool key alt+w' 4: left: command: 'xdotool key super' right: command: 'xdotool key super+a' up: command: 'sh ~/tool/linux/script/desktop_switcher.sh 1' down: command: 'sh ~/tool/linux/script/desktop_switcher.sh -1' pinch: 2: in: command: 'xdotool key ctrl+equal' out: command: 'xdotool key ctrl+minus' 4: in: command: 'xdotool key super+a' out: command: 'xdotool key super+s' threshold: swipe: 0.</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/><div class=image style=background-image:url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png)></div><footer><div class=date><div class=time>Mon, Feb 6, 2017</time></div><h2 class=title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2><div class=summary>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key alt+Left' up: command: 'xdotool key alt+t' down: command: 'xdotool key alt+w' 4: left: command: 'xdotool key super' right: command: 'xdotool key super+a' up: command: 'sh ~/tool/linux/script/desktop_switcher.sh 1' down: command: 'sh ~/tool/linux/script/desktop_switcher.sh -1' pinch: 2: in: command: 'xdotool key ctrl+equal' out: command: 'xdotool key ctrl+minus' 4: in: command: 'xdotool key super+a' out: command: 'xdotool key super+s' threshold: swipe: 0.</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/>
+<div class=image style=background-image:url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Feb 6, 2017</time>
+</div>
+<h2 class=title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
+<div class=summary>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
 リポジトリを追加する
 sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール
@@ -132,7 +346,21 @@ HWE（Hardware Enablement）カーネルは，より新しいハードウェア�
 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
 linux-generic-hwe-16.04-edgeをインストール
 sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/><div class=image style=background-image:url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png)></div><footer><div class=date><div class=time>Mon, Jan 30, 2017</time></div><h2 class=title>記憶の定着率を上げるPocket+Kindle連携</h2><div class=summary>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/>
+<div class=image style=background-image:url(https://i.gyazo.com/e2361e2976238ea1b8fbc2401a1dd460.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Jan 30, 2017</time>
+</div>
+<h2 class=title>記憶の定着率を上げるPocket+Kindle連携</h2>
+<div class=summary>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
 1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
 時間を空けて読むという行為をWebサービスを組み合わせてやってみる。
@@ -146,7 +374,21 @@ Kindleで読むのは週に1回（しかも長めの記事）になるので必�
 週末に30分-1時間程度かけて読む。
 その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている
 IFTTTでTwitter-> Pocketの連携 Twitterでいいねした記事を後で読むリストに追加する。 IFTTTでPocket -> Buffer連携 Pocketでスターをつけた記事をBuffer経由で#見てるタグを付けてTwitterにポストする Buffer経由することで時間を空けてツイートするので自分自身が記事を再チェック出来る 上記を取り入れた場合、3回以上同じ記事を目にすることになる。
-Special Thanks [忘却曲線 - Wikipedia] (https://ja.wikipedia.org/wiki/%E5%BF%98%E5%8D%B4%E6%9B%B2%E7%B7%9A) エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/><div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Amazon_Kindle_logo.svg/2000px-Amazon_Kindle_logo.svg.png)></div><footer><div class=date><div class=time>Tue, Jan 24, 2017</time></div><h2 class=title>風呂キンドルのすゝめ</h2><div class=summary>風呂で読書するというのを一度やってみたかったのでやってみた。
+Special Thanks [忘却曲線 - Wikipedia] (https://ja.wikipedia.org/wiki/%E5%BF%98%E5%8D%B4%E6%9B%B2%E7%B7%9A) エビングハウスの忘却曲線(ぼうきゃくきょくせん) 「記憶」の仕組みを知って効率よく学習したい…その３、短期記憶の特徴と容量について - 烏は歌う </div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/>
+<div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Amazon_Kindle_logo.svg/2000px-Amazon_Kindle_logo.svg.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Jan 24, 2017</time>
+</div>
+<h2 class=title>風呂キンドルのすゝめ</h2>
+<div class=summary>風呂で読書するというのを一度やってみたかったのでやってみた。
 Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良い。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
 Ziploc 防水性能をアドオンする。
 ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を保管するのに買った。
@@ -158,7 +400,22 @@ Kindleを入れるとこうなる。奇跡のジャストサイズ。
 ちなみに今はホモ・サピエンス全史という本を読んでる。
 ネアンデルタール人と裾野を分けたサピエンスは動物とどう違うのか、お金、会社、資本主義はどうやって成り立っているのか。
 それらは全て虚構であり、それを信じなければ成り立たなかった&mldr;という話。
-普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2017-01-23_generate_post_template/><div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png)></div><footer><div class=date><div class=time>Mon, Jan 23, 2017</time></div><h2 class=title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2><div class=summary>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。
+</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-01-23_generate_post_template/>
+<div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Jan 23, 2017</time>
+</div>
+<h2 class=title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2>
+<div class=summary>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
 hugoの記事作成 hugo new "path/to/article.md" コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new "content/post/article.md"とやってしまう。
 しかしcontent/content/path/to/article.mdに作られてしまう。
 正しくはhugo new "post/article.md"だ。contentを除いておく必要が有る。
@@ -170,7 +427,21 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 ちなみにbashのlintとしてshellcheckを入れてる。
 さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
 変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
-使ってない人はぜひインストールしよう。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/><div class=image style=background-image:url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg)></div><footer><div class=date><div class=time>Sun, Dec 18, 2016</time></div><h2 class=title>Amazon Dash Buttonで出社する</h2><div class=summary>この記事は出社芸アドベントカレンダーの18日目の記事です。
+使ってない人はぜひインストールしよう。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/>
+<div class=image style=background-image:url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Dec 18, 2016</time>
+</div>
+<h2 class=title>Amazon Dash Buttonで出社する</h2>
+<div class=summary>この記事は出社芸アドベントカレンダーの18日目の記事です。
 今日のアドベントカレンダーに登録した。
 現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
@@ -196,20 +467,124 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
 実装する 処理は大きく見ると下記の様な流れになる
-Amazon Dash Button ---> LocalServer ---> IFTTT ---> Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</div></footer></a></article></div><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2016-08-08_stub_api_for_prototyping/><div class=image style=background-image:url(https://i.gyazo.com/9f3c02a4f3b25c24677444eaaed72643.png)></div><footer><div class=date><div class=time>Mon, Aug 8, 2016</time></div><h2 class=title>プロトタイピングのためのスタブAPIサーバ</h2><div class=summary>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
-外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
-何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。
-初期にAPIのスタブサーバが出来てしまうと
-サーバサイドエンジニア => スタブサーバと同じjsonを返すようにサーバサイド開発 フロントエンドエンジニア => スタブサーバが返すjsonをパースするインタフェースを作成できる jsonの型を先に握ってしまえば並行開発が可能、テストやりやすくなる、など結構捗るので積極的に導入すべき。
-APIドキュメントの自動生成 加えてドキュメントサーバとして動くスタブサーバであればさらに便利。
-また、APIドキュメントのメンテは面倒で放置されやすいため、テストやスタブサーバから自動生成するようにしておく。
-実際にあった話として
-APIの仕様書にjsonレスポンスがない APIの返すレスポンス内容が仕様書と違っている 外部APIサーバのレスポンスデータが少ない、中身がない あとからテスト・デバッグが面倒になってきて泣きそうになった。APIスタブサーバは先に作るべき。
-node-easymockでスタブサーバ作る npm i easymock --save-devで開発環境用にインストール path/to/end-point_get.jsonのようなファイル名でレスポンスボディのJSONを記述する localhost:8000/_document で整形されたAPIドキュメントが返される 非常にシンプル。 POSTで認証用のレスポンスも返せる、ドキュメントサーバがありアクセスログも記録される。
-起動スクリプトを作る package.jsonに以下のような記述をして起動スクリプトを作成する。
-"scripts": { "easymock": "easymock --port 8000 --path spec/api/easymock" } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
-リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
-APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
-Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</div></footer></a></article></div></div><div class=row><div class=col-md-12><nav class="p-paging float-right"><a href=https://iberianpig.github.io/page/2/ rel=nofollow>NEXT</a></nav></div></div></div><div class=col-md-3><aside class=site><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div><footer><div class=date><div class=time>Sun, Apr 28, 2019</div></div><h2 class=title>2019/04/28 最近読んだ記事</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/504267be3d139795a2231eb0f7896df5.png)></div><footer><div class=date><div class=time>Fri, Feb 22, 2019</div></div><h2 class=title>Fusumaのインストールと設定</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>趣味・仕事で平日休日変わらず毎日コードを書いてます。</div><iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-briefcase fa-lg">Work</i></div>エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+Amazon Dash Button ---> LocalServer ---> IFTTT ---> Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</div>
+</footer>
+</a>
+</article>
+</div>
+</div>
+<div class=row>
+<div class=col-md-12>
+<nav class="p-paging float-right">
+<a href=https://iberianpig.github.io/page/2/ rel=nofollow>NEXT</a>
+</nav>
+</div>
+</div>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/5a7ca91b43f87ac14c3f7dfe8e38453c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</div>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</div>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Apr 28, 2019</div>
+</div>
+<h2 class=title>2019/04/28 最近読んだ記事</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+趣味・仕事で平日休日変わらず毎日コードを書いてます。
+</div>
+<iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-briefcase fa-lg"> Work</i>
+</div>
+エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
 <a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
-<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script><script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script><script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script><script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script><script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
+<script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
+<script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
+<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>
