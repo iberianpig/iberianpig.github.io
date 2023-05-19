@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on iberianpigsty</title><link>https://iberianpig.github.io/tags/linux/</link><description>Recent content in Linux on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</copyright><lastBuildDate>Wed, 17 May 2023 09:19:06 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2023に登壇してFusumaについて話した</title><link>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</link><pubDate>Wed, 17 May 2023 09:19:06 +0900</pubDate><guid>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</guid><description>RubyKaigi 2023 RubyKaigi2023で登壇してFusumaについて話した。
-CFP出したら通ってしまって、まだまだ先の話だと思っていたら、あっという間に当日になってしまった。
+CFPを出したら通過してしまい、まだまだ先の話だと思っていたら、あっという間に当日が来てしまった。
 資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。 結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。
 今でも自分がRubyKaigiに登壇するなんて思ってもいなかったし、なんならもう一週間経つけれど、あんまり実感がない。 https://rubykaigi.org/2023/schedule/#day1 で並んでる面々、みんな凄い人ばかりで、自分が並んでるのが違和感があるというか、まだそんな感じがする。
 RubyKaigi is 祭 ランチブレイクの時にRubyKaigiって祭りだよねという話をしていた。 あの短い期間だけ、町がRubyistに包まれるあの熱狂的でカオスな状況、まさしく祭りだと思う。
@@ -9,7 +9,7 @@ RubyKaigi is 祭 ランチブレイクの時にRubyKaigiって祭りだよねと
 &amp;mdash; iberianpig(Kohei Yamada) (@nukumaro22) May 14, 2023 みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。
 ちなみに最初に参加したのはRubyKaigi 2019の福岡の時で、その時もめちゃくちゃ楽しかったけど、今回はもっと楽しめた気がする。Kaigi is back!
 RubyKaigiを盛り上げてきてくださったスタッフの皆様、スポンサーしてくれている企業さんには頭が上がりません。本当にありがとうございます。
-Fusumaについて発表した FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。gem install fusuma でジェスチャが効くようになるツール。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。
+Fusumaについて発表した FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。gem install fusuma でジェスチャが効くようになる。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。
 初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。
 Youtubeにアーカイブが上がったら見てください。
 同時通訳 RubyKaigiは日 -&amp;gt; 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。
