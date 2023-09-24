@@ -77,7 +77,8 @@
 <p>FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。<code>gem install fusuma</code> でジェスチャが効くようになる。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。</p>
 <div class=iframely-embed><div class=iframely-responsive style=height:168px;padding-bottom:0><a href=https://github.com/iberianpig/fusuma data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
 <p>初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。</p>
-<p>Youtubeにアーカイブが上がったら見てください。</p>
+<p>YouTubeにアーカイブがあがってました。</p>
+<div style=left:0;width:100%;height:0;position:relative;padding-bottom:56.25%><iframe src="https://www.youtube.com/embed/gnwe8DqPDrk?rel=0" style=top:0;left:0;width:100%;height:100%;position:absolute;border:0 allowfullscreen scrolling=no allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe></div>
 <h3 id=同時通訳>同時通訳</h3>
 <p>RubyKaigiは日 -> 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。</p>
 <p>自分は通訳の方を入れて話すのは初めてだった。
@@ -103,14 +104,20 @@ Macのトラックパッド上を2本指で右端からからスワイプする�
 タッチを検知してキーボードレイヤの変更を依頼する<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense>fusuma-plugin-thumbsense</a>
 と、外部プロセスから動的にレイヤ変更できるキーリマッパーの<a href=https://github.com/iberianpig/fusuma-plugin-remap>fusuma-plugin-remap</a>の2つのGemで実現している。</p>
 <p><img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt="Image from Gyazo"></p>
-<p>実は親指を使わなくても便利で、ThumbSenseの状態でFを押しっぱなしにした場合、ドラッグ中はタッチパッドから手が離れても問題ないように実装している。つまりこの間タッチパッドを自由にスクロールしたりスワイプしたりできる。</p>
-<p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo">
-ドラッグ中に別のワークスペースにスワイプして移動してドロップ、 ThumbSenseが出た当時はスワイプジェスチャは無かったはずだけど、この組み合わせはすごく便利。 みんなLinuxにしてFusuma使ってみよう。</p>
-<p>あとタップしてクリックする機能がオフに出来るのでキーボード入力中にタッチパッド触って誤操作することが無くなって便利だった。</p>
+<p>実は親指を使わなくても便利で、よく片手だけホームポジションに残してタッチパッド操作している。<br>
+それと、タッチ->Fを押しっぱなしでドラッグをすると、そのドラッグ中はタッチパッドから手が離れても問題ないように実装している。
+そのおかげでこの間はタッチパッドを自由にスクロールしたりスワイプしたりできる！！</p>
+<p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo"></p>
+<p>つまり、このようにドラッグ中に別のワークスペースにスワイプして移動してドロップができる。
+これまでのマウスやタッチパッドの制約を超えた操作ができるようになる。
+ThumbSenseが出た当時はスワイプジェスチャは無かったので、これはかなり画期的だったと思う。
+すごく便利だから、みんなLinuxにしてFusuma使ってみよう。</p>
+<p>あとタップしてクリックする機能を使わなくなるので、これをオフにするとキーボード入力中にタッチパッド触って誤操作することが無くなって、めちゃくちゃ快適になる。
+完全に副作用なのだけれど、タッチパッドの不満点を一気に解消できていて最高。</p>
 <h3 id=今後の展望>今後の展望</h3>
 <p>ThumbSenseは自分の中でかなり良い環境改善になった。
-これからしばらくThumbsenseの使い勝手とキーリマッパーとしての拡張性を向上させていきたい。</p>
-<p>あとPalm Detectionが微妙なのでなんとかしたい気持ちもあるし、そもそもFusumaのinputプラグインはLibinputをFFI経由で使えるようにしたい、色々やりたいことがある。</p>
+これからしばらくThumbSenseの使い勝手とキーリマッパーとしての拡張性を向上させていきたい。</p>
+<p>LibinputのPalm Detectionとの兼ね合いが微妙なのでなんとかしたい気持ちもあるし、あとFusumaのinputプラグインはLibinputをFFI経由で使えるようにしたい、色々やりたいことがある。</p>
 <h2 id=rubykaigiの後>RubyKaigiの後</h2>
 <p>しばらく余韻が抜けてなくて、いやー、楽しかったなと思い出している。
 次のRubyKaigiは沖縄、めちゃくちゃ楽しみ。MINASWAN、また沖縄で会いましょう！</p>
