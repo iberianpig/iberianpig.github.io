@@ -5,9 +5,7 @@ published: true
 date: 2014-09-11
 comments: true
 tags:
-  - vim
-  - fold
-  - vimrc
+  - Vim
 ---
 
 # Vimの折りたたみをしない設定

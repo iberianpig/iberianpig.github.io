@@ -13,4 +13,4 @@ echo $path
 
 hugo new $path
 
-vi "content/$path"
+$EDITOR "content/$path"

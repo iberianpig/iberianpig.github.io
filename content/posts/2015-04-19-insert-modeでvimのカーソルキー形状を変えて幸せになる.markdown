@@ -5,7 +5,7 @@ published: true
 date: 2015-04-19
 comments: true
 tags: 
-  - vim
+  - Vim
 image: http://i.gyazo.com/523d7f4dc324943c6d55f00b69f4fa8b.png
 description: Gnome-TerminalでVimのCommand/Normalモードの状態をよりわかりやすくするためのTips
 ---
