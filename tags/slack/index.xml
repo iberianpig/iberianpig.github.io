@@ -24,4 +24,5 @@
 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
 実装する 処理は大きく見ると下記の様な流れになる
-Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description></item></channel></rss>
+Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。
+エンドポイントを作る IFTTTでTriggerを作る Makerから自分でエンドポイントを作ることが出来る。</description></item></channel></rss>

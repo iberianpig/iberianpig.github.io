@@ -5,8 +5,7 @@ https://github.com/ffi/ffi/wiki/projects-using-ffi
 キー入力のエミュレーションライブラリのxdotoolの基幹ライブラリのlibxdoをNative Extentionとして呼び出せるか調べていた。
 というのも、fusumaでxdotoolの呼び出し遅延のIssueが上がっていて、ネイティブのC関数レベルでAPIを呼べると改善するか試したかったというのがある。
 最近のlibxdo3に対応出来ているライブラリは少なく、forkされたものであれば動くことを確認した。
-require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動
-GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
+require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動 GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
 貸倒引当金について 昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
 一括評価になりそう。 この単語もたまたま詳しい方に教えて頂けたが、会計難しいので詳しい人からすぐ聞けるようにしておきたい。
 歴4ヶ月の異業種未経験がリモート開発 スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。

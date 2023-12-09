@@ -1,273 +1,36 @@
-<!doctype html><html>
-<head>
-<meta charset=utf-8>
-<meta name=generator content="Hugo 0.92.2">
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
-<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
-<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
-<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
-<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
-<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
-<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
-<title>RubyKaigi 2023に登壇してFusumaについて話した - iberianpigsty</title>
-<meta property="og:title" content="RubyKaigi 2023に登壇してFusumaについて話した - iberianpigsty">
-<meta name=description content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した">
-<meta property="og:url" content="https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/">
-<meta property="og:description" content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した">
-<meta property="og:image" content="https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg">
-<meta name=twitter:card content="summary">
-<meta name=twitter:site content="@nukumaro22">
-<meta name=twitter:creator content="@nukumaro22">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"RubyKaigi 2023に登壇してFusumaについて話した |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2023-05-17T09:19:06JST","dateModified":"2023-05-17T09:19:06JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":"RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した"}</script>
-<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
-<script src=https://kit.fontawesome.com/13953638e7.js></script>
-</head>
-<body>
-<header class=l-header>
-<div class=p-logo>
-<a href=https://iberianpig.github.io/>iberianpigsty</a>
-</div>
-</header>
-<div class=container>
-<div class=row>
-<div class=col-md-9>
-<article class=single>
-<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
-<div class=body>
-<h1>RubyKaigi 2023に登壇してFusumaについて話した</h1>
-<div class=publishDate>
-<time datetime=2023-05-17T09:19:06+09:00>Published at 17 May, 2023 </time>
-</div>
-<nav>
-<ul class=terms>
-<li><a href=https://iberianpig.github.io/tags/ruby/>#ruby</a></li><li><a href=https://iberianpig.github.io/tags/linux/>#linux</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>#libinput</a></li>
-</ul>
-</nav>
-<aside class=p-share>
-<div class=share-inner>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&text=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.110.0"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>RubyKaigi 2023に登壇してFusumaについて話した - iberianpigsty</title><meta property="og:title" content="RubyKaigi 2023に登壇してFusumaについて話した - iberianpigsty"><meta name=description content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した"><meta property="og:url" content="https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/"><meta property="og:description" content="RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した"><meta property="og:image" content="https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"RubyKaigi 2023に登壇してFusumaについて話した |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2023-05-17T09:19:06JST","dateModified":"2023-05-17T09:19:06JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":"RubyKaigi2023に登壇してDIY Your Touchpad Experience: Building Your Own GesturesというタイトルでFusumaについて話した"}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><article class=single><div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div><div class=body><h1>RubyKaigi 2023に登壇してFusumaについて話した</h1><div class=publishDate><time datetime=2023-05-17T09:19:06+09:00>Published at 17 May, 2023</time></div><nav><ul class=terms><li><a href=https://iberianpig.github.io/tags/ruby/>#ruby</a></li><li><a href=https://iberianpig.github.io/tags/linux/>#linux</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>#libinput</a></li></ul></nav><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&text=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&t=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
-</div>
-</aside>
-<div class=content>
-<h2 id=rubykaigi-2023>RubyKaigi 2023</h2>
-<p><a href=https://rubykaigi.org/2023/>RubyKaigi2023</a>で登壇してFusumaについて話した。</p>
-<p>CFPを出したら通過してしまい、まだまだ先の話だと思っていたら、あっという間に当日が来てしまった。</p>
-<p>資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><div class=content><h2 id=rubykaigi-2023>RubyKaigi 2023</h2><p><a href=https://rubykaigi.org/2023/>RubyKaigi2023</a>で登壇してFusumaについて話した。</p><p>CFPを出したら通過してしまい、まだまだ先の話だと思っていたら、あっという間に当日が来てしまった。</p><p>資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。
 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。
-結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。</p>
-<p>今でも自分がRubyKaigiに登壇するなんて思ってもいなかったし、なんならもう一週間経つけれど、あんまり実感がない。
-<a href=https://rubykaigi.org/2023/schedule/#day1>https://rubykaigi.org/2023/schedule/#day1</a> で並んでる面々、みんな凄い人ばかりで、自分が並んでるのが違和感があるというか、まだそんな感じがする。</p>
-<h3 id=rubykaigi-is-祭>RubyKaigi is 祭</h3>
-<p>ランチブレイクの時にRubyKaigiって祭りだよねという話をしていた。
-あの短い期間だけ、町がRubyistに包まれるあの熱狂的でカオスな状況、まさしく祭りだと思う。</p>
-<p>好きなトークを聞いて、久々に会う友人・はじめましての人と話して、松本グルメ探訪し、夜はOfficial Party、Drinkup、After Party、会期中ずっとRubyの話してるのすごい楽しい。</p>
-<p>トーク聞きに来てくれた友人の夫妻と久々に会ったらお子さんがめっちゃ大きくなってて謎に感動したり、
+結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。</p><p>今でも自分がRubyKaigiに登壇するなんて思ってもいなかったし、なんならもう一週間経つけれど、あんまり実感がない。
+<a href=https://rubykaigi.org/2023/schedule/#day1>https://rubykaigi.org/2023/schedule/#day1</a> で並んでる面々、みんな凄い人ばかりで、自分が並んでるのが違和感があるというか、まだそんな感じがする。</p><h3 id=rubykaigi-is-祭>RubyKaigi is 祭</h3><p>ランチブレイクの時にRubyKaigiって祭りだよねという話をしていた。
+あの短い期間だけ、町がRubyistに包まれるあの熱狂的でカオスな状況、まさしく祭りだと思う。</p><p>好きなトークを聞いて、久々に会う友人・はじめましての人と話して、松本グルメ探訪し、夜はOfficial Party、Drinkup、After Party、会期中ずっとRubyの話してるのすごい楽しい。</p><p>トーク聞きに来てくれた友人の夫妻と久々に会ったらお子さんがめっちゃ大きくなってて謎に感動したり、
 推しのk0kubunさんやペンさんと写真を撮ってホクホクしていたり、
 初めてRubyKaigiに来たという若者見つけてバーに連れて行ったり、
-特にDay 3は After Party🍺 => 居酒屋🍺 => ラーメン屋🍺 => コンビニ🍺 みたいな感じで朝までずっと飲んで話してた。</p>
-<blockquote class=twitter-tweet><p lang=ja dir=ltr>ラーメン屋で朝まで飲んでた人達、みんな無事かな<a href="https://twitter.com/hashtag/rubykaigi?src=hash&ref_src=twsrc%5Etfw">#rubykaigi</a> <a href="https://twitter.com/hashtag/rubyfriends?src=hash&ref_src=twsrc%5Etfw">#rubyfriends</a> <a href=https://t.co/O2zDWNscAP>pic.twitter.com/O2zDWNscAP</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1657592463379558401?ref_src=twsrc%5Etfw">May 14, 2023</a></blockquote> <script async src=https://platform.twitter.com/widgets.js></script>
-<p>みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。</p>
-<p>ちなみに最初に参加したのはRubyKaigi 2019の福岡の時で、その時もめちゃくちゃ楽しかったけど、今回はもっと楽しめた気がする。Kaigi is back!</p>
-<p>RubyKaigiを盛り上げてきてくださったスタッフの皆様、スポンサーしてくれている企業さんには頭が上がりません。本当にありがとうございます。</p>
-<h2 id=fusumaについて発表した>Fusumaについて発表した</h2>
-<p>FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。<code>gem install fusuma</code> でジェスチャが効くようになる。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。</p>
-<div class=iframely-embed><div class=iframely-responsive style=height:168px;padding-bottom:0><a href=https://github.com/iberianpig/fusuma data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
-<p>初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。</p>
-<p>YouTubeにアーカイブがあがってました。</p>
-<div style=left:0;width:100%;height:0;position:relative;padding-bottom:56.25%><iframe src="https://www.youtube.com/embed/gnwe8DqPDrk?rel=0" style=top:0;left:0;width:100%;height:100%;position:absolute;border:0 allowfullscreen scrolling=no allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe></div>
-<h3 id=同時通訳>同時通訳</h3>
-<p>RubyKaigiは日 -> 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。</p>
-<p>自分は通訳の方を入れて話すのは初めてだった。
-当日になってギリギリまで資料を弄ってしまっていたので、事前に送った資料との差分が出ていてそのギャップを埋めるのにてんやわんやさせてしまいました。本当に申し訳ありません。</p>
-<p>二人の通訳の方がセクション毎に交代して通訳を担当するのでお互いのパートで表現のニュアンスのズレがでないか調整をしていた。 技術通訳をされているプロの方々で、担当してくれた方はバッファやキューなどのデータ構造のことを認識されていて、その上でどの表現が適切か、発火はFireかTriggerか、みたいな細かいところまで質問していただけて、すごく新鮮な体験だった。</p>
-<p>あと、通訳し終わる前にスライドが次に移動すると英語で聞いている人が理解しづらくなるので、話の区切りでは適宜間を持たせたほうが良いという話や、みなさんどうしても早口になるのでゆっくり落ち着いて話すようにというアドバイスをいただきました。
-しかし、想定よりも若干時間が余ったのでかなりオタク特有の早口出てしまったと思います。すみません。</p>
-<h3 id=登壇資料>登壇資料</h3>
-<iframe class=speakerdeck-iframe frameborder=0 src=https://speakerdeck.com/player/348ac4ad084147e8a05c9c1007cb2170 title="DIY Your Touchpad Experience Building Your Own Gestures - RubyKaigi 2023" allowfullscreen style="border:0;background:padding-box padding-box rgba(0,0,0,.1);margin:0;padding:0;border-radius:6px;box-shadow:rgba(0,0,0,.2)0 5px 40px;width:100%;height:auto;aspect-ratio:560/314" data-ratio=1.78343949044586></iframe>
-<p>トークの中で話してた、ヨドバシに通ってMac触って挙動を確認してたのは本当で、それでエッジスワイプをプロトタイプのxSwipeに実装できた。
+特にDay 3は After Party🍺 => 居酒屋🍺 => ラーメン屋🍺 => コンビニ🍺 みたいな感じで朝までずっと飲んで話してた。</p><blockquote class=twitter-tweet><p lang=ja dir=ltr>ラーメン屋で朝まで飲んでた人達、みんな無事かな<a href="https://twitter.com/hashtag/rubykaigi?src=hash&ref_src=twsrc%5Etfw">#rubykaigi</a> <a href="https://twitter.com/hashtag/rubyfriends?src=hash&ref_src=twsrc%5Etfw">#rubyfriends</a> <a href=https://t.co/O2zDWNscAP>pic.twitter.com/O2zDWNscAP</a></p>&mdash; iberianpig(Kohei Yamada) (@nukumaro22) <a href="https://twitter.com/nukumaro22/status/1657592463379558401?ref_src=twsrc%5Etfw">May 14, 2023</a></blockquote><script async src=https://platform.twitter.com/widgets.js></script><p>みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。</p><p>ちなみに最初に参加したのはRubyKaigi 2019の福岡の時で、その時もめちゃくちゃ楽しかったけど、今回はもっと楽しめた気がする。Kaigi is back!</p><p>RubyKaigiを盛り上げてきてくださったスタッフの皆様、スポンサーしてくれている企業さんには頭が上がりません。本当にありがとうございます。</p><h2 id=fusumaについて発表した>Fusumaについて発表した</h2><p>FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。<code>gem install fusuma</code> でジェスチャが効くようになる。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。</p><div class=iframely-embed><div class=iframely-responsive style=height:168px;padding-bottom:0><a href=https://github.com/iberianpig/fusuma data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script><p>初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。</p><p>YouTubeにアーカイブがあがってました。</p><div style=left:0;width:100%;height:0;position:relative;padding-bottom:56.25%><iframe src="https://www.youtube.com/embed/gnwe8DqPDrk?rel=0" style=top:0;left:0;width:100%;height:100%;position:absolute;border:0 allowfullscreen scrolling=no allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe></div><h3 id=同時通訳>同時通訳</h3><p>RubyKaigiは日 -> 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。</p><p>自分は通訳の方を入れて話すのは初めてだった。
+当日になってギリギリまで資料を弄ってしまっていたので、事前に送った資料との差分が出ていてそのギャップを埋めるのにてんやわんやさせてしまいました。本当に申し訳ありません。</p><p>二人の通訳の方がセクション毎に交代して通訳を担当するのでお互いのパートで表現のニュアンスのズレがでないか調整をしていた。 技術通訳をされているプロの方々で、担当してくれた方はバッファやキューなどのデータ構造のことを認識されていて、その上でどの表現が適切か、発火はFireかTriggerか、みたいな細かいところまで質問していただけて、すごく新鮮な体験だった。</p><p>あと、通訳し終わる前にスライドが次に移動すると英語で聞いている人が理解しづらくなるので、話の区切りでは適宜間を持たせたほうが良いという話や、みなさんどうしても早口になるのでゆっくり落ち着いて話すようにというアドバイスをいただきました。
+しかし、想定よりも若干時間が余ったのでかなりオタク特有の早口出てしまったと思います。すみません。</p><h3 id=登壇資料>登壇資料</h3><iframe class=speakerdeck-iframe frameborder=0 src=https://speakerdeck.com/player/348ac4ad084147e8a05c9c1007cb2170 title="DIY Your Touchpad Experience Building Your Own Gestures - RubyKaigi 2023" allowfullscreen style="border:0;background:padding-box padding-box rgba(0,0,0,.1);margin:0;padding:0;border-radius:6px;box-shadow:rgba(0,0,0,.2)0 5px 40px;width:100%;height:auto;aspect-ratio:560/314" data-ratio=1.78343949044586></iframe><p>トークの中で話してた、ヨドバシに通ってMac触って挙動を確認してたのは本当で、それでエッジスワイプをプロトタイプのxSwipeに実装できた。
 Macのトラックパッド上を2本指で右端からからスワイプすると通知センター開くやつで、右端指1本分くらいの領域を通過したあとその領域にもう1回連続でタッチが入り移動するとトリガされるやつ。
-ただ、Synapticsではタッチパッド上の絶対位置が取れて同じような実装が出来るのだが、相対移動しか取れないLibinputだと端を取るのがちょっと難しくまだFusumaには移植できてない。</p>
-<h3 id=pluginとpipeline>PluginとPipeline</h3>
-<p>Fusumaはジェスチャ認識のフローをパイプラインとしてイベントでやり取りするようになっており、その中の各タスクはプラグインとして拡張可能かつ差し替え可能になっている。
-全てがプラグイン、Fluentdにかなり影響を受けている。</p>
-<p><img src=https://i.gyazo.com/5d620bb1a58f99a1e396abf3157684a6.png alt="Image from Gyazo"></p>
-<p>後半にOne more thing的なノリで新しいプラグインを発表した。</p>
-<h3 id=thumbsense>ThumbSense</h3>
-<p>ThumbSenseはSony CSLの暦本先生の2003年の<a href=https://www2.sonycsl.co.jp/person/rekimoto/papers/chi03tsense.pdf>論文</a>とその実装で、オリジナルはWindows向けのソフトウェア。
-これをFusumaのPluginとして実装した。</p>
-<p><img src=https://i.gyazo.com/f5595089b529ad8ddd93777604d9c6be.jpg alt="Image from Gyazo"></p>
-<p>タッチパッドが追加の修飾キーになるようなイメージ。親指でタッチパッドに触れる間JやFのキーがクリックにリマップされる。
+ただ、Synapticsではタッチパッド上の絶対位置が取れて同じような実装が出来るのだが、相対移動しか取れないLibinputだと端を取るのがちょっと難しくまだFusumaには移植できてない。</p><h3 id=pluginとpipeline>PluginとPipeline</h3><p>Fusumaはジェスチャ認識のフローをパイプラインとしてイベントでやり取りするようになっており、その中の各タスクはプラグインとして拡張可能かつ差し替え可能になっている。
+全てがプラグイン、Fluentdにかなり影響を受けている。</p><p><img src=https://i.gyazo.com/5d620bb1a58f99a1e396abf3157684a6.png alt="Image from Gyazo"></p><p>後半にOne more thing的なノリで新しいプラグインを発表した。</p><h3 id=thumbsense>ThumbSense</h3><p>ThumbSenseはSony CSLの暦本先生の2003年の<a href=https://www2.sonycsl.co.jp/person/rekimoto/papers/chi03tsense.pdf>論文</a>とその実装で、オリジナルはWindows向けのソフトウェア。
+これをFusumaのPluginとして実装した。</p><p><img src=https://i.gyazo.com/f5595089b529ad8ddd93777604d9c6be.jpg alt="Image from Gyazo"></p><p>タッチパッドが追加の修飾キーになるようなイメージ。親指でタッチパッドに触れる間JやFのキーがクリックにリマップされる。
 タッチを検知してキーボードレイヤの変更を依頼する<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense>fusuma-plugin-thumbsense</a>
-と、外部プロセスから動的にレイヤ変更できるキーリマッパーの<a href=https://github.com/iberianpig/fusuma-plugin-remap>fusuma-plugin-remap</a>の2つのGemで実現している。</p>
-<p><img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt="Image from Gyazo"></p>
-<p>実は親指を使わなくても便利で、よく片手だけホームポジションに残してタッチパッド操作している。<br>
-それと、タッチ->Fを押しっぱなしでドラッグをすると、そのドラッグ中はタッチパッドから手が離れても問題ないように実装している。
-そのおかげでこの間はタッチパッドを自由にスクロールしたりスワイプしたりできる！！</p>
-<p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo"></p>
-<p>つまり、このようにドラッグ中に別のワークスペースにスワイプして移動してドロップができる。
+と、外部プロセスから動的にレイヤ変更できるキーリマッパーの<a href=https://github.com/iberianpig/fusuma-plugin-remap>fusuma-plugin-remap</a>の2つのGemで実現している。</p><p><img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt="Image from Gyazo"></p><p>実は親指を使わなくても便利で、よく片手だけホームポジションに残してタッチパッド操作している。<br>それと、タッチ->Fを押しっぱなしでドラッグをすると、そのドラッグ中はタッチパッドから手が離れても問題ないように実装している。
+そのおかげでこの間はタッチパッドを自由にスクロールしたりスワイプしたりできる！！</p><p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Image from Gyazo"></p><p>つまり、このようにドラッグ中に別のワークスペースにスワイプして移動してドロップができる。
 これまでのマウスやタッチパッドの制約を超えた操作ができるようになる。
 ThumbSenseが出た当時はスワイプジェスチャは無かったので、これはかなり画期的だったと思う。
-すごく便利だから、みんなLinuxにしてFusuma使ってみよう。</p>
-<p>あとタップしてクリックする機能を使わなくなるので、これをオフにするとキーボード入力中にタッチパッド触って誤操作することが無くなって、めちゃくちゃ快適になる。
-完全に副作用なのだけれど、タッチパッドの不満点を一気に解消できていて最高。</p>
-<h3 id=今後の展望>今後の展望</h3>
-<p>ThumbSenseは自分の中でかなり良い環境改善になった。
-これからしばらくThumbSenseの使い勝手とキーリマッパーとしての拡張性を向上させていきたい。</p>
-<p>LibinputのPalm Detectionとの兼ね合いが微妙なのでなんとかしたい気持ちもあるし、あとFusumaのinputプラグインはLibinputをFFI経由で使えるようにしたい、色々やりたいことがある。</p>
-<h2 id=rubykaigiの後>RubyKaigiの後</h2>
-<p>しばらく余韻が抜けてなくて、いやー、楽しかったなと思い出している。
-次のRubyKaigiは沖縄、めちゃくちゃ楽しみ。MINASWAN、また沖縄で会いましょう！</p>
-<p>それと、RubyKaigi後お仕事の話を色々と頂けており嬉しい限りです。ありがとうございます。</p>
-<p>[PR]法人としてRubyのお仕事お請けしております。よろしくおねがいします。:pray:</p>
-</div>
-<aside class=p-share>
-<div class=share-inner>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&text=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+すごく便利だから、みんなLinuxにしてFusuma使ってみよう。</p><p>あとタップしてクリックする機能を使わなくなるので、これをオフにするとキーボード入力中にタッチパッド触って誤操作することが無くなって、めちゃくちゃ快適になる。
+完全に副作用なのだけれど、タッチパッドの不満点を一気に解消できていて最高。</p><h3 id=今後の展望>今後の展望</h3><p>ThumbSenseは自分の中でかなり良い環境改善になった。
+これからしばらくThumbSenseの使い勝手とキーリマッパーとしての拡張性を向上させていきたい。</p><p>LibinputのPalm Detectionとの兼ね合いが微妙なのでなんとかしたい気持ちもあるし、あとFusumaのinputプラグインはLibinputをFFI経由で使えるようにしたい、色々やりたいことがある。</p><h2 id=rubykaigiの後>RubyKaigiの後</h2><p>しばらく余韻が抜けてなくて、いやー、楽しかったなと思い出している。
+次のRubyKaigiは沖縄、めちゃくちゃ楽しみ。MINASWAN、また沖縄で会いましょう！</p><p>それと、RubyKaigi後お仕事の話を色々と頂けており嬉しい限りです。ありがとうございます。</p><p>[PR]法人としてRubyのお仕事お請けしております。よろしくおねがいします。:pray:</p></div><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&text=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&t=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
-</div>
-</aside>
-<aside>
-<section>
-<div>
-<div id=disqus_thread></div>
-</div>
-</section>
-</aside>
-</div>
-</article>
-</div>
-<div class=col-md-3>
-<aside class=site>
-<section>
-<header>Table Of Contents</header>
-<div><nav id=TableOfContents>
-<ul>
-<li><a href=#rubykaigi-2023>RubyKaigi 2023</a>
-<ul>
-<li><a href=#rubykaigi-is-祭>RubyKaigi is 祭</a></li>
-</ul>
-</li>
-<li><a href=#fusumaについて発表した>Fusumaについて発表した</a>
-<ul>
-<li><a href=#同時通訳>同時通訳</a></li>
-<li><a href=#登壇資料>登壇資料</a></li>
-<li><a href=#pluginとpipeline>PluginとPipeline</a></li>
-<li><a href=#thumbsense>ThumbSense</a></li>
-<li><a href=#今後の展望>今後の展望</a></li>
-</ul>
-</li>
-<li><a href=#rubykaigiの後>RubyKaigiの後</a></li>
-</ul>
-</nav></div>
-</section>
-<section>
-<header>Latest Posts</header>
-<div><article class=li>
-<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Wed, May 17, 2023</div>
-</div>
-<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
-<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
-<footer>
-<div class=date>
-<div class=time>Mon, Apr 26, 2021</div>
-</div>
-<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, May 14, 2019</div>
-</div>
-<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Sun, Apr 28, 2019</div>
-</div>
-<h2 class=title>2019/04/28 最近読んだ記事</h2>
-</footer>
-</a>
-</article>
-</div>
-</section>
-<section class=taxonomies>
-<header class=taxonomies__header>tag</header>
-<div class=taxonomies__body>
-<ul>
-<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
-</ul>
-</div>
-</section>
-<section class=author>
-<header class=author__header> About Me</header>
-<div class=author__body>
-<div class=aboutme>
-<div class=aboutme__icon>
-<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
-</div>
-趣味・仕事で平日休日変わらず毎日コードを書いてます。
-</div>
-<iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe>
-<div class=aboutwork>
-<div class=aboutwork__icon>
-<i class="fas fa-briefcase fa-lg"> Work</i>
-</div>
-エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。
-</div>
-<div class=contact>
-<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-05-17_rubykaigi2023%2f&title=RubyKaigi%202023%e3%81%ab%e7%99%bb%e5%a3%87%e3%81%97%e3%81%a6Fusuma%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e8%a9%b1%e3%81%97%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><aside><section><div><div id=disqus_thread></div></div></section></aside></div></article></div><div class=col-md-3><aside class=site><section><header>Table Of Contents</header><div><nav id=TableOfContents><ul><li><a href=#rubykaigi-2023>RubyKaigi 2023</a><ul><li><a href=#rubykaigi-is-祭>RubyKaigi is 祭</a></li></ul></li><li><a href=#fusumaについて発表した>Fusumaについて発表した</a><ul><li><a href=#同時通訳>同時通訳</a></li><li><a href=#登壇資料>登壇資料</a></li><li><a href=#pluginとpipeline>PluginとPipeline</a></li><li><a href=#thumbsense>ThumbSense</a></li><li><a href=#今後の展望>今後の展望</a></li></ul></li><li><a href=#rubykaigiの後>RubyKaigiの後</a></li></ul></nav></div></section><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div><footer><div class=date><div class=time>Wed, May 17, 2023</div></div><h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/cfb534014d1237c291ff4e7c6e3e885d.gif)></div><footer><div class=date><div class=time>Sun, Apr 28, 2019</div></div><h2 class=title>2019/04/28 最近読んだ記事</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>趣味・仕事で平日休日変わらず毎日コードを書いてます。</div><iframe src=https://github.com/sponsors/iberianpig/button title="Sponsor iberianpig" height=35 width=116 style=border:0></iframe><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-briefcase fa-lg">Work</i></div>エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
 <a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
-<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
-</div>
-</div>
-</section>
-</aside>
-</div>
-</div>
-</div>
-<footer class=l-footer>
-<p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p>
-<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
-</footer>
-<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
 <script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
 <script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
-<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
-</body>
-</html>
+<script data-no-instant>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","//www.google-analytics.com/analytics.js","ga"),InstantClick.on("change",function(){ga("create","UA-45334010-1","auto"),ga("send","pageview")}),InstantClick.on("change",function(){for(var n=document.querySelectorAll("pre code"),t=0;t<n.length;t++)hljs.highlightBlock(n[t])}),InstantClick.on("change",function(){var t,n="iberianpigsty";document.querySelector("#disqus_thread")&&(typeof DISQUS=="undefined"?(t=document.createElement("script"),t.type="text/javascript",t.async=!0,t.src="//"+n+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>

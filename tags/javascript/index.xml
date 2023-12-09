@@ -18,7 +18,7 @@ npm -v
 str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。
 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
 hashed_data = angular.fomJson(str)
-これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description></item><item><title>ng-japan</title><link>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</link><pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</guid><description>Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
+これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description></item><item><title>ng-japan</title><link>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</link><pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-03-21-ng-japan/</guid><description>Angualrjsの日本初のカンファレンス ng-japan2015 が渋谷で2015/03/21にあったので行って来た。
 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
 結構人がいて定員500名の会場が普通に埋まってた

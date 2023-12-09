@@ -12,4 +12,8 @@ node-easymockでスタブサーバ作る npm i easymock --save-devで開発環�
 &amp;#34;scripts&amp;#34;: { &amp;#34;easymock&amp;#34;: &amp;#34;easymock --port 8000 --path spec/api/easymock&amp;#34; } ターミナルでnpm run easymockを実行するとspec/api/easymockを起点に配置したパス(path/to/end-point)でAPIスタブサーバが起動する。
 リーンな開発のためのAPI開発 下記のような順序で開発すると捗る。(実際に捗った) 両方担当するのが必須ではないが、フロントエンド・サーバサイドを両方触れるAPIを開発するエンジニアがいると並行開発をコントロールしやすい。
 APIレスポンスとなるjsonを決める フロントエンドのAPI叩くマネージャ的なサービスのモック(モック内にjson持っているだけで実際にリクエストしない)を作る フロントエンドのロジック書く人にタスクを切り出す APIスタブサーバ作る フロントエンドのAPI叩くマネージャ的なサービス内を実装し、モックを置き換える サーバサイドのrouting/controller/view(json)を作成し、APIスタブサーバなしの疎通確認 サーバサイドでDBの型を決定し、モデルレイヤ書く サーバサイドにビジネスロジックを書いていく 柔らかい所から作り始める 経験則的にあとから大きな変更があると面倒な部分はモデル、DB周り。
-Railsでの通常の開発だとmodel、controller、viewの順で作っていく。</description></item></channel></rss>
+Railsでの通常の開発だとmodel、controller、viewの順で作っていく。
+プロトタイピング的な観点でプロダクトを作る場合、変更コストの高いDB設計をどれだけ遅延させられるかがキモになる。
+フロントエンドは一旦先に決めはするものの、一度固めたjsonをちょいちょいいじるだけなので変更が非常に簡単である。
+硬いDB部分は一番最後に、 一方柔らかいフロントのモデル周りは先にやる。
+ユーザテスト後にDB周りの設計やるくらいがちょうどいい。</description></item></channel></rss>

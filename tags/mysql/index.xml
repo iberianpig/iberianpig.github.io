@@ -5,7 +5,7 @@ workbencだQueryの結果が白くなって表示されない。
 selectした結果がセルで表示されるはずなんだけど。 ちなみにCUIでMySQLからselectしたりした場合は全く問題ない。
 調査してみた 色々な人が死んでた
 workbenchはelementaryOS freya,Ubuntu14.04以降でSQLの実行結果が表示されないバグがあることが報告されている
-また、debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
+また、 debパッケージの中身を書き換える方法 が提案されていたが筆者の環境では失敗。
 source落としてパッチ当ててmakeする(成功) 唯一上手く行った方法。
 下記コマンドを実行 sudo apt-get remove mysql-workbench* tar xvf mysql-workbench-community-6.3.3-src.tar.gz cd mysql-workbench-community-6.3.3-src wget -O patch-glib.diff http://bugs.mysql.com/file.php?id=21874&amp;amp;bug_id=74147 patch -p0 &amp;lt; patch-glib.diff sudo apt-get build-dep mysql-workbench sudo apt-get install libgdal-dev cd build cmake .. -DBUILD_CONFIG=mysql_release make sudo make install buildは1.5h程度は見込んでおいた方が良い。
 sudo make install後にrebootするときちんとresultが表示される。

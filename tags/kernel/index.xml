@@ -23,4 +23,5 @@ HWE（Hardware Enablement）カーネルは，より新しいハードウェア�
 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
 linux-generic-hwe-16.04-edgeをインストール
 sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</description></item></channel></rss>
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。
+Special Thanks How to Easily Upgrade Ubuntu’s Linux Kernel With Ukuu (http://www.</description></item></channel></rss>

@@ -6,14 +6,18 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
 &lt;p>Easytetherを使う際にはAndroid側のBluetooth,EasyTetherを立ち上げてBluetoothテザリングを有効にし、そのあとPC側でBluetoothをパネルから有効にし、
 コマンドラインで&lt;code>easytether-bluetooth connect -d MAC_ADDRESS&lt;/code>と入力する必要がある。&lt;/p>
 &lt;p>結構面倒なのだ。喫茶店に来るたびにこれをやったり、携帯もって少し離れるとBluetoothは切れてしまうので、また再接続するのがダルい。
-ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p></description></item><item><title>EasytetherでBluetoothテザリング</title><link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link><pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid><description>Easytether with linux
-EasytetherFull( GooglePlay )
+ということで以前のブログでEasyTether用にショートカットキーを割り当てたのだが、Bluetooth自体のオン、オフはまだ出来ていなかった。&lt;/p></description></item><item><title>EasytetherでBluetoothテザリング</title><link>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link><pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid><description>Easytether with linux EasytetherFull( GooglePlay )
 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
 そして、公式のLinux向けクライアントがある。
 当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
-Linux版パッケージはこちら からダウンロード可。
+Linux版パッケージは こちら からダウンロード可。
 現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
 いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
 Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
 おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
-#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。</description></item></channel></rss>
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。
+実行権与えたいのでsudo chmod +x easytether.shしてあげる
+sudo ./easytether.shで動かしてみる。
+パスワードの省略( sudoersの変更 ) ただし、sudoつけてあげないとEasytetherが動いてくれないので、自動化やショートカット割り当てはには向かない。そこで下記のようにsudo visudoで当該スクリプトに関してはパスワードが必要ない旨を明示し、パスワードを省略する。
+&amp;lt;username&amp;gt; ALL=(ALL) NOPASSWD: /path/to/script/ xbindkeysショートカットキーのマッピング xbindkeysを利用してマッピングする。
+持ってない人はsudo apt-get install xbindkeysで入れましょう。便利。</description></item></channel></rss>
