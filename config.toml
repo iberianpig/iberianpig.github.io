@@ -1,7 +1,7 @@
 baseurl = "https://iberianpig.github.io/"
 languageCode = "ja-jp"
 title = "iberianpigsty"
-copyright = "Copyright (c) 2014 - 2021, iberianpigsty; all rights reserved."
+copyright = "Copyright (c) iberianpigsty; all rights reserved."
 paginate = 16
 theme = "hugo_theme_robust"
 canonifyurls = true
