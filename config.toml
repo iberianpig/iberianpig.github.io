@@ -19,8 +19,8 @@ MetaDataFormat = "yaml"
     githubId = "iberianpig"
     email = "yhkyky+work@gmail.com"
     author = "Kohei Yamada"
-    aboutme = "趣味・仕事で平日休日変わらず毎日コードを書いてます。"
-    aboutwork = "エンジニアチームでスタートアップのお手伝いをしています。バックエンド、フロントエンド問わず色々。特にRubyが得意。お仕事のご相談はお気軽にどうぞ。"
+    aboutme = "自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。"
+    aboutwork = "チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。"
     description = "iberianpigの技術ブログ"
 
 [params.eyecatch]
