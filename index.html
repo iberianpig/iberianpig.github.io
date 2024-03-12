@@ -47,7 +47,7 @@ Authyは人気のある2FAアプリケーションの一つだったが、 2024�
 移行先の選定 Authyの一つ大きなポイントはデスクトップ・モバイルデバイス間の各クライアントでの同期だが、これはAuthyのサーバ経由で秘密鍵を同期することで実現されている。
 AegisはOSSのTOTPクライアントだが、Android向けしかないため、デスクトップ向けにはGnome Authenticatorを使うことにした。
 Aegis
-Google play https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis GitHub https://github.com/beemdevelopment/Aegis Aegisの記事 https://gigazine.net/news/20230128-aegis-authenticator-review/ Aegisのバックアップとして複数の秘密鍵をまとめたQRコード(Google Authenticator形式)が出力できること(標準的なインポート・エクスポート形式をサポートしていること) Gnome Authenticator
+Google play https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis GitHub https://github.com/beemdevelopment/Aegis Aegisの記事 https://gigazine.net/news/20230128-aegis-authenticator-review/ AegisのバックアップとしてGoogle Authenticator形式の複数の秘密鍵をまとめたQRコードが出力できる(他にも標準的な形式のインポート・エクスポート形式をサポートしている) Gnome Authenticator
 Fluthub https://flathub.org/apps/com.belmoussaoui.Authenticator GitLab https://gitlab.gnome.org/World/Authenticator flatpakで導入するGnome AuthenticatorはGoogle Authenticator形式のQRコードをWebカメラから読み込むことができる Aegisのバックアップ用QRをWebカメラにかざして読み込ませることでAuthyの秘密鍵の同期相当が行える ちなみに以下も選択肢としては良いと思う
 Google Authenticater自体も最近 バックアップ/QRのエクスポート機能が追加されていて(Aegisで利用している一括のQRコード形式)が扱える 2fas(https://2fas.com/) は iOS / Android / Chrome Extension クライアントがあり、こちらに寄せるのもアリかも AuthyからTOTPの秘密鍵のエクスポート 公式を漁ったがAuthyの秘密鍵をエクスポートする方法が見つからなかった。 どうやらAuthyの秘密鍵のエクスポートはサポートされていないため、各自で何らかのアプリやツールを用いた移行が必要となる。
 rootが取れるAndroid端末があれば、Aegisや他のアプリからもエクスポートできるらしいが自分はroot取得していないので https://github.com/token2/authy-migration を使った。
