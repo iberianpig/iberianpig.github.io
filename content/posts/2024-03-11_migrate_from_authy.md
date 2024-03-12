@@ -12,9 +12,11 @@ description: "Authy Desktopが2024年3月にサービス終了するので、秘
 
 ## Authy Desktopが2024年3月にサービス終了
 
-[参考記事](https://iototsecnews.jp/2024/01/08/twilio-will-ditch-its-authy-desktop-2fa-app-in-august-goes-mobile-only/)
+- [公式](https://help.twilio.com/articles/19753631228315)
+- [参考記事](https://iototsecnews.jp/2024/01/08/twilio-will-ditch-its-authy-desktop-2fa-app-in-august-goes-mobile-only/)
 
 Authyは人気のある2FAアプリケーションの一つだったが、 2024年3月にデスクトップ用Authyが終了する発表されている。
+元々は8月の予定だったが、3月に前倒しになった模様。
 
 自分はAndroid, Linuxの環境下でAuthyを使っていたがデスクトップ版が終了するため、モバイル版はAegisとデスクトップ版はGnome Authenticatorに移行することにした。
 
