@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する"
-draft: true
+draft: false
 date: 2024-03-10T17:04:08+09:00
 comments: true
 tags: 
