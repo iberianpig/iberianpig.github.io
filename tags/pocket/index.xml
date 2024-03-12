@@ -5,7 +5,8 @@ https://github.com/ffi/ffi/wiki/projects-using-ffi
 キー入力のエミュレーションライブラリのxdotoolの基幹ライブラリのlibxdoをNative Extentionとして呼び出せるか調べていた。
 というのも、fusumaでxdotoolの呼び出し遅延のIssueが上がっていて、ネイティブのC関数レベルでAPIを呼べると改善するか試したかったというのがある。
 最近のlibxdo3に対応出来ているライブラリは少なく、forkされたものであれば動くことを確認した。
-require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動 GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
+require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動
+GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
 貸倒引当金について 昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
 一括評価になりそう。 この単語もたまたま詳しい方に教えて頂けたが、会計難しいので詳しい人からすぐ聞けるようにしておきたい。
 歴4ヶ月の異業種未経験がリモート開発 スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。
@@ -21,7 +22,7 @@ ERC20自体に欠陥があるわけではない。
 作成と確認アトミックであれば良い。
 $ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $ mkdir /tmp/lockfile # =&amp;gt; mkdir: ディレクトリ `/tmp/lockfile&amp;#39; を作成できません: ファイルが存在します $ echo $? #=&amp;gt; 1 # 失敗 ちなみに以前の会社ではmkdirでロック書いてた。 確か他と比較して早いというのが理由。
 【翻訳】サイドプロジェクトから収益性のあるスタートアップに育てる方法（前編） Nomad List 作った人の話。毎月1つのペースでサービス作るのは楽しそう。 Nomad Listはノマドワーカーに必要なネットや電源、生活費を含めた都市毎のランキングがメインのサイト。 コワーキングのリストとかもある。 ログインしてチャットチャンネルに参加する部分は有料。 サインアップしたらフリーミアムとかはなくて全て有料プラン。
-あと、 remoteok というサービスも作っていてこちらも稼ぎを出してる模様 数を撃つこと自体は当てるためには必要。個人的にかなり参考にしたい。
+あと、remoteok というサービスも作っていてこちらも稼ぎを出してる模様 数を撃つこと自体は当てるためには必要。個人的にかなり参考にしたい。
 アマゾン・エコーが、英会話の練習相手になってくれた 日常会話的な内容が練習出来ると良さそう。
 最近まったくSpeakingの練習してない。まずEcho Dotを箱から出さないと。</description></item><item><title>記憶の定着率を上げるPocket+Kindle連携</title><link>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</link><pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-01-30_information_gathering_and_its_optimization/</guid><description>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
@@ -31,7 +32,8 @@ $ mkdir /tmp/lockfile # ロック作成/確認 $ echo $? #=&amp;gt; 0 # 成功 $
 気になったらとりあえずPocketに入れる PocketはWebページを&amp;quot;後で読むリスト&amp;quot;に追加してくれるサービス。 後で見返そう、今時間ないから後で見たい、難しいから復習しよう、と思った時にここに放り投げる。 スマホアプリやChrome拡張があって、ブラウジングしながら後で読むリストに追加できる。
 Pocketで見る(短期記憶) Pocketのアプリをスマホに入れる。タブレットでも良いが、いつでも持っているものがいい。
 毎日の通勤時に記事をチェックする。
-Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。 配信オプションが色々ある(daily/weekly, 記事の長さ、 取得順序、 etc)が、自分は30分程度で読める分を週1回Kindleに配信している。
+Kindleで記事を読む(長期記憶) P2K - Pocket to Kindleというサービスを使ってPocketの記事をKindleで読む。
+配信オプションが色々ある(daily/weekly, 記事の長さ、 取得順序、 etc)が、自分は30分程度で読める分を週1回Kindleに配信している。
 Kindleで読むのは週に1回（しかも長めの記事）になるので必然的にPocketに入れた時から期間が空くことになる。
 週末に30分-1時間程度かけて読む。
 その他 Twitterを連携させて時間差付けてフィード流したり、後で読むリストに追加したりしている

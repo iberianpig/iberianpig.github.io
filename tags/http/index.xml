@@ -4,5 +4,4 @@ public void addView(View child, LayoutParams params) Adds a child view with the 
 Parameters: child: the child view to add params: the layout parameters to set on the child
 LinearLayout.LayoutParamsクラス
 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。
-LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。 (参考:　http://www.javadrive.jp/android/relativelayout/index3.html)
-addRule public void addRule(int verb, int anchor) Adds a layout rule to be interpreted by the RelativeLayout.</description></item></channel></rss>
+LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description></item></channel></rss>

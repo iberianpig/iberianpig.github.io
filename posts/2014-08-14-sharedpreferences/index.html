@@ -1,60 +1,391 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.110.0"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>Androidでのデータの保存 - iberianpigsty</title><meta property="og:title" content="Androidでのデータの保存 - iberianpigsty"><meta property="og:url" content="https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/"><meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"Androidでのデータの保存 |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2014-08-14T00:00:00JST","dateModified":"2014-08-14T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":""}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><article class=single><div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div><div class=body><h1>Androidでのデータの保存</h1><div class=publishDate><time datetime=2014-08-14T00:00:00+00:00>Published at 14 Aug, 2014</time></div><nav><ul class=terms><li><a href=https://iberianpig.github.io/tags/android/>#android</a></li><li><a href=https://iberianpig.github.io/tags/sharedpreferences/>#SharedPreferences</a></li></ul></nav><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&text=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>Androidでのデータの保存 - iberianpigsty</title>
+<meta property="og:title" content="Androidでのデータの保存 - iberianpigsty">
+<meta property="og:url" content="https://iberianpig.github.io/posts/2014-08-14-sharedpreferences/">
+<meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"Androidでのデータの保存 |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2014-08-14T00:00:00JST","dateModified":"2014-08-14T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":""}</script>
+<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<article class=single>
+<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
+<div class=body>
+<h1>Androidでのデータの保存</h1>
+<div class=publishDate>
+<time datetime=2014-08-14T00:00:00+00:00>Published at 14 Aug, 2014 </time>
+</div>
+<nav>
+<ul class=terms>
+<li><a href=https://iberianpig.github.io/tags/android/>#android</a></li><li><a href=https://iberianpig.github.io/tags/sharedpreferences/>#SharedPreferences</a></li>
+</ul>
+</nav>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&text=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&t=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><div class=content><h1 id=データの保存>データの保存</h1><h2 id=sharedpreferenceの利用>SharedPreferenceの利用</h2><blockquote><p>Androidアプリでデータを保存する方法のひとつ
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<div class=content>
+<h1 id=データの保存>データの保存</h1>
+<h2 id=sharedpreferenceの利用>SharedPreferenceの利用</h2>
+<blockquote>
+<p>Androidアプリでデータを保存する方法のひとつ
 データをキーと値の組み合わせで保存
-ファイルなどに保存するよりも非常に簡単にデータを保存可能</p></blockquote><p>ただし大規模なデータには向かず、設定項目向き。</p><h3 id=使い方>使い方</h3><blockquote><p>SharedPreferences はgetSharedPreferences(String name, int mode);
+ファイルなどに保存するよりも非常に簡単にデータを保存可能</p>
+</blockquote>
+<p>ただし大規模なデータには向かず、設定項目向き。</p>
+<h3 id=使い方>使い方</h3>
+<blockquote>
+<p>SharedPreferences はgetSharedPreferences(String name, int mode);
 でを取得。
 <code>name</code> は <code>Preference</code> 自体の名前指定
 mode には
 <code>Activity.MODE_PRIVATE</code>
 <code>Activity.MODE_WORLD_READABLE</code>
 <code>Activity.MODE_WORLD_WRITEABLE</code>
-などを指定</p></blockquote><p>モードについては後述。</p><p><code>SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);</code></p><p>SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、
+などを指定</p>
+</blockquote>
+<p>モードについては後述。</p>
+<p><code>SharedPreferences pref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);</code></p>
+<p>SharedPreferencesのインスタンスをgetSharedPreferencesで取得し、
 editメソッドでEditorクラスのインスタンスを呼び出す。
 そのEditorクラスにputXxxxメソッドを使って値を対応させる
-最後にcommitメソッドで格納する</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>// プリファレンスに保存
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>Editor editor <span style=color:#f92672>=</span> pref<span style=color:#f92672>.</span><span style=color:#a6e22e>edit</span><span style=color:#f92672>();</span>
-</span></span><span style=display:flex><span>editor<span style=color:#f92672>.</span><span style=color:#a6e22e>putString</span><span style=color:#f92672>(</span>KEY_TEXT<span style=color:#f92672>,</span> s<span style=color:#f92672>);</span>  <span style=color:#75715e>// KEY, VALUEの組み合わせで保存
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>editor<span style=color:#f92672>.</span><span style=color:#a6e22e>commit</span><span style=color:#f92672>();</span>
-</span></span></code></pre></div><h3 id=保存される場所>保存される場所</h3><blockquote><p>保存された Preference は data/data/パッケージ名/shared_prefs
-の中に xmlファイルとして保存される</p></blockquote><h3 id=データの取得>データの取得</h3><p><code>getXxxx(String key, Xxxx defValue)</code>のkey, value形式で取得する。</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>getString<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> String defValue<span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>getInt<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> defValue<span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>getLong<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> <span style=color:#66d9ef>long</span> defValue<span style=color:#f92672>);</span>
-</span></span></code></pre></div><h3 id=データ型>データ型</h3><blockquote><p>下記のデータ型がXMLに保存される</p><ol><li>boolean</li><li>float</li><li>int</li><li>long</li><li>String</li></ol></blockquote><p>※ データの大きい物、objectの保管は非推奨。(シリアライズさせれば出来るはず)<br>それらはバイナリ化してDBへ、もしくはファイルとして保存させるべき。</p><h3 id=mode種別>MODE種別</h3><p>プリファレンスでは、MODE_APPENDを除いた3種類のオペレーションモードが指定可能</p><table><thead><tr><th>定数</th><th>説明</th></tr></thead><tbody><tr><td>MODE_PRIVATE</td><td>作成したアプリのみ読み書きできる</td></tr><tr><td>MODE_WORLD_READABLE</td><td>他アプリに読み込み権を与える</td></tr><tr><td>MODE_WORLD_WRITEABLE</td><td>他アプリに書き込み権を与える</td></tr></tbody></table><h3 id=どのタイミングで使用すべきか>どのタイミングで使用すべきか</h3><p>実際は下記が一般的とのこと。</p><ul><li>書き込み<ul><li>onStop()</li></ul></li><li>読み込み<ul><li>onResume()</li></ul></li></ul><p><a href=https://gist.github.com/iberianpig/a25ce9e12795cdd40dd1/revisions>サンプルコード</a></p><h2 id=ファイル入出力>ファイル入出力</h2><p>openFileOutput, openFileInputを利用してローカルファイルへ保存。
-android.content.Contextのファイル書き込み/読み込み系のメソッドを利用。</p><p>###ファイル入出力メソッド</p><table><thead><tr><th>メソッド名</th><th>概要</th></tr></thead><tbody><tr><td>openFileInput(String name)</td><td>ローカルファイルの読み込み</td></tr><tr><td>openFileOutput (String name, int mode)</td><td>ローカルファイルへの書き込み</td></tr><tr><td>deleteFile(String name)</td><td>ローカルファイルの削除</td></tr><tr><td>abstract String[]fileList()</td><td>該当アプリが作成したローカルファイルのリストを取得</td></tr></tbody></table><h3 id=モード種別>モード種別</h3><table><thead><tr><th>定数</th><th>説明</th></tr></thead><tbody><tr><td>MODE_APPEND</td><td>既にファイルがあった場合、追記で開く</td></tr><tr><td>MODE_PRIVATE</td><td>他のアプリからアクセスできないprivate fileとして生成</td></tr><tr><td>MODE_WORLD_READABLE</td><td>他のアプリへ読み込み権限を与える</td></tr><tr><td>MODE_WORLD_WRITEABLE</td><td>他のアプリへ書き込み権限を与える</td></tr></tbody></table><blockquote><p><a href=http://techbooster.org/tag/openfileoutput/>http://techbooster.org/tag/openfileoutput/</a></p></blockquote><h3 id=書き込みの例>書き込みの例</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>OutputStream out<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span><span style=color:#75715e>//OutputStream インスタンス作成
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>  out <span style=color:#f92672>=</span> openFileOutput<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;log.txt&#34;</span><span style=color:#f92672>,</span> MODE_PRIVATE<span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// 出力ファイルをlog.txt, 権限をPRIVATE、このアプリでのみ利用可能とする
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  PrintWriter writer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PrintWriter<span style=color:#f92672>(</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>new</span> OutputStreamWriter<span style=color:#f92672>(</span>out<span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>));</span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>// Outputstreamインスタンスとエンコーディングの設定
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  EditText edit <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>EditText<span style=color:#f92672>)</span>findViewById<span style=color:#f92672>(</span>R<span style=color:#f92672>.</span><span style=color:#a6e22e>id</span><span style=color:#f92672>.</span><span style=color:#a6e22e>edit_data</span><span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>  writer<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>edit<span style=color:#f92672>.</span><span style=color:#a6e22e>getText</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
-</span></span><span style=display:flex><span>  <span style=color:#75715e>//editTextの内容をファイルに書き込む
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  writer<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
-</span></span><span style=display:flex><span><span style=color:#f92672>}</span><span style=color:#66d9ef>catch</span><span style=color:#f92672>...</span>
-</span></span></code></pre></div><h3 id=読み込みの例>読み込みの例</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>    InputStream in<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e>//InputStream インスタンス作成
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    String lineBuffer<span style=color:#f92672>;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>      in <span style=color:#f92672>=</span> openFileInput<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;log.txt&#34;</span><span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>      BufferedReader reader <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BufferedReader<span style=color:#f92672>(</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>new</span> InputStreamReader<span style=color:#f92672>(</span>in<span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>));</span>
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>while</span><span style=color:#f92672>((</span>lineBuffer <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span><span style=color:#a6e22e>readLine</span><span style=color:#f92672>())</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>        Log<span style=color:#f92672>.</span><span style=color:#a6e22e>v</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;TEST&#34;</span><span style=color:#f92672>,</span> lineBuffer<span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>      <span style=color:#f92672>}</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-</span></span><span style=display:flex><span>      e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
-</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
-</span></span></code></pre></div><p><a href=https://gist.github.com/iberianpig/007b96e935dd607311ae/revisions>サンプルコード</a></p><h2 id=dbへの保存書きかけ>DBへの保存(書きかけ)</h2><h2 id=special-thanks>Special Thanks</h2><p><a href=http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html>http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html</a></p><p><a href=http://androlab.blogspot.jp/2011/01/blog-post_20.html>http://androlab.blogspot.jp/2011/01/blog-post_20.html</a></p><p><a href=http://techbooster.org/tag/openfileoutput/>http://techbooster.org/tag/openfileoutput/</a></p></div><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&text=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+最後にcommitメソッドで格納する</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#75715e>// プリファレンスに保存
+</span><span style=color:#75715e></span>Editor editor <span style=color:#f92672>=</span> pref<span style=color:#f92672>.</span><span style=color:#a6e22e>edit</span><span style=color:#f92672>();</span>
+editor<span style=color:#f92672>.</span><span style=color:#a6e22e>putString</span><span style=color:#f92672>(</span>KEY_TEXT<span style=color:#f92672>,</span> s<span style=color:#f92672>);</span>  <span style=color:#75715e>// KEY, VALUEの組み合わせで保存
+</span><span style=color:#75715e></span>editor<span style=color:#f92672>.</span><span style=color:#a6e22e>commit</span><span style=color:#f92672>();</span>
+</code></pre></div><h3 id=保存される場所>保存される場所</h3>
+<blockquote>
+<p>保存された Preference は data/data/パッケージ名/shared_prefs
+の中に xmlファイルとして保存される</p>
+</blockquote>
+<h3 id=データの取得>データの取得</h3>
+<p><code>getXxxx(String key, Xxxx defValue)</code>のkey, value形式で取得する。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>getString<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> String defValue<span style=color:#f92672>);</span>
+getInt<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> defValue<span style=color:#f92672>);</span>
+getLong<span style=color:#f92672>(</span>String key<span style=color:#f92672>,</span> <span style=color:#66d9ef>long</span> defValue<span style=color:#f92672>);</span>
+</code></pre></div><h3 id=データ型>データ型</h3>
+<blockquote>
+<p>下記のデータ型がXMLに保存される</p>
+<ol>
+<li>boolean</li>
+<li>float</li>
+<li>int</li>
+<li>long</li>
+<li>String</li>
+</ol>
+</blockquote>
+<p>※ データの大きい物、objectの保管は非推奨。(シリアライズさせれば出来るはず)<br>
+それらはバイナリ化してDBへ、もしくはファイルとして保存させるべき。</p>
+<h3 id=mode種別>MODE種別</h3>
+<p>プリファレンスでは、MODE_APPENDを除いた3種類のオペレーションモードが指定可能</p>
+<table>
+<thead>
+<tr>
+<th>定数</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MODE_PRIVATE</td>
+<td>作成したアプリのみ読み書きできる</td>
+</tr>
+<tr>
+<td>MODE_WORLD_READABLE</td>
+<td>他アプリに読み込み権を与える</td>
+</tr>
+<tr>
+<td>MODE_WORLD_WRITEABLE</td>
+<td>他アプリに書き込み権を与える</td>
+</tr>
+</tbody>
+</table>
+<h3 id=どのタイミングで使用すべきか>どのタイミングで使用すべきか</h3>
+<p>実際は下記が一般的とのこと。</p>
+<ul>
+<li>書き込み
+<ul>
+<li>onStop()</li>
+</ul>
+</li>
+<li>読み込み
+<ul>
+<li>onResume()</li>
+</ul>
+</li>
+</ul>
+<p><a href=https://gist.github.com/iberianpig/a25ce9e12795cdd40dd1/revisions> サンプルコード </a></p>
+<h2 id=ファイル入出力>ファイル入出力</h2>
+<p>openFileOutput, openFileInputを利用してローカルファイルへ保存。
+android.content.Contextのファイル書き込み/読み込み系のメソッドを利用。</p>
+<p>###ファイル入出力メソッド</p>
+<table>
+<thead>
+<tr>
+<th>メソッド名</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>openFileInput(String name)</td>
+<td>ローカルファイルの読み込み</td>
+</tr>
+<tr>
+<td>openFileOutput (String name, int mode)</td>
+<td>ローカルファイルへの書き込み</td>
+</tr>
+<tr>
+<td>deleteFile(String name)</td>
+<td>ローカルファイルの削除</td>
+</tr>
+<tr>
+<td>abstract String[]fileList()</td>
+<td>該当アプリが作成したローカルファイルのリストを取得</td>
+</tr>
+</tbody>
+</table>
+<h3 id=モード種別>モード種別</h3>
+<table>
+<thead>
+<tr>
+<th>定数</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MODE_APPEND</td>
+<td>既にファイルがあった場合、追記で開く</td>
+</tr>
+<tr>
+<td>MODE_PRIVATE</td>
+<td>他のアプリからアクセスできないprivate fileとして生成</td>
+</tr>
+<tr>
+<td>MODE_WORLD_READABLE</td>
+<td>他のアプリへ読み込み権限を与える</td>
+</tr>
+<tr>
+<td>MODE_WORLD_WRITEABLE</td>
+<td>他のアプリへ書き込み権限を与える</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><a href=http://techbooster.org/tag/openfileoutput/>http://techbooster.org/tag/openfileoutput/</a></p>
+</blockquote>
+<h3 id=書き込みの例>書き込みの例</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>OutputStream out<span style=color:#f92672>;</span>
+<span style=color:#75715e>//OutputStream インスタンス作成
+</span><span style=color:#75715e></span><span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+  out <span style=color:#f92672>=</span> openFileOutput<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;log.txt&#34;</span><span style=color:#f92672>,</span> MODE_PRIVATE<span style=color:#f92672>);</span>
+  <span style=color:#75715e>// 出力ファイルをlog.txt, 権限をPRIVATE、このアプリでのみ利用可能とする
+</span><span style=color:#75715e></span>  PrintWriter writer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> PrintWriter<span style=color:#f92672>(</span>
+    <span style=color:#66d9ef>new</span> OutputStreamWriter<span style=color:#f92672>(</span>out<span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>));</span>
+  <span style=color:#75715e>// Outputstreamインスタンスとエンコーディングの設定
+</span><span style=color:#75715e></span>  EditText edit <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>EditText<span style=color:#f92672>)</span>findViewById<span style=color:#f92672>(</span>R<span style=color:#f92672>.</span><span style=color:#a6e22e>id</span><span style=color:#f92672>.</span><span style=color:#a6e22e>edit_data</span><span style=color:#f92672>);</span>
+  writer<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>edit<span style=color:#f92672>.</span><span style=color:#a6e22e>getText</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
+  <span style=color:#75715e>//editTextの内容をファイルに書き込む
+</span><span style=color:#75715e></span>  writer<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+<span style=color:#f92672>}</span><span style=color:#66d9ef>catch</span><span style=color:#f92672>...</span>
+</code></pre></div><h3 id=読み込みの例>読み込みの例</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>    InputStream in<span style=color:#f92672>;</span>
+    <span style=color:#75715e>//InputStream インスタンス作成
+</span><span style=color:#75715e></span>    String lineBuffer<span style=color:#f92672>;</span>
+    <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+      in <span style=color:#f92672>=</span> openFileInput<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;log.txt&#34;</span><span style=color:#f92672>);</span>
+      BufferedReader reader <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BufferedReader<span style=color:#f92672>(</span>
+        <span style=color:#66d9ef>new</span> InputStreamReader<span style=color:#f92672>(</span>in<span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>));</span>
+      <span style=color:#66d9ef>while</span><span style=color:#f92672>((</span>lineBuffer <span style=color:#f92672>=</span> reader<span style=color:#f92672>.</span><span style=color:#a6e22e>readLine</span><span style=color:#f92672>())</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+        Log<span style=color:#f92672>.</span><span style=color:#a6e22e>v</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;TEST&#34;</span><span style=color:#f92672>,</span> lineBuffer<span style=color:#f92672>);</span>
+      <span style=color:#f92672>}</span>
+    <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+      e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
+    <span style=color:#f92672>}</span>
+</code></pre></div><p><a href=https://gist.github.com/iberianpig/007b96e935dd607311ae/revisions> サンプルコード </a></p>
+<h2 id=dbへの保存書きかけ>DBへの保存(書きかけ)</h2>
+<h2 id=special-thanks>Special Thanks</h2>
+<p><a href=http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html>http://weide-dev.blogspot.jp/2010/09/sharedpreferences.html</a></p>
+<p><a href=http://androlab.blogspot.jp/2011/01/blog-post_20.html>http://androlab.blogspot.jp/2011/01/blog-post_20.html</a></p>
+<p><a href=http://techbooster.org/tag/openfileoutput/>http://techbooster.org/tag/openfileoutput/</a></p>
+</div>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&text=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&t=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><aside><section><div><div id=disqus_thread></div></div></section></aside></div></article></div><div class=col-md-3><aside class=site><section><header>Table Of Contents</header><div><nav id=TableOfContents><ul><li><a href=#sharedpreferenceの利用>SharedPreferenceの利用</a><ul><li><a href=#使い方>使い方</a></li><li><a href=#保存される場所>保存される場所</a></li><li><a href=#データの取得>データの取得</a></li><li><a href=#データ型>データ型</a></li><li><a href=#mode種別>MODE種別</a></li><li><a href=#どのタイミングで使用すべきか>どのタイミングで使用すべきか</a></li></ul></li><li><a href=#ファイル入出力>ファイル入出力</a><ul><li><a href=#モード種別>モード種別</a></li><li><a href=#書き込みの例>書き込みの例</a></li><li><a href=#読み込みの例>読み込みの例</a></li></ul></li><li><a href=#dbへの保存書きかけ>DBへの保存(書きかけ)</a></li><li><a href=#special-thanks>Special Thanks</a></li></ul></nav></div></section><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div><footer><div class=date><div class=time>Mon, Nov 20, 2023</div></div><h2 class=title>VimConf 2023 Tinyに行ってきた</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div><footer><div class=date><div class=time>Wed, May 17, 2023</div></div><h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
-<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a></div><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-laptop-code fa-lg">Work</i></div>チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。</div><div class=contact><a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-14-sharedpreferences%2f&title=Android%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e4%bf%9d%e5%ad%98" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<aside>
+<section>
+<div>
+<div id=disqus_thread></div>
+</div>
+</section>
+</aside>
+</div>
+</article>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Table Of Contents</header>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#sharedpreferenceの利用>SharedPreferenceの利用</a>
+<ul>
+<li><a href=#使い方>使い方</a></li>
+<li><a href=#保存される場所>保存される場所</a></li>
+<li><a href=#データの取得>データの取得</a></li>
+<li><a href=#データ型>データ型</a></li>
+<li><a href=#mode種別>MODE種別</a></li>
+<li><a href=#どのタイミングで使用すべきか>どのタイミングで使用すべきか</a></li>
+</ul>
+</li>
+<li><a href=#ファイル入出力>ファイル入出力</a>
+<ul>
+<li><a href=#モード種別>モード種別</a></li>
+<li><a href=#書き込みの例>書き込みの例</a></li>
+<li><a href=#読み込みの例>読み込みの例</a></li>
+</ul>
+</li>
+<li><a href=#dbへの保存書きかけ>DBへの保存(書きかけ)</a></li>
+<li><a href=#special-thanks>Special Thanks</a></li>
+</ul>
+</nav></div>
+</section>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</div>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</div>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
 <script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
 <script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
-<script data-no-instant>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","//www.google-analytics.com/analytics.js","ga"),InstantClick.on("change",function(){ga("create","UA-45334010-1","auto"),ga("send","pageview")}),InstantClick.on("change",function(){for(var n=document.querySelectorAll("pre code"),t=0;t<n.length;t++)hljs.highlightBlock(n[t])}),InstantClick.on("change",function(){var t,n="iberianpigsty";document.querySelector("#disqus_thread")&&(typeof DISQUS=="undefined"?(t=document.createElement("script"),t.type="text/javascript",t.async=!0,t.src="//"+n+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>
+<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>

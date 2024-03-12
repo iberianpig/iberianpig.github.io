@@ -9,10 +9,9 @@ ranger rangerはCLIベースの高機能ファイラで、コマンドライン�
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
 &amp;lt;Ctrl-o&amp;gt;: 現在のタブ上で開く &amp;lt;Ctrl-t&amp;gt;: 新しいタブで開く &amp;lt;Ctrl-v&amp;gt;: 画面を垂直に分割して開く &amp;lt;Ctrl-s&amp;gt;: 画面を水平に分割して開く このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
-let g:ranger_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39; let g:ranger_explorer_keymap_tabedit = &amp;#39;&amp;lt;C-t&amp;gt;&amp;#39; let g:ranger_explorer_keymap_split = &amp;#39;&amp;lt;C-s&amp;gt;&amp;#39; let g:ranger_explorer_keymap_vsplit = &amp;#39;&amp;lt;C-v&amp;gt;&amp;#39; 得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
+let g:ranger_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:ranger_explorer_keymap_tabedit = &amp;#39;&amp;lt;C-t&amp;gt;&amp;#39;let g:ranger_explorer_keymap_split = &amp;#39;&amp;lt;C-s&amp;gt;&amp;#39;let g:ranger_explorer_keymap_vsplit = &amp;#39;&amp;lt;C-v&amp;gt;&amp;#39;得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
 fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
 異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。
 そこで、fzfや以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、&amp;lt;C-o&amp;gt;、&amp;lt;C-t&amp;gt;、&amp;lt;C-v&amp;gt;、&amp;lt;C-s&amp;gt;のキーバインドでタブや画面分割して開けるようにした。
-プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。
-前述の3つのツールは同じキーバインドで同じ振る舞いをするよう一貫性が保てるようになっているため、ツール別でキーバインドが合わずに混乱するのを防ぐことが出来ている。</description></item></channel></rss>
+プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</description></item></channel></rss>

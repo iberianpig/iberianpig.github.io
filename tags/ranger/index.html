@@ -1,5 +1,46 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.110.0"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>ranger - iberianpigsty</title><meta property="og:title" content="ranger - iberianpigsty"><meta property="og:url" content="https://iberianpig.github.io/tags/ranger/"><meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><h1 class=p-page-title>ranger</h1><div class=row><div class=col-sm-4><article class=grid><a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/><div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div><footer><div class=date><div class=time>Sun, Sep 2, 2018</time></div><h2 class=title>ranger-explorer.vimをアップデートした</h2><div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>ranger - iberianpigsty</title>
+<meta property="og:title" content="ranger - iberianpigsty">
+<meta property="og:url" content="https://iberianpig.github.io/tags/ranger/">
+<meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<h1 class=p-page-title>ranger</h1>
+<div class=row>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/>
+<div class=image style=background-image:url(https://i.gyazo.com/c4ce832cea5e7fcad3451fdfb21d03fd.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Sep 2, 2018</time>
+</div>
+<h2 class=title>ranger-explorer.vimをアップデートした</h2>
+<div class=summary>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
@@ -10,15 +51,123 @@ ranger rangerはCLIベースの高機能ファイラで、コマンドライン�
 rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた時、Vimを開くキーバインドがrangerに自動で定義されるようにした。
 &lt;Ctrl-o>: 現在のタブ上で開く &lt;Ctrl-t>: 新しいタブで開く &lt;Ctrl-v>: 画面を垂直に分割して開く &lt;Ctrl-s>: 画面を水平に分割して開く このようにrangerから分割して開くことが出来る。 動的にrangerへキーバインドを注入しているので、CLIからrangerを開いた時はこれらのキーバインドは使えず、ranger-explorerから開いた時のみタブや画面分割が出来るようになる。
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
-let g:ranger_explorer_keymap_edit = '&lt;C-o>' let g:ranger_explorer_keymap_tabedit = '&lt;C-t>' let g:ranger_explorer_keymap_split = '&lt;C-s>' let g:ranger_explorer_keymap_vsplit = '&lt;C-v>' 得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
+let g:ranger_explorer_keymap_edit = '&lt;C-o>'let g:ranger_explorer_keymap_tabedit = '&lt;C-t>'let g:ranger_explorer_keymap_split = '&lt;C-s>'let g:ranger_explorer_keymap_vsplit = '&lt;C-v>'得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
 fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
 異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。
 そこで、fzfや以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、&lt;C-o>、&lt;C-t>、&lt;C-v>、&lt;C-s>のキーバインドでタブや画面分割して開けるようにした。
-プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。
-前述の3つのツールは同じキーバインドで同じ振る舞いをするよう一貫性が保てるようになっているため、ツール別でキーバインドが合わずに混乱するのを防ぐことが出来ている。</div></footer></a></article></div></div></div><div class=col-md-3><aside class=site><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div><footer><div class=date><div class=time>Mon, Nov 20, 2023</div></div><h2 class=title>VimConf 2023 Tinyに行ってきた</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div><footer><div class=date><div class=time>Wed, May 17, 2023</div></div><h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
-<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a></div><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-laptop-code fa-lg">Work</i></div>チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。</div><div class=contact><a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</div>
+</footer>
+</a>
+</article>
+</div>
+</div>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</div>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</div>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
 <script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
 <script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
-<script data-no-instant>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","//www.google-analytics.com/analytics.js","ga"),InstantClick.on("change",function(){ga("create","UA-45334010-1","auto"),ga("send","pageview")}),InstantClick.on("change",function(){for(var n=document.querySelectorAll("pre code"),t=0;t<n.length;t++)hljs.highlightBlock(n[t])}),InstantClick.on("change",function(){var t,n="iberianpigsty";document.querySelector("#disqus_thread")&&(typeof DISQUS=="undefined"?(t=document.createElement("script"),t.type="text/javascript",t.async=!0,t.src="//"+n+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>
+<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>

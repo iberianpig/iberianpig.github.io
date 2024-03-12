@@ -12,8 +12,7 @@ public void addView(View child, LayoutParams params) Adds a child view with the 
 Parameters: child: the child view to add params: the layout parameters to set on the child
 LinearLayout.LayoutParamsクラス
 「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。
-LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。 (参考:　http://www.javadrive.jp/android/relativelayout/index3.html)
-addRule public void addRule(int verb, int anchor) Adds a layout rule to be interpreted by the RelativeLayout.</description></item><item><title>send data on Intent to call activity</title><link>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</link><pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</guid><description>#Activityとは
+LayoutParams public LinearLayout.LayoutParams(int w, int h) 他のビューに対する相対位置の指定(addRule) このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.</description></item><item><title>send data on Intent to call activity</title><link>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</link><pubDate>Wed, 23 Jul 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-07-23-send-data-on-intent-to-call-activity/</guid><description>#Activityとは
 Androidの画面単位の概念 一つのアクティビティに対してクラス一つが割り当てされる
 &amp;ndash;&amp;gt;1つのXML(Viewテンプレート)と1つのJavaクラス(Activity)が必要となる
 #Intentとは

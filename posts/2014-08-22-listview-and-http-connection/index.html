@@ -1,47 +1,159 @@
-<!doctype html><html><head><meta charset=utf-8><meta name=generator content="Hugo 0.110.0"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet><link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous><link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css><link rel=stylesheet href=https://iberianpig.github.io/css/styles.css><link rel=stylesheet href=https://iberianpig.github.io/css/custom.css><link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml><title>ListView and http connection - iberianpigsty</title><meta property="og:title" content="ListView and http connection - iberianpigsty"><meta property="og:url" content="https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/"><meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'"><meta name=twitter:card content="summary"><meta name=twitter:site content="@nukumaro22"><meta name=twitter:creator content="@nukumaro22"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"ListView and http connection |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2014-08-01T00:00:00JST","dateModified":"2014-08-01T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":""}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script><script src=https://kit.fontawesome.com/13953638e7.js></script></head><body><header class=l-header><div class=p-logo><a href=https://iberianpig.github.io/>iberianpigsty</a></div></header><div class=container><div class=row><div class=col-md-9><article class=single><div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div><div class=body><h1>ListView and http connection</h1><div class=publishDate><time datetime=2014-08-01T00:00:00+00:00>Published at 1 Aug, 2014</time></div><nav><ul class=terms><li><a href=https://iberianpig.github.io/tags/android/>#android</a></li><li><a href=https://iberianpig.github.io/tags/http/>#HTTP</a></li><li><a href=https://iberianpig.github.io/tags/listview/>#ListView</a></li><li><a href=https://iberianpig.github.io/tags/thread/>#Thread</a></li></ul></nav><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&text=ListView%20and%20http%20connection&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>ListView and http connection - iberianpigsty</title>
+<meta property="og:title" content="ListView and http connection - iberianpigsty">
+<meta property="og:url" content="https://iberianpig.github.io/posts/2014-08-22-listview-and-http-connection/">
+<meta property="og:image" content="'https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500'">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"ListView and http connection |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2014-08-01T00:00:00JST","dateModified":"2014-08-01T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":""}</script>
+<script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"",enable_page_level_ads:!0})</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<article class=single>
+<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
+<div class=body>
+<h1>ListView and http connection</h1>
+<div class=publishDate>
+<time datetime=2014-08-01T00:00:00+00:00>Published at 1 Aug, 2014 </time>
+</div>
+<nav>
+<ul class=terms>
+<li><a href=https://iberianpig.github.io/tags/android/>#android</a></li><li><a href=https://iberianpig.github.io/tags/http/>#HTTP</a></li><li><a href=https://iberianpig.github.io/tags/listview/>#ListView</a></li><li><a href=https://iberianpig.github.io/tags/thread/>#Thread</a></li>
+</ul>
+</nav>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&text=ListView%20and%20http%20connection&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&t=ListView%20and%20http%20connection" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><div class=content><h1 id=雑多メモ>雑多メモ</h1><p>Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達</p><h2 id=レイアウトをjava側で生成する>レイアウトをJava側で生成する</h2><pre><code>    LinearLayout linearLayout = new LinearLayout(this);
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<div class=content>
+<h1 id=雑多メモ>雑多メモ</h1>
+<p>Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達</p>
+<h2 id=レイアウトをjava側で生成する>レイアウトをJava側で生成する</h2>
+<pre><code>    LinearLayout linearLayout = new LinearLayout(this);
     linearLayout.setOrientation(LinearLayout.VERTICAL);
     setContentView(linearLayout);`
-</code></pre><h2 id=レイアウトに要素を追加する>レイアウトに要素を追加する</h2><pre><code>   Button button1 = new Button(this);
+</code></pre>
+<h2 id=レイアウトに要素を追加する>レイアウトに要素を追加する</h2>
+<pre><code>   Button button1 = new Button(this);
     button1.setText(&quot;OK&quot;);
     button1.setLayoutParams(new LinearLayout.LayoutParams(
         LinerLayout.LayoutParams.MATCH_PARENT,
         LinerLayout.LayoutParams.WRAP_CONTENT));
     linearLayout.addView(button1);`
-</code></pre><h3 id=addviewメソッド>AddViewメソッド</h3><p>「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。</p><blockquote><p>public void addView(View child, LayoutParams params)
-Adds a child view with the specified layout parameters.</p></blockquote><p>Parameters:
+</code></pre>
+<h3 id=addviewメソッド>AddViewメソッド</h3>
+<p>「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。</p>
+<blockquote>
+<p>public void addView(View child, LayoutParams params)
+Adds a child view with the specified layout parameters.</p>
+</blockquote>
+<p>Parameters:
 child: the child view to add
-params: the layout parameters to set on the child</p><blockquote><p>LinearLayout.LayoutParamsクラス</p></blockquote><blockquote><p>「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。</p></blockquote><pre><code>LayoutParams
+params: the layout parameters to set on the child</p>
+<blockquote>
+<p>LinearLayout.LayoutParamsクラス</p>
+</blockquote>
+<blockquote>
+<p>「android.widget.LinearLayout.LayoutParams」クラスは「android.view.ViewGroup.LayoutParams」クラスのサブクラスです。コンストラクタの1つのは次のようになっています。</p>
+</blockquote>
+<pre><code>LayoutParams
 public LinearLayout.LayoutParams(int w, int h)
-</code></pre><h2 id=他のビューに対する相対位置の指定addrule>他のビューに対する相対位置の指定(addRule)</h2><blockquote><p>このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。
-(参考:　http://www.javadrive.jp/android/relativelayout/index3.html)</p></blockquote><p>addRule
+</code></pre>
+<h2 id=他のビューに対する相対位置の指定addrule>他のビューに対する相対位置の指定(addRule)</h2>
+<blockquote>
+<p>このビュー自身のサイズに関する設定の他に、別に追加されたビューに対する位置関係を設定することが出来ます。「RelativeLayout.LayoutParams」クラスで用意されている「addRule」メソッドを使います。
+(参考:　http://www.javadrive.jp/android/relativelayout/index3.html)</p>
+</blockquote>
+<p>addRule
 public void addRule(int verb, int anchor)
 Adds a layout rule to be interpreted by the RelativeLayout. Use this for
 verbs that take a target, such as a sibling (ALIGN_RIGHT) or a boolean
-value (VISIBLE).</p><p>Parameters:
+value (VISIBLE).</p>
+<p>Parameters:
 verb One of the verbs defined by RelativeLayout, such as
 ALIGN_WITH_PARENT_LEFT.
 anchor The id of another view to use as an anchor, or a boolean
 value(represented as TRUE) for true or 0 for false). For verbs that
 don&rsquo;t refer to another sibling (for example, ALIGN_WITH_PARENT_BOTTOM)
-just use -1.</p><h3 id=windowのタイトルを消す>Windowのタイトルを消す</h3><ul><li>onCreate内に下記を記述<ul><li><code>requestWindowFeature(Window.FEATURE_NO_TITLE);</code></li></ul></li></ul><h2 id=listviewの扱い方>ListViewの扱い方</h2><ul><li><p><code>List&lt;String> items = new ArrayList&lt;String>();</code></p></li><li><p>ListViewに値を追加する場合はArrayAdapterを用いる</p></li><li><p>独自クラスのリストを扱う場合は下記が必要</p><ul><li>独自クラスの作成(id, name, url, 画像等)</li><li>XMLレイアウトを作成(独自クラスが収まるようなレイアウト)</li></ul></li><li><p>ListViewに追加するArrayAdapter<class>(context, layout)
-<code>ArrayAdapter&lt;String> adapter = new ArrayAdapter&lt;String>(this, android.R.layout.simple_list_item_1);</code></p></li><li><p>アイテムの追加</p></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;red&#34;</span><span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;green&#34;</span><span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;blue&#34;</span><span style=color:#f92672>);</span>
-</span></span><span style=display:flex><span>ListView listView <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>ListView<span style=color:#f92672>)</span> findViewById<span style=color:#f92672>(</span>id<span style=color:#f92672>.</span><span style=color:#a6e22e>listview</span><span style=color:#f92672>);</span>
-</span></span></code></pre></div><ul><li>リストビューのアイテムがクリックされた時に呼び出されるコールバックリスナーを登録<ul><li>listview.getItemAtPosition(position)でリスト上のオブジェクトを取得</li></ul></li></ul><p>``java
+just use -1.</p>
+<h3 id=windowのタイトルを消す>Windowのタイトルを消す</h3>
+<ul>
+<li>onCreate内に下記を記述
+<ul>
+<li><code>requestWindowFeature(Window.FEATURE_NO_TITLE);</code></li>
+</ul>
+</li>
+</ul>
+<h2 id=listviewの扱い方>ListViewの扱い方</h2>
+<ul>
+<li>
+<p><code>List&lt;String> items = new ArrayList&lt;String>();</code></p>
+</li>
+<li>
+<p>ListViewに値を追加する場合はArrayAdapterを用いる</p>
+</li>
+<li>
+<p>独自クラスのリストを扱う場合は下記が必要</p>
+<ul>
+<li>独自クラスの作成(id, name, url, 画像等)</li>
+<li>XMLレイアウトを作成(独自クラスが収まるようなレイアウト)</li>
+</ul>
+</li>
+<li>
+<p>ListViewに追加するArrayAdapter<class>(context, layout)
+<code>ArrayAdapter&lt;String> adapter = new ArrayAdapter&lt;String>(this, android.R.layout.simple_list_item_1);</code></p>
+</li>
+<li>
+<p>アイテムの追加</p>
+</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;red&#34;</span><span style=color:#f92672>);</span>
+adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;green&#34;</span><span style=color:#f92672>);</span>
+adapter<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;blue&#34;</span><span style=color:#f92672>);</span>
+ListView listView <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>ListView<span style=color:#f92672>)</span> findViewById<span style=color:#f92672>(</span>id<span style=color:#f92672>.</span><span style=color:#a6e22e>listview</span><span style=color:#f92672>);</span>
+</code></pre></div><ul>
+<li>リストビューのアイテムがクリックされた時に呼び出されるコールバックリスナーを登録
+<ul>
+<li>listview.getItemAtPosition(position)でリスト上のオブジェクトを取得</li>
+</ul>
+</li>
+</ul>
+<p>``java
 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 @Override
-public void onItemClick(AdapterView parent, View view,
+public void onItemClick(AdapterView&lt;?> parent, View view,
 int position, long id) {
 ListView listView = (ListView) parent;
 String item = (String) listView.getItemAtPosition(position);
 Toast.makeText(ListViewSampleActivity.this, item, Toast.LENGTH_LONG).show();
 }
-});</p><pre tabindex=0><code>
+});</p>
+<pre tabindex=0><code>
 ## Threadの扱い
 * 基本的にMainでUIを担当する
 * サブThread上でUI描画を実行するとエラーとなってしまうので要注意
@@ -52,8 +164,8 @@ Toast.makeText(ListViewSampleActivity.this, item, Toast.LENGTH_LONG).show();
 ## Http通信を行う場合
 * インターネット接続を許可する為に、AndroidManifest.xmlに以下を
 * 記述する。
-`&lt;uses-permission android:name=&#34;android.permission.INTERNET&#34;&gt;&lt;/uses-permissio&gt;`
-* メインスレッドで通信を行った場合、Android4では&#34;android.os.StrictMode$AndroidBlockGuardPolicy.onNetwork&#34;エラーが発生し動作しない。
+`&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;&gt;&lt;/uses-permissio&gt;`
+* メインスレッドで通信を行った場合、Android4では&quot;android.os.StrictMode$AndroidBlockGuardPolicy.onNetwork&quot;エラーが発生し動作しない。
    * Android4ではメインスレッドからネットワークにアクセスする処理を実行することができなくなったため。
    * HTTPでdataを取得する場合はサブスレッドで取得する必要がある
 
@@ -113,15 +225,159 @@ if (null == convertView) {
    convertView = layoutInflater_.inflate(R.layout.hoge_layout, null);
 }
 </code></pre><p>下記の説明を読んで少しハラオチした。
-<a href=http://hyoromo.hatenablog.com/entry/20090912/1252777077>http://hyoromo.hatenablog.com/entry/20090912/1252777077</a></p><p>convertView自体はListViewをScrollした時のList一行生成時に呼ばれるgetViewに必要。
-getView自体はAdapterクラスだと持ってるコールバック。</p><p>一度でもgetViewを行ってさえいれば、AdapterクラスのインスタンスはconvertViewのプロパティ
-を保持しており、それを毎回getViewに代入する。</p><p>そのため、もし持っていなかったらLayoutInflaterで新しくconvertView取ってくるよという動きをする</p><h2 id=その他不明点>その他/不明点</h2><p>見てたサイト達
-<a href=http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA>http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA</a></p></div><aside class=p-share><div class=share-inner><a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&text=ListView%20and%20http%20connection&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href=http://hyoromo.hatenablog.com/entry/20090912/1252777077>http://hyoromo.hatenablog.com/entry/20090912/1252777077</a></p>
+<p>convertView自体はListViewをScrollした時のList一行生成時に呼ばれるgetViewに必要。
+getView自体はAdapterクラスだと持ってるコールバック。</p>
+<p>一度でもgetViewを行ってさえいれば、AdapterクラスのインスタンスはconvertViewのプロパティ
+を保持しており、それを毎回getViewに代入する。</p>
+<p>そのため、もし持っていなかったらLayoutInflaterで新しくconvertView取ってくるよという動きをする</p>
+<h2 id=その他不明点>その他/不明点</h2>
+<p>見てたサイト達
+<a href=http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA>http://www.one-tab.com/page/0QqPosDYSompC8jtQAdzMA</a></p>
+</div>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&text=ListView%20and%20http%20connection&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
 <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&t=ListView%20and%20http%20connection" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
 <a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a></div></aside><aside><section><div><div id=disqus_thread></div></div></section></aside></div></article></div><div class=col-md-3><aside class=site><section><header>Table Of Contents</header><div><nav id=TableOfContents><ul><li><a href=#レイアウトをjava側で生成する>レイアウトをJava側で生成する</a></li><li><a href=#レイアウトに要素を追加する>レイアウトに要素を追加する</a><ul><li><a href=#addviewメソッド>AddViewメソッド</a></li></ul></li><li><a href=#他のビューに対する相対位置の指定addrule>他のビューに対する相対位置の指定(addRule)</a><ul><li><a href=#windowのタイトルを消す>Windowのタイトルを消す</a></li></ul></li><li><a href=#listviewの扱い方>ListViewの扱い方</a></li><li><a href=#その他不明点>その他/不明点</a></li></ul></nav></div></section><section><header>Latest Posts</header><div><article class=li><a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div><footer><div class=date><div class=time>Mon, Nov 20, 2023</div></div><h2 class=title>VimConf 2023 Tinyに行ってきた</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div><footer><div class=date><div class=time>Wed, May 17, 2023</div></div><h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix><div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div><footer><div class=date><div class=time>Mon, Apr 26, 2021</div></div><h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div><footer><div class=date><div class=time>Tue, May 14, 2019</div></div><h2 class=title>Upgrade to elementary OS 5.0 Juno</h2></footer></a></article><article class=li><a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix><div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div><footer><div class=date><div class=time>Tue, Apr 30, 2019</div></div><h2 class=title>tig-explorer.vimの使い方</h2></footer></a></article></div></section><section class=taxonomies><header class=taxonomies__header>tag</header><div class=taxonomies__body><ul><li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li></ul></div></section><section class=author><header class=author__header>About Me</header><div class=author__body><div class=aboutme><div class=aboutme__icon><i class="fas fa-piggy-bank fa-lg">Kohei Yamada</i></div>自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。</div><div class=contact><a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
-<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a></div><div class=aboutwork><div class=aboutwork__icon><i class="fas fa-laptop-code fa-lg">Work</i></div>チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。</div><div class=contact><a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a></div></div></section></aside></div></div></div><footer class=l-footer><p>Copyright (c) iberianpigsty; all rights reserved.</p><p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p></footer><script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2014-08-22-listview-and-http-connection%2f&title=ListView%20and%20http%20connection" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<aside>
+<section>
+<div>
+<div id=disqus_thread></div>
+</div>
+</section>
+</aside>
+</div>
+</article>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Table Of Contents</header>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#レイアウトをjava側で生成する>レイアウトをJava側で生成する</a></li>
+<li><a href=#レイアウトに要素を追加する>レイアウトに要素を追加する</a>
+<ul>
+<li><a href=#addviewメソッド>AddViewメソッド</a></li>
+</ul>
+</li>
+<li><a href=#他のビューに対する相対位置の指定addrule>他のビューに対する相対位置の指定(addRule)</a>
+<ul>
+<li><a href=#windowのタイトルを消す>Windowのタイトルを消す</a></li>
+</ul>
+</li>
+<li><a href=#listviewの扱い方>ListViewの扱い方</a></li>
+<li><a href=#その他不明点>その他/不明点</a></li>
+</ul>
+</nav></div>
+</section>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, May 14, 2019</div>
+</div>
+<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
+<footer>
+<div class=date>
+<div class=time>Tue, Apr 30, 2019</div>
+</div>
+<h2 class=title>tig-explorer.vimの使い方</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
 <script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
 <script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
-<script data-no-instant>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","//www.google-analytics.com/analytics.js","ga"),InstantClick.on("change",function(){ga("create","UA-45334010-1","auto"),ga("send","pageview")}),InstantClick.on("change",function(){for(var n=document.querySelectorAll("pre code"),t=0;t<n.length;t++)hljs.highlightBlock(n[t])}),InstantClick.on("change",function(){var t,n="iberianpigsty";document.querySelector("#disqus_thread")&&(typeof DISQUS=="undefined"?(t=document.createElement("script"),t.type="text/javascript",t.async=!0,t.src="//"+n+".disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(t)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script></body></html>
+<script data-no-instant>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'),InstantClick.on('change',function(a){ga('create','UA-45334010-1','auto'),ga('send','pageview')}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>
