@@ -33,6 +33,32 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2017-01-23_generate_post_template/>
+<div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Jan 23, 2017</time>
+</div>
+<h2 class=title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2>
+<div class=summary>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
+hugoの記事作成 hugo new "path/to/article.md" コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new "content/post/article.md"とやってしまう。
+しかしcontent/content/path/to/article.mdに作られてしまう。
+正しくはhugo new "post/article.md"だ。contentを除いておく必要が有る。
+「久々にブログ書くか」という時（いつも）こうなる。しんどい。
+shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
+#!/bin/bash echo -e "\033[0;32mCreating new post...\033[0m" if [ $# -eq 1 ]; then title="_$1" else title="" fi formatted_date=$(date "+%Y-%m-%d") full_path="posts/${formatted_date}${title}.md" hugo new "$full_path" vi "content/$full_path" タイトルに日付を付けてエディタを起動するまで自動化した。
+./new_post.sh title で./content/posts/2017-01-23_title.mdが生成されてviで開く。
+これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
+ちなみにbashのlintとしてshellcheckを入れてる。
+さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
+変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
+使ってない人はぜひインストールしよう。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/>
 <div class=image style=background-image:url(https://i.gyazo.com/518ab73560119267fa5e740036585f9f.jpg)></div>
 <footer>
@@ -431,24 +457,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画�
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/>
-<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 21, 2015</time>
-</div>
-<h2 class=title>SPとOC-企業戦略-</h2>
-<div class=summary><p>会社の方針決めるために、企業戦略のたて方についての勉強する。</p>
-<p>教材は<code>ストーリーとしての競争戦略</code>、から。</p>
-<h1 id=戦略には優劣がある>戦略には優劣がある</h1>
-<p>打率2.5割の打者に戦略Aを施すと3割<br>
-打率2.5割の打者に戦略Bを施すと3.5割</p></div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -464,6 +472,17 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -504,17 +523,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画�
 <div class=time>Tue, May 14, 2019</div>
 </div>
 <h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
 </footer>
 </a>
 </article>

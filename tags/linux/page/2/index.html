@@ -33,6 +33,35 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/>
+<div class=image style=background-image:url(https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, May 4, 2015</time>
+</div>
+<h2 class=title>Elementary OS freyaでハイバネートオプションを追加する</h2>
+<div class=summary>少し前からElementaryOSの最新版Freyaを使っている。
+電源周りで少し手こずったので、備忘録として残しておく。
+インストール後にやったことはまた今度まとめる。
+ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
+※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
+pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
+電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+下記をコピー&ペースト
+[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=/dev/sda3" resume=&lsquo;スワップ用パーティション&rsquo;とすること！
+Grubの更新 sudo update-grub
+これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
+ノートPCを閉じた時にハイバネーションを有効にしたい && ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
+/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
+sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し、 下記に変更する
+HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2013-11-19-fcitx/>
 <div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
 <footer>
@@ -122,6 +151,17 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -162,17 +202,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <div class=time>Tue, May 14, 2019</div>
 </div>
 <h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
 </footer>
 </a>
 </article>

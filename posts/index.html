@@ -33,6 +33,31 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</time>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+<div class=summary>Authy Desktopが2024年3月にサービス終了 参考記事
+Authyは人気のある2FAアプリケーションの一つだったが、 2024年3月にデスクトップ用Authyが終了する発表されている。
+自分はAndroid, Linuxの環境下でAuthyを使っていたがデスクトップ版が終了するため、モバイル版はAegisとデスクトップ版はGnome Authenticatorに移行することにした。
+移行先の選定 Authyの一つ大きなポイントはデスクトップ・モバイルデバイス間の各クライアントでの同期だが、これはAuthyのサーバ経由で秘密鍵を同期することで実現されている。
+AegisはOSSのTOTPクライアントだが、Android向けしかないため、デスクトップ向けにはGnome Authenticatorを使うことにした。
+Aegis
+Google play https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis GitHub https://github.com/beemdevelopment/Aegis Aegisの記事 https://gigazine.net/news/20230128-aegis-authenticator-review/ Aigesのバックアップとして複数の秘密鍵をまとめたQRコード(Google Authenticator形式)が出力できること。(様々なインポート・エクスポート形式をサポートしている) Gnome Authenticator
+Fluthub https://flathub.org/apps/com.belmoussaoui.Authenticator GitLab https://gitlab.gnome.org/World/Authenticator flatpakで導入するGnome AuthenticatorはGoogle Authenticator形式のQRコードをWebカメラから読み込むことができる Aegisのバックアップ用QRをWebカメラにかざして読み込ませることでAuthyの秘密鍵の同期相当が行える ちなみに以下も選択肢としては良いと思う
+Google Authenticater自体も最近 バックアップ/QRのエクスポート機能が追加されていて(Aegisで利用している一括のQRコード形式)が扱える 2fas(https://2fas.com/) は iOS / Android / Chrome Extension クライアントがあり、こちらに寄せるのもアリかも AuthyからTOTPの秘密鍵のエクスポート 公式を漁ったがAuthyの秘密鍵をエクスポートする方法が見つからなかった。 どうやらAuthyの秘密鍵のエクスポートはサポートされていないため、各自で何らかのアプリやツールを用いた移行が必要となる。
+rootが取れるAndroid端末があれば、Aegisや他のアプリからもエクスポートできるらしいが自分はroot取得していないので https://github.com/token2/authy-migration を使った。
+authy-migrationはクライアントのふりをしてバックアップから秘密鍵をダンプする
+廃止されたAuthy Chrome Appのapi_keyを内部で使っている模様 2024年3月現在はまだ使えているが、APIキーがいつまで使えるかは不明なので早めに移行すべき Authy側の設定でバックアップを有効にしておく</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -432,32 +457,6 @@ Kindleを入れるとこうなる。奇跡のジャストサイズ。
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://iberianpig.github.io/posts/2017-01-23_generate_post_template/>
-<div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Gnu-bash-logo.svg/1280px-Gnu-bash-logo.svg.png)></div>
-<footer>
-<div class=date>
-<div class=time>Mon, Jan 23, 2017</time>
-</div>
-<h2 class=title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</h2>
-<div class=summary>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
-hugoの記事作成 hugo new "path/to/article.md" コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new "content/post/article.md"とやってしまう。
-しかしcontent/content/path/to/article.mdに作られてしまう。
-正しくはhugo new "post/article.md"だ。contentを除いておく必要が有る。
-「久々にブログ書くか」という時（いつも）こうなる。しんどい。
-shellscriptで生成を自動化 ということで自動化しよう。 shellscriptを書く。new_post.shと言う名前にした。
-#!/bin/bash echo -e "\033[0;32mCreating new post...\033[0m" if [ $# -eq 1 ]; then title="_$1" else title="" fi formatted_date=$(date "+%Y-%m-%d") full_path="posts/${formatted_date}${title}.md" hugo new "$full_path" vi "content/$full_path" タイトルに日付を付けてエディタを起動するまで自動化した。
-./new_post.sh title で./content/posts/2017-01-23_title.mdが生成されてviで開く。
-これでブログ書き出しの障壁が小さくなった。もっと頻度を上げたい。
-ちなみにbashのlintとしてshellcheckを入れてる。
-さらにVimのWatchdogsに組み込んで使うと、非同期でチェックを行い、警告を出してくれて大変便利。
-変な書き方すると怒ってくれて、自分のような半端者にはたいへん助かる。
-使ってない人はぜひインストールしよう。</div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -472,6 +471,17 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -512,17 +522,6 @@ shellscriptで生成を自動化 ということで自動化しよう。 shellsc
 <div class=time>Tue, May 14, 2019</div>
 </div>
 <h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
 </footer>
 </a>
 </article>

@@ -33,6 +33,26 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2014-01-22-generate-publish-false-post-with-octopress/>
+<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Jan 22, 2014</time>
+</div>
+<h2 class=title>Octopressで下書き保存をデフォルト設定にする方法</h2>
+<div class=summary>Octopressでの下書き保存 普通にdeployすると、rake new_post['hogehoge']で生成された/_posts配下の記事がすべてPublishされてしまう。
+一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
+実際はyyyy-MM-dd-[$title].markdown内に published: falseを記述するだけ。 (※$titleは生成された記事毎に異なる)
+layout: post title: "Octopressで下書き保存をデフォルト設定にする方法" date: 2014-01-22 comments: true categories: + published: false 一番下のpublished: falseを追記。
+これでRake deployしてもpublishされないため、投稿する場合はfalseをtrueに変える必要がある。
+下書き保存をデフォルト設定 記事生成時に下書き保存をデフォルトで設定してほしい場合、RakeFileを編集する。
+task :new_post, :title do |t, args| if args.title title = args.title else title = get_stdin("Enter a title for your post: ") end raise "### You haven't set anything up yet. First run `rake install` to set up an Octopress theme." unless File.directory?(source_dir) mkdir_p "#{source_dir}/#{posts_dir}" filename = "#{source_dir}/#{posts_dir}/#{Time.</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2013-11-19-fcitx/>
 <div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
 <footer>
@@ -122,6 +142,17 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -162,17 +193,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <div class=time>Tue, May 14, 2019</div>
 </div>
 <h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
 </footer>
 </a>
 </article>

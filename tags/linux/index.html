@@ -33,6 +33,31 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</time>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+<div class=summary>Authy Desktopが2024年3月にサービス終了 参考記事
+Authyは人気のある2FAアプリケーションの一つだったが、 2024年3月にデスクトップ用Authyが終了する発表されている。
+自分はAndroid, Linuxの環境下でAuthyを使っていたがデスクトップ版が終了するため、モバイル版はAegisとデスクトップ版はGnome Authenticatorに移行することにした。
+移行先の選定 Authyの一つ大きなポイントはデスクトップ・モバイルデバイス間の各クライアントでの同期だが、これはAuthyのサーバ経由で秘密鍵を同期することで実現されている。
+AegisはOSSのTOTPクライアントだが、Android向けしかないため、デスクトップ向けにはGnome Authenticatorを使うことにした。
+Aegis
+Google play https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis GitHub https://github.com/beemdevelopment/Aegis Aegisの記事 https://gigazine.net/news/20230128-aegis-authenticator-review/ Aigesのバックアップとして複数の秘密鍵をまとめたQRコード(Google Authenticator形式)が出力できること。(様々なインポート・エクスポート形式をサポートしている) Gnome Authenticator
+Fluthub https://flathub.org/apps/com.belmoussaoui.Authenticator GitLab https://gitlab.gnome.org/World/Authenticator flatpakで導入するGnome AuthenticatorはGoogle Authenticator形式のQRコードをWebカメラから読み込むことができる Aegisのバックアップ用QRをWebカメラにかざして読み込ませることでAuthyの秘密鍵の同期相当が行える ちなみに以下も選択肢としては良いと思う
+Google Authenticater自体も最近 バックアップ/QRのエクスポート機能が追加されていて(Aegisで利用している一括のQRコード形式)が扱える 2fas(https://2fas.com/) は iOS / Android / Chrome Extension クライアントがあり、こちらに寄せるのもアリかも AuthyからTOTPの秘密鍵のエクスポート 公式を漁ったがAuthyの秘密鍵をエクスポートする方法が見つからなかった。 どうやらAuthyの秘密鍵のエクスポートはサポートされていないため、各自で何らかのアプリやツールを用いた移行が必要となる。
+rootが取れるAndroid端末があれば、Aegisや他のアプリからもエクスポートできるらしいが自分はroot取得していないので https://github.com/token2/authy-migration を使った。
+authy-migrationはクライアントのふりをしてバックアップから秘密鍵をダンプする
+廃止されたAuthy Chrome Appのapi_keyを内部で使っている模様 2024年3月現在はまだ使えているが、APIキーがいつまで使えるかは不明なので早めに移行すべき Authy側の設定でバックアップを有効にしておく</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/>
 <div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
@@ -399,35 +424,6 @@ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替�
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/>
-<div class=image style=background-image:url(https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Mon, May 4, 2015</time>
-</div>
-<h2 class=title>Elementary OS freyaでハイバネートオプションを追加する</h2>
-<div class=summary>少し前からElementaryOSの最新版Freyaを使っている。
-電源周りで少し手こずったので、備忘録として残しておく。
-インストール後にやったことはまた今度まとめる。
-ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
-※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
-pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
-電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
-下記をコピー&ペースト
-[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=/dev/sda3" resume=&lsquo;スワップ用パーティション&rsquo;とすること！
-Grubの更新 sudo update-grub
-これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
-ノートPCを閉じた時にハイバネーションを有効にしたい && ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
-/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
-sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し、 下記に変更する
-HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -442,6 +438,17 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
@@ -482,17 +489,6 @@ HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画�
 <div class=time>Tue, May 14, 2019</div>
 </div>
 <h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/181fef546cced7ca6dc651dff59cd1bf.gif)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Apr 30, 2019</div>
-</div>
-<h2 class=title>tig-explorer.vimの使い方</h2>
 </footer>
 </a>
 </article>
