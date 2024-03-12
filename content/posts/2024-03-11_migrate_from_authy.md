@@ -28,7 +28,7 @@ AegisはOSSのTOTPクライアントだが、Android向けしかないため、�
   - Google play https://play.google.com/store/apps/details?id=com.beemdevelopment.aegis
   - GitHub https://github.com/beemdevelopment/Aegis
   - Aegisの記事 https://gigazine.net/news/20230128-aegis-authenticator-review/
-  - Aigesのバックアップとして複数の秘密鍵をまとめたQRコード(Google Authenticator形式)が出力できること。(様々なインポート・エクスポート形式をサポートしている)  
+  - AegisのバックアップとしてGoogle Authenticator形式の複数の秘密鍵をまとめたQRコードが出力できる(他にも標準的な形式のインポート・エクスポート形式をサポートしている)
 
 - Gnome Authenticator
   - Fluthub https://flathub.org/apps/com.belmoussaoui.Authenticator
