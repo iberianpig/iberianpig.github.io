@@ -1,17 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kernel on iberianpigsty</title><link>https://iberianpig.github.io/tags/kernel/</link><description>Recent content in Kernel on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 25 Jun 2017 22:48:09 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/kernel/index.xml" rel="self" type="application/rss+xml"/><item><title>fwupdでLinuxからUEFI(BIOS)のアップデート</title><link>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</link><pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</guid><description>Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kernel on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/kernel/</link>
+    <description>Recent content in Kernel on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 25 Jun 2017 22:48:09 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fwupdでLinuxからUEFI(BIOS)のアップデート</title>
+      <link>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</link>
+      <pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-06-25_fwupd_updates_firmware_in_linux/</guid>
+      <description>Linuxデスクトップを利用する際に少し問題となるBIOSのアップデート。 ここではfwupdというツールを使ってUEFI(BIOS)のアップデート方法を書く。
 特徴として、別のデバイスにBootableなディスクを焼いてアップデートする必要がないが、サポートされているデバイスでなければ対応出来ない。
 なお、Unetbootinを使ってUSBデバイスからのアップデート手順をQiitaに書いているのでそちらもご参考あれ。
 この記事はUbuntu16.04ベースのelementary os v0.4(loki), Dell XPS13 9360で試した内容を元にを書いている。
 fwupdで利用可能なデバイスかどうかを確認する 利用可能なデバイスのリストはこちら→(https://fwupd.org/lvfs/devicelist) 自分のXPS13 9360はfwupdでアップデート可能だった。
 fwupdのインストール aptでfwupdインストールする
 sudo apt install fwupd cabファイルをダウンロード (https://fwupd.org/lvfs/devicelist) からダウンロードする。
+
 画像内のリンク先のcabファイル。
 fwupdmgrでインストール fwupdmgrというコマンドが利用出来るようになっている。
 ただし、ACアダプタを接続していないと進めないので注意する。
 fwupdmgr installでファームウェアをインストール。
 fwupdmgr install /path/to/your/downloaded/firmware.cab これでインストール待ち状態になった。
 再起動時にBIOSのロード画面でアップグレードが走る。
-Special Thanks https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist</description></item><item><title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title><link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link><pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid><description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
+Special Thanks  https://github.com/hughsie/fwupd https://fwupd.org/lvfs/devicelist  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</title>
+      <link>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</link>
+      <pubDate>Mon, 06 Feb 2017 17:53:41 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-02-06_how_to_upgrade_kernel/</guid>
+      <description>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
 ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
 リポジトリを追加する
 sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール
@@ -19,8 +45,12 @@ sudo apt update &amp;amp;&amp;amp; sudo apt install ukuu Ukuu Kernel Update Util
 カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
 記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
 HWEカーネル用パッケージのインストール HWEカーネルとは
-HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
-安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
+ HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
+ 安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
 linux-generic-hwe-16.04-edgeをインストール
 sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</description></item></channel></rss>
+$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</description>
+    </item>
+    
+  </channel>
+</rss>

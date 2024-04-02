@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lifehack on iberianpigsty</title><link>https://iberianpig.github.io/tags/lifehack/</link><description>Recent content in lifehack on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright><lastBuildDate>Sun, 31 May 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/lifehack/index.xml" rel="self" type="application/rss+xml"/><item><title>Linuxでブルーライトフィルタ そして快眠へ...</title><link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link><pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid><description>毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lifehack on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/lifehack/</link>
+    <description>Recent content in lifehack on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 31 May 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/lifehack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
+      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
+      <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
+      <description>毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなどあるが、現実問題難しい。
 いくつか対策を考える。
 PCメガネ、JINS PC jinsのPC用メガネを使うと目に優しくなれるとのこと。
@@ -6,8 +22,8 @@ PCメガネ、JINS PC jinsのPC用メガネを使うと目に優しくなれる�
 ようはその青い光をフィルタしてしまうメガネが売れているようだ。
 メガネを買えばそれで解決、なのかも知れないがハードウェアではなくソフトウェアで解決したい。
 Linuxでブルーライトをカット 実はこのブルーライト、色温度を下げることで減量させることができる。
-色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
-実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
+ 色温度（いろおんど、英語：color temperature）とは、ある光源が発している光の色を定量的な数値で表現する尺度（単位）である。単位には熱力学的温度の K（ケルビン） を用いる。 (http://ja.wikipedia.org/wiki/%E8%89%B2%E6%B8%A9%E5%BA%A6)
+ 実は色温度は青い方が高い。 炎は赤いので赤は温度が高そうだが、実際は炎の先端の青い部分が最も温度が高い。
 そう、モニタの色温度をソフトウェアで変更さえすれば良い。 輝度を下げることでブルーライト低減はできるが、色温度を下げることで更に低減させ、PCメガネよりさらに高い効果を目指す。
 今回はRedshiftというソフトウェアを試してみた。
 Redshift manual page
@@ -16,9 +32,13 @@ Redshift同様のソフトウェアとしてf.luxも試したが、稀にCPU消�
 Redshiftのインストール sudo apt-get install redshift redshift-gtk
 パネルのインジケーターに表示させることができる。コマンドラインからの利用の場合、その場合redshift-gtkは必要ない。
 Redshiftの起動と設定 redshift-gtkを実行させると、パネル上にインジケーターが出る。
-toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。 詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
+ toggleでon/offを切り替え。 autostartで自動起動の設定を切り替え。  詳細な設定内容はコマンドラインや外部ファイルから入力することができる。
 こちらのサイトで詳しく紹介されていた。
 デフォルトの設定では、日中の色温度はあまり抑えない設定で、夜間はほんのり赤くなり色温度を抑える。([off]6300K, [day]5700K, [night]3600K)
 ブルーライトカットの効果 最初は少々赤さが気になるが段々と目が慣れてくると気にならなくなる。設定を元に戻すと眩しく感じる。
 ライターさんのLubuntuにRedshift導入した所、目が疲れにくくなったとのフィードバックを得たので効果はあるようだ。
-寝付きの悪いLinuxユーザーは是非お試しあれ。</description></item></channel></rss>
+寝付きの悪いLinuxユーザーは是非お試しあれ。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,7 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>angularJS on iberianpigsty</title><link>https://iberianpig.github.io/tags/angularjs/</link><description>Recent content in angularJS on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright><lastBuildDate>Mon, 13 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/angularjs/index.xml" rel="self" type="application/rss+xml"/><item><title>AngularでのDOMへのアクセス</title><link>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link><pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid><description>AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>angularJS on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/angularjs/</link>
+    <description>Recent content in angularJS on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 13 Apr 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AngularでのDOMへのアクセス</title>
+      <link>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link>
+      <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid>
+      <description>AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
-&amp;lt;SELECTOR data-x = '{&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}'...&amp;gt;というDOM要素が存在した時
-str = angular.element('SELECTOR').attr('data-x')のような形式でデータを取得することができる。
+&amp;lt;SELECTOR data-x = &#39;{&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}&#39;...&amp;gt;というDOM要素が存在した時
+str = angular.element(&#39;SELECTOR&#39;).attr(&#39;data-x&#39;)のような形式でデータを取得することができる。
 しかしこの状態ではstrはただの文字列として取得した状態なので、ハッシュを取り出すにはパースしてあげる必要がある。
 hashed_data = angular.fomJson(str)
-これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description></item></channel></rss>
+これでhashed_data = {&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}が取得できる。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,32 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vim on iberianpigsty</title><link>https://iberianpig.github.io/tags/vim/</link><description>Recent content in Vim on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright><lastBuildDate>Mon, 20 Nov 2023 10:35:11 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml"/><item><title>VimConf 2023 Tinyに行ってきた</title><link>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link><pubDate>Mon, 20 Nov 2023 10:35:11 +0900</pubDate><guid>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid><description>2023年11月18日、秋葉原で開催されたVimConf 2023 Tinyに参加してきました。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/vim/</link>
+    <description>Recent content in Vim on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 20 Nov 2023 10:35:11 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VimConf 2023 Tinyに行ってきた</title>
+      <link>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link>
+      <pubDate>Mon, 20 Nov 2023 10:35:11 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
+      <description>2023年11月18日、秋葉原で開催されたVimConf 2023 Tinyに参加してきました。
 https://vimconf.org/2023/
-VimConfが4年ぶりに帰ってくる! VimConf は、世界初かつ世界で唯一のコミュニティによって定期運営されているVimの国際カンファレンスです。
+ VimConfが4年ぶりに帰ってくる! VimConf は、世界初かつ世界で唯一のコミュニティによって定期運営されているVimの国際カンファレンスです。
 新型コロナの影響で開催を延期していたVimConfが、2023年ついに開催決定!
 今回は、準備期間が限られているため、VimConf 2023 tinyとして縮小版での開催となりますが、 Vimに関する様々なセッションが予定されています。 Vimユーザーなら誰でも楽しめるVimConf 2023 tiny。 Vimをもっと使いこなしたい方、Vimについてもっと知りたい方は、ぜひご参加をご検討ください!
-初めてのVimConfの参加でちょっと緊張していたのだけれど、とても楽しかった。 ありすえさんがtogetterにまとめてくれているのでそれ見ながら思い出しつつ書いていきます。 https://zenn.dev/lambdalisue/articles/67f532581548b6
+ 初めてのVimConfの参加でちょっと緊張していたのだけれど、とても楽しかった。 ありすえさんがtogetterにまとめてくれているのでそれ見ながら思い出しつつ書いていきます。 https://zenn.dev/lambdalisue/articles/67f532581548b6
 Bram Moolenaar the Creator of Vim (mattn) Bram Moolenaar the Creator of Vim (mattn) - Togetter
 Vimの歴史やVimの作者Bramさんとmattnさんの二人のエピソードをSoftware Designのスピンアウトという形でお話されてました。
 自分も、Bramさんがこの世を去ったと知ったときとても悲しい気持ちになったのを覚えている。 このキーノートでmattnさんも感情をなんとか抑えながら話していて、聞いている自分も気持ちを抑えながら聞いていました。
 印象的だったのはBramさんはあのmattnさんから見ても手が早かったこと、英語がコンプレックスだったmattnさんのターニングポイントがBramさんとのメールのやりとり、それがOSSへの貢献につながっていること。 そして、今後mattnさんはずっとVimを使いつづけ、メンテナンスしていくんだという意志表明があり、良い基調講演でした。
 Revolutionizing Vim/Neovim Plugin Development ~ An In-Depth Look into Denops (Λlisue) Revolutionizing Vim/Neovim Plugin Development ~ An In-Depth Look into Denops (Λlisue) - Togetter
 開発者のありすえさん自身が、Denopsについて解説するトーク。 特にDenopsのアーキテクチャそれらの通信がどうなっているのか、プラグイン間の通信あたりが個人的に面白かった。
-Vim / NeoVim &amp;lt;&amp;ndash;&amp;gt; denops のやりとりはそれぞれJSON/MessagePackでやりとりし、denops &amp;lt;&amp;ndash;&amp;gt; plugin は messagepack-rpc でやりとりしている。</description></item><item><title>tig-explorer.vimの使い方</title><link>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</link><pubDate>Tue, 30 Apr 2019 23:57:45 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</guid><description>Vim用のGitクライアントが欲しかった vimのGitプラグインとして何を使っているのが多いだろうか？
+Vim / NeoVim &amp;lt;&amp;ndash;&amp;gt; denops のやりとりはそれぞれJSON/MessagePackでやりとりし、denops &amp;lt;&amp;ndash;&amp;gt; plugin は messagepack-rpc でやりとりしている。</description>
+    </item>
+    
+    <item>
+      <title>tig-explorer.vimの使い方</title>
+      <link>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</link>
+      <pubDate>Tue, 30 Apr 2019 23:57:45 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</guid>
+      <description>Vim用のGitクライアントが欲しかった vimのGitプラグインとして何を使っているのが多いだろうか？
 自分の観測範囲ではfugitiveを使っている人が多いようだ。
 しかし、ターミナルではCUIツールで高速なプレビューの出来るtigをGitクライアントとして利用している人は多いのではないだろうか。
-vimでもtigが使いたい。そんな人(自分)のためにvim pluginを作成した。
-tig-explorer.vim tig-explorer.vimはtigをvimから扱うプラグイン。
+ vimでもtigが使いたい。そんな人(自分)のためにvim pluginを作成した。
+tig-explorer.vim  tig-explorer.vimはtigをvimから扱うプラグイン。
 tigの機能でdiff上からeキーを押下すると任意のエディタで該当箇所を開く事が出来るが、このプラグインを使うと、vimからtigを呼び出すことが出来る。
+
 tigを開き、差分をチェックして、そこから再びvimで開くことが出来る。
 また、vimからtigを呼び出すには!tigコマンドをvimのコマンドモードから呼び出すことでも同じことが実現でも可能だが、 プロセスがvim-tig-vim-tig-vimのようにどんどんネストしてしまう。
 このプラグインを経由してエディタで開く場合は親のvimプロセスで開くため、vim上のbuffer移動やhistory、yankが途切れることがない。
 また、vimからtigに行番号やファイル名を渡せるので、↓のコマンドが格段に扱いやすくなる。
-tig FILEPATHで閲覧中のファイルの履歴を見る(:TigOpenCurrentFile)
-tig grep PATTERN PATHでプレビューしてから開く(:TigGrep)
-tig blame FILEPATHで現在のファイル履歴を行単位で見る(:TigBlame)
-tig-explorer.vimのカスタマイズ .vimrcの記述例
+  tig FILEPATHで閲覧中のファイルの履歴を見る(:TigOpenCurrentFile)
+  tig grep PATTERN PATHでプレビューしてから開く(:TigGrep)
+  tig blame FILEPATHで現在のファイル履歴を行単位で見る(:TigBlame)
+  tig-explorer.vimのカスタマイズ .vimrcの記述例
 &amp;#34; tigを開くnnoremap &amp;lt;Leader&amp;gt;t :TigOpenProjectRootDir&amp;lt;CR&amp;gt;&amp;#34; 現在のファイルの履歴を見るnnoremap &amp;lt;Leader&amp;gt;T :TigOpenCurrentFile&amp;lt;CR&amp;gt;&amp;#34; パターンでtig grepするnnoremap &amp;lt;Leader&amp;gt;g :TigGrep&amp;lt;CR&amp;gt;&amp;#34; tig grepした内容を再呼び出しするnnoremap &amp;lt;Leader&amp;gt;r :TigGrepResume&amp;lt;CR&amp;gt;&amp;#34; 選択中のキーワードでtig grepするvnoremap &amp;lt;Leader&amp;gt;g y:TigGrep&amp;lt;Space&amp;gt;&amp;lt;C-R&amp;gt;&amp;#34;&amp;lt;CR&amp;gt;&amp;#34; カーソル下のキーワードでtig grepするnnoremap &amp;lt;Leader&amp;gt;cg :&amp;lt;C-u&amp;gt;:TigGrep&amp;lt;Space&amp;gt;&amp;lt;C-R&amp;gt;&amp;lt;C-W&amp;gt;&amp;lt;CR&amp;gt;&amp;#34; 現在のカーソル位置でtig blameするnnoremap &amp;lt;Leader&amp;gt;b :TigBlame&amp;lt;CR&amp;gt;また、このプラグインの特徴的なところでtig上でCtrl-tを押下するとvimのタブで開く機能が追加されている。 同様にCtrl-sで水平分割、 Ctrl-vで垂直分割出来る。
+
 tig上のvimを開くキーバインドの動的に追加していて、下記がデフォルトの設定値。
-let g:tig_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:tig_explorer_keymap_tabedit = &amp;#39;&amp;lt;C-t&amp;gt;&amp;#39;let g:tig_explorer_keymap_split = &amp;#39;&amp;lt;C-s&amp;gt;&amp;#39;let g:tig_explorer_keymap_vsplit = &amp;#39;&amp;lt;C-v&amp;gt;&amp;#39;↑ .</description></item><item><title>ranger-explorer.vimをアップデートした</title><link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link><pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate><guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid><description>ranger-explorer.vimというVimプラグインをアップデートした。
+let g:tig_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:tig_explorer_keymap_tabedit = &amp;#39;&amp;lt;C-t&amp;gt;&amp;#39;let g:tig_explorer_keymap_split = &amp;#39;&amp;lt;C-s&amp;gt;&amp;#39;let g:tig_explorer_keymap_vsplit = &amp;#39;&amp;lt;C-v&amp;gt;&amp;#39;↑ .</description>
+    </item>
+    
+    <item>
+      <title>ranger-explorer.vimをアップデートした</title>
+      <link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link>
+      <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid>
+      <description>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
 ranger-explorer.vim https://github.com/iberianpig/ranger-explorer.vim
@@ -39,27 +75,67 @@ rangerからタブ/画面分割で開く ranger-explorerからrangerを開いた
 また、動的にアサインするキーバインドは ~/.vimrc で下記のように上書きできる。
 let g:ranger_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:ranger_explorer_keymap_tabedit = &amp;#39;&amp;lt;C-t&amp;gt;&amp;#39;let g:ranger_explorer_keymap_split = &amp;#39;&amp;lt;C-s&amp;gt;&amp;#39;let g:ranger_explorer_keymap_vsplit = &amp;#39;&amp;lt;C-v&amp;gt;&amp;#39;得意なツールに任せる 無理に全てVimプラグインで頑張るよりも得意なツールを使えば良いと考えていて、 今回の場合はディレクトリ構造を扱うのが適したツールのrangerに任せている。
 特にファイルを開いたり、検索する部分は外部のCLIツールを利用している。
-fzf.vim ファイル名をあいまい検索(fuzzy-finder) ranger-explorer.vim ディレクトリ階層からファイルを選択 tig-explorer.vim tigでGitの履歴から、git grepからファイルを開く どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
+ fzf.vim  ファイル名をあいまい検索(fuzzy-finder)   ranger-explorer.vim  ディレクトリ階層からファイルを選択   tig-explorer.vim  tigでGitの履歴から、git grepからファイルを開く    どれもプレビューが高速なツールなのでVimからファイルを探すワークフローが快適になった。
 異なるツールの操作に一貫性を持たせる Vimに外部ツールを利用する場合はパフォーマンスの利点もあるが、普段から使い慣れているツールを扱えるということが利点。 しかし、当然ながらツール毎に細かいキーバインドが異なる。同じ機能は同じキーバインドで扱えるようにしたいと思っていた。
 そこで、fzfや以前愛用していたvimfiler/ctrlpと同様の使い勝手が欲しくて、&amp;lt;C-o&amp;gt;、&amp;lt;C-t&amp;gt;、&amp;lt;C-v&amp;gt;、&amp;lt;C-s&amp;gt;のキーバインドでタブや画面分割して開けるようにした。
-プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</description></item><item><title>ソースコードを読む</title><link>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link><pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid><description>エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
+プラグイン側からキーバインドを動的に設定するアイデアは、tig-explorerにも取り込んでいる。</description>
+    </item>
+    
+    <item>
+      <title>ソースコードを読む</title>
+      <link>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link>
+      <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid>
+      <description>エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
 どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。
-ソースを読むメリット 間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮 必要なモノ 気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元ジャンプができればOK 言語、フレームワークの公式リファレンス(http://devdocs.io) 武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
+ソースを読むメリット  間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮  必要なモノ  気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc)  定義元ジャンプができればOK   言語、フレームワークの公式リファレンス(http://devdocs.io)  武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
 根性 ソースコードを読み始めたが、よくわからんと途中で調べる事をやめてGoogleにすぐ逃げてしまうことを避けるために必要
 pry 調べたいコードを実行させ、binding.pryでブレークポイントを作る edit METHOD_NAMEがどこから呼ばれているのかを見る。
 Rubyのコードは実行時でないと、正しい呼び出し元がわからない。
 また、pryはコード・リーディングやデバッグに便利様々な機能を持っている
-show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
-これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする Ctags コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供 tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ) 万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。 bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.</description></item><item><title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title><link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link><pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid><description>Command/Normalモードを間違う 問題はこれ。
+ show-source METHOD_NAME でソースを読むこともできる ls OBJECT_NAMEでオブジェクトのクラスメソッド、インスタンスメソッドなどを確認できる  IDEや、Ctagsが使えるエディタ(Emacs, Vim, etc) 定義元にエディタ上でジャンプする
+ これだけのためにIDE使うという人は多い pryのeditで飛んでそこからはエディタでタグジャンプしたりする  Ctags  コマンドラインツール エディタがメソッドの定義元を調べるための索引tagsを提供  tagsがある場合、vimはデフォルトでc-]押せば定義元にジャンプできる(タグジャンプ)   万能ではなく、ジャンプ先がたまに間違っていることも Gtags(GNU GLOBAL)をいじるともっと賢い索引が手に入るらしい vim使ってる場合は、rails-vimプラグインがRails用にタグ生成コマンドを提供している ファイルサイズが大きく、利用するか否かは個人の環境に依存するため、.gitignoreへtagsを追加しておくべき。  bundle open bundle open LIBRARRY_NAME ライブラリ内のソースの在処(ディレクトリ)を開く README.</description>
+    </item>
+    
+    <item>
+      <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
+      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
+      <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
+      <description>Command/Normalモードを間違う 問題はこれ。
 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
-gVimではカーソル形状が矩形と'｜'が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
+gVimではカーソル形状が矩形と&#39;｜&#39;が切り替わるのだが、ターミナル上では制限があって、調べたところ簡単ではなかった。
 暫定策 代替案として、 lightline.vimを使ってInsert/Normalモードの状態を色付きで 画面下部に表示し、視覚的に理解しやすいように試みた。
 確かにわかりやすいが、画面の端の色なので、気づかずにミスタイプになることも多い。
 また、横のラインを表示・非表示を( autocmd InsertEnter,InsertLeave * set cursorline! )で切り替える アプローチも試みたが、モード間違いは大きく改善はしなかった。
 救世主 これまでかと思った矢先に、救世主が現れた(stackoverflowで記事を見つけた)
-To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
-if has(&amp;#34;autocmd&amp;#34;)au InsertEnter * silent execute &amp;#34;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;#34;au InsertLeave * silent execute &amp;#34;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;#34;au VimLeave * silent execute &amp;#34;!</description></item><item><title>vimで折りたたみしないようにする</title><link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link><pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid><description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
-set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</description></item><item><title>vim-surround</title><link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link><pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid><description>テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
+ To change the shape of the cursor in different modes, you can add the following into your vimrc. For the Gnome-Terminal (version 2.26)Edit
+ if has(&amp;#34;autocmd&amp;#34;)au InsertEnter * silent execute &amp;#34;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape ibeam&amp;#34;au InsertLeave * silent execute &amp;#34;!gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_shape block&amp;#34;au VimLeave * silent execute &amp;#34;!</description>
+    </item>
+    
+    <item>
+      <title>vimで折りたたみしないようにする</title>
+      <link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
+set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</description>
+    </item>
+    
+    <item>
+      <title>vim-surround</title>
+      <link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link>
+      <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid>
+      <description>テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
 すぐに忘れてしまうのでメモ
-よく使うコマンド コマンド 実行内容 cs({ (を{に置き換える csw&amp;quot; 単語の外側を&amp;quot;で囲む ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に いつも忘れるコマンド コマンド 実行内容 dst tagで囲われた部分を消去 yss&amp;quot; &amp;quot;で行を囲む yss= &amp;lt;%=で行を囲む(vim-rails必須) yss- &amp;lt;%で行を囲む(vim-rails必須) dst tagで囲われた部分を消去 選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む</description></item></channel></rss>
+よく使うコマンド    コマンド 実行内容     cs({ (を{に置き換える   csw&amp;quot; 単語の外側を&amp;quot;で囲む   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に    いつも忘れるコマンド    コマンド 実行内容     dst tagで囲われた部分を消去   yss&amp;quot; &amp;quot;で行を囲む   yss= &amp;lt;%=で行を囲む(vim-rails必須)   yss- &amp;lt;%で行を囲む(vim-rails必須)   dst tagで囲われた部分を消去   選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む    </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ruby on iberianpigsty</title><link>https://iberianpig.github.io/tags/ruby/</link><description>Recent content in ruby on iberianpigsty</description><generator>Hugo -- gohugo.io</generator><language>ja-jp</language><copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright><lastBuildDate>Wed, 17 May 2023 09:19:06 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml"/><item><title>RubyKaigi 2023に登壇してFusumaについて話した</title><link>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</link><pubDate>Wed, 17 May 2023 09:19:06 +0900</pubDate><guid>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</guid><description>RubyKaigi 2023 RubyKaigi2023で登壇してFusumaについて話した。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ruby on iberianpigsty</title>
+    <link>https://iberianpig.github.io/tags/ruby/</link>
+    <description>Recent content in ruby on iberianpigsty</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
+    <lastBuildDate>Wed, 17 May 2023 09:19:06 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RubyKaigi 2023に登壇してFusumaについて話した</title>
+      <link>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</link>
+      <pubDate>Wed, 17 May 2023 09:19:06 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</guid>
+      <description>RubyKaigi 2023 RubyKaigi2023で登壇してFusumaについて話した。
 CFPを出したら通過してしまい、まだまだ先の話だと思っていたら、あっという間に当日が来てしまった。
 資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。 結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。
 今でも自分がRubyKaigiに登壇するなんて思ってもいなかったし、なんならもう一週間経つけれど、あんまり実感がない。 https://rubykaigi.org/2023/schedule/#day1 で並んでる面々、みんな凄い人ばかりで、自分が並んでるのが違和感があるというか、まだそんな感じがする。
@@ -6,39 +22,66 @@ RubyKaigi is 祭 ランチブレイクの時にRubyKaigiって祭りだよねと
 好きなトークを聞いて、久々に会う友人・はじめましての人と話して、松本グルメ探訪し、夜はOfficial Party、Drinkup、After Party、会期中ずっとRubyの話してるのすごい楽しい。
 トーク聞きに来てくれた友人の夫妻と久々に会ったらお子さんがめっちゃ大きくなってて謎に感動したり、 推しのk0kubunさんやペンさんと写真を撮ってホクホクしていたり、 初めてRubyKaigiに来たという若者見つけてバーに連れて行ったり、 特にDay 3は After Party🍺 =&amp;gt; 居酒屋🍺 =&amp;gt; ラーメン屋🍺 =&amp;gt; コンビニ🍺 みたいな感じで朝までずっと飲んで話してた。
 ラーメン屋で朝まで飲んでた人達、みんな無事かな#rubykaigi #rubyfriends pic.twitter.com/O2zDWNscAP
-&amp;mdash; iberianpig(Kohei Yamada) (@nukumaro22) May 14, 2023 みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。
+&amp;mdash; iberianpig(Kohei Yamada) (@nukumaro22) May 14, 2023  みんな体力持つなぁと思ってたんですが、多分この楽しい時間をこのRubyKaigi終わらせたくないんですよね。だからRubyKaigiの夜は長い。
 ちなみに最初に参加したのはRubyKaigi 2019の福岡の時で、その時もめちゃくちゃ楽しかったけど、今回はもっと楽しめた気がする。Kaigi is back!
 RubyKaigiを盛り上げてきてくださったスタッフの皆様、スポンサーしてくれている企業さんには頭が上がりません。本当にありがとうございます。
 Fusumaについて発表した FusumaはLinuxのタッチパッド向けのマルチタッチジェスチャのツール。gem install fusuma でジェスチャが効くようになる。 ネィティブでジェスチャ実装されてないLinuxディストロでもほとんどのケースでマルチタッチジェスチャが使えるようになる。
-初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。
+ 初めて作ったGemなのでそれなりに思い入れがあって、また長くメンテしてると色々リファクタリングしたくなって、その結果プラグインで拡張できるようになったりしたのでその仕組みを中心に話した感じ。
 YouTubeにアーカイブがあがってました。
-同時通訳 RubyKaigiは日 -&amp;gt; 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。
+ 同時通訳 RubyKaigiは日 -&amp;gt; 英の同時通訳があって、自分の発表を英語に通訳してもらって日本語ネイティブじゃない方にもトークを聞いてもらえる。これめちゃくちゃすごい。
 自分は通訳の方を入れて話すのは初めてだった。 当日になってギリギリまで資料を弄ってしまっていたので、事前に送った資料との差分が出ていてそのギャップを埋めるのにてんやわんやさせてしまいました。本当に申し訳ありません。
 二人の通訳の方がセクション毎に交代して通訳を担当するのでお互いのパートで表現のニュアンスのズレがでないか調整をしていた。 技術通訳をされているプロの方々で、担当してくれた方はバッファやキューなどのデータ構造のことを認識されていて、その上でどの表現が適切か、発火はFireかTriggerか、みたいな細かいところまで質問していただけて、すごく新鮮な体験だった。
 あと、通訳し終わる前にスライドが次に移動すると英語で聞いている人が理解しづらくなるので、話の区切りでは適宜間を持たせたほうが良いという話や、みなさんどうしても早口になるのでゆっくり落ち着いて話すようにというアドバイスをいただきました。 しかし、想定よりも若干時間が余ったのでかなりオタク特有の早口出てしまったと思います。すみません。
-登壇資料 トークの中で話してた、ヨドバシに通ってMac触って挙動を確認してたのは本当で、それでエッジスワイプをプロトタイプのxSwipeに実装できた。 Macのトラックパッド上を2本指で右端からからスワイプすると通知センター開くやつで、右端指1本分くらいの領域を通過したあとその領域にもう1回連続でタッチが入り移動するとトリガされるやつ。 ただ、Synapticsではタッチパッド上の絶対位置が取れて同じような実装が出来るのだが、相対移動しか取れないLibinputだと端を取るのがちょっと難しくまだFusumaには移植できてない。</description></item><item><title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</title><link>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</link><pubDate>Mon, 26 Apr 2021 22:05:57 +0900</pubDate><guid>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</guid><description>Linux向けのマルチタッチジェスチャツールのFusumaがv2にバージョンアップした。 新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
-Fusuma v2のアップデートの概要 Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ、contextに応じた設定の切り替えなど、 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
-アプリ固有のジェスチャ設定(fusuma-plugin-appmatcher) Mac OSスタイルの3本指ドラッグ Windowsスタイルの3本指スワイプでのウィンドウ切り替え スワイプ/ローテートによる音量調整・輝度変更 動作確認した環境 この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。 利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
+登壇資料  トークの中で話してた、ヨドバシに通ってMac触って挙動を確認してたのは本当で、それでエッジスワイプをプロトタイプのxSwipeに実装できた。 Macのトラックパッド上を2本指で右端からからスワイプすると通知センター開くやつで、右端指1本分くらいの領域を通過したあとその領域にもう1回連続でタッチが入り移動するとトリガされるやつ。 ただ、Synapticsではタッチパッド上の絶対位置が取れて同じような実装が出来るのだが、相対移動しか取れないLibinputだと端を取るのがちょっと難しくまだFusumaには移植できてない。</description>
+    </item>
+    
+    <item>
+      <title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</title>
+      <link>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</link>
+      <pubDate>Mon, 26 Apr 2021 22:05:57 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</guid>
+      <description>Linux向けのマルチタッチジェスチャツールのFusumaがv2にバージョンアップした。 新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
+ Fusuma v2のアップデートの概要 Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ、contextに応じた設定の切り替えなど、 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
+ アプリ固有のジェスチャ設定(fusuma-plugin-appmatcher) Mac OSスタイルの3本指ドラッグ Windowsスタイルの3本指スワイプでのウィンドウ切り替え スワイプ/ローテートによる音量調整・輝度変更  動作確認した環境 この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。 利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
 $ fusuma --version reload config: /home/iberianpig/.config/fusuma/config.yml --------------------------------------------- Fusuma: 2.0.5 libinput: 1.16.5 ruby 2.7.0p0 OS: Linux 5.10.0-1026-oem #27-Ubuntu SMP Thu May 6 07:19:13 UTC 2021 Distribution: Ubuntu 20.04.2 LTS \n \l Desktop session: ubuntu x11 --------------------------------------------- なお、Fusuma v2から要求するRubyバージョンが2.5.1以上(Ubuntu 18.04のデフォルトのRubyバージョン)となっているので注意。
 Fusumaとプラグインを最新版にアップデート gemコマンドでアップデートできる。 システムワイドのRubyを使ってインストールしていない場合sudoは不要。
 $ sudo gem update fusuma インストール済みのFusumaプラグインがある場合はそれらをアップデートしておく。
-# プラグインをリストする $ sudo gem list fusuma-plugin- fusuma-plugin-keypress (0.</description></item><item><title>2019/04/28 最近読んだ記事</title><link>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link><pubDate>Sun, 28 Apr 2019 17:55:22 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid><description>Ruby FFIについて https://github.com/ffi/ffi
+# プラグインをリストする $ sudo gem list fusuma-plugin- fusuma-plugin-keypress (0.</description>
+    </item>
+    
+    <item>
+      <title>2019/04/28 最近読んだ記事</title>
+      <link>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link>
+      <pubDate>Sun, 28 Apr 2019 17:55:22 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid>
+      <description>Ruby FFIについて  https://github.com/ffi/ffi
 RubyからCの関数を呼び出すことが出来る代物。 内部でlibffiというライブラリを経由してRubyからCをコールする。
 ↓ FFIを使って作成されたプロジェクト一覧
 https://github.com/ffi/ffi/wiki/projects-using-ffi
 キー入力のエミュレーションライブラリのxdotoolの基幹ライブラリのlibxdoをNative Extentionとして呼び出せるか調べていた。
 というのも、fusumaでxdotoolの呼び出し遅延のIssueが上がっていて、ネイティブのC関数レベルでAPIを呼べると改善するか試したかったというのがある。
 最近のlibxdo3に対応出来ているライブラリは少なく、forkされたものであれば動くことを確認した。
-require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動
+require &amp;#39;x_do&amp;#39; =&amp;gt; true XDo.new.keyboard.type_keysequence(&amp;#39;super+Right&amp;#39;) =&amp;gt; :success # 隣のワークスペースに移動 
 GIFのようにワークスペースの移動が出来ている。fusuma-pluginsとして追加出来ないかと画策中。 既にあるGemを最大限利用したいが、足りない部分は自分でメンテしないといけないかも。
-貸倒引当金について 昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
+貸倒引当金について  昔の顧客に未払いのまま倒産するスタートアップが居るので調べた。
 一括評価になりそう。 この単語もたまたま詳しい方に教えて頂けたが、会計難しいので詳しい人からすぐ聞けるようにしておきたい。
-歴4ヶ月の異業種未経験がリモート開発 スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。
+歴4ヶ月の異業種未経験がリモート開発  スクール上がりだと教育コスト結構必要で、スクールで教えることと業務経験は全く別で、覚えることも多い。 簡単な物をつくる1つの方法だけを教えられれても、現実で解決する問題は難しくて複雑なものが多いので仕方ない。
 特に最初からリモートワークは絶対にやめたほうが良くて、テキストベースのチャットで理解できる範囲なんて初心者(じゃなくても難しい)に分かるはずもない。 しかも教える側のコストが格段に大きくなってしまうので、お互いに不幸になる。
 技術的レベルが足りないのであれば、 ちゃんと1年下積みしたら見違えるように変わるので、フリーランスなる前に何処かの事業会社や受託会社などに転がり込んで武者修行すると早い。 自分は職業訓練校の後にスタートアップにインターンとしてジョインしたが、特に小さいスタートアップだと急速な成長は見込めるものの体力無いとしんどいので覚悟決めていったほうが良い。
-最近、未経験でフリーランスのエンジニアやりたいという人から相談受けることがあるけれど、普通に無謀なのでまずは会社に入ろう。</description></item><item><title>Fusumaのインストールと設定</title><link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link><pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate><guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid><description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
-RubyGemsにライブラリを公開した時の記事⇓
-Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
+最近、未経験でフリーランスのエンジニアやりたいという人から相談受けることがあるけれど、普通に無謀なのでまずは会社に入ろう。</description>
+    </item>
+    
+    <item>
+      <title>Fusumaのインストールと設定</title>
+      <link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link>
+      <pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid>
+      <description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
+ RubyGemsにライブラリを公開した時の記事⇓
+ Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
 自分はUbuntu16.04ベースのelementary OS lokiをインストールしたDell XPS 13(9360)で利用している。
 Archの人はArchWikiに色々書いてもらっているようなのでそちらを参照。
 https://wiki.archlinux.org/index.php/Libinput#fusuma
@@ -50,7 +93,16 @@ $ sudo apt install libinput-tools また、Alt+Left, Alt+Rightなどショート
 $ sudo apt install xdotool FusumaをRubyGemsからインストール $ sudo gem i fusuma iはinstallの省略。システムのRubyでインストールする場合はsudoが必要。
 (rbenvやrvmでインストールしているRubyを使う場合、$ gem i fusuma でインストール出来る)
 Fusumaの設定ファイルを作成する ~/.config/fusuma/config.ymlに設定ファイルを作成する。
-$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</description></item><item><title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title><link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link><pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate><guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid><description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
+$ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~/.</description>
+    </item>
+    
+    <item>
+      <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
+      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
+      <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
+      <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
 Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。
@@ -64,8 +116,17 @@ fusumaコマンドで起動。
 ~/.config/fusuma/config.ymlに設定ファイルを配置するとFusuma起動時に読み込んでくれる。
 ジェスチャとそれに対応するスクリプトを自由にカスタマイズできる。
 下記は一例。
-swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key alt+Left' up: command: 'xdotool key alt+t' down: command: 'xdotool key alt+w' 4: left: command: 'xdotool key super' right: command: 'xdotool key super+a' up: command: 'sh ~/tool/linux/script/desktop_switcher.sh 1' down: command: 'sh ~/tool/linux/script/desktop_switcher.sh -1' pinch: 2: in: command: 'xdotool key ctrl+equal' out: command: 'xdotool key ctrl+minus' 4: in: command: 'xdotool key super+a' out: command: 'xdotool key super+s' threshold: swipe: 0.</description></item><item><title>Amazon Dash Buttonで出社する</title><link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link><pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate><guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid><description>この記事は出社芸アドベントカレンダーの18日目の記事です。
-今日のアドベントカレンダーに登録した。
+swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xdotool key alt+Left&#39; up: command: &#39;xdotool key alt+t&#39; down: command: &#39;xdotool key alt+w&#39; 4: left: command: &#39;xdotool key super&#39; right: command: &#39;xdotool key super+a&#39; up: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh 1&#39; down: command: &#39;sh ~/tool/linux/script/desktop_switcher.sh -1&#39; pinch: 2: in: command: &#39;xdotool key ctrl+equal&#39; out: command: &#39;xdotool key ctrl+minus&#39; 4: in: command: &#39;xdotool key super+a&#39; out: command: &#39;xdotool key super+s&#39; threshold: swipe: 0.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Dash Buttonで出社する</title>
+      <link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link>
+      <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid>
+      <description>この記事は出社芸アドベントカレンダーの18日目の記事です。
+ 今日のアドベントカレンダーに登録した。
 現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
 出社時間をSlackに報告する 弊社は出社自由。リモートもOKで出社も自由。 (自分はリモートすると孤独で寂しかったりするので、旅行中以外は割と出社してる)
 ※詳細は出社芸アドベントカレンダー1日目出社自由の会社を作ったよ | rake enjoyをご参照。
@@ -90,11 +151,24 @@ swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key al
 エンドポイント 任意のアクションをキャッチする場所が必要。 Slackのエンドポイントを直接作っても良いが、拡張性をもたせるため、IFTTTでエンドポイントを作る。
 IFTTTのエンドポイントさえあれば、GmailでもGoogleカレンダーでも何にでも連携出来る。
 実装する 処理は大きく見ると下記の様な流れになる
-Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description></item><item><title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title><link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link><pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate><guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid><description>&lt;p>なぜこんなことがやりたいかというと、&lt;/p>
-&lt;ul>
-&lt;li>スクラムでのタスク管理にPivotalTracker(&lt;a href="http://www.pivotaltracker.com">http://www.pivotaltracker.com&lt;/a>)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/li>
-&lt;li>Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される&lt;/li>
-&lt;li>あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li>
-&lt;li>毎回IDを入れるのがめんどくさい、たまに忘れる&lt;/li>
-&lt;li>チームで浸透させたい&lt;/li>
-&lt;/ul></description></item></channel></rss>
+Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack IFTTTとSlackを連携する 前述したとおり、Slackとの連携部分を作る。 無料のクラウドサービスIFTTTで作る。 もっと自由にやりたいならAWS Lambdaを使おう。</description>
+    </item>
+    
+    <item>
+      <title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title>
+      <link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
+      <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
+      <description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;スクラムでのタスク管理にPivotalTracker(&lt;a href=&#34;http://www.pivotaltracker.com&#34;&gt;http://www.pivotaltracker.com&lt;/a&gt;)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/li&gt;
+&lt;li&gt;Githubと連携することができ、[#IDの番号]としてコミットメッセージを入れてPushすると、PivotalTrackerのコメント欄にGithubのリンクが自動で挿入される&lt;/li&gt;
+&lt;li&gt;あとからコミットログを追うときにコミットメッセージにIDが入っていると該当のチケットを検索できる&lt;/li&gt;
+&lt;li&gt;毎回IDを入れるのがめんどくさい、たまに忘れる&lt;/li&gt;
+&lt;li&gt;チームで浸透させたい&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
