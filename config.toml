@@ -31,3 +31,6 @@ MetaDataFormat = "yaml"
 
 [markup.goldmark.renderer]
 unsafe = true
+
+[minify]
+disableXML = true
