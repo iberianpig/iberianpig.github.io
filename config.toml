@@ -13,21 +13,17 @@ MetaDataFormat = "yaml"
 
 [params]
     disqusShortname = "iberianpigsty"
-    GoogleAnalyticsUserID = "UA-45334010-1"
-    # GoogleAdsenseId = "ca-pub-4578444047174224"
+    GoogleAnalyticsUserID = "G-8G6M9151B3"
     twitterId = "nukumaro22"
     githubId = "iberianpig"
     email = "yhkyky+work@gmail.com"
     author = "Kohei Yamada"
     aboutme = "自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。"
-    aboutwork = "チームでスタートアップ企業の技術支援をしています。フロントエンド・バックエンド領域は問いませんが、Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。"
+    aboutwork = "チームでスタートアップ企業の技術支援をしています。Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。"
     description = "iberianpigの技術ブログ"
 
 [params.eyecatch]
     linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
-# [params.adsense]
-#     sidebar = "2886367399" 
-#     content = "2746766592" 
 
 [markup.goldmark.renderer]
 unsafe = true
