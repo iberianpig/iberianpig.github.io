@@ -9,21 +9,21 @@ publishdir = "public"
 MetaDataFormat = "yaml"
 
 [taxonomies]
-  tag = "tags"
+tag = "tags"
 
 [params]
-    disqusShortname = "iberianpigsty"
-    GoogleAnalyticsUserID = "G-8G6M9151B3"
-    twitterId = "nukumaro22"
-    githubId = "iberianpig"
-    email = "yhkyky+work@gmail.com"
-    author = "Kohei Yamada"
-    aboutme = "自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。"
-    aboutwork = "チームでスタートアップ企業の技術支援をしています。Rubyが得意です。お仕事のご相談はメールかX(Twitter)でご連絡ください。"
-    description = "iberianpigの技術ブログ"
+disqusShortname = "iberianpigsty"
+twitterId = "nukumaro22"
+githubId = "iberianpig"
+email = "yhkyky+work@gmail.com"
+author = "Kohei Yamada"
+aboutme = "自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。"
+aboutwork = "スタートアップ企業の技術支援をしています。お仕事のご相談はメールかX(Twitter)でご連絡ください。"
+description = "iberianpigの技術ブログ"
+image = "https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500"
 
 [params.eyecatch]
-    linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
+linux = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/652px-Tux.svg.png" 
 
 [markup.goldmark.renderer]
 unsafe = true
