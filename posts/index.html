@@ -80,6 +80,31 @@ Vim / NeoVim &lt;&ndash;> denops のやりとりはそれぞれJSON/MessagePack�
 </div>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</time>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+<div class=summary>ThumbSenseとは？ ThumbSenseは、タッチパッドとキーボードをシームレスに統合することで、操作感を向上させる革新的なソフトウェア。 ユーザーは指（親指）がタッチパッドに触れているかを基準に仮想キーボードのレイヤーが自動的に切り替わり、キーボードをマウスボタンのように利用できる。 タッチパッドとキーボード間の移動が最小限に抑えられ、スムーズな操作が可能になる。 ThumbSenseの革新的なアプローチ ThumbSenseは、2003年にSony CSLの暦本氏がWindows向けに開発したソフトウェア(https://www2.sonycsl.co.jp/person/rekimoto/tsense/soft/index.html)
+ThumbSenseはタッチパッドに触れているかどうかに基づいて仮想キーボードのレイヤーを自動的に切り替えを行うことで、キーボードをマウスボタンとして使用できるようにします。これにより、操作の移動を最小限に抑え、シームレスな操作が可能になります。
+オリジナルが発表されてから20年経っているが、この前のRubyKaigi 2023でLinux向けのThumbSensefusuma-plugin-thumbsenseをリリースした
+タッチパッドジェスチャ認識アプリのFusumaのプラグインとして実装されている タッチパッドとキーボードを一つのデバイスとして扱う ThumbSenseは指（親指）がタッチパッドに触れているかどうかで、特定のキーがマウスボタンとして機能するか、通常のキーボードキーとして機能するかを切り替える。
+ThumbSenseを使用すると、同じ指でポインタを移動し、クリックする際の操作感が大きく変わる。具体的には、以下のステップで操作が行われる。
+指でタッチパッドにふれる(親指でも、どちらかの指をホームポジションからずらしてもよい) FキーやJキーを使ってクリック。 タッチパッドのクリックボタンの操作に近いが、キーボード上のホームポジションにある指を使えることにメリットがあり、シングルタップによるクリック操作と比べて移動とクリックの操作が分離されるため、通常のタッチパッド操作よりスムーズな操作感が得られる。
+また、Thumbsense利用時はtap to clickというタッチパッド上のシングルタップでクリックする機能をオフにすることをオススメする。 タップではなくF/Jにクリック操作を任せるためなのだが、副次的に文字入力中にカーソルが意図せず飛ぶ誤爆が防げるようになるメリットがある。 ちなみにlibinputやsyclientにDisable-while-typingという入力中のタップ操作を防止したり、手のひら検知して除外する機能が存在するが、それだけで完全に誤入力が防げるわけではないので、オフにしたほうが体験が良い。
+インストールと設定方法 ThumbSenseを利用するには、以下の手順で設定を行う。
+必要なパッケージのインストール $ sudo apt install libinput-tools libevdev-dev # rbenvなどでrubyをインストールしている場合は以下は不要 $ sudo apt install ruby-dev build-essential 次に、fusuma-plugin-thumbsenseをインストールする。
+# rbenvなどでrubyをインストールしている場合はsudoは不要 $ sudo gem install fusuma-plugin-thumbsense 次にudevの設定を行う。これらはキーボードのリマップを行うために必要な設定。
+udevの設定 udevの設定を行い、キーボードのリマッピングに必要な設定を追加する。
+$ sudo gpasswd -a $USER input # inputグループに$USERを追加 (一度ログアウトして再ログインする必要がある) $ echo 'KERNEL=="uinput", MODE="0660", GROUP="input", OPTIONS+="static_node=uinput"' | sudo tee /etc/udev/rules.</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/>
 <div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
@@ -426,33 +451,6 @@ Special Thanks [忘却曲線 - Wikipedia] (https://ja.wikipedia.org/wiki/%E5%BF%
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://iberianpig.github.io/posts/2017-01-24_kindle_in_the_bath/>
-<div class=image style=background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Amazon_Kindle_logo.svg/2000px-Amazon_Kindle_logo.svg.png)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, Jan 24, 2017</time>
-</div>
-<h2 class=title>風呂キンドルのすゝめ</h2>
-<div class=summary>風呂で読書するというのを一度やってみたかったのでやってみた。
-Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良い。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
-Ziploc 防水性能をアドオンする。
-ZiplocのMサイズだとちょうどよかった。ちなみにお茶っ葉を保管するのに買った。
-Kindleを入れるとこうなる。奇跡のジャストサイズ。
-風呂Kindleやってみた結果 意外と良かった。日々の習慣に組み込みたいレベル。
-蒸気プラスビニール一枚隔てるので、視認性は若干落ちるのでフォントサイズを少しだけ大きくすれば快適に読める。
-バスタブをちょっと曲げてあげて溝の部分に挟んであげるとKindleを立てるスタンドになる。手で持たなくていい。 これも快適な要因の1つ。
-ただ、集中して読めるのだが、水分が持って行かれているのに気づかない。 お水を飲んだりするのにペットボトル置いておくといい。あとのぼせてしまう場合はお湯の温度を少し下げたほうがいい。
-ちなみに今はホモ・サピエンス全史という本を読んでる。
-ネアンデルタール人と裾野を分けたサピエンスは動物とどう違うのか、お金、会社、資本主義はどうやって成り立っているのか。
-それらは全て虚構であり、それを信じなければ成り立たなかった&mldr;という話。
-普段読まないジャンルだけれど結構売れてるみたいで内容はすごく面白い。
-</div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -489,6 +487,17 @@ Kindleを入れるとこうなる。奇跡のジャストサイズ。
 </a>
 </article>
 <article class=li>
+<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</div>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
@@ -510,24 +519,13 @@ Kindleを入れるとこうなる。奇跡のジャストサイズ。
 </footer>
 </a>
 </article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, May 14, 2019</div>
-</div>
-<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
 </div>
 </section>
 <section class=taxonomies>
 <header class=taxonomies__header>tag</header>
 <div class=taxonomies__body>
 <ul>
-<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
 </ul>
 </div>
 </section>

@@ -1,0 +1,272 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link href=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css rel=stylesheet integrity=sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>キーボードとタッチパッドをシームレスに統合するThumbSense - iberianpigsty</title>
+<meta property="og:title" content="キーボードとタッチパッドをシームレスに統合するThumbSense - iberianpigsty">
+<meta name=description content="ThumbSenseというタッチパッドとキーボードをシームレスに統合するインタラクション技術をFusumaプラグインとしてLinux上に実装した">
+<meta property="og:url" content="https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/">
+<meta property="og:description" content="ThumbSenseというタッチパッドとキーボードをシームレスに統合するインタラクション技術をFusumaプラグインとしてLinux上に実装した">
+<meta property="og:image" content="https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"キーボードとタッチパッドをシームレスに統合するThumbSense |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2023-09-06T09:19:50JST","dateModified":"2023-09-06T09:19:50JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":"ThumbSenseというタッチパッドとキーボードをシームレスに統合するインタラクション技術をFusumaプラグインとしてLinux上に実装した"}</script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<article class=single>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<div class=body>
+<h1>キーボードとタッチパッドをシームレスに統合するThumbSense</h1>
+<div class=publishDate>
+<time datetime=2023-09-06T09:19:50+09:00>Published at 6 Sep, 2023 </time>
+</div>
+<nav>
+<ul class=terms>
+<li><a href=https://iberianpig.github.io/tags/ruby/>#ruby</a></li><li><a href=https://iberianpig.github.io/tags/linux/>#linux</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>#libinput</a></li>
+</ul>
+</nav>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&text=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&t=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&title=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&title=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<div class=content>
+<h2 id=thumbsenseとは>ThumbSenseとは？</h2>
+<p>ThumbSenseは、タッチパッドとキーボードをシームレスに統合することで、操作感を向上させる革新的なソフトウェア。
+ユーザーは指（親指）がタッチパッドに触れているかを基準に仮想キーボードのレイヤーが自動的に切り替わり、キーボードをマウスボタンのように利用できる。
+タッチパッドとキーボード間の移動が最小限に抑えられ、スムーズな操作が可能になる。
+<img src=https://i.gyazo.com/cf929775aec1e3aefaabb3a6dd15a3ff.gif alt=thumbsense></p>
+<h2 id=thumbsenseの革新的なアプローチ>ThumbSenseの革新的なアプローチ</h2>
+<ul>
+<li>
+<p>ThumbSenseは、2003年にSony CSLの暦本氏がWindows向けに開発したソフトウェア(<a href=https://www2.sonycsl.co.jp/person/rekimoto/tsense/soft/index.html>https://www2.sonycsl.co.jp/person/rekimoto/tsense/soft/index.html</a>)</p>
+</li>
+<li>
+<p>ThumbSenseはタッチパッドに触れているかどうかに基づいて仮想キーボードのレイヤーを自動的に切り替えを行うことで、キーボードをマウスボタンとして使用できるようにします。これにより、操作の移動を最小限に抑え、シームレスな操作が可能になります。</p>
+</li>
+<li>
+<p>オリジナルが発表されてから20年経っているが、この前のRubyKaigi 2023でLinux向けのThumbSense<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense>fusuma-plugin-thumbsense</a>をリリースした</p>
+<ul>
+<li>タッチパッドジェスチャ認識アプリのFusumaのプラグインとして実装されている</li>
+</ul>
+</li>
+</ul>
+<div class=iframely-embed><div class=iframely-responsive style=height:140px;padding-bottom:0><a href=https://github.com/iberianpig/fusuma-plugin-thumbsense data-iframely-url="//cdn.iframe.ly/api/iframe?card=small&url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma-plugin-thumbsense&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<h2 id=タッチパッドとキーボードを一つのデバイスとして扱う>タッチパッドとキーボードを一つのデバイスとして扱う</h2>
+<p>ThumbSenseは指（親指）がタッチパッドに触れているかどうかで、特定のキーがマウスボタンとして機能するか、通常のキーボードキーとして機能するかを切り替える。</p>
+<p><img src=https://i.gyazo.com/a40aab93a88e7233473352024a70bf8b.png alt=RubyKaigiのスライドの一部></p>
+<p>ThumbSenseを使用すると、同じ指でポインタを移動し、クリックする際の操作感が大きく変わる。具体的には、以下のステップで操作が行われる。</p>
+<ol>
+<li>指でタッチパッドにふれる(親指でも、どちらかの指をホームポジションからずらしてもよい)</li>
+<li>FキーやJキーを使ってクリック。</li>
+</ol>
+<p>タッチパッドのクリックボタンの操作に近いが、キーボード上のホームポジションにある指を使えることにメリットがあり、シングルタップによるクリック操作と比べて移動とクリックの操作が分離されるため、通常のタッチパッド操作よりスムーズな操作感が得られる。</p>
+<p>また、Thumbsense利用時はtap to clickというタッチパッド上のシングルタップでクリックする機能をオフにすることをオススメする。
+タップではなくF/Jにクリック操作を任せるためなのだが、副次的に文字入力中にカーソルが意図せず飛ぶ誤爆が防げるようになるメリットがある。
+ちなみにlibinputやsyclientにDisable-while-typingという入力中のタップ操作を防止したり、手のひら検知して除外する機能が存在するが、それだけで完全に誤入力が防げるわけではないので、オフにしたほうが体験が良い。</p>
+<h2 id=インストールと設定方法>インストールと設定方法</h2>
+<p>ThumbSenseを利用するには、以下の手順で設定を行う。</p>
+<h3 id=必要なパッケージのインストール>必要なパッケージのインストール</h3>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ sudo apt install libinput-tools libevdev-dev 
+
+<span style=color:#75715e># rbenvなどでrubyをインストールしている場合は以下は不要</span>
+$ sudo apt install ruby-dev build-essential
+</code></pre></div><p>次に、fusuma-plugin-thumbsenseをインストールする。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e># rbenvなどでrubyをインストールしている場合はsudoは不要</span>
+$ sudo gem install fusuma-plugin-thumbsense
+</code></pre></div><p>次にudevの設定を行う。これらはキーボードのリマップを行うために必要な設定。</p>
+<h3 id=udevの設定>udevの設定</h3>
+<p>udevの設定を行い、キーボードのリマッピングに必要な設定を追加する。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ sudo gpasswd -a $USER input <span style=color:#75715e># inputグループに$USERを追加 (一度ログアウトして再ログインする必要がある)</span>
+$ echo <span style=color:#e6db74>&#39;KERNEL==&#34;uinput&#34;, MODE=&#34;0660&#34;, GROUP=&#34;input&#34;, OPTIONS+=&#34;static_node=uinput&#34;&#39;</span> | sudo tee /etc/udev/rules.d/60-udev-fusuma-remap.rules 
+$ sudo udevadm control --reload-rules <span style=color:#f92672>&amp;&amp;</span> sudo udevadm trigger <span style=color:#75715e># udevの設定を反映</span>
+</code></pre></div><p><strong>ユーザーがinputグループに所属していない場合はここで一度ログアウトして再ログインする必要があるため注意</strong></p>
+<h3 id=設定ファイルの作成>設定ファイルの作成</h3>
+<p>設定ファイル~/.config/fusuma/config.ymlを以下のように書く。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml>---
+
+<span style=color:#f92672>context</span>:
+  <span style=color:#f92672>thumbsense</span>: <span style=color:#66d9ef>true</span>
+
+<span style=color:#f92672>remap</span>:
+  <span style=color:#f92672>F</span>: <span style=color:#ae81ff>BTN_LEFT</span>
+  <span style=color:#f92672>E</span>: <span style=color:#ae81ff>BTN_MIDDLE</span>
+  <span style=color:#f92672>D</span>: <span style=color:#ae81ff>BTN_RIGHT</span>
+  <span style=color:#f92672>J</span>: <span style=color:#ae81ff>BTN_LEFT</span>
+  <span style=color:#f92672>K</span>: <span style=color:#ae81ff>BTN_RIGHT</span>
+</code></pre></div><p>その後、以下のコマンドでfusumaを起動する。</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ fusuma
+</code></pre></div><p>fusuma実行後はタッチ中にFキーを押すと左クリック、Dキーを押すと右クリック、Eキーを押すとホイールクリックができるようになる。</p>
+<p>また、これは実際にやってみないと便利さがなかなか伝わらないのだが、マルチタッチジェスチャと組み合わせが便利。</p>
+<p><img src=https://i.gyazo.com/b434e5c33712b210ea58650451c21caf.gif alt="Dragging and Swipe gesture with Fusuma">
+Fキーでのドラッグアンドドロップ中に、スワイプジェスチャを挟んで隣の仮想デスクトップにドロップしたりできる。</p>
+<h2 id=fusumaとの統合と今後>Fusumaとの統合と今後</h2>
+<p>Fusumaは、Linux上でマルチタッチジェスチャーをサポートするためのツールで、スワイプ/ピンチ/タップなどのジェスチャーをコマンドやキー送信に割当できる。</p>
+<div class=iframely-embed><div class=iframely-responsive style=height:168px;padding-bottom:0><a href=https://github.com/iberianpig/fusuma data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fgithub.com%2Fiberianpig%2Ffusuma&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src=//cdn.iframe.ly/embed.js></script>
+<p>今回のThumbsenseの実装でFusumaに仮想キーボードや仮想タッチパッドの実装が整ってきた(fusuma-plugin-remapが実装できた)ので、XやWaylandに依存しないデバイスイベントの処理ができるようになった。</p>
+<p>これまでできなかったキーリマッパー実装やタッチパッドのパームリジェクション、2本指スワイプ実装などを進めていく予定。</p>
+</div>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&text=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&t=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&title=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad%2f&title=%e3%82%ad%e3%83%bc%e3%83%9c%e3%83%bc%e3%83%89%e3%81%a8%e3%82%bf%e3%83%83%e3%83%81%e3%83%91%e3%83%83%e3%83%89%e3%82%92%e3%82%b7%e3%83%bc%e3%83%a0%e3%83%ac%e3%82%b9%e3%81%ab%e7%b5%b1%e5%90%88%e3%81%99%e3%82%8bThumbSense" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<aside>
+<section>
+<div>
+<div id=disqus_thread></div>
+</div>
+</section>
+</aside>
+</div>
+</article>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Table Of Contents</header>
+<div><nav id=TableOfContents>
+<ul>
+<li><a href=#thumbsenseとは>ThumbSenseとは？</a></li>
+<li><a href=#thumbsenseの革新的なアプローチ>ThumbSenseの革新的なアプローチ</a></li>
+<li><a href=#タッチパッドとキーボードを一つのデバイスとして扱う>タッチパッドとキーボードを一つのデバイスとして扱う</a></li>
+<li><a href=#インストールと設定方法>インストールと設定方法</a>
+<ul>
+<li><a href=#必要なパッケージのインストール>必要なパッケージのインストール</a></li>
+<li><a href=#udevの設定>udevの設定</a></li>
+<li><a href=#設定ファイルの作成>設定ファイルの作成</a></li>
+</ul>
+</li>
+<li><a href=#fusumaとの統合と今後>Fusumaとの統合と今後</a></li>
+</ul>
+</nav></div>
+</section>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</div>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
+<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Apr 26, 2021</div>
+</div>
+<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+スタートアップ企業の技術支援をしています。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js integrity=sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k crossorigin=anonymous></script>
+<script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
+<script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
+<script data-no-instant>InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.on('change',function(c){var b='iberianpigsty',a;document.querySelector("#disqus_thread")&&(typeof DISQUS=='undefined'?(a=document.createElement('script'),a.type='text/javascript',a.async=!0,a.src='//'+b+'.disqus.com/embed.js',(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(a)):DISQUS.reset({reload:!0,config:function(){this.page.identifier=window.location.pathname,this.page.url=window.location.toString()}}))}),InstantClick.init()</script>
+</body>
+</html>

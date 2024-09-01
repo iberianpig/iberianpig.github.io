@@ -27,6 +27,26 @@ rootが取れるAndroid端末があれば、Aegisや他のアプリからもエ�
     </item>
     
     <item>
+      <title>キーボードとタッチパッドをシームレスに統合するThumbSense</title>
+      <link>https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</link>
+      <pubDate>Wed, 06 Sep 2023 09:19:50 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</guid>
+      <description>ThumbSenseとは？ ThumbSenseは、タッチパッドとキーボードをシームレスに統合することで、操作感を向上させる革新的なソフトウェア。 ユーザーは指（親指）がタッチパッドに触れているかを基準に仮想キーボードのレイヤーが自動的に切り替わり、キーボードをマウスボタンのように利用できる。 タッチパッドとキーボード間の移動が最小限に抑えられ、スムーズな操作が可能になる。 ThumbSenseの革新的なアプローチ   ThumbSenseは、2003年にSony CSLの暦本氏がWindows向けに開発したソフトウェア(https://www2.sonycsl.co.jp/person/rekimoto/tsense/soft/index.html)
+  ThumbSenseはタッチパッドに触れているかどうかに基づいて仮想キーボードのレイヤーを自動的に切り替えを行うことで、キーボードをマウスボタンとして使用できるようにします。これにより、操作の移動を最小限に抑え、シームレスな操作が可能になります。
+  オリジナルが発表されてから20年経っているが、この前のRubyKaigi 2023でLinux向けのThumbSensefusuma-plugin-thumbsenseをリリースした
+ タッチパッドジェスチャ認識アプリのFusumaのプラグインとして実装されている     タッチパッドとキーボードを一つのデバイスとして扱う ThumbSenseは指（親指）がタッチパッドに触れているかどうかで、特定のキーがマウスボタンとして機能するか、通常のキーボードキーとして機能するかを切り替える。
+ThumbSenseを使用すると、同じ指でポインタを移動し、クリックする際の操作感が大きく変わる。具体的には、以下のステップで操作が行われる。
+ 指でタッチパッドにふれる(親指でも、どちらかの指をホームポジションからずらしてもよい) FキーやJキーを使ってクリック。  タッチパッドのクリックボタンの操作に近いが、キーボード上のホームポジションにある指を使えることにメリットがあり、シングルタップによるクリック操作と比べて移動とクリックの操作が分離されるため、通常のタッチパッド操作よりスムーズな操作感が得られる。
+また、Thumbsense利用時はtap to clickというタッチパッド上のシングルタップでクリックする機能をオフにすることをオススメする。 タップではなくF/Jにクリック操作を任せるためなのだが、副次的に文字入力中にカーソルが意図せず飛ぶ誤爆が防げるようになるメリットがある。 ちなみにlibinputやsyclientにDisable-while-typingという入力中のタップ操作を防止したり、手のひら検知して除外する機能が存在するが、それだけで完全に誤入力が防げるわけではないので、オフにしたほうが体験が良い。
+インストールと設定方法 ThumbSenseを利用するには、以下の手順で設定を行う。
+必要なパッケージのインストール $ sudo apt install libinput-tools libevdev-dev # rbenvなどでrubyをインストールしている場合は以下は不要 $ sudo apt install ruby-dev build-essential 次に、fusuma-plugin-thumbsenseをインストールする。
+# rbenvなどでrubyをインストールしている場合はsudoは不要 $ sudo gem install fusuma-plugin-thumbsense 次にudevの設定を行う。これらはキーボードのリマップを行うために必要な設定。
+udevの設定 udevの設定を行い、キーボードのリマッピングに必要な設定を追加する。
+$ sudo gpasswd -a $USER input # inputグループに$USERを追加 (一度ログアウトして再ログインする必要がある) $ echo &amp;#39;KERNEL==&amp;#34;uinput&amp;#34;, MODE=&amp;#34;0660&amp;#34;, GROUP=&amp;#34;input&amp;#34;, OPTIONS+=&amp;#34;static_node=uinput&amp;#34;&amp;#39; | sudo tee /etc/udev/rules.</description>
+    </item>
+    
+    <item>
       <title>RubyKaigi 2023に登壇してFusumaについて話した</title>
       <link>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</link>
       <pubDate>Wed, 17 May 2023 09:19:06 +0900</pubDate>

@@ -32,6 +32,35 @@
 <div class=row>
 <div class=col-sm-6>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/>
+<div class=image style=background-image:url(https://i.ytimg.com/vi/PrFNYW99vSM/hqdefault.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, May 4, 2015</time>
+</div>
+<h2 class=title>Elementary OS freyaでハイバネートオプションを追加する</h2>
+<div class=summary>少し前からElementaryOSの最新版Freyaを使っている。
+電源周りで少し手こずったので、備忘録として残しておく。
+インストール後にやったことはまた今度まとめる。
+ハイバネートオプションを追加する Elementary OS Freyaでハイバネートが利用できなかったので、利用できるようにする。
+※ メモリ領域のデータをディスクに退避することで、作業状態を保存した状態で電源オフにし、電源オンでそこから復帰できる。 サスペンドはメモリに電源供給しながらデータを保持。メモリは揮発性で、電源供給がないとデータが消えてしまうため。
+pm-utilsを導入してpm-hibernateコマンドを実行する手もあるが、今回は別の方法で。
+電源オプションの中にハイバネートを追加する sudo vi /etc/polkit-1/localauthority/50-local.d/com.ubuntu.enable-hibernate.pkla
+下記をコピー&ペースト
+[Re-enable hibernate by default in upower] Identity=unix-user:* Action=org.freedesktop.upower.hibernate ResultActive=yes [Re-enable hibernate by default in logind] Identity=unix-user:* Action=org.freedesktop.login1.hibernate ResultActive=yes Grubの設定 sudo vi /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=/dev/sda3" resume=&lsquo;スワップ用パーティション&rsquo;とすること！
+Grubの更新 sudo update-grub
+これでシャットダウンのオプションなどで、休止状態(もしくはハイバネート)が増えているはず。
+ノートPCを閉じた時にハイバネーションを有効にしたい && ロック画面でのPowerボタンの挙動を変える 自分の場合はロック画面の状態（だがディスプレイオフ）で電源を押して復帰しようとして、シャットダウンしてしまう現象に悩まされていた デフォでこの動作はバグと言っていい気がする。あとノートPCなので、急なとき閉じて移動、などあるのでその際はハイバネートできたほうが良い。
+/etc/systemd/logind.confの編集 man logind.conf で確認したところ、HandlerPowerKeyやHandleLidSwitchなど、電源周りの挙動を変えられるようだった。
+sudo vi /etc/systemd/logind.confにて該当箇所のコメントアウトを外し、 下記に変更する
+HandlePowerKey=hibernate HandleLidSwitch=hibernate 再起動後、ロック画面での電源ボタン、 PCの閉じる動作によるハイバネートが有効になっているはず。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-6>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/>
 <div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
 <footer>
@@ -91,7 +120,7 @@ hashed_data = angular.fomJson(str)
 </a>
 </article>
 </div>
-<div class=col-sm-6>
+<div class=col-sm-4>
 <article class=grid>
 <a href=https://iberianpig.github.io/posts/2015-03-21-ng-japan/>
 <div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
@@ -382,27 +411,6 @@ updateも同様。if文で@model.update_attributes(:params[:model])の実行し�
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/>
-<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Sat, Mar 15, 2014</time>
-</div>
-<h2 class=title>Head-First-Rails_4</h2>
-<div class=summary>Head First Rails第4章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
-Scaffoldで作成したページを改造していく。
-検索窓の導入 どのページにも検索窓を用意するので、layoutsを利用する layoutfileは｛モデル名｝.html.erbとなる
-form_forとform_tagの違い
-ハマったところ 書籍では&lt;% %>だったが、実際はform_tagは &lt;%= %> で囲む必要があった
-(rails 3とrails 4の違い？　)
-routesの追記が必要。 formの追加に合わせて post 'client_workouts/find' => 'client_workouts#find' rails4だとFindで :conditionsが使えない 代わりにモデル名.whereを利用する
-モデル名.find(id) findはidの検索専用 モデル名.where(:カラム名 => 内容) なんか指定するときは大体where defaultで生成されるapplication.html.erbはいつ利用される？ いつも使われてて、マスタのテンプレートとして使われてる どのViewもコントローラのメソッド（アクション）と紐づくViewが中にサンドイッチされて出力されてる。</div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -440,6 +448,17 @@ routesの追記が必要。 formの追加に合わせて post 'client_workouts/f
 </a>
 </article>
 <article class=li>
+<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</div>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
@@ -461,24 +480,13 @@ routesの追記が必要。 formの追加に合わせて post 'client_workouts/f
 </footer>
 </a>
 </article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/b91034c425a91a6bda3ad6af608a61ac.png)></div>
-<footer>
-<div class=date>
-<div class=time>Tue, May 14, 2019</div>
-</div>
-<h2 class=title>Upgrade to elementary OS 5.0 Juno</h2>
-</footer>
-</a>
-</article>
 </div>
 </section>
 <section class=taxonomies>
 <header class=taxonomies__header>tag</header>
 <div class=taxonomies__body>
 <ul>
-<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
 </ul>
 </div>
 </section>
