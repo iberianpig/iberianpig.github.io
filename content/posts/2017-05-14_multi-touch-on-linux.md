@@ -2,7 +2,7 @@
 comments: true
 date: 2017-05-14T17:27:59+09:00
 description: "FusumaというGemを公開した。Linux上のタッチパッドでのジェスチャをキーイベントにマッピングし、スワイプを検知したらワークスペースを移動させるなどの処理を可能にする。"
-image: "https://camo.githubusercontent.com/97640cbbff96a8545119e063ffdeb31954d3f739/68747470733a2f2f692e6779617a6f2e636f6d2f37353766656635323633313062396436386636386538306562316534353430662e706e67"
+image: "https://repository-images.githubusercontent.com/69813387/60879a00-166c-11ea-9875-3bf0818c62ec"
 layout: post
 published: true
 tags:
