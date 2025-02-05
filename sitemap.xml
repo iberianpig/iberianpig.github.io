@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</loc>
-    <lastmod>2025-02-05T13:27:42+09:00</lastmod>
-  </url><url>
     <loc>https://iberianpig.github.io/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
@@ -15,6 +12,9 @@
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
     <loc>https://iberianpig.github.io/tags/tailscale/</loc>
+    <lastmod>2025-02-05T13:27:42+09:00</lastmod>
+  </url><url>
+    <loc>https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
     <loc>https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/</loc>
