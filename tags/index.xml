@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 10 Mar 2024 17:04:08 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Feb 2025 13:27:42 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tailscale</title>
+      <link>https://iberianpig.github.io/tags/tailscale/</link>
+      <pubDate>Wed, 05 Feb 2025 13:27:42 +0900</pubDate>
+      
+      <guid>https://iberianpig.github.io/tags/tailscale/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Linux</title>
       <link>https://iberianpig.github.io/tags/linux/</link>

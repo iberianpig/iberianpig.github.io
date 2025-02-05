@@ -32,6 +32,29 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://iberianpig.github.io/posts/2014-03-17-head-first-rails_5/>
+<div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Mar 17, 2014</time>
+</div>
+<h2 class=title>Head-First-Rails_5</h2>
+<div class=summary>Head First Rails第5章のメモ ※ rails3の書籍をrails4で読み替えてチュートリアルを進めています。
+scaffoldで生成したアプリケーションのフォームに バリデーションを設定していく。
+##バリデーションの設定。
+バリデーションの設定はモデル名.rbの中に設定する validates_xxxxxx_of と記述する。
+エラー処理を自分で書く場合 scaffoldを利用していない場合にエラー処理を自分で記述する必要がある。
+画面に処理内容を表示するためにはSaveメソッドでの失敗をコントローラに伝える必要がある。
+そのため、 if文で@model.saveを実行した結果true or falseに応じて、リダイレクトを 行うか否かを決定する。
+form内で、f.error_messagesメソッドを利用する。
+updateも同様。if文で@model.update_attributes(:params[:model])の実行し、結果に応じて リダイレクトを行うか否かを決める。
+不明点 バリデーターのメッセージを変更方法 書籍内のvalidates_presence_of :trainer, "What's your name?"がうまく動かない</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://iberianpig.github.io/posts/2014-03-15-head-first-rails_4/>
 <div class=image style=background-image:url(https://iberianpig.github.io//images/default.jpg)></div>
 <footer>
@@ -162,6 +185,17 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Feb 5, 2025</div>
+</div>
+<h2 class=title>2025 02 05_tailscale_serveとtailscale_funnel</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
 <footer>
@@ -202,17 +236,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <div class=time>Wed, May 17, 2023</div>
 </div>
 <h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/ class=clearfix>
-<div class=image style=background-image:url(https://opengraph.githubassets.com/ecc39c3b5067e737618dce4b17876b2ef6c628c6dbcacd9db938a2a57e8b161c/iberianpig/fusuma)></div>
-<footer>
-<div class=date>
-<div class=time>Mon, Apr 26, 2021</div>
-</div>
-<h2 class=title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</h2>
 </footer>
 </a>
 </article>

@@ -1,0 +1,167 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css integrity=sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<title>tailscale - iberianpigsty</title>
+<meta property="og:title" content="tailscale - iberianpigsty">
+<meta property="og:url" content="https://iberianpig.github.io/tags/tailscale/">
+<meta property="og:image" content="https://secure.gravatar.com/avatar/0cad0568651dbea482d80104ee3bf9b3?size=500">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G6M9151B3"></script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://iberianpig.github.io/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<h1 class=p-page-title>tailscale</h1>
+<div class=row>
+<div class=col-sm-4>
+<article class=grid>
+<a href=https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/>
+<div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Feb 5, 2025</time>
+</div>
+<h2 class=title>2025 02 05_tailscale_serveとtailscale_funnel</h2>
+<div class=summary>Tailscaleを自宅のRaspbery Piや手元のラップトップに入れて使っている。 主に自宅からVPNを使って抜けたいときにexit nodeとしてRaspbery Piを使っている。
+今回はラップトップ上でRailsのサーバを動かしていて、自分のスマホで挙動をテストするときや他人に見てもらいたいときにtailscaleを使うと便利だと思ったので、tailscaleのFunnelとServeの使い方をまとめてみる。
+tailscale funnel 以下はローカルポートの3000番を外部に公開するためのコマンド。
+$ tailscale funnel 3000 このコマンドを実行すると、指定したポートのサービスがインターネット上で利用可能となる。 公開されるURLは https://host-name.foo-bar.ts.net となり、foo-bar はtailscaleのアカウント単位で決まるランダム文字列で、tailscaleの設定で変更できる。 スマホや他人が接続する際にはtailscaleのアカウントは必要ない。 ただし、外部アクセスの制限や認証の設定がないため、取り扱いには注意が必要。
+Raspberry Pi で Funnel を使用して Web サイトをホストしている場合と違って、ラップトップで Funnel を使用して開発サーバーを一時的に共有しているだけの場合は、作業が終わったら必ずオフすること。 そうしないと、意図せずlocalhostのサービスが外部に公開されたままになる。
+また、funnelの利用時はserveと違ってDNSの伝搬に時間が必要で、公開後すぐにアクセスできないことがある。 公式に10分とあったが、実際にはもう少し時間がかかることがある。これにはちょっとハマってしまった。
+tailscale serve Tailscale serveはfunnelと同様にローカルポートを外部に公開するが、こちらはTailscaleでVPNを接続しており、自分のtailnet内のみに公開される。
+$ tailscale serve 3000 funnelと 同様に https://host-name.foo-bar.ts.net でアクセスできる。
+このコマンドを実行すると、指定したポートのサービスがTailscaleのVPN内で利用可能となる。 外部に公開したくないサービスをチームのVPN内で利用ような、共有リソースとして使うときに便利。 スマホアプリでtailscaleを使って自分のtailnetに接続すると、https://host-name.foo-bar.ts.net でアクセスできる。
+Funnel と Serve、それぞれの利用用途 Funnelの利用用途 個人プロジェクトの公開: 自宅や開発環境で作成したウェブアプリやサービスを外部に公開。 イベントやプレゼンテーション: デモ用のサービスを一時的に公開。 ローカルウェブフックのテスト: 外部サービスからアクセスできるようにして、開発中のウェブフックを試す。 IoTデバイスのアクセス: Raspberry Piなど、特定の機器でのサービスをインターネット上で利用可能に。 Serveの利用用途 チーム内のリソース共有: チームメンバー間での開発アプリやサービスの共有。 プライベートAPIの提供: 開発環境におけるAPIをチーム内で安全に利用。 社内ツールやダッシュボードへのアクセス: 社内向けサービスをtailnet内で利用。 リモートスタッフのサポート: 自宅や他の場所で勤務するスタッフが社内リソースに安全にアクセス。 ローカルサーバを公開する 開発中のサーバへのアクセスであればserveを使うのが便利。 最初はfunnelを使ってみたが、他のユーザーに広く公開したいわけではないので、自分のスマホやチームメンバーに公開するだけであればtailnetに参加させた上でのserveの方が便利だと感じた。 この辺は用途によって使い分けると良い。</div>
+</footer>
+</a>
+</article>
+</div>
+</div>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Feb 5, 2025</div>
+</div>
+<h2 class=title>2025 02 05_tailscale_serveとtailscale_funnel</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</div>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, May 17, 2023</div>
+</div>
+<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+スタートアップ企業の技術支援をしています。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<script src=https://code.jquery.com/jquery-3.5.1.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js integrity=sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI crossorigin=anonymous></script>
+<script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
+<script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
+<script data-no-instant>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}InstantClick.on('change',function(a){gtag('js',new Date),gtag('config','G-8G6M9151B3',{page_location:location.href})}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.init()</script>
+</body>
+</html>
