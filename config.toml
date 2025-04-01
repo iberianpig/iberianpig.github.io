@@ -1,5 +1,5 @@
 baseurl = "https://iberianpig.github.io/"
-languageCode = "ja-jp"
+LanguageCode = "ja-jp"
 title = "iberianpigsty"
 copyright = "Copyright (c) iberianpigsty; all rights reserved."
 paginate = 16
@@ -12,9 +12,9 @@ MetaDataFormat = "yaml"
 tag = "tags"
 
 [params]
-disqusShortname = "iberianpigsty"
 twitterId = "nukumaro22"
 githubId = "iberianpig"
+GoogleAnalyticsUserID = "G-8G6M9151B3"
 email = "yhkyky+work@gmail.com"
 author = "Kohei Yamada"
 aboutme = "自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。"
