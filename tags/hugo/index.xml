@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/hugo/</link>
+    <link>https://blog.iberianpig.dev/tags/hugo/</link>
     <description>Recent content in hugo on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 23 Jan 2017 19:36:53 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Jan 2017 19:36:53 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>簡単にHugoのブログポストのテンプレを生成するシェルスクリプトを作った</title>
-      <link>https://iberianpig.dev/posts/2017-01-23_generate_post_template/</link>
+      <link>https://blog.iberianpig.dev/posts/2017-01-23_generate_post_template/</link>
       <pubDate>Mon, 23 Jan 2017 19:36:53 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2017-01-23_generate_post_template/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2017-01-23_generate_post_template/</guid>
       <description>表題の通り。 いつもコマンドを忘れるので。 ちなみにデプロイもシェルスクリプトで書いてる。
 hugoの記事作成 hugo new &amp;#34;path/to/article.md&amp;#34; コレだけなのだが、記事ソースが配置されるcontent配下にpostと階層が有る場合、 hugo new &amp;quot;content/post/article.md&amp;quot;とやってしまう。
 しかしcontent/content/path/to/article.mdに作られてしまう。

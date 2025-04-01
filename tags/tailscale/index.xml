@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tailscale on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/tailscale/</link>
+    <link>https://blog.iberianpig.dev/tags/tailscale/</link>
     <description>Recent content in tailscale on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 05 Feb 2025 13:27:42 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/tailscale/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Feb 2025 13:27:42 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/tailscale/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tailscale serveとtailscale funnel</title>
-      <link>https://iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</link>
+      <link>https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</link>
       <pubDate>Wed, 05 Feb 2025 13:27:42 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</guid>
       <description>Tailscaleを自宅のRaspbery Piや手元のラップトップに入れて使っている。 主に自宅からVPNを使って抜けたいときにexit nodeとしてRaspbery Piを使っている。
 今回はラップトップ上でRailsのサーバを動かしていて、自分のスマホで挙動をテストするときや他人に見てもらいたいときにtailscaleを使うと便利だと思ったので、tailscaleのFunnelとServeの使い方をまとめてみる。
 tailscale funnel 以下はローカルポートの3000番を外部に公開するためのコマンド。

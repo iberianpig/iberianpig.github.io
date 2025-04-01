@@ -2,567 +2,567 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/</link>
+    <link>https://blog.iberianpig.dev/tags/</link>
     <description>Recent content in Tags on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 05 Feb 2025 13:27:42 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Feb 2025 13:27:42 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tailscale</title>
-      <link>https://iberianpig.dev/tags/tailscale/</link>
+      <link>https://blog.iberianpig.dev/tags/tailscale/</link>
       <pubDate>Wed, 05 Feb 2025 13:27:42 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/tailscale/</guid>
+      <guid>https://blog.iberianpig.dev/tags/tailscale/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://iberianpig.dev/tags/linux/</link>
+      <link>https://blog.iberianpig.dev/tags/linux/</link>
       <pubDate>Sun, 10 Mar 2024 17:04:08 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/linux/</guid>
+      <guid>https://blog.iberianpig.dev/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>https://iberianpig.dev/tags/vim/</link>
+      <link>https://blog.iberianpig.dev/tags/vim/</link>
       <pubDate>Mon, 20 Nov 2023 10:35:11 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/vim/</guid>
+      <guid>https://blog.iberianpig.dev/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libinput</title>
-      <link>https://iberianpig.dev/tags/libinput/</link>
+      <link>https://blog.iberianpig.dev/tags/libinput/</link>
       <pubDate>Wed, 06 Sep 2023 09:19:50 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/libinput/</guid>
+      <guid>https://blog.iberianpig.dev/tags/libinput/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ruby</title>
-      <link>https://iberianpig.dev/tags/ruby/</link>
+      <link>https://blog.iberianpig.dev/tags/ruby/</link>
       <pubDate>Wed, 06 Sep 2023 09:19:50 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ruby/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ruby/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elementaryOS</title>
-      <link>https://iberianpig.dev/tags/elementaryos/</link>
+      <link>https://blog.iberianpig.dev/tags/elementaryos/</link>
       <pubDate>Tue, 14 May 2019 15:38:04 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/elementaryos/</guid>
+      <guid>https://blog.iberianpig.dev/tags/elementaryos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://iberianpig.dev/tags/git/</link>
+      <link>https://blog.iberianpig.dev/tags/git/</link>
       <pubDate>Tue, 30 Apr 2019 23:57:45 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/git/</guid>
+      <guid>https://blog.iberianpig.dev/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pocket</title>
-      <link>https://iberianpig.dev/tags/pocket/</link>
+      <link>https://blog.iberianpig.dev/tags/pocket/</link>
       <pubDate>Sun, 28 Apr 2019 17:55:22 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/pocket/</guid>
+      <guid>https://blog.iberianpig.dev/tags/pocket/</guid>
       <description></description>
     </item>
     
     <item>
       <title>remote</title>
-      <link>https://iberianpig.dev/tags/remote/</link>
+      <link>https://blog.iberianpig.dev/tags/remote/</link>
       <pubDate>Sun, 28 Apr 2019 17:55:22 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/remote/</guid>
+      <guid>https://blog.iberianpig.dev/tags/remote/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ranger</title>
-      <link>https://iberianpig.dev/tags/ranger/</link>
+      <link>https://blog.iberianpig.dev/tags/ranger/</link>
       <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ranger/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ranger/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon Echo</title>
-      <link>https://iberianpig.dev/tags/amazon-echo/</link>
+      <link>https://blog.iberianpig.dev/tags/amazon-echo/</link>
       <pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/amazon-echo/</guid>
+      <guid>https://blog.iberianpig.dev/tags/amazon-echo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>English</title>
-      <link>https://iberianpig.dev/tags/english/</link>
+      <link>https://blog.iberianpig.dev/tags/english/</link>
       <pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/english/</guid>
+      <guid>https://blog.iberianpig.dev/tags/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ethereum</title>
-      <link>https://iberianpig.dev/tags/ethereum/</link>
+      <link>https://blog.iberianpig.dev/tags/ethereum/</link>
       <pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ethereum/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ethereum/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shellscript</title>
-      <link>https://iberianpig.dev/tags/shellscript/</link>
+      <link>https://blog.iberianpig.dev/tags/shellscript/</link>
       <pubDate>Fri, 27 Apr 2018 15:46:41 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/shellscript/</guid>
+      <guid>https://blog.iberianpig.dev/tags/shellscript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kernel</title>
-      <link>https://iberianpig.dev/tags/kernel/</link>
+      <link>https://blog.iberianpig.dev/tags/kernel/</link>
       <pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/kernel/</guid>
+      <guid>https://blog.iberianpig.dev/tags/kernel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>https://iberianpig.dev/tags/ubuntu/</link>
+      <link>https://blog.iberianpig.dev/tags/ubuntu/</link>
       <pubDate>Sun, 25 Jun 2017 22:48:09 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ubuntu/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Buffer</title>
-      <link>https://iberianpig.dev/tags/buffer/</link>
+      <link>https://blog.iberianpig.dev/tags/buffer/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/buffer/</guid>
+      <guid>https://blog.iberianpig.dev/tags/buffer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Kindle</title>
-      <link>https://iberianpig.dev/tags/kindle/</link>
+      <link>https://blog.iberianpig.dev/tags/kindle/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/kindle/</guid>
+      <guid>https://blog.iberianpig.dev/tags/kindle/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>https://iberianpig.dev/tags/life/</link>
+      <link>https://blog.iberianpig.dev/tags/life/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/life/</guid>
+      <guid>https://blog.iberianpig.dev/tags/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Twitter</title>
-      <link>https://iberianpig.dev/tags/twitter/</link>
+      <link>https://blog.iberianpig.dev/tags/twitter/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/twitter/</guid>
+      <guid>https://blog.iberianpig.dev/tags/twitter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>風呂</title>
-      <link>https://iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</link>
+      <link>https://blog.iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</link>
       <pubDate>Tue, 24 Jan 2017 23:58:22 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</guid>
+      <guid>https://blog.iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://iberianpig.dev/tags/hugo/</link>
+      <link>https://blog.iberianpig.dev/tags/hugo/</link>
       <pubDate>Mon, 23 Jan 2017 19:36:53 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/hugo/</guid>
+      <guid>https://blog.iberianpig.dev/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Advent Calendar</title>
-      <link>https://iberianpig.dev/tags/advent-calendar/</link>
+      <link>https://blog.iberianpig.dev/tags/advent-calendar/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/advent-calendar/</guid>
+      <guid>https://blog.iberianpig.dev/tags/advent-calendar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Amazon Dash Button</title>
-      <link>https://iberianpig.dev/tags/amazon-dash-button/</link>
+      <link>https://blog.iberianpig.dev/tags/amazon-dash-button/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/amazon-dash-button/</guid>
+      <guid>https://blog.iberianpig.dev/tags/amazon-dash-button/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IFTTT</title>
-      <link>https://iberianpig.dev/tags/ifttt/</link>
+      <link>https://blog.iberianpig.dev/tags/ifttt/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ifttt/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ifttt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Slack</title>
-      <link>https://iberianpig.dev/tags/slack/</link>
+      <link>https://blog.iberianpig.dev/tags/slack/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/slack/</guid>
+      <guid>https://blog.iberianpig.dev/tags/slack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>出社芸</title>
-      <link>https://iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</link>
+      <link>https://blog.iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</guid>
+      <guid>https://blog.iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>API</title>
-      <link>https://iberianpig.dev/tags/api/</link>
+      <link>https://blog.iberianpig.dev/tags/api/</link>
       <pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/api/</guid>
+      <guid>https://blog.iberianpig.dev/tags/api/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node</title>
-      <link>https://iberianpig.dev/tags/node/</link>
+      <link>https://blog.iberianpig.dev/tags/node/</link>
       <pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/node/</guid>
+      <guid>https://blog.iberianpig.dev/tags/node/</guid>
       <description></description>
     </item>
     
     <item>
       <title>prototyping</title>
-      <link>https://iberianpig.dev/tags/prototyping/</link>
+      <link>https://blog.iberianpig.dev/tags/prototyping/</link>
       <pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/tags/prototyping/</guid>
+      <guid>https://blog.iberianpig.dev/tags/prototyping/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pry</title>
-      <link>https://iberianpig.dev/tags/pry/</link>
+      <link>https://blog.iberianpig.dev/tags/pry/</link>
       <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/pry/</guid>
+      <guid>https://blog.iberianpig.dev/tags/pry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rails</title>
-      <link>https://iberianpig.dev/tags/rails/</link>
+      <link>https://blog.iberianpig.dev/tags/rails/</link>
       <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/rails/</guid>
+      <guid>https://blog.iberianpig.dev/tags/rails/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bluetooth</title>
-      <link>https://iberianpig.dev/tags/bluetooth/</link>
+      <link>https://blog.iberianpig.dev/tags/bluetooth/</link>
       <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/bluetooth/</guid>
+      <guid>https://blog.iberianpig.dev/tags/bluetooth/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tethering</title>
-      <link>https://iberianpig.dev/tags/tethering/</link>
+      <link>https://blog.iberianpig.dev/tags/tethering/</link>
       <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/tethering/</guid>
+      <guid>https://blog.iberianpig.dev/tags/tethering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sql</title>
-      <link>https://iberianpig.dev/tags/sql/</link>
+      <link>https://blog.iberianpig.dev/tags/sql/</link>
       <pubDate>Sat, 23 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/sql/</guid>
+      <guid>https://blog.iberianpig.dev/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lubuntu</title>
-      <link>https://iberianpig.dev/tags/lubuntu/</link>
+      <link>https://blog.iberianpig.dev/tags/lubuntu/</link>
       <pubDate>Thu, 17 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/lubuntu/</guid>
+      <guid>https://blog.iberianpig.dev/tags/lubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pivotaltracker</title>
-      <link>https://iberianpig.dev/tags/pivotaltracker/</link>
+      <link>https://blog.iberianpig.dev/tags/pivotaltracker/</link>
       <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/pivotaltracker/</guid>
+      <guid>https://blog.iberianpig.dev/tags/pivotaltracker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://iberianpig.dev/tags/javascript/</link>
+      <link>https://blog.iberianpig.dev/tags/javascript/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/javascript/</guid>
+      <guid>https://blog.iberianpig.dev/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mysql</title>
-      <link>https://iberianpig.dev/tags/mysql/</link>
+      <link>https://blog.iberianpig.dev/tags/mysql/</link>
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/mysql/</guid>
+      <guid>https://blog.iberianpig.dev/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>easytether</title>
-      <link>https://iberianpig.dev/tags/easytether/</link>
+      <link>https://blog.iberianpig.dev/tags/easytether/</link>
       <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/easytether/</guid>
+      <guid>https://blog.iberianpig.dev/tags/easytether/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lifehack</title>
-      <link>https://iberianpig.dev/tags/lifehack/</link>
+      <link>https://blog.iberianpig.dev/tags/lifehack/</link>
       <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/lifehack/</guid>
+      <guid>https://blog.iberianpig.dev/tags/lifehack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>marketing</title>
-      <link>https://iberianpig.dev/tags/marketing/</link>
+      <link>https://blog.iberianpig.dev/tags/marketing/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/marketing/</guid>
+      <guid>https://blog.iberianpig.dev/tags/marketing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>strategy</title>
-      <link>https://iberianpig.dev/tags/strategy/</link>
+      <link>https://blog.iberianpig.dev/tags/strategy/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/strategy/</guid>
+      <guid>https://blog.iberianpig.dev/tags/strategy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>angularJS</title>
-      <link>https://iberianpig.dev/tags/angularjs/</link>
+      <link>https://blog.iberianpig.dev/tags/angularjs/</link>
       <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/angularjs/</guid>
+      <guid>https://blog.iberianpig.dev/tags/angularjs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>angualrjs</title>
-      <link>https://iberianpig.dev/tags/angualrjs/</link>
+      <link>https://blog.iberianpig.dev/tags/angualrjs/</link>
       <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/angualrjs/</guid>
+      <guid>https://blog.iberianpig.dev/tags/angualrjs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cordova</title>
-      <link>https://iberianpig.dev/tags/cordova/</link>
+      <link>https://blog.iberianpig.dev/tags/cordova/</link>
       <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/cordova/</guid>
+      <guid>https://blog.iberianpig.dev/tags/cordova/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTML5</title>
-      <link>https://iberianpig.dev/tags/html5/</link>
+      <link>https://blog.iberianpig.dev/tags/html5/</link>
       <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/html5/</guid>
+      <guid>https://blog.iberianpig.dev/tags/html5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PhoneGap</title>
-      <link>https://iberianpig.dev/tags/phonegap/</link>
+      <link>https://blog.iberianpig.dev/tags/phonegap/</link>
       <pubDate>Fri, 13 Feb 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/phonegap/</guid>
+      <guid>https://blog.iberianpig.dev/tags/phonegap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootstrap</title>
-      <link>https://iberianpig.dev/tags/bootstrap/</link>
+      <link>https://blog.iberianpig.dev/tags/bootstrap/</link>
       <pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/bootstrap/</guid>
+      <guid>https://blog.iberianpig.dev/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>https://iberianpig.dev/tags/css/</link>
+      <link>https://blog.iberianpig.dev/tags/css/</link>
       <pubDate>Fri, 12 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/css/</guid>
+      <guid>https://blog.iberianpig.dev/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rspec</title>
-      <link>https://iberianpig.dev/tags/rspec/</link>
+      <link>https://blog.iberianpig.dev/tags/rspec/</link>
       <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/rspec/</guid>
+      <guid>https://blog.iberianpig.dev/tags/rspec/</guid>
       <description></description>
     </item>
     
     <item>
       <title>android</title>
-      <link>https://iberianpig.dev/tags/android/</link>
+      <link>https://blog.iberianpig.dev/tags/android/</link>
       <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/android/</guid>
+      <guid>https://blog.iberianpig.dev/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SharedPreferences</title>
-      <link>https://iberianpig.dev/tags/sharedpreferences/</link>
+      <link>https://blog.iberianpig.dev/tags/sharedpreferences/</link>
       <pubDate>Thu, 14 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/sharedpreferences/</guid>
+      <guid>https://blog.iberianpig.dev/tags/sharedpreferences/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>https://iberianpig.dev/tags/http/</link>
+      <link>https://blog.iberianpig.dev/tags/http/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/http/</guid>
+      <guid>https://blog.iberianpig.dev/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ListView</title>
-      <link>https://iberianpig.dev/tags/listview/</link>
+      <link>https://blog.iberianpig.dev/tags/listview/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/listview/</guid>
+      <guid>https://blog.iberianpig.dev/tags/listview/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Thread</title>
-      <link>https://iberianpig.dev/tags/thread/</link>
+      <link>https://blog.iberianpig.dev/tags/thread/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/thread/</guid>
+      <guid>https://blog.iberianpig.dev/tags/thread/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Octopress</title>
-      <link>https://iberianpig.dev/tags/octopress/</link>
+      <link>https://blog.iberianpig.dev/tags/octopress/</link>
       <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/octopress/</guid>
+      <guid>https://blog.iberianpig.dev/tags/octopress/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fcitx</title>
-      <link>https://iberianpig.dev/tags/fcitx/</link>
+      <link>https://blog.iberianpig.dev/tags/fcitx/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/fcitx/</guid>
+      <guid>https://blog.iberianpig.dev/tags/fcitx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ibus</title>
-      <link>https://iberianpig.dev/tags/ibus/</link>
+      <link>https://blog.iberianpig.dev/tags/ibus/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/ibus/</guid>
+      <guid>https://blog.iberianpig.dev/tags/ibus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mozc</title>
-      <link>https://iberianpig.dev/tags/mozc/</link>
+      <link>https://blog.iberianpig.dev/tags/mozc/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/mozc/</guid>
+      <guid>https://blog.iberianpig.dev/tags/mozc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SublimeText</title>
-      <link>https://iberianpig.dev/tags/sublimetext/</link>
+      <link>https://blog.iberianpig.dev/tags/sublimetext/</link>
       <pubDate>Tue, 19 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/sublimetext/</guid>
+      <guid>https://blog.iberianpig.dev/tags/sublimetext/</guid>
       <description></description>
     </item>
     
     <item>
       <title>font</title>
-      <link>https://iberianpig.dev/tags/font/</link>
+      <link>https://blog.iberianpig.dev/tags/font/</link>
       <pubDate>Sat, 02 Nov 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/tags/font/</guid>
+      <guid>https://blog.iberianpig.dev/tags/font/</guid>
       <description></description>
     </item>
     

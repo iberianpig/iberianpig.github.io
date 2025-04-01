@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>javascript on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/javascript/</link>
+    <link>https://blog.iberianpig.dev/tags/javascript/</link>
     <description>Recent content in javascript on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Aug 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>node/npmをUbuntuにインストールする方法</title>
-      <link>https://iberianpig.dev/posts/2015-08-15-install-node/</link>
+      <link>https://blog.iberianpig.dev/posts/2015-08-15-install-node/</link>
       <pubDate>Sun, 16 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2015-08-15-install-node/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2015-08-15-install-node/</guid>
       <description>ionic入れようとした時にwarning出たのでnodeの最新バージョンを入れた。
 sudo apt-get install nodejsで入るバージョンが最新でなかったので少し調べる事になった。
 環境はElementary OS freya(Ubuntu14.04ベース)
@@ -33,10 +33,10 @@ npm -v
     
     <item>
       <title>AngularでのDOMへのアクセス</title>
-      <link>https://iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link>
+      <link>https://blog.iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</link>
       <pubDate>Mon, 13 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</guid>
       <description>AngularがDOMのdata-x属性の値を取得する必要があったのでメモ。
 今回はdata-x属性内のハッシュ構造のデータを取り出す必要があった。
 &amp;lt;SELECTOR data-x = &#39;{&amp;quot;id&amp;quot;:&amp;quot;123&amp;quot;, &amp;quot;name&amp;quot;:&amp;quot;hoge&amp;quot;}&#39;...&amp;gt;というDOM要素が存在した時
@@ -48,10 +48,10 @@ hashed_data = angular.fomJson(str)
     
     <item>
       <title>ng-japan</title>
-      <link>https://iberianpig.dev/posts/2015-03-21-ng-japan/</link>
+      <link>https://blog.iberianpig.dev/posts/2015-03-21-ng-japan/</link>
       <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2015-03-21-ng-japan/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2015-03-21-ng-japan/</guid>
       <description>Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。

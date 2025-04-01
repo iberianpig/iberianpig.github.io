@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ListView on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/listview/</link>
+    <link>https://blog.iberianpig.dev/tags/listview/</link>
     <description>Recent content in ListView on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.dev/tags/listview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Aug 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/listview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ListView and http connection</title>
-      <link>https://iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</link>
+      <link>https://blog.iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</link>
       <pubDate>Fri, 01 Aug 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</guid>
       <description>雑多メモ Railsで作ったサーバとHttpでCRUDなおしゃべりをするアプリを作った時に調べたメモ達
 レイアウトをJava側で生成する  LinearLayout linearLayout = new LinearLayout(this); linearLayout.setOrientation(LinearLayout.VERTICAL); setContentView(linearLayout);`  レイアウトに要素を追加する  Button button1 = new Button(this); button1.setText(&amp;quot;OK&amp;quot;); button1.setLayoutParams(new LinearLayout.LayoutParams( LinerLayout.LayoutParams.MATCH_PARENT, LinerLayout.LayoutParams.WRAP_CONTENT)); linearLayout.addView(button1);`  AddViewメソッド 「LinearLayout」クラスの親クラスである「ViewGroup」クラスで用意されている「addView」メソッドを使います。
  public void addView(View child, LayoutParams params) Adds a child view with the specified layout parameters.

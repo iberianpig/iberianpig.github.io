@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Buffer on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/buffer/</link>
+    <link>https://blog.iberianpig.dev/tags/buffer/</link>
     <description>Recent content in Buffer on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 30 Jan 2017 02:52:18 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/buffer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2017 02:52:18 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/buffer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>記憶の定着率を上げるPocket&#43;Kindle連携</title>
-      <link>https://iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</link>
+      <link>https://blog.iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
       <description>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
 1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Octopress on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/octopress/</link>
+    <link>https://blog.iberianpig.dev/tags/octopress/</link>
     <description>Recent content in Octopress on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 22 Jan 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.dev/tags/octopress/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jan 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/octopress/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Octopressで下書き保存をデフォルト設定にする方法</title>
-      <link>https://iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</link>
+      <link>https://blog.iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</link>
       <pubDate>Wed, 22 Jan 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</guid>
       <description>Octopressでの下書き保存 普通にdeployすると、rake new_post[&#39;hogehoge&#39;]で生成された/_posts配下の記事がすべてPublishされてしまう。
 一時的に手元にとどめておくためには Octopressデフォルトのプラグインがあるので、記事のファイルに『下書き』であることを明示させればよい。
 実際はyyyy-MM-dd-[$title].markdown内に published: falseを記述するだけ。 (※$titleは生成された記事毎に異なる)
@@ -25,10 +25,10 @@ task :new_post, :title do |t, args| if args.title title = args.title else title 
     
     <item>
       <title>Linux版SublmeTextでの日本語入力</title>
-      <link>https://iberianpig.dev/posts/2013-10-26-first-commit/</link>
+      <link>https://blog.iberianpig.dev/posts/2013-10-26-first-commit/</link>
       <pubDate>Sat, 26 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2013-10-26-first-commit/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2013-10-26-first-commit/</guid>
       <description>Linux + Octpress + Sublime Text 2 + SublimeIbus SublimeTextはデフォルトで日本語入力は対応してない。 調べてみるとLinuxでSublmeTextでの日本語入力は鬼門のようだ。
 InputHelperなるものを使ってはみたものの、ショートカットキーからダイアログが出て来るタイプで、プログラムのコメント程度なら許容できるが、常用するにはツラミがある。
 ブログもSublimeTextで書きたかったので調べを尽くした。 何とかヨサゲなソリューションを発見したので残しておく。

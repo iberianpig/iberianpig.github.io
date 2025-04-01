@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tethering on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/tethering/</link>
+    <link>https://blog.iberianpig.dev/tags/tethering/</link>
     <description>Recent content in tethering on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 20 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.dev/tags/tethering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/tethering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bluetoothのオン・オフをコマンドラインから切り替える</title>
-      <link>https://iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link>
+      <link>https://blog.iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</link>
       <pubDate>Sun, 20 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</guid>
       <description>&lt;p&gt;以前、ブログで書いたAndroidのテザリング用アプリ、Easytether。
-&lt;a href=&#34;https://iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;EasytetherでBluetoothテザリング&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://blog.iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/&#34;&gt;EasytetherでBluetoothテザリング&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;端末はXperia Z1f(Docomo)を使っていて、MVMOのSIMに切り替えた際に機器デフォルトのテザリング機能が利用できなくなってしまった。
 EasytetherではBluetooth, USBテザリングが選択できるが、こちらはMVMOのSIMを利用しても問題なくテザリングできる。&lt;/p&gt;
 &lt;h1 id=&#34;easytether使う前にbluetoothを有効にする&#34;&gt;Easytether使う前にBluetoothを有効にする&lt;/h1&gt;
@@ -27,10 +27,10 @@ EasytetherではBluetooth, USBテザリングが選択できるが、こちら�
     
     <item>
       <title>EasytetherでBluetoothテザリング</title>
-      <link>https://iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
+      <link>https://blog.iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</link>
       <pubDate>Sun, 07 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</guid>
       <description>Easytether with linux 
 EasytetherFull( GooglePlay )
 数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kindle on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/kindle/</link>
+    <link>https://blog.iberianpig.dev/tags/kindle/</link>
     <description>Recent content in Kindle on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 30 Jan 2017 02:52:18 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/kindle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2017 02:52:18 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/kindle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>記憶の定着率を上げるPocket&#43;Kindle連携</title>
-      <link>https://iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</link>
+      <link>https://blog.iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</link>
       <pubDate>Mon, 30 Jan 2017 02:52:18 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</guid>
       <description>日々の情報収集のフロー内で記憶定着のために自分がやっていることを書いてみた。
 エビングハウスの忘却曲線 エビングハウスの忘却曲線と復習の関係に注目すると、復習は少し時間を空けておいたほうが効率が良いと言われている。
 1〜2日以内にチェックして短期記憶に、1週間後に再度見直して長期記憶に持っていく作戦。
@@ -34,10 +34,10 @@ Special Thanks  [忘却曲線 - Wikipedia] (https://ja.wikipedia.org/wiki/%E5%BF
     
     <item>
       <title>風呂キンドルのすゝめ</title>
-      <link>https://iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</link>
+      <link>https://blog.iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</link>
       <pubDate>Tue, 24 Jan 2017 23:58:22 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</guid>
       <description>風呂で読書するというのを一度やってみたかったのでやってみた。
 Kindle KindleのペーパーホワイトのWifiキャンペーンモデルを使ってる。買って1年半くらいになる。 キャンペーン情報の有りのモデルのほう買ったけれど、キャンペーン情報はありがたいので特にキャンペーンなしにしなくても良い。安いし。 Kinlde PaperWhiteは最近のデバイスとは打って変わって電池持ちはすごいよくて殆んど充電しない。 測ってないけれどガラケーよりも電池持ちが断然いい。
 Ziploc 防水性能をアドオンする。

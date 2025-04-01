@@ -2,364 +2,364 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://iberianpig.dev/</loc>
+    <loc>https://blog.iberianpig.dev/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/</loc>
+    <loc>https://blog.iberianpig.dev/posts/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/</loc>
+    <loc>https://blog.iberianpig.dev/tags/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/tailscale/</loc>
+    <loc>https://blog.iberianpig.dev/tags/tailscale/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/</loc>
     <lastmod>2025-02-05T13:27:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2024-03-11_migrate_from_authy/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2024-03-11_migrate_from_authy/</loc>
     <lastmod>2024-03-10T17:04:08+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/linux/</loc>
+    <loc>https://blog.iberianpig.dev/tags/linux/</loc>
     <lastmod>2024-03-10T17:04:08+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/vim/</loc>
+    <loc>https://blog.iberianpig.dev/tags/vim/</loc>
     <lastmod>2023-11-20T10:35:11+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</loc>
     <lastmod>2023-11-20T10:35:11+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/libinput/</loc>
+    <loc>https://blog.iberianpig.dev/tags/libinput/</loc>
     <lastmod>2023-09-06T09:19:50+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ruby/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ruby/</loc>
     <lastmod>2023-09-06T09:19:50+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</loc>
     <lastmod>2023-09-06T09:19:50+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2023-05-17_rubykaigi2023/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2023-05-17_rubykaigi2023/</loc>
     <lastmod>2023-05-17T09:19:06+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2021-04-26_introducing_new_fusuma_2_features/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2021-04-26_introducing_new_fusuma_2_features/</loc>
     <lastmod>2021-06-09T01:36:42+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/elementaryos/</loc>
+    <loc>https://blog.iberianpig.dev/tags/elementaryos/</loc>
     <lastmod>2019-05-14T15:38:04+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</loc>
     <lastmod>2019-05-14T15:38:04+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/git/</loc>
+    <loc>https://blog.iberianpig.dev/tags/git/</loc>
     <lastmod>2019-04-30T23:57:45+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2019-04-30_how-to-use-tig-explorer.vim/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2019-04-30_how-to-use-tig-explorer.vim/</loc>
     <lastmod>2019-04-30T23:57:45+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</loc>
     <lastmod>2019-04-28T17:55:22+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/pocket/</loc>
+    <loc>https://blog.iberianpig.dev/tags/pocket/</loc>
     <lastmod>2019-04-28T17:55:22+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/remote/</loc>
+    <loc>https://blog.iberianpig.dev/tags/remote/</loc>
     <lastmod>2019-04-28T17:55:22+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2019-02-22_cusomize_fusuma/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2019-02-22_cusomize_fusuma/</loc>
     <lastmod>2019-02-22T23:07:09+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ranger/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ranger/</loc>
     <lastmod>2018-09-02T00:05:21+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2018-09-02_make_ranger-explorer.vim/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2018-09-02_make_ranger-explorer.vim/</loc>
     <lastmod>2018-09-02T00:05:21+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2018-07-15_disable_while_typing/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2018-07-15_disable_while_typing/</loc>
     <lastmod>2018-07-15T00:05:21+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2018-04-27_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</loc>
     <lastmod>2018-04-27T15:46:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/amazon-echo/</loc>
+    <loc>https://blog.iberianpig.dev/tags/amazon-echo/</loc>
     <lastmod>2018-04-27T15:46:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/english/</loc>
+    <loc>https://blog.iberianpig.dev/tags/english/</loc>
     <lastmod>2018-04-27T15:46:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ethereum/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ethereum/</loc>
     <lastmod>2018-04-27T15:46:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/shellscript/</loc>
+    <loc>https://blog.iberianpig.dev/tags/shellscript/</loc>
     <lastmod>2018-04-27T15:46:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-06-25_fwupd_updates_firmware_in_linux/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-06-25_fwupd_updates_firmware_in_linux/</loc>
     <lastmod>2017-06-25T22:48:09+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/kernel/</loc>
+    <loc>https://blog.iberianpig.dev/tags/kernel/</loc>
     <lastmod>2017-06-25T22:48:09+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ubuntu/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ubuntu/</loc>
     <lastmod>2017-06-25T22:48:09+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-05-14_multi-touch-on-linux/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-05-14_multi-touch-on-linux/</loc>
     <lastmod>2017-05-14T17:27:59+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-02-06_how_to_upgrade_kernel/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-02-06_how_to_upgrade_kernel/</loc>
     <lastmod>2017-02-06T17:53:41+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/buffer/</loc>
+    <loc>https://blog.iberianpig.dev/tags/buffer/</loc>
     <lastmod>2017-01-30T02:52:18+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/kindle/</loc>
+    <loc>https://blog.iberianpig.dev/tags/kindle/</loc>
     <lastmod>2017-01-30T02:52:18+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/life/</loc>
+    <loc>https://blog.iberianpig.dev/tags/life/</loc>
     <lastmod>2017-01-30T02:52:18+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/twitter/</loc>
+    <loc>https://blog.iberianpig.dev/tags/twitter/</loc>
     <lastmod>2017-01-30T02:52:18+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-01-30_information_gathering_and_its_optimization/</loc>
     <lastmod>2017-01-30T02:52:18+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</loc>
+    <loc>https://blog.iberianpig.dev/tags/%E9%A2%A8%E5%91%82/</loc>
     <lastmod>2017-01-24T23:58:22+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-01-24_kindle_in_the_bath/</loc>
     <lastmod>2017-01-24T23:58:22+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/hugo/</loc>
+    <loc>https://blog.iberianpig.dev/tags/hugo/</loc>
     <lastmod>2017-01-23T19:36:53+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2017-01-23_generate_post_template/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2017-01-23_generate_post_template/</loc>
     <lastmod>2017-01-23T19:36:53+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/advent-calendar/</loc>
+    <loc>https://blog.iberianpig.dev/tags/advent-calendar/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/amazon-dash-button/</loc>
+    <loc>https://blog.iberianpig.dev/tags/amazon-dash-button/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ifttt/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ifttt/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/slack/</loc>
+    <loc>https://blog.iberianpig.dev/tags/slack/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</loc>
+    <loc>https://blog.iberianpig.dev/tags/%E5%87%BA%E7%A4%BE%E8%8A%B8/</loc>
     <lastmod>2016-12-18T00:31:31+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/api/</loc>
+    <loc>https://blog.iberianpig.dev/tags/api/</loc>
     <lastmod>2016-08-08T06:32:00+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/node/</loc>
+    <loc>https://blog.iberianpig.dev/tags/node/</loc>
     <lastmod>2016-08-08T06:32:00+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/prototyping/</loc>
+    <loc>https://blog.iberianpig.dev/tags/prototyping/</loc>
     <lastmod>2016-08-08T06:32:00+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</loc>
     <lastmod>2016-08-08T06:32:00+09:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/pry/</loc>
+    <loc>https://blog.iberianpig.dev/tags/pry/</loc>
     <lastmod>2016-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/rails/</loc>
+    <loc>https://blog.iberianpig.dev/tags/rails/</loc>
     <lastmod>2016-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</loc>
     <lastmod>2016-07-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-04-22-tig%E3%82%92%E4%BD%BF%E3%81%86/</loc>
     <lastmod>2016-04-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-04-15-%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%81%AB%E3%82%A6%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A6%E3%82%92%E7%A7%BB%E5%8B%95/</loc>
     <lastmod>2016-04-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/bluetooth/</loc>
+    <loc>https://blog.iberianpig.dev/tags/bluetooth/</loc>
     <lastmod>2016-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2016-03-20-switch-bluetooth-status-from-command-line/</loc>
     <lastmod>2016-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/tethering/</loc>
+    <loc>https://blog.iberianpig.dev/tags/tethering/</loc>
     <lastmod>2016-03-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/</loc>
     <lastmod>2016-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/sql/</loc>
+    <loc>https://blog.iberianpig.dev/tags/sql/</loc>
     <lastmod>2016-01-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/lubuntu/</loc>
+    <loc>https://blog.iberianpig.dev/tags/lubuntu/</loc>
     <lastmod>2015-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-09-17-%E4%BC%9A%E7%A4%BE%E3%81%AEpc%E3%81%AEwindows%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABlubuntu%E3%82%92%E5%85%A5%E3%82%8C%E3%81%A6%E3%81%8D%E3%81%9F/</loc>
     <lastmod>2015-09-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/pivotaltracker/</loc>
+    <loc>https://blog.iberianpig.dev/tags/pivotaltracker/</loc>
     <lastmod>2015-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</loc>
     <lastmod>2015-08-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/javascript/</loc>
+    <loc>https://blog.iberianpig.dev/tags/javascript/</loc>
     <lastmod>2015-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-08-15-install-node/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-08-15-install-node/</loc>
     <lastmod>2015-08-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</loc>
     <lastmod>2015-08-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/mysql/</loc>
+    <loc>https://blog.iberianpig.dev/tags/mysql/</loc>
     <lastmod>2015-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</loc>
     <lastmod>2015-06-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/easytether/</loc>
+    <loc>https://blog.iberianpig.dev/tags/easytether/</loc>
     <lastmod>2015-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/</loc>
     <lastmod>2015-06-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/lifehack/</loc>
+    <loc>https://blog.iberianpig.dev/tags/lifehack/</loc>
     <lastmod>2015-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</loc>
     <lastmod>2015-05-31T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</loc>
     <lastmod>2015-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/marketing/</loc>
+    <loc>https://blog.iberianpig.dev/tags/marketing/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-04-21-sp%E3%81%A8oc-%E4%BC%81%E6%A5%AD%E6%88%A6%E7%95%A5/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/strategy/</loc>
+    <loc>https://blog.iberianpig.dev/tags/strategy/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</loc>
     <lastmod>2015-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/angularjs/</loc>
+    <loc>https://blog.iberianpig.dev/tags/angularjs/</loc>
     <lastmod>2015-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-04-13-angular%E3%81%A7%E3%81%AEdom%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9/</loc>
     <lastmod>2015-04-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/angualrjs/</loc>
+    <loc>https://blog.iberianpig.dev/tags/angualrjs/</loc>
     <lastmod>2015-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-03-21-ng-japan/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-03-21-ng-japan/</loc>
     <lastmod>2015-03-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-02-13-apachecordova%E5%8B%89%E5%BC%B7%E4%BC%9A/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/cordova/</loc>
+    <loc>https://blog.iberianpig.dev/tags/cordova/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/html5/</loc>
+    <loc>https://blog.iberianpig.dev/tags/html5/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/phonegap/</loc>
+    <loc>https://blog.iberianpig.dev/tags/phonegap/</loc>
     <lastmod>2015-02-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-01-26-cordova%E5%8B%89%E5%BC%B7%E4%BC%9A%E7%AC%AC3%E5%9B%9E/</loc>
     <lastmod>2015-01-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2015-01-03-%E4%BB%8A%E3%82%84%E3%81%A3%E3%81%A6%E3%81%84%E3%82%8B%E3%81%93%E3%81%A82014%E5%B9%B4%E3%81%A82015%E5%B9%B4/</loc>
     <lastmod>2015-01-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/bootstrap/</loc>
+    <loc>https://blog.iberianpig.dev/tags/bootstrap/</loc>
     <lastmod>2014-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/css/</loc>
+    <loc>https://blog.iberianpig.dev/tags/css/</loc>
     <lastmod>2014-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-09-12-twitterbootstrap%E3%81%A7navbar%E3%81%8C%E3%83%A2%E3%83%90%E3%82%A4%E3%83%AB%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%AA%E3%82%89%E3%81%AA%E3%81%84/</loc>
     <lastmod>2014-09-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/rspec/</loc>
+    <loc>https://blog.iberianpig.dev/tags/rspec/</loc>
     <lastmod>2014-09-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-09-11-rspec%E3%81%A7%E3%81%AA%E3%81%9C%E3%81%8B%E3%82%A4%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%B3%E3%82%B9%E5%A4%89%E6%95%B0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E6%99%82/</loc>
     <lastmod>2014-09-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</loc>
     <lastmod>2014-09-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-09-02-vim-surround/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-09-02-vim-surround/</loc>
     <lastmod>2014-09-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/android/</loc>
+    <loc>https://blog.iberianpig.dev/tags/android/</loc>
     <lastmod>2014-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-08-14-sharedpreferences/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-08-14-sharedpreferences/</loc>
     <lastmod>2014-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/sharedpreferences/</loc>
+    <loc>https://blog.iberianpig.dev/tags/sharedpreferences/</loc>
     <lastmod>2014-08-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/http/</loc>
+    <loc>https://blog.iberianpig.dev/tags/http/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/listview/</loc>
+    <loc>https://blog.iberianpig.dev/tags/listview/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-08-22-listview-and-http-connection/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/thread/</loc>
+    <loc>https://blog.iberianpig.dev/tags/thread/</loc>
     <lastmod>2014-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-07-23-send-data-on-intent-to-call-activity/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-07-23-send-data-on-intent-to-call-activity/</loc>
     <lastmod>2014-07-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-03-17-head-first-rails_5/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-03-17-head-first-rails_5/</loc>
     <lastmod>2014-03-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-03-15-head-first-rails_4/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-03-15-head-first-rails_4/</loc>
     <lastmod>2014-03-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/octopress/</loc>
+    <loc>https://blog.iberianpig.dev/tags/octopress/</loc>
     <lastmod>2014-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2014-01-22-generate-publish-false-post-with-octopress/</loc>
     <lastmod>2014-01-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2013-11-19-fcitx/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2013-11-19-fcitx/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/fcitx/</loc>
+    <loc>https://blog.iberianpig.dev/tags/fcitx/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/ibus/</loc>
+    <loc>https://blog.iberianpig.dev/tags/ibus/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/mozc/</loc>
+    <loc>https://blog.iberianpig.dev/tags/mozc/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/sublimetext/</loc>
+    <loc>https://blog.iberianpig.dev/tags/sublimetext/</loc>
     <lastmod>2013-11-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/tags/font/</loc>
+    <loc>https://blog.iberianpig.dev/tags/font/</loc>
     <lastmod>2013-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2013-11-02-migu-font/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2013-11-02-migu-font/</loc>
     <lastmod>2013-11-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2013-10-28-escape-mozc-with-sublimeibus/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2013-10-28-escape-mozc-with-sublimeibus/</loc>
     <lastmod>2013-10-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://iberianpig.dev/posts/2013-10-26-first-commit/</loc>
+    <loc>https://blog.iberianpig.dev/posts/2013-10-26-first-commit/</loc>
     <lastmod>2013-10-26T00:00:00+00:00</lastmod>
   </url>
 </urlset>

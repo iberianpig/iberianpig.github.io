@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>API on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/api/</link>
+    <link>https://blog.iberianpig.dev/tags/api/</link>
     <description>Recent content in API on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 08 Aug 2016 06:32:00 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Aug 2016 06:32:00 +0900</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>プロトタイピングのためのスタブAPIサーバ</title>
-      <link>https://iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</link>
+      <link>https://blog.iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</link>
       <pubDate>Mon, 08 Aug 2016 06:32:00 +0900</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2016-08-08_stub_api_for_prototyping/</guid>
       <description>APIサーバが出来てない、 もしくはAPIサーバが外部サーバのため開発、テストへ利用しづらい時にスタブのAPIサーバを作る。
 外部のAPIサーバのように振る舞うサーバをlocalhost上に作る。
 何がうれしいのか リクエストを送るとほしいレスポンスが帰ってくるので、 APIサーバがなくてもクライアント側の開発に専念できる。

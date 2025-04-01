@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>angualrjs on iberianpigsty</title>
-    <link>https://iberianpig.dev/tags/angualrjs/</link>
+    <link>https://blog.iberianpig.dev/tags/angualrjs/</link>
     <description>Recent content in angualrjs on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Sat, 21 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://iberianpig.dev/tags/angualrjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.iberianpig.dev/tags/angualrjs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ng-japan</title>
-      <link>https://iberianpig.dev/posts/2015-03-21-ng-japan/</link>
+      <link>https://blog.iberianpig.dev/posts/2015-03-21-ng-japan/</link>
       <pubDate>Sat, 21 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.dev/posts/2015-03-21-ng-japan/</guid>
+      <guid>https://blog.iberianpig.dev/posts/2015-03-21-ng-japan/</guid>
       <description>Angualrjsの日本初のカンファレンスng-japan2015 が渋谷で2015/03/21にあったので行って来た。
 場所はサイバーエージェント。以前参加した勉強会もここでやってた気がする。
 毎度の通り、最初の1個目のセッションはあんまり聞けなかった。
