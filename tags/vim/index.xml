@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/vim/</link>
+    <link>https://iberianpig.dev/tags/vim/</link>
     <description>Recent content in Vim on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Mon, 20 Nov 2023 10:35:11 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Nov 2023 10:35:11 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VimConf 2023 Tinyに行ってきた</title>
-      <link>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link>
+      <link>https://iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</link>
       <pubDate>Mon, 20 Nov 2023 10:35:11 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
+      <guid>https://iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/</guid>
       <description>2023年11月18日、秋葉原で開催されたVimConf 2023 Tinyに参加してきました。
 https://vimconf.org/2023/
  VimConfが4年ぶりに帰ってくる! VimConf は、世界初かつ世界で唯一のコミュニティによって定期運営されているVimの国際カンファレンスです。
@@ -31,10 +31,10 @@ Vim / NeoVim &amp;lt;&amp;ndash;&amp;gt; denops のやりとりはそれぞれJS
     
     <item>
       <title>tig-explorer.vimの使い方</title>
-      <link>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</link>
+      <link>https://iberianpig.dev/posts/2019-04-30_how-to-use-tig-explorer.vim/</link>
       <pubDate>Tue, 30 Apr 2019 23:57:45 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2019-04-30_how-to-use-tig-explorer.vim/</guid>
+      <guid>https://iberianpig.dev/posts/2019-04-30_how-to-use-tig-explorer.vim/</guid>
       <description>Vim用のGitクライアントが欲しかった vimのGitプラグインとして何を使っているのが多いだろうか？
 自分の観測範囲ではfugitiveを使っている人が多いようだ。
 しかし、ターミナルではCUIツールで高速なプレビューの出来るtigをGitクライアントとして利用している人は多いのではないだろうか。
@@ -58,10 +58,10 @@ let g:tig_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:tig_
     
     <item>
       <title>ranger-explorer.vimをアップデートした</title>
-      <link>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</link>
+      <link>https://iberianpig.dev/posts/2018-09-02_make_ranger-explorer.vim/</link>
       <pubDate>Sun, 02 Sep 2018 00:05:21 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2018-09-02_make_ranger-explorer.vim/</guid>
+      <guid>https://iberianpig.dev/posts/2018-09-02_make_ranger-explorer.vim/</guid>
       <description>ranger-explorer.vimというVimプラグインをアップデートした。
 このアップデートでranger上の操作でVimのタブで開くか画面分割して開くかを選択できるようにした。
 (あとNeovimもサポートした)
@@ -83,10 +83,10 @@ let g:ranger_explorer_keymap_edit = &amp;#39;&amp;lt;C-o&amp;gt;&amp;#39;let g:r
     
     <item>
       <title>ソースコードを読む</title>
-      <link>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link>
+      <link>https://iberianpig.dev/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</link>
       <pubDate>Mon, 11 Jul 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid>
+      <guid>https://iberianpig.dev/posts/2016-07-11-%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E8%AA%AD%E3%82%80/</guid>
       <description>エンジニアとなり、RubyやRailsのプログラムを読み書きするようになって2年経った。 ソースコードを読む時のワークフローについて考えてみた時に、他人がどのようにソースを読んでいるのが気になった。
 どのようにソースを読み、どのように理解するのか、一般解を知る前にまずは自分の方法を整理してみることにした。
 ソースを読むメリット  間違いがない APIドキュメントから漏れていること、内部仕様もわかったり StackOverFllowに惑わされない 結果的に迷う時間の短縮  必要なモノ  気合 根性 pry bundle open IDE、Ctagsが使えるエディタ(Emacs, Vim, etc)  定義元ジャンプができればOK   言語、フレームワークの公式リファレンス(http://devdocs.io)  武器の使いドコロ 気合 Googleへ逃げず、ソースを読むという決断をするのために必要
@@ -100,10 +100,10 @@ Rubyのコードは実行時でないと、正しい呼び出し元がわから�
     
     <item>
       <title>insert-modeでvimのカーソルキー形状を変えて幸せになる(gnome-terminalの場合)</title>
-      <link>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
+      <link>https://iberianpig.dev/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</link>
       <pubDate>Sun, 19 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
+      <guid>https://iberianpig.dev/posts/2015-04-19-insert-mode%E3%81%A7vim%E3%81%AE%E3%82%AB%E3%83%BC%E3%82%BD%E3%83%AB%E3%82%AD%E3%83%BC%E5%BD%A2%E7%8A%B6%E3%82%92%E5%A4%89%E3%81%88%E3%81%A6%E5%B9%B8%E3%81%9B%E3%81%AB%E3%81%AA%E3%82%8B/</guid>
       <description>Command/Normalモードを間違う 問題はこれ。
 頻繁にどちらのモードかを勘違いしてしまってタイプミスをしてしまう。
 自分はgnome-terminal上でVimを使っている。tmuxなどターミナルマルチプレクサとの共存が必要だからだ。
@@ -118,20 +118,20 @@ gVimではカーソル形状が矩形と&#39;｜&#39;が切り替わるのだが
     
     <item>
       <title>vimで折りたたみしないようにする</title>
-      <link>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
+      <link>https://iberianpig.dev/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</link>
       <pubDate>Thu, 11 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
+      <guid>https://iberianpig.dev/posts/2014-09-11-vim%E3%81%A7%E6%8A%98%E3%82%8A%E3%81%9F%E3%81%9F%E3%81%BF%E3%81%97%E3%81%AA%E3%81%84%E3%82%88%E3%81%86%E3%81%AB%E3%81%99%E3%82%8B/</guid>
       <description>Vimの折りたたみをしない設定 いつも+++とかrspecをvim上で表示したり、markdownでブログ書いたりとかしてる時に 毎回折りたたみ開くのが面倒だったので、いっそ折りたたみしないことにした。
 set foldmethod=syntax let perl_fold=1 set foldlevel=100 special thanks vimの折りたたみ設定</description>
     </item>
     
     <item>
       <title>vim-surround</title>
-      <link>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</link>
+      <link>https://iberianpig.dev/posts/2014-09-02-vim-surround/</link>
       <pubDate>Tue, 02 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2014-09-02-vim-surround/</guid>
+      <guid>https://iberianpig.dev/posts/2014-09-02-vim-surround/</guid>
       <description>テキストオブジェクトを利用してその周りを囲ったり、周りについてるクォーテーション、括弧を一発でつけたり外したりできる
 すぐに忘れてしまうのでメモ
 よく使うコマンド    コマンド 実行内容     cs({ (を{に置き換える   csw&amp;quot; 単語の外側を&amp;quot;で囲む   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に   ci&amp;quot; &amp;quot;で囲われた部分を消去し、入力状態に    いつも忘れるコマンド    コマンド 実行内容     dst tagで囲われた部分を消去   yss&amp;quot; &amp;quot;で行を囲む   yss= &amp;lt;%=で行を囲む(vim-rails必須)   yss- &amp;lt;%で行を囲む(vim-rails必須)   dst tagで囲われた部分を消去   選択状態でS&amp;quot; &amp;quot;で選択範囲を囲む    </description>

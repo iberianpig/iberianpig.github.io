@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>elementaryOS on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/elementaryos/</link>
+    <link>https://iberianpig.dev/tags/elementaryos/</link>
     <description>Recent content in elementaryOS on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Tue, 14 May 2019 15:38:04 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/elementaryos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 May 2019 15:38:04 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/elementaryos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upgrade to elementary OS 5.0 Juno</title>
-      <link>https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</link>
+      <link>https://iberianpig.dev/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</link>
       <pubDate>Tue, 14 May 2019 15:38:04 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</guid>
+      <guid>https://iberianpig.dev/posts/2019-05-14_upgrade_to_elementary_os_5.0_juno/</guid>
       <description>下書きが2019-05-14T15:38:04+09:00 となっているので1年以上塩漬けされた記事である😨 (2020/06/05)
 elementary OSはUIが綺麗でかつ動作も軽快なので、5年ほど愛用している。今回、新バージョンの5.0Junoが出てしばらく経っていたのでアップグレードすることにした。
  Unetbootinを利用してelementary OS Junoにアップグレードする。
@@ -30,10 +30,10 @@ ansible-playbook ~/.config/ansible/playbook.yml -K インストールしたア�
     
     <item>
       <title>elementary OS freyaへのアップグレード時のメモ（elementaryOS lunaから）</title>
-      <link>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
+      <link>https://iberianpig.dev/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</link>
       <pubDate>Sat, 15 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
+      <guid>https://iberianpig.dev/posts/2015-08-15-elementary-os-luna-upgrade-to-freya/</guid>
       <description>lunaからのアップグレードはアップデートマネージャなどのGUIでは提供されていない 新たにインストールディスクを作成し、上書きでのインストールを行う。(むしろこの方法を推奨していた) lunaのインストール時に/homeと/パーティションを分けて管理していたので、/homeを残して/をすべて入れ替える。 /homeと/(root)パーティションがGparted上で /dev/sda1, /dev/sda2等、どれに割り当てられるかを確認  (install時にこれらを割り当てするときに間違えなようにメモしておく)   elementaryOS freyaのイメージをダウンロード(https://elementary.io) UnetbootInでのインストールディスクを作成(今回は8GBのUSBメモリに作成) 起動時にBIOS画面でF8を押してUSBディスクからブートさせる。Install elementaryOSを選択  パッケージのインストール 各種リポジトリの追加 sudo man add-apt-repository sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily sudo add-apt-repository ppa:numix/ppa sudo add-apt-repository ppa:webupd8team/atom sudo apt-get update &amp;amp;&amp;amp; sudo apt-get upgrade sudo add-apt-repository -y ppa:aguignard/ppa sudo add-apt-repository -y ppa:pi-rho/dev sudo add-apt-repository -y ppa:git-core/ppa elementary-tweaks のインストール アイコンやフォント、アニメーションなどの外観の設定やドッグの設定ができる
 sudo apt-get install elementary-tweaks numixのiconセットのインストール sudo apt-get install numix-* numix-circleを適用
 Arc-themeのインストール sudo sh -c &amp;#34;echo &amp;#39;deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_15.04/ /&amp;#39; &amp;gt;&amp;gt; /etc/apt/sources.</description>
@@ -41,10 +41,10 @@ Arc-themeのインストール sudo sh -c &amp;#34;echo &amp;#39;deb http://down
     
     <item>
       <title>MySQL WorkbenchでQueryの結果が表示されない問題</title>
-      <link>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link>
+      <link>https://iberianpig.dev/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</link>
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid>
+      <guid>https://iberianpig.dev/posts/2015-06-21-mysql-workbench-on-elementary-os-freya/</guid>
       <description>elementaryOS freya(Ubuntu14.04ベース)で問題が起きた。
 MySQLはUbuntuのリポジトリにあるものでも依存関係で問題は合ったり、直接Oracleから落としても上手く動かないことも合ったりしたのであまり驚かない。 (またお前か程度) しかしながら毎度踏みまくるので、ブログなりに記録していかないと、再度環境構築した際に面倒なのでメモ書き。
 具体的には以下のような症状。
@@ -61,10 +61,10 @@ special thanks  reddit  launchpad   </description>
     
     <item>
       <title>Linuxでブルーライトフィルタ そして快眠へ...</title>
-      <link>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
+      <link>https://iberianpig.dev/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</link>
       <pubDate>Sun, 31 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
+      <guid>https://iberianpig.dev/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/</guid>
       <description>毎日趣味や作業でPCと対面するため、目の疲れや夜の寝不足と行ったことからは免れられない。
 少しでも目への負荷を軽減させるべく、なるべく夜はPCを利用しない、利用時間を短くするなどあるが、現実問題難しい。
 いくつか対策を考える。
@@ -93,10 +93,10 @@ Redshiftの起動と設定 redshift-gtkを実行させると、パネル上に�
     
     <item>
       <title>Elementary OS freyaでハイバネートオプションを追加する</title>
-      <link>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</link>
+      <link>https://iberianpig.dev/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</link>
       <pubDate>Mon, 04 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</guid>
+      <guid>https://iberianpig.dev/posts/2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B/</guid>
       <description>少し前からElementaryOSの最新版Freyaを使っている。
 電源周りで少し手こずったので、備忘録として残しておく。
 インストール後にやったことはまた今度まとめる。

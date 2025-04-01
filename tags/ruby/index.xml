@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ruby on iberianpigsty</title>
-    <link>https://iberianpig.github.io/tags/ruby/</link>
+    <link>https://iberianpig.dev/tags/ruby/</link>
     <description>Recent content in ruby on iberianpigsty</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <copyright>Copyright (c) iberianpigsty; all rights reserved.</copyright>
-    <lastBuildDate>Wed, 06 Sep 2023 09:19:50 +0900</lastBuildDate><atom:link href="https://iberianpig.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Sep 2023 09:19:50 +0900</lastBuildDate><atom:link href="https://iberianpig.dev/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>キーボードとタッチパッドをシームレスに統合するThumbSense</title>
-      <link>https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</link>
+      <link>https://iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</link>
       <pubDate>Wed, 06 Sep 2023 09:19:50 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</guid>
+      <guid>https://iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/</guid>
       <description>ThumbSenseとは？ ThumbSenseは、タッチパッドとキーボードをシームレスに統合することで、操作感を向上させる革新的なソフトウェア。 ユーザーは指（親指）がタッチパッドに触れているかを基準に仮想キーボードのレイヤーが自動的に切り替わり、キーボードをマウスボタンのように利用できる。 タッチパッドとキーボード間の移動が最小限に抑えられ、スムーズな操作が可能になる。 ThumbSenseの革新的なアプローチ   ThumbSenseは、2003年にSony CSLの暦本氏がWindows向けに開発したソフトウェア(https://www2.sonycsl.co.jp/person/rekimoto/tsense/soft/index.html)
  タッチパッドに触れているかどうかに基づいてキーボードのレイヤーを自動的に切り替えを行うことで、キーボードのキーをマウスボタンとして使用できるようになり、操作の移動を最小限に抑えることでキーボードとタッチパッド間のシームレスな操作が可能となる    オリジナルが発表されてから20年経っているが、この間のRubyKaigi 2023でLinux向けのThumbSenseをリリースした
- タッチパッドジェスチャ認識アプリのFusumaのプラグインとして実装されている(https://github.com/iberianpig/fusuma-plugin-thumbsense) RubyKaigi2023の記事(https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/)    タッチパッドとキーボードを一つのデバイスとして扱う ThumbSenseは指（親指）がタッチパッドに触れているかどうかで、特定のキーがマウスボタンとして機能するか、通常のキーボードキーとして機能するかを切り替える。
+ タッチパッドジェスチャ認識アプリのFusumaのプラグインとして実装されている(https://github.com/iberianpig/fusuma-plugin-thumbsense) RubyKaigi2023の記事(https://iberianpig.dev/posts/2023-05-17_rubykaigi2023/)    タッチパッドとキーボードを一つのデバイスとして扱う ThumbSenseは指（親指）がタッチパッドに触れているかどうかで、特定のキーがマウスボタンとして機能するか、通常のキーボードキーとして機能するかを切り替える。
 ThumbSenseを使用すると、同じ指でポインタを移動し、クリックする際の操作感が大きく変わる。具体的には、以下のステップで操作が行われる。
  指でタッチパッドにふれる(親指でも、どちらかの指をホームポジションからずらしてもよい) FキーやJキーを使ってクリック。  タッチパッドのクリックボタンの操作に近いが、キーボード上のホームポジションにある指を使えることにメリットがあり、シングルタップによるクリック操作と比べて移動とクリックの操作が分離されるため、通常のタッチパッド操作よりスムーズな操作感が得られる。
 また、Thumbsense利用時はtap to clickというタッチパッド上のシングルタップでクリックする機能をオフにすることをオススメする。 タップではなくF/Jにクリック操作を任せるためなのだが、副次的に文字入力中にカーソルが意図せず飛ぶ誤爆が防げるようになるメリットがある。 ちなみにlibinputやsyclientにDisable-while-typingという入力中のタップ操作を防止したり、手のひら検知して除外する機能が存在するが、それだけで完全に誤入力が防げるわけではないので、オフにしたほうが体験が良い。
@@ -29,10 +29,10 @@ $ sudo gpasswd -a $USER input # inputグループに$USERを追加 (一度ログ
     
     <item>
       <title>RubyKaigi 2023に登壇してFusumaについて話した</title>
-      <link>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</link>
+      <link>https://iberianpig.dev/posts/2023-05-17_rubykaigi2023/</link>
       <pubDate>Wed, 17 May 2023 09:19:06 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/</guid>
+      <guid>https://iberianpig.dev/posts/2023-05-17_rubykaigi2023/</guid>
       <description>RubyKaigi 2023 RubyKaigi2023で登壇してFusumaについて話した。
 CFPを出したら通過してしまい、まだまだ先の話だと思っていたら、あっという間に当日が来てしまった。
 資料づくりがままならないのに途中でGem入れたほうが面白いだろうなと思ってしまったのが良くなかった。 新しくGemをこしらえてきたのだけれど、ギリギリの発表10分前に2つリリースすることになるとは思ってもみなかった。 結果fusuma本体が落ちるバグ入りプラグインをリリースをしてしまい、その後すぐに修正した。余裕を持ったスケジュールが大事。
@@ -56,10 +56,10 @@ YouTubeにアーカイブがあがってました。
     
     <item>
       <title>Linux用マルチタッチジェスチャのFusumaがv2にアップデート</title>
-      <link>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</link>
+      <link>https://iberianpig.dev/posts/2021-04-26_introducing_new_fusuma_2_features/</link>
       <pubDate>Mon, 26 Apr 2021 22:05:57 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2021-04-26_introducing_new_fusuma_2_features/</guid>
+      <guid>https://iberianpig.dev/posts/2021-04-26_introducing_new_fusuma_2_features/</guid>
       <description>Linux向けのマルチタッチジェスチャツールのFusumaがv2にバージョンアップした。 新たにジェスチャの設定項目が充実して、細かいところに手が届くようになった。
  Fusuma v2のアップデートの概要 Fusuma v2ではマルチプロセス化、I/O多重化、継続ジェスチャ、contextに応じた設定の切り替えなど、 色々とアップデートが入った結果、以下のような機能が実現できるようになった。
  アプリ固有のジェスチャ設定(fusuma-plugin-appmatcher) Mac OSスタイルの3本指ドラッグ Windowsスタイルの3本指スワイプでのウィンドウ切り替え スワイプ/ローテートによる音量調整・輝度変更  動作確認した環境 この記事内での設定はDELL XPS 13 9310上のUbuntu 20.04(X11/Gnome-shell)で動作確認している。 利用しているディストリビューションやデスクトップ環境に応じてショートカットキーなどは適宜読み替えて欲しい。
@@ -71,10 +71,10 @@ $ sudo gem update fusuma インストール済みのFusumaプラグインがあ�
     
     <item>
       <title>2019/04/28 最近読んだ記事</title>
-      <link>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link>
+      <link>https://iberianpig.dev/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</link>
       <pubDate>Sun, 28 Apr 2019 17:55:22 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid>
+      <guid>https://iberianpig.dev/posts/2019-04-28_%E6%9C%80%E8%BF%91%E8%AA%AD%E3%82%93%E3%81%A0%E8%A8%98%E4%BA%8B/</guid>
       <description>Ruby FFIについて  https://github.com/ffi/ffi
 RubyからCの関数を呼び出すことが出来る代物。 内部でlibffiというライブラリを経由してRubyからCをコールする。
 ↓ FFIを使って作成されたプロジェクト一覧
@@ -94,10 +94,10 @@ GIFのようにワークスペースの移動が出来ている。fusuma-plugins
     
     <item>
       <title>Fusumaのインストールと設定</title>
-      <link>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</link>
+      <link>https://iberianpig.dev/posts/2019-02-22_cusomize_fusuma/</link>
       <pubDate>Fri, 22 Feb 2019 23:07:09 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/</guid>
+      <guid>https://iberianpig.dev/posts/2019-02-22_cusomize_fusuma/</guid>
       <description>Linux上でタッチパッド上のジェスチャーをカスタマイズ出来るFusumaというライブラリをRubyGems公開している。 日本語の記事もあまりないので、使い方やカスタマイズの記事を書いてみることにした。
  RubyGemsにライブラリを公開した時の記事⇓
  Fusumaのインストール Debian系を利用しているOS(パッケージ管理にaptを利用している)なら下記のapt install等のコマンドはそのまま利用できるはず。
@@ -117,10 +117,10 @@ $ mkdir -p ~/.config/fusuma $ touch ~/.config/fusuma/config.yml エディタで~
     
     <item>
       <title>Linuxでマルチタッチのジェスチャにショートカットを割り当てるFusumaというGemを作った</title>
-      <link>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</link>
+      <link>https://iberianpig.dev/posts/2017-05-14_multi-touch-on-linux/</link>
       <pubDate>Sun, 14 May 2017 17:27:59 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/</guid>
+      <guid>https://iberianpig.dev/posts/2017-05-14_multi-touch-on-linux/</guid>
       <description>linuxのマルチタッチのジェスチャを認識して任意のスクリプトを実行するプログラムを作った。
 https://github.com/iberianpig/fusuma
 Fusumaという名前でRubyGemsに公開した。
@@ -140,10 +140,10 @@ swipe: 3: left: command: &#39;xdotool key alt+Right&#39; right: command: &#39;xd
     
     <item>
       <title>Amazon Dash Buttonで出社する</title>
-      <link>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link>
+      <link>https://iberianpig.dev/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</link>
       <pubDate>Sun, 18 Dec 2016 00:31:31 +0900</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid>
+      <guid>https://iberianpig.dev/posts/2016-12-18-%E3%82%A2%E3%83%9E%E3%82%BE%E3%83%B3%E3%83%80%E3%83%83%E3%82%B7%E3%83%A5%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%A7%E5%87%BA%E7%A4%BE/</guid>
       <description>この記事は出社芸アドベントカレンダーの18日目の記事です。
  今日のアドベントカレンダーに登録した。
 現在0:31。あと23時間半くらいある！　余裕だね！　ちなみに夜開いてる喫茶店がなかったのでこの記事はHUBで書いてる。すごくうるさい。
@@ -175,10 +175,10 @@ Amazon Dash Button ---&amp;gt; LocalServer ---&amp;gt; IFTTT ---&amp;gt; Slack I
     
     <item>
       <title>自動でコミットメッセージの先頭にIssueIDを付与するGithookの作り方</title>
-      <link>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
+      <link>https://iberianpig.dev/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</link>
       <pubDate>Tue, 18 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://iberianpig.github.io/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
+      <guid>https://iberianpig.dev/posts/2015-08-18-issueid_xxxx%E3%81%AA%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E5%90%8D%E3%81%AE%E6%99%82%E3%81%AB%E8%87%AA%E5%8B%95%E3%81%A7%E3%82%B3%E3%83%9F%E3%83%83%E3%83%88%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%85%88%E9%A0%AD%E3%81%ABissueid%E3%82%92%E4%BB%98%E4%B8%8E%E3%81%99%E3%82%8Bruby%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/</guid>
       <description>&lt;p&gt;なぜこんなことがやりたいかというと、&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;スクラムでのタスク管理にPivotalTracker(&lt;a href=&#34;http://www.pivotaltracker.com&#34;&gt;http://www.pivotaltracker.com&lt;/a&gt;)を利用していて、ストーリーと呼ばれるチケットにはIDが付与される&lt;/li&gt;

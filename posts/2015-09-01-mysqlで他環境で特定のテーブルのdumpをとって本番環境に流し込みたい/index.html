@@ -6,24 +6,24 @@
 <link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
 <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css integrity=sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk crossorigin=anonymous>
 <link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
-<link rel=stylesheet href=https://iberianpig.github.io/css/styles.css>
-<link rel=stylesheet href=https://iberianpig.github.io/css/custom.css>
-<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.github.io/index.xml>
+<link rel=stylesheet href=https://iberianpig.dev/css/styles.css>
+<link rel=stylesheet href=https://iberianpig.dev/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://iberianpig.dev/index.xml>
 <title>mysqlで特定のテーブルのDumpをのみ取得する - iberianpigsty</title>
 <meta property="og:title" content="mysqlで特定のテーブルのDumpをのみ取得する - iberianpigsty">
-<meta property="og:url" content="https://iberianpig.github.io/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/">
+<meta property="og:url" content="https://iberianpig.dev/posts/2015-09-01-mysql%E3%81%A7%E4%BB%96%E7%92%B0%E5%A2%83%E3%81%A7%E7%89%B9%E5%AE%9A%E3%81%AE%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AEdump%E3%82%92%E3%81%A8%E3%81%A3%E3%81%A6%E6%9C%AC%E7%95%AA%E7%92%B0%E5%A2%83%E3%81%AB%E6%B5%81%E3%81%97%E8%BE%BC%E3%81%BF%E3%81%9F%E3%81%84/">
 <meta property="og:image" content="https://i.gyazo.com/1717a969e7fde1fc4f0b2c4ca28de192.png">
 <meta name=twitter:card content="summary">
 <meta name=twitter:site content="@nukumaro22">
 <meta name=twitter:creator content="@nukumaro22">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.github.io\/"},"headline":"mysqlで特定のテーブルのDumpをのみ取得する |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2016-01-23T00:00:00JST","dateModified":"2016-01-23T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.github.io\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.github.io\/images/logo.png","height":60,"width":60}},"description":""}</script>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/iberianpig.dev\/"},"headline":"mysqlで特定のテーブルのDumpをのみ取得する |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2016-01-23T00:00:00JST","dateModified":"2016-01-23T00:00:00JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/iberianpig.dev\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/iberianpig.dev\/images/logo.png","height":60,"width":60}},"description":""}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8G6M9151B3"></script>
 <script src=https://kit.fontawesome.com/13953638e7.js></script>
 </head>
 <body>
 <header class=l-header>
 <div class=p-logo>
-<a href=https://iberianpig.github.io/>iberianpigsty</a>
+<a href=https://iberianpig.dev/>iberianpigsty</a>
 </div>
 </header>
 <div class=container>
@@ -38,15 +38,15 @@
 </div>
 <nav>
 <ul class=terms>
-<li><a href=https://iberianpig.github.io/tags/rails/>#Rails</a></li><li><a href=https://iberianpig.github.io/tags/sql/>#sql</a></li>
+<li><a href=https://iberianpig.dev/tags/rails/>#Rails</a></li><li><a href=https://iberianpig.dev/tags/sql/>#sql</a></li>
 </ul>
 </nav>
 <aside class=p-share>
 <div class=share-inner>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&text=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&t=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&text=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&t=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
 </div>
 </aside>
 <div class=content>
@@ -80,10 +80,10 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 </div>
 <aside class=p-share>
 <div class=share-inner>
-<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&text=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
-<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&t=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
-<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
-<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.github.io%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&text=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&t=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fiberianpig.dev%2fposts%2f2015-09-01-mysql%25E3%2581%25A7%25E4%25BB%2596%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25A7%25E7%2589%25B9%25E5%25AE%259A%25E3%2581%25AE%25E3%2583%2586%25E3%2583%25BC%25E3%2583%2596%25E3%2583%25AB%25E3%2581%25AEdump%25E3%2582%2592%25E3%2581%25A8%25E3%2581%25A3%25E3%2581%25A6%25E6%259C%25AC%25E7%2595%25AA%25E7%2592%25B0%25E5%25A2%2583%25E3%2581%25AB%25E6%25B5%2581%25E3%2581%2597%25E8%25BE%25BC%25E3%2581%25BF%25E3%2581%259F%25E3%2581%2584%2f&title=mysql%e3%81%a7%e7%89%b9%e5%ae%9a%e3%81%ae%e3%83%86%e3%83%bc%e3%83%96%e3%83%ab%e3%81%aeDump%e3%82%92%e3%81%ae%e3%81%bf%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
 </div>
 </aside>
 </div>
@@ -98,7 +98,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
-<a href=https://iberianpig.github.io/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
+<a href=https://iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
 <footer>
 <div class=date>
@@ -109,7 +109,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 </a>
 </article>
 <article class=li>
-<a href=https://iberianpig.github.io/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<a href=https://iberianpig.dev/posts/2024-03-11_migrate_from_authy/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
 <footer>
 <div class=date>
@@ -120,7 +120,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 </a>
 </article>
 <article class=li>
-<a href=https://iberianpig.github.io/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<a href=https://iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
 <footer>
 <div class=date>
@@ -131,7 +131,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 </a>
 </article>
 <article class=li>
-<a href=https://iberianpig.github.io/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<a href=https://iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
 <footer>
 <div class=date>
@@ -142,7 +142,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 </a>
 </article>
 <article class=li>
-<a href=https://iberianpig.github.io/posts/2023-05-17_rubykaigi2023/ class=clearfix>
+<a href=https://iberianpig.dev/posts/2023-05-17_rubykaigi2023/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
 <footer>
 <div class=date>
@@ -158,7 +158,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 <header class=taxonomies__header>tag</header>
 <div class=taxonomies__body>
 <ul>
-<li><a href=https://iberianpig.github.io/tags/linux/>linux</a></li><li><a href=https://iberianpig.github.io/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.github.io/tags/vim/>vim</a></li><li><a href=https://iberianpig.github.io/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.github.io/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.github.io/tags/rails/>rails</a></li><li><a href=https://iberianpig.github.io/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.github.io/tags/git/>git</a></li><li><a href=https://iberianpig.github.io/tags/android/>android</a></li><li><a href=https://iberianpig.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://iberianpig.dev/tags/linux/>linux</a></li><li><a href=https://iberianpig.dev/tags/ruby/>ruby</a></li><li><a href=https://iberianpig.dev/tags/vim/>vim</a></li><li><a href=https://iberianpig.dev/tags/libinput/>libinput</a></li><li><a href=https://iberianpig.dev/tags/elementaryos/>elementaryos</a></li><li><a href=https://iberianpig.dev/tags/rails/>rails</a></li><li><a href=https://iberianpig.dev/tags/ubuntu/>ubuntu</a></li><li><a href=https://iberianpig.dev/tags/git/>git</a></li><li><a href=https://iberianpig.dev/tags/android/>android</a></li><li><a href=https://iberianpig.dev/tags/javascript/>javascript</a></li>
 </ul>
 </div>
 </section>
@@ -199,7 +199,7 @@ db:seed_fuで使えるseedデータがdb/fixtures内に生成される。</p>
 <script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script>
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js integrity=sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI crossorigin=anonymous></script>
 <script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
-<script data-no-instant src=https://iberianpig.github.io/javascripts/instantclick.min.js></script>
+<script data-no-instant src=https://iberianpig.dev/javascripts/instantclick.min.js></script>
 <script data-no-instant>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}InstantClick.on('change',function(a){gtag('js',new Date),gtag('config','G-8G6M9151B3',{page_location:location.href})}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.init()</script>
 </body>
 </html>
