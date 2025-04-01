@@ -21,7 +21,7 @@ Linux上でタッチパッド上のジェスチャーをカスタマイズ出来
 
 RubyGemsにライブラリを公開した時の記事⇓
 
-<div class="iframely-embed"><div class="iframely-responsive" style="height: 168px; padding-bottom: 0;"><a href="https://iberianpig.github.io/posts/2017-05-14_multi-touch-on-linux/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2017-05-14_multi-touch-on-linux%2F&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 168px; padding-bottom: 0;"><a href="https://iberianpig.dev/posts/2017-05-14_multi-touch-on-linux/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2017-05-14_multi-touch-on-linux%2F&key=f073c4f447189e73167146bd9d0f6195"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
 
 # Fusumaのインストール

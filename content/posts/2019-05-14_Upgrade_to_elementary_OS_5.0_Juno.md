@@ -120,7 +120,7 @@ ansible-playbook ~/.config/ansible/playbook.yml -K
  - [Fusuma](https://github.com/iberianpig/fusuma)
    - マルチタッチジェスチャ
    - gemコマンドでインストール。Rubyが必要。
-   - インストールとカスタマイズ方法(https://iberianpig.github.io/posts/2019-02-22_cusomize_fusuma/)
+   - インストールとカスタマイズ方法(https://iberianpig.dev/posts/2019-02-22_cusomize_fusuma/)
 
  - [Dropbox](https://www.dropbox.com/ja/install-linux)
    - デバイス間のファイル共有
@@ -222,7 +222,7 @@ GRUB_CMDLINE_LINUX=""
 
 ## hibernateオプションの設定
 
-<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://iberianpig.github.io/posts/2015-05-04-elementary-os-freya%25E3%2581%25A7%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2590%25E3%2583%258D%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25AA%25E3%2583%2597%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2582%2592%25E8%25BF%25BD%25E5%258A%25A0%25E3%2581%2599%25E3%2582%258B/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%2F&amp;key=f073c4f447189e73167146bd9d0f6195&amp;iframe=card-small"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+<div class="iframely-embed"><div class="iframely-responsive" style="height: 140px; padding-bottom: 0;"><a href="https://iberianpig.dev/posts/2015-05-04-elementary-os-freya%25E3%2581%25A7%25E3%2583%258F%25E3%2582%25A4%25E3%2583%2590%25E3%2583%258D%25E3%2583%25BC%25E3%2583%2588%25E3%2582%25AA%25E3%2583%2597%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%25E3%2582%2592%25E8%25BF%25BD%25E5%258A%25A0%25E3%2581%2599%25E3%2582%258B/" data-iframely-url="//cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fiberianpig.github.io%2Fposts%2F2015-05-04-elementary-os-freya%E3%81%A7%E3%83%8F%E3%82%A4%E3%83%90%E3%83%8D%E3%83%BC%E3%83%88%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%2F&amp;key=f073c4f447189e73167146bd9d0f6195&amp;iframe=card-small"></a></div></div><script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
 
 以前の方法のとおりだと上手くいかずにハマった。  
 `resume=UUID=9844e045-cffd-4fac-806d-9b1f3f430edf`のように必ず、**UUID**で指定をすること。
