@@ -15,7 +15,7 @@
       
       <guid>https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/</guid>
       <description>Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにリマップできるようになった。
-登壇資料 Fukuoka.rb #397 〜RubyKaigi 2025の機運〜 - connpassでLTしてきました。
+登壇資料 Fukuoka.rb #397 〜RubyKaigi 2025の機運〜でLTしてきました。
  HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置くだけでタッチを検出できるようにした。
 取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、事前にHID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。
 HidAPIのバインディングライブラリをいくつか試したが期待通りに動作しなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。
