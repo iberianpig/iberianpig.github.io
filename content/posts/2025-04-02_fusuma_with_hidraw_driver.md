@@ -11,9 +11,7 @@ image: "https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png"
 description: "HHKB StudioのポインティングスティックでThumbsenseを利用するため、HIDRawドライバを用いたFusumaプラグインを書きました"
 ---
 
-Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにするようにした。
-
-
+Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにリマップできるようになった。
 
 
 # 登壇資料
