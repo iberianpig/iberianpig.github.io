@@ -62,7 +62,7 @@
 <h1 id=実装内容>実装内容</h1>
 <p><a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4><img src=https://i.gyazo.com/de822307748283960c2ea576655338c3.png alt=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4></a>
 ↑はポインティングスティックからタッチイベントを取得するPR(<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4>https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4</a>)</p>
-<p>SB接続時とは異なり、Bluetooth接続時は同一デバイス上でキーボードとポインティングデバイスの両方が通信に乗ってくるため、report_id分のバイト列の有無や不要なバイト列を読み飛ばす処理が必要となり、その結果パーサーを2種類に分割する実装となっている。</p>
+<p>USB接続時とは異なり、Bluetooth接続時は同一デバイス上でキーボードとポインティングデバイスの両方が通信に乗ってくるため、report_id分のバイト列の有無や不要なバイト列を読み飛ばす処理が必要となり、その結果パーサーを2種類に分割する実装となっている。</p>
 <h1 id=課題など>課題など</h1>
 <p>ちゃんと汎用ドライバのようにやるにはHID Report Descriptorから動的に構造体を作ってHIDレポートをデコードする必要がある。すると色々なデバイスで同じようにイベントがパースできるようになり、ThinkPadのトラックポイントやトラックボールなども対応が簡単になる。</p>
 <p>Fusuma側のリマップ処理については、fusuma-plugin-remapにおいて、evdevで物理デバイスからイベントをgrabし排他制御を行った上で、uinputにより作成された仮想デバイスへイベントを書き換えるプロキシが実装されている。</p>
