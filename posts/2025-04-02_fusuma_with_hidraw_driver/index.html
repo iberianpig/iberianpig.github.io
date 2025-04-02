@@ -56,19 +56,19 @@
 <h1 id=登壇資料>登壇資料</h1>
 <p><a href=https://fukuokarb.connpass.com/event/345164/>Fukuoka.rb #397 〜RubyKaigi 2025の機運〜 - connpass</a>でLTしてきました。</p>
 <iframe class=speakerdeck-iframe frameborder=0 src=https://speakerdeck.com/player/52e19275d015488a838d43452dd8c730 title="RubyKaigiで手に入れた HHKB Studioのための HIDRawドライバ" allowfullscreen style="border:0;background:padding-box padding-box rgba(0,0,0,.1);margin:0;padding:0;border-radius:6px;box-shadow:rgba(0,0,0,.2)0 5px 40px;width:100%;height:auto;aspect-ratio:560/315" data-ratio=1.7777777777777777></iframe>
-<p>HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置いたときにタッチを検出できるようにした。</p>
-<p>取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、HID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。</p>
-<p>HidAPIのバインディングライブラリを使おうと考えたが、どれもまともに動かなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。</p>
+<p>HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置くだけでタッチを検出できるようにした。</p>
+<p>取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、事前にHID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。</p>
+<p>HidAPIのバインディングライブラリをいくつか試したが期待通りに動作しなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。</p>
 <h1 id=実装内容>実装内容</h1>
 <p><a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4><img src=https://i.gyazo.com/de822307748283960c2ea576655338c3.png alt=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4></a>
 ↑はポインティングスティックからタッチイベントを取得するPR(<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4>https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4</a>)</p>
-<p>USB接続時と異なりBluetooth接続時には同じデバイスでキーボードとポインティングデバイスを混ぜてHIDの通信に乗ってくるので、report_id分のバイト列の有無や読み飛ばすなどの処理を入れることになったのでパーサーが2つに分かれている。</p>
+<p>SB接続時とは異なり、Bluetooth接続時は同一デバイス上でキーボードとポインティングデバイスの両方が通信に乗ってくるため、report_id分のバイト列の有無や不要なバイト列を読み飛ばす処理が必要となり、その結果パーサーを2種類に分割する実装となっている。</p>
 <h1 id=課題など>課題など</h1>
 <p>ちゃんと汎用ドライバのようにやるにはHID Report Descriptorから動的に構造体を作ってHIDレポートをデコードする必要がある。すると色々なデバイスで同じようにイベントがパースできるようになり、ThinkPadのトラックポイントやトラックボールなども対応が簡単になる。</p>
-<p>今の所リマップの処理部分はfusuma-plugin-remapではevdevでgrabして物理デバイスのイベントを排他制御しつつuinputで作った仮想デバイスにイベントを書き換えるプロキシが実装されている。</p>
+<p>Fusuma側のリマップ処理については、fusuma-plugin-remapにおいて、evdevで物理デバイスからイベントをgrabし排他制御を行った上で、uinputにより作成された仮想デバイスへイベントを書き換えるプロキシが実装されている。</p>
 <p>fusuma-plugin-remap自体にC拡張を使っているのでRubyを普段使わないユーザはOSのruby-devのパッケージとインストール時のビルドが必要になってしまったり、
 ユーザ側でデバイスファイルのパーミッション用のudevルールを作成する必要があったりする。</p>
-<p>このあたりの面倒事を軽減するにはX11やWayland(libinput + libei)上でリマップしてしまうか、 リマップ周りをeBPFを使ってカーネル空間に処理を移譲してしまって、フィルタリングやリマップをセキュアにやっていくのも面白そう。</p>
+<p>このあたりの面倒事を軽減するにはX11やWayland(libinput + libei)上でリマップしてしまうか、 リマップ周りをeBPFを使ってカーネル空間に処理を移譲してしまって、フィルタリングやリマップをセキュアに処理を移譲する手法もあったりしてどの辺りに進むかは検討中。</p>
 <p>またC拡張を使わずにPure Rubyでlibevdev/libinputなど自分が使う範囲だけ再実装しちゃうのも意外とできちゃうんじゃないかと思っていて、気分次第でどれかに進捗を出していきたい。</p>
 <p>自分が遊べる余白を残しながら他の人にも安定して使ってもらえるのはプラグイン化のメリットの一つだなと思う。</p>
 </div>
