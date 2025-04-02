@@ -16,7 +16,7 @@ Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張�
 
 # 登壇資料
 
-[Fukuoka.rb #397 〜RubyKaigi 2025の機運〜 - connpass](https://fukuokarb.connpass.com/event/345164/)でLTしてきました。
+[Fukuoka.rb #397 〜RubyKaigi 2025の機運〜](https://fukuokarb.connpass.com/event/345164/)でLTしてきました。
 <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/52e19275d015488a838d43452dd8c730" title="RubyKaigiで手に入れた HHKB Studioのための HIDRawドライバ" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 
 HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置くだけでタッチを検出できるようにした。
