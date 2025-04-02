@@ -33,6 +33,32 @@
 <div class=row>
 <div class=col-sm-6>
 <article class=grid>
+<a href=https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Apr 2, 2025</time>
+</div>
+<h2 class=title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h2>
+<div class=summary>Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにするようにした。
+登壇資料 Fukuoka.rb #397 〜RubyKaigi 2025の機運〜 - connpassでLTしてきました。
+HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置いたときにタッチを検出できるようにした。
+取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、HID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。
+HidAPIのバインディングライブラリを使おうと考えたが、どれもまともに動かなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。
+実装内容 ↑はポインティングスティックからタッチイベントを取得するPR(https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4)
+USB接続時と異なりBluetooth接続時には同じデバイスでキーボードとポインティングデバイスを混ぜてHIDの通信に乗ってくるので、report_id分のバイト列の有無や読み飛ばすなどの処理を入れることになったのでパーサーが2つに分かれている。
+課題など ちゃんと汎用ドライバのようにやるにはHID Report Descriptorから動的に構造体を作ってHIDレポートをデコードする必要がある。すると色々なデバイスで同じようにイベントがパースできるようになり、ThinkPadのトラックポイントやトラックボールなども対応が簡単になる。
+今の所リマップの処理部分はfusuma-plugin-remapではevdevでgrabして物理デバイスのイベントを排他制御しつつuinputで作った仮想デバイスにイベントを書き換えるプロキシが実装されている。
+fusuma-plugin-remap自体にC拡張を使っているのでRubyを普段使わないユーザはOSのruby-devのパッケージとインストール時のビルドが必要になってしまったり、 ユーザ側でデバイスファイルのパーミッション用のudevルールを作成する必要があったりする。
+このあたりの面倒事を軽減するにはX11やWayland(libinput + libei)上でリマップしてしまうか、 リマップ周りをeBPFを使ってカーネル空間に処理を移譲してしまって、フィルタリングやリマップをセキュアにやっていくのも面白そう。
+またC拡張を使わずにPure Rubyでlibevdev/libinputなど自分が使う範囲だけ再実装しちゃうのも意外とできちゃうんじゃないかと思っていて、気分次第でどれかに進捗を出していきたい。
+自分が遊べる余白を残しながら他の人にも安定して使ってもらえるのはプラグイン化のメリットの一つだなと思う。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-6>
+<article class=grid>
 <a href=https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/>
 <div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
 <footer>
@@ -103,7 +129,7 @@ Vim / NeoVim &lt;&ndash;> denops のやりとりはそれぞれJSON/MessagePack�
 </a>
 </article>
 </div>
-<div class=col-sm-6>
+<div class=col-sm-4>
 <article class=grid>
 <a href=https://blog.iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/>
 <div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
@@ -421,32 +447,6 @@ swipe: 3: left: command: 'xdotool key alt+Right' right: command: 'xdotool key al
 </a>
 </article>
 </div>
-<div class=col-sm-4>
-<article class=grid>
-<a href=https://blog.iberianpig.dev/posts/2017-02-06_how_to_upgrade_kernel/>
-<div class=image style=background-image:url(https://i.gyazo.com/f14af56a0f8f5f8f3fcbf8e5f90f71f9.png)></div>
-<footer>
-<div class=date>
-<div class=time>Mon, Feb 6, 2017</time>
-</div>
-<h2 class=title>Ubuntuのベースバージョンを変えずにLinuxカーネルをアップグレードする方法</h2>
-<div class=summary>環境のElementary OS 0.4 Lokiを利用しているが、カーネルのバージョンは4.4である。 4.4ではディスプレイ周りの不具合が多かったため、カーネルをアップグレードしたかった。 本記事の内容は、基本的にベースバージョンのUbuntu16.04でも同様と見てもらって構わない。
-ukuuによるカーネルのアップグレード ukuuというツールを使えば任意のkernelをインストール出来る
-リポジトリを追加する
-sudo apt-add-repository -y ppa:teejee2008/ppa ukuuのインストール
-sudo apt update && sudo apt install ukuu Ukuu Kernel Update Utilityというアプリを選択して起動(ukuuでターミナルから起動してもいい)
-カーネルのバージョンを選んでインストール出来る。インストールされたカーネルはローカルにキャッシュされていて、 キャッシュ済の場合バージョンを簡単に切り替えできる。
-記事執筆時点では4.9.8までインストール出来ることを確認した。 動作確認時に特に問題はないと思われたが、Fusumaが依存しているlibinput-debug-eventsのログにエラーが出ていた。 そのためukuuによるアップグレードではなく、後述するHWEカーネル用パッケージをインストールすることにした。
-HWEカーネル用パッケージのインストール HWEカーネルとは
-HWE（Hardware Enablement）カーネルは，より新しいハードウェアでもLTSを使えるように用意されている 「LTS Enablement Stacks」のカーネルです。 簡単に言うと，LTS以降にリリースされたUbuntuで使われるカーネルを，LTSでも使えるようにしたものです。 (http://gihyo.jp/admin/serial/01/ubuntu-recipe/0278) より引用
-安定版と開発版があり、開発版であれば4.8が入るそうだったので開発版をインストールすることにした。
-linux-generic-hwe-16.04-edgeをインストール
-sudo apt install linux-generic-hwe-16.04-edge バージョンの確認
-$ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18:55:08 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux カーネルバージョンは4.8.0-34まで上がった。 ハードウェアのサポートが入っているためか、こちらではlibinput-debug-eventsが正しく動作していた。</div>
-</footer>
-</a>
-</article>
-</div>
 </div>
 <div class=row>
 <div class=col-md-12>
@@ -461,6 +461,17 @@ $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Apr 2, 2025</div>
+</div>
+<h2 class=title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
 <footer>
@@ -501,17 +512,6 @@ $ uname -a Linux XPS-L321X 4.8.0-34-generic #36~16.04.1-Ubuntu SMP Wed Dec 21 18
 <div class=time>Wed, Sep 6, 2023</div>
 </div>
 <h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://blog.iberianpig.dev/posts/2023-05-17_rubykaigi2023/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Wed, May 17, 2023</div>
-</div>
-<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
 </footer>
 </a>
 </article>

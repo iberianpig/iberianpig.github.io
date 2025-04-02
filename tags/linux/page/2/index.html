@@ -32,6 +32,30 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://blog.iberianpig.dev/posts/2015-06-07-easytether%E3%82%92linux%E3%81%A7%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B/>
+<div class=image style=background-image:url(https://i.ytimg.com/vi/GjL3HTeVnbY/hqdefault.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Jun 7, 2015</time>
+</div>
+<h2 class=title>EasytetherでBluetoothテザリング</h2>
+<div class=summary>Easytether with linux
+EasytetherFull( GooglePlay )
+数年前に、AndroidのXperia acroHD使ってた時に利用してた有償のテザリングアプリ。一応FreeのLite版もある。
+そして、公式のLinux向けクライアントがある。
+当時はUSBテザリングで利用しており、テザリングサポート外の端末でも動作して、そこそこ速度が出ていたので利用していた。
+Linux版パッケージはこちら からダウンロード可。
+現在利用しているXperia Z1fではUSBテザリング、Wifiテザリング、Bluetoothは標準でサポートされている。
+いつもはXperia側のバッテリーの事を気にかけてBluetoothでテザリングを行っていたが、Easytetherの事だから標準より速度出るのでは…?と、気になってみたのでやってみた
+Speedテスト3回戦 Easytether Bluetoothテザリング AndroidのBluetoothテザリング やはり、Easytetherの方が早い 若干だけれども。 ただ、バッテリー消費量の検証は行っていないので片手落ち感はある。 ただし起動/終了が面倒なので、ショートカット割り当てまで行う。
+おまけ(起動スクリプトの登録) 接続を切り替えるscriptを作る easytether.shを任意のディレクトリに作成。
+#!/bin/sh pgrep -lf easytether ret=$? if test ${ret} -eq 0 then # 既に起動中の場合停止させる pkill easytether -f else # 対象のスマホのBluetoothのMACアドレスを指定して接続 sudo easytether-bluetooth BT:MA:CA:DD:RE:SS fi 内容はこんな感じ。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://blog.iberianpig.dev/posts/2015-05-31-linux%E3%81%A7%E3%83%96%E3%83%AB%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%88%E3%83%95%E3%82%A3%E3%83%AB%E3%82%BF-%E3%81%9D%E3%81%97%E3%81%A6%E5%BF%AB%E7%9C%A0%E3%81%B8/>
 <div class=image style=background-image:url(http://jonls.dk/assets/redshift-icon-256.png)></div>
 <footer>
@@ -187,6 +211,17 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Apr 2, 2025</div>
+</div>
+<h2 class=title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
 <footer>
@@ -227,17 +262,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <div class=time>Wed, Sep 6, 2023</div>
 </div>
 <h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://blog.iberianpig.dev/posts/2023-05-17_rubykaigi2023/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Wed, May 17, 2023</div>
-</div>
-<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
 </footer>
 </a>
 </article>

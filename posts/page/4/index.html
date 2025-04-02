@@ -32,6 +32,38 @@
 <div class=row>
 <div class=col-sm-4>
 <article class=grid>
+<a href=https://blog.iberianpig.dev/posts/2014-07-23-send-data-on-intent-to-call-activity/>
+<div class=image style=background-image:url(https://blog.iberianpig.dev//images/default.jpg)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Jul 23, 2014</time>
+</div>
+<h2 class=title>send data on Intent to call activity</h2>
+<div class=summary>#Activityとは
+Androidの画面単位の概念 一つのアクティビティに対してクラス一つが割り当てされる
+&ndash;>1つのXML(Viewテンプレート)と1つのJavaクラス(Activity)が必要となる
+#Intentとは
+インテントというのは簡単に言えばアクティビティなどが他のアクティビティやアプリケーションなどと情報のやり取りを行うための箱のようなものです。インテントという箱には、相手先や届けたい情報などが含まれています。
+アクティビティから他の指定したアクティビティへインテントを送ることがあります。例えば他の画面を表示したい場合などです。
+(参考:　http://www.javadrive.jp/android/intent/index1.html)
+##暗黙的インテントと明示的インテント
+どの機能を呼び出すかをあらかじめ指定して直接それを起動することを「明示的インテント」(explicit intent)、何をしたいかは明示せずに漠然とそのデータに対して実行できる機能の一覧を要求することを「暗黙的インテント」(implicit intent)という。
+(参考: http://e-words.jp/w/E382A4E383B3E38386E383B3E38388.html)
+##どうやって起動するのか
+インテントのアクションとは、あるオブジェクトが他のオブジェクトを起動する際に、何をしたいのかを指すための指定です。ここでいうオブジェクトはActivityやサービスのことを指します。
+アクションを指定するには、Intentクラスのコンストラクタで指定するか、もしくはIntentクラスのsetActionメソッドを使って指定します。### また、指定するアクションはすべてIntentクラスの遷移元への値の渡し方と受け取り方定数として定義されていますので、該当な定数を使ってアクションを以下のように指定します。
+// アクションを指定してインテントのインスタンス生成 Intent intent = new Intent(Intent.ACTION_MAIN); // 次画面のアクティビティ起動 startActivity(intent); インテントをnew Intentしてそれを**startActivity()**の引数に入れて起動するらしい。
+StartActivityとは 同一アプリ内の画面を呼び出すときは明示的Intentを作成する。そして**startActivity()の引数として引き渡すことでそれを実現する。ただし、この挙動は一方通行のようなもの。呼び出し元の情報を返して欲しいときはstartActivityForResult()**を使う。
+また、アクションには「アクティビティアクション」と「ブロードキャストアクション」があります。
+###アクティビティアクション
+アクティビティアクションとは、他のアクティビティを起動する際に、何をしたいのかを示すためのアクションです。具体的には以下のものがあります
+アクション 機能 ACTION_MAIN メインエントリーポイントとしてアクションを起動する。データを戻すことができない。 ACTION_VIEW データをユーザに表示するためにアクションを起動する。 ACTION_ATTACH_DATA 別の場所にデータが添付されていることを示す。 ACTION_EDIT データを編集するためにアクションを起動する。 ACTION_PICK データの中からアイテムを選択するためにアクションを起動する。選択されたアイテムを受け取る。 ACTION_CHOOSER 起動するActivityを選択するチューザーをユーザに示し、選択してもらう。 ACTION_GET_CONTENT 指定した種類のデータをユーザに選択、もしくは作成してもらう。 ACTION_DIAL データで指定した番号を電話番号として設定する。データを指定しなければ、ユーザがその場で設定する。電話をかける操作はユーザに任せる。 ACTION_CALL データで指定した人に電話をかける。データを指定しなければ、ユーザがその場で指定した番号に電話をかける。 ACTION_SEND 別の人にデータを送信する。データの宛先は指定しない。このIntentを受け取ったアクションが、ユーザに宛先を問う。 ACTION_SENDTO データによって指定された人にメッセージを送信する。 ACTION_ANSWER かかってきた電話に対処するアクションを起動する。 ACTION_INSERT データに含まれるURIが示すディレクトリに秋のデータを挿入する。 ACTION_DELETE データに含まれるURIが示すデータをコンテナから削除する。 ACTION_RUN データを起動する。その意味はデータの種類によって異なる。 ACTION_SYNC データの同期を実行する。 ACTION_PICK_ACTIVITY Intentが与えられるActivityを選択し、そのクラスを返す。 ACTION_SEARCH 検索を実行する。 ACTION_WEB_SEARCH WEB検索を実行する。 ACTION_FACTORY_TEST デバイスが工場検査モードで起動する際にだけ実行される工場検査のメインエントリポイントとして起動する。 ブロードキャストアクション ブロードキャストアクションとは、なんらかのイベントが発生したことを他のオブジェクトに知らせる際に指定するアクションです。</div>
+</footer>
+</a>
+</article>
+</div>
+<div class=col-sm-4>
+<article class=grid>
 <a href=https://blog.iberianpig.dev/posts/2014-03-17-head-first-rails_5/>
 <div class=image style=background-image:url(https://blog.iberianpig.dev//images/default.jpg)></div>
 <footer>
@@ -185,6 +217,17 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <section>
 <header>Latest Posts</header>
 <div><article class=li>
+<a href=https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Apr 2, 2025</div>
+</div>
+<h2 class=title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
 <a href=https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
 <div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
 <footer>
@@ -225,17 +268,6 @@ SCIM、uim、その他のIMには対応していません。とあるものの�
 <div class=time>Wed, Sep 6, 2023</div>
 </div>
 <h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
-</footer>
-</a>
-</article>
-<article class=li>
-<a href=https://blog.iberianpig.dev/posts/2023-05-17_rubykaigi2023/ class=clearfix>
-<div class=image style=background-image:url(https://i.gyazo.com/9278c279e0a7118a58c54f57d3fac995.jpg)></div>
-<footer>
-<div class=date>
-<div class=time>Wed, May 17, 2023</div>
-</div>
-<h2 class=title>RubyKaigi 2023に登壇してFusumaについて話した</h2>
 </footer>
 </a>
 </article>

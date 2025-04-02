@@ -1,0 +1,199 @@
+<!doctype html><html>
+<head>
+<meta charset=utf-8>
+<meta name=generator content="Hugo 0.92.2">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<link href="//fonts.googleapis.com/css?family=Noto+Sans:400,700|Pacifico" rel=stylesheet>
+<link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css integrity=sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk crossorigin=anonymous>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css>
+<link rel=stylesheet href=https://blog.iberianpig.dev/css/styles.css>
+<link rel=stylesheet href=https://blog.iberianpig.dev/css/custom.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://blog.iberianpig.dev/index.xml>
+<title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた - iberianpigsty</title>
+<meta property="og:title" content="HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた - iberianpigsty">
+<meta name=description content="HHKB StudioのポインティングスティックでThumbsenseを利用するため、HIDRawドライバを用いたFusumaプラグインを書きました">
+<meta property="og:url" content="https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/">
+<meta property="og:description" content="HHKB StudioのポインティングスティックでThumbsenseを利用するため、HIDRawドライバを用いたFusumaプラグインを書きました">
+<meta property="og:image" content="https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@nukumaro22">
+<meta name=twitter:creator content="@nukumaro22">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/blog.iberianpig.dev\/"},"headline":"HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた |  ","image":{"@type":"ImageObject","url":"","height":700,"width":700},"datePublished":"2025-04-02T01:46:38JST","dateModified":"2025-04-02T01:46:38JST","author":{"@type":"Person","name":"Kohei Yamada","image":"https:\/\/blog.iberianpig.dev\/images/logo.png"},"publisher":{"@type":"Organization","name":"Copyright (c) iberianpigsty; all rights reserved.","logo":{"@type":"ImageObject","url":"https:\/\/blog.iberianpig.dev\/images/logo.png","height":60,"width":60}},"description":"HHKB StudioのポインティングスティックでThumbsenseを利用するため、HIDRawドライバを用いたFusumaプラグインを書きました"}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8G6M9151B3"></script>
+<script src=https://kit.fontawesome.com/13953638e7.js></script>
+</head>
+<body>
+<header class=l-header>
+<div class=p-logo>
+<a href=https://blog.iberianpig.dev/>iberianpigsty</a>
+</div>
+</header>
+<div class=container>
+<div class=row>
+<div class=col-md-9>
+<article class=single>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<div class=body>
+<h1>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h1>
+<div class=publishDate>
+<time datetime=2025-04-02T01:46:38+09:00>Published at 2 Apr, 2025 </time>
+</div>
+<nav>
+<ul class=terms>
+<li><a href=https://blog.iberianpig.dev/tags/linux/>#linux</a></li><li><a href=https://blog.iberianpig.dev/tags/ruby/>#ruby</a></li>
+</ul>
+</nav>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&text=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&t=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&title=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&title=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+<div class=content>
+<p>Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにするようにした。</p>
+<h1 id=登壇資料>登壇資料</h1>
+<p><a href=https://fukuokarb.connpass.com/event/345164/>Fukuoka.rb #397 〜RubyKaigi 2025の機運〜 - connpass</a>でLTしてきました。</p>
+<iframe class=speakerdeck-iframe frameborder=0 src=https://speakerdeck.com/player/52e19275d015488a838d43452dd8c730 title="RubyKaigiで手に入れた HHKB Studioのための HIDRawドライバ" allowfullscreen style="border:0;background:padding-box padding-box rgba(0,0,0,.1);margin:0;padding:0;border-radius:6px;box-shadow:rgba(0,0,0,.2)0 5px 40px;width:100%;height:auto;aspect-ratio:560/315" data-ratio=1.7777777777777777></iframe>
+<p>HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置いたときにタッチを検出できるようにした。</p>
+<p>取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、HID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。</p>
+<p>HidAPIのバインディングライブラリを使おうと考えたが、どれもまともに動かなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。</p>
+<h1 id=実装内容>実装内容</h1>
+<p><a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4><img src=https://i.gyazo.com/de822307748283960c2ea576655338c3.png alt=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4></a>
+↑はポインティングスティックからタッチイベントを取得するPR(<a href=https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4>https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4</a>)</p>
+<p>USB接続時と異なりBluetooth接続時には同じデバイスでキーボードとポインティングデバイスを混ぜてHIDの通信に乗ってくるので、report_id分のバイト列の有無や読み飛ばすなどの処理を入れることになったのでパーサーが2つに分かれている。</p>
+<h1 id=課題など>課題など</h1>
+<p>ちゃんと汎用ドライバのようにやるにはHID Report Descriptorから動的に構造体を作ってHIDレポートをデコードする必要がある。すると色々なデバイスで同じようにイベントがパースできるようになり、ThinkPadのトラックポイントやトラックボールなども対応が簡単になる。</p>
+<p>今の所リマップの処理部分はfusuma-plugin-remapではevdevでgrabして物理デバイスのイベントを排他制御しつつuinputで作った仮想デバイスにイベントを書き換えるプロキシが実装されている。</p>
+<p>fusuma-plugin-remap自体にC拡張を使っているのでRubyを普段使わないユーザはOSのruby-devのパッケージとインストール時のビルドが必要になってしまったり、
+ユーザ側でデバイスファイルのパーミッション用のudevルールを作成する必要があったりする。</p>
+<p>このあたりの面倒事を軽減するにはX11やWayland(libinput + libei)上でリマップしてしまうか、 リマップ周りをeBPFを使ってカーネル空間に処理を移譲してしまって、フィルタリングやリマップをセキュアにやっていくのも面白そう。</p>
+<p>またC拡張を使わずにPure Rubyでlibevdev/libinputなど自分が使う範囲だけ再実装しちゃうのも意外とできちゃうんじゃないかと思っていて、気分次第でどれかに進捗を出していきたい。</p>
+<p>自分が遊べる余白を残しながら他の人にも安定して使ってもらえるのはプラグイン化のメリットの一つだなと思う。</p>
+</div>
+<aside class=p-share>
+<div class=share-inner>
+<a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&text=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f&tw_p=tweetbutton" title=Twitterでシェア class=tw target=_blank rel=nofollow></a>
+<a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&t=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=Facebookでシェア class=fb target=_blank rel=nofollow></a>
+<a href="http://b.hatena.ne.jp/add?mode=confirm&url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&title=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=はてなブックマーク class=ht target=_blank rel=nofollow></a>
+<a href="http://getpocket.com/edit?url=https%3a%2f%2fblog.iberianpig.dev%2fposts%2f2025-04-02_fusuma_with_hidraw_driver%2f&title=HHKB%20Studio%e3%81%ae%e3%83%9d%e3%82%a4%e3%83%b3%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0%e3%82%b9%e3%83%86%e3%82%a3%e3%83%83%e3%82%af%e3%81%a7Thumbsense%e3%82%92%e5%88%a9%e7%94%a8%e3%81%99%e3%82%8bFusuma%e3%83%97%e3%83%a9%e3%82%b0%e3%82%a4%e3%83%b3%e3%82%92%e6%9b%b8%e3%81%84%e3%81%9f" title=Pocketであとで読む class=pk target=_blank rel=nofollow></a>
+</div>
+</aside>
+</div>
+</article>
+</div>
+<div class=col-md-3>
+<aside class=site>
+<section>
+<header>Table Of Contents</header>
+<div><nav id=TableOfContents></nav></div>
+</section>
+<section>
+<header>Latest Posts</header>
+<div><article class=li>
+<a href=https://blog.iberianpig.dev/posts/2025-04-02_fusuma_with_hidraw_driver/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Apr 2, 2025</div>
+</div>
+<h2 class=title>HHKB StudioのポインティングスティックでThumbsenseを利用するFusumaプラグインを書いた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://blog.iberianpig.dev/posts/2025-02-05_tailscale_serve%E3%81%A8tailscale_funnel/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Feb 5, 2025</div>
+</div>
+<h2 class=title>tailscale serveとtailscale funnel</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://blog.iberianpig.dev/posts/2024-03-11_migrate_from_authy/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/2b59469c61ee89377043ba87e101bbcd.png)></div>
+<footer>
+<div class=date>
+<div class=time>Sun, Mar 10, 2024</div>
+</div>
+<h2 class=title>Authy Desktopが終了するので秘密鍵を抽出して他ツールへ移行する</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://blog.iberianpig.dev/posts/2023-11-20_vimconf_2023_tiny%E3%81%AB%E8%A1%8C%E3%81%A3%E3%81%A6%E3%81%8D%E3%81%9F/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/b38a6595852d4d96994a114bb489eff6.png)></div>
+<footer>
+<div class=date>
+<div class=time>Mon, Nov 20, 2023</div>
+</div>
+<h2 class=title>VimConf 2023 Tinyに行ってきた</h2>
+</footer>
+</a>
+</article>
+<article class=li>
+<a href=https://blog.iberianpig.dev/posts/2023-09-06_thumbsense_is_new_fusion_of_keyboard_and_touchpad/ class=clearfix>
+<div class=image style=background-image:url(https://i.gyazo.com/f1287b6c6ef727356b43ded17601e651.png)></div>
+<footer>
+<div class=date>
+<div class=time>Wed, Sep 6, 2023</div>
+</div>
+<h2 class=title>キーボードとタッチパッドをシームレスに統合するThumbSense</h2>
+</footer>
+</a>
+</article>
+</div>
+</section>
+<section class=taxonomies>
+<header class=taxonomies__header>tag</header>
+<div class=taxonomies__body>
+<ul>
+<li><a href=https://blog.iberianpig.dev/tags/linux/>linux</a></li><li><a href=https://blog.iberianpig.dev/tags/ruby/>ruby</a></li><li><a href=https://blog.iberianpig.dev/tags/vim/>vim</a></li><li><a href=https://blog.iberianpig.dev/tags/libinput/>libinput</a></li><li><a href=https://blog.iberianpig.dev/tags/elementaryos/>elementaryos</a></li><li><a href=https://blog.iberianpig.dev/tags/rails/>rails</a></li><li><a href=https://blog.iberianpig.dev/tags/ubuntu/>ubuntu</a></li><li><a href=https://blog.iberianpig.dev/tags/git/>git</a></li><li><a href=https://blog.iberianpig.dev/tags/android/>android</a></li><li><a href=https://blog.iberianpig.dev/tags/javascript/>javascript</a></li>
+</ul>
+</div>
+</section>
+<section class=author>
+<header class=author__header> About Me</header>
+<div class=author__body>
+<div class=aboutme>
+<div class=aboutme__icon>
+<i class="fas fa-piggy-bank fa-lg"> Kohei Yamada</i>
+</div>
+自分が便利そうだと思ったものを作っています。Linux/Ruby/Vim が好きです。
+</div>
+<div class=contact>
+<a target=_blank href=https://github.com/iberianpig><i class="fab fa-github"></i> https://github.com/iberianpig</a>
+<a target=_blank href=https://twitter.com/nukumaro22><i class="fab fa-twitter"></i> https://twitter.com/nukumaro22</a>
+</div>
+<div class=aboutwork>
+<div class=aboutwork__icon>
+<i class="fas fa-laptop-code fa-lg"> Work</i>
+</div>
+スタートアップ企業の技術支援をしています。お仕事のご相談はメールかX(Twitter)でご連絡ください。
+</div>
+<div class=contact>
+<a target=_blank href=mailto:yhkyky+work@gmail.com><i class="fas fa-envelope"></i> yhkyky+work@gmail.com</a>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+</div>
+<footer class=l-footer>
+<p>Copyright (c) iberianpigsty; all rights reserved.</p>
+<p>Powered by <a href=http://gohugo.io target=_blank rel=nofollow>Hugo</a>, Theme <a href=https://github.com/dim0627/hugo_theme_robust target=_blank rel=nofollow>robust</a> designed by <a href=http://yet.unresolved.xyz target=_blank rel=nofollow>Daisuke Tsuji</a></p>
+</footer>
+<script data-no-instant src=//code.jquery.com/jquery-3.1.1.min.js></script>
+<script src=https://code.jquery.com/jquery-3.5.1.slim.min.js integrity=sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js integrity=sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI crossorigin=anonymous></script>
+<script data-no-instant src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js></script>
+<script data-no-instant src=https://blog.iberianpig.dev/javascripts/instantclick.min.js></script>
+<script data-no-instant>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}InstantClick.on('change',function(a){gtag('js',new Date),gtag('config','G-8G6M9151B3',{page_location:location.href})}),InstantClick.on('change',function(c){for(var b=document.querySelectorAll('pre code'),a=0;a<b.length;a++)hljs.highlightBlock(b[a])}),InstantClick.init()</script>
+</body>
+</html>
