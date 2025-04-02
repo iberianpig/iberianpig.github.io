@@ -11,25 +11,28 @@ image: "https://i.gyazo.com/d5a87784aad5ed3769d4ad5efe8723bc.png"
 description: "HHKB StudioのポインティングスティックでThumbsenseを利用するため、HIDRawドライバを用いたFusumaプラグインを書きました"
 ---
 
-Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにリマップできるようになった。
 
+「**RubyKaigiで手にれたHHKB StudioのためのHIDRawドライバ**」という内容で [Fukuoka.rb #397 〜RubyKaigi 2025の機運〜](https://fukuokarb.connpass.com/event/345164/)でLTしてきました。
+
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Ftech.smarthr.jp%2Fentry%2F2025%2F03%2F27%2F193817" title="Fukuoka.rbをSmartHR九州支社で開催しました - SmartHR Tech Blog" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"></iframe>
+
+HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置くだけでタッチを検出できるようにした、という話です。
 
 # 登壇資料
 
-[Fukuoka.rb #397 〜RubyKaigi 2025の機運〜](https://fukuokarb.connpass.com/event/345164/)でLTしてきました。
 <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/52e19275d015488a838d43452dd8c730" title="RubyKaigiで手に入れた HHKB Studioのための HIDRawドライバ" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 315;" data-ratio="1.7777777777777777"></iframe>
 
-HIDRawドライバを利用することで汎用カーネルドライバではフィルタリングされてしまっていたイベントが取得できるようになり、指を軽く置くだけでタッチを検出できるようにした。
+Fusumaプラグインの一つであるfusuma-plugin-thumbsenseを機能拡張して、HHKB Studioのポインティングスティック(トラックポイント)に触っているときのみFキーやDキーをマウスボタンにリマップできるようになった。
 
 取得した生のHIDイベントは、通常のevdev相当の構造体に変換する必要がある。イベントストリームのバイト列の区切りを見つけるために、事前にHID Report Descriptorを解析しておき、デバイス別にキーやポインティングデバイスの操作イベントにデコードする。
 
-HidAPIのバインディングライブラリをいくつか試したが期待通りに動作しなかった。マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyで実装した。
+HidAPIのバインディングライブラリをいくつか試したが期待通りに動作しなかったことや、マウスのイベントが飛んできているときだけは雑にタッチ判定しておけばとりあえず動くものは作れそうだったのでffiやC拡張に頼らずRubyだけで実装した。
+リマップ処理は既存のfusuma-plugin-remapでやるので検出部分のみ作るだけだった。
 
 # 実装内容
 
 [![https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4](https://i.gyazo.com/de822307748283960c2ea576655338c3.png)](https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4)
 ↑はポインティングスティックからタッチイベントを取得するPR(https://github.com/iberianpig/fusuma-plugin-thumbsense/pull/4)
-
 
 USB接続時とは異なり、Bluetooth接続時は同一デバイス上でキーボードとポインティングデバイスの両方が通信に乗ってくるため、report_id分のバイト列の有無や不要なバイト列を読み飛ばす処理が必要となり、その結果パーサーを2種類に分割する実装となっている。
 
