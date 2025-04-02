@@ -5,9 +5,13 @@ echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
 # Build the project.
 hugo --gc --minify --cleanDestinationDir
 
+# Set CNAME after build
+echo blog.iberianpig.dev > public/CNAME
+
 # Go To Public folder
 cd public
 # Add changes to git.
+
 git add -A
 
 # Commit changes.

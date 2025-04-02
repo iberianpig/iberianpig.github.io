@@ -1,0 +1,81 @@
+---
+layout: post
+title: "tailscale serveとtailscale funnel"
+draft: false
+date: 2025-02-05T13:27:42+09:00
+comments: true
+tags: 
+   - "tailscale"
+image: "https://i.gyazo.com/f8067d064e763c3c9a0f16c18fe2dd6c.png"
+description: "ローカルでRailsのサーバを動かしていて、自分のスマホや他人に見てもらいたいときにtailscaleを使うと便利"
+---
+
+Tailscaleを自宅のRaspbery Piや手元のラップトップに入れて使っている。
+主に自宅からVPNを使って抜けたいときにexit nodeとしてRaspbery Piを使っている。
+
+今回はラップトップ上でRailsのサーバを動かしていて、自分のスマホで挙動をテストするときや他人に見てもらいたいときにtailscaleを使うと便利だと思ったので、tailscaleのFunnelとServeの使い方をまとめてみる。
+
+## tailscale funnel
+
+以下はローカルポートの3000番を外部に公開するためのコマンド。
+
+```bash
+$ tailscale funnel 3000
+```
+
+このコマンドを実行すると、指定したポートのサービスがインターネット上で利用可能となる。
+公開されるURLは `https://host-name.foo-bar.ts.net` となり、foo-bar はtailscaleのアカウント単位で決まるランダム文字列で、tailscaleの設定で変更できる。
+スマホや他人が接続する際にはtailscaleのアカウントは必要ない。
+ただし、外部アクセスの制限や認証の設定がないため、取り扱いには注意が必要。
+
+Raspberry Pi で Funnel を使用して Web サイトをホストしている場合と違って、ラップトップで Funnel を使用して開発サーバーを一時的に共有しているだけの場合は、作業が終わったら必ずオフすること。
+そうしないと、意図せずlocalhostのサービスが外部に公開されたままになる。
+
+また、funnelの利用時はserveと違ってDNSの伝搬に時間が必要で、公開後すぐにアクセスできないことがある。
+公式に10分とあったが、実際にはもう少し時間がかかることがある。これにはちょっとハマってしまった。
+
+## tailscale serve
+
+Tailscale serveはfunnelと同様にローカルポートを外部に公開するが、こちらはTailscaleでVPNを接続しており、自分のtailnet内のみに公開される。
+
+```bash
+$ tailscale serve 3000
+```
+
+funnelと 同様に `https://host-name.foo-bar.ts.net` でアクセスできる。
+
+このコマンドを実行すると、指定したポートのサービスがTailscaleのVPN内で利用可能となる。
+外部に公開したくないサービスをチームのVPN内で利用ような、共有リソースとして使うときに便利。
+スマホアプリでtailscaleを使って自分のtailnetに接続すると、`https://host-name.foo-bar.ts.net` でアクセスできる。
+
+## Funnel と Serve、それぞれの利用用途
+
+### Funnelの利用用途
+- **個人プロジェクトの公開**: 自宅や開発環境で作成したウェブアプリやサービスを外部に公開。
+- **イベントやプレゼンテーション**: デモ用のサービスを一時的に公開。
+- **ローカルウェブフックのテスト**: 外部サービスからアクセスできるようにして、開発中のウェブフックを試す。
+- **IoTデバイスのアクセス**: Raspberry Piなど、特定の機器でのサービスをインターネット上で利用可能に。
+
+### Serveの利用用途
+- **チーム内のリソース共有**: チームメンバー間での開発アプリやサービスの共有。
+- **プライベートAPIの提供**: 開発環境におけるAPIをチーム内で安全に利用。
+- **社内ツールやダッシュボードへのアクセス**: 社内向けサービスをtailnet内で利用。
+- **リモートスタッフのサポート**: 自宅や他の場所で勤務するスタッフが社内リソースに安全にアクセス。
+
+### ローカルサーバを公開する
+
+開発中のサーバへのアクセスであればserveを使うのが便利。
+最初はfunnelを使ってみたが、他のユーザーに広く公開したいわけではないので、自分のスマホやチームメンバーに公開するだけであればtailnetに参加させた上でのserveの方が便利だと感じた。
+この辺は用途によって使い分けると良い。
+
+
+## まとめ
+
+- TailscaleのFunnelとServeは、ローカルのサービスを外部に公開するための便利なツール。
+- Funnelはインターネット上で公開されるため、DNSの伝搬に時間が必要でアクセスできるまでに時間がかかること、外部アクセスの制限や認証の設定がなこと、など注意が必要。
+- ServeはFunnelと違ってVPN内でのみ公開されるため、チーム内でのリソース共有などに適している。
+
+## 参考文献
+
+- https://tailscale.com/kb/1311/tailscale-funnel
+- https://tailscale.com/blog/reintroducing-serve-funnel
